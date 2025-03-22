@@ -4,7 +4,8 @@
  *						*
  *						*
  * * * * * * * * * * * **/
-
+// NOTE : the smoothing works like this. cansmooth with = this turf will allow the indicated turfs to overlay it with edges
+// It will look in the icon file IN ITS OWN PATH for that one. So need to be in the same DMI as the indicated turfs edge icon.
 
 /*--------------\
 | Better Floors |
@@ -97,7 +98,17 @@
 	icon_state = "cobblerock_red"
 	neighborlay = "cobblerock_red"
 	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/open/floor)
+	canSmoothWith = list(
+						/turf/open/floor/snow,
+						/turf/open/floor/snow/patchy,
+						/turf/open/floor/snow/rough,
+						/turf/open/floor/grass,
+						/turf/open/floor/grass/mixyel,
+						/turf/open/floor/grass/yel,
+						/turf/open/floor/grass/red,
+						/turf/open/floor/grass/transition,
+						/turf/open/floor/dirt/muddie
+						)
 
 /turf/open/floor/cobble/mossy
 	icon = 'modular/stonekeep/icons/turfs.dmi'
@@ -225,6 +236,7 @@
 						/turf/open/floor/grass/mixyel,
 						/turf/open/floor/grass/yel,
 						/turf/open/floor/grass/red,
+						/turf/open/floor/naturalstone,
 						/turf/open/floor/grass/transition,
 						/turf/open/floor/dirt/muddie
 						)
@@ -280,7 +292,8 @@
 
 
 /turf/open/floor/grass/cold
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'modular/stonekeep/icons/turfs.dmi'
+	neighborlay = "grass_cold"
 
 /turf/open/floor/grass/hell
 	icon = 'icons/turf/roguefloor.dmi'
@@ -292,6 +305,7 @@
 	canSmoothWith = list(
 						/turf/open/floor/snow
 						)
+	neighborlay = "snowpatchy"
 
 /turf/open/floor/snow
 	icon = 'modular/stonekeep/icons/turfs.dmi'
@@ -306,6 +320,7 @@
 /*	..................   Dirt   ................... */
 
 /turf/open/floor/dirt
+	icon = 'modular/stonekeep/icons/turfs.dmi'
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(
 						/turf/open/floor/cobblerock/alt,
@@ -313,6 +328,8 @@
 						/turf/open/floor/snow,
 						/turf/open/floor/dirt/muddie,
 						/turf/open/floor/dirt/road,
+						/turf/open/floor/snow/patchy,
+						/turf/open/floor/grass/cold,
 						)
 
 /turf/open/floor/dirt/Initialize()
@@ -367,12 +384,16 @@
 	wash_in = FALSE
 
 /turf/open/floor/naturalstone
+//	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	smooth = SMOOTH_MORE
+	icon = 'modular/stonekeep/icons/turfs.dmi'
 	canSmoothWith = list(
 						/turf/open/floor/cobblerock,
 						/turf/open/floor/grass,
 						/turf/open/floor/snow,
 						/turf/open/floor/dirt,
+						/turf/open/floor/snow/patchy,
+						/turf/open/floor/grass/cold,
 						)
 /turf/open/floor/naturalstone/cardinal_smooth(adjacencies)
 	smooth(adjacencies)
@@ -380,7 +401,6 @@
 
 /turf/open/floor/naturalstone/rough
 	icon_state = "digstone_rough"
-	icon = 'modular/stonekeep/icons/turfs.dmi'
 	slowdown = 3
 /turf/open/floor/naturalstone/rough/Initialize()
 	. = ..()

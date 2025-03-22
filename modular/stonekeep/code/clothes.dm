@@ -410,6 +410,61 @@
 /obj/item/clothing/head/hooded/rainhood
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 
+
+//................ Templar Helmets. I made the necked ones, I regreet it, better avoid overlap and muddled boundaries ............... //
+/obj/item/clothing/head/helmet/heavy/bucket/templar
+	icon_state = "astrata"
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/noc
+	icon_state = "noc"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/dendor
+	icon_state = "dendor"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/necra
+	icon_state = "necra"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/abyssor
+	icon_state = "abyssor"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/ravox
+	icon_state = "ravoxhelm"
+	item_state = "ravoxhelm"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+/obj/item/clothing/head/helmet/heavy/bucket/templar/malum
+	icon_state = "malumhelm"
+	item_state = "malumhelm"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+
+
+/obj/item/clothing/head/helmet/pestracage	// not great armor value but very durable and best coverage
+	name = "iron cage"
+	desc = "A simple steel helmet with no attachments. Helps protect the ears."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "headcage"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	armor =  ARMOR_LEATHER_GOOD
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	max_integrity = INTEGRITY_STRONGEST
+
+/obj/item/clothing/neck/monke
+	name = "collar"
+	desc = "Fits snug."
+	icon_state = "surgcollar"
+	item_state = "surgcollar"
+	armor =  ARMOR_LEATHER_BAD
+	prevent_crits = MINOR_CRITICALS
+
+
+
 // =============================================================================
 // ==============================	CLOAKS	====================================
 
@@ -450,6 +505,9 @@
 
 // =============================================================================
 // ==============================	ARMOR	====================================
+
+/obj/item/clothing/armor/rare	// already got huge armor values. Lets balance with crappy integrity. OP classes no fun for everyone else.
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/armor/leather/vest/bard
 	name = "leather vest"
@@ -533,8 +591,8 @@
 	item_state = "desertgown"
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 
-/obj/item/clothing/shirt/robe/monkcloth	// kinda sus
-	name = "monks robes"
+/obj/item/clothing/shirt/robe/prior
+	name = "prior robes"
 	desc = ""
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
@@ -545,7 +603,7 @@
 	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/armor/leather/vest/monk
-	name = "monks robes"
+	name = "monk robes"
 	desc = "Comes with a leather vest."
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
@@ -1244,8 +1302,11 @@
 //	color = CLOTHING_WHITE
 //	detail_color = "#422413"
 //	alternate_worn_layer =  WRISTSLEEVE_LAYER
+/obj/item/clothing/shirt/dress/velvetdress/sleeveless
+	icon_state = "velvetdress_less"
+	item_state = "velvetdress_less"
 
-/obj/item/clothing/shirt/dress/velvetdress/courtupdate_icon()
+/obj/item/clothing/shirt/dress/velvetdress/court/update_icon()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))

@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
-	var/ooccolor = "#c43b23"
+	var/ooccolor = null
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
 	var/triumphs = 0
 	var/enable_tips = TRUE
@@ -103,7 +103,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		(RANDOM_SKIN_TONE) = TRUE,
 		(RANDOM_EYE_COLOR) = TRUE
 	)
-	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
 
 	var/list/custom_names = list()
@@ -325,9 +324,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				else
 					dispGender = "Other"
 				dat += "<b>Sex:</b> <a href='?_src_=prefs;preference=gender'>[dispGender]</a><BR>"
-				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
-					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Gender: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
-					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
+//				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
+//					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Gender: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
+//					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
 
 			if(AGE_IMMORTAL in pref_species.possible_ages)
 				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[AGE_IMMORTAL]</a><BR>"
@@ -763,7 +762,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
 
 				if(unlock_content || check_rights_for(user.client, R_ADMIN))
-					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
+					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.OOC_COLOR];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 
 			dat += "</td>"
 
