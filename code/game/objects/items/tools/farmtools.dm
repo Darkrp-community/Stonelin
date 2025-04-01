@@ -32,7 +32,7 @@
 	force = 10
 	force_wielded = 15
 	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
-	gripped_intents = list(POLEARM_BASH,POLEARM_THRUST,DUMP_INTENT)
+	gripped_intents = list(POLEARM_THRUST,POLEARM_BASH,DUMP_INTENT)
 	name = "copper fork"
 	desc = "A simple and rustic tool for working the fields, not a very effective weapon."
 	icon_state = "cfork"
