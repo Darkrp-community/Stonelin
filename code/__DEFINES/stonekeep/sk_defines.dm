@@ -65,7 +65,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SK_GUILDMASTER	(1<<2)
 #define SK_FELDSHER		(1<<3)
 #define SK_BLACKSMITH	(1<<4)
-#define SK_MASON		(1<<5)
+#define SK_HAMMERITE	(1<<5)
 #define SK_NITEMAN		(1<<6)
 
 #define SK_ELDER		(1<<0)
@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define INNKEEP_ORDER		33
 #define FELDSHER_ORDER		34
 #define BLACKSMITH_ORDER	35
-#define MASON_ORDER			36
+#define HAMMERITE_ORDER 	36
 #define NITEMAN_ORDER		38
 
 #define ELDER_ORDER			41

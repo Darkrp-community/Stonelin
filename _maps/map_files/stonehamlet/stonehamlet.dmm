@@ -1043,6 +1043,7 @@
 /obj/structure/stairs/d{
 	dir = 4
 	},
+/obj/structure/fluff/railing/wood,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors)
 "bLd" = (
@@ -2082,12 +2083,9 @@
 /turf/open/floor/blocks/moss,
 /area/rogue/outdoors/exposed/church)
 "dgJ" = (
-/obj/structure/table/stone_end{
-	dir = 8
-	},
-/obj/item/weapon/chisel,
-/turf/open/floor/herringbone,
-/area/rogue/indoors/shelter/town/dwarf)
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/cobblemoss,
+/area/rogue/outdoors/exposed/magiciantower)
 "dhd" = (
 /obj/structure/bed/mediocre{
 	name = "acolytes bedding"
@@ -4075,6 +4073,8 @@
 	},
 /obj/item/weapon/axe/iron,
 /obj/machinery/light/fueled/wallfire/candle/l,
+/obj/item/weapon/hammer/steel,
+/obj/item/weapon/chisel,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "fUV" = (
@@ -4211,11 +4211,8 @@
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manor/stone)
 "gdS" = (
-/obj/structure/table/stone_end{
-	dir = 4
-	},
-/obj/item/weapon/hammer/steel,
 /obj/machinery/light/fueled/wallfire/candle/r,
+/obj/machinery/artificer_table,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "geB" = (
@@ -6456,6 +6453,15 @@
 	},
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/plague_district)
+"jqW" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
+	},
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/ruinedwood/turned/darker,
+/area/rogue/outdoors)
 "jqY" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -9634,7 +9640,7 @@
 /area/rogue/indoors/soilsons)
 "nJv" = (
 /obj/structure/bed/wool,
-/obj/effect/landmark/start/sk_mason,
+/obj/effect/landmark/start/sk_hammerite,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "nLq" = (
@@ -10400,12 +10406,9 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/rtfield/outlaw)
 "oMH" = (
-/obj/structure/fluff/railing/border{
-	dir = 1;
-	icon_state = "border"
-	},
-/turf/open/floor/twig,
-/area/rogue/indoors/town/shop)
+/obj/structure/closet/crate/chest/old_crate,
+/turf/open/floor/herringbone,
+/area/rogue/indoors/shelter/town/dwarf)
 "oNP" = (
 /obj/structure/fluff/walldeco/pillar{
 	pixel_x = 20;
@@ -11415,6 +11418,10 @@
 "qhd" = (
 /turf/closed/wall/mineral/stonebrick,
 /area/rogue/indoors/town/manor/stone)
+"qhH" = (
+/obj/structure/fluff/railing/wood,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors)
 "qhN" = (
 /obj/structure/stairs/stone{
 	dir = 1;
@@ -11820,6 +11827,11 @@
 /obj/structure/stairs,
 /obj/structure/fluff/walldeco/moon{
 	pixel_x = 32
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
 	},
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors)
@@ -13152,6 +13164,17 @@
 /obj/structure/fluff/walldeco/bath/wallrope,
 /turf/closed/wall/mineral/decowood,
 /area/rogue/indoors/town/bath/redhouse)
+"szm" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/ruinedwood/turned/darker,
+/area/rogue/outdoors)
 "szv" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/fence{
@@ -13285,6 +13308,11 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/manor/stone)
+"sIs" = (
+/obj/structure/fake_machine/balloon_pad,
+/obj/item/roguemachine/merchant,
+/turf/open/floor/tile/kitchen,
+/area/rogue/outdoors/town/roofs)
 "sJq" = (
 /obj/effect/spawner/map_spawner/rockies,
 /turf/open/floor/grass,
@@ -14640,6 +14668,11 @@
 /area/rogue)
 "uFL" = (
 /obj/structure/stairs/d,
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
+	},
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors)
 "uGi" = (
@@ -15659,6 +15692,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
+/obj/structure/fluff/railing/wood,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors)
 "weO" = (
@@ -15775,11 +15809,17 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "wos" = (
-/obj/machinery/light/fueled/wallfire/candle{
-	pixel_y = -32
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
 	},
-/turf/open/floor/grass,
-/area/rogue/outdoors/exposed/townhamlet)
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	icon_state = "woodrailing"
+	},
+/turf/open/floor/ruinedwood/darker,
+/area/rogue/outdoors)
 "woD" = (
 /obj/structure/flora/grass,
 /mob/living/simple_animal/hostile/retaliate/goatmale{
@@ -75626,8 +75666,8 @@ ozH
 qoZ
 ahK
 ahK
-wos
-wos
+ahK
+ahK
 ahK
 ahK
 ahK
@@ -115516,7 +115556,7 @@ sNs
 sNs
 oao
 pBU
-cvk
+szm
 qGg
 oao
 sNs
@@ -115967,7 +116007,7 @@ sNs
 qyk
 qBo
 kHD
-oMH
+kHD
 cWd
 qAE
 cWd
@@ -116189,7 +116229,7 @@ mvy
 xqT
 xqT
 xqT
-dgJ
+mvy
 mvy
 keR
 sNs
@@ -116392,7 +116432,7 @@ xqT
 xqT
 xKZ
 gdS
-mvy
+oMH
 keR
 sNs
 dzb
@@ -155920,8 +155960,8 @@ sNs
 sNs
 sNs
 uFL
-hbO
-cvk
+wos
+jqW
 sNs
 sNs
 sNs
@@ -156122,7 +156162,7 @@ afT
 ftL
 afT
 afT
-sNs
+qhH
 weL
 sNs
 sNs
@@ -157580,7 +157620,7 @@ sNs
 pao
 nXp
 dYg
-dYg
+sIs
 dYg
 aLq
 aLq
@@ -196928,7 +196968,7 @@ afT
 xgk
 xcj
 wte
-wte
+dgJ
 sNs
 sNs
 sNs
@@ -197130,7 +197170,7 @@ ceR
 xVF
 xgk
 wte
-wte
+dgJ
 sNs
 sNs
 sNs
@@ -197534,7 +197574,7 @@ pTu
 xVF
 xgk
 wte
-wte
+dgJ
 sNs
 sNs
 sNs
@@ -197736,7 +197776,7 @@ afT
 xgk
 xcj
 wte
-wte
+dgJ
 sNs
 sNs
 sNs
