@@ -547,6 +547,11 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 1)
 	craftdiff = 3
 
+/datum/crafting_recipe/roguetown/improspear//improvised spear anyone can do is just tie a knife to a staff
+	name = "improvised spear"
+	result = /obj/item/weapon/polearm/spear/stone/improvised
+	reqs = list(/obj/item/weapon/polearm/woodstaff/quarterstaff = 1, /obj/item/rope = 1, /obj/item/weapon/knife/villager = 1)
+	craftdiff = 3
 
 // ---------	CLOTHING		-------------
 /datum/crafting_recipe/roguetown/skullmask

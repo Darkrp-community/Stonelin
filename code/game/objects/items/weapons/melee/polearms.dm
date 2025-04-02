@@ -81,7 +81,7 @@
 	attack_verb = list("bashes", "strikes", "swings")
 	reach = 2
 	chargetime = 1
-	item_damage_type = "slash"
+	item_damage_type = "blunt"
 
 /*-----------\
 | Cut intent |
@@ -150,6 +150,7 @@
 /obj/item/weapon/polearm/woodstaff/quarterstaff
 	force_wielded =  DAMAGE_STAFF_WIELD
 	name = "wooden quarterstaff"
+	gripped_intents = list(/datum/intent/polearm/bash/swing,POLEARM_BASH,/datum/intent/mace/smash)// quarterstaffs get a two tile bash instead of a stab attack, they are spear ranged without pointy end.
 	desc = "A staff that makes any journey easier. Durable and swift, capable of bludgeoning stray volves and ruffians alike."
 	icon_state = "quarterstaff"
 	max_integrity = INTEGRITY_STRONG
@@ -158,7 +159,7 @@
 //................ Iron-shod Staff ............... //
 /obj/item/weapon/polearm/woodstaff/quarterstaff/iron
 	force_wielded =  DAMAGE_STAFF_WIELD
-	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
+	gripped_intents = list(/datum/intent/polearm/bash/swing,POLEARM_BASH,/datum/intent/mace/smash)
 	name = "iron quarterstaff"
 	desc = "A perfect tool for bounty hunters who prefer their prisoners broken and bruised but not slain. This reinforced staff is capable of clubbing even an armed opponent into submission with some carefully placed strikes."
 	icon_state = "ironstaff"
@@ -167,7 +168,7 @@
 
 /obj/item/weapon/polearm/woodstaff/quarterstaff/steel
 	force_wielded =  DAMAGE_STAFF_WIELD+1
-	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
+	gripped_intents = list(/datum/intent/polearm/bash/swing,POLEARM_BASH,/datum/intent/mace/smash)
 	name = "steel quarterstaff"
 	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood. It is a heavy and powerful weapon, more than capable of beating the living daylights out of any brigand."
 	icon_state = "steelstaff"
@@ -272,6 +273,32 @@
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+//................ improvised spear ............... //COPPER SPEAR DIFFERENT SPRITE
+/obj/item/weapon/polearm/spear/stone/improvised
+	throwforce = DAMAGE_SPEAR_WIELD
+	name = "knife spear"
+	desc = "Made out of some rope, quarterstaff and a common knife this spear makes it to arm a militiaman."
+	icon_state = "impspear"
+	max_blade_int = 70
+	max_integrity = INTEGRITY_POOR
+	minstr = 7
+	melting_material = null
+	melt_amount = 75
+	dropshrink = 0.9
+	sellprice = 15
+	throw_speed = 3
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 50, "embedded_fall_chance" = 0, "embedded_ignore_throwspeed_threshold" = 1)
+
+/obj/item/weapon/polearm/spear/stone/copper/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
 
 
 //................ Halberd ............... //
@@ -442,10 +469,9 @@
 	force_wielded = 22
 	name = "bone spear"
 	desc = "A spear made of bones."
-	// icon_state = "bonespear"
-	icon_state = "stonespear_sk"
-	// pixel_y = -16
-	// pixel_x = -16
+	icon_state = "bonespear"
+	pixel_y = -16
+	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
