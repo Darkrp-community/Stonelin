@@ -278,7 +278,7 @@
 /obj/item/weapon/polearm/spear/stone/improvised
 	throwforce = DAMAGE_SPEAR_WIELD
 	name = "knife spear"
-	desc = "Made out of some rope, quarterstaff and a common knife this spear makes it to arm a militiaman."
+	desc = "Made out of a quarterstaff, some rope and a common knife, this spear is all it takes to arm a peasant to form a militia."
 	icon_state = "impspear"
 	max_blade_int = 70
 	max_integrity = INTEGRITY_POOR
