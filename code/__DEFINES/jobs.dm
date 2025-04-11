@@ -156,7 +156,7 @@
 #define INNKEEP		(1<<0)
 #define BLACKSMITH	(1<<1)
 #define ALCHEMIST	(1<<2)
-#define MASON		(1<<3)
+#define HAMMERITE	(1<<3)
 #define TAILOR		(1<<4)
 #define ARTIFICER	(1<<5)
 #define MATRON 		(1<<6)
