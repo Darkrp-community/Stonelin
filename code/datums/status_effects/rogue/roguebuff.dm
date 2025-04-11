@@ -803,3 +803,87 @@
 	name = "Powered Steam Armor"
 	desc = "The armor is powered. I feel unstoppable."
 	icon_state = "buff"
+
+// ---------------------- RARE RING (STR) ----------------------------
+/datum/status_effect/buff/goldstrengh
+	id = "goldstrengh"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldstrengh
+	effectedstats = list(STATKEY_STR = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldstrengh
+	name = "Divine strengh"
+	desc = span_nicegreen("a new strengh flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (SPD) ----------------------------
+/datum/status_effect/buff/goldspeed
+	id = "goldspeed"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldspeed
+	effectedstats = list(STATKEY_SPD = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldspeed
+	name = "Divine speed"
+	desc = span_nicegreen("a new speed flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (END) ----------------------------
+/datum/status_effect/buff/goldend
+	id = "goldend"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldend
+	effectedstats = list(STATKEY_END = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldend
+	name = "Divine endurance"
+	desc = span_nicegreen("a new endurance flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (LUCK) ----------------------------
+/datum/status_effect/buff/goldluck
+	id = "goldluck"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldluck
+	effectedstats = list(STATKEY_LCK = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldluck
+	name = "Divine luck"
+	desc = span_nicegreen("a new fortune flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (CONSTITUTION) ----------------------------
+/datum/status_effect/buff/goldconst
+	id = "goldconst"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldconst
+	effectedstats = list(STATKEY_CON = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldconst
+	name = "Divine constitution"
+	desc = span_nicegreen("a new durability flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (PERCEPTION) ----------------------------
+/datum/status_effect/buff/goldper
+	id = "goldper"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldper
+	effectedstats = list(STATKEY_PER = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldper
+	name = "Divine perception"
+	desc = span_nicegreen("a new vision flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (INT) ----------------------------
+/datum/status_effect/buff/goldint
+	id = "goldint"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldint
+	effectedstats = list(STATKEY_INT = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldint
+	name = "Divine intelligence"
+	desc = span_nicegreen("a new mental clarity flows through me.")
+	icon_state = "goldring"

@@ -337,3 +337,161 @@
 		bearerdied = FALSE
 		. = ..()
 
+// ................... Event Ring of loot ....................... (rare treasure, not for purchase no pre spawn)
+
+// ---------------------- RARE RING (STR) ----------------------------
+/obj/item/clothing/ring/gold/goldstrengh
+	name = "ring of strengh"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly strength."
+	icon_state = "rare_ring_str"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_RED_OCHRE
+
+
+/obj/item/clothing/ring/gold/goldstrengh/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldstrengh)
+
+/obj/item/clothing/ring/gold/goldstrengh/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldstrengh)
+
+// ---------------------- RARE RING (SPD) ----------------------------
+obj/item/clothing/ring/gold/goldspeed
+	name = "ring of speed"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly speed."
+	icon_state = "rare_ring_spd"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_SKY_BLUE
+
+/obj/item/clothing/ring/gold/goldspeed/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldspeed)
+
+/obj/item/clothing/ring/gold/goldspeed/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldspeed)
+
+// ---------------------- RARE RING (END) ----------------------------
+obj/item/clothing/ring/gold/goldend
+	name = "ring of endurance"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly endurance."
+	icon_state = "rare_ring_end"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_YELLOW_OCHRE
+
+/obj/item/clothing/ring/gold/goldend/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldend)
+
+/obj/item/clothing/ring/gold/goldend/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldend)
+
+// ---------------------- RARE RING (CONSTITUTION) ----------------------------
+obj/item/clothing/ring/gold/goldconst
+	name = "ring of constitution"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly constitution."
+	icon_state = "rare_ring_const"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_FOREST_GREEN
+
+/obj/item/clothing/ring/gold/goldconst/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldconst)
+
+/obj/item/clothing/ring/gold/goldconst/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldconst)
+
+// ---------------------- RARE RING (LUCK) ----------------------------
+obj/item/clothing/ring/gold/goldluck
+	name = "ring of fortune"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly fortune."
+	icon_state = "rare_ring_luck"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_PLUM_PURPLE
+
+/obj/item/clothing/ring/gold/goldluck/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldluck)
+
+/obj/item/clothing/ring/gold/goldluck/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldluck)
+
+// ---------------------- RARE RING (PERCEPTION) ----------------------------
+obj/item/clothing/ring/gold/goldper
+	name = "ring of perception"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly vision."
+	icon_state = "rare_ring_per"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_ASH_GREY
+
+
+/obj/item/clothing/ring/gold/goldper/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldper)
+
+/obj/item/clothing/ring/gold/goldper/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldper)
+
+// ---------------------- RARE RING (INT) ----------------------------
+obj/item/clothing/ring/gold/goldint
+	name = "ring of intelligence"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly mental clarity."
+	icon_state = "rare_ring_int"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_SOOT_BLACK
+
+
+/obj/item/clothing/ring/gold/goldint/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldint)
+
+/obj/item/clothing/ring/gold/goldint/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldint)
