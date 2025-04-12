@@ -44,6 +44,8 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 
+		H.grant_language(/datum/language/dwarvish)
+
 /datum/outfit/job/stonekeep/hammerite/pre_equip(mob/living/carbon/human/H)
 	..()
 	ring = /obj/item/key/guildring
