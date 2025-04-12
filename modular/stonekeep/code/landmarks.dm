@@ -276,8 +276,8 @@
 	name = "Gravekeeper"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/sk_mason
-	name = "Mason"
+/obj/effect/landmark/start/sk_hammerite
+	name = "Hammerite"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/sk_woodsman

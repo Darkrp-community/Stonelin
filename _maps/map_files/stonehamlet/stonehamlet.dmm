@@ -1961,6 +1961,15 @@
 /obj/item/clothing/ring/adventurer/copper,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/hamlet/advguild)
+"cXk" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/natural/bundle/stoneblock,
+/obj/item/natural/bundle/stoneblock,
+/obj/item/natural/stone,
+/obj/item/natural/bundle/plank,
+/obj/item/natural/wood/plank,
+/turf/open/floor/cobble,
+/area/rogue/indoors/shelter/town/dwarf)
 "cXo" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -2102,10 +2111,9 @@
 /turf/open/floor/blocks/moss,
 /area/rogue/outdoors/exposed/church)
 "dgJ" = (
-/obj/structure/table/stone_end{
-	dir = 8
-	},
-/obj/item/weapon/chisel,
+/obj/machinery/artificer_table,
+/obj/item/storage/sack,
+/obj/item/weapon/pick,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "dhd" = (
@@ -4126,11 +4134,12 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "fTz" = (
+/obj/machinery/light/fueled/wallfire/candle/l,
+/obj/item/weapon/chisel,
+/obj/item/weapon/shovel/small,
 /obj/structure/table/stone_end{
 	dir = 8
 	},
-/obj/item/weapon/axe/iron,
-/obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "fUV" = (
@@ -4267,10 +4276,6 @@
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manor/stone)
 "gdS" = (
-/obj/structure/table/stone_end{
-	dir = 4
-	},
-/obj/item/weapon/hammer/steel,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -5868,6 +5873,10 @@
 "iuA" = (
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/under/town/caverogue/deep)
+"iuZ" = (
+/obj/item/natural/wood/plank,
+/turf/open/floor/wood,
+/area/rogue/indoors/town/hamlet)
 "ivo" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/dirt,
@@ -6659,6 +6668,16 @@
 	icon_state = "tile"
 	},
 /area/rogue/indoors/town/manor/stone)
+"jzt" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/recipe_book/masonry,
+/obj/item/recipe_book/engineering,
+/obj/item/recipe_book/survival,
+/obj/item/recipe_book/carpentry,
+/turf/open/floor/cobble,
+/area/rogue/indoors/shelter/town/dwarf)
 "jzP" = (
 /turf/open/floor/wood,
 /area/rogue/indoors/soilsons)
@@ -7759,7 +7778,8 @@
 /obj/structure/table/stone_end{
 	dir = 4
 	},
-/obj/item/weapon/shovel/small,
+/obj/item/weapon/handsaw,
+/obj/item/weapon/axe/iron,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "lbQ" = (
@@ -8328,6 +8348,10 @@
 	},
 /turf/open/floor/carpet/lord/center,
 /area/rogue/indoors/town/manor/stone)
+"lRP" = (
+/obj/effect/landmark/start/sk_hammerite,
+/turf/open/floor/herringbone,
+/area/rogue/indoors/shelter/town/dwarf)
 "lRY" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -9798,7 +9822,7 @@
 /area/rogue/indoors/soilsons)
 "nJv" = (
 /obj/structure/bed/wool,
-/obj/effect/landmark/start/sk_mason,
+/obj/item/bedsheet/pelt,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "nKu" = (
@@ -13956,6 +13980,7 @@
 	pixel_x = -5;
 	pixel_y = 6
 	},
+/obj/item/recipe_book/blacksmithing,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/dwarfin)
 "tmi" = (
@@ -16266,6 +16291,8 @@
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
+/obj/item/recipe_book/sewing,
+/obj/item/recipe_book/leatherworking,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/hamlet)
 "wAw" = (
@@ -17061,11 +17088,10 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/manor/stone)
 "xKZ" = (
-/obj/structure/closet/crate/chest/old_crate,
-/obj/item/natural/stone,
-/obj/item/natural/bundle/stoneblock,
-/obj/item/natural/bundle/stoneblock,
-/turf/open/floor/cobble,
+/obj/machinery/artificer_table,
+/obj/item/gear/metal/bronze,
+/obj/item/weapon/hammer/steel,
+/turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "xLz" = (
 /obj/structure/trophy/deer,
@@ -113911,7 +113937,7 @@ sKE
 wSM
 wSM
 wSM
-wSM
+iuZ
 wSM
 knX
 sNs
@@ -115932,7 +115958,7 @@ sNs
 sNs
 hcb
 nJv
-mvy
+lRP
 qLx
 eTg
 qLx
@@ -116135,9 +116161,9 @@ sNs
 keR
 kiE
 mvy
-xqT
 qLx
-xqT
+jzt
+qLx
 lbp
 mvy
 keR
@@ -116543,7 +116569,7 @@ xqT
 xqT
 xqT
 dgJ
-mvy
+xKZ
 keR
 sNs
 dzb
@@ -116740,10 +116766,10 @@ sNs
 sNs
 keR
 nJv
-mvy
+lRP
+cXk
 xqT
 xqT
-xKZ
 gdS
 mvy
 keR

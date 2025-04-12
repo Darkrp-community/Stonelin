@@ -156,7 +156,7 @@
 #define INNKEEP		(1<<0)
 #define BLACKSMITH	(1<<1)
 #define ALCHEMIST	(1<<2)
-#define MASON		(1<<3)
+#define HAMMERITE	(1<<3)
 #define TAILOR		(1<<4)
 #define ARTIFICER	(1<<5)
 #define MATRON 		(1<<6)
@@ -251,7 +251,7 @@
 #define JDO_BAPP 22
 #define JDO_ARTIFICER 23
 
-#define JDO_MASON 24
+#define JDO_HAMMERITE 24
 
 #define JDO_BUTLER 25
 #define JDO_SERVANT 26
