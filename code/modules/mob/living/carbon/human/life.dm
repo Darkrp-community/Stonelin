@@ -35,11 +35,9 @@
 		Stun(50)
 
 	if(mind)
-		mind.sleep_adv.add_stress_cycle(get_stress_amount())
 		for(var/datum/antagonist/A in mind.antag_datums)
 			A.on_life(src)
 
-	handle_vamp_dreams()
 	if(IsSleeping())
 		if(health > 0)
 			remove_status_effect(/datum/status_effect/debuff/trainsleep)
@@ -47,7 +45,6 @@
 			if(has_status_effect(/datum/status_effect/debuff/dreamytime))
 				remove_status_effect(/datum/status_effect/debuff/dreamytime)
 				if(mind)
-					mind.sleep_adv.advance_cycle()
 					if(!mind.antag_datums || !mind.antag_datums.len)
 						allmig_reward++
 						to_chat(src, span_danger("Nights Survived: \Roman[allmig_reward]"))
@@ -338,25 +335,6 @@
 		Unconscious(80)
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
-
-/mob/living/carbon/human/proc/handle_vamp_dreams()
-	if(!HAS_TRAIT(src, TRAIT_VAMP_DREAMS))
-		return
-	if(!mind)
-		return
-	if(!has_status_effect(/datum/status_effect/debuff/vamp_dreams))
-		return
-	if(!eyesclosed)
-		return
-	if(mobility_flags & MOBILITY_STAND)
-		return
-	if(!istype(loc, /obj/structure/closet/crate/coffin))
-		return
-	var/obj/structure/closet/crate/coffin/coffin = loc
-	if(coffin.opened)
-		return
-	remove_status_effect(/datum/status_effect/debuff/vamp_dreams)
-	mind.sleep_adv.advance_cycle()
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST
