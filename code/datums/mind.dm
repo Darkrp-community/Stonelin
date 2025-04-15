@@ -155,11 +155,11 @@
 	soulOwner = src
 	martial_art = default_martial_art
 	set_assigned_role(SSjob.GetJobType(/datum/job/unassigned))
-	sleep_adv = new /datum/sleep_adv(src)
+//	sleep_adv = new /datum/sleep_adv(src)
 
 /datum/mind/Destroy()
 	SSticker.minds -= src
-	QDEL_NULL(sleep_adv)
+//	QDEL_NULL(sleep_adv)
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
 	apprentices = null
@@ -1109,7 +1109,7 @@
 			var/apprentice_amt = amt * 0.1 + multiplier
 			if(apprentice.mind.add_sleep_experience(skill, apprentice_amt, FALSE, FALSE))
 				current.add_stress(/datum/stressevent/apprentice_making_me_proud)
-	if(sleep_adv.add_sleep_experience(skill, amt, silent))
+//	if(sleep_adv.add_sleep_experience(skill, amt, silent))
 		return TRUE
 
 /**

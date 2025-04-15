@@ -260,6 +260,7 @@
 		"I TRUST THE COUNSEL OF DAEMONS!",
 		"ZIZO SHOWED ME THE WAY!",
 	)
+	preference_accessible = FALSE
 
 /datum/patron/inhumen/graggar
 	name = "Graggar"
@@ -275,6 +276,7 @@
 		"GRAGGAR WILL RAVAGE YOU!",
 		"GRAGGAR WILL SATE MY HUNGER!"
 	)
+	preference_accessible = FALSE
 
 /datum/patron/inhumen/matthios
 	name = "Matthios"
@@ -294,6 +296,7 @@
 		"MATTHIOS WILL SAVE ME!",
 		"MATTHIOS, MUST I BE YOUR MARTYR?!",
 	)
+	preference_accessible = FALSE
 /* they removed the config way to disable it I dont know ROGTODO
 /datum/patron/inhumen/baotha
 */
