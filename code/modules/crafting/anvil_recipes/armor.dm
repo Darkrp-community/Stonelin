@@ -125,23 +125,18 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/shoes/boots/armor/light
 
-/datum/anvil_recipe/armor/iron/nasal_helmet
-	name = "Nasal helmet"
-	recipe_name = "a Nasal helmet"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/head/helmet/nasal
-	craftdiff = 1
-
 /datum/anvil_recipe/armor/iron/skullcap
 	name = "Skullcap"
 	recipe_name = "a skullcap"
 	created_item = /obj/item/clothing/head/helmet/skullcap
+	createmultiple = TRUE
+	createditem_num = 1
 
 /datum/anvil_recipe/armor/iron/splint
-	name = "Splint Armor (+Hide)"
+	name = "Splint Armor (+2 cured leather)"
 	recipe_name = "durable light armor"
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/hide)
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/leather/splint
 	craftdiff = 1
 
@@ -152,6 +147,16 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/bevor
 	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/nasal_helmet
+	name = "Nasal helmet"
+	recipe_name = "a Nasal helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/helmet/nasal
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 1
+
 
 /datum/anvil_recipe/armor/steel/brigadine
 	name = "Brigandine (+Bar x2, +Cloth)"
@@ -233,6 +238,8 @@
 	recipe_name = "a Kettle Helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/kettle
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/helmetslitkettle

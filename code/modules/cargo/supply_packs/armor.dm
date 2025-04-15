@@ -68,10 +68,10 @@
 	cost = 33
 	contains = /obj/item/clothing/armor/leather/splint
 
-/datum/supply_pack/armor/studleather_masterwork
-	name = "Masterwork Leather Armor"
-	cost = 63
-	contains = /obj/item/clothing/armor/leather/masterwork
+///datum/supply_pack/armor/studleather_masterwork
+//	name = "Masterwork Leather Armor"
+//	cost = 63
+//	contains = /obj/item/clothing/armor/leather/masterwork
 
 /datum/supply_pack/armor/chainmail_iron
 	name = "Iron Chainmail"

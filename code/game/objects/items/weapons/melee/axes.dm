@@ -147,6 +147,7 @@
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	melting_material = /datum/material/iron
 
 	wdefense = MEDIOCHRE_PARRY
 	minstr = 6

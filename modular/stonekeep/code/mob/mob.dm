@@ -142,12 +142,12 @@
 /datum/outfit/savageorc
 //	shirt = /obj/item/clothing/shirt/tribalrag	Vanderlin clothing
 	pants =	/obj/item/clothing/pants/loincloth/brown
-	shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 
 /datum/outfit/savageorc2
 //	shirt = /obj/item/clothing/shirt/tribalrag
 	pants =	/obj/item/clothing/pants/loincloth/brown
-	shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	head = /obj/item/clothing/head/helmet/leather
 
 /obj/effect/mob_spawn/human/orc/corpse/orcmarauder

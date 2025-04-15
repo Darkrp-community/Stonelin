@@ -150,6 +150,7 @@
 	name = "spiked mace"
 	icon_state = "spikedmace"
 	max_integrity = 200
+	melting_material = /datum/material/iron
 
 
 //................ Morningstar ............... //
@@ -159,6 +160,7 @@
 	name = "morningstar"
 	icon_state = "spiked_club_old"
 	max_integrity = 300
+	melting_material = /datum/material/steel
 
 
 //................ Copper bludgeon ............... //

@@ -2,10 +2,11 @@
 	name = "nasal helmet"
 	desc = "A steel nasal helmet, usually worn by the guards of any respectable fief."
 	icon_state = "nasal"
-	sellprice = VALUE_CHEAP_IRON_HELMET
+	sellprice = VALUE_CHEAP_STEEL_HELMET
+	smeltresult = /obj/item/ash
 
 	body_parts_covered = COVERAGE_NASAL
-	max_integrity = INTEGRITY_STANDARD
+	max_integrity = 250
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/helmet/skullcap
@@ -13,6 +14,7 @@
 	desc = "A humble iron helmet. The most standard and antiquated protection for one's head from harm."
 	icon_state = "skullcap"
 	sellprice = VALUE_CHEAP_IRON_HELMET
+	smeltresult = /obj/item/ash
 
 	max_integrity = INTEGRITY_POOR
 
@@ -76,7 +78,9 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS
-	sellprice = VALUE_CHEAP_IRON_HELMET
+	sellprice = VALUE_CHEAP_STEEL_HELMET
+	smeltresult = /obj/item/ash
+	max_integrity = 250
 
 	body_parts_covered = COVERAGE_HEAD
 
@@ -147,7 +151,7 @@
 
 	armor =  ARMOR_PLATE
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = 350
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/helmet/sallet/elven	// blackoak merc helmet

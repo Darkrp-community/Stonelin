@@ -20,8 +20,8 @@
 
 /datum/crafting_recipe/roguetown/leather/drum
 	name = "instrument (drum)"
-	result = /obj/item/natural/saddle
-	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/grown/log/tree/small = 2)
+	result = /obj/item/instrument/drum
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/grown/log/tree/small = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/leather/whip
@@ -195,10 +195,11 @@
 	result = list(/obj/item/clothing/shoes/tribal)
 	reqs = list(/obj/item/natural/hide  = 1)
 
-/datum/crafting_recipe/roguetown/leather/furlinedanklets
+/*/datum/crafting_recipe/roguetown/leather/furlinedanklets
 	name = "shoes (fur lined anklets)"
 	reqs = list(/obj/item/natural/fur = 1)
 	result = /obj/item/clothing/shoes/boots/furlinedanklets
+*/
 
 /datum/crafting_recipe/roguetown/leather/sandals
 	name = "shoes (sandals)"
@@ -229,7 +230,7 @@
 	name = "shoes (fur lined boots)"
 	result = /obj/item/clothing/shoes/boots/furlinedboots
 	reqs = 	list(/obj/item/natural/hide = 1,
-				/obj/item/natural/fur = 2)
+				/obj/item/natural/fur = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/boots

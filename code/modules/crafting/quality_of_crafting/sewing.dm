@@ -124,11 +124,11 @@
 	output = /obj/item/clothing/face/shepherd/clothmask
 	requirements = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 
-/datum/repeatable_crafting_recipe/sewing/linedanklet
-	name = "cloth anklet"
-	output = /obj/item/clothing/shoes/boots/clothlinedanklets
-	requirements = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 2)
+///datum/repeatable_crafting_recipe/sewing/linedanklet
+//	name = "cloth anklet"
+//	output = /obj/item/clothing/shoes/boots/clothlinedanklets
+//	requirements = list(/obj/item/natural/cloth = 2,
+//				/obj/item/natural/fibers = 2)
 
 /datum/repeatable_crafting_recipe/sewing/zigbox
 	name = "zigbox"
