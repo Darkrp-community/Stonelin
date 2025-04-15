@@ -21,10 +21,10 @@
 	armor = /obj/item/clothing/armor/cuirass/elven
 	backr = /obj/item/weapon/polearm/spear
 	backl = /obj/item/storage/backpack/satchel
-	beltl = /obj/item/weapon/knife/dagger/steel/special
+	beltl = /obj/item/weapon/knife/dagger
 	shirt = /obj/item/clothing/shirt/undershirt/black
 	pants = /obj/item/clothing/pants/trou/leather
-	neck = /obj/item/clothing/neck/chaincoif
+	neck = /obj/item/clothing/neck/chaincoif/iron
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)

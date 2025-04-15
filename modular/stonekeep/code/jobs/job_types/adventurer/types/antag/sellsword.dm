@@ -23,25 +23,25 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	belt = /obj/item/storage/belt/leather
 	pants = /obj/item/clothing/pants/trou
 	shoes = /obj/item/clothing/shoes/boots
 	backr = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1)
 	shirt = /obj/item/clothing/armor/gambeson
-	armor = /obj/item/clothing/armor/chainmail/iron
+	armor = /obj/item/clothing/armor/cuirass/iron
 	H.change_stat(STATKEY_STR, 1)
 	H.change_stat(STATKEY_END, 2)
-	H.change_stat(STATKEY_CON, 2)
+	H.change_stat(STATKEY_CON, 1)
 	H.change_stat(STATKEY_SPD, 1)
 	H.change_stat(STATKEY_INT, -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
@@ -51,15 +51,14 @@
 	H.set_blindness(0)
 	switch(weapon_choice)
 		if("Former Town Watch") //Deserter watchman.
-			r_hand = /obj/item/weapon/polearm/spear/billhook
+			r_hand = /obj/item/weapon/polearm/spear
 			head = /obj/item/clothing/head/helmet/kettle/slit
 			mask = /obj/item/clothing/face/shepherd/rag
-			neck = /obj/item/clothing/neck/chaincoif/iron
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			neck = /obj/item/clothing/neck/gorget
 		if("Former Mercenary") //Mercenary on the wrong side of the law
 			backl= /obj/item/weapon/shield/tower/buckleriron
-			beltr = /obj/item/weapon/sword //steel sword like literally every adventurer gets
-			head = /obj/item/clothing/head/helmet/sallet
+			beltr = /obj/item/weapon/sword/iron //iron* sword like literally every adventurer gets
+			head = /obj/item/clothing/head/helmet/kettle/slit
 			mask = /obj/item/clothing/face/facemask
-			neck = /obj/item/clothing/neck/coif/cloth
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+			neck = /obj/item/clothing/neck/gorget
+

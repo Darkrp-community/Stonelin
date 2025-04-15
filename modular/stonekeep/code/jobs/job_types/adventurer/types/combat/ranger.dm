@@ -36,7 +36,7 @@
 	H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
-	shirt = /obj/item/clothing/shirt/undershirt/random
+	shirt = pick(/obj/item/clothing/shirt/undershirt/random,/obj/item/clothing/armor/gambeson/light)
 	pants = pick(/obj/item/clothing/pants/tights/random, /obj/item/clothing/pants/trou/leather )
 	gloves = pick(/obj/item/clothing/gloves/leather, /obj/item/clothing/gloves/fingerless)
 	wrists = /obj/item/clothing/wrists/bracers/leather
@@ -44,7 +44,7 @@
 	armor = /obj/item/clothing/armor/leather/hide
 	cloak = /obj/item/clothing/cloak/raincloak/woodsman
 	backl = /obj/item/storage/backpack/satchel
-	shoes = pick(/obj/item/clothing/shoes/boots, /obj/item/clothing/shoes/boots/leather)
+	shoes = pick(/obj/item/clothing/shoes/boots/furlinedboots, /obj/item/clothing/shoes/boots/leather)
 	backpack_contents = list(/obj/item/bait = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/weapon/knife/hunting = 1)
 
 	H.change_stat("perception", 2)

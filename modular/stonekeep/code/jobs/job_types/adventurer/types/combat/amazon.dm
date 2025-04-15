@@ -13,8 +13,9 @@
 	..()
 	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)//the role had a roll for swords but no skill for it
 	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
