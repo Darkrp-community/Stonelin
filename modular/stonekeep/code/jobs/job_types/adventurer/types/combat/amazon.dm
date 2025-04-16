@@ -11,9 +11,9 @@
 
 /datum/outfit/job/sk/adventurer/amazon/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)//the role had a roll for swords but no skill for it
+	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
@@ -49,8 +49,10 @@
 			r_hand = /obj/item/weapon/polearm/spear
 			neck = /obj/item/storage/belt/pouch/pdarts
 			beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
+			H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)//this guarantees a skilled option while the secondary option is average
 		if("Bow & Sword")
 			r_hand = /obj/item/weapon/sword/iron
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/ammo_holder/quiver/arrows
+			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 
