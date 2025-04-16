@@ -63,7 +63,7 @@
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 	H.set_blindness(0)
 	switch(weapon_choice)
-		if("Steel Axe")
+		if("Iron Axe")
 			beltr= /obj/item/weapon/axe/iron
 		if("Spiked Mace")
 			beltr = /obj/item/weapon/mace/spiked
