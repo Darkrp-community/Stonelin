@@ -37,20 +37,7 @@
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 			neck = /obj/item/clothing/neck/chaincoif/iron
-		if(/datum/patron/divine/dendor)
-			head = /obj/item/clothing/head/helmet/leather/saiga
-			armor = /obj/item/clothing/armor/leather/hide
-			shirt = /obj/item/clothing/shirt/tribalrag
-			neck = /obj/item/clothing/neck/coif
-			wrists = /obj/item/clothing/neck/psycross/silver/dendor
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-			beltr = /obj/item/weapon/knife/stone
-			beltl = /obj/item/weapon/axe/boneaxe
-			backl = /obj/item/weapon/polearm/spear/bonespear
-			shoes = /obj/item/clothing/shoes/boots/furlinedboots
-			ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
-			REMOVE_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)//a warrior of dendor shouldn't wear any iron or steel shaped by the art of malum
-		if(/datum/patron/divine/necra)
+		if(/datum/patron/divine/necra)//removing dendor clerics until i polish up the forest guardian role, i wasn't able to succesfully remove the medium armor training for them
 			head = /obj/item/clothing/head/padded/deathface
 			wrists = /obj/item/clothing/neck/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
@@ -92,6 +79,8 @@
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)//secondary weapon option
 		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
