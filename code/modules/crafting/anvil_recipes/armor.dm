@@ -140,6 +140,23 @@
 	created_item = /obj/item/clothing/armor/leather/splint
 	craftdiff = 1
 
+
+/datum/anvil_recipe/armor/iron/jackoplates
+	name = "Splint armbraces (+2 cured leather)"
+	recipe_name = "durable light armor"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/wrists/bracers/splint
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/iron/splintleggings
+	name = "Splint leggings (+2 cured leather)"
+	recipe_name = "durable light armor"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/pants/splintlegs
+	craftdiff = 1
+
 // --------- STEEL -----------
 /datum/anvil_recipe/armor/steel/bevor
 	name = "Bevor"
