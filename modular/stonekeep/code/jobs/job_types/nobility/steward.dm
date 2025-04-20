@@ -23,7 +23,7 @@
 	and you know just what lengths they'll go to in order to get even more. Keep your festering economy and your rats alive, theyre the only two things you can weigh any trust into anymore."
 	outfit = /datum/outfit/job/stonekeep/steward
 	give_bank_account = 100
-	cmode_music = 'sound/music/cmode/combat_scholar.ogg'
+	cmode_music = 'sound/music/cmode/nobility/combat_steward.ogg'
 
 
 /datum/outfit/job/steward

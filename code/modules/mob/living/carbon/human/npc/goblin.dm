@@ -25,6 +25,8 @@
 
 	wander = FALSE
 
+	cmode_music = 'sound/music/cmode/antag/combat_goblin.ogg'
+
 /mob/living/carbon/human/species/rousman/npc/Initialize()
 	. = ..()
 	AddComponent(/datum/component/combat_noise, list("laugh" = 2))

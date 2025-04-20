@@ -20,7 +20,6 @@
 	tutorial = "Advisor, spymaster, confidante, your ties with the ruler are deep and personal."
 	advclass_cat_rolls = list(CTAG_SKHAND = 20)
 	give_bank_account = 120
-	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
 
 /datum/job/hand/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
@@ -74,6 +73,8 @@
 
 	category_tags = list(CTAG_SKHAND)
 
+	cmode_music = 'sound/music/cmode/nobility/combat_spymaster.ogg'
+
 /datum/outfit/job/stonekeep/hand_spymaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	beltr = /obj/item/weapon/sword/sabre/dec
@@ -94,6 +95,8 @@
 	outfit = /datum/outfit/job/stonekeep/hand_consort
 
 	category_tags = list(CTAG_SKHAND)
+
+	cmode_music = 'sound/music/cmode/nobility/combat_consort.ogg'
 
 /datum/outfit/job/stonekeep/hand_consort/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -21,7 +21,7 @@
 	display_order = SERVANT_ORDER
 	min_pq = -10
 	give_bank_account = 25 // Along with the pouch, enough to purchase some ingredients from the farm and give hard working servants a silver here and there. Still need the assistance of the crown's coffers to do anything significant
-	cmode_music = 'sound/music/cmode/combat_scholar.ogg'
+	cmode_music = 'sound/music/cmode/nobility/combat_butler.ogg'
 
 /datum/outfit/job/stonekeep/butler/pre_equip(mob/living/carbon/human/H)
 	..()
