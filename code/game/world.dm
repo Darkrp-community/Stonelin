@@ -98,7 +98,7 @@ GLOBAL_PROTECT(tracy_init_reason)
 	SetupLogs()
 	if(CONFIG_GET(string/channel_announce_new_game_message))
 		send2chat(new /datum/tgs_message_content(CONFIG_GET(string/channel_announce_new_game_message)), CONFIG_GET(string/chat_announce_new_game))
-
+	GLOB.xylix_trickery = prob(50)
 #ifndef USE_CUSTOM_ERROR_HANDLER
 	world.log = file("[GLOB.log_directory]/dd.log")
 #else

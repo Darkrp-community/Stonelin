@@ -321,9 +321,10 @@
 	canSmoothWith = list(/turf/open/floor/grass,
 						/turf/open/floor/snow,
 						/turf/open/floor/snow/rough)
+	temperature = 250
 
 /turf/open/floor/grass/hell
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 
 
 /*	..................   Snow   ................... */
@@ -336,14 +337,23 @@
 	neighborlay = "snowpatchy"
 
 /turf/open/floor/snow
-	icon = 'modular/stonekeep/icons/turfs.dmi'
+	icon = 'icons/turf/floors.dmi'
 	canSmoothWith = list(
-						/turf/open/floor/snow/rough)
+						/turf/open/floor/snow)
+	temperature = 250
 
 /turf/open/floor/snow/rough
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 
-
+/obj/effect/decal/rockedge
+	name = ""
+	desc = ""
+	icon = 'modular/stonekeep/icons/turfs.dmi'
+	icon_state = "rockedge1"
+	mouse_opacity = 0
+/obj/effect/decal/rockedge/Initialize()
+	. = ..()
+	icon_state = pick("rockedge1", "rockedge2", "rockedge3")
 
 /*	..................   Dirt   ................... */
 
@@ -453,6 +463,8 @@
 
 
 /turf/open/floor/hay
+	name = "hay"
+	desc = "Mostly clean straw provides padding and insulation from the cold."
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "hay"
 	footstep = FOOTSTEP_GRASS
@@ -545,7 +557,7 @@
 /turf/closed/wall/mineral/sbrick_nonsmooth
 	name = "stonebrick wall"
 	desc = ""
-	icon = 'icons/turf/roguewall.dmi'
+	icon = 'icons/turf/walls.dmi'
 	icon_state = "stonebrick"
 	smooth = SMOOTH_MORE
 	blade_dulling = DULLING_BASH

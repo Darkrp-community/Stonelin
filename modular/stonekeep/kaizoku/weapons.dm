@@ -318,8 +318,6 @@
 	coverage = 50
 	max_integrity = 150
 
-/obj/item/weapon/shield/wood/rattan/attack_hand(mob/user)
-		..()
 
 /obj/item/weapon/shield/wood/rattan/getonmobprop(tag)
 	. = ..()
@@ -707,13 +705,14 @@
 
 /obj/item/weapon/knife/hunting/sai //I love gundam for helping me on my request on this sai. I love HIM!!!!!!!!!!!!! -Monochrome
 	name = "sai"
-	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
+	desc = "A dagger with a sharply-tapered central rod with two prongs at the cross-guards, excels in jabbing and defending against other weapons. Combative capabilities improved if carried in pairs."
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
 	icon_state = "sai"
 	possible_item_intents = list(/datum/intent/dagger/thrust)
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
-	wdefense = 5
+	wdefense = 4 //With another Sai = 8
+	dual_wield = 2 //For now, the only weapon with dual_wield. The 2 is a MULTIPLICATOR. Later I will make the hook swords, which is a direct update.
 
 
 // =================================================================
@@ -1528,7 +1527,6 @@
 	item_state = "yumibow"
 	base_icon = "yumibow"
 
-
 /obj/item/weapon/sickle/kama	// iron sword worse integrity
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop,MACE_STRIKE,/datum/intent/flailthresh)
 	name = "kama"
@@ -1543,4 +1541,421 @@
 	blade_dulling = DULLING_BASHCHOP
 	wdefense = GOOD_PARRY
 
+// =================================================================================
+// ========================		FOGLANDER TRADESECTOR		========================
 
+/obj/structure/firewagon
+	name = "abyssal firewagon"
+	desc = "A terrifying war machine that unleashes a volley of firebolts."
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+	icon_state = "firewagon"
+	anchored = FALSE
+	density = TRUE
+	max_integrity = 9999
+	drag_slowdown = 1
+	w_class = WEIGHT_CLASS_GIGANTIC
+	var/obj/item/firewagonrockets/loaded = null  //Since we can't have nice things.
+
+/obj/structure/firewagon/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/firewagonrockets))
+		if(loaded)
+			to_chat(user, "<span class='warning'>The firewagon is already loaded!</span>")
+			return
+
+		user.visible_message("<span class='notice'>[user] starts loading [I] into [src].</span>")
+		if(!do_after(user, 10 SECONDS, src))
+			return
+
+		I.forceMove(src)
+		loaded = I
+		user.visible_message("<span class='notice'>[user] loads [I] into [src].</span>")
+		return
+
+	if(istype(I, /obj/item/flashlight/flare/torch))
+		var/obj/item/flashlight/flare/torch/LR = I
+		if(!loaded)
+			to_chat(user, "<span class='warning'>There's nothing to ignite.</span>")
+			return
+		if(LR.on)
+			playsound(src.loc, 'modular/stonekeep/kaizoku/sound/hwanchafire.ogg', 100)
+			user.visible_message("<span class='danger'>[user] lights [src]!</span>")
+			fire(user)
+		return
+
+	..()
+
+/obj/structure/firewagon/proc/fire(mob/firer)
+	if(!loaded)
+		return
+
+	for(var/mob/living/carbon/H in hearers(7, src))
+		shake_camera(H, 6, 5)
+		H.blur_eyes(4)
+		H.playsound_local(get_turf(H), 'sound/foley/tinnitus.ogg', 75, FALSE)
+
+	flick("hwancha_fire", src)
+
+	var/pellets = 8
+	var/spread = 30
+	var/projectile_type = /obj/projectile/bullet/reusable/arrow
+
+	if(istype(loaded, /obj/item/firewagonrockets/pyro))
+		projectile_type = /obj/projectile/bullet/arrow/pyro
+
+	for (var/i = 1, i <= pellets, i++)
+		var/obj/projectile/bullet/reusable/arrow/fired_projectile = new projectile_type(get_turf(src))
+		fired_projectile.firer = firer
+		fired_projectile.fired_from = src
+
+		var/spread_angle = rand(-spread, spread)
+		fired_projectile.fire(dir2angle(dir) + spread_angle)
+
+	QDEL_NULL(loaded)
+	sleep(2)
+
+/obj/item/firewagonrockets
+	name = "firewagon storm-maker"
+	desc = "A wooden container filled of arrows for usage in a Firewagon."
+	icon_state = "firewagon_ammo"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+
+/obj/item/firewagonrockets/pyro
+	name = "firewagon inferno-maker"
+	desc = "A wooden container filled of pyroarrows for usage in a Firewagon."
+	icon_state = "firefirewagon_ammo"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+
+/obj/structure/kaizoku/crate
+	name = "illegal immigrant crate"
+	desc = "Something scratches from the inside. It is written on the wood, 'Deported Illegal Immigrant. Exiled for petty crimes.'"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+	icon_state = "animal_cage"
+	anchored = FALSE
+	var/mob_path = /mob/living/carbon/human/species/human/northern
+
+/obj/structure/kaizoku/crate/attackby(obj/item/W, mob/living/user)
+	if(istype(W, /obj/item/weapon/knife))
+		to_chat(user, "<span class='danger'>You cut off the straps holding the wood planks together.</span>")
+		playsound(src, 'sound/misc/slide_wood (1).ogg', 50, TRUE)
+		new mob_path(get_turf(src)) // Spawn the mob
+		qdel(src) // Remove the crate
+	else
+		to_chat(user, "<span class='warning'>You need a knife to cut this open.</span>")
+
+/obj/structure/kaizoku/crate/fogbeast
+	name = "fogbeast crate"
+	desc = "Something neighs from the inside. The crate is unusually heavy."
+	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon
+	name = "huochong handcannon"
+	desc = "Rather outdated weapon from fog islands brought to the trading docks, as the new innovations, such as the chongtong, are kept away from espionage."
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector64.dmi'
+	icon_state = "handcannon"
+	item_state = "handcannon"
+	bigboy = TRUE
+	recoil = 10
+	randomspread = 3
+	spread = 4
+	force = 12
+//	experimental_inhand = FALSE	ROGTODO missing icons
+//	experimental_onback = FALSE
+	var/click_delay = 0.5
+	var/obj/item/ramrod/rod
+	cartridge_wording = "ball"
+	var/rammed = FALSE
+	var/powdered = FALSE
+	var/inserted = FALSE
+	load_sound = 'sound/foley/nockarrow.ogg'
+	fire_sound = 'sound/combat/Ranged/muskshoot.ogg'
+	equip_sound = 'sound/foley/gun_equip.ogg'
+	pickup_sound = 'sound/foley/gun_equip.ogg'
+	drop_sound = 'sound/foley/gun_drop.ogg'
+	dropshrink = 1
+	associated_skill = /datum/skill/combat/firearms
+	possible_item_intents = list(/datum/intent/mace/strike)
+	sharpness = IS_BLUNT
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/musk
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	sellprice = 150
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/Initialize()
+	. = ..()
+	var/obj/item/ramrod/rrod = new(src)
+	rod = rrod
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/ammo_casing/caseless/bullet))
+		if(!powdered)
+			to_chat(user, "<span class='warning'>Lacking in blastpowder, you think twice before putting the projectile inside. You don't need to waste your time pulling it out.</span>")
+			return
+		if(inserted)
+			to_chat(user, "<span class='warning'>You attempt to put the projectile inside, but something hard already occupies the space.</span>")
+			return
+		inserted = TRUE
+		chambered = I
+		qdel(I)
+		to_chat(user, "<span class='info'>You hear the ball of lead bouncing inside the barrel until it meets cushioning blastpowder.</span>")
+		playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 70)
+		update_icon()
+		return
+
+	else if(istype(I, /obj/item/reagent_containers/glass/bottle/aflask))
+		if(powdered)
+			to_chat(user, "<span class='warning'>If you put more gunpowder than it already has, you risk exploding the barrel.</span>")
+			return
+		if(I.reagents.get_reagent_amount(/datum/reagent/blastpowder) >= 5)
+			I.reagents.remove_reagent(/datum/reagent/blastpowder, 5)
+			powdered = TRUE
+			to_chat(user, "<span class='info'>You pour gunpowder into the handcannon.</span>")
+			playsound(src.loc, 'sound/foley/gunpowder_fill.ogg', 70)
+			update_icon()
+			return
+		else
+			to_chat(user, "<span class='warning'>Not enough blastpowder to charge it.</span>")
+			return
+
+	else if(istype(I, /obj/item/ramrod))
+		if(!powdered || !inserted)
+			to_chat(user, "<span class='warning'>You must load both blastpowder and a ball before tamping!</span>")
+			return
+		if(rammed)
+			to_chat(user, "<span class='warning'>Already tamped!</span>")
+			return
+		rammed = TRUE
+		to_chat(user, "<span class='info'>You use [I] to tamp down the load.</span>")
+		playsound(src.loc, 'sound/foley/nockarrow.ogg', 70)
+		update_icon()
+		return
+
+	else if(istype(I, /obj/item/flashlight/flare/torch))
+		if(!rammed)
+			to_chat(user, "<span class='warning'>The contents are still loose. You must tamp first!</span>")
+			return
+		fire(user)
+		return
+
+	..()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/MiddleClick(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(rod)
+			H.put_in_hands(rod)
+			rod = null
+			to_chat(user, "<span class='info'>You remove the ramrod from [src].</span>")
+		else if(istype(H.get_active_held_item(), /obj/item/ramrod))
+			var/obj/item/ramrod/rrod = H.get_active_held_item()
+			rrod.forceMove(src)
+			rod = rrod
+			to_chat(user, "<span class='info'>You place the ramrod into [src].</span>")
+		playsound(src.loc, 'sound/foley/struggle.ogg', 100)
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/proc/tamp(mob/user)
+	if(!powdered || !inserted)
+		to_chat(user, "<span class='warning'>You hilt the ramrod inside the handcannon. It is empty, having nothing to be tampered for.</span>")
+		return
+	if(rammed)
+		to_chat(user, "<span class='warning'>You tamp the handcannon, but the blastpowder is already compacted and ready.</span>")
+		return
+	rammed = TRUE
+	to_chat(user, "<span class='info'>You use the ramrod to tamp down the load.</span>")
+	playsound(src.loc, 'sound/foley/nockarrow.ogg', 70)
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/update_icon()
+	if(rod)
+		icon_state = "handcannon_ramrod"
+	else
+		icon_state = "handcannon_noram"
+	update_icon_state()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/proc/fire(mob/living/user)
+	if(!chambered)
+		to_chat(user, "<span class='warning'>Unloaded, the handcannon is no better than a overpriced battering stick.</span>")
+		return
+	rammed = FALSE
+	powdered = FALSE
+	inserted = FALSE
+	chambered = null
+	to_chat(src.loc, "<span class='warning'>[user] position the fuse near the ignition point.</span>")
+	spawn(20)
+		to_chat(src.loc, "<span class='danger'>The fuse loudly sparks and the handcannon roars to life.</span>")
+	spawn(30)
+		update_icon()
+		playsound(src.loc, 'modular/stonekeep/kaizoku/sound/hwanchafire.ogg', 100)
+
+		for(var/mob/living/carbon/H in hearers(5, user))
+			shake_camera(H, 4, 3)
+			H.blur_eyes(3)
+			H.playsound_local(get_turf(H), 'sound/foley/tinnitus.ogg', 70)
+		step(user, get_dir(user, turn(user.dir, 180)))
+		new /obj/effect/particle_effect/smoke(get_turf(user))
+		var/turf/start = get_turf(user)
+		var/dir = user.dir
+		var/obj/projectile/bullet/reusable/bullet/shot = new /obj/projectile/bullet/reusable/bullet(start)
+		shot.firer = user
+		shot.fired_from = src
+		shot.fire(dir2angle(dir))
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu
+	name = "repeating crossbow"
+	desc = "Crossbow of Islander creation with a lever for repeating fire. It causes less damage, but its rapid-fire compensates for it."
+	icon = 'modular/stonekeep/kaizoku/icons/weapons/bows.dmi'
+	icon_state = "chukonu0"
+	item_state = "chukonu"
+	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, INTENT_GENERIC)
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/xxbow
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	randomspread = 1
+	spread = 0
+	can_parry = TRUE
+	force = 10
+	var/cocked = FALSE
+	cartridge_wording = "bolt"
+	load_sound = 'sound/foley/nockarrow.ogg'
+	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	associated_skill = /datum/skill/combat/crossbows
+	damfactor = 0.7 //less string power. May decrease it further or see a way to decrease crit chance.
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/attackby(obj/item/A, mob/user, params)
+	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
+		..()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/attack_self(mob/living/user)
+
+	if(cocked)
+		to_chat(user, "<span class='warning'>You carefully decock the crossbow.</span>")
+		cocked = FALSE
+	else
+		if(user.get_num_arms(FALSE) < 2)
+			return FALSE
+		if(user.get_inactive_held_item())
+			to_chat(user, "<span class='warning'>You require two hands to stirrup the weapon.</span>")
+			return FALSE
+		to_chat(user, "<span class='info'>You stir the repeating crossbow...</span>")
+		if(do_after(user, 20 - user.STASTR, target = user)) // Faster stir time
+			playsound(user, 'sound/combat/Ranged/crossbow_medium_reload-01.ogg', 100, FALSE)
+			cocked = TRUE
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(user.get_num_arms(FALSE) < 2)
+		return FALSE
+	if(user.get_inactive_held_item())
+		to_chat(user, "<span class='warning'>You require a free hand to pull the lever.</span>")
+		return FALSE
+	if(!cocked)
+		to_chat(user, "<span class='warning'>You must stir the crossbow before firing!</span>")
+		return
+	if(!chambered)
+		to_chat(user, "<span class='warning'>There's no bolt in the chamber!</span>")
+		return
+
+	var/obj/item/ammo_casing/CB = chambered
+	var/obj/projectile/BB = CB.BB
+
+	if(BB)
+		if(user.client && user.client.chargedprog >= 100)
+			BB.accuracy += 15
+		if(user.STAPER > 8)
+			BB.accuracy += (user.STAPER - 8) * 4
+			BB.bonus_accuracy += (user.STAPER - 8)
+			if(user.STAPER > 10)
+				BB.damage *= (user.STAPER / 10)
+		BB.damage *= damfactor
+		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
+
+	..()
+
+	cocked = FALSE
+	chambered = null //Kill what was shot.
+	chamber_next_round()
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/proc/chamber_next_round()
+	if(chambered)
+		qdel(chambered)
+		chambered = null
+
+	if(magazine) //We got a Magazine? kiss it.
+		var/obj/item/ammo_casing/CB = magazine.get_round()
+		if(CB)
+			if(chambered)
+				qdel(chambered)
+			chambered = CB
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/proc/unload_bolts(mob/living/user)
+	if(!magazine || !magazine.ammo_count())
+		to_chat(user, "<span class='warning'>There are no bolts to remove!</span>")
+		return
+	var/num_unloaded = 0
+	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+		CB.forceMove(drop_location())
+		CB.bounce_away(FALSE, NONE)
+		num_unloaded++
+	to_chat(user, "<span class='notice'>You remove [num_unloaded] bolt\s from the crossbow.</span>")
+	playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+	update_icon()
+
+/obj/item/ammo_box/magazine/internal/shot/xxbow
+	ammo_type = /obj/item/ammo_casing/caseless/bolt
+	caliber = "regbolt"
+	max_ammo = 8
+	start_empty = TRUE
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/update_icon()
+	. = ..()
+	if(cocked)
+		icon_state = "chukonu1"
+	else
+		icon_state = "chukonu0"
+	cut_overlays()
+	if(chambered)
+		var/obj/item/ammo_casing/CB = chambered
+		var/bolt_overlay = get_bolt_overlay(CB)
+		if(bolt_overlay)
+			add_overlay(bolt_overlay)
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/proc/get_bolt_overlay(obj/item/ammo_casing/CB)
+	if(!CB)
+		return null
+
+	var/overlay_icon = "normal" //Overlay for normal bolts, or bolts someone else made which the creator forgot to make an overlay for the Repeating Crossbow
+
+	switch(CB.type)
+		if(/obj/item/ammo_casing/caseless/bolt/pyro)
+			overlay_icon = "fire"
+		if(/obj/item/ammo_casing/caseless/bolt/poison)
+			overlay_icon = "poison"
+		if(/obj/item/ammo_casing/caseless/bolt/poison/fog)
+			overlay_icon = "fog"
+
+	return mutable_appearance('modular/stonekeep/kaizoku/icons/weapons/bows.dmi', overlay_icon)
+
+obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/examine(mob/user)
+	. = ..()
+	var/remaining_ammo = 0
+	if(magazine)
+		remaining_ammo = magazine.ammo_count()
+
+	var/status = "The crossbow is "
+	if(cocked)
+		status += "cocked and ready to fire."
+	else
+		status += "not cocked."
+
+	. += "<span class='info'>[status]</span>"
+	. += "<span class='info'>It has [remaining_ammo] bolts remaining in the magazine.</span>"

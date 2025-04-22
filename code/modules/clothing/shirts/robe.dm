@@ -106,7 +106,7 @@
 	desc = "What wizard's ensemble would be complete without robes?"
 	icon_state = "wizardrobes"
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 100
 
 /obj/item/clothing/shirt/robe/magus
@@ -114,11 +114,11 @@
 	desc = "A dark padded robe worn by only the most mysterious of mages, the magi."
 	icon_state = "warlock"
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 150
 
-	armor = list("blunt" = 40, "slash" = 40, "stab" = 40,  "piercing" = 15, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	armor = ARMOR_PADDED
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST, BCLASS_BITE)
 	max_integrity = 200
 
 
@@ -132,7 +132,7 @@
 /obj/item/clothing/shirt/robe/nun
 	icon_state = "nun"
 	item_state = "nun"
-	allowed_race = list("human", "tiefling", "dark elf", "elf", "half-elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "dark elf", "elf", "half-elf", "dwarf", "aasimar", "abyssariad")
 	allowed_sex = list(FEMALE)
 
 /obj/item/clothing/shirt/robe/feld
@@ -159,7 +159,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "aasimar", "elf")
+	allowed_race = list("human", "tiefling", "aasimar", "elf", "abyssariad")
 	color = null
 	sellprice = 100
 
@@ -171,7 +171,7 @@
 	color = null
 	slot_flags = ITEM_SLOT_ARMOR
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_BITE)
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	r_sleeve_status = SLEEVE_NORMAL

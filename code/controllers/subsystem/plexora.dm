@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(plexora)
 	wait = 30 SECONDS
 	init_order = INIT_ORDER_PLEXORA
 	runlevels = ALL
-
+	flags = SS_NO_INIT | SS_NO_FIRE // STONEKEEP EDIT TO DISABLE THIS, DOESNT WORK W/O the external stuff we dont have
 #ifdef UNIT_TESTS
 	flags = SS_NO_INIT | SS_NO_FIRE
 #endif

@@ -105,8 +105,13 @@ Design philosphy:
 	H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 
+/obj/item/soap/bath
+	icon = 'modular/stonekeep/icons/misc.dmi'
+	icon_state = "soap_herbal"
+
+/*
 // Herbal soap
-/obj/item/bath/soap
+/obj/item/soap/bath
 	name = "herbal soap"
 	desc = "A soap made from various herbs."
 	icon = 'modular/stonekeep/icons/misc.dmi'
@@ -119,11 +124,11 @@ Design philosphy:
 	var/cleanspeed = 35 //slower than mop
 	uses = 10
 
-/obj/item/bath/soap/ComponentInitialize()
+/obj/item/soap/bath/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
 
-/obj/item/bath/soap/examine(mob/user)
+/obj/item/soap/bath/examine(mob/user)
 	. = ..()
 	var/max_uses = initial(uses)
 	var/msg = "It looks like it was freshly made."
@@ -142,7 +147,7 @@ Design philosphy:
 				msg = "It's seen some light use, but it's still pretty fresh."
 	. += "<span class='notice'>[msg]</span>"
 
-/obj/item/bath/soap/attack(mob/living/carbon/human/target, mob/living/carbon/user)
+/obj/item/soap/bath/attack(mob/living/carbon/human/target, mob/living/carbon/user)
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/turf/bathspot = get_turf(target)				// Checks for being in a bath and being undressed
 	if(!istype(bathspot, /turf/open/water/bath))
@@ -189,7 +194,7 @@ Design philosphy:
 		uses -= 1
 		if(uses == 0)
 			qdel(src)
-
+*/
 
 /obj/item/storage/belt/pouch/nitemaiden
 	populate_contents = list(

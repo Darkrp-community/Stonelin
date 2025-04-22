@@ -1,13 +1,13 @@
 SUBSYSTEM_DEF(librarian)
 	name = "Librarian"
 //	init_order = INIT_ORDER_PATH	Stonekeep edit, commenting out since it makes the current books unreadable and theres no db for the books on our branch as of yet.
-	flags = SS_NO_FIRE
+	flags = SS_NO_FIRE	// Stonekeep edit, commenting out since it makes the current books unreadable and theres no db for the books on our branch as of yet.
 	var/list/books = list()
-
+/*
 /datum/controller/subsystem/librarian/Initialize(start_timeofday)
-	update_books()
+	update_books()	Stonekeep edit, commenting out since it makes the current books unreadable and theres no db for the books on our branch as of yet.
 	return ..()
-
+*/
 /datum/controller/subsystem/librarian/proc/get_book(input)
 	if(!input)
 		return list()

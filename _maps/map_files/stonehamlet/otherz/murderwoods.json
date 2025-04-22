@@ -2,5 +2,5 @@
     "map_name": "Murderwoods",
     "map_path": "map_files/stonehamlet/otherz",
     "map_file": "murderwoods.dmm",
-    "traits": [{"Up": true}, {"Down": true}]
+    "traits": [{"Up": true, "Leylines": true}, {"Down": true, "Leylines": true}]
 }

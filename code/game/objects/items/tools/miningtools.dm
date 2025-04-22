@@ -10,7 +10,7 @@
 	experimental_onback = FALSE
 	sharpness = IS_BLUNT
 	wlength = 10
-	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_HIP
 	toolspeed = 2
 	associated_skill = /datum/skill/labor/mining
 	melting_material = /datum/material/iron
@@ -35,7 +35,7 @@
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
 	wlength = 10
-	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_HIP
 	toolspeed = 3
 	pickmult = 0.8 // Worse pick
 	associated_skill = /datum/skill/combat/axesmaces

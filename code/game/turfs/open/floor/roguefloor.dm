@@ -769,6 +769,9 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
+/turf/open/floor/church/purple
+	icon_state = "church_purple"
+
 /turf/open/floor/churchbrick
 	icon_state = "church_brick"
 	footstep = FOOTSTEP_STONE
@@ -826,6 +829,10 @@
 /turf/open/floor/churchrough/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+
+/turf/open/floor/churchrough/purple
+	icon_state = "church_rough_purple"
+
 //
 /turf/open/floor/herringbone
 	icon_state = "herringbone"
@@ -970,7 +977,7 @@
 /obj/effect/decal/cobbleedge
 	name = ""
 	desc = ""
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "cobblestone_edges"
 	mouse_opacity = 0
 
@@ -986,7 +993,7 @@
 /obj/effect/decal/cobblerockedge
 	name = ""
 	desc = ""
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "cobble_edges"
 	mouse_opacity = 0
 
@@ -1123,7 +1130,7 @@
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/carpet/lord
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = ""
 
 /turf/open/floor/carpet/lord/Initialize()
@@ -1159,7 +1166,7 @@
 	icon_state = "carpet_r"
 
 /turf/open/floor/carpet/green
-	icon = 'icons/turf/roguefloor.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "carpet_inn"
 
 /turf/open/floor/shroud

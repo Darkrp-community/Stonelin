@@ -43,8 +43,6 @@
 /datum/job/miner,
 
 /datum/job/feldsher,
-/datum/job/farmer,
-/datum/job/grabber,
 /datum/job/templar,
 /datum/job/undertaker,
 /datum/job/men_at_arms,
@@ -52,12 +50,26 @@
 /datum/job/wapprentice,
 /datum/job/inquisitor,
 /datum/job/monk,
-
+/datum/job/gatemaster,
 		)
 /*
 /datum/map_adjustment/stonehamlet/job_change()
 	. = ..()
 	change_job_position(/datum/job/consort, 2)
+
+
+
+	var/list/dorfkingdom = list(
+		/datum/job/lord,
+	)
+
+/datum/map_adjustment/stonehamlet/job_change()
+	. = ..()
+	for(var/datum/job/dorf in dorfkingdom)
+		var/datum/job/J = SSjob.GetJobType(dorf)
+		J?.allowed_races = list(
+			"Humen",
+			"Dwarf"
+		)
+
 */
-
-

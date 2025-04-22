@@ -132,6 +132,7 @@
 	seed_identity = "poppy seeds"
 	plant_def_type = /datum/plant_def/poppy
 
+// Below is cancer
 /obj/item/neuFarm/seed/plum
 	seed_identity = "plum seeds"
 	plant_def_type = /datum/plant_def/plum

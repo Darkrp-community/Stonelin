@@ -11,31 +11,46 @@
 //	var/gob_outfit = /datum/outfit/job/npc/orc/ambush removed to apply different classes to the orcs
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
-	possible_rmb_intents = list()
 	vitae_pool = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
+
+	flee_in_pain = TRUE
+	stand_attempts = 6
+	a_intent = INTENT_HELP
+	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)
+	possible_rmb_intents = list(/datum/rmb_intent/feint, /datum/rmb_intent/swift, /datum/rmb_intent/riposte, /datum/rmb_intent/weak)
 
 /mob/living/carbon/human/species/orc/npc
 	ai_controller = /datum/ai_controller/human_npc
 	dodgetime = 15 //they can dodge easily, but have a cooldown on it
 	canparry = TRUE
 	flee_in_pain = FALSE
+	simpmob_attack = 40
+	simpmob_defend = 30
+	wander = TRUE
+	attack_speed = 2
 
-	wander = FALSE
+/mob/living/carbon/human/species/orc/npc/ambush
 
 /mob/living/carbon/human/species/orc/npc/Initialize()
 	. = ..()
 	AddComponent(/datum/component/combat_noise, list("aggro" = 2))
 
-/mob/living/carbon/human/species/orc/ambush/after_creation()
+/mob/living/carbon/human/species/orc/npc/ambush/after_creation()
 	..()
 	job = "Ambush Orc"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/npc/orc/ambush)
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
+	ambushable = FALSE
+
+/mob/living/carbon/human/species/orc/npc/warlord/after_creation()
+	..()
+	name = "Warlord Orc"
+	job = "Warlord Orc"
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/npc/orc/warlord)
+	ambushable = FALSE
 
 /obj/item/bodypart/chest/orc
 	dismemberable = 1
@@ -159,6 +174,9 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "orc"
 
+
+
+
 /datum/species/orc/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
@@ -201,10 +219,10 @@
 			if(!B.rotted)
 				B.rotted = TRUE
 				should_update = TRUE
-			if(B.rotted && amount < 16 MINUTES)
+			if(B.rotted && amount < 16 MINUTES && !(FACTION_MATTHIOS in C.faction))
 				var/turf/open/T = C.loc
 				if(istype(T))
-					T.pollute_turf(/datum/pollutant/rot, 10)
+					T.pollute_turf(/datum/pollutant/rot, 4)
 	if(should_update)
 		if(amount > 20 MINUTES)
 			C.update_body()
@@ -222,49 +240,37 @@
 
 /datum/outfit/job/npc/orc/ambush/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.TOTALSTR = 13
-	H.TOTALSPD = 12
-	H.TOTALCON = 13
-	H.TOTALEND = 13
+	H.base_strength = 13
+	H.base_speed = 12
+	H.base_constitution = 13
+	H.base_endurance = 13
+	armor = /obj/item/clothing/armor/leather/hide/orc
+	if(prob(20))
+		armor = /obj/item/clothing/armor/chainmail/iron/orc
+	if(prob(20))
+		head = /obj/item/clothing/head/helmet/leather
+	if(prob(10))
+		head = /obj/item/clothing/head/helmet/orc
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Stolen Tool armed raider
 			r_hand = /obj/item/weapon/axe/iron
-			armor = /obj/item/clothing/armor/leather/hide/orc
 		if(2) //Stolen Tool armed raider
-			r_hand = /obj/item/weapon/thresher
-			armor = /obj/item/clothing/armor/leather/hide/orc
+			r_hand = /obj/item/weapon/mace/copperbludgeon
 		if(3) //Stolen Tool armed raider
-			r_hand = /obj/item/weapon/pitchfork//removed the cudgel because it's way too good at knock people out
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			if(prob(10))
-				//head = /obj/item/clothing/head/helmet/orc
-				r_hand = /obj/item/weapon/sickle
-				armor = /obj/item/clothing/armor/leather/hide/orc
-		if(4) //lightly armored sword/flail/daggers
-			if(prob(50))
-				head = /obj/item/clothing/head/helmet/orc
-				r_hand = /obj/item/weapon/mace/spiked
-				armor = /obj/item/clothing/armor/chainmail/iron/orc
-				pants = /obj/item/clothing/armor/leather/hide/orc
-				head = /obj/item/clothing/head/helmet/leather
+			r_hand = /obj/item/weapon/polearm/spear/bonespear
 			if(prob(30))
-				l_hand = /obj/item/weapon/sword/iron
-				armor = /obj/item/clothing/armor/chainmail/iron/orc
-				head = /obj/item/clothing/head/helmet/leather
-			if(prob(23))
-				armor = /obj/item/clothing/armor/chainmail/iron/orc
-				r_hand = /obj/item/weapon/knife/dagger
+				r_hand = /obj/item/weapon/axe/boneaxe
+		if(4) //armored sword/flail/daggers
+			r_hand = /obj/item/weapon/mace/spiked
+			if(prob(20))
+				l_hand = /obj/item/weapon/sword/short
+			if(prob(20))
+				r_hand = /obj/item/weapon/knife/cleaver/combat
 				l_hand = /obj/item/weapon/knife/dagger
-				pants = /obj/item/clothing/armor/leather/hide/orc
-				head = /obj/item/clothing/head/helmet/leather
-			if(prob(80))
-				armor = /obj/item/clothing/armor/chainmail/iron/orc
-				pants = /obj/item/clothing/armor/leather/hide/orc
-				head = /obj/item/clothing/head/helmet/leather
 		if(5) //heavy armored sword/flail/shields
 			if(prob(20))
-				r_hand = /obj/item/weapon/mace//readded the blunt weapon, this time with an very rare "slavist" orc
+				r_hand = /obj/item/weapon/mace
 				l_hand = /obj/item/weapon/whip
 				armor = /obj/item/clothing/armor/plate/orc
 				head = /obj/item/clothing/head/helmet/orc
@@ -285,13 +291,11 @@
 			if(prob(50))
 				r_hand = /obj/item/weapon/sword/iron
 				l_hand = /obj/item/weapon/shield/wood
-				armor = /obj/item/clothing/armor/plate/orc
 				head = /obj/item/clothing/head/helmet/orc
 			else
 				r_hand = /obj/item/weapon/mace/spiked
 				l_hand = /obj/item/weapon/shield/wood
 				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
 			if(prob(30))
 				r_hand = /obj/item/weapon/sword/scimitar/messer
 				armor = /obj/item/clothing/armor/plate/orc
@@ -315,10 +319,10 @@
 
 /datum/outfit/job/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.TOTALSTR = 13
-	H.TOTALSPD = 13
-	H.TOTALCON = 13
-	H.TOTALEND = 13
+	H.base_strength = 13
+	H.base_speed = 13
+	H.base_constitution = 13
+	H.base_endurance = 13
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Dual Axe Warrior
@@ -364,10 +368,10 @@
 
 /datum/outfit/job/npc/orc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.TOTALSTR = 13
-	H.TOTALSPD = 13
-	H.TOTALCON = 14
-	H.TOTALEND = 14
+	H.base_strength = 13
+	H.base_speed = 13
+	H.base_constitution = 14
+	H.base_endurance = 14
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
@@ -434,10 +438,10 @@
 
 /datum/outfit/job/npc/orc/marauder/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.TOTALSTR = 12
-	H.TOTALSPD = 12
-	H.TOTALCON = 13
-	H.TOTALEND = 13
+	H.base_strength = 12
+	H.base_speed = 12
+	H.base_constitution = 13
+	H.base_endurance = 13
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
@@ -487,34 +491,27 @@
 
 /datum/outfit/job/npc/orc/warlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.TOTALSTR = 14
-	H.TOTALSPD = 14
-	H.TOTALCON = 14
-	H.TOTALEND = 14
+	H.base_strength = 14
+	H.base_speed = 14
+	H.base_constitution = 14
+	H.base_endurance = 14
+	armor = /obj/item/clothing/armor/plate/orc/warlord
+	head = /obj/item/clothing/head/helmet/orc/warlord
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord
-			r_hand = /obj/item/weapon/polearm/halberd
-			armor = /obj/item/clothing/armor/plate/orc/warlord
-			head = /obj/item/clothing/head/helmet/orc/warlord
+			r_hand = /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe
 		if(2) //Greatsword Warlord
-			r_hand = /obj/item/weapon/sword/long/greatsword
-			armor = /obj/item/clothing/armor/plate/orc/warlord
-			head = /obj/item/clothing/head/helmet/orc/warlord
+			r_hand = /obj/item/weapon/mace/goden
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/weapon/whip/antique
 			l_hand = /obj/item/weapon/sword/short
-			armor = /obj/item/clothing/armor/plate/orc/warlord
-			head = /obj/item/clothing/head/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
-			armor = /obj/item/clothing/armor/plate/orc/warlord
 			r_hand = /obj/item/weapon/sword/scimitar/falchion
-			l_hand = /obj/item/weapon/shield/tower
-			head = /obj/item/clothing/head/helmet/orc/warlord
+			l_hand = /obj/item/weapon/shield/tower/buckleriron
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/weapon/flail/sflail
-			armor = /obj/item/clothing/armor/plate/orc/warlord
-			head = /obj/item/clothing/head/helmet/orc/warlord
+
 
 /mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills
 	..()
@@ -526,3 +523,6 @@
 	flee_in_pain = FALSE
 	wander = TRUE
 	configure_mind()
+
+// obsolete just kept because vanderlin uses it
+/mob/living/carbon/human/species/orc/ambush

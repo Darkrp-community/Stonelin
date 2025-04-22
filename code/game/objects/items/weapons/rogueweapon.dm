@@ -37,6 +37,7 @@
 	var/renamed_name
 	var/axe_cut = 0
 	istrainable = TRUE // You can train weapon skills on a dummy with these.
+	var/dual_wield = 0
 
 /obj/item/weapon/Initialize()
 	. = ..()

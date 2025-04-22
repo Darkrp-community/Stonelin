@@ -18,7 +18,7 @@
 /datum/outfit/job/roguetown/mercenary/toweryakko/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shortboots/cloudhead/toweryakkos
-	head = /obj/item/clothing/head/helmet/kaizoku/jingasa
+	head = /obj/item/clothing/head/helmet/kettle/jingasa
 	gloves = /obj/item/clothing/gloves/leather/abyssal/toweryakko
 	mask = /obj/item/clothing/face/kaizoku/menpo
 	belt = /obj/item/storage/belt/leather

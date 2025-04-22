@@ -12,7 +12,6 @@
 	allowed_races = list(
 		"Humen",
 		"Elf",
-		"Half-Elf",
 		"Dwarf"
 	)
 	allowed_sexes = list(MALE, FEMALE)
@@ -23,7 +22,7 @@
 	and you know just what lengths they'll go to in order to get even more. Keep your festering economy and your rats alive, theyre the only two things you can weigh any trust into anymore."
 	outfit = /datum/outfit/job/stonekeep/steward
 	give_bank_account = 100
-	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_scholar.ogg'
 
 
 /datum/outfit/job/steward
@@ -39,7 +38,7 @@
 		pants = /obj/item/clothing/pants/trou/leathertights
 
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	shoes = /obj/item/clothing/shoes/simpleshoes/buckle
+	shoes = /obj/item/clothing/shoes/shortboots
 	head = /obj/item/clothing/head/chaperon/greyscale/chaperonsecondary
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	armor = /obj/item/clothing/armor/gambeson/arming

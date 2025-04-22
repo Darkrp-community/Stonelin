@@ -275,7 +275,6 @@
 	)
 	component_type = /datum/component/storage/concrete/grid/surgery_bag
 
-//	update_icon()
 
 ///////////////////////////////////////////////
 

@@ -327,7 +327,6 @@
 	spawnableAtoms = list(
 							/obj/structure/flora/grass/bush_meagre = 3,
 							/obj/structure/flora/grass/herb/salvia = 1,
-							/obj/structure/flora/rogueflower/random = 1,
 							/obj/structure/flora/grass/pyroclasticflowers = 1,
 							)
 	allowed_areas = list(/area/rogue/outdoors/mountains/decap)

@@ -65,7 +65,7 @@
 	penfactor = AP_CLUB_STRIKE+10
 	swingdelay = 2
 	icon_state = "instrike"
-	misscost = 12
+	misscost = 10
 
 
 /*--------------\
@@ -82,7 +82,7 @@
 	swingdelay = 3
 	charging_slowdown = 0.8
 	icon_state = "insmash"
-	misscost = 10
+	misscost = 8
 	item_damage_type = "blunt"
 
 /datum/intent/mace/smash/wood
@@ -93,7 +93,7 @@
 	damfactor = 1.2
 	chargetime = 3
 	swingdelay = 3
-	misscost = 22
+	misscost = 16
 	warnie = "mobwarning"
 
 
@@ -112,7 +112,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	penfactor = 40
 	swingdelay = 1
-	misscost = 15
+	misscost = 10
 	item_damage_type = "blunt"
 
 

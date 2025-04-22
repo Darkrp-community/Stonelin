@@ -280,6 +280,10 @@
 	name = "Mason"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/sk_hammerite
+	name = "Hammerite"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/sk_woodsman
 	name = "Woodsman"
 	icon_state = "arrow"

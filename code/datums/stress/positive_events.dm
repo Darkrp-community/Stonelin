@@ -120,11 +120,11 @@
 
 /datum/stressevent/music/two
 	stressadd = -1
-	desc = span_green("This music is relaxing.")
+//	desc = span_green("This music is relaxing.")
 
 /datum/stressevent/music/three
 	stressadd = -1
-	desc = span_green("This music is wonderful.")
+//	desc = span_green("This music is wonderful.")
 
 /datum/stressevent/music/four
 	stressadd = -2

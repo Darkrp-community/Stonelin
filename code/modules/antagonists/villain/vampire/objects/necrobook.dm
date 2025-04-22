@@ -45,7 +45,7 @@
 		if("Steal the Sun")
 			if(!can_steal_sun(lord_datum))
 				return
-			if(browser_alert(user, "Force Vanderlin into Night?<BR>Cost:[SUN_STEAL_COST]","",DEFAULT_INPUT_CHOICES) != CHOICE_YES)
+			if(browser_alert(user, "Force the lands into Night?<BR>Cost:[SUN_STEAL_COST]","",DEFAULT_INPUT_CHOICES) != CHOICE_YES)
 				return
 			if(!do_after(user, 10 SECONDS, src))
 				return

@@ -31,9 +31,9 @@
 	food_type = list()
 	footstep_type = null
 	pooptype = null
-	TOTALCON = 6
-	TOTALSTR = 13
-	TOTALSPD = 10
+	base_constitution = 6
+	base_strength = 13
+	base_speed = 10
 	deaggroprob = 0
 	defprob = 10
 	defdrain = 5
@@ -76,12 +76,16 @@
 /mob/living/simple_animal/hostile/retaliate/headless/Life()
 	if(isliving(swallowed_mob))
 		//Vomit your captive if you take 40 damage since swallowing them
-		if(health < health_at_swallow - 40)
+		if(health < health_at_swallow - 30)
 			SpitUp()
 		if(swallowed_mob)
 			if(stomach_burn_cooldown < world.time)
 				//Yes they take burn damage. No i wont explain why.
 				var/acid_damage = 20
+				playsound(get_turf(src), 'sound/items/Fish_out.ogg', 20, TRUE)
+				if(prob(20))
+					SpitUp()
+					playsound(get_turf(src), 'sound/vo/vomit.ogg', 40, TRUE)
 				if(swallowed_mob.stat != CONSCIOUS)
 					//To prevent someone being stuck in crit.
 					acid_damage += 30
@@ -171,7 +175,7 @@
 /mob/living/simple_animal/hostile/retaliate/headless/proc/SpitUp()
 	if(swallowed_mob)
 		visible_message(span_notice("[src] vomits a disheveled [swallowed_mob]."))
-		playsound(loc, 'sound/vo/vomit.ogg', 25, TRUE)
+		playsound(loc, 'sound/vo/vomit.ogg', 30, TRUE)
 		swallowed_mob.forceMove(get_turf(src))
 		swallowed_mob = null
 		body_eater = TRUE

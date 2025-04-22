@@ -33,11 +33,10 @@
 	cloak = /obj/item/clothing/cloak/apron
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	backl = /obj/item/storage/backpack/backpack
-	r_hand = /obj/item/weapon/mace/copperbludgeon
 	neck = /obj/item/storage/belt/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	beltr = /obj/item/reagent_containers/glass/bottle/waterskin/milk
-	beltl = /obj/item/weapon/knife/villager
-	backpack_contents = list(/obj/item/reagent_containers/powder/salt = 3, /obj/item/reagent_containers/food/snacks/cheddar = 1, /obj/item/natural/cloth = 2, /obj/item/book/yeoldecookingmanual = 1)
+	beltl = /obj/item/weapon/mace/copperbludgeon
+	backpack_contents = list(/obj/item/weapon/knife/villager = 1,/obj/item/reagent_containers/powder/salt = 3, /obj/item/reagent_containers/food/snacks/cheddar = 1, /obj/item/natural/cloth = 2, /obj/item/book/yeoldecookingmanual = 1)
 	H.change_stat("intelligence", 1)
 	H.change_stat("constitution", 2) // Cheese diet.

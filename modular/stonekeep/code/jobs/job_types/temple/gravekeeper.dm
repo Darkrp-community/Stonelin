@@ -15,7 +15,6 @@
 		"Aasimar"
 	)
 	tutorial = "As a servant of Necra, you embody the sanctity of her domain, ensuring the dead rest peacefully within the earth. You are the bane of grave robbers and necromancers, and your holy magic brings undead back into Necra's embrace: the only rightful place for lost souls."
-	allowed_patrons = list(/datum/patron/divine/necra)
 
 	outfit = /datum/outfit/job/stonekeep/gravekeeper
 	display_order = GRAVEKEEPER_ORDER
@@ -24,11 +23,10 @@
 	bypass_lastclass = TRUE
 	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
 
-/datum/outfit/job/stonekeep/gravekeeper
-	allowed_patrons = list(/datum/patron/divine/necra)
-
 /datum/outfit/job/stonekeep/gravekeeper/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.patron != /datum/patron/divine/necra)
+		H.set_patron(/datum/patron/divine/necra)
 	head = /obj/item/clothing/head/padded/deathshroud
 	neck = /obj/item/clothing/neck/psycross/silver/necra
 	pants = /obj/item/clothing/pants/trou/leather/mourning

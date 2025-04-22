@@ -13,7 +13,7 @@
 	give_bank_account = 100
 	can_have_apprentices = FALSE
 	outfit = /datum/outfit/job/stonekeep/guildmaster
-	cmode_music = 'sound/music/cmode/combat_hellish2.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish2.ogg'
 
 /datum/outfit/job/stonekeep/guildmaster/pre_equip(mob/living/carbon/human/H)
 	armor = /obj/item/clothing/shirt/tunic/red

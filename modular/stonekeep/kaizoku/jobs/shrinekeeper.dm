@@ -57,10 +57,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 
-		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_STR, 3)
 		H.change_stat(STATKEY_PER, -1)
-		H.change_stat(STATKEY_CON, 1)
-		H.change_stat(STATKEY_END, 1)
+		H.change_stat(STATKEY_CON, 2)
+		H.change_stat(STATKEY_END, 2)
 		H.change_stat(STATKEY_SPD, 1)
 
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

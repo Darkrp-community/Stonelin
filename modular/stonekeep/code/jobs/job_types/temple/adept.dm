@@ -16,7 +16,7 @@
 		"Dark Elf"
 	)
 	allowed_sexes = list(MALE)
-	tutorial = "You were a convicted criminal, the lowest scum of Vanderlin. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to the Forgotten. You will not let him down."
+	tutorial = "You were a convicted criminal, the lowest scum of the land. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to the Forgotten. You will not let him down."
 
 	outfit = /datum/outfit/job/stonekeep/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)

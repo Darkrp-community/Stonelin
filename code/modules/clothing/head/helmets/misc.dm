@@ -7,6 +7,7 @@
 
 	body_parts_covered = COVERAGE_NASAL
 	max_integrity = 250
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/helmet/skullcap
@@ -17,6 +18,7 @@
 	smeltresult = /obj/item/ash
 
 	max_integrity = INTEGRITY_POOR
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 //............... Grenzelhoft Plume Hat ............... // - worn over a skullcap
 /obj/item/clothing/head/helmet/skullcap/grenzelhoft
@@ -56,6 +58,7 @@
 	desc = "A crude horned cap usually worn by brute barbarians to invoke fear unto their enemies."
 	icon_state = "hornedcap"
 	sellprice = VALUE_CHEAP_IRON_HELMET
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 //................ Winged Cap ............... //
 /obj/item/clothing/head/helmet/winged
@@ -66,6 +69,7 @@
 	worn_y_dimension = 64
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 //................ Kettle Helmet ............... //
 /obj/item/clothing/head/helmet/kettle
@@ -83,6 +87,7 @@
 	max_integrity = 250
 
 	body_parts_covered = COVERAGE_HEAD
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 //................ Kettle Helmet (Slitted)............... //
 /obj/item/clothing/head/helmet/kettle/slit
@@ -102,6 +107,7 @@
 	sellprice = VALUE_IRON_HELMET
 
 	body_parts_covered = COVERAGE_HEAD_NOSE
+	item_weight = 5.5 * IRON_MULTIPLIER
 
 
 //................ Copper Lamellar Cap ............... //
@@ -117,6 +123,7 @@
 	body_parts_covered = COVERAGE_HEAD
 	prevent_crits = ONLY_VITAL_ORGANS
 	max_integrity = INTEGRITY_POOR
+	item_weight = 5.5 * COPPER_MULTIPLIER
 
 //............... Battle Nun ........................... (unique kit for the role, iron coif mechanically.)
 /obj/item/clothing/head/helmet/battlenun
@@ -134,6 +141,7 @@
 	armor = ARMOR_MAILLE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	prevent_crits = ALL_EXCEPT_BLUNT
+	item_weight = 9 * IRON_MULTIPLIER
 
 
 /*-------------\
@@ -151,7 +159,9 @@
 
 	armor =  ARMOR_PLATE
 	body_parts_covered = COVERAGE_HEAD
+
 	max_integrity = 350
+ 	item_weight = 9 * STEEL_MULTIPLIER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/helmet/sallet/elven	// blackoak merc helmet
@@ -185,6 +195,7 @@
 
 	body_parts_covered = COVERAGE_HEAD
 	max_integrity = INTEGRITY_STRONG
+	item_weight = 6 * STEEL_MULTIPLIER
 
 
 
@@ -246,7 +257,7 @@
 	name = "visored sallet"
 	desc = "A steel helmet offering good overall protection. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "sallet_visor"
-
+	item_weight = 6 * STEEL_MULTIPLIER
 
 //............... Hounskull ............... //
 /obj/item/clothing/head/helmet/visored/hounskull
@@ -258,6 +269,7 @@
 	emote_environment = 3
 
 	armor = ARMOR_PLATE_GOOD
+	item_weight = 7 * STEEL_MULTIPLIER
 
 //............... Knights Helmet ............... //
 /obj/item/clothing/head/helmet/visored/knight
@@ -271,6 +283,7 @@
 	worn_y_dimension = 64
 
 	emote_environment = 3
+	item_weight = 5.6 * STEEL_MULTIPLIER
 
 /obj/item/clothing/head/helmet/visored/knight/black
 	color = CLOTHING_SOOT_BLACK
@@ -282,6 +295,7 @@
 	icon = 'icons/roguetown/clothing/special/captain.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
 	icon_state = "capbarbute"
+	item_weight = 13 * STEEL_MULTIPLIER
 
 //................. Town Watch Helmet .............. //
 /obj/item/clothing/head/helmet/townwatch
@@ -296,9 +310,12 @@
 	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_HIP
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR_UNUSUAL
+	item_weight = 6 * STEEL_MULTIPLIER
 
 /obj/item/clothing/head/helmet/townwatch/alt
-	desc = "An old archaic helmet of a symbol long forgotten. The shape resembles the bars of a prison."
+	name = "barred helmet"
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE
+	desc = "An old archaic helmet of a symbol long forgotten. The shape resembles the bars of a gate."
 	icon_state = "gatehelm"
 
 //............... Feldshers Cage ............... //
@@ -314,6 +331,7 @@
 
 	body_parts_covered = FULL_HEAD
 	prevent_crits = BLUNT_AND_MINOR_CRITS
+	item_weight = 5.5 * STEEL_MULTIPLIER
 
 /obj/item/clothing/head/helmet/blacksteel/bucket
 	name = "Blacksteel Great Helm"
@@ -331,3 +349,4 @@
 	max_integrity = 425
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/blacksteel
+	item_weight = 6 * BLACKSTEEL_MULTIPLIER

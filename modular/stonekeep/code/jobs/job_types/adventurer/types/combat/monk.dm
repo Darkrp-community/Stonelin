@@ -2,12 +2,7 @@
 	name = "Monk"
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "A traveling monk of the God Ravox, unmatched in unarmed combat and with an unwavering devotion to Justice."
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
-	)
+	allowed_races = ALL_RACES_BY_NAME
 	outfit = /datum/outfit/job/sk/adventurer/monk
 	min_pq = -10
 	category_tags = list(CTAG_ADVENTURER)

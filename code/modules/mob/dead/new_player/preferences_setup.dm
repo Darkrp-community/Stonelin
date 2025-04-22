@@ -38,7 +38,7 @@
 	if(randomise_flags & RANDOMIZE_EYE_COLOR)
 		eye_color = random_eye_color()
 	if(randomise_flags & RANDOMIZE_FEATURES)
-		features = random_features()
+		features = merged_features(pref_species)// Codefix for Ears and Tails. Stonekeep/Kaizoku modification.
 
 
 /// Randomizes our character preferences according to enabled randomise preferences.
@@ -80,7 +80,7 @@
 		skin_tone = pick_assoc(skins)
 	if(randomise[RANDOM_EYE_COLOR])
 		eye_color = random_eye_color()
-	features = random_features()
+	features = merged_features(pref_species)// Codefix for Ears and Tails. Stonekeep/Kaizoku modification.
 
 	if(pref_species.default_features["ears"])
 		features["ears"] = pref_species.default_features["ears"]

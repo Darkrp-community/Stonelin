@@ -14,6 +14,21 @@
 
 	var/returning_home = FALSE
 
+	//Putting these back for the Raiders NPCs until an alternative pops up.
+	var/frustration=0
+	var/pickupTimer=0
+	var/list/enemies = list()
+	var/list/friends = list()
+	var/mob/living/target
+	var/obj/item/pickupTarget
+	var/mode = AI_OFF
+	var/list/myPath = list()
+	var/list/blacklistItems = list()
+	var/maxStepsTick = 6
+	var/next_idle = 0
+	var/next_seek = 0
+	var/next_passive_detect = 0
+
 /mob/living/carbon/human/proc/IsStandingStill()
 	return resisting || pickpocketing
 
@@ -87,6 +102,17 @@
 /mob/living/carbon/human/proc/monkey_attack(mob/living/L)
 	if(next_move > world.time)
 		return
+	if(abyssariadraider) // Special attack logic for event-oriented 'traditionalist' Foglander enemies.
+		if(prob(5))
+			say(pick(GLOB.custodian_quotes))
+		if(L.surrendering == 1) //If the target actually followed what the raider said...
+			src.killyielder(target)//Fuck them up John.
+			return
+		if(world.time >= special_timer + special_cooldown) // Enforce proper cooldown.
+			if(prob(20)) // 20% chance to execute special attack.
+				src.special_attacks(src, L, null)
+				special_timer = world.time + 15 SECONDS + rand(2, 5)
+				return
 	var/obj/item/Weapon = get_active_held_item()
 	var/obj/item/OffWeapon = get_inactive_held_item()
 	if(Weapon && OffWeapon)
@@ -141,10 +167,7 @@
 		else
 			sneak_bonus = (target.mind?.get_skill_level(/datum/skill/misc/sneaking) * 5)
 		probby -= sneak_bonus
-	if(!target.check_armor_skill())
-		probby += 85 //armor is loud as fuck
-		if (sneak_bonus)
-			probby += sneak_bonus // you don't get sneak bonus in heavy armor at all, on top of that
+	probby += 100 * target.get_encumbrance()
 	if (target.stat_roll(STATKEY_LCK,5,10,TRUE))
 		probby += (10 - target.STALUC) * 5 // drop 5% chance for every bit of fortune we're missing
 	if (target.stat_roll(STATKEY_LCK,5,10))

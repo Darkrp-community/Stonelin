@@ -83,14 +83,14 @@
 	penfactor = AP_SWORD_CHOP
 	damfactor = 1.1
 	swingdelay = 1
-	misscost = 8
+	misscost = 7
 	item_damage_type = "slash"
 
 /datum/intent/sword/chop/long
 	damfactor = 1.1
 	chargetime = 1.2
 	swingdelay = 1.5
-	misscost = 12
+	misscost = 10
 	warnie = "mobwarning"
 	item_damage_type = "slash"
 
@@ -700,7 +700,7 @@
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
 	name = "executioner's sword"
-	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Vanderlin's greatest pastime, executions."
+	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Rockhill's greatest pastime, executions."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 
@@ -926,6 +926,7 @@
 	desc = ""
 	force = 2
 	force_wielded = 5
+	throwforce = 2
 	max_integrity = 240
 	sellprice = 1
 	smeltresult = /obj/item/ingot/tin //the truth comes out

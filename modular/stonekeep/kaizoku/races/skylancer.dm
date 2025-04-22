@@ -14,15 +14,19 @@
 	name = "Skylancer"
 	id = "abyssariad"
 	desc = "<b>Sky branched Champions</b><br>\
-	Molded from Abyssor's relentless skies, the avian denmorians are a inquisitive race with lithe bodies \
-	glaceful as the flows of the tides to navigate and glide across the rocky shores and crashing \
-	waves of their currently destroyed domain to provide information, supplies and messages in any \
-	battlefield. Just like the skies they branched from, they are vast and enduring - if not \
-	mysterious and deep, often appearing aloof and solitary to outsiders. Their society almost crumbled \
-	during The Bloody Apotheosis, but their bronze-age traditions lives on together with a deep \
-	hatred for all things Graggar. They are refined souls that, when not belonging to military or clerical jobs, \
-	usually partakes in the society's mercantile division, usually as merchants, bankers and gem lapidary. \
-	Their specialized syrinxs makes them complex vocalizators for spionage and disguise."
+	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, these \
+	avian denmorians are an graceful race suited to navigate rocky shores and battlefronts. Inquisitive and aloof, \
+	they are as vast and graceful as the skies, the true reflection of Abyssor's previous shape.\
+	\n\n\
+	Their specialized syrinxs makes them complex vocalizators for spionage and disguise, and when needed, \
+	they can use their wings to fly, but it is severely exhausting, while remaining lightweight is necessary to do so, \
+	so much that even their bones are hollow to remain light and oxygenated, lowering their physical resilience for vigor.\
+	\n\n\
+	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
+	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
+	known for their extreme loyalty.\
+	\n\n\
+	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
 
 	skin_tone_wording = "Championage Branch"
 
@@ -120,30 +124,53 @@
 
 	"white - platinum" = "f8f3f3",
 	"white - silver" = "ddddc8",
-	"white - oceanid" = "141f1f"
+	"white - oceanid" = "b8d4de"
 
 	))
 
+/*	This using the older proc causes runtimes, if possible adapt to new below ROGTODO
 /datum/species/abyssariad/skylancer/random_name(gender,unique,lastname)
+	var/static/list/male_names = world.file2list("modular/stonekeep/kaizoku/strings/names/abyssnorm.txt")
+	var/static/list/female_names = world.file2list("modular/stonekeep/kaizoku/strings/names/abyssnorf.txt")
+
+	var/list/names = (gender == FEMALE) ? female_names : male_names
 	var/randname
+
 	if(unique)
-		if(gender == MALE)
-			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorm.txt") )
-				if(!findname(randname))
-					break
-		if(gender == FEMALE)
-			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorf.txt") )
-				if(!findname(randname))
-					break
+		for(var/i in 1 to 10)
+			randname = pick(names)
+			if(!findname(randname))
+				break
 	else
-		if(gender == MALE)
-			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorm.txt") )
-		if(gender == FEMALE)
-			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorf.txt") )
-	randname += " Clanless"
-	return randname
+		randname = pick(names)
+
+	return "[randname] Clanless"
 
 /datum/species/abyssariad/skylancer/random_surname()
-	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorm.txt"))]"
+	return " [pick(world.file2list("modular/stonekeep/kaizoku/strings/names/abyssnorm.txt"))]"
+*/
+
+/datum/species/abyssariad/skylancer/get_possible_names(gender = MALE)
+	var/static/list/male_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorm.txt')
+	var/static/list/female_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorf.txt')
+	return (gender == FEMALE) ? female_names : male_names
+
+/datum/species/abyssariad/skylancer/random_name(gender = MALE, unique = FALSE)
+	var/list/possible_names = get_possible_names(gender)
+	if(!possible_names || !length(possible_names))
+		return "Nameless Clanless" //This is a fallback in case we get any pesky runtime.
+
+	var/first_name
+	if(!unique)
+		first_name = pick(possible_names)
+	else
+		for(var/i in 1 to 10)
+			first_name = pick(possible_names)
+			if(!findname(first_name))
+				break
+
+	return "[first_name] Clanless"
+
+/datum/species/abyssariad/skylancer/get_possible_surnames(gender = MALE)
+	var/static/list/last_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorlast.txt')
+	return last_names

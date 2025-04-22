@@ -107,9 +107,9 @@
 	"green - leaf" = "2f3c2e",
 	"green - moss" = "3b3c2a",
 	"white - silver" = "e8fdfd",
-	"white - oceanid" = "afdddd"
+	"white - oceanid" = "b8d4de"
 	))
-
+/*	This using the older proc causes runtimes, if possible adapt to new below ROGTODO
 /datum/species/elf/undine/random_name(gender,unique,lastname)
 	var/randname
 	if(unique)
@@ -132,9 +132,19 @@
 
 /datum/species/elf/undine/random_surname()
 	return " [pick(world.file2list("strings/rt/names/elf/elfwlast.txt"))]"
+*/
+/datum/species/elf/undine/get_possible_names(gender = MALE)
+	var/static/list/male_names = world.file2list('modular/stonekeep/kaizoku/strings/names/onim.txt')
+	var/static/list/female_names = world.file2list('modular/stonekeep/kaizoku/strings/names/onif.txt')
+	return (gender == FEMALE) ? female_names : male_names
+
+/datum/species/elf/undine/get_possible_surnames(gender = MALE)
+	var/static/list/last_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorm.txt')
+	return last_names
+
 
 /datum/species/elf/undine/get_accent_list()
-	return strings("abyssal_replacement.json", "abyssal")
+	return strings("accents/abyssal_replacement.json", "abyssal")
 
 /mob/proc/croak()
 	set name = "Croak"

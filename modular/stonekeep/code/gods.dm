@@ -244,8 +244,8 @@
 	godhead = /datum/patron/godless
 
 
-
-
+/datum/faith/inhumen_pantheon
+	preference_accessible = FALSE
 /datum/patron/inhumen/zizo
 	name = "Zizo"
 	domain = "The Eternal Beast of Chaos"
@@ -294,6 +294,5 @@
 		"MATTHIOS WILL SAVE ME!",
 		"MATTHIOS, MUST I BE YOUR MARTYR?!",
 	)
-/* they removed the config way to disable it I dont know ROGTODO
-/datum/patron/inhumen/baotha
-*/
+
+

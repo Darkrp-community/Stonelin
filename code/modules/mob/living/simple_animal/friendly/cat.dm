@@ -2,7 +2,6 @@
 /mob/living/simple_animal/pet/cat
 	name = "parent roguecat"
 	desc = "If you're seeing this, someone forgot to set a mob desc or it spawned the parent mob. Report to the Creators."
-	TOTALSPD = 5
 	icon = 'icons/roguetown/mob/monster/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
@@ -39,10 +38,10 @@
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	TOTALSTR = 3
-	TOTALEND = 4
-	TOTALSPD = 3
-	TOTALCON = 3
+	base_strength = 3
+	base_endurance = 4
+	base_speed = 3
+	base_constitution = 3
 	var/turns_since_scan = 0
 	gold_core_spawnable = FRIENDLY_SPAWN
 
@@ -93,7 +92,7 @@
 
 /mob/living/simple_animal/pet/cat/cabbit
 	name = "cabbit"
-	desc = "A cabbit, a particular favorite of Enigma's fauna, as pets and meals. It has been exported to Vanderlin." // Do NOT eat the cabbit!!!!!!
+	desc = "A cabbit, a particular favorite of Enigma's fauna, as pets and meals." // Do NOT eat the cabbit!!!!!!
 	icon = 'icons/roguetown/mob/cabbit.dmi'
 	icon_state = "cabbit"
 	icon_living = "cabbit"

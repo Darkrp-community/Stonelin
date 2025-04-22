@@ -95,7 +95,7 @@ SUBSYSTEM_DEF(droning)
 
 	//kill the previous droning sound
 	kill_droning(dreamer)
-	var/sound/combat_music = sound(pick(music), repeat = TRUE, wait = 0, channel = CHANNEL_BUZZ, volume = (dreamer?.prefs.musicvol)*1.2)
+	var/sound/combat_music = sound(pick(music), repeat = TRUE, wait = 0, channel = CHANNEL_BUZZ, volume = (dreamer?.prefs.musicvol)*1) // STONEKEEP EDIT x 1 volume instead of 1.2
 	combat_music.frequency = frenq
 	if(!HAS_TRAIT(dreamer.mob, TRAIT_DRUQK))
 		combat_music.pitch = 1 / combat_music.frequency
