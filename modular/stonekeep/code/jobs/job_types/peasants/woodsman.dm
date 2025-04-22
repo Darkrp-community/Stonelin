@@ -75,9 +75,10 @@
 
 /datum/outfit/job/stonekeep/woodsman_lumberjack/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguehood/random/heavy
+	head = /obj/item/clothing/head/hatfur
+	neck = /obj/item/clothing/neck/coif/cloth//actual frontiersmen hide hat and warm coif + hide vest
 	wrists = /obj/item/clothing/wrists/bracers/leather
-	armor = /obj/item/clothing/armor/gambeson/light/striped
+	armor = /obj/item/clothing/armor/leather/hide
 	beltl = /obj/item/weapon/knife/villager
 	backl = /obj/item/weapon/polearm/halberd/bardiche/woodcutter
 	shoes = /obj/item/clothing/shoes/shortboots

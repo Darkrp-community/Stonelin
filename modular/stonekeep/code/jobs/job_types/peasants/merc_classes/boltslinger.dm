@@ -19,7 +19,7 @@
 	..()
 	shoes = /obj/item/clothing/shoes/boots/leather
 	head = /obj/item/clothing/head/helmet/kettle/slit
-	wrists = /obj/item/clothing/wrists/bracers/splint
+	wrists = /obj/item/clothing/wrists/bracers/leather
 	belt = /obj/item/storage/belt/leather/mercenary
 	armor = /obj/item/clothing/armor/leather/splint
 	beltr = /obj/item/weapon/sword/iron

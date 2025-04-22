@@ -30,19 +30,18 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) // Cut those trees #Morbiussweep
+		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // no armor training at all but 2 skills on lv 3
 		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE) // Valor pleases you, Crom.
 
-	beltr = /obj/item/weapon/sword/iron
+	beltr = /obj/item/weapon/sword/scimitar/messer
 	neck = /obj/item/clothing/neck/coif
 	pants = /obj/item/clothing/pants/loincloth
 	gloves = /obj/item/clothing/gloves/leather
 	belt = /obj/item/storage/belt/leather/mercenary
 	beltl = /obj/item/weapon/mace/cudgel
-	head = /obj/item/clothing/head/helmet/leather
+	head = /obj/item/clothing/head/helmet/horned
 	armor = /obj/item/clothing/armor/leather/hide
 	shoes = /obj/item/clothing/shoes/boots/leather
 	wrists = /obj/item/clothing/wrists/bracers/leather
@@ -56,6 +55,7 @@
 	H.change_stat("speed", -1) // fat fuck
 	H.change_stat("intelligence", 1) // Conan! What is best in life?
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)//this merc may be added on the future, is hard to discuss a non dodge master/armor trained merc
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
