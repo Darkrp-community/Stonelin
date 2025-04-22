@@ -140,6 +140,23 @@
 	created_item = /obj/item/clothing/armor/leather/splint
 	craftdiff = 1
 
+/datum/anvil_recipe/armor/iron/splintlegs
+	name = "Splint chausses (+2 cured leather)"
+	recipe_name = "durable light armor for the legs"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/pants/splintlegs
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/iron/splintbracers
+	name = "Splint vambraces (+2 cured leather)"
+	recipe_name = "durable light armor for the arms"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/wrists/bracers/splint
+	craftdiff = 1
+
+
 // --------- STEEL -----------
 /datum/anvil_recipe/armor/steel/bevor
 	name = "Bevor"
@@ -159,10 +176,10 @@
 
 
 /datum/anvil_recipe/armor/steel/brigadine
-	name = "Brigandine (+Bar x2, +Cloth)"
+	name = "Brigandine (+Bar x2, +2 cured leather)"
 	recipe_name = "a Brigandine"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/brigandine
 	craftdiff = 3
 
