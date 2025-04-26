@@ -161,7 +161,7 @@
 	body_parts_covered = COVERAGE_HEAD
 
 	max_integrity = 350
- 	item_weight = 9 * STEEL_MULTIPLIER
+	item_weight = 9 * STEEL_MULTIPLIER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/helmet/sallet/elven	// blackoak merc helmet

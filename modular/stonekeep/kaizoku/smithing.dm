@@ -95,7 +95,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/kikko
-	name = ""Turtleshell jacket (+2 cured leather)" {Kikko-Gane}"
+	name = "Turtleshell jacket (+2 cured leather) Kikko-Gane"
 	recipe_name = "a Kikko Leather Do"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
@@ -104,7 +104,7 @@
 	craftdiff = 1
 //cheaper on iron, but has many sticks. Proper for this armor's context.
 /datum/anvil_recipe/armor/rattanarmor
-	name = "Rattan armor (+Bar x2, +Stick x4) {Teng jia}" //Téng jiǎ
+	name = "Rattan armor (+Bar x2, +Stick x4) Teng jia" //Téng jiǎ
 	recipe_name = "a Rattan Armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
@@ -112,7 +112,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/kikkoarmor //cheaper brigadine with hide.
-	name = "Turtleshell Full Armor (+Bar x2, +Hide 2x) {Kikko gusoku}"
+	name = "Turtleshell Full Armor (+Bar x2,+ 2 cured leather) Kikko gusoku"
 	recipe_name = "a Kikko Gusoku"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
@@ -306,7 +306,6 @@
 
 //'neck'
 /datum/anvil_recipe/armor/shood
-=======
 	name = "Foldable hood {Karuta zukin}"
 	recipe_name = "a Karuta Zukin"
 	req_bar = /obj/item/ingot/steel
