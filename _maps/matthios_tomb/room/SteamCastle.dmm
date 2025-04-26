@@ -157,7 +157,6 @@
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/clothing/shirt/tunic/noblecoat,
 /obj/item/clothing/shoes/nobleboot/thighboots,
-/obj/item/clothing/gloves/leather/masterwork,
 /obj/item/clothing/head/crown/circlet/sleepless,
 /obj/item/weapon/polearm/woodstaff/quarterstaff/steel,
 /obj/item/clothing/ring/gold/dorpel,
@@ -3404,6 +3403,7 @@
 "LU" = (
 /obj/structure/rack/shelf/biggest,
 /obj/effect/spawner/map_spawner/loot/potion_stats,
+/obj/item/clothing/gloves/fencer,
 /turf/open/floor/herringbone,
 /area/rogue/under/cave)
 "LW" = (
