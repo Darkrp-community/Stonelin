@@ -3,7 +3,7 @@
 	tutorial = "As a Pilgrim, you begin far outside the safety of the city and must reach it in order to ply your trade. \
 	Alternatively, you can build your own settlement and enjoy the terrible dangers nature has to offer."
 	flag = ADVENTURER
-	department_flag = OUTSIDERS
+	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_PILGRIM
 	faction = FACTION_STATION

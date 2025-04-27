@@ -107,7 +107,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SK_PILGRIM		(1<<2)
 #define SK_BANDIT		(1<<3)
 
-#define OUTSIDERS           (1<<7)
+#define SK_OUTSIDERS    (1<<7)
 
 #define LORD_ORDER			1
 #define CONSORT_ORDER		2

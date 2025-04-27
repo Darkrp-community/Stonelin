@@ -295,7 +295,7 @@
 		/obj/item/neuFarm/seed/turnip = 10,
 		/obj/item/neuFarm/seed/apple = 10,
 		/obj/item/neuFarm/seed/onion = 10,
-		/obj/item/neuFarm/seed/berryrogue = 15,
+		/obj/item/neuFarm/seed/berry = 15,
 		/obj/item/neuFarm/seed/westleach = 10,
 		/obj/item/neuFarm/seed/sunflower = 10,
 		/obj/item/neuFarm/seed/swampleaf = 5,
@@ -316,7 +316,7 @@
 
 /obj/effect/spawner/map_spawner/seeds/uncommon
 	spawned = list(
-		/obj/item/neuFarm/seed/berryrogue = 40,
+		/obj/item/neuFarm/seed/berry = 40,
 		/obj/item/neuFarm/seed/westleach = 25,
 		/obj/item/neuFarm/seed/swampleaf = 15,
 		/obj/item/neuFarm/seed/pear = 15,

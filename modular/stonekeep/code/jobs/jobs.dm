@@ -20,7 +20,7 @@ The word serf means something completely different than what the original maker 
 
 /datum/job/adventurer
 	flag = SK_ADVENTURER	// STONEKEEP EDIT
-	department_flag = OUTSIDERS	// STONEKEEP EDIT
+	department_flag = SK_OUTSIDERS	// STONEKEEP EDIT
 	allowed_races = ALL_RACES_BY_NAME	// STONEKEEP EDIT
 	display_order = ADVENTURER_ORDER	// STONEKEEP EDIT
 	min_pq = 0	// STONEKEEP EDIT
@@ -42,7 +42,7 @@ The word serf means something completely different than what the original maker 
 
 /datum/job/pilgrim
 	flag = SK_PILGRIM	// STONEKEEP EDIT
-	department_flag = OUTSIDERS	// STONEKEEP EDIT
+	department_flag = SK_OUTSIDERS	// STONEKEEP EDIT
 	allowed_races = ALL_STONEKEEP_PLAYER_RACES	// STONEKEEP EDIT
 	tutorial = "Pilgrims begin far outside of the town and must reach it in order to ply their various trades. Sometimes, they build their own settlements and enjoy the terrible nature."
 	display_order = PILGRIM_ORDER	// STONEKEEP EDIT

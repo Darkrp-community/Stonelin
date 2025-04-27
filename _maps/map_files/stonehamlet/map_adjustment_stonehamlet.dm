@@ -33,7 +33,7 @@
 
 /datum/job/butcher,
 /datum/job/carpenter,
-/datum/job/mayor,
+/datum/job/town_elder,
 /datum/job/fisher,
 /datum/job/cheesemaker,
 /datum/job/archivist,

@@ -447,7 +447,7 @@
 
 /mob/living/simple_animal/hostile/insanegnome/Initialize()
 	. = ..()
-	emote(pick( "laugh"), TRUE)
+	playsound(src, pick('modular/stonekeep/sound/vo/mobs/gnome/laugh.ogg','modular/stonekeep/sound/vo/mobs/gnome/giggle.ogg'), 100, 0) // Bandaid fix since it shouldn't call emote on init
 
 /mob/living/simple_animal/hostile/insanegnome/death(gibbed)
 	playsound(src.loc, 'modular/stonekeep/sound/vo/mobs/gnome/scream.ogg', 50)

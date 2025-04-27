@@ -4,7 +4,7 @@
 	worthy of your bounty being hung on the wall outside of the local inn. \
 	You now live with your fellow free men in the bog, and generally get up to no good."
 	flag = BANDIT
-	department_flag = OUTSIDERS
+	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
 	job_flags = (JOB_EQUIP_RANK)
 	display_order = JDO_BANDIT
 	faction = FACTION_STATION

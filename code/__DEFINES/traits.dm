@@ -130,7 +130,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_DARKLING = span_info("I am a creature of the dark and am sensitive to the light. The hateful sun is especially harsh on my eyes, and I prefer to sleep during the dae."), //STONEKEEP EDIT
 	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.", //STONEKEEP EDIT
 	TRAIT_CHANGELING_METABOLISM = span_info("My metabolism breaks down demonic impurity. Now, I crave flesh rather than what is green."), // STONEKEEP EDIT
-	TRAIT_DESECRANT = span_info("I've forsaken honor and on the path of becoming Dai, for my soul is diseased and Abyssor looks down on me.") // STONEKEEP EDIT
+	TRAIT_DESECRANT = span_info("I've forsaken honor and on the path of becoming Dai, for my soul is diseased and Abyssor looks down on me."), // STONEKEEP EDIT
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new height.",
