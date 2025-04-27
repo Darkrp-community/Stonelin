@@ -8,17 +8,17 @@
 	cost = 18
 	contains = /obj/item/reagent_containers/glass/bottle/manapot
 
-/datum/supply_pack/food/stronghealthpot
+///datum/supply_pack/food/stronghealthpot
 
-	name = "Strong Healing Potion"
-	cost = 38
-	contains = /obj/item/reagent_containers/glass/bottle/stronghealthpot
+//	name = "Strong Healing Potion"
+//	cost = 38
+//	contains = /obj/item/reagent_containers/glass/bottle/stronghealthpot
 
-/datum/supply_pack/food/strongmanapot
+///datum/supply_pack/food/strongmanapot
 
-	name = "Strong Manna Potion"
-	cost = 32
-	contains = /obj/item/reagent_containers/glass/bottle/strongmanapot
+//	name = "Strong Manna Potion"
+//	cost = 32
+//	contains = /obj/item/reagent_containers/glass/bottle/strongmanapot
 
 /datum/supply_pack/food/antidote
 
