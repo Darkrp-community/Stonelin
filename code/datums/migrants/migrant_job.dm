@@ -1,7 +1,7 @@
 /datum/job/migrant
 	title = "Migrant"
 	flag = MIGRANT
-	department_flag = OUTSIDERS
+	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
 	job_flags = NONE
 	display_order = JDO_MIGRANT
 	faction = FACTION_STATION

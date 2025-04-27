@@ -446,7 +446,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 					cat_name = "Apprentices"
 				if (YOUNGFOLK)
 					cat_name = "Young Folk"
-				if (OUTSIDERS) // STONEKEEP EDIT
+				if (SK_OUTSIDERS) // STONEKEEP EDIT
 					cat_name = "Outsiders" // STONEKEEP EDIT
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
