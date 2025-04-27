@@ -26,12 +26,6 @@
 /obj/structure/roguetent/preopen,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
-"ds" = (
-/obj/structure/closet/crate/chest/wicker,
-/obj/item/ore/copper,
-/obj/item/ore/copper,
-/turf/open/floor/twig,
-/area/rogue/under/cave/sumpgrotto)
 "ef" = (
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
@@ -106,8 +100,6 @@
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/alch/bone,
 /obj/item/alch/bone,
-/obj/item/reagent_containers/food/snacks/fat,
-/obj/item/reagent_containers/food/snacks/fat,
 /turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
 "ng" = (
@@ -138,12 +130,6 @@
 /obj/structure/remains/human,
 /turf/open/floor/dirt/muddie,
 /area/rogue/under/cave/sumpgrotto)
-"pZ" = (
-/obj/item/grown/log/tree/small,
-/obj/item/grown/log/tree/small,
-/obj/structure/rack,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "qr" = (
 /obj/effect/spawner/map_spawner/rockies,
 /turf/open/floor/dirt/muddie,
@@ -153,7 +139,7 @@
 /turf/open/floor/dirt/muddie,
 /area/rogue/under/cave/sumpgrotto)
 "qv" = (
-/obj/structure/closet/crate/chest/rotting,
+/obj/structure/closet/crate/chest/wicker,
 /obj/item/clothing/neck/bogcowl,
 /obj/item/storage/backpack/satchel,
 /turf/open/floor/twig,
@@ -178,21 +164,12 @@
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/dirt/muddie,
 /area/rogue/under/cave/sumpgrotto)
-"sT" = (
-/obj/machinery/light/fueled/forge,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "te" = (
 /obj/structure/barricade/rogue,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
-"tB" = (
-/obj/structure/table/wood/crafted,
-/turf/open/floor/twig,
-/area/rogue/under/cave/sumpgrotto)
 "tG" = (
 /obj/structure/table/wood/crafted,
-/obj/item/cooking/pan,
 /turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
 "tW" = (
@@ -291,11 +268,6 @@
 /obj/structure/fluff/walldeco/rags,
 /turf/closed/wall/mineral/tent,
 /area/rogue/under/cave/sumpgrotto)
-"FL" = (
-/obj/structure/closet/crate/chest/rotting,
-/obj/item/needle/thorn,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "HZ" = (
 /obj/effect/spawner/map_spawner/rockies,
 /turf/open/floor/naturalstone,
@@ -317,11 +289,6 @@
 /obj/structure/fluff/walldeco/rags/skull,
 /obj/structure/barricade/rogue,
 /turf/closed/mineral/bedrock,
-/area/rogue/under/cave/sumpgrotto)
-"KM" = (
-/obj/structure/table/wood/crafted,
-/obj/item/weapon/tongs/stone,
-/turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "KO" = (
 /turf/closed/wall/mineral/roofwall/center,
@@ -350,20 +317,6 @@
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
-"LU" = (
-/obj/machinery/light/fueled/torchholder/c,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
-"Mo" = (
-/obj/structure/closet/crate/chest/wicker,
-/obj/item/ore/tin,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
-"Mu" = (
-/obj/machinery/anvil,
-/obj/item/weapon/hammer/iron,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "Ng" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -387,8 +340,7 @@
 /turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
 "Qy" = (
-/obj/structure/closet/crate/chest/rotting,
-/obj/item/ingot/iron,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
 "QK" = (
@@ -396,18 +348,9 @@
 /obj/structure/table/wood/crafted,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
-"Re" = (
-/obj/machinery/light/fueled/hearth,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "Ri" = (
 /obj/effect/decal/remains/bigrat,
 /turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
-"Rn" = (
-/obj/item/weapon/axe/stone,
-/obj/structure/table/wood/crafted,
-/turf/open/floor/twig,
 /area/rogue/under/cave/sumpgrotto)
 "Ro" = (
 /obj/effect/spawner/map_spawner/bogdirt,
@@ -427,7 +370,8 @@
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
 "SY" = (
-/obj/machinery/light/fueled/smelter,
+/obj/item/weapon/axe/stone,
+/obj/structure/table/wood/crafted,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "Tf" = (
@@ -442,10 +386,6 @@
 /obj/structure/well/climb_up,
 /turf/open/water/cleanshallow,
 /area/rogue/under/cave)
-"UX" = (
-/obj/machinery/tanningrack,
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
 "VB" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 9
@@ -469,13 +409,6 @@
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave/sumpgrotto)
-"Zf" = (
-/obj/structure/closet/crate/chest/wicker,
-/obj/item/ore/iron,
-/obj/item/ore/iron,
-/obj/item/ore/iron,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "ZJ" = (
@@ -1392,7 +1325,7 @@ ab
 ab
 ab
 ab
-Jm
+ab
 ef
 ef
 ef
@@ -1458,7 +1391,7 @@ ef
 ef
 ab
 ab
-Jm
+ab
 Jm
 ef
 ef
@@ -2261,7 +2194,7 @@ ef
 HZ
 ab
 ab
-Jm
+ab
 ab
 ab
 ab
@@ -2312,7 +2245,7 @@ kO
 Jm
 ab
 ab
-Jm
+ab
 ab
 ab
 ab
@@ -2365,7 +2298,7 @@ ef
 ef
 RN
 ab
-Jm
+ab
 ab
 ef
 ef
@@ -2432,7 +2365,7 @@ ef
 ef
 RN
 Jm
-Jm
+ab
 ab
 ab
 ef
@@ -2486,7 +2419,7 @@ ab
 ab
 ab
 ab
-Jm
+ab
 Jm
 RN
 ef
@@ -2499,8 +2432,8 @@ ef
 ef
 ef
 Jm
-Jm
-Jm
+ab
+ab
 ab
 ri
 ab
@@ -2566,7 +2499,7 @@ ef
 ef
 ef
 RN
-Jm
+ab
 ab
 ab
 ab
@@ -2722,7 +2655,7 @@ rs
 rs
 ab
 ab
-FL
+ab
 RN
 RN
 ef
@@ -2903,9 +2836,9 @@ ef
 ef
 ef
 RN
-Jm
 ab
-Jm
+ab
+ab
 ab
 ab
 ab
@@ -2971,9 +2904,9 @@ ef
 ef
 kO
 Jm
-Jm
-Jm
-Jm
+ab
+ab
+ab
 ab
 ab
 ab
@@ -3038,8 +2971,8 @@ ef
 ef
 jS
 Jm
-Jm
-Jm
+ab
+ab
 ab
 ab
 ab
@@ -3104,7 +3037,7 @@ ef
 ef
 Jm
 Jm
-Jm
+ab
 ab
 ab
 ef
@@ -3116,9 +3049,9 @@ ab
 ab
 gM
 ab
-rY
-tB
-UX
+ab
+ab
+ab
 ab
 VB
 Xt
@@ -3170,7 +3103,7 @@ ef
 ef
 ef
 ab
-Jm
+ab
 ab
 ab
 ef
@@ -3183,14 +3116,14 @@ ab
 ab
 gM
 ab
-Ay
-Ay
-Ay
+ab
+ab
+ab
 ab
 bH
 Ay
 tG
-ab
+rY
 ab
 mE
 oP
@@ -3205,7 +3138,7 @@ RN
 qt
 kO
 Jm
-Jm
+ab
 ab
 ab
 ab
@@ -3257,7 +3190,7 @@ ab
 lc
 Ay
 Ay
-Re
+ab
 ab
 ab
 es
@@ -3358,7 +3291,7 @@ ab
 ab
 HZ
 ef
-ef
+ab
 ab
 ab
 ef
@@ -3423,10 +3356,10 @@ ab
 ab
 ab
 ab
+ef
+ef
 gp
-gp
-gp
-LU
+ab
 ab
 te
 ef
@@ -3487,12 +3420,12 @@ ef
 ef
 ef
 te
-pZ
 ab
+rY
 ab
-sT
-Mu
-eo
+ef
+gp
+gp
 If
 Ay
 yv
@@ -3562,7 +3495,7 @@ ab
 Qr
 ab
 Ay
-Rn
+Ay
 ef
 "}
 (47,1,1) = {"
@@ -3621,7 +3554,6 @@ ef
 ef
 ef
 gp
-KM
 ab
 ab
 ab
@@ -3629,7 +3561,8 @@ ab
 ab
 ab
 ab
-ds
+ab
+Qy
 ef
 "}
 (48,1,1) = {"
@@ -3696,7 +3629,7 @@ do
 oP
 ab
 ab
-Zf
+ab
 ef
 "}
 (49,1,1) = {"
@@ -3763,7 +3696,7 @@ ab
 oP
 ab
 ab
-Mo
+ri
 ef
 "}
 (50,1,1) = {"
@@ -3779,7 +3712,7 @@ ab
 ab
 ab
 Jm
-Jm
+ab
 ab
 ab
 ab
@@ -3829,7 +3762,7 @@ Ay
 ab
 oP
 ab
-ri
+ab
 ef
 ef
 "}
@@ -3989,7 +3922,7 @@ ab
 ab
 ab
 ab
-Jm
+ab
 ab
 Jm
 RN
@@ -4055,8 +3988,8 @@ ab
 ab
 ab
 ab
-Jm
-Jm
+ab
+ab
 Jm
 Jm
 RN
@@ -4123,7 +4056,7 @@ ab
 ab
 ab
 ab
-Jm
+ab
 RN
 RN
 ef

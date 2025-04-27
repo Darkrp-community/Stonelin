@@ -23,10 +23,6 @@
 
 /obj/item
 	var/list/attunement_values
-	///this is in KG
-	var/item_weight = 0
-	///this is a multiplier to the weight of items inside of this items contents
-	var/carry_multiplier = 1
 
 /*
 * Weird proc that prevents

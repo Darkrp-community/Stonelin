@@ -19,7 +19,6 @@
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
-	item_weight = 7
 
 
 //................ Armored Surcoat ............... //	- splint mail looking armor thats colored
@@ -30,7 +29,6 @@
 	item_state = "surcoat"
 	detail_tag = "_metal"		// metal bits are the details so keep them uncolorer = white
 	detail_color = COLOR_WHITE
-	item_weight = 7.4
 
 /obj/item/clothing/armor/medium/surcoat/Initialize()
 	. = ..()

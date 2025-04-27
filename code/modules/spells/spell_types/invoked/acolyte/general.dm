@@ -15,7 +15,6 @@
 	recharge_time = 10 SECONDS
 	devotion_cost = 10
 	miracle = TRUE
-	healing_miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/lesser_heal/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -184,7 +183,6 @@
 	antimagic_allowed = TRUE
 	recharge_time = 20 SECONDS
 	miracle = TRUE
-	healing_miracle = TRUE
 	devotion_cost = 45
 
 /obj/effect/proc_holder/spell/invoked/heal/cast(list/targets, mob/living/user)
@@ -269,5 +267,4 @@
 		var/mob/living/victim = targets[1]
 		if(victim.can_hear())
 			victim.apply_status_effect(/datum/status_effect/debuff/viciousmockery)
-			GLOB.vanderlin_round_stats[STATS_PEOPLE_MOCKED]++
 		return TRUE

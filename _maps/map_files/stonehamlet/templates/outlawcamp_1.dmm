@@ -211,11 +211,6 @@
 /obj/item/rope,
 /turf/open/floor/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
-"Hm" = (
-/turf/closed/wall/mineral/tent{
-	dir = 1
-	},
-/area/rogue/indoors/shelter/rtfield)
 "HJ" = (
 /obj/item/chair/stool/bar,
 /turf/open/floor/dirt,
@@ -223,16 +218,6 @@
 "Mh" = (
 /obj/item/storage/backpack/satchel/heartfelt,
 /turf/open/floor/dirt/road,
-/area/rogue/indoors/shelter/rtfield)
-"ML" = (
-/turf/closed/wall/mineral/tent{
-	dir = 4
-	},
-/area/rogue/indoors/shelter/rtfield)
-"Nh" = (
-/turf/closed/wall/mineral/tent{
-	dir = 8
-	},
 /area/rogue/indoors/shelter/rtfield)
 "NB" = (
 /obj/machinery/light/fueled/firebowl/stump,
@@ -327,15 +312,15 @@ fB
 Wj
 fB
 zg
-Nh
-Nh
-Nh
+VP
+VP
+VP
 zg
 wv
-Nh
-Nh
-Nh
-Nh
+VP
+VP
+VP
+VP
 xd
 fB
 "}
@@ -347,13 +332,13 @@ fB
 Wj
 fB
 Wj
-Hm
+VP
 mK
 yv
 aV
 VP
 wv
-Hm
+VP
 gE
 lZ
 VP
@@ -368,13 +353,13 @@ Wj
 fB
 wv
 fB
-Hm
+VP
 mK
 Op
 hw
 VP
 wv
-Hm
+VP
 mK
 mK
 VP
@@ -389,13 +374,13 @@ xd
 wW
 wv
 xd
-Hm
+VP
 mK
 Um
 wK
 Ry
 ta
-Hm
+VP
 Ft
 mK
 VP
@@ -404,27 +389,27 @@ wv
 "}
 (5,1,1) = {"
 zg
-Nh
+VP
 zg
 dc
 or
 qa
 DF
-Hm
+VP
 lZ
 ue
 RK
 VP
 ya
-ML
-ML
+VP
+VP
 hP
-ML
+VP
 wv
 fB
 "}
 (6,1,1) = {"
-Hm
+VP
 kb
 hP
 yW
@@ -432,9 +417,9 @@ yW
 Am
 sM
 zg
-ML
-ML
-ML
+VP
+VP
+VP
 zg
 cm
 jq
@@ -446,7 +431,7 @@ wv
 "}
 (7,1,1) = {"
 zg
-ML
+VP
 zg
 qa
 or
@@ -472,8 +457,8 @@ Wj
 fB
 xd
 zg
-Nh
-Nh
+VP
+VP
 zr
 wv
 wv
@@ -512,7 +497,7 @@ fB
 fB
 Wj
 fB
-Hm
+VP
 tV
 kQ
 mK
@@ -533,7 +518,7 @@ Wj
 fB
 Wj
 xd
-Hm
+VP
 iD
 mK
 mK
@@ -577,8 +562,8 @@ fB
 Wj
 fB
 zg
-ML
-ML
+VP
+VP
 zg
 or
 wv
@@ -621,14 +606,14 @@ Wj
 fB
 wv
 zg
-Nh
-Nh
+VP
+VP
 hP
 zg
 wv
 zg
-Nh
-Nh
+VP
+VP
 hP
 zg
 wv
@@ -641,13 +626,13 @@ Wj
 fB
 Wj
 fB
-Hm
+VP
 Hf
 mK
 mK
 VP
 wv
-Hm
+VP
 NK
 EX
 mK
@@ -662,13 +647,13 @@ fB
 fB
 Wj
 fB
-Hm
+VP
 Ch
 ON
 lZ
 VP
 or
-Hm
+VP
 cr
 mK
 XA
@@ -684,12 +669,12 @@ Wj
 fB
 Wj
 zg
-ML
-ML
-ML
+VP
+VP
+VP
 zg
 fB
-Hm
+VP
 lZ
 tV
 tV
@@ -711,9 +696,9 @@ xd
 Wj
 xd
 zg
-ML
-ML
-ML
+VP
+VP
+VP
 zg
 xd
 "}

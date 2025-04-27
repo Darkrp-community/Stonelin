@@ -105,7 +105,6 @@
 	var/tempatarget = null
 	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
 	var/pet_passive = FALSE
-	var/abyssariadraider = FALSE //Code for abyssariad NPCs, solely.
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
@@ -153,7 +152,7 @@
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		user.adjust_stamina(10)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		user.adjust_stamina(8)	// STONEKEEP EDIT
+		user.adjust_stamina(10)
 	var/turf/turf_before = get_turf(M)
 	if(M.checkdefense(user.used_intent, user))
 		if(M.d_intent == INTENT_PARRY)

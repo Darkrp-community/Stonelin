@@ -1,6 +1,5 @@
 /turf/closed
 	name = ""
-	icon_state = "black"
 	layer = CLOSED_TURF_LAYER
 	opacity = 1
 	density = TRUE
@@ -247,7 +246,7 @@
 /turf/closed/indestructible/wooddark
 	name = "wall"
 	desc = ""
-	icon = 'icons/turf/walls.dmi'
+	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "corner"
 
 /turf/closed/indestructible/roguewindow

@@ -31,6 +31,10 @@
 	food_type = list()
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
+	STACON = 15
+	STAEND = 15
+	STASTR = 10
+	STASPD = 6
 	simple_detect_bonus = 20
 	deaggroprob = 0
 	defprob = 40
@@ -42,11 +46,7 @@
 	attack_sound = 'sound/combat/hits/onstone/wallhit.ogg'
 	dodgetime = 30
 	aggressive = 1
-
-	base_constitution = 15
-	base_endurance = 15
-	base_strength = 10
-	base_speed = 6
+//	stat_attack = UNCONSCIOUS
 
 /mob/living/simple_animal/hostile/retaliate/elemental/warden/Initialize()
 	. = ..()
@@ -74,8 +74,7 @@
 	if(!target)
 		return
 	yeet(target)
-	if(!QDELETED(target))
-		return target.attack_animal(src)
+	return target.attack_animal(src)
 
 /mob/living/simple_animal/hostile/retaliate/elemental/warden/proc/yeet(target)
 	var/atom/throw_target = get_edge_target_turf(src, get_dir(src, target)) //ill be real I got no idea why this worked.

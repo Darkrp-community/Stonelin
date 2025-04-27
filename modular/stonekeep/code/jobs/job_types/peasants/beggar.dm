@@ -2,7 +2,6 @@
 	title = "Beggar"
 	flag = SK_BEGGAR
 //	flag = APPRENTICE	ROGTODO again, their apprenrtice system, is it something good or bad.
-	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	department_flag = PEASANTS
 	total_positions = 15
 	spawn_positions = 15
@@ -18,7 +17,6 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/beggar
 	banned_leprosy = FALSE
-	bypass_lastclass = TRUE
 
 	tutorial = "The smell of filth and sweat no longer bother you, the glances of disgust or pity others give you familiar  ; the only reason you've not dead in a mud pit already is because you are tough as a old leather sole, hardned by ratbites, sticks and stones."
 	display_order = BEGGAR_ORDER
@@ -68,24 +66,23 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, pick(2,3,4,5), TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3,4), TRUE) // Street-fu
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
-		H.change_stat(STATKEY_LCK, rand(-2, 2), TRUE)
+		H.TOTALLUC = rand(1, 20)
 	if(prob(5))
 		r_hand = /obj/item/weapon/mace/woodclub
 	if(prob(20))
-		H.change_stat(STATKEY_CON, 2)
-		H.change_stat(STATKEY_INT, -1)
+		H.change_stat("constitution", 2)
+		H.change_stat("intelligence", -1)
 	if(prob(20))
-		H.change_stat(STATKEY_END, 3)
-		H.change_stat(STATKEY_CON, -1)
+		H.change_stat("endurance", 3)
+		H.change_stat("constitution", -1)
 	if(prob(20))
-		H.change_stat(STATKEY_STR, 2)
-		H.change_stat(STATKEY_CON, -1)
-		H.change_stat(STATKEY_END, -1)
-		H.change_stat(STATKEY_INT, -1)
-	H.change_stat(STATKEY_INT, -2)
-	H.change_stat(STATKEY_CON, -2)
-	H.change_stat(STATKEY_END, -1)
-
+		H.change_stat("strength", 2)
+		H.change_stat("constitution", -1)
+		H.change_stat("endurance", -1)
+		H.change_stat("intelligence", -1)
+	H.change_stat("intelligence", -2)
+	H.change_stat("constitution", -2)
+	H.change_stat("endurance", -1)
 
 /datum/outfit/job/vagrant
 	name = "Beggar"

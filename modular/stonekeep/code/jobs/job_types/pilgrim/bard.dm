@@ -15,7 +15,8 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Skylancer"
+		"Skylancer",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/bard
 	category_tags = list(CTAG_PILGRIM)

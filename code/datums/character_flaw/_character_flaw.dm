@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/randflaw
 	name = "Random Flaw"
-	desc = "Chooses a random flaw (70% chance for no flaw)"
+	desc = "Chooses a random flaw (50% chance for no flaw)"
 	var/nochekk = TRUE
 
 /datum/charflaw/randflaw/flaw_on_life(mob/user)
@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		var/mob/living/carbon/human/H = user
 		if(H.ckey)
 			nochekk = FALSE
-			if(prob(70))	// STONEKEEP EDIT
+			if(prob(50))
 				var/flawz = GLOB.character_flaws.Copy()
 				var/charflaw = pick_n_take(flawz)
 				charflaw = GLOB.character_flaws[charflaw]

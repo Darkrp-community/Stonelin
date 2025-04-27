@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/stonekeep/innkeep
 	display_order = INNKEEP_ORDER
 	give_bank_account = 60
-	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
+	cmode_music = 'sound/music/cmode/towner/CombatInn.ogg'
 
 
 /datum/outfit/job/stonekeep/innkeep/pre_equip(mob/living/carbon/human/H)

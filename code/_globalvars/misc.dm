@@ -33,5 +33,3 @@ GLOBAL_VAR(bible_icon_state)
 GLOBAL_VAR(bible_item_state)
 GLOBAL_VAR(holy_weapon_type)
 GLOBAL_VAR(holy_armor_type)
-
-GLOBAL_VAR(xylix_trickery)

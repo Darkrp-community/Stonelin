@@ -27,7 +27,7 @@
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
-	misscost = 6
+	misscost = 5
 	item_damage_type = "slash"
 
 /datum/intent/axe/chop/great//unique long attack for axes, basically you swing really really hard, stills worse than a polearm like the bardiche or spear
@@ -35,7 +35,6 @@
 	reach = 2
 	chargetime = 1
 	item_damage_type = "slash"
-	misscost = 8
 
 
 /*------------\
@@ -70,7 +69,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
-	misscost = 8
+	misscost = 10
 	item_damage_type = "stab"
 
 //................ Stone Axe ............... //

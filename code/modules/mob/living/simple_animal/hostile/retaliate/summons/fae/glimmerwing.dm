@@ -31,9 +31,9 @@
 	food_type = list()
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	base_constitution = 7
-	base_strength = 9
-	base_speed = 15
+	STACON = 7
+	STASTR = 9
+	STASPD = 15
 	simple_detect_bonus = 20
 	deaggroprob = 0
 	defprob = 40
@@ -77,5 +77,4 @@
 		targetted.visible_message(span_danger("[src] dusts [target] with some kind of powder!"))
 		targetted.adjustToxLoss(15)
 		src.drug_cd = world.time
-	if(!QDELETED(target))
-		return target.attack_animal(src)
+	return target.attack_animal(src)

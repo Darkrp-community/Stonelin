@@ -6,7 +6,7 @@
 	There is nothing in this world that you can't build, your creed and hardwork has revealed all the secrets of the stone."
 	allowed_ages = list(AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen", "Aasimar")
+	allowed_races = list("Humen", "Aasimar","Dark Elf", "Tiefling")
 	outfit = /datum/outfit/job/sk/pilgrim/grandmastermason
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1

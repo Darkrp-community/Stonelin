@@ -126,17 +126,13 @@
 	uni_identity = generate_uni_identity()
 	unique_enzymes = generate_unique_enzymes()
 
-/datum/dna/proc/initialize_dna(newblood_type = random_human_blood_type(), skip_index = FALSE, datum/species/species_override = null)
+/datum/dna/proc/initialize_dna(newblood_type = random_human_blood_type(), skip_index = FALSE)
 	if(newblood_type)
 		human_blood_type = newblood_type
 	unique_enzymes = generate_unique_enzymes()
 	uni_identity = generate_uni_identity()
-	//features = random_features() //Stonekeep Change.
+	features = random_features()
 
-	if(species_override) //Part of the Ear/Tail fix. Stonekeep Change.
-		features = merged_features(species_override)
-	else
-		features = random_features()
 
 /datum/dna/stored //subtype used by brain mob's stored_dna
 

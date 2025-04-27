@@ -2,7 +2,7 @@
 	name = "Priest of Noc"
 	greet_text = "It is time to replace the Sun Queen with her superior brother as the head of the Pantheon! Inspired by divine command in your dreams, you must take over the local Temple and make them recognize the supremacy of Noc."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = ALL_RACES_BY_NAME
+	allowed_races = ALL_RACES_FOR_REAL
 	outfit = /datum/outfit/job/sk_migration/noc_priest
 	grant_lit_torch = TRUE
 
@@ -16,9 +16,7 @@
 		if(H.patron != /datum/patron/divine/noc) // For some stupid reason this was checking for Dendor before.
 			H.set_patron(/datum/patron/divine/noc)
 
-
-
-	head = /obj/item/clothing/head/helmet/nocpriest
+	head = /obj/item/clothing/head/roguehood/nochood/priest
 	neck = /obj/item/clothing/neck/psycross/noc
 	wrists = /obj/item/clothing/wrists/nocwrappings
 	shoes = /obj/item/clothing/shoes/sandals

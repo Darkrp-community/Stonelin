@@ -7,7 +7,7 @@
 	name = "amethyst transmutation"
 	output = /obj/item/gem/amethyst
 	reagent_requirements = list(
-		/datum/reagent/medicine/manapot = 15
+		/datum/reagent/medicine/manapot/weak = 15
 	)
 	requirements = list(
 		/obj/item/natural/stone = TRUE
@@ -18,8 +18,7 @@
 
 	attacked_atom = /obj/item/natural/stone
 	starting_atom = /obj/item/weapon/knife
-	subtypes_allowed = TRUE // so you can use any subtype of knife
-	reagent_subtypes_allowed = TRUE // so normal mana potions can be used as well as weak ones.
+	subtypes_allowed = TRUE // so you can use any subtype of fur
 
 /datum/repeatable_crafting_recipe/arcyne/manabloom_powder
 	name = "manabloom powder"

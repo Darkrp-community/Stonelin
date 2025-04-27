@@ -19,7 +19,6 @@
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STANDARD
 	salvage_result = /obj/item/natural/hide/cured
-	item_weight = 3.2
 
 /obj/item/clothing/armor/leather/advanced
 	name = "hardened leather coat"
@@ -61,7 +60,6 @@
 	armor = ARMOR_LEATHER_GOOD
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG
-	item_weight = 6.7
 
 
 //................ Leather Vest ............... //	- has no sleeves.  - can be worn in armor OR shirt slot
@@ -81,7 +79,6 @@
 	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 	salvage_result = /obj/item/natural/hide/cured
-	item_weight = 2.2
 
 /obj/item/clothing/armor/leather/vest/random/Initialize()
 	color = pick(CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN)
@@ -92,7 +89,6 @@
 	name = "butchers vest"
 	icon_state = "leathervest"
 	color = "#d69c87" // custom coloring
-	item_weight = 1.8
 
 //................ Other Vests ............... //
 /obj/item/clothing/armor/leather/vest/butler
@@ -156,7 +152,6 @@
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
 	body_parts_covered = COVERAGE_SHIRT
-	item_weight = 2.2
 
 /obj/item/clothing/armor/leather/jacket/ComponentInitialize()
 	. = ..()

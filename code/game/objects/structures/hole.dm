@@ -2,7 +2,7 @@
 /obj/structure/closet/dirthole
 	name = "hole"
 	icon_state = "hole1"
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/roguefloor.dmi'
 	var/stage = 1
 	var/mutable_appearance/abovemob
 	var/turf/open/floor/dirt/mastert
@@ -175,7 +175,6 @@
 			locked = FALSE
 			open()
 			for(var/obj/structure/gravemarker/G in loc)
-				GLOB.vanderlin_round_stats[STATS_GRAVES_ROBBED]++
 				qdel(G)
 				if(isliving(user))
 					var/mob/living/L = user
@@ -300,7 +299,7 @@
 	update_abovemob()
 
 /obj/structure/closet/dirthole/Initialize()
-	abovemob = mutable_appearance('icons/turf/floors.dmi', "grave_above")
+	abovemob = mutable_appearance('icons/turf/roguefloor.dmi', "grave_above")
 	abovemob.layer = ABOVE_MOB_LAYER
 	update_icon()
 	var/turf/open/floor/dirt/T = loc

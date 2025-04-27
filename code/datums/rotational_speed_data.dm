@@ -99,7 +99,9 @@
 
 /obj/structure/proc/find_rotation_network()
 	var/turf/step_forward = get_step(src, dir)
-	for(var/obj/structure/structure in step_forward?.contents)
+	if(!step_forward)
+		return
+	for(var/obj/structure/structure in step_forward.contents)
 		if(structure.dir != dir && structure.dir != GLOB.reverse_dir[dir] && !istype(structure, /obj/structure/gearbox) && !istype(structure, /obj/structure/minecart_rail))
 			continue
 		if(structure.rotation_network)
@@ -111,7 +113,7 @@
 					rotation_break()
 
 	var/turf/step_back = get_step(src, GLOB.reverse_dir[dir])
-	for(var/obj/structure/structure in step_back?.contents)
+	for(var/obj/structure/structure in step_back.contents)
 		if(structure.dir != dir && structure.dir != GLOB.reverse_dir[dir])
 			continue
 		if(structure.rotation_network)
@@ -163,6 +165,8 @@
 	if(connector.rotation_direction && connector.rotation_direction != rotation_direction)
 		if(connector.rotations_per_minute && rotations_per_minute)
 			return FALSE
+	if(connector.stress_generator && connector.giving_stress && !stress_generator)
+		return FALSE
 	return TRUE
 
 /obj/structure/proc/try_network_merge(obj/structure/connector)

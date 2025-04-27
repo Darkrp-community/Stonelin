@@ -22,7 +22,6 @@ GLOBAL_LIST_INIT(dungeon_exit, list())
 
 	var/dungeon_id
 	var/list/dungeon_exits = list()
-	var/can_enter = TRUE
 
 /obj/structure/dungeon_entry/New(loc, ...)
 	GLOB.dungeon_entrys |= src
@@ -64,8 +63,6 @@ GLOBAL_LIST_INIT(dungeon_exit, list())
 	return ..()
 
 /obj/structure/dungeon_entry/proc/use(mob/user, is_ghost)
-	if(!is_ghost && !can_enter)
-		return
 	if(!length(dungeon_exits))
 		return
 	var/atom/exit = pick(dungeon_exits)

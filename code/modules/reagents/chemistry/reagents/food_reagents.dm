@@ -215,16 +215,3 @@
 		M.adjustOxyLoss(-1*REM, 0)
 		M.adjustToxLoss(-1*REM, 0)
 	..()
-
-/datum/reagent/consumable/nutriment/plantfiber //the alternative to screw with changelings.
-	name = "Plant Fiber"
-
-/datum/reagent/consumable/nutriment/plantfiber/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_CHANGELING_METABOLISM)) //Vegetarianism is not a choice for you.
-		M.add_nausea(2)
-		M.adjustToxLoss(1)
-	else
-		if(prob(50))
-			M.heal_bodypart_damage(brute_heal,burn_heal, 0)
-			. = 1
-		..()

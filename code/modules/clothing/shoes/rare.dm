@@ -24,7 +24,6 @@
 	allowed_race = list("elf", "half-elf", "dark elf")
 	color = null
 	blocksound = PLATEHIT
-	item_weight = 7 * STEEL_MULTIPLIER
 
 /obj/item/clothing/shoes/boots/rare/elfplate/welfplate
 	name = "elvish plated boots"
@@ -47,7 +46,6 @@
 	item_state = "dwarfshoe"
 	color = null
 	blocksound = PLATEHIT
-	item_weight = 7 * STEEL_MULTIPLIER
 
 /obj/item/clothing/shoes/boots/rare/grenzelplate
 	name = "grenzelhoft \"Elvenbane\" sabatons"
@@ -61,7 +59,6 @@
 	item_state = "human_swordshoes"
 	color = null
 	blocksound = PLATEHIT
-	item_weight = 7 * STEEL_MULTIPLIER
 
 /obj/item/clothing/shoes/boots/rare/zybanplate
 	name = "zybantean segmented plate boots"
@@ -75,4 +72,3 @@
 	item_state = "human_spearshoe"
 	color = null
 	blocksound = PLATEHIT
-	item_weight = 7 * STEEL_MULTIPLIER

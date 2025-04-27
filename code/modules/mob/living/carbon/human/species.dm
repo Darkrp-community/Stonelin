@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/language = speech_args[SPEECH_LANGUAGE]
 
 	if(message)
-		var/list/accent_words = strings("accents/spellcheck.json", "spellcheck")
+		var/list/accent_words = strings("spellcheck.json", "spellcheck")
 		var/mob/living/carbon/human/H
 		if(ismob(source))
 			H = source
@@ -203,7 +203,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(message && message[1] && message[1] != "*")
 		message = " [message]"
 
-		var/list/accent_words = strings("accents/accent_universal.json", "universal")
+		var/list/accent_words = strings("accent_universal.json", "universal")
 		for(var/key in accent_words)
 			var/value = accent_words[key]
 			if(islist(value))
@@ -524,7 +524,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/tongue/tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
 	var/obj/item/organ/liver/liver = C.getorganslot(ORGAN_SLOT_LIVER)
 	var/obj/item/organ/stomach/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
-	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_GUTS)
+	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_STOMACH_AID)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
@@ -893,7 +893,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				//List of all valid dynamic_hair_suffixes
 				var/static/list/extensions
 				if(!extensions)
-					var/icon/hair_extensions = icon('modular/stonekeep/icons/mobs/hair_extensions.dmi') // STONEKEEP EDIT
+					var/icon/hair_extensions = icon('icons/roguetown/mob/hair_extensions.dmi') //hehe
 					extensions = list()
 					for(var/s in hair_extensions.IconStates(1))
 						extensions[s] = TRUE
@@ -904,7 +904,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/hair_file = S.icon
 				if(extensions[hair_state+dynamic_hair_suffix])
 					hair_state += dynamic_hair_suffix
-					hair_file = 'modular/stonekeep/icons/mobs/hair_extensions.dmi' // STONEKEEP EDIT
+					hair_file = 'icons/roguetown/mob/hair_extensions.dmi'
 
 				hair_overlay.icon = hair_file
 				hair_overlay.icon_state = hair_state
@@ -2801,11 +2801,3 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/modifier = -distance
 	if(!prob(STAEND+skill_modifier+modifier))
 		Knockdown(8)
-
-//Stonelin part. May require to be moved somewhere else, as it is not a 'modular' kaizoku thing.
-/proc/merged_features(datum/species/spec)
-	var/list/features = random_features()
-	if(spec?.default_features)
-		for(var/key in spec.default_features)
-			features[key] = spec.default_features[key]
-	return features

@@ -7,7 +7,7 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/corsair
 	category_tags = list(CTAG_SKMERCENARY)
-	cmode_music = 'modular/stonekeep/sound/cmode/combat_duelist.ogg'
+	cmode_music = 'sound/music/cmode/combat_duelist.ogg'
 	maximum_possible_slots = 5
 
 /datum/outfit/job/stonekeep/merc/corsair
@@ -16,10 +16,9 @@
 	belt = /obj/item/storage/belt/leather/mercenary
 	armor = /obj/item/clothing/armor/leather/jacket/sea
 	backl = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/natural/worms/leech = 2,/obj/item/storage/belt/pouch/coins/mid)
-	backr = /obj/item/fishingrod/fisher
+	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
 	beltl = /obj/item/weapon/sword/sabre/cutlass
-	beltr = /obj/item/weapon/knife/throwingknife
+	beltr = /obj/item/weapon/knife/dagger
 	shoes = /obj/item/clothing/shoes/boots
 
 /datum/outfit/job/stonekeep/merc/corsair/pre_equip(mob/living/carbon/human/H)
@@ -30,16 +29,15 @@
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) // Swords / Nonlethal.
-		H.mind?.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE) // For jumping off roofs. Don't lower.
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) // mercenaries aren't rogues.
 		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE) // Most other classes have better Sneaking.
-		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 	shirt = pick(/obj/item/clothing/shirt/undershirt/sailor, /obj/item/clothing/shirt/undershirt/sailor/red)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	H.change_stat("endurance", 2)
+	H.change_stat("endurance", 1)
 	H.change_stat("speed", 2)

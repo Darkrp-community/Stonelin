@@ -14,7 +14,6 @@
 	smeltresult = /obj/item/ingot/gold
 	sellprice = 10
 	melting_material = /datum/material/gold
-	item_weight = 6.2 * GOLD_MULITPLIER
 
 /obj/item/ore/gold/Initialize()
 	icon_state = "oregold[rand(1,3)]"
@@ -27,7 +26,6 @@
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 8
 	melting_material = /datum/material/silver
-	item_weight = 6.2 * SILVER_MULTIPLIER
 
 /obj/item/ore/silver/Initialize()
 	icon_state = "oresilv[rand(1,3)]"
@@ -40,7 +38,6 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = 5
 	melting_material = /datum/material/iron
-	item_weight = 6.2 * IRON_MULTIPLIER
 
 /obj/item/ore/iron/Initialize()
 	icon_state = "oreiron[rand(1,3)]"
@@ -53,7 +50,6 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 2
 	melting_material = /datum/material/copper
-	item_weight = 6.2 * COPPER_MULTIPLIER
 
 /obj/item/ore/copper/Initialize()
 	icon_state = "orecop[rand(1,3)]"
@@ -66,7 +62,6 @@
 	smeltresult = /obj/item/ingot/tin
 	sellprice = 4
 	melting_material = /datum/material/tin
-	item_weight = 6.2 * TIN_MULTIPLIER
 
 /obj/item/ore/tin/Initialize()
 	icon_state = "oretin[rand(1,3)]"
@@ -78,7 +73,6 @@
 	firefuel = 5 MINUTES
 	smeltresult = /obj/item/ore/coal
 	sellprice = 1
-	item_weight = 7
 
 /obj/item/ore/coal/Initialize()
 	icon_state = "orecoal[rand(1,3)]"
@@ -90,7 +84,6 @@
 	icon_state = "orecinnabar"
 	grind_results = list(/datum/reagent/mercury = 15)
 	sellprice = 5
-	item_weight = 6.2
 
 /obj/item/ingot
 	name = "ingot"
@@ -158,7 +151,6 @@
 	smeltresult = /obj/item/ingot/gold
 	sellprice = 100
 	melting_material = /datum/material/gold
-	item_weight = 7.5 * GOLD_MULITPLIER
 
 /obj/item/ingot/iron
 	name = "iron bar"
@@ -167,7 +159,6 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = 25
 	melting_material = /datum/material/iron
-	item_weight = 7.5 * IRON_MULTIPLIER
 
 /obj/item/ingot/copper
 	name = "copper bar"
@@ -176,7 +167,6 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 10
 	melting_material = /datum/material/copper
-	item_weight = 7.5 * COPPER_MULTIPLIER
 
 /obj/item/ingot/tin
 	name = "tin bar"
@@ -185,7 +175,6 @@
 	smeltresult = /obj/item/ingot/tin
 	sellprice = 15
 	melting_material = /datum/material/tin
-	item_weight = 7.5 * TIN_MULTIPLIER
 
 /obj/item/ingot/bronze
 	name = "bronze bar"
@@ -194,7 +183,6 @@
 	smeltresult = /obj/item/ingot/bronze
 	sellprice = 30
 	melting_material = /datum/material/bronze
-	item_weight = 7.5 * BRONZE_MULTIPLIER
 
 /obj/item/ingot/silver
 	name = "silver bar"
@@ -203,7 +191,6 @@
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 60
 	melting_material = /datum/material/silver
-	item_weight = 7.5 * SILVER_MULTIPLIER
 
 /obj/item/ingot/steel
 	name = "steel bar"
@@ -212,7 +199,6 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 40
 	melting_material = /datum/material/steel
-	item_weight = 7.5 * STEEL_MULTIPLIER
 
 /obj/item/ingot/blacksteel
 	name = "blacksteel bar"
@@ -221,4 +207,3 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	sellprice = 90
 	melting_material = /datum/material/blacksteel
-	item_weight = 7.5 * BLACKSTEEL_MULTIPLIER

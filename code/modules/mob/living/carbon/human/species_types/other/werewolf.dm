@@ -11,9 +11,6 @@
 /mob/living/carbon/human/species/werewolf/female
 	gender = FEMALE
 
-/mob/living/carbon/human/species/werewolf/child
-	age = AGE_CHILD
-
 /datum/species/werewolf
 	name = "werewolf"
 	id = "werewolf"
@@ -42,10 +39,8 @@
 	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/wereclaw, /datum/intent/simple/werebite)
 	if(H.gender == MALE)
 		H.icon_state = "wwolf_m"
-	if(H.gender == FEMALE)
+	else
 		H.icon_state = "wwolf_f"
-	if(H.age == AGE_CHILD)
-		H.icon_state = "wwolf_c"
 	H.update_damage_overlays()
 	return TRUE
 

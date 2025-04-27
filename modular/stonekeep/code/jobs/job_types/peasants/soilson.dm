@@ -1,4 +1,4 @@
-/datum/job/farmer
+/datum/job/stonekeep/soilson
 	title = "Soilson"
 	flag = SK_SOILSON
 	department_flag = PEASANTS
@@ -12,7 +12,6 @@
 		"Half-Elf",
 		"Dwarf",
 		"Aasimar",
-		"Dark Elf",
 	)
 	tutorial = "It is a simple life you live, your basic understanding of life is something many would be envious of if they knew how perfect it was. You know a good day's work, the sweat on your brow is yours: Famines and plague may take its toll, but you know how to celebrate life well. Till the soil and produce fresh food for those around you, and maybe youll be more than an unsung hero someday."
 	cmode_music = 'sound/music/cmode/combat_guard.ogg'
@@ -30,7 +29,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)//they are supposed to be highly skilled at aim the thresher
 		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3), TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/labor/farming, 4, TRUE)

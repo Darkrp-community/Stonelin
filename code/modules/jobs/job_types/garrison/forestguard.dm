@@ -33,10 +33,7 @@
 
 /datum/outfit/job/forestguard/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(SSmapping.config.map_name == "Rosewood")
-		cloak = /obj/item/clothing/cloak/forrestercloak/snow
-	else
-		cloak = /obj/item/clothing/cloak/forrestercloak
+	cloak = /obj/item/clothing/cloak/forrestercloak
 	armor = /obj/item/clothing/armor/leather/advanced/forrester
 	head = /obj/item/clothing/head/helmet/medium/decorated/skullmet
 	shirt = /obj/item/clothing/shirt/undershirt/black

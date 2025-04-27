@@ -196,7 +196,7 @@
 	info += "<br/></font>"
 
 	if(signedname)
-		info += "<font size=\"2\" face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of [SSmapping.config.map_name]</font>"
+		info += "<font size=\"2\" face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of Vanderlin</font>"
 
 	info += "</div>"
 

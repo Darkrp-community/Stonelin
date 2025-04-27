@@ -52,9 +52,9 @@
 		return
 
 	if(hiding_target) //Slap it!
-		controller.ai_interact(hiding_target, TRUE, TRUE)
+		controller.ai_interact(hiding_target, TRUE)
 	else
-		controller.ai_interact(target, TRUE, TRUE)
+		controller.ai_interact(target, TRUE)
 
 	if(sidesteps_after && prob(33)) //this is so fucking hacky, but going off og code this is exactly how it goes ignoring movetimers
 		if(!target || !isturf(target.loc) || !isturf(basic_mob.loc) || basic_mob.stat == DEAD)

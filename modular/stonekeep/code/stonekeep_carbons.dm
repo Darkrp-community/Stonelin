@@ -4,6 +4,14 @@
 	QDEL_NULL(sexcon)
 
 // -------------------		SKELLY SKILLED CORE		--------------------------
+/datum/outfit/job/roguetown/species/skeleton/skilled/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = rand(6,8)
+	H.STASPD = rand(8,10)
+	H.STACON = rand(8,10)
+	H.STAEND = 12
+	H.STAINT = 1
+
 /mob/living/carbon/human/species/skeleton/skilled/after_creation()
 	..()
 	configure_mind()
@@ -29,6 +37,13 @@
 	mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 
 // -------------------		UNARMED SKELLY		--------------------------
+/mob/living/carbon/human/species/skeleton/skilled/unarmed
+	name = "animated skeleton"
+
+/mob/living/carbon/human/species/skeleton/skilled/unarmed/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/skilled/unarmed)
+
 /datum/outfit/job/roguetown/species/skeleton/skilled/unarmed/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(50))
@@ -53,6 +68,12 @@
 		r_hand = /obj/item/weapon/mace/woodclub
 
 // -------------------		FIGHTER SKELLY		--------------------------
+/mob/living/carbon/human/species/skeleton/skilled/fighter
+	name = "animated skeleton"
+
+/mob/living/carbon/human/species/skeleton/skilled/fighter/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/skilled/fighter)
 
 /mob/living/carbon/human/species/skeleton/skilled/fighter/configure_mind()
 	if(!mind)
@@ -115,10 +136,36 @@
 			neck = /obj/item/clothing/neck/chaincoif
 
 
+/mob/living/carbon/human/species/skeleton/skilled/ancient
+	name = "ancient skeleton"
+	skel_outfit = /datum/outfit/job/ancient_skeleton
+
+/mob/living/carbon/human/species/skeleton/skilled/ancient/configure_mind()
+	if(!mind)
+		mind = new /datum/mind(src)
+
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+
+/datum/outfit/job/ancient_skeleton/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 12
+	H.TOTALSTR = rand(13,14)
+	H.TOTALSPD = 8
+	H.TOTALCON = 9
+	H.TOTALEND = 15
+	H.TOTALINT = 1
+
+
 
 // ===================================================================================
 // -------------------		ORC SKILLED CORE		--------------------------
-
 /mob/living/carbon/human/species/orc/skilled
 	initial_language_holder = /datum/language_holder/orc
 
@@ -202,9 +249,6 @@
 			r_hand = /obj/item/weapon/polearm/spear/stone
 
 // -------------------		SAVAGE ORC LOOTER		--------------------------
-
-
-
 /mob/living/carbon/human/species/orc/skilled/looter
 	name = "savage orc looter"
 
@@ -467,7 +511,7 @@
 /datum/outfit/job/roguetown/human_npc/outlaw/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.STASTR = 10
-	H.STAEND = 13
+	H.STAEND = 10
 
 	shirt = /obj/item/clothing/shirt/undershirt/vagrant
 	if(prob(30))
@@ -554,10 +598,7 @@
 
 
 
-/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-	step(src, dir)
+/mob/living/carbon/human/species/human/northern/bum/ambush/outlaw
 
 /mob/living/carbon/human/species/human/northern/bum/ambush/outlaw/after_creation()
 	..()
@@ -599,10 +640,9 @@
 	speak_chance = 5
 	turns_per_move = 1
 	move_to_delay = 1
-	base_constitution = 14
-	base_strength = 12
-	base_speed = 10
-	base_endurance = 20
+	TOTALCON = 14
+	TOTALSTR = 12
+	TOTALSPD = 10
 	maxHealth = 180
 	health = 180
 	harm_intent_damage = 15
@@ -683,13 +723,6 @@
 	dodge_prob = 70
 
 
-/mob/living/simple_animal/hostile/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-	step(src, dir)
-
-
-
 // ===================================================================================
 /*	..................	The Insane Jester   ................... */
 
@@ -738,7 +771,7 @@
 	H.STASTR = rand(10,18)
 	H.STASPD = rand(9,18)
 	H.STACON = rand(8,18)
-	H.STAEND = rand(12,18)
+	H.STAEND = rand(8,18)
 	H.STALUC = 18
 	H.STAINT = 7
 	H.set_patron(/datum/patron/divine/xylix)
@@ -776,7 +809,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/xylix_cap
 	name = "I feel lucky"
-	desc = "<span class='nicegreen'>My hat makes me feel more in tune with the spirit of Xylix...</span>\n"
+	desc = "<span class='nicegreen'>My hat attracts lucky waves from Xylix...</span>\n"
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = ""
 
@@ -786,24 +819,3 @@
 	icon_state = "skull"
 	headprice = 12
 	adventurer_artefact = TRUE
-
-
-
-/mob/living/carbon/human/species/skeleton/npc/ambush/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-	step(src, dir)
-
-/mob/living/carbon/human/species/skeleton/npc/ambush/uneqipped
-	equipped = FALSE
-
-
-/mob/living/carbon/human/species/goblin/npc/ambush/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-	step(src, dir)
-
-/mob/living/simple_animal/hostile/retaliate/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-	step(src, dir)

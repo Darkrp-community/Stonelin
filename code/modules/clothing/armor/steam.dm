@@ -19,11 +19,8 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_GOOD
 	body_parts_covered = COVERAGE_FULL
-	prevent_crits = ALL_EXCEPT_BLUNT
+	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST
-	item_weight = 25 * BRONZE_MULTIPLIER
-
-	do_sound_plate = TRUE
 
 /obj/item/clothing/armor/steam/equipped(mob/living/user, slot)
 	if(!(slotdefine2slotbit(slot) & slot_flags))

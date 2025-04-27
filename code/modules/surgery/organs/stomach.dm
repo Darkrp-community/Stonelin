@@ -131,7 +131,7 @@
 	icon_state = "guts"
 	w_class = WEIGHT_CLASS_SMALL
 	zone = BODY_ZONE_PRECISE_STOMACH
-	slot = ORGAN_SLOT_GUTS
+	slot = ORGAN_SLOT_STOMACH_AID
 	attack_verb = list("gored", "squished", "slapped", "digested")
 	desc = ""
 

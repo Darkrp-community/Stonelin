@@ -23,4 +23,3 @@
 	fiber_salvage = TRUE
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/hide/cured
-	carry_multiplier = 0.75

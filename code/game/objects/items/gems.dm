@@ -92,7 +92,7 @@
 	sellprice = 121
 
 /obj/item/gem/red
-	name = "rontz"
+	name = "rubor"
 	desc = "Glistening with unkempt rage."
 	//color = "#ff00008c"
 	icon_state = "ruby_cut"

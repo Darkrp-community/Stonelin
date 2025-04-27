@@ -409,8 +409,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
 				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
-			dat += "<br><b>Flavortext:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"*/
-			dat += "<br></td>"
+			dat += "<br><b>Flavortext:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
+			dat += "<br></td>"*/
 			//dat += "<span style='border: 1px solid #161616; background-color: #[detail_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=detail_color;task=input'>Change</a>"
 
 			//if(HAIR in pref_species.species_traits)
@@ -2264,7 +2264,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	character.socks = socks
 
 	/* V: */
-
 	character.headshot_link = headshot_link
 	character.flavortext = flavortext
 
@@ -2309,10 +2308,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	if(is_misc_banned(parent.ckey, BAN_MISC_PUNISHMENT_CURSE))
 		ADD_TRAIT(character, TRAIT_PUNISHMENT_CURSE, TRAIT_BAN_PUNISHMENT)
 
-	if(parent?.patreon?.has_access(ACCESS_ASSISTANT_RANK))
-		character.accent = selected_accent
-
-	/* :V */
+	/* V */
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
@@ -2321,6 +2317,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
+
+	if(parent?.patreon?.has_access(ACCESS_ASSISTANT_RANK))
+		character.accent = selected_accent
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

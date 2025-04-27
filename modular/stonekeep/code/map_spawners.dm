@@ -93,15 +93,6 @@
 		/obj/structure/punji_sticks = 50
 		)
 
-/obj/effect/spawner/map_spawner/fiftyfifty_hidden_beartrap
-	icon = 'modular/stonekeep/icons/misc.dmi'
-	icon_state = "danger"
-	probby = 50
-	spawned = list(
-		/obj/item/restraints/legcuffs/beartrap/armed/camouflage
-		)
-
-
 
 /*	..................  Kitchen Mess Spawner  ................... */
 /obj/effect/spawner/map_spawner/kitchenmess
@@ -217,7 +208,7 @@
 /*	..................  Grave Spawner  ................... */
 /obj/effect/spawner/map_spawner/graverandom
 	icon_state = "gravecovered"
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/roguefloor.dmi'
 	alpha = 200
 	color = "#00ff11"
 	probby = 50

@@ -152,7 +152,8 @@
 	ambush_types = list(
 				/turf/open/floor/dirt)
 	ambush_mobs = list(
-				/mob/living/carbon/human/species/skeleton/npc/ambush = 15,
+				/mob/living/simple_animal/hostile/retaliate/troll = 20,
+				/mob/living/carbon/human/species/skeleton/skilled/fighter = 15,
 				/mob/living/carbon/human/species/goblin/npc/ambush/hell = 50)
 
 /area/rogue/outdoors/mountains/decap
@@ -161,8 +162,9 @@
 	ambush_types = list(
 				/turf/open/floor/snow)
 	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/troll = 5,
-				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
+				/mob/living/simple_animal/hostile/retaliate/troll = 15,
+				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 25,
+				/mob/living/carbon/human/species/skeleton/skilled/fighter = 25)
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -218,28 +220,23 @@
 				/mob/living/simple_animal/hostile/retaliate/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 5,
 				/mob/living/simple_animal/hostile/retaliate/mole = 10)
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/under/town/caverogue/deep
 	first_time_text = "DEEP MINESHAFT"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/towerofwise
 	name = "danger (tower of the wise)"
 	icon_state = "cave"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/cave/volf
 	name = "danger (volf cave)"
 	icon_state = "cave"
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/wolf)
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/cave/bear
 	name = "danger (bear cave)"
 	icon_state = "cave"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/shelter/woods/spider
 	name = "danger (spider nest)"
@@ -267,12 +264,12 @@
 	ambush_types = list(
 				/turf/open/water/swamp)
 	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/skeleton = 30,
+				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 30,
 				/mob/living/simple_animal/hostile/retaliate/bigrat = 10)
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/xylix
-	name = "dungeon (xylix maze)"
+	name = "xylix maze"
 	icon_state = "cavewet"
 	first_time_text = "The Maze"
 	spookysounds = SPOOKY_CAVE
@@ -292,12 +289,19 @@
 	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/under/catacombs/dwarfoutpost
-	name = "dungeon (outpost)"
+	name = "underrock outpost"
 	first_time_text = "Underrock Outpost"
 	ambush_types = list(
 				/turf/open/water/swamp)
 	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/lamia = 30)
+				/mob/living/simple_animal/hostile/retaliate/lamia = 30,
+				/mob/living/simple_animal/hostile/retaliate/headless = 20)
+
+/area/rogue/under/catacombs/dwarfoutpost/orcy
+	ambush_types = list(
+				/turf/open/water/cleanshallow)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/orc/savage/chopper = 50)
 
 /area/rogue/under/town/caverogue/saltmine
 	name = "salt mine"
@@ -318,6 +322,6 @@
 	ambush_types = list(
 				/turf/open/water/swamp)
 	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/skeleton = 30,
+				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 30,
 				/mob/living/simple_animal/hostile/retaliate/bigrat = 10)
 

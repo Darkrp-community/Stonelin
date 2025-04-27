@@ -2,8 +2,8 @@
 	title = "Mason"
 	flag = SK_MASON
 	department_flag = SERFS
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = list(
 		"Humen",
@@ -17,10 +17,9 @@
 	tutorial = "There are ancient secrets within stone, something your creed has known since man built upon dirt. Youve pride in your work, youre the only reason this place doesnt fall apart. The King could replace you in a heartbeat, prove to them why youre the Master Mason."
 
 	outfit = /datum/outfit/job/stonekeep/mason
-//	display_order = MASON_ORDER
+	display_order = MASON_ORDER
 	give_bank_account = 8
 	min_pq = -50
-	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/outfit/job/stonekeep/mason/pre_equip(mob/living/carbon/human/H)
 	..()

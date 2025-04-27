@@ -31,6 +31,10 @@
 	food_type = list()
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
+	STACON = 17
+	STAEND = 17
+	STASTR = 13
+	STASPD = 5
 	simple_detect_bonus = 20
 	deaggroprob = 0
 	defprob = 40
@@ -41,12 +45,6 @@
 	attack_sound = 'sound/combat/hits/onstone/wallhit.ogg'
 	dodgetime = 30
 	aggressive = 1
-
-	base_constitution = 17
-	base_endurance = 17
-	base_strength = 13
-	base_speed = 5
-
 	var/rock_cd
 
 /mob/living/simple_animal/hostile/retaliate/elemental/behemoth/Initialize()
@@ -70,8 +68,7 @@
 	if(!target)
 		return
 	addtimer(CALLBACK(src,PROC_REF(yeet),target), 1 SECONDS)
-	if(!QDELETED(target))
-		return target.attack_animal(src)
+	return target.attack_animal(src)
 
 /obj/effect/temp_visual/marker
 	icon = 'icons/effects/effects.dmi'

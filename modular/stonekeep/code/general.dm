@@ -26,7 +26,7 @@
 	add_overlay(mutable_appearance(icon, "bathtub_bathing", ABOVE_MOB_LAYER, GAME_PLANE_UPPER))
 
 
-/* cant be arsed to refactor this shit, upstream did a whole soap thing that well use instead fuckit)
+
 // -------------- SOAP -----------------
 /obj/item/soap
 	name = "soap"
@@ -91,7 +91,7 @@
 		uses -= 1
 		if(uses == 0)
 			qdel(src)
-*/
+
 
 // =================================================================================
 /*------\
@@ -121,12 +121,6 @@
 /obj/item/paper/reminder_about_dwarfs
 	name = "note about steel deliveries"
 	info = "Makers! The northern dwarves delivery of steele is much delayed this yil. Make do or go get it from them, the Guild cannot do more to solve this."
-
-
-/obj/item/paper/note_about_malum
-	name = "a missive from the oracle"
-	info = "Bad omens cloud the mountains. Malum has been desecrated, and bad fortune might befall us if the source is not found and purified."
-
 
 
 /obj/item/paper/note_about_tollhouse
@@ -237,12 +231,8 @@
 // =============================================================================
 // ========================		WEATHER EDITS		============================
 
-/obj/item/flashlight/flare/torch
-	var/openflame = TRUE
-
 /obj/item/flashlight/flare/torch/lantern
 	dropshrink = 0.7
-	openflame = FALSE
 /obj/item/flashlight/flare/torch/lantern/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -296,9 +286,10 @@
 /obj/item/flashlight/flare/torch/weather_act_on(weather_trait, severity)
 	if(weather_trait != PARTICLEWEATHER_RAIN)
 		return
-	if(!openflame)
-		return
 	extinguish()
+
+/obj/item/flashlight/flare/torch/lantern/weather_act_on(weather_trait, severity)
+	return
 
 /obj/machinery/light/fueled/firebowl/standing/weather_act_on(weather_trait, severity)
 	if(weather_trait != PARTICLEWEATHER_RAIN)
@@ -786,10 +777,6 @@
 	var/refueled
 	var/on
 
-/obj/structure/fluff/psycross/crafted/shrine/malum/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, /obj/structure/fluff/psycross/crafted/shrine/malum/proc/has_the_temple_been_purified), 60 MINUTES)
-
 /obj/structure/fluff/psycross/crafted/shrine/malum/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ore/coal))
 		if(refueled)
@@ -828,24 +815,6 @@
 				playsound(H, 'modular/stonekeep/sound/triumph_w.ogg', 100, FALSE, -5)
 			else
 				H.apply_status_effect(/datum/status_effect/buff/craft_buff)
-
-/obj/structure/fluff/psycross/crafted/shrine/malum/proc/has_the_temple_been_purified()
-//	if(!on)
-	shrine_not_purified()
-
-/obj/structure/fluff/psycross/crafted/shrine/malum/proc/shrine_not_purified()
-	var/outcome = rand(1,100)
-	switch(outcome)
-		if(1 to 40)
-			var/datum/round_event_control/haunts/HA = new()
-			HA.runEvent()
-		if(41 to 70)
-			var/datum/round_event_control/skellyinvade/SI = new()
-			SI.runEvent()
-		if(71 to 100)
-			var/datum/round_event_control/gobinvade/GI = new()
-			GI.runEvent()
-
 
 
 /obj/structure/chair/pew
@@ -969,14 +938,6 @@
 
 
 
-/obj/item/reagent_containers/glass/cup/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(!reagents.total_volume)
-		if(istype(I,/obj/item/natural/cloth))
-			if(do_after(user, 3 SECONDS, src))
-				user.visible_message("<span class='notice'>[user] cleans [src] with a rag.</span>")
-
 /obj/item/paper/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -987,6 +948,13 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
+/obj/item/reagent_containers/glass/cup/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(!reagents.total_volume)
+		if(istype(I,/obj/item/natural/cloth))
+			if(do_after(user, 3 SECONDS, src))
+				user.visible_message("<span class='notice'>[user] cleans [src] with a rag.</span>")
 
 /obj/item/perfume
 	dropshrink = 0.5
@@ -1294,13 +1262,3 @@
 
 /obj/structure/fluff/walldeco/masonflag
 	icon = 'modular/stonekeep/icons/misc.dmi'
-
-
-
-/obj/item/storage/keyring/garrison
-	keys = list(/obj/item/key/manor, /obj/item/key/garrison, /obj/item/key/walls)
-
-
-/datum/alch_grind_recipe/manabloom
-	valid_input = /obj/item/reagent_containers/food/snacks/produce/manabloom
-	valid_outputs = list(/obj/item/reagent_containers/powder/manabloom = 1)

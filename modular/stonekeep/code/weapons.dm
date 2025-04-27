@@ -11,13 +11,11 @@
 	slot_flags = null
 
 /obj/item/weapon/polearm/eaglebeak
-	icon = 'icons/roguetown/weapons/64.dmi'
 	slot_flags = null
 
 /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe
 	name = "poleaxe"
 	desc = "A poleaxe of simple iron, fracture bone and dissent with simple brute force."
-	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "poleaxe"
 /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe/getonmobprop(tag)
 	. = ..()
@@ -93,8 +91,6 @@
 	return ..()
 
 
-/obj/item/weapon/axe/boneaxe
-	icon = 'modular/stonekeep/icons/weapons.dmi'
 
 /obj/item/weapon/knife/hunting
 	icon = 'modular/stonekeep/icons/weapons.dmi'

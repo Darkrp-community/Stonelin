@@ -42,7 +42,6 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t3"
 	mutant_bodyparts = list("ears")
-	exotic_bloodtype = /datum/blood_type/human/delf
 	mutanteyes = /obj/item/organ/eyes/elf
 	use_f = TRUE
 	soundpack_m = /datum/voicepack/male/elf
@@ -125,4 +124,4 @@
 	return last_names
 
 /datum/species/elf/dark/get_accent_list()
-	return strings("accents/french_replacement.json", "french")
+	return strings("french_replacement.json", "french")

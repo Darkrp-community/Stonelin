@@ -432,8 +432,6 @@
 /obj/item/clothing/head/crown/serpcrown/surplus
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-	desc = "A replacement crown for the Monarch, every bit as valid as proof of sovereignity as the original."
-
 
 //................ Padded Coif edit............... //
 /obj/item/clothing/neck/coif/cloth
@@ -672,7 +670,6 @@
 //................ Steel cuirass ............... //
 /obj/item/clothing/armor/cuirass
 	icon_state = "cuirasse"
-	item_state = "cuirass"
 
 //................ Silk Jacket ............... //
 /obj/item/clothing/armor/leather/jacket/niteman
@@ -838,7 +835,17 @@
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0) // I just wanted to give Malumite robes a tiny bit of fire protection because they're craftspeople.
 
 
+/obj/item/clothing/shirt/dress/valorian
+	name = "commoner dress"
+	desc = "A simple deep-blue frock worn in many cities of Valoria."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
+	icon_state = "valorian"
+	sellprice = 13
 
+/obj/item/clothing/shirt/dress/gen/sexy
+	icon = 'modular/stonekeep/icons/clothing.dmi'
 
 /obj/item/clothing/armor/gambeson/heavy/dress
 	slot_flags = ITEM_SLOT_ARMOR
@@ -957,26 +964,14 @@
 	color = pick_assoc(GLOB.noble_dyes)
 	..()
 
-
-/obj/item/clothing/shirt/tunic/yellow
-	color = CLOTHING_MAGE_YELLOW
-
-
 /obj/item/clothing/shirt/dress/stewarddress
 	name = "demure dress"
 	desc = "Fashionably fitted with shining bronze buttons."
 
-/obj/item/clothing/shirt/dress/valorian
-	name = "commoner dress"
-	desc = "A simple deep-blue frock worn in many cities of Valoria."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
-	icon_state = "valorian"
-	sellprice = 13
 
-/obj/item/clothing/shirt/dress/gen/sexy
-	icon = 'modular/stonekeep/icons/clothing.dmi'
+/obj/item/clothing/shirt/tunic/yellow
+	color = CLOTHING_MAGE_YELLOW
+
 
 //
 //   Velvet Dress
@@ -988,7 +983,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
+	sleeved = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	icon_state = "velvetdress"
 	item_state = "velvetdress"
 //	detail_tag = "_detail"
@@ -1047,10 +1042,6 @@
 /obj/item/clothing/armor/brigandine/coatplates
 	desc = "A heavy armor made of smaller overlapping plates. \
 			It is said to have been invented by the most famous Haiduk khan Möngke, but as with most tales, no one knows for sure."
-
-
-/obj/item/clothing/shirt/robe/magus
-	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
 
 
 // ==============================	GLOVES	====================================

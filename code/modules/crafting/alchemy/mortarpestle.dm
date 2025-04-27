@@ -14,8 +14,6 @@
 	dropshrink = 0.9
 	color = COLOR_LIME
 	var/obj/item/to_grind
-	grid_height = 32
-	grid_width = 64
 
 /obj/item/mortar/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_MELEE)

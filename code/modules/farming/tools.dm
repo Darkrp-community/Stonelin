@@ -25,7 +25,7 @@
 	smeltresult = null
 	associated_skill = /datum/skill/combat/whipsflails
 	possible_item_intents = list(MACE_STRIKE)
-	gripped_intents = list(/datum/intent/flailthresh, MACE_STRIKE )
+	gripped_intents = list(MACE_STRIKE, /datum/intent/flailthresh)
 
 	force = 10
 	force_wielded = 14
@@ -105,8 +105,6 @@
 
 /obj/item/weapon/thresher/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
-		if(!proximity)
-			return
 		if(isturf(target.loc))
 			var/turf/T = target.loc
 			var/found = FALSE
@@ -117,9 +115,9 @@
 				playsound(loc,"plantcross", 90, FALSE)
 				playsound(loc,"smashlimb", 35, FALSE)
 				apply_farming_fatigue(user, 10)
-				user.visible_message(span_notice("[user] threshes the stalks!"), \
-									span_notice("I thresh the stalks."))
-		return
+				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
+									"<span class='notice'>I thresh the stalks.</span>")
+			return
 	..()
 
 
@@ -229,7 +227,7 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 	possible_item_intents = list(POLEARM_BASH)
-	gripped_intents = list(TILL_INTENT,/datum/intent/pick,POLEARM_BASH )
+	gripped_intents = list(/datum/intent/pick,TILL_INTENT,POLEARM_BASH)
 	associated_skill = /datum/skill/combat/polearms
 
 	force = 5
@@ -356,7 +354,7 @@
 	var/list/forked = list()
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
-	gripped_intents = list(DUMP_INTENT,POLEARM_BASH,POLEARM_THRUST )
+	gripped_intents = list(POLEARM_THRUST,DUMP_INTENT,POLEARM_BASH)
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	thrown_bclass = BCLASS_STAB

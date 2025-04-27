@@ -35,20 +35,10 @@
 /obj/structure/roguetent/preopen,
 /turf/open/floor/dirt,
 /area/rogue/indoors/shelter/rtfield)
-"jf" = (
-/turf/closed/wall/mineral/tent{
-	dir = 8
-	},
-/area/rogue/indoors/shelter/rtfield)
 "kb" = (
 /obj/structure/toilet,
 /obj/item/natural/poo,
 /turf/open/floor/dirt/road,
-/area/rogue/indoors/shelter/rtfield)
-"kp" = (
-/turf/closed/wall/mineral/tent{
-	dir = 4
-	},
 /area/rogue/indoors/shelter/rtfield)
 "kz" = (
 /obj/item/reagent_containers/glass/bucket/wooden/alter,
@@ -57,11 +47,6 @@
 "lZ" = (
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/dirt/road,
-/area/rogue/indoors/shelter/rtfield)
-"md" = (
-/turf/closed/wall/mineral/tent{
-	dir = 1
-	},
 /area/rogue/indoors/shelter/rtfield)
 "mK" = (
 /turf/open/floor/dirt/road,
@@ -214,14 +199,14 @@ wW
 Wj
 wW
 zg
-jf
-jf
-jf
+VP
+VP
+VP
 zg
 wv
 zg
-jf
-jf
+VP
+VP
 zg
 wW
 wW
@@ -234,13 +219,13 @@ wW
 wW
 Wj
 wW
-md
+VP
 mK
 yv
 aV
 VP
 wv
-md
+VP
 tV
 lZ
 VP
@@ -255,13 +240,13 @@ Wj
 Wj
 wW
 Wj
-md
+VP
 mK
 mK
 mK
 Ry
 wv
-md
+VP
 mK
 mK
 VP
@@ -276,13 +261,13 @@ wW
 wW
 wv
 wW
-md
+VP
 mK
 mK
 mK
 Ry
 wv
-md
+VP
 Ft
 mK
 VP
@@ -291,27 +276,27 @@ wv
 "}
 (5,1,1) = {"
 zg
-jf
+VP
 zg
 dc
 wv
 wv
 wv
-md
+VP
 lZ
 ue
 mK
 VP
 Am
 zg
-kp
+VP
 WU
 zg
 wv
 wW
 "}
 (6,1,1) = {"
-md
+VP
 kb
 WU
 yW
@@ -319,9 +304,9 @@ yW
 Am
 sM
 zg
-kp
-kp
-kp
+VP
+VP
+VP
 zg
 cm
 wv
@@ -333,7 +318,7 @@ wv
 "}
 (7,1,1) = {"
 zg
-kp
+VP
 zg
 wv
 wv
@@ -359,8 +344,8 @@ wW
 wW
 xd
 zg
-jf
-jf
+VP
+VP
 zg
 wv
 wv
@@ -399,7 +384,7 @@ wW
 Wj
 wW
 wW
-md
+VP
 tV
 mK
 mK
@@ -420,7 +405,7 @@ Wj
 wW
 Wj
 wW
-md
+VP
 ta
 mK
 mK
@@ -464,8 +449,8 @@ wW
 Wj
 wW
 zg
-kp
-kp
+VP
+VP
 zg
 wv
 wv
@@ -508,14 +493,14 @@ Wj
 wW
 Wj
 zg
-jf
-jf
+VP
+VP
 WU
 zg
 wv
 zg
-jf
-jf
+VP
+VP
 hP
 zg
 wv
@@ -528,13 +513,13 @@ wW
 wW
 Wj
 wW
-md
+VP
 mK
 mK
 mK
 VP
 wv
-md
+VP
 fB
 lZ
 mK
@@ -549,13 +534,13 @@ wv
 Wj
 wW
 Wj
-md
+VP
 Ch
 ON
 lZ
 VP
 or
-md
+VP
 cr
 mK
 XA
@@ -571,12 +556,12 @@ wW
 Wj
 wW
 zg
-kp
-kp
-kp
+VP
+VP
+VP
 zg
 wW
-md
+VP
 tV
 mK
 tV
@@ -598,9 +583,9 @@ wW
 xd
 Wj
 zg
-kp
-kp
-kp
+VP
+VP
+VP
 zg
 wW
 "}

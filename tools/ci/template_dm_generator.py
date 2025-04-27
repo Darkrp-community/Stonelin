@@ -3,7 +3,8 @@
 import os
 import sys
 
-folders = ["_maps/templates", "_maps/map_files/shared", "_maps/map_files/vanderlin", "_maps/matthios_tomb/room"]
+folders = ["_maps/RandomRuins", "_maps/RandomZLevels", "_maps/shuttles",
+           "_maps/templates", "_maps/map_files/vanderlin", "_maps/map_files/roguetown", "_maps/map_files/vanderlin", "_maps/map_files/roguetown/otherz", "_maps/map_files/vanderlin/otherz", "_maps/map_files/matthios_tomb/room"]
 
 generated = "_maps/templates.dm"
 

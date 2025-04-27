@@ -22,30 +22,25 @@ Future plan:
 	name = "Changeling"
 	id = "abyssariad"
 	desc = "<b>Storm branched Champions</b><br>\
-	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, the changelings are an \
-	honor-bound race wild as the storms, hermetically humble, yet quick tempered. \
-	Their principles are always extreme, such as being the most fierce duelists or martial pacifists, but never in-between. \
-	\n\n\
-	Their mask-like facial bones and fleshbending physiology exposes their predatorial divine making, built to consume \
-	corruption and purify decay, but this leaves them unable to ingest many of the creations of the soil. \
-	Their traditional form is standardized, but some outcasts strays to carve out a distinct physical identity. \
-	\n\n\
-	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
-	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
-	known for their extreme loyalty.\
-	\n\n\
-	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
+	Molded from Abyssor's tumultuous embrace of storm and will, the Changelings are a warrior, demiurgic race \
+	deeply bonded with honor and ethos that intertwines with the tempestuous forces of Abyssor, \
+	never set on a balance, all Changelings are extreme as the storms, with the tendency to be both \
+	hermeticly humble and quick tempered, and know for either loving duel for honor's sake \
+	- or being the most radical martial pacifists on Grimoria. Their society almost crumbled \
+	during The Bloody Apotheosis, but their bronze-age traditions lives on together with a deep \
+	hatred for all things Graggar. Their biology allows high degree of fleshbending, their faces exactly alike masks. \
+	They are noble souls that, when not belonging to military or clerical jobs, usually partakes \
+	in the society's intelligentsia division, usually as astronomers, alchemists and surgeons."
 
 	skin_tone_wording = "Championage Branch"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail_human" = "Onetail")
+	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail" = "Onetail" )
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
 //	skinned_type = /obj/item/stack/sheet/animalhide/human
-	toxic_food = VEGETABLES
 	disliked_food = NONE
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -72,8 +67,8 @@ Future plan:
 	// Qualities: +Dense muscles ; higher fast-twitch fiber
 	// =>Disadvantage: -Lower Stationary Acuity; They are better at noticing movements, bad at noticing stationary objects. Bad with bows by nature. Foxes have that IRL because of nightvision. At least they have more reason to have it than Dark Elves.
 	// -Low fat mass, high muscle mass. Streamlined body structure that minimizes resistance and maximizes intense muscular movements.
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
-	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
+	specstats_f = list("strength" = 0, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	mutanttongue = /obj/item/organ/tongue/kitsune
 //	minrace_pq = 0
@@ -140,52 +135,48 @@ Future plan:
 
 	"white - platinum" = "f8f3f3",
 	"white - silver" = "ddddc8",
-	"white - oceanid" = "b8d4de"
+	"white - oceanid" = "141f1f"
 
 	))
-/*	This using the older proc causes runtimes, if possible adapt to new below ROGTODO
+
 /datum/species/abyssariad/changeling/random_name(gender,unique,lastname)
-	var/static/list/male_names = world.file2list("modular/stonekeep/kaizoku/strings/names/abyssnorm.txt")
-	var/static/list/female_names = world.file2list("modular/stonekeep/kaizoku/strings/names//abyssnorf.txt")
-
-	var/list/names = (gender == FEMALE) ? female_names : male_names
 	var/randname
-
 	if(unique)
-		for(var/i in 1 to 10)
-			randname = pick(names)
-			if(!findname(randname))
-				break
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorf.txt") )
+				if(!findname(randname))
+					break
 	else
-		randname = pick(names)
-
-	return "[randname] Clanless"
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorf.txt") )
+	randname += " Clanless"
+	return randname
 
 /datum/species/abyssariad/changeling/random_surname()
-	return " [pick(world.file2list("modular/stonekeep/kaizoku/strings/names/abyssnorlast.txt"))]"
+	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorlast.txt"))]"
+
+// Commented out. All this was a code FAILURE by my part, and I require help.
+/*
+/datum/species/abyssariad/changeling/can_wag_tongue(mob/living/carbon/human/H)
+	return ("kitsune_tongue" in mutant_bodyparts) || ("waggingkitsune_tongue" in mutant_bodyparts)
+/datum/species/abyssariad/changeling/is_wagging_tongue(mob/living/carbon/human/H)
+	return ("waggingkitsune_tongue" in mutant_bodyparts)
+/datum/species/abyssariad/changeling/start_wagging_tongue(mob/living/carbon/human/H)
+	if("changeling" in mutant_bodyparts)
+		mutant_bodyparts -= "kitsune_tongue"
+		mutant_bodyparts |= "waggingkitsune_tongue"
+	H.update_body()
+/datum/species/abyssariad/changeling/stop_wagging_tongue(mob/living/carbon/human/H)
+	if("waggingkitsune_tongue" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingkitsune_tongue"
+		mutant_bodyparts |= "kitsune_tongue"
+	H.update_body()
 */
-
-/datum/species/abyssariad/changeling/get_possible_names(gender = MALE)
-	var/static/list/male_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorm.txt')
-	var/static/list/female_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorf.txt')
-	return (gender == FEMALE) ? female_names : male_names
-
-/datum/species/abyssariad/changeling/random_name(gender = MALE, unique = FALSE)
-	var/list/possible_names = get_possible_names(gender)
-	if(!possible_names || !length(possible_names))
-		return "Nameless Clanless" //This is a fallback in case we get any pesky runtime.
-
-	var/first_name
-	if(!unique)
-		first_name = pick(possible_names)
-	else
-		for(var/i in 1 to 10)
-			first_name = pick(possible_names)
-			if(!findname(first_name))
-				break
-
-	return "[first_name] Clanless"
-
-/datum/species/abyssariad/changeling/get_possible_surnames(gender = MALE)
-	var/static/list/last_names = world.file2list('modular/stonekeep/kaizoku/strings/names/abyssnorlast.txt')
-	return last_names

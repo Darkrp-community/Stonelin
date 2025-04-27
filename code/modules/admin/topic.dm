@@ -480,13 +480,6 @@
 		else
 			qdel(M)
 
-	else if(href_list["cryomob"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		var/mob/M = locate(href_list["cryomob"])
-		usr.client.send_to_cryo(M)
-
 	else if(href_list["revive"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -779,7 +772,6 @@
 
 		var/mob/M = locate(href_list["sendmob"])
 		usr.client.sendmob(M)
-
 
 	else if(href_list["narrateto"])
 		if(!check_rights(R_ADMIN))

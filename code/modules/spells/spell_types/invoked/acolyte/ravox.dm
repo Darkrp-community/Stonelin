@@ -9,7 +9,6 @@
 	sound = 'sound/magic/timestop.ogg'
 	releasedrain = 30
 	miracle = TRUE
-	healing_miracle = TRUE
 	devotion_cost = 40
 
 /obj/effect/proc_holder/spell/self/call_to_arms/cast(list/targets,mob/living/user = usr)
@@ -136,7 +135,6 @@
 	antimagic_allowed = TRUE
 	recharge_time = 20 SECONDS
 	miracle = TRUE
-	healing_miracle = TRUE
 	devotion_cost = 50
 
 /obj/effect/proc_holder/spell/invoked/persistence/cast(list/targets, mob/living/user)

@@ -1,53 +1,51 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aX" = (
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/item/ammo_casing/caseless/arrow/poison,
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "cd" = (
 /obj/machinery/light/fueled/smelter/great,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ct" = (
 /obj/structure/fluff/walldeco/fakeshelf,
 /obj/item/reagent_containers/peppermill{
 	pixel_y = 35
 	},
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "cv" = (
 /obj/structure/bars/pipe{
 	dir = 1;
 	icon_state = "pipe"
 	},
 /turf/closed/wall/mineral/stone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "cN" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "dh" = (
 /obj/effect/decal/shadow_floor{
 	dir = 6
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "dA" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 8
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "dN" = (
 /obj/structure/bars/pipe{
 	dir = 5
@@ -55,13 +53,13 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "dU" = (
 /obj/structure/stairs/stone{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "er" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor{
@@ -69,81 +67,64 @@
 	},
 /obj/item/ammo_casing/caseless/arrow,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "eQ" = (
 /obj/structure/rack,
 /obj/item/flint,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "fj" = (
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "fq" = (
 /obj/structure/chair/stool,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "fV" = (
 /obj/structure/fermentation_keg/random/beer,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ge" = (
 /obj/effect/spawner/map_spawner/outpost/dwarf_weapon,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "gT" = (
 /obj/structure/fluff/walldeco/stone,
-/turf/closed/wall/mineral/craftstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/closed/wall/mineral/stone,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "hc" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 6
 	},
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "hp" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
-"hq" = (
-/turf/closed/wall/mineral/decostone/end{
-	dir = 8
-	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ik" = (
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "iy" = (
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
-"jb" = (
-/obj/machinery/light/fueled/firebowl/standing,
-/turf/open/water/cleanshallow,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "jm" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
-"jH" = (
-/obj/structure/bars/pipe{
-	dir = 1;
-	icon_state = "pipe"
-	},
-/obj/structure/bars/grille,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "jN" = (
 /obj/item/reagent_containers/glass/bottle/beer/voddena,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "jV" = (
 /obj/structure/toilet{
 	pixel_y = 4
@@ -152,71 +133,71 @@
 /turf/open/floor/raisedwood{
 	dir = 1
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "kx" = (
 /obj/structure/rack,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ls" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/reagent_containers/food/snacks/hardtack,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mb" = (
 /obj/effect/decal/shadow_floor{
 	dir = 4
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mr" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 1
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ms" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 10
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mx" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mI" = (
 /obj/structure/bars,
 /turf/open/water/swamp,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mK" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor{
 	dir = 10
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "mM" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/effect/spawner/map_spawner/outpost/personal_item,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "nh" = (
 /turf/closed/wall/mineral/decostone/cand,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "np" = (
 /obj/structure/bed/mediocre,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "nD" = (
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "nK" = (
 /obj/effect/decal/shadow_floor{
 	dir = 1
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "oj" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/decal/shadow_floor{
@@ -227,7 +208,7 @@
 	redstone_id = "exit_dwarfoutpost"
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "oD" = (
 /obj/structure/bars/pipe{
 	dir = 4;
@@ -236,11 +217,11 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "oV" = (
 /obj/structure/fluff/psycross/crafted/shrine/malum,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "pd" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -250,51 +231,37 @@
 	dir = 1
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "py" = (
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "pU" = (
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
-"qe" = (
-/obj/effect/decal/shadow_floor{
-	dir = 4
-	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "qh" = (
 /obj/effect/spawner/map_spawner/loot/weapon,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "qy" = (
 /obj/effect/spawner/map_spawner/orc_warlord_carbon,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "qJ" = (
 /obj/structure/rack,
 /obj/item/ammo_casing/caseless/bolt/pyro,
 /obj/item/ammo_casing/caseless/bolt/pyro,
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "rf" = (
 /obj/item/bin/water/gross,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
-"rj" = (
-/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ru" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
@@ -302,7 +269,7 @@
 	},
 /obj/effect/decal/cleanable/blood_neu/tracks,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "rB" = (
 /obj/structure/bars/pipe{
 	dir = 9;
@@ -311,43 +278,41 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "rJ" = (
-/turf/closed/wall/mineral/craftstone,
-/area/rogue/under/catacombs/dwarfoutpost)
-"rT" = (
-/turf/closed/wall/mineral/decostone/end{
+/obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sg" = (
 /obj/structure/stairs/stone{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sl" = (
 /obj/machinery/anvil/crafted,
 /obj/item/weapon/hammer/iron,
 /obj/item/weapon/tongs,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "st" = (
 /obj/effect/decal/shadow_floor{
 	dir = 10
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sz" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 6
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sI" = (
 /obj/machinery/light/fueled/hearth,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sO" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 10
@@ -355,11 +320,11 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sQ" = (
 /obj/structure/toilet,
 /turf/open/floor/raisedwood,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "sR" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -367,15 +332,15 @@
 	},
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "te" = (
 /obj/machinery/artificer_table,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "tz" = (
 /obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "tN" = (
 /obj/structure/toilet{
 	pixel_y = 4
@@ -386,54 +351,51 @@
 /turf/open/floor/raisedwood{
 	dir = 1
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "tY" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 8
 	},
 /obj/item/reagent_containers/glass/bowl,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ub" = (
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "uF" = (
 /obj/structure/fermentation_keg/random/beer,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
-"uY" = (
-/turf/closed/wall/mineral/decostone/long,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "uZ" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vf" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/effect/spawner/map_spawner/outpost/personal_item,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vi" = (
 /obj/structure/bars,
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vl" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 4
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vt" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vA" = (
 /obj/effect/decal/shadow_floor,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vW" = (
 /obj/item/ore/coal,
 /obj/structure/closet/crate/chest/old_crate,
@@ -442,37 +404,29 @@
 /obj/item/ore/coal,
 /obj/item/ore/coal,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
-"vX" = (
-/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "wn" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/reagent_containers/food/snacks/produce/potato,
 /obj/item/reagent_containers/food/snacks/produce/potato,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "wN" = (
 /obj/structure/grindwheel,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "wT" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "xd" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "xg" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 1
@@ -480,72 +434,61 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "xp" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 6
 	},
 /obj/item/reagent_containers/food/snacks/meat/salami,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "xE" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/blocks,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "xW" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 9
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
-"yb" = (
-/turf/closed/wall/mineral/decostone/long{
-	dir = 1
-	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "yG" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_y = -32
 	},
-/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
-/turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/blocks,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "yI" = (
 /obj/effect/spawner/map_spawner/metal_bars,
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "yZ" = (
 /obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "zc" = (
 /obj/structure/stairs/stone{
 	dir = 1;
 	icon_state = "stonestairs"
 	},
 /turf/open/floor/naturalstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "zg" = (
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "zj" = (
-/obj/structure/remains/human{
-	name = "dwarf remains";
-	plane = -3
-	},
+/obj/effect/mob_spawn/human/corpse/damaged/underdweller,
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "zk" = (
 /obj/structure/toilet{
 	pixel_y = 4
@@ -553,12 +496,10 @@
 /turf/open/floor/raisedwood{
 	dir = 1
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Aw" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/obj/structure/remains/human{
-	name = "orc remains"
-	},
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion,
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
@@ -566,61 +507,53 @@
 	dir = 4
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ay" = (
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "AQ" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Bf" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
-"Bj" = (
-/obj/effect/decal/shadow_floor{
-	dir = 8
-	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
-"BA" = (
-/turf/closed/wall/mineral/decostone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "BC" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "BR" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/flashlight/flare/torch/lantern,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Cg" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Cj" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "CV" = (
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ds" = (
 /obj/item/ore/iron,
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Dt" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_x = 0;
@@ -630,22 +563,22 @@
 /obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/powder/salt,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Dw" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_x = 0;
 	pixel_y = 32
 	},
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "DR" = (
 /obj/effect/spawner/map_spawner/metal_bars,
 /turf/open/water/swamp,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ed" = (
 /obj/effect/decal/cleanable/blood_neu/tracks,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Eh" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
@@ -653,18 +586,18 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ei" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/effect/spawner/map_spawner/loot/common,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "EX" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_y = -32
 	},
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "EZ" = (
 /obj/item/clothing/cloak/cape/silk/random,
 /obj/structure/closet/crate/crafted_closet/lord{
@@ -672,24 +605,24 @@
 	},
 /obj/effect/spawner/map_spawner/artefact_outpost,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ft" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Fz" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/flint,
 /obj/effect/spawner/map_spawner/outpost/dwarf_armor,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "FC" = (
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "FK" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -698,7 +631,7 @@
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/spawner/map_spawner/outpost/personal_item,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "FN" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -708,26 +641,27 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Gd" = (
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Gu" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor{
 	dir = 6
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "GB" = (
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "GC" = (
 /obj/effect/spawner/map_spawner/outpost/dwarf_armor,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "GE" = (
 /obj/structure/table/wood/reinforced_alt,
 /obj/item/mould/ingot{
@@ -737,124 +671,115 @@
 	pixel_y = -4
 	},
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "HB" = (
 /obj/structure/mirror,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Iz" = (
 /obj/machinery/light/fueled/torchholder/c,
-/turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/water/cleanshallow,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "IZ" = (
 /obj/structure/table/wood/plain,
 /obj/item/reagent_containers/glass/bucket/pot{
 	pixel_y = 8
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "JF" = (
 /obj/structure/table/wood/reinf_long,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "KE" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/reagent_containers/powder/flour,
 /obj/item/reagent_containers/powder/flour,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "KK" = (
-/obj/structure/remains/human{
-	name = "dwarf remains";
-	plane = -3
-	},
+/obj/effect/mob_spawn/human/corpse/damaged/underdweller,
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/item/ammo_casing/caseless/arrow,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "KS" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Lf" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Lg" = (
 /obj/structure/trap/wall_projectile{
 	dir = 4
 	},
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Lo" = (
 /obj/structure/fluff/walldeco/stone,
 /turf/closed/wall/mineral/stone/window/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ly" = (
 /turf/open/water/cleanshallow,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Mm" = (
 /obj/effect/decal/shadow_floor{
 	dir = 4
 	},
 /obj/item/ammo_casing/caseless/arrow,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Mo" = (
 /obj/structure/bars/pipe{
 	dir = 5
 	},
 /turf/open/water/cleanshallow,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Mt" = (
 /obj/structure/rack,
 /obj/effect/spawner/map_spawner/outpost/dwarf_weapon,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Mx" = (
 /obj/structure/rack,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "ME" = (
 /obj/structure/table/wood/reinforced_alter,
 /obj/item/storage/sack{
 	pixel_y = 10
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "MK" = (
 /obj/machinery/light/fueled/oven{
 	pixel_y = 32
 	},
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "MU" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "MV" = (
 /obj/structure/fluff/walldeco/fakeshelf,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
-"MX" = (
-/obj/structure/bars/pipe{
-	dir = 1;
-	icon_state = "pipe"
-	},
-/turf/closed/wall/mineral/craftstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Nb" = (
 /obj/structure/table/wood/reinforced_alt,
 /obj/item/weapon/tongs,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Nu" = (
 /obj/structure/rack,
 /obj/item/flashlight/flare/torch/lantern/copper,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "NQ" = (
 /obj/structure/rack,
 /obj/item/storage/sack{
@@ -864,7 +789,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Oj" = (
 /obj/structure/bars/pipe{
 	dir = 1;
@@ -872,25 +797,25 @@
 	},
 /obj/structure/fluff/walldeco/stone,
 /turf/closed/wall/mineral/stone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Os" = (
 /turf/closed/mineral/bedrock,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "OL" = (
 /obj/structure/rack,
 /obj/item/weapon/flail/sflail,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Pk" = (
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Py" = (
 /obj/effect/spawner/map_spawner/beartrap,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "PO" = (
 /obj/structure/bars/pipe{
 	dir = 8;
@@ -899,22 +824,22 @@
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Qe" = (
 /obj/structure/fermentation_keg/random/beer,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Qf" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 6
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Qr" = (
 /obj/structure/table/wood/plain,
 /obj/item/cooking/pan,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "QJ" = (
 /obj/structure/stairs/stone{
 	dir = 4;
@@ -924,41 +849,41 @@
 	redstone_id = "exit_outpost"
 	},
 /turf/open/floor/naturalstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "QM" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/riddleofsteel,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "QO" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 9
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "QQ" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 1
 	},
 /obj/item/weapon/knife/cleaver,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ra" = (
 /obj/item/chair/stool/bar,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "RA" = (
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Sb" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Sv" = (
 /obj/effect/spawner/map_spawner/outpost/dwarf_weapon,
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "SD" = (
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 6
@@ -966,16 +891,16 @@
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "SW" = (
 /turf/open/floor/metal,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "SX" = (
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Ta" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -986,42 +911,42 @@
 	pixel_x = -12;
 	pixel_y = 5
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Te" = (
 /obj/structure/table/wood/reinforced_alt,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "TD" = (
 /obj/machinery/light/fueled/forge,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Uq" = (
 /obj/structure/bed/wool,
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Uy" = (
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "UL" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "UY" = (
 /turf/open/floor/cobble,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Vd" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/decal/shadow_floor{
 	dir = 4
 	},
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Vv" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -1030,11 +955,11 @@
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Vz" = (
 /obj/item/bin/water/gross,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "VG" = (
 /obj/structure/lever/wall{
 	pixel_y = 29;
@@ -1045,10 +970,10 @@
 	redstone_id = "exit_dwarfoutpost"
 	},
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "VJ" = (
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "VO" = (
 /obj/structure/remains/human{
 	name = "dwarf remains";
@@ -1056,31 +981,28 @@
 	},
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/spawner/map_spawner/outpost/dwarf_key,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "VP" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
-"Wp" = (
-/obj/effect/decal/cleanable/blood_neu/random,
-/obj/effect/decal/shadow_floor{
-	dir = 8
-	},
-/turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
+"WJ" = (
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/blocks,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "WQ" = (
 /obj/item/bin/water/gross,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "WY" = (
 /obj/item/key/dwarf_outpost,
 /turf/open/water/cleanshallow,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Xd" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Xk" = (
 /obj/structure/bars/pipe{
 	dir = 1;
@@ -1096,17 +1018,17 @@
 	pixel_y = 12
 	},
 /turf/open/floor/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Xy" = (
 /turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "XG" = (
 /obj/machinery/light/fueled/torchholder/l,
-/turf/open/floor/blocks/moss,
-/area/rogue/under/catacombs/dwarfoutpost)
+/turf/open/floor/cobble,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "XT" = (
 /turf/closed/wall/mineral/stone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Yt" = (
 /obj/structure/bars/pipe{
 	dir = 1;
@@ -1114,46 +1036,42 @@
 	},
 /obj/structure/bars/grille,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "YH" = (
 /obj/machinery/light/fueled/smelter,
 /turf/open/floor/metal{
 	icon_state = "plating2"
 	},
-/area/rogue/under/catacombs/dwarfoutpost)
-"YR" = (
-/obj/machinery/light/fueled/torchholder/r,
-/turf/open/floor/blocks,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "YT" = (
 /obj/item/ore/iron,
 /obj/item/ore/iron,
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Zj" = (
 /turf/open/floor/concrete,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Zk" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Zs" = (
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Zv" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 9
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Zz" = (
 /obj/item/clothing/armor/chainmail/hauberk/broken,
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 6
 	},
 /turf/open/floor/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost)
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 
 (1,1,1) = {"
 XT
@@ -1248,7 +1166,7 @@ Zs
 Zs
 Zj
 Xy
-Zj
+Xy
 Xy
 XT
 ik
@@ -1278,7 +1196,7 @@ Zj
 Zs
 Zj
 Zj
-tz
+Zj
 Zs
 Zs
 Zs
@@ -1287,7 +1205,7 @@ Zs
 Zs
 Zj
 Xy
-Zj
+UY
 UY
 XT
 fV
@@ -1316,7 +1234,7 @@ nh
 FC
 Zs
 Zj
-rT
+XT
 Zj
 Zj
 te
@@ -1326,7 +1244,7 @@ Zj
 Zj
 Zj
 UY
-Zj
+UY
 UY
 XT
 uF
@@ -1354,18 +1272,18 @@ XT
 XT
 jm
 Zs
-Zj
-BA
-uY
-uY
-uY
-BA
-uY
-uY
-uY
-BA
+tz
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
 ik
-Zj
+UY
 UY
 XT
 XT
@@ -1398,26 +1316,26 @@ Nb
 dN
 oD
 Xk
-yb
+XT
 EZ
 CV
 BR
-yb
+XT
 UY
-Zj
+Xy
 UY
 XG
-VJ
-VJ
+Xy
+Xy
 UY
 UY
-VJ
-XG
+Xy
+WJ
 UY
-VJ
-VJ
-VJ
-XG
+Xy
+Xy
+Xy
+WJ
 UY
 XT
 Ei
@@ -1437,27 +1355,27 @@ SX
 SX
 SX
 SX
-yb
+XT
 qJ
 CV
 CV
-hq
+XT
 UY
-Zj
 Xy
-VJ
-UY
-UY
-VJ
-VJ
-VJ
-VJ
+Xy
 UY
 UY
 UY
+Xy
+Xy
+Xy
+Xy
 UY
-VJ
-VJ
+UY
+UY
+UY
+Xy
+Xy
 XT
 GB
 Zs
@@ -1476,27 +1394,27 @@ SX
 cd
 SX
 YH
-yb
+XT
 Dw
 CV
 CV
 xd
 UY
-Zj
+UY
 Xy
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
 Xd
-rJ
+XT
 XT
 Zs
 Zs
@@ -1515,15 +1433,15 @@ SX
 SX
 SX
 SX
-yb
+XT
 CV
 CV
 jN
-rT
+XT
 UY
-Zj
+UY
 Xy
-rJ
+XT
 sI
 UY
 Zs
@@ -1554,15 +1472,15 @@ Te
 rB
 PO
 GE
-yb
+XT
 fj
 Uq
 CV
-yb
+XT
 Xy
-Zj
+UY
 Xy
-rJ
+XT
 ct
 Cj
 QQ
@@ -1589,19 +1507,19 @@ XT
 tz
 Zs
 mx
-BA
-uY
-uY
-uY
-BA
-uY
-uY
-uY
-BA
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
 iy
-Zj
 Xy
-rJ
+Xy
+XT
 Qr
 Zs
 Zs
@@ -1628,7 +1546,7 @@ nh
 Vv
 Zs
 Zj
-hq
+XT
 Zj
 Zj
 RA
@@ -1638,7 +1556,7 @@ Zj
 Zj
 Zj
 UY
-Zj
+Xy
 Xy
 nh
 ik
@@ -1677,7 +1595,7 @@ Zs
 Zs
 Zj
 UY
-Zj
+Xy
 UY
 XT
 MK
@@ -1716,7 +1634,7 @@ Zs
 Zs
 Zj
 Xy
-Zj
+UY
 UY
 nh
 ik
@@ -1757,7 +1675,7 @@ Zj
 Xy
 UY
 UY
-rJ
+XT
 Dt
 Zs
 hc
@@ -1796,7 +1714,7 @@ XT
 XT
 XT
 VG
-rJ
+XT
 IZ
 Zs
 vl
@@ -1835,7 +1753,7 @@ XT
 XT
 nh
 oj
-rJ
+XT
 Qe
 Zs
 Zs
@@ -1874,16 +1792,16 @@ XT
 XT
 XT
 QJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
-rJ
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
+XT
 hp
 UY
 Xy
@@ -1906,18 +1824,18 @@ Os
 Os
 Os
 XT
-Xy
-Xy
-jH
-Xy
-Xy
-Xy
+Zj
+Zj
+Yt
+Zj
+Zj
+Zj
 SW
 vA
-Xy
-Xy
-jH
-Xy
+Zj
+Zj
+Yt
+Zj
 QO
 ru
 Ed
@@ -1945,19 +1863,19 @@ Os
 Os
 Os
 XT
-rj
+Zj
 Zj
 Yt
 Zj
 Zj
-MU
+mx
 SW
 vA
 Zj
 Zj
 Yt
 Zj
-Cg
+rJ
 XT
 Xy
 UY
@@ -1984,10 +1902,10 @@ Os
 Os
 Os
 XT
-Xy
+Zj
 Zj
 Oj
-Ly
+Iz
 Zj
 Ta
 GC
@@ -1995,8 +1913,8 @@ vA
 Zj
 Ly
 Oj
-Zj
-Cg
+FC
+rJ
 XT
 ik
 UY
@@ -2023,19 +1941,19 @@ XT
 XT
 XT
 XT
-Xy
+Zj
 Zj
 Ly
-jb
+Ly
 Zj
 ge
 py
 vA
 Zj
-jb
+Ly
 Ly
 Zj
-Cg
+rJ
 XT
 HB
 UY
@@ -2059,10 +1977,10 @@ XT
 dU
 XT
 XT
-Xy
-Xy
-Bj
-Bj
+Zj
+Zj
+Pk
+Pk
 Pk
 Pk
 zj
@@ -2070,7 +1988,7 @@ Pk
 BC
 AQ
 st
-Wp
+BC
 Pk
 Pk
 mK
@@ -2093,9 +2011,9 @@ mI
 "}
 (25,1,1) = {"
 XT
-rJ
-VJ
-VJ
+XT
+Xy
+Xy
 UY
 nh
 FC
@@ -2133,10 +2051,10 @@ mI
 (26,1,1) = {"
 XT
 gT
-VJ
-VJ
+Xy
+Xy
 EX
-rJ
+XT
 Zj
 Zj
 UL
@@ -2149,7 +2067,7 @@ SX
 SW
 ub
 UL
-vX
+SX
 SX
 SX
 SX
@@ -2171,11 +2089,11 @@ mI
 "}
 (27,1,1) = {"
 XT
-rJ
+XT
 UY
 xE
 UY
-rJ
+XT
 Zj
 Mm
 SW
@@ -2184,14 +2102,14 @@ mb
 mb
 Aw
 mb
-qe
+mb
 KK
 Gu
 er
 mb
 mb
 mb
-qe
+mb
 XT
 XT
 XT
@@ -2214,23 +2132,23 @@ nh
 ik
 xE
 UY
-rJ
+XT
 Zj
 Zj
 SW
 vA
 Zj
 Ly
-jb
+Ly
 Zj
 MU
 Sv
 vA
 Zj
-jb
+Ly
 WY
 Zj
-Xy
+Zj
 XT
 zk
 UY
@@ -2249,18 +2167,18 @@ XT
 "}
 (29,1,1) = {"
 XT
-rJ
+XT
 UY
 xE
-VJ
-rJ
+Xy
+XT
 Zj
 Zj
 aX
 vA
 Zj
 Oj
-Ly
+Iz
 Zj
 VO
 AQ
@@ -2268,8 +2186,8 @@ vA
 Zj
 Ly
 Oj
+FC
 Zj
-Xy
 XT
 jV
 UY
@@ -2289,26 +2207,26 @@ XT
 (30,1,1) = {"
 XT
 gT
-VJ
-VJ
-yG
-rJ
-Zj
-Zj
-SW
-vA
-Zj
-Yt
-Zj
-Zj
-rj
-SW
-vA
-Zj
-Zj
-Yt
-Zj
 Xy
+Xy
+yG
+XT
+Zj
+Zj
+SW
+vA
+Zj
+Yt
+Zj
+Zj
+Zj
+SW
+vA
+Zj
+Zj
+Yt
+Zj
+Zj
 XT
 zk
 UY
@@ -2327,8 +2245,8 @@ XT
 "}
 (31,1,1) = {"
 XT
-rJ
-VJ
+XT
+Xy
 UY
 UY
 nh
@@ -2336,18 +2254,18 @@ Ft
 Pk
 SW
 vA
-Xy
-jH
-Xy
-Xy
-Xy
+Zj
+Yt
+Zj
+Zj
+Zj
 SW
 vA
-Xy
-Xy
-jH
-Xy
-YR
+Zj
+Zj
+Yt
+Zj
+uZ
 XT
 tN
 UY
@@ -2367,26 +2285,26 @@ XT
 (32,1,1) = {"
 XT
 nh
-Iz
+iy
 UY
-VJ
+Xy
 zc
 ub
 SW
 SW
 vA
 XT
-MX
-rJ
-rJ
-rJ
+cv
+XT
+XT
+XT
 yI
-rJ
-rJ
-rJ
-MX
-rJ
-rJ
+XT
+XT
+XT
+cv
+XT
+XT
 XT
 XT
 XT
@@ -2405,10 +2323,10 @@ XT
 "}
 (33,1,1) = {"
 XT
-rJ
-VJ
-VJ
-VJ
+XT
+Xy
+Xy
+Xy
 zc
 ub
 SW
@@ -2450,9 +2368,9 @@ XT
 XT
 nh
 Vd
-qe
-qe
-Xy
+mb
+mb
+Zj
 XT
 SW
 SW

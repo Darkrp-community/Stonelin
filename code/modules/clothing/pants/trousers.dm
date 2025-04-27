@@ -16,7 +16,6 @@
 	prevent_crits = MINOR_CRITICALS
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/hide/cured
-	item_weight = 3
 
 /obj/item/clothing/pants/trou/leather
 	name = "leather trousers"

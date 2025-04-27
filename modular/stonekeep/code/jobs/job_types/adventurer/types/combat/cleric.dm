@@ -24,8 +24,8 @@
 	..()
 	H.virginity = TRUE
 
-	armor = /obj/item/clothing/armor/cuirass // Halfplate has been made heavy armor, billions must make due.
-	shirt = /obj/item/clothing/shirt/shortshirt/random
+	armor = /obj/item/clothing/armor/cuirass/iron // Halfplate has been made heavy armor, billions must make due.
+	shirt = /obj/item/clothing/armor/gambeson/light
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots/leather
 	belt = /obj/item/storage/belt/leather
@@ -36,18 +36,12 @@
 		if(/datum/patron/divine/astrata)
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
-			neck = /obj/item/clothing/neck/chaincoif
-		if(/datum/patron/divine/dendor)
-			head = /obj/item/clothing/head/antlerhood
-			neck = /obj/item/clothing/neck/coif
-			wrists = /obj/item/clothing/neck/psycross/silver/dendor
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak
-			beltr = /obj/item/weapon/knife/stone
-		if(/datum/patron/divine/necra)
+			neck = /obj/item/clothing/neck/chaincoif/iron
+		if(/datum/patron/divine/necra)//removing dendor clerics until i polish up the forest guardian role, i wasn't able to succesfully remove the medium armor training for them
 			head = /obj/item/clothing/head/padded/deathface
 			wrists = /obj/item/clothing/neck/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/chaincoif/iron
 		if(/datum/patron/divine/eora)
 			wrists = /obj/item/clothing/neck/psycross/silver/eora
 			cloak = /obj/item/clothing/cloak/stabard/templar/eora
@@ -56,11 +50,11 @@
 		if(/datum/patron/divine/ravox)
 			wrists = /obj/item/clothing/neck/psycross/silver/ravox
 			cloak =  /obj/item/clothing/cloak/stabard/templar/ravox
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/chaincoif/iron
 		if(/datum/patron/divine/noc)
 			wrists = /obj/item/clothing/neck/psycross/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
-			neck = /obj/item/clothing/neck/chaincoif
+			neck = /obj/item/clothing/neck/chaincoif/iron
 		if(/datum/patron/divine/pestra)
 			wrists = /obj/item/clothing/neck/psycross/silver/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
@@ -72,7 +66,7 @@
 		if(/datum/patron/divine/malum)
 			wrists = /obj/item/clothing/neck/psycross/silver/malum
 			cloak = /obj/item/clothing/cloak/stabard/templar/malum
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/chaincoif/iron
 		if(/datum/patron/divine/xylix)
 			wrists = /obj/item/clothing/neck/psycross/silver/xylix
 			cloak = /obj/item/clothing/cloak/tabard/crusader
@@ -85,6 +79,8 @@
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)//secondary weapon option
 		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)

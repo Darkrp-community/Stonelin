@@ -11,7 +11,7 @@
 	category_tags = list(CTAG_SKMERCENARY)
 	maximum_possible_slots = 5
 
-	cmode_music = 'modular/stonekeep/sound/cmode/combat_steppe.ogg'
+	cmode_music = 'sound/music/cmode/combat_steppe.ogg'
 
 /datum/outfit/job/stonekeep/merc/steppesman/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -26,10 +26,10 @@
 	beltl= /obj/item/ammo_holder/quiver/arrows
 	shirt = /obj/item/clothing/shirt/undershirt
 	pants = /obj/item/clothing/pants/tights/red
-	neck = /obj/item/storage/belt/pouch/coins/poor
+	neck = /obj/item/clothing/neck/coif//neck cover
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/weapon/knife/hunting = 1)
+	backpack_contents = list(/obj/item/weapon/knife/hunting = 1, /obj/item/storage/belt/pouch/coins/poor = 1)
 	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 		beltr = /obj/item/weapon/sword/sabre/piandao
@@ -38,7 +38,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)

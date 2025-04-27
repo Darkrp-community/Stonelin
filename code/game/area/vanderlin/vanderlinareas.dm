@@ -26,7 +26,7 @@
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/carbon/human/species/rousman/ambush = 30,
 				/mob/living/carbon/human/species/orc/ambush = 20,
-				/mob/living/simple_animal/hostile/retaliate/troll/cave = 10)
+				/mob/living/simple_animal/hostile/retaliate/troll = 5)
 
 /area/rogue/under/mountains/anvil/upper
 	name = "malum's anvil under upper caves"
@@ -36,8 +36,7 @@
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/mole = 60,
 				/mob/living/carbon/human/species/rousman/ambush = 20,
-				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
-				/mob/living/simple_animal/hostile/retaliate/troll/cave = 5)
+				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,)
 
 /area/rogue/under/mountains/anvil/lower/building
 	name = "malum's anvil cave building"

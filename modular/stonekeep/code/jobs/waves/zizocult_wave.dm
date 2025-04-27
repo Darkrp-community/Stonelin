@@ -7,7 +7,7 @@
 	)
 	outfit = /datum/outfit/job/sk_migration/antag/zherald
 	grant_lit_torch = FALSE
-	antag_datum = /datum/antagonist/zizocultist
+//	antag_datum = /datum/antagonist/zizocultist/leader
 
 /datum/migrant_role/sk/zizo/herald/after_spawn(mob/living/carbon/human/character)
 	. = ..()
@@ -86,7 +86,7 @@
 	)
 //	outfit = /datum/outfit/job/sk_migration/antag/zhellgobbo
 	grant_lit_torch = FALSE
-	antag_datum = /datum/antagonist/zizocultist
+//	antag_datum = /datum/antagonist/hellgoblin
 /*
 /datum/outfit/job/sk_migration/antag/zhellgobbo/pre_equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source)
 	. = ..()
@@ -155,12 +155,12 @@
 
 /datum/outfit/job/sk_migration/antag/zhellgobbo/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.base_strength = rand(10, 12)
-	H.base_perception = rand(5, 7)
-	H.base_intelligence = rand(1, 4)
-	H.base_constitution = rand(10, 12)
-	H.base_endurance = rand(10, 12)
-	H.base_speed = rand(12, 15)
+	H.TOTALSTR = rand(10, 12)
+	H.TOTALPER = rand(5, 7)
+	H.TOTALINT = rand(1, 4)
+	H.TOTALCON = rand(10, 12)
+	H.TOTALEND = rand(10, 12)
+	H.TOTALSPD = rand(12, 15)
 	armor = pick(/obj/item/clothing/armor/leather/goblin,  /obj/item/clothing/armor/leather/hide/goblin)
 	head = pick(/obj/item/clothing/head/helmet/goblin, /obj/item/clothing/head/helmet/leather/goblin)
 	r_hand = pick(/obj/item/weapon/mace/spiked, /obj/item/weapon/flail, /obj/item/weapon/sword/sabre/scythe)
@@ -188,8 +188,8 @@
 	shared_wave_type = list(/datum/migrant_wave/evil_knight,/datum/migrant_wave/varyag_raiders, /datum/migrant_wave/zizo_cult)
 	can_roll = FALSE
 	roles = list(
-		/datum/migrant_role/sk/zizo/herald = 1,
-//		/datum/migrant_role/sk/zizo/hellgoblin = 1
+//		/datum/migrant_role/sk/zizo/herald = 1,
+		/datum/migrant_role/sk/zizo/hellgoblin = 1
 )
 	greet_text = "Zizo is your master, and too long has these lands been allowed to forget."
 

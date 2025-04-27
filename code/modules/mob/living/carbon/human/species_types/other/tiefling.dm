@@ -102,7 +102,7 @@
 		if(message[1])
 			if(message[1] != "*")
 				message = " [message]"
-				var/list/accent_words = strings("accents/accent_universal.json", "universal")
+				var/list/accent_words = strings("accent_universal.json", "universal")
 
 				for(var/key in accent_words)
 					var/value = accent_words[key]
@@ -126,7 +126,7 @@
 		"Zarkana" = SKIN_COLOR_ARCANA, // - (Dark violet)
 		"Zarconum" = SKIN_COLOR_ZARCONUM, // - (Pink)
 //		"Flayer" = SKIN_COLOR_FLAYER, // - (Purple)
-//		"Abyssium" = SKIN_COLOR_ABYSS, // - (Navy blue)
+		"Abyssium" = SKIN_COLOR_ABYSS, // - (Navy blue)
 		"Castillian" = SKIN_COLOR_CASTILLIAN, // - (Pale red)
 		"Asturias" = SKIN_COLOR_ASTURIAS, // - (Clay red)
 		"Vaquero" = SKIN_COLOR_VAQUERO, // - (Earthly red)
@@ -170,7 +170,7 @@
 	return last_names
 
 /datum/species/tieberian/get_accent_list()
-	return strings("accents/spanish_replacement.json", "spanish")
+	return strings("spanish_replacement.json", "spanish")
 
 /datum/species/tieberian/get_native_language()
 	return "Infernal"

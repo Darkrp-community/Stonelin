@@ -73,6 +73,11 @@
 	sellprice = 17
 	craftdiff = 1
 
+/datum/repeatable_crafting_recipe/leather/hood
+	name = "leather hood"
+	output = /obj/item/clothing/head/roguehood/brown
+	craftdiff = 2
+
 /datum/repeatable_crafting_recipe/leather/cloak
 	name = "leather raincloak"
 	requirements = list(

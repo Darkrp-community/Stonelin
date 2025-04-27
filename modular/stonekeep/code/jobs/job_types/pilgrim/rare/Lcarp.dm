@@ -8,7 +8,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Elf",
-		"Half-Elf"
+		"Half-Elf",
+		"Dark Elf",
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/mastercarpenter
 	category_tags = list(CTAG_PILGRIM)

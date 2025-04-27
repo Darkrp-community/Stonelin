@@ -20,11 +20,11 @@
 	tutorial = "Advisor, spymaster, confidante, your ties with the ruler are deep and personal."
 	advclass_cat_rolls = list(CTAG_SKHAND = 20)
 	give_bank_account = 120
-	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
+	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
 
 /datum/job/hand/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
-//	SSfamilytree.AddRoyal(spawned, FAMILY_OMMER)	Caused sibling + child at once issues ROGTODO?
+	SSfamilytree.AddRoyal(spawned, FAMILY_OMMER)
 	var/mob/living/carbon/human/H = spawned
 	if(GLOB.keep_doors.len > 0)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(know_keep_door_password), H), 50)

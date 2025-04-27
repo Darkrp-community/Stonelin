@@ -39,8 +39,6 @@
 	soundpack_m = /datum/voicepack/male/dwarf
 	soundpack_f = /datum/voicepack/female/dwarf
 
-	exotic_bloodtype = /datum/blood_type/human/kobold
-
 	custom_id = "dwarf"
 	custom_clothes = TRUE
 

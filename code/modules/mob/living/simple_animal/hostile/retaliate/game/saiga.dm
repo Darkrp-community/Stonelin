@@ -83,9 +83,9 @@
 	melee_damage_upper = 20
 	retreat_distance = 10
 	minimum_distance = 10
-	base_speed = 15
-	base_constitution = 8
-	base_strength = 9
+	TOTALSPD = 15
+	TOTALCON = 8
+	TOTALSTR = 9
 	childtype = list(/mob/living/simple_animal/hostile/retaliate/saiga/saigakid = 70,
 					/mob/living/simple_animal/hostile/retaliate/saiga/saigakid/boy = 30)
 	can_buckle = TRUE
@@ -206,9 +206,9 @@
 	retreat_distance = 0
 	minimum_distance = 0
 	retreat_health = 0.3
-	base_constitution = 15
-	base_strength = 11
-	base_speed = 12
+	TOTALCON = 15
+	TOTALSTR = 11
+	TOTALSPD = 12
 
 	can_buckle = TRUE
 	buckle_lying = 0
@@ -336,9 +336,9 @@
 	melee_damage_lower = 1
 	melee_damage_upper = 6
 
-	base_constitution = 5
-	base_strength = 5
-	base_speed = 5
+	TOTALCON = 5
+	TOTALSTR = 5
+	TOTALSPD = 5
 	defprob = 50
 	pixel_x = -16
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/saiga
