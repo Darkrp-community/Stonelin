@@ -35,7 +35,10 @@
 	. = ..()
 	AddComponent(/datum/component/combat_noise, list("aggro" = 2))
 
-/mob/living/carbon/human/species/orc/npc/ambush/after_creation()
+/mob/living/carbon/human/species/orc/ambush
+	ai_controller = /datum/ai_controller/human_npc
+
+/mob/living/carbon/human/species/orc/ambush/after_creation()
 	..()
 	job = "Ambush Orc"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
@@ -197,10 +200,14 @@
 
 /datum/component/rot/corpse/orc/process()
 	var/amt2add = 10 //1 second
+	var/time_elapsed = last_process ? (world.time - last_process)/10 : 1
 	if(last_process)
 		amt2add = ((world.time - last_process)/10) * amt2add
 	last_process = world.time
 	amount += amt2add
+	if(has_world_trait(/datum/world_trait/pestra_mercy))
+		amount -= 5 * time_elapsed
+
 	var/mob/living/carbon/C = parent
 	if(!C)
 		qdel(src)
@@ -304,6 +311,7 @@
 //NEW ORCS WITH DIFFERENT GEAR AND SHIT
 /mob/living/carbon/human/species/orc/tribal
 	name = "Tribal Orc"
+	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/tribal
 	ambushable = FALSE
 
@@ -353,6 +361,7 @@
 
 /mob/living/carbon/human/species/orc/warrior
 	name = "Warrior Orc"
+	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/warrior
 	ambushable = FALSE
 
@@ -423,6 +432,7 @@
 
 /mob/living/carbon/human/species/orc/marauder
 	name = "Marauder Orc"
+	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/marauder
 	ambushable = FALSE
 
@@ -476,6 +486,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 /mob/living/carbon/human/species/orc/warlord
 	name = "Warlord Orc"
+	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/warlord
 	ambushable = FALSE
 

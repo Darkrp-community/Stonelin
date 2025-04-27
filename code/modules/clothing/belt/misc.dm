@@ -32,7 +32,7 @@
 		/obj/item/key/bandit,
 	)
 
-//Mercenary belt starts with a bandage and a key to their guildhall.
+//Bandit's belt starts with a bandage and a key to their guildhall.
 /obj/item/storage/belt/leather/mercenary
 	populate_contents = list(
 		/obj/item/natural/cloth,
@@ -275,6 +275,114 @@
 	)
 	component_type = /datum/component/storage/concrete/grid/surgery_bag
 
+/obj/item/storage/belt/leather/knifebelt
+
+	name = "tossblade belt"
+	desc = "A many-slotted belt meant for tossblades. Little room left over."
+	icon_state = "knife"
+	item_state = "knife"
+	strip_delay = 20
+	var/max_storage = 8
+	sewrepair = TRUE
+	component_type = /datum/component/storage/concrete/grid/belt/knife_belt
+
+
+/obj/item/storage/belt/leather/knifebelt/attack_turf(turf/T, mob/living/user)
+	if(length(contents) >= max_storage)
+		to_chat(user, span_warning("Your [src.name] is full!"))
+		return
+	to_chat(user, span_notice("You begin to gather the ammunition..."))
+	for(var/obj/item/weapon/knife/throwingknife/knife in T.contents)
+		if(do_after(user, 5 DECISECONDS))
+			if(!eat_knife(knife))
+				break
+
+/obj/item/storage/belt/leather/knifebelt/proc/eat_knife(obj/A)
+	if(A.type in typesof(/obj/item/weapon/knife/throwingknife))
+		if(length(contents) < max_storage)
+			if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, FALSE))
+				update_icon()
+				return TRUE
+			else
+				return FALSE
+
+/obj/item/storage/belt/leather/knifebelt/attackby(obj/A, mob/living/user, params)
+	if(A.type in typesof(/obj/item/weapon/knife/throwingknife))
+		if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
+			update_icon()
+			to_chat(usr, span_notice("I discreetly slip [A] into [src]."))
+		else
+			to_chat(loc, span_warning("Full!"))
+		return TRUE
+	. = ..()
+
+/obj/item/storage/belt/leather/knifebelt/attack_right(mob/user)
+	if(length(contents))
+		var/list/knives = list()
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE_TYPE, /obj/item/weapon/knife/throwingknife, drop_location(), amount = 1, check_adjacent = TRUE, user = user, inserted = knives)
+		for(var/knife in knives)
+			user.put_in_active_hand(knife)
+			break
+		update_icon()
+		return TRUE
+
+/obj/item/storage/belt/leather/knifebelt/examine(mob/user)
+	. = ..()
+	if(length(contents))
+		. += span_notice("[length(contents)] inside.")
+
+/obj/item/storage/belt/leather/knifebelt/iron/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
+
+/obj/item/storage/belt/leather/knifebelt/steel/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/steel/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
+
+/obj/item/storage/belt/leather/knifebelt/psydon/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/psydon/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
+
+/obj/item/storage/belt/leather/knifebelt/black
+
+	icon_state = "blackknife"
+	item_state = "blackknife"
+
+/obj/item/storage/belt/leather/knifebelt/black/iron/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
+
+/obj/item/storage/belt/leather/knifebelt/black/steel/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/steel/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
+
+/obj/item/storage/belt/leather/knifebelt/black/psydon/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/knife/throwingknife/psydon/A = new(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, null, TRUE, TRUE))
+			qdel(A)
+	update_icon()
 
 ///////////////////////////////////////////////
 

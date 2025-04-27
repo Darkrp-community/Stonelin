@@ -34,6 +34,7 @@
 	landsound = 'sound/foley/jumpland/waterland.wav'
 	neighborlay_override = "edge"
 	path_weight = 90
+	shine = SHINE_SHINY
 	var/datum/reagent/water_reagent = /datum/reagent/water
 	var/mapped = TRUE // infinite source of water
 	var/water_volume = 100 // 100 is 1 bucket. Minimum of 10 to count as a water tile
@@ -121,6 +122,8 @@
 		QDEL_NULL(water_top_overlay)
 		for(var/obj/effect/overlay/water/water in contents)
 			qdel(water)
+		make_unshiny()
+		shine = 0
 		we_cut = TRUE
 		var/mutable_appearance/dirty = mutable_appearance('icons/turf/floors.dmi', "dirt")
 		add_overlay(dirty)
@@ -292,6 +295,7 @@
 	smooth(adjacencies)
 
 /turf/open/water/smooth(adjacencies)
+	make_unshiny()
 	var/list/Yeah = ..()
 	if(water_overlay)
 		water_overlay.cut_overlays(TRUE)
@@ -301,6 +305,7 @@
 		water_top_overlay.cut_overlays(TRUE)
 		if(Yeah)
 			water_top_overlay.add_overlay(Yeah)
+	make_shiny(initial(shine))
 
 /turf/open/water/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
