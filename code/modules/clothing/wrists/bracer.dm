@@ -33,18 +33,18 @@
 /obj/item/clothing/wrists/bracers/leather/advanced
 	name = "hardened leather bracers"
 	desc = "Hardened leather braces that will keep your wrists safe from bludgeoning."
-	armor = list("blunt" = 60, "slash" = 40, "stab" = 20, "piercing" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER_GOOD
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST) //We're losing stab here
 	max_integrity = 250
 
-/obj/item/clothing/wrists/bracers/leather/masterwork
-	name = "masterwork leather bracers"
-	desc = "These bracers are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	armor = list("blunt" = 80, "slash" = 60, "stab" = 40, "piercing" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST) //We're getting chop here
-	max_integrity = 300
+///obj/item/clothing/wrists/bracers/leather/masterwork
+//	name = "masterwork leather bracers"
+//	desc = "These bracers are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+//	armor = list("blunt" = 80, "slash" = 60, "stab" = 40, "piercing" = 0, "fire" = 0, "acid" = 0)
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST) //We're getting chop here
+//	max_integrity = 300
 
-/obj/item/clothing/wrists/bracers/leather/masterwork/Initialize()
-	. = ..()
-	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
+///obj/item/clothing/wrists/bracers/leather/masterwork/Initialize()
+//	. = ..()
+//	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 

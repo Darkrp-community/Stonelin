@@ -10,7 +10,6 @@
 		"Changeling",
 		"Skylancer",
 		"Ogrun",
-		"Undine"
 
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/woodcutter

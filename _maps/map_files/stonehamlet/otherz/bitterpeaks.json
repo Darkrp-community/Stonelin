@@ -2,5 +2,5 @@
     "map_name": "Bitter Peaks",
     "map_path": "map_files/stonehamlet/otherz",
     "map_file": "bitterpeaks.dmm",
-    "traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Down": true}]
+    "traits": [{"Up": true, "Leylines": true}, {"Up": true, "Down": true, "Leylines": true}, {"Up": true, "Down": true, "Leylines": true}, {"Down": true, "Leylines": true}]
 }

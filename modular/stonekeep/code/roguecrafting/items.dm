@@ -301,9 +301,9 @@
 	result = /obj/item/ammo_casing/caseless/bolt/poison/potent
 	reqs = list(/obj/item/ammo_casing/caseless/bolt = 1,
 				/datum/reagent/strongpoison = 5)
-/* kaizoku ROGTODO
+
 /datum/crafting_recipe/roguetown/shinobiarrow
-	name = "shinobi arrow(5)"
+	name = "sedative arrow(5)"
 	result = list(/obj/item/ammo_casing/caseless/arrow/poison/fog,
 			/obj/item/ammo_casing/caseless/arrow/poison/fog,
 			/obj/item/ammo_casing/caseless/arrow/poison/fog,
@@ -329,8 +329,8 @@
 	result = /obj/item/weapon/flail/kusarigama/peasant
 	reqs = list(/obj/item/weapon/sickle/kama = 1,
 				/obj/item/rope/chain = 1)
-	craftdiff = 1
-*/
+	craftdiff = 0 //Any farmer should be able to make this. It's just a sickle and a chain.
+
 /*========= ENGINEEERING CRAFTING ==========*/
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
@@ -547,11 +547,6 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/improspear//improvised spear anyone can do is just tie a knife to a staff
-	name = "improvised spear"
-	result = /obj/item/weapon/polearm/spear/stone/improvised
-	reqs = list(/obj/item/weapon/polearm/woodstaff/quarterstaff = 1, /obj/item/rope = 1, /obj/item/weapon/knife/villager = 1)
-	craftdiff = 3
 
 // ---------	CLOTHING		-------------
 /datum/crafting_recipe/roguetown/skullmask
@@ -665,7 +660,7 @@
 	result = /obj/item/weapon/surgery/retractor/improv
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 2)
 	craftdiff = 1
-
+/* back to slapcraft since the recipes are only in the Vanderbook describing painting, too confusing like this
 // ---------	PAINTING		-------------
 /datum/crafting_recipe/roguetown/canvas
 	name = "painting (canvas)"
@@ -686,5 +681,5 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 		/obj/item/natural/wood/plank = 1)
 	craftdiff = 1
-
+*/
 

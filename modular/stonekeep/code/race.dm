@@ -38,7 +38,7 @@
 		"Jackpoison" = SKIN_COLOR_JACKPOISON, // - (Grey-purple)
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS, // - (Grey-blue)
 		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR, // - (Black-blue)
-		"Scorpion" = DELF_SCORPION, // - (Pale green)
+//		"Scorpion" = DELF_SCORPION, // - (Pale green)
 	))
 /datum/species/elf/dark/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)
 	. = ..()
@@ -71,7 +71,7 @@
 #define DWARF_FERRO "bc8d74"
 #define DWARF_PHOSPHORITE "967e70"
 #define DWARF_OBSIDIAN "665855"
-#define DWARF_QUARTZ "8b7e70"
+#define DWARF_QUARTZ "70685f"
 #define DWARF_GRENZDWARF "ffe0d1"
 
 /datum/species/dwarf/mountain/get_skin_list()

@@ -217,17 +217,8 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
 			add_overlay(mounted)
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed(mob/user)
-	..()
-	deaggroprob = 30
-	if(can_buckle)
-		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 12), TEXT_SOUTH = list(0, 12), TEXT_EAST = list(-2, 8), TEXT_WEST = list(2, 12))) //horses are 6 pixels taller.
-		D.set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
-		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
-/sound/vo/female_abyssariad
+
+
 /mob/living/simple_animal/hostile/retaliate/saiga/horse
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
 	name = "fogbeast"
@@ -273,9 +264,9 @@
 	melee_damage_upper = 30
 	retreat_distance = 10
 	minimum_distance = 10
-	STASPD = 15
-	STACON = 12
-	STASTR = 11
+	base_constitution = 12
+	base_strength = 10
+	base_speed = 15
 	childtype = /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -291,16 +282,21 @@
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed(mob/user)
 	..()
 	if(can_buckle)
-		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-		D.set_riding_offsets(RIDING_OFFSET_ALL, list(
+		AddComponent(/datum/component/riding/fogbeast)
+	deaggroprob = 30
+
+/datum/component/riding/fogbeast/Initialize()
+	. = ..()
+	set_riding_offsets(RIDING_OFFSET_ALL, list(
 			TEXT_NORTH = list(0, 8),
 			TEXT_SOUTH = list(0, 8),
 			TEXT_EAST = list(-2, 8),
 			TEXT_WEST = list(2, 8)))
-		D.set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
-		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+	set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
+	set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+	set_vehicle_dir_layer(EAST, OBJ_LAYER)
+	set_vehicle_dir_layer(WEST, OBJ_LAYER)
+
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
@@ -327,9 +323,9 @@
 	melee_damage_lower = 1
 	melee_damage_upper = 6
 
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
+	base_constitution = 5
+	base_strength = 5
+	base_speed = 5
 	defprob = 50
 	pixel_x = -16
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/saiga/horse

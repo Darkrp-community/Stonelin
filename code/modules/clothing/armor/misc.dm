@@ -32,6 +32,7 @@
 	armor = ARMOR_LEATHER_GOOD
 	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_EXCEPT_BLUNT
+	item_weight = 7 * IRON_MULTIPLIER
 
 //................ Brigandine ............... //
 /obj/item/clothing/armor/brigandine
@@ -50,8 +51,9 @@
 	armor = ARMOR_BRIGANDINE
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	max_integrity = INTEGRITY_STRONGEST
-	prevent_crits = ALL_EXCEPT_STAB
+	prevent_crits = ALL_EXCEPT_BLUNT
 	do_sound_plate = TRUE
+	item_weight = 3.2 * IRON_MULTIPLIER
 
 /obj/item/clothing/armor/brigandine/update_icon()
 	cut_overlays()
@@ -64,7 +66,7 @@
 
 /obj/item/clothing/armor/captain
 	name = "captain's brigandine"
-	desc = "A coat with plates specifically tailored and forged for the captain of Vanderlin."
+	desc = "A coat with plates specifically tailored and forged for the captain."
 	icon_state = "capplate"
 	icon = 'icons/roguetown/clothing/special/captain.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
@@ -82,8 +84,9 @@
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	max_integrity = INTEGRITY_STRONGEST
-	prevent_crits = ALL_EXCEPT_STAB
+	prevent_crits = ALL_EXCEPT_BLUNT
 	do_sound_plate = TRUE
+	item_weight = 7 * STEEL_MULTIPLIER
 
 /obj/item/clothing/armor/captain/update_icon()
 	cut_overlays()
@@ -118,6 +121,8 @@
 	blocksound = PLATEHIT
 	sellprice = VALUE_SNOWFLAKE_STEEL
 	armor = ARMOR_PLATE_BAD
+	armor_class = AC_MEDIUM
+	body_parts_covered = COVERAGE_TORSO//this way the roundstart zybantu mercenary armor is on pair with the other roles, a full brigandine doesn't seem fair on a merc role.
 	// add armor plate bad from defines
 
 	max_integrity = INTEGRITY_STRONG
@@ -140,6 +145,7 @@
 	armor = ARMOR_SCALE
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	prevent_crits = ALL_EXCEPT_BLUNT
+	item_weight = 7 * IRON_MULTIPLIER
 
 // VAMPIRE ARMORS BELOW
 
@@ -158,6 +164,7 @@
 	smeltresult = /obj/item/ingot/steel
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	item_weight = 5.5 * STEEL_MULTIPLIER
 
 /obj/item/clothing/shirt/vampire
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR

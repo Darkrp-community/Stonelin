@@ -20,7 +20,7 @@
 	desc = "A piece of cloth worn around the temple."
 	icon_state = "headband"
 	dynamic_hair_suffix = ""
-	fiber_salvage = FALSE
+	salvage_result = /obj/item/natural/cloth
 	salvage_amount = 1
 
 /obj/item/clothing/head/headband/red
@@ -31,16 +31,19 @@
 	desc = "A white cap worn by most manual laborers to protect from sunburn."
 	icon_state = "armingcap"
 	flags_inv = HIDEEARS
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/clothing/head/shawl
 	name = "shawl"
 	desc = "Keeps the hair in check, and looks proper."
 	icon_state = "shawl"
 	flags_inv = HIDEEARS
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/clothing/head/brimmed
 	desc = "A simple brimmed hat that provides some relief from the sun."
 	icon_state = "brimmed"
+	salvage_result = /obj/item/natural/cured
 
 
 //................ Fur Hats ............... //
@@ -48,10 +51,12 @@
 	name = "fur hat"
 	desc = "A hat made of fur typically worn by guildsmen."
 	icon_state = "hatfur"
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/head/hatblu
 	name = "fur hat"
 	icon_state = "hatblu"
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/head/papakha
 	name = "papakha"
@@ -59,6 +64,7 @@
 	icon_state = "papakha"
 	sellprice = VALUE_FINE_CLOTHING
 	max_integrity = INTEGRITY_POOR
+	salvage_result = /obj/item/natural/fur
 
 //................ Fancy Hats ............... //
 
@@ -138,7 +144,7 @@
 	body_parts_covered = HEAD|HAIR|EARS
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
-
+	salvage_result = /obj/item/natural/cloth
 
 
 /*------------------\

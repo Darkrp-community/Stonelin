@@ -13,6 +13,7 @@
 	move_to_delay = 2
 	vision_range = 5
 	aggro_vision_range = 5
+	footstep_type = FOOTSTEP_MOB_CLAW	// Rogtodo why is it silent?
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 4,
@@ -31,12 +32,12 @@
 	base_intents = list(/datum/intent/simple/trollrip)
 	attack_sound = list('modular/stonekeep/sound/vo/mobs/gator/gatorattack1.ogg', 'modular/stonekeep/sound/vo/mobs/gator/gatorattack2.ogg')
 	melee_damage_lower = 35
-	melee_damage_upper = 40
+	melee_damage_upper = 42
 
-	TOTALCON = 14
-	TOTALSTR = 18
-	TOTALSPD = 6
-	TOTALEND = 8
+	base_constitution = 14
+	base_strength = 20
+	base_speed = 6
+	base_endurance = 18
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -54,7 +55,7 @@
 	AIStatus = AI_OFF
 	can_have_ai = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/gator/Initialize()
+/mob/living/simple_animal/hostile/retaliate/cavebear/Initialize()
 	. = ..()
 	gender = MALE
 	if(prob(33))
@@ -65,44 +66,36 @@
 	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 	//ADD_TRAIT(src, TRAIT_GENERIC) // to-do
 
-/mob/living/simple_animal/hostile/retaliate/gator/find_food()
+/mob/living/simple_animal/hostile/retaliate/cavebear/find_food()
 	. = ..()
 	if(!.)
 		return eat_bodies()
 
-/mob/living/simple_animal/hostile/retaliate/gator/death(gibbed)
-	..()
-	update_icon()
 
-
-/mob/living/simple_animal/hostile/retaliate/gator/update_icon()
-	cut_overlays()
-	..()
-
-/mob/living/simple_animal/hostile/retaliate/gator/get_sound(input)
+/mob/living/simple_animal/hostile/retaliate/cavebear/get_sound(input)
 	switch(input)
 		if("aggro")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatoraggro1.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro2.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro3.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro4.ogg')
+			return pick('modular/stonekeep/sound/vo/mobs/bear/bear_aggro.ogg')
 		if("pain")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatorpain.ogg')
+			return pick('modular/stonekeep/sound/vo/mobs/bear/bear_idle.ogg')
 		if("death")
 			return pick('modular/stonekeep/sound/vo/mobs/gator/gatordeath.ogg')
 		if("idle")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatoridle1.ogg')
+			return pick('modular/stonekeep/sound/vo/mobs/bear/bear_idle.ogg')
 
-/mob/living/simple_animal/hostile/retaliate/gator/taunted(mob/user)
+/mob/living/simple_animal/hostile/retaliate/cavebear/taunted(mob/user)
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/gator/Life()
+/mob/living/simple_animal/hostile/retaliate/cavebear/Life()
 	..()
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
 
-/mob/living/simple_animal/hostile/retaliate/gator/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/cavebear/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)

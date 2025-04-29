@@ -95,7 +95,7 @@
 	if((getBruteLoss() + getFireLoss()) < (STAEND * 10))
 		return
 
-	var/probby = 53 - (STAEND * 2)
+	var/probby = 53 - (STAEND * 3)
 	if(!(mobility_flags & MOBILITY_STAND))
 		probby = probby - 20
 	if(prob(probby))

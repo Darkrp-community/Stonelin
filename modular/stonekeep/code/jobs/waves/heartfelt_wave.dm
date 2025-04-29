@@ -224,7 +224,6 @@ Spawn in the bog area.
 	name = "The Heartfelt Lord"
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/heartfelt)
 	can_roll = FALSE
-	downgrade_wave = /datum/migrant_wave/heartfelt_smallest
 	roles = list(
 		/datum/migrant_role/sk/heartfelt/lord = 1,
 		/datum/migrant_role/sk/heartfelt/bodyguard = 1,

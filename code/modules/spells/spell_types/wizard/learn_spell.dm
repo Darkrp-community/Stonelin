@@ -21,7 +21,7 @@
 		/obj/effect/proc_holder/spell/invoked/haste,
 		/obj/effect/proc_holder/spell/invoked/findfamiliar,
 		/obj/effect/proc_holder/spell/self/primalsavagery5e,
-		/obj/effect/proc_holder/spell/invoked/projectile/bloodlightning,
+//		/obj/effect/proc_holder/spell/invoked/projectile/bloodlightning,	STONEKEEP EDIT its the classic vampire spell, bit boring every joe gets it
 //		/obj/effect/proc_holder/spell/invoked/push_spell,
 //		/obj/effect/proc_holder/spell/targeted/ethereal_jaunt,
 //		/obj/effect/proc_holder/spell/aoe_turf/knock,

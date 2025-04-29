@@ -31,12 +31,12 @@
 	base_intents = list(/datum/intent/simple/trollrip)
 	attack_sound = list('modular/stonekeep/sound/vo/mobs/gator/gatorattack1.ogg', 'modular/stonekeep/sound/vo/mobs/gator/gatorattack2.ogg')
 	melee_damage_lower = 25
-	melee_damage_upper = 35
+	melee_damage_upper = 37
 
-	TOTALCON = 10
-	TOTALSTR = 16
-	TOTALSPD = 2
-	TOTALEND = 8
+	base_constitution = 10
+	base_strength = 16
+	base_speed = 2
+	base_endurance = 20
 
 	retreat_distance = 0
 	minimum_distance = 0

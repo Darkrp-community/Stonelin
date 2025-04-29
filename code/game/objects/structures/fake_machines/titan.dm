@@ -252,6 +252,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 				user.mind.adjust_triumphs(1)
 			SSmapping.retainer.head_rebel_decree = TRUE
 	GLOB.lord_decrees += message
+	GLOB.vanderlin_round_stats[STATS_LAWS_AND_DECREES_MADE]++
 	SScommunications.make_announcement(user, TRUE, message)
 	reset_mode()
 
@@ -259,6 +260,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 	if(!SScommunications.can_announce(user))
 		return
 	GLOB.laws_of_the_land += message
+	GLOB.vanderlin_round_stats[STATS_LAWS_AND_DECREES_MADE]++
 	priority_announce("[length(GLOB.laws_of_the_land)]. [message]", "A LAW IS DECLARED", 'sound/misc/lawdeclaration.ogg', "Captain")
 	reset_mode()
 
@@ -289,7 +291,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 /obj/structure/fake_machine/titan/proc/declare_outlaw(mob/living/carbon/human/user, message)
 	if(message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= message
-		priority_announce("[message] is no longer an outlaw in Vanderlin lands.", "[user.real_name], The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("[message] is no longer an outlaw in these lands.", "[user.real_name], The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
 		reset_mode()
 		return
 	var/found = FALSE
@@ -348,6 +350,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 	possible_positions += GLOB.garrison_positions
 	possible_positions += GLOB.church_positions
 	possible_positions += GLOB.serf_positions
+	possible_positions += GLOB.company_positions
 	possible_positions += GLOB.peasant_positions
 	possible_positions += GLOB.apprentices_positions
 	possible_positions += GLOB.allmig_positions
@@ -409,13 +412,13 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 		if(MODE_NONE)
 			recognize_command(speaker, sanitized_message)
 		if(MODE_MAKE_ANNOUNCEMENT)
-			make_announcement(speaker, sanitized_message)
+			make_announcement(speaker, raw_message)
 		if(MODE_MAKE_LAW)
-			make_law(speaker, sanitized_message)
+			make_law(speaker, raw_message)
 		if(MODE_DECLARE_OUTLAW)
-			declare_outlaw(speaker, sanitized_message)
+			declare_outlaw(speaker, raw_message)
 		if(MODE_MAKE_DECREE)
-			make_decree(speaker, sanitized_message)
+			make_decree(speaker, raw_message)
 
 #undef MODE_NONE
 #undef MODE_MAKE_ANNOUNCEMENT

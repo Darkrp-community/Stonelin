@@ -117,6 +117,15 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 		if(!user.can_zTravel(target, DOWN, src))
 			to_chat(user, "<span class='warning'>I can't climb here.</span>")
 			return
+		if(user.movement_type & FLYING) // Handle flying descent
+			visible_message("<span class='info'>[user] glides downward.</span>")
+			playsound(user, 'sound/foley/chairfall.ogg', 100, TRUE)
+			var/pulling = user.pulling
+			if(ismob(pulling))
+				user.pulling.forceMove(target)
+			user.forceMove(target)
+			user.start_pulling(pulling,supress_message = TRUE)
+			return
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 		user.visible_message("<span class='warning'>[user] starts to climb down.</span>", "<span class='warning'>I start to climb down.</span>")

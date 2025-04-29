@@ -90,7 +90,7 @@
 /obj/effect/spawner/map_spawner/enemy_fifty/skeleton_fighter
 	spawned = list(
 //		/obj/structure/idle_enemy/skeleton_fighter = 100
-		/mob/living/carbon/human/species/skeleton/skilled/fighter = 100
+		/mob/living/carbon/human/species/skeleton/npc/ambush = 100
 		)
 
 /*	..................   Flesheater Enemy    ................... */
@@ -118,10 +118,8 @@
 /*	..................   Savage Orc Enemy    ................... */
 /obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior
 	spawned = list(
-		/mob/living/simple_animal/hostile/orc/savage = 40,
-		/mob/living/simple_animal/hostile/orc/savage/chopper = 30,
+		/mob/living/carbon/human/species/orc/npc/ambush = 80,
 		/mob/living/simple_animal/hostile/orc/savage/bow = 20,
-		/mob/living/simple_animal/hostile/orc/savage/looter = 10
 		)
 
 /obj/effect/spawner/map_spawner/orc_warlord_carbon
@@ -131,7 +129,7 @@
 	color = "#caa3a3"
 	spawned = list(
 //		/obj/structure/idle_enemy/savage_orc_chieftain = 100
-		/mob/living/carbon/human/species/orc/skilled/savage_chieftain = 100
+		/mob/living/carbon/human/species/orc/npc/warlord = 100
 		)
 
 /*	..................   Haunts Enemy    ................... */
@@ -246,7 +244,7 @@ range. How much processing this saves is unclear */
 	. = ..()
 	AddComponent(/datum/component/spawner/npc/skeleton_fighter)
 /datum/component/spawner/npc/skeleton_fighter
-	mob_types = list(/mob/living/carbon/human/species/skeleton/skilled/fighter)
+	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ambush)
 	range = 11
 
 /*	..................   Orc Carbons Spawner   ................... */
@@ -300,7 +298,7 @@ range. How much processing this saves is unclear */
 	. = ..()
 	AddComponent(/datum/component/spawner/npc/weak_skelly)
 /datum/component/spawner/npc/weak_skelly
-	mob_types = list(/mob/living/carbon/human/species/skeleton/skilled/unarmed)
+	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
 	range = 11
 	spawn_text = ""
 

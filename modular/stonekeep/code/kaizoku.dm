@@ -159,7 +159,7 @@ get_accent_list()
 	name = "abyssal ishigaki wall"
 	desc = "Made from large, interlocking uncut stones without the use of mortar, so a castle is built above it. However, many make simple walls out of it."
 	icon = 	'modular/stonekeep/kaizoku/icons/wallset/abyssalstone.dmi'
-	icon_state = "abyssabyssal"
+	icon_state = "abyssal"
 	sheet_type = /obj/item/natural/stone
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
@@ -242,8 +242,8 @@ get_accent_list()
 	name = "thunder daisho belt"
 	color = CLOTHING_THUNDER
 
-/obj/item/storage/belt/kaizoku/leather/daisho/storm
-	name = "storm daisho belt"
+/obj/item/storage/belt/kaizoku/leather/daisho/deluge
+	name = "deluge daisho belt"
 	color = CLOTHING_STORM
 
 /obj/item/storage/belt/kaizoku/leather/daisho/ocean
@@ -263,7 +263,7 @@ get_accent_list()
 
 // =============================================================================
 // ========================	SPRITE ACCESSORIES	================================
-
+/*
 /datum/sprite_accessory/underwear/male_fundoshi
 	name = "Mendoshi"
 	icon_state = "male_fundoshi"
@@ -272,7 +272,7 @@ get_accent_list()
 	roundstart = TRUE
 	use_static = TRUE
 	icon = 'modular/stonekeep/kaizoku/icons/clothing/underwear.dmi'
-
+*/
 /datum/sprite_accessory/underwear/male_fundoshi/female
 	name = "Femdoshi"
 	icon_state = "female_fundoshi"
@@ -491,30 +491,33 @@ get_accent_list()
 	icon_state = "warrior"
 
 
-/datum/outfit/job/stonekeep/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	if(H.mind)
 		if(H.dna)
 			if(H.dna.species)
 				if(H.dna.species.id == "abyssariad")
 					H.verbs |= /mob/proc/throatsing
-					H.cmode_music = list('modular/stonekeep/kaizoku/sound/combat/combat_changeling.ogg','modular/stonekeep/kaizoku/sound/combat/combat_stormwarrior.ogg','modular/stonekeep/kaizoku/sound/combat/combat_searaider.ogg','modular/stonekeep/kaizoku/sound/combat/combat_oldtides.ogg','modular/stonekeep/kaizoku/sound/combat/combat_decapitator.ogg','modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg','modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg','modular/stonekeep/kaizoku/sound/combat/combat_navalretainers.ogg','modular/stonekeep/kaizoku/sound/combat/combat_kyudo.ogg')
+					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+					H.verbs |= /mob/proc/abyssaltide
+					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
 					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
-				if(H.dna.species.name == "Ogrun")
-					H.dna.features["ears"] = "Ogrun"
-					H.dna.features["tail_human"] = "Onihorn"
-				if(H.dna.species.name == "Changeling")
-					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) // When their Skull-bending "wag system" comes about, it will be their debuff to counter this.
-					H.dna.features["ears"] = "Upright"
-					H.dna.features["tail_human"] = "Onetail"
-				if(H.dna.species.name == "Skylancer")
-					H.verbs |= /mob/proc/birdcall
-					H.dna.features["ears"] = "TenguS"
-					H.dna.features["tail_human"] = "TenguV"
-				if(H.dna.species.name == "Undine")
-					H.dna.features["ears"] = "Kappae"
-					H.dna.features["tail_human"] = "Kappav"
-					H.cmode_music = list('modular/stonekeep/kaizoku/sound/combat/combat_changeling.ogg','modular/stonekeep/kaizoku/sound/combat/combat_stormwarrior.ogg','modular/stonekeep/kaizoku/sound/combat/combat_searaider.ogg','modular/stonekeep/kaizoku/sound/combat/combat_oldtides.ogg','modular/stonekeep/kaizoku/sound/combat/combat_decapitator.ogg','modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg','modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg','modular/stonekeep/kaizoku/sound/combat/combat_navalretainers.ogg','modular/stonekeep/kaizoku/sound/combat/combat_kyudo.ogg')
+					if(H.dna.species.name == "Changeling")
+						H.verbs |= /mob/living/carbon/human/proc/toggle_changeling_maw
+						//H.verbs |= /mob/living/carbon/human/proc/toggle_shapeshift // Not done. The idea is for changelings to choose their specialization later.
+						//H.verbs |= /mob/living/carbon/human/proc/toggle_mimicry //This one isn't working.
+						ADD_TRAIT(H, TRAIT_CHANGELING_METABOLISM, TRAIT_GENERIC) //Both an advantage and a disadvantage, essentially carnivore code + Venom bite.
+						ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC) //Mythology Kitsune trope //hopefully// done right. Seduction may go a long way to KILL victims.
+						// please. Don't make me feel like I did a wrong move here. I swear to INARI. You people fucked up too much for my taste.
+					if(H.dna.species.name == "Skylancer")
+						H.verbs |= /mob/proc/birdcall
+						H.verbs |= /mob/living/carbon/human/proc/fly
+						H.verbs |= /mob/living/carbon/human/proc/fly_up
+					if(H.dna.species.name == "Ogrun")
+						H.verbs |= /mob/living/carbon/human/proc/warcry
+				if(H.dna.species.name == "Undine") //undine ability; Making below-average armor with normal random things/butchered goods.
+					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
 					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
@@ -561,3 +564,47 @@ get_accent_list()
 	desc = ""
 	eye_icon_state = "eyes_closed"
 	icon_state = "eyes_closed"
+
+
+
+/mob/living/carbon/human/species/abyssariad/raider/stripPanelUnequip(obj/item/what, mob/living/who, where)
+	if(istype(who, /mob/living))
+		if(who.abyssariadraider == TRUE && who.stat == CONSCIOUS) //If they are unconscious, you can loot them.
+			src.visible_message(
+				"<span class='danger'>[who] grabs [src]'s exposed arm before slamming them on the ground!</span>")
+			src.AdjustKnockdown(5 + rand(3, 5))
+			src.apply_damage(rand(5, 10), BRUTE, BODY_ZONE_CHEST)
+			playsound(get_turf(src), 'sound/combat/shieldraise.ogg', 100, TRUE)
+			if(length(GLOB.custodian_handsoff))
+				who.say(pick(GLOB.custodian_handsoff))
+			return
+	..()
+
+
+
+/datum/sprite_accessory/wings/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/wings
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/wings.dmi'
+
+/datum/sprite_accessory/wings_open
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/wings.dmi'
+
+/datum/sprite_accessory/wings/angel
+	name = "Angel"
+	icon_state = "angel"
+	color_src = 0
+	dimension_x = 46
+	center = TRUE
+	dimension_y = 34
+	locked = TRUE
+
+/datum/sprite_accessory/wings_open/angel
+	name = "Angel"
+	icon_state = "angel"
+	color_src = 0
+	dimension_x = 46
+	center = TRUE
+	dimension_y = 34

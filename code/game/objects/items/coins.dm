@@ -1,7 +1,12 @@
 #define CTYPE_GOLD "g"
 #define CTYPE_SILV "s"
 #define CTYPE_COPP "c"
+#define CTYPE_PAPE "p"
+#define CTYPE_ZAFF "z"
+#define CTYPE_VELU "v"
+
 #define MAX_COIN_STACK_SIZE 20
+#define MAX_PAPER_STACK_SIZE 35
 
 /obj/item/coin
 	name = ""
@@ -22,6 +27,7 @@
 	var/quantity = 1
 	var/plural_name
 	var/rigged_outcome = 0 //1 for heads, 2 for tails
+	var/is_paper = FALSE //Paper money can be stored in greater quantities. But may not be compatible in machines... for now.
 
 /obj/item/coin/on_consume(mob/living/eater)
 	. = ..()
@@ -31,10 +37,6 @@
 	. = ..()
 	if(coin_amount >= 1)
 		set_quantity(floor(coin_amount))
-		setup_denomination()
-
-/obj/item/coin/proc/setup_denomination()
-	return
 
 /obj/item/coin/getonmobprop(tag)
 	. = ..()
@@ -102,13 +104,13 @@
 
 		switch(intelligence)						// Intelligence-based messaging
 			if(0 to 6)
-				user.visible_message(span_notice("[user] clumsily starts to count [src]."),span_notice("You clumsily start counting [src]..."), vision_distance = 2)
+				user.visible_message(span_small(span_notice("[user] clumsily starts to count [src].")),span_small(span_notice("I clumsily start counting [src]...")), vision_distance = 2)
 			if(7 to 9)
-				user.visible_message(span_notice("[user] begins counting [src]."),span_notice("You begin counting [src]."), vision_distance = 2)
+				user.visible_message(span_small(span_notice("[user] begins counting [src].")),span_small(span_notice("I begin counting [src].")), vision_distance = 2)
 			if(10 to 13)
-				user.visible_message(span_notice("[user] counts [src]."),span_notice("You count [src]."), vision_distance = 2)
+				user.visible_message(span_small(span_notice("[user] counts [src].")),span_small(span_notice("I count [src].")), vision_distance = 2)
 			if(14 to INFINITY)
-				user.visible_message(span_info("[user] effortlessly tallies [src]."),span_notice("You effortlessly tally [src]."), vision_distance = 2)
+				user.visible_message(span_small(span_info("[user] effortlessly tallies [src].")),span_small(span_notice("I effortlessly tally [src].")), vision_distance = 2)
 
 		if(!do_after(user, skill_data["delay"]))
 			return
@@ -137,42 +139,40 @@
 			return
 		intended = clamp(intended, 0, quantity)
 		intended = round(intended, 1)
-		if(!intended || intended >= quantity)
+		if(!intended)
 			return
 
 		var/list/skill_data = coin_skill(user, intended)		// Get skill-based parameters
 		var/delay_time = skill_data["delay"]
-		var/error = skill_data["error"]
 
 		if(delay_time > 5 SECONDS)			// Chat feedback
-			user.visible_message(span_notice("[user] fumbles through [src]."),span_warning("You struggle to count while separating [src]!"), vision_distance = 2)
+			user.visible_message(span_small(span_notice("[user] fumbles through [src].")),span_small(span_warning("You struggle to count while separating [src]!")), vision_distance = 2)
 		else if(delay_time >= 1 SECONDS)
-			user.visible_message(span_notice("[user] carefully counts out [src]."),span_notice("You concentrate on separating [src]"), vision_distance = 2)
+			user.visible_message(span_small(span_notice("[user] carefully separates out [src].")),span_small(span_notice("You concentrate on separating [src].")), vision_distance = 2)
 		else if(delay_time == 0)
-			user.visible_message(span_notice("[user] splits [src]."),span_notice("You effortlessly divide [src]."), vision_distance = 2)
+			user.visible_message(span_small(span_notice("[user] quickly splits [src].")),span_small(span_notice("You effortlessly divide [src].")), vision_distance = 2)
 
 		if(delay_time > 0 && !do_after(user, delay_time))	// Make sure people don't move to cancel the delay
 			return
 
-		var/actual = intended + error		// Apply error safely
-		actual = clamp(actual, 1, quantity - 1)
-
+		if(intended >= quantity)
+			return ..()
 		var/obj/item/coin/new_coins = new type()	// Split coins
-		new_coins.set_quantity(actual)
+		new_coins.set_quantity(intended)
 		new_coins.heads_tails = last_merged_heads_tails
-		set_quantity(quantity - actual)
+		set_quantity(quantity - intended)
 
 		user.put_in_hands(new_coins)
 		playsound(loc, 'sound/foley/coins1.ogg', 100, TRUE, -2)
 		return
-	..()
+	. = ..()
 
 /obj/item/coin/proc/coin_skill(mob/user, intended)		// Coin counting and splitting
 	var/intelligence = user.mind?.current.STAINT
 	var/perception = user.mind?.current.STAPER
 	var/speed = user.mind?.current.STASPD
 	var/mathematics_skill = user.mind?.get_skill_level(/datum/skill/labor/mathematics) || 0
-	var/list/skill_data = list("delay" = 1 SECONDS,"error" = 0)
+	var/list/skill_data = list("delay" = 1.2 SECONDS,"error" = 0)
 
 	var/base_tier	// Base intelligence tiers
 	switch(intelligence)
@@ -193,7 +193,7 @@
 	switch(effective_tier)	// Set values based on effective tier
 		if(1) // Very low INT
 			skill_data["error"] = rand(-3,3)
-			skill_data["delay"] = 3 SECONDS
+			skill_data["delay"] = 3.5 SECONDS
 		if(2) // Below Average INT
 			skill_data["error"] = rand(-1,1)
 			if(prob(10))
@@ -207,7 +207,10 @@
 	if(perception < 7 && mathematics_skill == 0)	// Secondary stat modifiers
 		skill_data["error"] += rand(-1,1)
 	if(speed < 5)
-		skill_data["delay"] += 0.5 SECONDS
+		skill_data["delay"] += 1 SECONDS
+
+	if(intended > 10 && mathematics_skill == 0) // can't count beyond your fingers
+		skill_data["delay"] += 0.25 SECONDS
 
 	return skill_data
 
@@ -359,19 +362,189 @@
 /obj/item/coin/copper/pile/Initialize(mapload, coin_amount)
 	. = ..()
 	if(!coin_amount)
-		set_quantity(rand(4,19))
+		set_quantity(rand(4,14))
 
 /obj/item/coin/silver/pile/Initialize(mapload, coin_amount)
 	. = ..()
 	if(!coin_amount)
-		set_quantity(rand(4,19))
+		set_quantity(rand(4,14))
 
 /obj/item/coin/gold/pile/Initialize(mapload, coin_amount)
 	. = ..()
 	if(!coin_amount)
-		set_quantity(rand(4,19))
+		set_quantity(rand(4,14))
+
+//Kaizoku paper money things.
+
+//SILVER PAPER
+/obj/item/coin/silver/peralo
+	name = "peralo"
+	desc = "Hallowed exorcism seal embossed in abyssal markings and a oyster pearl. Used by foglanders in everyday banter, or by banks for easy storage. Harmful to demons."
+	icon_state = "p1"
+	sellprice = 5
+	base_type = CTYPE_PAPE
+	plural_name = "peralius"
+	icon = 'modular/stonekeep/kaizoku/icons/items/valuables.dmi'
+	is_paper = TRUE
+	dropshrink = 1
+
+/obj/item/coin/silver/peralo/update_icon()
+	..()
+	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
+
+
+	if(quantity == 1)
+		name = initial(name)
+		desc = initial(desc)
+		return
+
+	name = plural_name
+	desc = ""
+	dropshrink = 1
+	switch(quantity)
+		if(2)
+			icon_state = "[base_type]2"
+		if(3 to 5)
+			icon_state = "[base_type]5"
+		if(6 to 10)
+			icon_state = "[base_type]10"
+		if(11 to 20)
+			icon_state = "[base_type]20"
+		if(21 to 35)
+			icon_state = "[base_type]35"
+
+/obj/item/coin/silver/peralo/Initialize()
+	. = ..()
+	set_quantity(rand(4,19))
+
+/obj/item/coin/silver/peralo/attack_self(mob/living/user)
+	return
+
+/obj/item/coin/silver/peralo/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if((H.faction && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+			to_chat(H, "<span class='span_warning'>The seal brings icy dread through your veins.</span>")
+			H.Immobilize(10)
+			H.adjustFireLoss(10)
+			H.fire_act(1)
+
+// COPPER PAPER
+
+/obj/item/coin/copper/zaffiro
+	name = "zaffiro"
+	desc = "A thin paper of pressed red kelp fibers and octopuses ink. Usually placed in lanterns to banish spirits, this exorcism seal emits warmth when someone tells lies close to it. Or was supposed to."
+	icon_state = "z1"
+	sellprice = 1
+	base_type = CTYPE_ZAFF
+	plural_name = "zaffiro"
+	icon = 'modular/stonekeep/kaizoku/icons/items/valuables.dmi'
+	is_paper = TRUE
+	dropshrink = 1
+
+/obj/item/coin/copper/zaffiro/update_icon()
+	..()
+	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
+
+
+	if(quantity == 1)
+		name = initial(name)
+		desc = initial(desc)
+		return
+
+	name = plural_name
+	desc = ""
+	dropshrink = 1
+	switch(quantity)
+		if(2)
+			icon_state = "[base_type]2"
+		if(3 to 5)
+			icon_state = "[base_type]5"
+		if(6 to 10)
+			icon_state = "[base_type]10"
+		if(11 to 20)
+			icon_state = "[base_type]20"
+		if(21 to 35)
+			icon_state = "[base_type]35"
+
+/obj/item/coin/copper/zaffiro/Initialize()
+	. = ..()
+	set_quantity(rand(4,19))
+
+/obj/item/coin/copper/zaffiro/attack_self(mob/living/user)
+	return
+
+/obj/item/coin/copper/zaffiro/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if((H.faction && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+			to_chat(H, "<span class='span_warning'>The seal brings icy dread through your veins.</span>")
+			H.Immobilize(5)
+			H.adjustFireLoss(5)
+			H.fire_act(1)
+
+//GOLD PAPER
+
+/obj/item/coin/gold/velumo
+	name = "velumo"
+	desc = "Hallowed veil with crushed gems and gold dust on the edges, it was first made to bribe ancestral sentries for safe dreams, but its spiritual power contained within turns demons into seafoam, and it reflects on its value. Has the same value as a golden coin."
+	icon_state = "v1"
+	sellprice = 10
+	base_type = CTYPE_VELU
+	plural_name = "velumius"
+	icon = 'modular/stonekeep/kaizoku/icons/items/valuables.dmi'
+	is_paper = TRUE
+	dropshrink = 1
+
+
+/obj/item/coin/gold/velumo/update_icon()
+	..()
+	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
+
+
+	if(quantity == 1)
+		name = initial(name)
+		desc = initial(desc)
+		return
+
+	name = plural_name
+	desc = ""
+	dropshrink = 1
+	switch(quantity)
+		if(2)
+			icon_state = "[base_type]2"
+		if(3 to 5)
+			icon_state = "[base_type]5"
+		if(6 to 10)
+			icon_state = "[base_type]10"
+		if(11 to 20)
+			icon_state = "[base_type]20"
+		if(21 to 35)
+			icon_state = "[base_type]35"
+
+/obj/item/coin/gold/velumo/Initialize()
+	. = ..()
+	set_quantity(rand(4,19))
+
+/obj/item/coin/gold/velumo/attack_self(mob/living/user)
+	return
+
+/obj/item/coin/gold/velumo/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if((H.faction && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+			to_chat(H, "<span class='span_warning'>The seal brings icy dread through your veins.</span>")
+			H.Immobilize(15)
+			H.adjustFireLoss(15)
+			H.fire_act(1)
 
 #undef CTYPE_GOLD
 #undef CTYPE_SILV
 #undef CTYPE_COPP
+#undef CTYPE_ZAFF
 #undef MAX_COIN_STACK_SIZE
+#undef CTYPE_PAPE
+#undef MAX_PAPER_STACK_SIZE

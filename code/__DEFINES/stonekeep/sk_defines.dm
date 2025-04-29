@@ -1,11 +1,15 @@
 #define ALL_STONEKEEP_PLAYER_RACES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine")	// the normal lineup sans Rakshari who are not generally available
-#define ALL_STONEKEEP_RACES_NORMALSPRITE		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Tiefling", "Aasimar", "Changeling","Skylancer","Ogrun")	// for clothes without dwarf sprites
+#define ALL_STONEKEEP_RACES_NORMALSPRITE		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Tiefling", "Aasimar", "Changeling","Skylancer","Ogrun", "Orc", "orc")	// for clothes without dwarf sprites
 #define ALL_RACES_FOR_REAL			list("human", "rakshari", "dwarf", "elf", "tiefling", "aasimar", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
-
+#define ALL_RACES_WITH_FACIALHAIR		list("human", "rakshari", "dwarf", "elf", "tiefling", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
+#define ALL_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine", "Rakshari")
 #define NORMAL_TOWNER_RACES 	list("Humen","Elf","Half-Elf","Dwarf")
 #define PEASANT_RACES 			list("Humen","Aasimar","Half-Elf","Dwarf")
 
+#define FACTION_BURAKUMIN "Burakumin"
+
 #define CTAG_SKMERCENARY 	"CAT_SKMERCENART"  		// Mercenary classes
+#define CTAG_SKGARRISON		"CAT_SKGARRISON"
 
 #define isgoblin(A) (is_species(A, /datum/species/goblin))
 
@@ -42,6 +46,24 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	//a var used for a rather niched power.
 	var/purification = FALSE
 
+	//These vars are used for Changeling special quirks.
+	var/mutable_appearance/eldritch_maw
+	var/mob/living/carbon/human/var/list/transformed = null
+	var/true_gender_string // <- this stores "male" or "female" for full safety
+	var/list/true_original_form = null
+	var/original_gender_mimicry = null
+	var/overlay_eldritchjaw = 0
+
+	//This var is used for Skylancer special quirk.
+	var/flight_processing = FALSE
+
+	//Vars for Abyssariad Raiders NPCs, specifically for special attacks.
+	var/special_timer = 0
+	var/special_cooldown = 20 // 20 seconds
+	var/shuriken_count = 0 //used only for NPC stuff.
+
+	var/aggressive //Outdated NPC stuff. Remove when the Raiders are updated.
+	var/next_reposition = 0 //Outdated NPC stuff. Remove when the Raiders are updated.
 
 #define SK_LORD			(1<<0)
 #define SK_CONSORT		(1<<1)
@@ -85,7 +107,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SK_PILGRIM		(1<<2)
 #define SK_BANDIT		(1<<3)
 
-#define OUTSIDERS           (1<<7)
+#define SK_OUTSIDERS    (1<<7)
 
 #define LORD_ORDER			1
 #define CONSORT_ORDER		2

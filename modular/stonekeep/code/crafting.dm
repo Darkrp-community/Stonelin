@@ -40,6 +40,7 @@
 /datum/anvil_recipe/weapons/iron/lucerne
 	name = "Poleaxe (+Bar, +Small Log)"
 	recipe_name = "a Poleaxe"
+	created_item = /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe
 
 /datum/anvil_recipe/weapons/iron/spear_iron
 	name = "Spear (+Small Log)"

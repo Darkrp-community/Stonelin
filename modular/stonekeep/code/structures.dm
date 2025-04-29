@@ -206,6 +206,7 @@
 	icon = 'modular/stonekeep/icons/temple.dmi'
 	icon_state = "sandstone"
 	pixel_y = 32
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/fluff/walldeco/pillar/doric
 	icon_state = "doric"
@@ -284,7 +285,7 @@
 		/datum/job/captain,
 	)
 
-/obj/structure/train/MouseDrop_T(atom/dropping, mob/user)
+/obj/structure/far_travel/MouseDrop_T(atom/dropping, mob/user)
 	if(!isliving(user) || user.incapacitated())
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(!ishuman(dropping))
@@ -314,9 +315,6 @@
 	in_use = FALSE
 	update_icon() //the section below handles roles and admin logging
 	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
-	if(departing_mob.mind)
-		var/datum/job/mob_job = departing_mob.mind.assigned_role
-		mob_job.adjust_current_positions(-1)
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else
@@ -328,7 +326,8 @@
 		dat += "."
 	message_admins(dat)
 	log_admin(dat)
-	say(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] is departing from Vanderlin."))
+	say(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] is departing."))
+	cryo_mob(departing_mob)
 	var/mob/dead/new_player/newguy = new()
 	newguy.ckey = departing_mob.ckey
 	qdel(departing_mob)
@@ -490,17 +489,17 @@
 
 /obj/structure/fluff/walldeco/xylixhint/Initialize()
 	. = ..()
-	if (GLOB.round_id % 2) // if round ID number is uneven
+	if (GLOB.xylix_trickery)
 		icon_state = "wall_sad"
 
 /obj/structure/fluff/walldeco/xylixhint_danger
 	icon_state = "wall_sad"
-	/*
+
 /obj/structure/fluff/walldeco/xylixhint_danger/Initialize()
 	. = ..()
-	if (GLOB.xylix_bad)
+	if (GLOB.xylix_trickery)
 		icon_state = "wall_funny"
-*/
+
 // XYLIX MAZE
 /obj/structure/fluff/statue/xylix
 	desc = "Some mad God no doubt."
@@ -508,13 +507,20 @@
 	icon_state = "xylix_smile"
 	pixel_x = -32
 	pixel_y = 0
-/*
+
 /obj/structure/fluff/statue/xylix/Initialize()
 	. = ..()
-	if (GLOB.xylix_bad == TRUE)
+	if (GLOB.xylix_trickery)
 		icon_state = "xylix_frown"
 
-*/
+/obj/structure/trap/shock/hidden/xylix/Initialize()
+	. = ..()
+	if (!GLOB.xylix_trickery)
+		qdel(src)
+
+
+
+
 /obj/structure/trap/bomb/hidden
 	alpha = 5
 /obj/structure/trap/poison/hidden
@@ -618,6 +624,67 @@
 	. = ..()
 	icon_state = "livebush_[rand(1,3)]"
 
+/obj/structure/flora/tree/neu/brambles
+	name = "brambles"
+	desc = ""
+	icon = 'modular/stonekeep/icons/pigflora.dmi'
+	icon_state = "bramblesc"
+	stump_type = /obj/item/grown/log/tree/stick
+	max_integrity = 120
+	destroy_sound = 'sound/misc/woodhit.ogg'
+	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	alpha = 255
+	pixel_x = 0
+	opacity = TRUE
+	density = TRUE
+	color = "#5a5a5b"
+/obj/structure/flora/tree/neu/brambles/Initialize()
+	. = ..()
+	icon_state = "bramblesc"
+	color = "#ffffff"
+	dir = pick(GLOB.cardinals)
+/obj/structure/flora/tree/neu/brambles/north
+	icon_state = "bramblesn"
+	color = "#daff6c"
+/obj/structure/flora/tree/neu/brambles/north/Initialize()
+	. = ..()
+	icon_state = "bramblesn"
+/obj/structure/flora/tree/neu/brambles/west
+	icon_state = "bramblesw"
+	color = "#67ff76"
+/obj/structure/flora/tree/neu/brambles/west/Initialize()
+	. = ..()
+	icon_state = "bramblesw"
+/obj/structure/flora/tree/neu/brambles/south
+	icon_state = "brambless"
+	color = "#4a4aff"
+/obj/structure/flora/tree/neu/brambles/south/Initialize()
+	. = ..()
+	icon_state = "brambless"
+/obj/structure/flora/tree/neu/brambles/east
+	icon_state = "bramblese"
+	color = "#f57e7e"
+/obj/structure/flora/tree/neu/brambles/east/Initialize()
+	. = ..()
+	icon_state = "bramblese"
+/obj/structure/flora/tree/neu/brambles_corner
+	name = "brambles"
+	desc = ""
+	icon = 'modular/stonekeep/icons/pigflora.dmi'
+	icon_state = "bramblescorner"
+	stump_type = /obj/item/grown/log/tree/stick
+	max_integrity = 120
+	destroy_sound = 'sound/misc/woodhit.ogg'
+	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	alpha = 255
+	opacity = TRUE
+	density = TRUE
+	pixel_x = 0
+	color = "#45979e"
+/obj/structure/flora/tree/neu/brambles_corner/Initialize()
+	. = ..()
+	icon_state = "bramblescorner"
+	color = "#ffffff"
 /obj/structure/punji_sticks
 	icon = 'modular/stonekeep/icons/pigflora.dmi'
 
@@ -1002,3 +1069,39 @@
 	icon_state = "passage1"
 	density = FALSE
 
+
+/obj/structure/chair/bench/couch/redright_middle
+	icon = 'modular/stonekeep/icons/structure.dmi'
+	icon_state = "redcouch_alt_middle"
+
+
+/obj/structure/closet/crate/chest/rotting
+	name = "rotting crate"
+	icon = 'modular/stonekeep/icons/structure.dmi'
+	icon_state = "crate_rotting"
+	base_icon_state = "crate_rotting"
+
+
+/obj/structure/fluff/walldeco/mines
+	icon = 'modular/stonekeep/icons/structure.dmi'
+	icon_state = "support1"
+	pixel_y = 32
+
+/obj/structure/fluff/walldeco/mines/alt
+	icon_state = "support2"
+
+/obj/structure/fluff/walldeco/mines/wall
+	icon_state = "support3"
+
+/obj/structure/fluff/walldeco/mines/wallbroken
+	icon_state = "support4"
+
+
+/obj/structure/bed
+	sleepy = 1
+/obj/structure/bed/inn
+	sleepy = 2
+/obj/structure/bed/inn/double
+	sleepy = 2
+/obj/structure/bed/wool
+	sleepy = 1.5

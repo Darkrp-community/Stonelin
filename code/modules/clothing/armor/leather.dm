@@ -19,26 +19,27 @@
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STANDARD
 	salvage_result = /obj/item/natural/hide/cured
+	item_weight = 3.2
 
 /obj/item/clothing/armor/leather/advanced
 	name = "hardened leather coat"
 	desc = "Sturdy, durable, flexible. Will keep you alive in style."
 	max_integrity = 350
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
-	armor = list("blunt" = 75, "slash" = 60, "stab" = 30, "piercing" = 10, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BITE, BCLASS_TWIST) // No blunt crits on leather, EVER.
+	armor = ARMOR_LEATHER_GOOD
 
-/obj/item/clothing/armor/leather/masterwork
-	name = "masterwork leather coat"
-	desc = "This coat is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	icon_state = "leather"
-	max_integrity = 400
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
-	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/armor/leather/masterwork/Initialize()
-	. = ..()
-	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
+//obj/item/clothing/armor/leather/masterwork
+//	name = "masterwork leather coat"
+//	desc = "This coat is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+//	icon_state = "leather"
+//	max_integrity = 400
+//	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
+//	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
+//
+///obj/item/clothing/armor/leather/masterwork/Initialize()
+//	. = ..()
+//	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 //................ Hide Armor ............... //
 /obj/item/clothing/armor/leather/hide
@@ -57,9 +58,10 @@
 	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
-	armor = ARMOR_LEATHER_GOOD
+	armor = ARMOR_MAILLE_IRON
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG
+	item_weight = 6.7
 
 
 //................ Leather Vest ............... //	- has no sleeves.  - can be worn in armor OR shirt slot
@@ -79,6 +81,7 @@
 	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 	salvage_result = /obj/item/natural/hide/cured
+	item_weight = 2.2
 
 /obj/item/clothing/armor/leather/vest/random/Initialize()
 	color = pick(CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN)
@@ -89,6 +92,7 @@
 	name = "butchers vest"
 	icon_state = "leathervest"
 	color = "#d69c87" // custom coloring
+	item_weight = 1.8
 
 //................ Other Vests ............... //
 /obj/item/clothing/armor/leather/vest/butler
@@ -152,6 +156,7 @@
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
 	body_parts_covered = COVERAGE_SHIRT
+	item_weight = 2.2
 
 /obj/item/clothing/armor/leather/jacket/ComponentInitialize()
 	. = ..()

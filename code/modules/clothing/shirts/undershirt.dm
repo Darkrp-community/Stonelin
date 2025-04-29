@@ -23,6 +23,9 @@
 	desc = ""
 	color = CLOTHING_BERRY_BLUE
 
+/obj/item/clothing/shirt/undershirt/blue
+	color = CLOTHING_SKY_BLUE
+
 /obj/item/clothing/shirt/undershirt/red
 	color = CLOTHING_RED_OCHRE
 
@@ -71,7 +74,7 @@
 /obj/item/clothing/shirt/undershirt/puritan
 	name = "formal silks"
 	icon_state = "puritan_shirt"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 	salvage_result = /obj/item/natural/silk
 
 /obj/item/clothing/shirt/undershirt/artificer

@@ -43,7 +43,7 @@
 	beltl = /obj/item/weapon/mace/cudgel/jitte
 	cloak = /obj/item/clothing/cloak/raincloak/horocloak/kabukimono
 	shirt = /obj/item/clothing/shirt/tunic/kimono/kabukimono
-	head = /obj/item/clothing/head/helmet/kaizoku/hachigane
+	head = /obj/item/clothing/head/helmet/skullcap/hachigane
 	armor = /obj/item/clothing/armor/cuirass/nanbando
 	backl = /obj/item/storage/backpack/satchel
 	backr = /obj/item/weapon/sword/long/greatsword/odachi

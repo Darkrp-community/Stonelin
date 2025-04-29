@@ -17,8 +17,6 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Changeling",
-		"Skylancer",
 		"Rakshari"
 	)
 
@@ -31,7 +29,7 @@
 	outfit = /datum/outfit/job/stonekeep/merchant
 	give_bank_account = 100
 	selection_color = "#2a348b"
-
+	cmode_music = 'sound/music/cmode/combat_giza.ogg'
 
 /datum/outfit/job/stonekeep/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -72,7 +70,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 6, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 

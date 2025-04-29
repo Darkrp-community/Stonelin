@@ -19,6 +19,7 @@
 	max_integrity = INTEGRITY_STANDARD
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/hide/cured
+	item_weight = 1.6
 
 
 /obj/item/clothing/head/helmet/leather/advanced
@@ -27,19 +28,19 @@
 	max_integrity = 250
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
-	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER_GOOD
 
-/obj/item/clothing/head/helmet/leather/masterwork
-	name = "masterwork leather helmet"
-	desc = "This helmet is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	max_integrity = 300
-	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
-	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
+///obj/item/clothing/head/helmet/leather/masterwork
+//	name = "masterwork leather helmet"
+//	desc = "This helmet is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+//	max_integrity = 300
+//	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+//	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
+//	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/head/helmet/leather/masterwork/Initialize()
-	. = ..()
-	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
+///obj/item/clothing/head/helmet/leather/masterwork/Initialize()
+//	. = ..()
+//	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 /obj/item/clothing/head/helmet/leather/headscarf // repathing isnt needed really
 	name = "headscarf"
@@ -52,6 +53,8 @@
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
 	clothing_flags = NONE
+	item_weight = 0.5
+
 //............... Buckled Hat ............... //
 /obj/item/clothing/head/helmet/leather/inquisitor
 	name = "buckled hat"
@@ -95,6 +98,7 @@
 
 	armor = ARMOR_PADDED
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
+	item_weight = 3 * IRON_MULTIPLIER
 
 	var/brightness_on = 4 //less than a torch; basically good for one person.
 	var/on = FALSE
