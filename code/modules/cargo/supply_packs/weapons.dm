@@ -45,7 +45,7 @@
 
 /datum/supply_pack/weapons/waraxe
 	name = "Iron war Axe"
-	cost = 30 //a bit more since is 2 iron bars to make, and deadlier
+	cost = 40 //a bit more since is 2 iron bars to make, and deadlier
 	contains = /obj/item/weapon/polearm/halberd/bardiche/warcutter
 
 ///datum/supply_pack/weapons/saxe
