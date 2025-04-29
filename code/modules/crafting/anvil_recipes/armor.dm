@@ -138,8 +138,8 @@
 	created_item = /obj/item/clothing/shoes/boots/armor/light
 
 /datum/anvil_recipe/armor/iron/skullcap
-	name = "Skullcap"
-	recipe_name = "a skullcap"
+	name = "Skullcap x2"
+	recipe_name = "a pair of skullcaps"
 	created_item = /obj/item/clothing/head/helmet/skullcap
 	createmultiple = TRUE
 	createditem_num = 1
@@ -178,8 +178,8 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/nasal_helmet
-	name = "Nasal helmet"
-	recipe_name = "a Nasal helmet"
+	name = "Nasal helmet x2"
+	recipe_name = "a pair of Nasal helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/nasal
 	createmultiple = TRUE
@@ -277,8 +277,8 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/helmetkettle
-	name = "Kettle Helmet"
-	recipe_name = "a Kettle Helmet"
+	name = "Kettle Helmet x2"
+	recipe_name = "a pair of Kettle Helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/kettle
 	createmultiple = TRUE
