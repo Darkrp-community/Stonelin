@@ -36,7 +36,7 @@
 /obj/item/clothing/pants/trou/leather/advanced
 	name = "hardened leather chausses"
 	desc = "Sturdy, durable, flexible. The finest leather to protect your nether regions."
-	max_integrity = 350
+	max_integrity = 300
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = ARMOR_LEATHER_GOOD
 
