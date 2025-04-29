@@ -1,4 +1,4 @@
 <!-- Most valid html will work in here, excluding images. -->
-<center>StoneKeep: Now with extra wine! </center>
-<center>* PLAYTESTING ENVIRONMENT FOR VANDERLIN REBASE *</center>
+<center>StoneKeep </center>
+<center>* Playtesting *</center>
 

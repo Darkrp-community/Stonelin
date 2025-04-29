@@ -130,8 +130,6 @@
 
 	var/blend_type
 	var/filter_type
-	var/secondary_filter_type
-	var/forecast_tag
 
 	var/datum/weather_effect/weather_special_effect
 
@@ -145,11 +143,10 @@
 	return
 
 /datum/particle_weather/Destroy()
-	for(var/mob/living/M as anything in currentSounds)
-		var/datum/looping_sound/looping_sound = currentSounds[M]
-		if(istype(looping_sound))
-			looping_sound.stop()
-			qdel(looping_sound)
+	for(var/S in currentSounds)
+		var/datum/looping_sound/looping_sound = currentSounds[S]
+		looping_sound.stop()
+		qdel(looping_sound)
 	return ..()
 
 /**
@@ -167,7 +164,7 @@
 	addtimer(CALLBACK(src, PROC_REF(wind_down)), weather_duration)
 
 	if(particleEffectType)
-		SSParticleWeather.SetparticleEffect(new particleEffectType, blend_type, filter_type, secondary_filter_type);
+		SSParticleWeather.SetparticleEffect(new particleEffectType, blend_type, filter_type);
 
 	if(weather_special_effect)
 		SSParticleWeather.weather_special_effect = new weather_special_effect(src)
@@ -227,9 +224,6 @@
  */
 /datum/particle_weather/proc/end()
 	running = FALSE
-	for(var/mob/living/M as anything in currentSounds)
-		if(M.client)
-			stop_weather_sound_effect(M)
 	SSParticleWeather.stopWeather()
 
 
@@ -240,10 +234,10 @@
 	var/turf/mob_turf = get_turf(mob_to_check)
 
 	if(!mob_turf)
-		return FALSE
+		return
 
 	if(!mob_turf.outdoor_effect || mob_turf.outdoor_effect.weatherproof)
-		return FALSE
+		return
 
 	return TRUE
 
@@ -292,7 +286,7 @@
 		L.weather = FALSE
 
 
-//Not using looping_sounds properly. somebody smart should fix this //actually this kind of works, just done a bit backwards
+//Not using looping_sounds properly. somebody smart should fix this
 /datum/particle_weather/proc/weather_sound_effect(mob/living/L)
 	var/datum/looping_sound/currentSound = currentSounds[L]
 	if(currentSound)
@@ -314,9 +308,8 @@
 /datum/particle_weather/proc/stop_weather_sound_effect(mob/living/L)
 	var/datum/looping_sound/currentSound = currentSounds[L]
 	if(currentSound)
-		currentSounds[L] = null
 		currentSound.stop()
-		qdel(currentSound)
+
 
 /datum/particle_weather/proc/weather_message(mob/living/L)
 	messagedMobs[L] = world.time + 30 SECONDS //Chunky delay - this spams otherwise - Severity changes and going indoors resets this timer
@@ -356,12 +349,3 @@
 	message_admins("[key_name_admin(usr)] started weather of type [weather_type].")
 	log_admin("[key_name(usr)] started weather of type [weather_type].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Particle Weather")
-
-
-/datum/weather_effect
-	var/name = "effect"
-	var/probability = 0
-	var/datum/particle_weather/initiator_ref
-
-/datum/weather_effect/proc/effect_affect(turf/target_turf)
-	return FALSE

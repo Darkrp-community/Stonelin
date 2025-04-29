@@ -4,7 +4,11 @@
 	worthy of your bounty being hung on the wall outside of the local inn. \
 	You now live with your fellow free men in the bog, and generally get up to no good."
 	flag = BANDIT
+<<<<<<< HEAD
 	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
+=======
+	department_flag = PEASANTS
+>>>>>>> parent of 81b8313fd (Merge branch 'main' into pr/38)
 	job_flags = (JOB_EQUIP_RANK)
 	display_order = JDO_BANDIT
 	faction = FACTION_STATION

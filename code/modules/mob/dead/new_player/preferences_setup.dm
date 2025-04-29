@@ -143,3 +143,7 @@
 		if(pref_species.patreon_req && !parent.patreon?.has_access(ACCESS_ASSISTANT_RANK))
 			return FALSE
 	return TRUE
+
+/mob/proc/patreonlevel()
+	if(client)
+		return client.patreonlevel()

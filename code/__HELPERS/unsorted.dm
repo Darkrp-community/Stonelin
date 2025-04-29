@@ -453,14 +453,17 @@ Turf and target are separate in case you want to teleport some distance from a t
 		return 0
 
 //Repopulates sortedAreas list
-/proc/require_area_resort()
-	GLOB.sortedAreas = null
+/proc/repopulate_sorted_areas()
+	GLOB.sortedAreas = list()
 
-/// Returns a sorted version of GLOB.areas, by name
-/proc/get_sorted_areas()
-	if(!GLOB.sortedAreas)
-		GLOB.sortedAreas = sortTim(GLOB.areas.Copy(), /proc/cmp_name_asc)
-	return GLOB.sortedAreas
+	for(var/area/A in world)
+		GLOB.sortedAreas.Add(A)
+
+	sortTim(GLOB.sortedAreas, GLOBAL_PROC_REF(cmp_name_asc))
+
+/area/proc/addSorted()
+	GLOB.sortedAreas.Add(src)
+	sortTim(GLOB.sortedAreas, GLOBAL_PROC_REF(cmp_name_asc))
 
 //Takes: Area type as a text string from a variable.
 //Returns: Instance for the area in the world.
@@ -479,16 +482,19 @@ Turf and target are separate in case you want to teleport some distance from a t
 		areatype = areatemp.type
 	else if(!ispath(areatype))
 		return null
+
 	var/list/areas = list()
 	if(subtypes)
 		var/list/cache = typecacheof(areatype)
-		for(var/area/area_to_check as anything in GLOB.areas)
-			if(cache[area_to_check.type])
-				areas += area_to_check
+		for(var/V in GLOB.sortedAreas)
+			var/area/A = V
+			if(cache[A.type])
+				areas += V
 	else
-		for(var/area/area_to_check as anything in GLOB.areas)
-			if(area_to_check.type == areatype)
-				areas += area_to_check
+		for(var/V in GLOB.sortedAreas)
+			var/area/A = V
+			if(A.type == areatype)
+				areas += V
 	return areas
 
 //Takes: Area type as text string or as typepath OR an instance of the area.
@@ -502,28 +508,24 @@ Turf and target are separate in case you want to teleport some distance from a t
 	else if(!ispath(areatype))
 		return null
 
-	// Pull out the areas
-	var/list/areas_to_pull = list()
+	var/list/turfs = list()
 	if(subtypes)
 		var/list/cache = typecacheof(areatype)
-		for(var/area/area_to_check as anything in GLOB.areas)
-			if(!cache[area_to_check.type])
+		for(var/V in GLOB.sortedAreas)
+			var/area/A = V
+			if(!cache[A.type])
 				continue
-			areas_to_pull += area_to_check
+			for(var/turf/T in A)
+				if(target_z == 0 || target_z == T.z)
+					turfs += T
 	else
-		for(var/area/area_to_check as anything in GLOB.areas)
-			if(area_to_check.type != areatype)
+		for(var/V in GLOB.sortedAreas)
+			var/area/A = V
+			if(A.type != areatype)
 				continue
-			areas_to_pull += area_to_check
-
-	// Now their turfs
-	var/list/turfs = list()
-	for(var/area/pull_from as anything in areas_to_pull)
-		if (target_z == 0)
-			for (var/list/zlevel_turfs as anything in pull_from.get_zlevel_turf_lists())
-				turfs += zlevel_turfs
-		else
-			turfs += pull_from.get_turfs_by_zlevel(target_z)
+			for(var/turf/T in A)
+				if(target_z == 0 || target_z == T.z)
+					turfs += T
 	return turfs
 
 //chances are 1:value. anyprob(1) will always return true

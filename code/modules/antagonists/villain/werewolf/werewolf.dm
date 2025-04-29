@@ -3,8 +3,6 @@
 	roundend_category = "Werewolves"
 	antagpanel_category = "Werewolf"
 	job_rank = ROLE_WEREWOLF
-	antag_hud_type = ANTAG_HUD_WEREWOLF
-	antag_hud_name = "werewolf"
 	confess_lines = list(
 		"THE BEAST INSIDE ME!",
 		"BEWARE THE BEAST!",
@@ -19,8 +17,6 @@
 
 /datum/antagonist/werewolf/lesser
 	name = "Lesser Verewolf"
-	antag_hud_type = ANTAG_HUD_WEREWOLF
-	antag_hud_name = "werewolf_lesser"
 	increase_votepwr = FALSE
 
 /datum/antagonist/werewolf/lesser/roundend_report()

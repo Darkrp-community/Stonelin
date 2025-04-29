@@ -37,6 +37,8 @@
 	return sellprice
 
 /atom/movable/proc/get_real_price()
+	if(sellprice == initial(sellprice))
+		randomize_price()
 	return sellprice
 
 /atom/movable/proc/pre_sell()

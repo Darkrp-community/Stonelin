@@ -705,10 +705,16 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if(!used_cat)
 			used_cat = "gen"
 
-		if(length(I.onprop?[used_cat]))
-			var/list/L = I.onprop[used_cat]
-			L[needtofind] += 0.1
-			to_chat(LI, "[needtofind] = [L[needtofind]]")
+		for(var/X in I.onprop)
+			if(X == used_cat)
+				var/list/L = I.onprop[X]
+				if(L.len)
+					if(!needtofind in L)
+						L += needtofind
+					for(var/P in L)
+						if(P == needtofind)
+							L[P] += 0.1
+							to_chat(LI, "[needtofind] = [L[P]]")
 	LI.update_inv_hands()
 	LI.update_inv_belt()
 	LI.update_inv_back()
@@ -743,10 +749,17 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if(!used_cat)
 			used_cat = "gen"
 
-		if(length(I.onprop?[used_cat]))
-			var/list/L = I.onprop[used_cat]
-			L[needtofind] -= 0.1
-			to_chat(LI, "[needtofind] = [L[needtofind]]")
+		for(var/X in I.onprop)
+			if(X == used_cat)
+				var/list/L = I.onprop[X]
+				if(L.len)
+					if(!needtofind in L)
+						L += needtofind
+					for(var/P in L)
+						if(P == needtofind)
+							L[P] -= 0.1
+							to_chat(LI, "[needtofind] = [L[P]]")
+	LI.update_inv_hands()
 	LI.update_inv_belt()
 	LI.update_inv_back()
 

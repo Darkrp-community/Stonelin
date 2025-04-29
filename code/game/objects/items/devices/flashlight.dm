@@ -136,7 +136,7 @@
 	flags_1 = null
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	slot_flags = ITEM_SLOT_HIP
-	var/datum/looping_sound/torchloop/soundloop = null         //remove the = null to re-add the torch crackle sounds.
+	var/datum/looping_sound/torchloop/soundloop
 	var/should_self_destruct = TRUE //added for torch burnout
 	max_integrity = 40
 	fuel = 30 MINUTES
@@ -159,8 +159,7 @@
 
 /obj/item/flashlight/flare/torch/Initialize()
 	. = ..()
-	if(soundloop)
-		soundloop = new(src, FALSE)
+	//soundloop = new(src, FALSE)
 
 /obj/item/flashlight/flare/torch/process()
 	open_flame(heat)
@@ -218,7 +217,7 @@
 			damtype = BURN
 			update_brightness()
 			force = on_damage
-			soundloop?.start()
+			//soundloop.start()
 			if(ismob(loc))
 				var/mob/M = loc
 				M.update_inv_hands()
@@ -286,13 +285,12 @@
 	on = FALSE
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_HIP
-	resistance_flags = FIRE_PROOF
 	force = 1
 	on_damage = 5
 	fuel = 120 MINUTES
 	should_self_destruct = FALSE
 	metalizer_result = null
-	extinguish_prob = 0
+	extinguish_prob = 10
 	melting_material = /datum/material/iron
 	melt_amount = 75
 
@@ -326,11 +324,10 @@
 	name = "bronze lamptern"
 	icon_state = "bronzelamp"
 	item_state = "bronzelamp"
-	desc = "A sturdy housing for a bright light."
-	resistance_flags = FIRE_PROOF//the lamps were being burned by fire (?)
-//	light_outer_range = 9
-//	light_power = 2
-	light_color ="#c3c5c2"//less green colour to be actually illuminating instead of a mess for the eyes, not very light since is the same except less grim
+	desc = "A marvel of engineering that emits a strange green glow."
+	light_outer_range = 9
+	light_power = 2
+	light_color ="#3fff8f"
 	on = FALSE
 	extinguish_prob = 0
 	melting_material = /datum/material/bronze
@@ -346,10 +343,9 @@
 	slot_flags = ITEM_SLOT_HIP
 	force = 1
 	on_damage = 5
-	resistance_flags = FIRE_PROOF
 	fuel = 120 MINUTES
 	should_self_destruct = FALSE
-	extinguish_prob = 0
+	extinguish_prob = 15
 	melting_material = /datum/material/copper
 	melt_amount = 75
 

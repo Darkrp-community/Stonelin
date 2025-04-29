@@ -5,7 +5,7 @@
 	Though you wear the royal colors, you hold no true authority. A servant among servants,\
 	yet without your guidance chaos would reign in the kitchen and halls."
 	flag = BUTLER
-	department_flag = SERFS
+	department_flag = PEASANTS
 	display_order = JDO_BUTLER
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_STATION

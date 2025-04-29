@@ -114,6 +114,9 @@ SUBSYSTEM_DEF(job)
 		if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 			JobDebug("FOC incompatible with patron, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
 			continue
+		if(job.plevel_req > player.client.patreonlevel())
+			JobDebug("FOC incompatible with PATREON LEVEL, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
+			continue
 		if(get_playerquality(player.ckey) < job.min_pq)
 			continue
 		if(length(job.allowed_sexes) && !(player.client.prefs.gender in job.allowed_sexes))
@@ -178,6 +181,10 @@ SUBSYSTEM_DEF(job)
 
 		if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 			JobDebug("GRJ incompatible with patron, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
+			continue
+
+		if(job.plevel_req > player.client.patreonlevel())
+			JobDebug("GRJ incompatible with PATREON LEVEL, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
 			continue
 
 		if(get_playerquality(player.ckey) < job.min_pq)
@@ -372,6 +379,10 @@ SUBSYSTEM_DEF(job)
 					JobDebug("DO incompatible with patron, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
 					continue
 
+				if(job.plevel_req > player.client.patreonlevel())
+					JobDebug("DO incompatible with PATREON LEVEL, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
+					continue
+
 				if(get_playerquality(player.ckey) < job.min_pq)
 					JobDebug("DO player lacks Quality. Player: [player], Job: [job.title]")
 					continue
@@ -453,6 +464,9 @@ SUBSYSTEM_DEF(job)
 				continue
 
 			if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
+				continue
+
+			if(job.plevel_req > player.client.patreonlevel())
 				continue
 
 			if(get_playerquality(player.ckey) < job.min_pq)
@@ -703,6 +717,9 @@ SUBSYSTEM_DEF(job)
 		return
 
 	if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
+		return
+
+	if(job.plevel_req > player.client.patreonlevel())
 		return
 
 	if(get_playerquality(player.ckey) < job.min_pq)

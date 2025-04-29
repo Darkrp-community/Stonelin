@@ -98,6 +98,9 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 			readied_as++
 			// But do we show them?
 
+			if((player.client.ckey in GLOB.hiderole))
+				continue
+
 			// We will show them
 			if(player.client.prefs.real_name)
 				var/thing = "[player.client.prefs.real_name]"

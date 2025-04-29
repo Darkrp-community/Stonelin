@@ -88,9 +88,7 @@
 /datum/ai_behavior/find_and_set/dead_bodies/bog_troll/finish_action(datum/ai_controller/controller, succeeded, ...)
 	. = ..()
 	if(succeeded)
-		if(istype(controller.pawn, /mob/living/simple_animal/hostile/retaliate/troll))
-			var/mob/living/simple_animal/hostile/retaliate/troll/mob = controller.pawn
-			mob.ambush()
+		controller.pawn.icon_state = "Trolla"
 
 /datum/ai_behavior/find_and_set/dead_bodies/mimic/finish_action(datum/ai_controller/controller, succeeded, ...)
 	. = ..()

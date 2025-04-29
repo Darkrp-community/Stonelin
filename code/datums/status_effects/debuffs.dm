@@ -167,14 +167,10 @@
 	var/mob/living/carbon/carbon_owner = iscarbon(owner) ? owner : null
 	var/mob/living/carbon/human/human_owner = ishuman(owner) ? owner : null
 
-	if(!sleptonground)
-		if(!(locate(/obj/structure/bed) in owner.loc) && !(locate(/obj/structure/table) in owner.loc))
-			sleptonground = TRUE
-		else
-			for(var/obj/structure/bed/bed in owner.loc)
-				if(bed.type == /obj/structure/bed/sleepingbag)
-					sleptonground = TRUE
-					break
+	if(!(locate(/obj/structure/bed) in owner.loc) && !(locate(/obj/structure/table) in owner.loc))
+		sleptonground = TRUE
+	else if(locate(/obj/structure/bed/sleepingbag) in owner.loc)
+		sleptonground = TRUE
 
 	human_owner?.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
 	if(prob(20))

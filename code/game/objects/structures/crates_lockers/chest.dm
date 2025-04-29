@@ -9,12 +9,11 @@
 	close_sound = 'sound/misc/chestclose.ogg'
 	keylock = TRUE
 	locked = FALSE
-	sellprice = 1 // crate recycling program
+	sellprice = 1
 	max_integrity = 200
 	blade_dulling = DULLING_BASHCHOP
 	mob_storage_capacity = 1
 	allow_dense = FALSE
-	static_price = TRUE
 
 /obj/structure/closet/crate/chest/OnCrafted(dirin, mob/user)
 	. = ..()
@@ -31,7 +30,7 @@
 	base_icon_state = "chestweird1"
 
 /obj/structure/closet/crate/chest/merchant
-	lockid = ACCESS_MERCHANT
+	lockid = "shop"
 	locked = TRUE
 	masterkey = TRUE
 
@@ -85,7 +84,6 @@
 	open_sound = 'sound/items/book_open.ogg'
 	open_sound = 'sound/items/book_close.ogg'
 	close_sound = 'sound/items/book_close.ogg'
-	sellprice = 0
 
 /obj/structure/closet/crate/chest/neu
 	name = "sturdy oak chest"

@@ -109,6 +109,9 @@
 /obj/structure/flora/tree,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
+"X" = (
+/turf/closed/mineral/bedrock,
+/area/rogue/outdoors/bog)
 "Y" = (
 /obj/structure/fluff/traveltile{
 	aportalgoesto = "bogrtout";
@@ -378,7 +381,7 @@ D
 q
 o
 o
-o
+X
 "}
 (3,1,1) = {"
 o

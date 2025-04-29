@@ -1,7 +1,6 @@
 /datum/antagonist/vampire/lord
 	name = "Vampire Lord"
-	antag_hud_type = ANTAG_HUD_VAMPIRE
-	antag_hud_name = "vamplord"
+	antag_hud_name = "vampire"
 	autojoin_team = TRUE
 	confess_lines = list(
 		"I AM ANCIENT!",
@@ -94,7 +93,7 @@
 
 /datum/outfit/job/vamplord/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/magic/blood, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)

@@ -313,7 +313,6 @@
 		if(!QDELETED(src))
 			update_inv_mouth()
 	check_armor_class()
-	update_reflection()
 //	if(!QDELETED(src))
 //		if(I.eweight)
 //			encumbrance -= I.eweight

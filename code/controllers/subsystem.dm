@@ -91,10 +91,6 @@
 		queue_node_priority = queue_node.queued_priority
 		queue_node_flags = queue_node.flags
 
-		if (queue_node.queue_next == queue_node)
-			message_admins("SS:[queue_node] had self-reference in queue. Fixed.")
-			return FALSE
-
 		if (queue_node_flags & SS_TICKER)
 			if (!(SS_flags & SS_TICKER))
 				continue
@@ -141,7 +137,7 @@
 		queue_node.queue_prev.queue_next = src
 		queue_prev = queue_node.queue_prev
 		queue_node.queue_prev = src
-	return TRUE
+
 
 /datum/controller/subsystem/proc/dequeue()
 	if (queue_next)

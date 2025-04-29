@@ -1,7 +1,11 @@
 /datum/job/migrant
 	title = "Migrant"
 	flag = MIGRANT
+<<<<<<< HEAD
 	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
+=======
+	department_flag = PEASANTS
+>>>>>>> parent of 81b8313fd (Merge branch 'main' into pr/38)
 	job_flags = NONE
 	display_order = JDO_MIGRANT
 	faction = FACTION_STATION

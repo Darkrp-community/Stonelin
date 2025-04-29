@@ -93,7 +93,7 @@
 	seed_identity = "swampweed seeds"
 	plant_def_type = /datum/plant_def/swampweed
 
-/obj/item/neuFarm/seed/berry
+/obj/item/neuFarm/seed/berryrogue
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/jacksberry
 

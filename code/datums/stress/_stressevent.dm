@@ -13,9 +13,6 @@
 /datum/stressevent/proc/can_apply(mob/living/user)
 	return TRUE
 
-/datum/stressevent/proc/on_apply(mob/living/user)
-	return TRUE
-
 /datum/stressevent/proc/get_stress(mob/living/user)
 	return stressadd + ((stacks - 1) * stressadd_per_extra_stack)
 

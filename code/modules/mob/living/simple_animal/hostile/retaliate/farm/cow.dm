@@ -55,18 +55,16 @@
 	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/basic_controller/cow
 	var/can_breed = TRUE
-	var/can_tip = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/cow/Initialize()
 	..()
-	if(can_tip)
-		AddComponent(/datum/component/tippable, \
-			0.5 SECONDS, \
-			0.5 SECONDS, \
-			rand(25 SECONDS, 50 SECONDS), \
-			null,
-			CALLBACK(src, PROC_REF(after_cow_tipped)),\
-			CALLBACK(src, PROC_REF(after_cow_untipped)))
+	AddComponent(/datum/component/tippable, \
+		0.5 SECONDS, \
+		0.5 SECONDS, \
+		rand(25 SECONDS, 50 SECONDS), \
+		null,
+		CALLBACK(src, PROC_REF(after_cow_tipped)),\
+		CALLBACK(src, PROC_REF(after_cow_untipped)))
 
 	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 	if(can_breed)
@@ -317,8 +315,6 @@
 
 	ai_controller = /datum/ai_controller/basic_controller/cow/baby
 	can_breed = FALSE
-	can_tip = FALSE
-
 
 /mob/living/simple_animal/hostile/retaliate/cow/cowlet/bullet
 	desc = "So cute! Be careful of those horns, though."

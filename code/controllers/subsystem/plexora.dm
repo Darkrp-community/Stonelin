@@ -22,7 +22,6 @@
 	};
 
 #define AUTH_HEADER ("Basic " + CONFIG_GET(string/comms_key))
-#define OLD_PLEXORA_CONFIG "config/plexora.json"
 
 SUBSYSTEM_DEF(plexora)
 	name = "Plexora"
@@ -36,17 +35,29 @@ SUBSYSTEM_DEF(plexora)
 
 	// MUST INCREMENT BY ONE FOR EVERY CHANGE MADE TO PLEXORA
 	var/version_increment_counter = 2
+	var/configuration_path = "config/plexora.json"
 	var/plexora_is_alive = FALSE
-	var/base_url = ""
+	var/vanderlin_available = FALSE
+	var/http_root = ""
+	var/http_port = 0
 	var/enabled = TRUE
 	var/tripped_bad_version = FALSE
 	var/list/default_headers
 
-	var/restart_type = PLEXORA_SHUTDOWN_NORMAL
-	var/mob/restart_requester
+	//other thingys!
+	var/hrp_available = FALSE
 
 /datum/controller/subsystem/plexora/Initialize()
-	if(!CONFIG_GET(flag/plexora_enabled) && !load_old_plexora_config())
+	if (!rustg_file_exists(configuration_path))
+		stack_trace("SSplexora has no configuration file! (missing: [configuration_path])")
+		enabled = FALSE
+		flags |= SS_NO_FIRE
+		return FALSE
+
+	// Get config
+	var/list/config = json_decode(rustg_file_read(configuration_path))
+
+	if (!config["enabled"])
 		enabled = FALSE
 		flags |= SS_NO_FIRE
 		return TRUE
@@ -58,7 +69,8 @@ SUBSYSTEM_DEF(plexora)
 		flags |= SS_NO_FIRE
 		return FALSE
 
-	base_url = CONFIG_GET(string/plexora_url)
+	http_root = config["ip"]
+	http_port = config["port"]
 
 	// Do a ping test to check if Plexora is actually running
 	if (!is_plexora_alive())
@@ -78,30 +90,19 @@ SUBSYSTEM_DEF(plexora)
 	flags |= SS_NO_INIT // Make extra sure we don't initialize twice.
 	initialized = SSplexora.initialized
 	plexora_is_alive = SSplexora.plexora_is_alive
-	base_url = SSplexora.base_url
+	http_root = SSplexora.http_root
+	http_port = SSplexora.http_port
 	enabled = SSplexora.enabled
 	tripped_bad_version = SSplexora.tripped_bad_version
 	default_headers = SSplexora.default_headers
 	if(initialized && !enabled)
 		flags |= SS_NO_FIRE
 
-// compat thing so that it'll load plexora.json if it's still used
-/datum/controller/subsystem/plexora/proc/load_old_plexora_config()
-	if(!rustg_file_exists(OLD_PLEXORA_CONFIG))
-		return FALSE
-	var/list/old_config = json_decode(rustg_file_read(OLD_PLEXORA_CONFIG))
-	if(!old_config["enabled"])
-		return FALSE
-	stack_trace("Falling back to [OLD_PLEXORA_CONFIG], you should really migrate to the PLEXORA_ENABLED and PLEXORA_URL config entries!")
-	CONFIG_SET(flag/plexora_enabled, TRUE)
-	CONFIG_SET(string/plexora_url, "http://[old_config["ip"]]:[old_config["port"]]")
-	return TRUE
-
 /datum/controller/subsystem/plexora/proc/is_plexora_alive()
 	. = FALSE
 	if(!enabled) return
 
-	var/datum/http_request/request = new(RUSTG_HTTP_METHOD_GET, "[base_url]/alive")
+	var/datum/http_request/request = new(RUSTG_HTTP_METHOD_GET, "http://[http_root]:[http_port]/alive")
 	request.begin_async()
 	UNTIL_OR_TIMEOUT(request.is_complete(), 10 SECONDS)
 	var/datum/http_response/response = request.into_response()
@@ -128,17 +129,12 @@ SUBSYSTEM_DEF(plexora)
 
 	http_request(
 		RUSTG_HTTP_METHOD_POST,
-		"[base_url]/status",
+		"http://[http_root]:[http_port]/status",
 		json_encode(status),
 		default_headers
 	).begin_async()
 
 /datum/controller/subsystem/plexora/proc/_Shutdown(hard = FALSE, requestedby)
-	var/static/server_restart_sent = FALSE
-
-	if (server_restart_sent)
-		return
-	server_restart_sent = TRUE
 	http_basicasync("serverupdates", list(
 		"type" = "servershutdown",
 		"timestamp" = rustg_unix_timestamp(),
@@ -146,9 +142,8 @@ SUBSYSTEM_DEF(plexora)
 		"round_timer" = ROUND_TIME(),
 		"map" = SSmapping.config?.map_name,
 		"playercount" = length(GLOB.clients),
-		"restart_type" = restart_type,
-		"requestedby" = usr?.ckey,
-		"requestedby_stealthed" = usr?.client?.holder?.fakekey,
+		"hard" = hard,
+		"requestedby" = requestedby,
 	))
 
 /datum/controller/subsystem/plexora/proc/serverstarted()
@@ -199,7 +194,7 @@ SUBSYSTEM_DEF(plexora)
 		"id" = id
 	)
 
-	var/datum/http_request/request = new(RUSTG_HTTP_METHOD_GET, "[base_url]/byondserver_alive", json_encode(body), default_headers)
+	var/datum/http_request/request = new(RUSTG_HTTP_METHOD_GET, "http://[http_root]:[http_port]/byondserver_alive", json_encode(body))
 	request.begin_async()
 	UNTIL_OR_TIMEOUT(request.is_complete(), 5 SECONDS)
 	var/datum/http_response/response = request.into_response()
@@ -328,7 +323,7 @@ SUBSYSTEM_DEF(plexora)
 
 	var/datum/http_request/request = new(
 		RUSTG_HTTP_METHOD_POST,
-		"[base_url]/[path]",
+		"http://[http_root]:[http_port]/[path]",
 		json_encode(body),
 		default_headers,
 		"tmp/response.json"
@@ -336,26 +331,13 @@ SUBSYSTEM_DEF(plexora)
 	request.begin_async()
 	return request
 
-/datum/world_topic/plx_restartcontroller
-	keyword = "PLX_restartcontroller"
-	require_comms_key = TRUE
+// // not ready yet
+// /datum/world_topic/plx_commandreport
+// 	keyword = "PLX_commandreport"
+// 	require_comms_key = TRUE
 
-/datum/world_topic/plx_restartcontroller/Run(list/input)
-	var/controller = input["controller"]
-	var/username = input["username"]
-	var/userid = input["userid"]
-
-	if (!controller)
-		return
-
-	switch(LOWER_TEXT(controller))
-		if("master")
-			Recreate_MC()
-			SSblackbox.record_feedback("tally", "admin_verb", 1, "PLX: Restart Master Controller")
-		if("failsafe")
-			new /datum/controller/failsafe()
-			SSblackbox.record_feedback("tally", "admin_verb", 1, "PLX: Restart Failsafe Controller")
-	message_admins("PLEXORA: @[username] ([userid]) has restarted the [controller] controller from the Discord.")
+// /datum/world_topic/plx_commandreport/Run(list/input)
+// 	priority_announce(text = input["text"], title = input["title"], encode_title = FALSE, encode_text = FALSE, color_override)
 
 /datum/world_topic/plx_globalnarrate
 	keyword = "PLX_globalnarrate"
@@ -413,7 +395,7 @@ SUBSYSTEM_DEF(plexora)
 	var/ckey = input["ckey"]
 
 	if (!ckey)
-		return list("error" = PLEXORA_ERROR_MISSING_CKEY)
+		return list("error" = "missingckey")
 
 	var/list/returning = list(
 		"ckey" = ckey
@@ -450,12 +432,12 @@ SUBSYSTEM_DEF(plexora)
 	var/omit_logs = input["omit_logs"]
 
 	if (!ckey)
-		return list("error" = PLEXORA_ERROR_MISSING_CKEY)
+		return list("error" = "missingckey")
 
 	var/datum/player_details/details = GLOB.player_details[ckey]
 
 	if (QDELETED(details))
-		return list("error" = PLEXORA_ERROR_DETAILSNOTEXIST)
+		return list("error" = "detailsnotexist")
 
 	var/client/client = disambiguate_client(ckey)
 
@@ -524,7 +506,7 @@ SUBSYSTEM_DEF(plexora)
 	var/client/client = disambiguate_client(ckey)
 
 	if (QDELETED(client))
-		return list("error" = PLEXORA_ERROR_CLIENTNOTEXIST)
+		return list("error" = "clientnotexist")
 
 	var/returning = list(
 		"icon_b64" = icon2base64(getFlatIcon(client.mob, no_anim = TRUE))
@@ -546,12 +528,12 @@ SUBSYSTEM_DEF(plexora)
 	var/client/client = disambiguate_client(ckey(target_ckey))
 
 	if (QDELETED(client))
-		return list("error" = PLEXORA_ERROR_CLIENTNOTEXIST)
+		return list("error" = "clientnotexist")
 
 	var/mob/client_mob = client.mob
 
 	if (QDELETED(client_mob))
-		return list("error" = PLEXORA_ERROR_CLIENTNOMOB)
+		return list("error" = "clientnomob")
 
 	return list(
 		"success" = client_mob.emote(emote, message = emote_args, intentional = FALSE)
@@ -568,12 +550,12 @@ SUBSYSTEM_DEF(plexora)
 	var/client/client = disambiguate_client(ckey(target_ckey))
 
 	if (QDELETED(client))
-		return list("error" = PLEXORA_ERROR_CLIENTNOTEXIST)
+		return list("error" = "clientnotexist")
 
 	var/mob/client_mob = client.mob
 
 	if (QDELETED(client_mob))
-		return list("error" = PLEXORA_ERROR_CLIENTNOMOB)
+		return list("error" = "clientnomob")
 
 	client_mob.say(message, forced = TRUE)
 
@@ -592,7 +574,7 @@ SUBSYSTEM_DEF(plexora)
 	usr = mockadmin
 
 	var/datum/admin_help/ticket = GLOB.ahelp_tickets.TicketByID(ticketid)
-	if (QDELETED(ticket)) return list("error" = PLEXORA_ERROR_TICKETNOTEXIST)
+	if (QDELETED(ticket)) return list("error" = "couldntfetchticket")
 
 	if (action != "reopen" && ticket.state != AHELP_ACTIVE)
 		return
@@ -634,12 +616,12 @@ SUBSYSTEM_DEF(plexora)
 	var/client/recipient = disambiguate_client(requested_ckey)
 
 	if (QDELETED(recipient))
-		return list("error" = PLEXORA_ERROR_CLIENTNOTEXIST)
+		return list("error" = "clientnotexist")
 
 	var/datum/admin_help/ticket = ticketid ? GLOB.ahelp_tickets.TicketByID(ticketid) : GLOB.ahelp_tickets.CKey2ActiveTicket(requested_ckey)
 
 	if (QDELETED(ticket))
-		return list("error" = PLEXORA_ERROR_TICKETNOTEXIST)
+		return list("error" = "couldntfetchticket")
 
 	var/plx_tagged = "[sender]"
 
@@ -650,7 +632,7 @@ SUBSYSTEM_DEF(plexora)
 	message = emoji_parse(message)
 
 	if (!message)
-		return list("error" = PLEXORA_ERROR_SANITIZATION_FAILED)
+		return list("error" = "sanitizationfailed")
 
 	// I have no idea what this does honestly.
 
@@ -707,8 +689,6 @@ SUBSYSTEM_DEF(plexora)
 
 	SSblackbox.record_feedback("tally", "admin_say_relay", 1, "Asay external") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-
-#undef OLD_PLEXORA_CONFIG
 #undef AUTH_HEADER
 #undef TOPIC_EMITTER
 

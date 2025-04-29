@@ -8,6 +8,7 @@
 	requirements = list(
 		/obj/item/paper = 1,
 	)
+	subtypes_allowed = TRUE
 
 	attacked_atom = /obj/item/natural/feather
 	starting_atom = /obj/item/paper
@@ -19,10 +20,30 @@
 	requires_learning = TRUE
 
 /datum/repeatable_crafting_recipe/reading/guide
-	name = "blank textbook"
+	name = "novice's guide to literature"
 	requirements = list(
 		/obj/item/paper/scroll = 3,
 	)
 	starting_atom = /obj/item/paper/scroll
 	craftdiff = 2
-	output = /obj/item/textbook
+	output = /obj/item/literary
+
+/datum/repeatable_crafting_recipe/reading/guide/apprentice
+	name = "apprentice's guide to literature"
+	output = /obj/item/literary/apprentice
+	craftdiff = 3
+
+/datum/repeatable_crafting_recipe/reading/guide/journeyman
+	name = "journeyman's guide to literature"
+	output = /obj/item/literary/journeyman
+	craftdiff = 4
+
+/datum/repeatable_crafting_recipe/reading/guide/expert
+	name = "expert's guide to literature"
+	output = /obj/item/literary/expert
+	craftdiff = 5
+
+/datum/repeatable_crafting_recipe/reading/guide/master
+	name = "master's guide to literature"
+	output = /obj/item/literary/master
+	craftdiff = 6

@@ -201,11 +201,8 @@
 
 	var/nodmg = FALSE
 	var/dam2do = 10*(user.STASTR/20)
-	var/poisonkiss = FALSE
 	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		dam2do *= 2
-	if(HAS_TRAIT(user, TRAIT_CHANGELING_METABOLISM))
-		poisonkiss = TRUE
 	if(!HAS_TRAIT(user, TRAIT_STRONGBITE))
 		if(!affecting.has_wound(/datum/wound/bite))
 			nodmg = TRUE
@@ -236,11 +233,6 @@
 		playsound(src, "smallslash", 100, TRUE, -1)
 		if(istype(src, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = src
-			if(poisonkiss)
-				if(prob(50)) // 50% chance of injecting venom on the victim.
-					to_chat(user, "<span class='greentext'>Your internal glands releases venom upon [src]</span>")
-					to_chat(src, "<span class='warning'>Argh! An burning sensation has spread on my veins!</span>")
-					src.reagents.add_reagent(/datum/reagent/poison/changelingtoxin, 5) // Inject 5 units of venomtoxin
 			if(user.mind && mind)
 				if(istype(user.dna.species, /datum/species/werewolf))
 					caused_wound?.werewolf_infect_attempt()
@@ -373,7 +365,7 @@
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
 					jadded += H.get_complex_pain()/50
-					if(H.get_encumbrance() >= 0.7)
+					if(!H.check_armor_skill())
 						jadded += 50
 						jrange = 1
 				if(adjust_stamina(min(jadded,100)))
@@ -407,88 +399,6 @@
 				if(HAS_TRAIT(src, TRAIT_NO_BITE))
 					to_chat(src, span_warning("I can't bite."))
 					return
-				if(HAS_TRAIT(src, TRAIT_CHANGELING_METABOLISM) && ismob(A))
-					var/mob/living/L = A
-					if(L && (L.stat == DEAD || L.stat == UNCONSCIOUS))
-						changeNext_move(mmb_intent.clickcd)
-						face_atom(L)
-
-						var/devour_delay
-						if(L.stat == DEAD)
-							devour_delay = 60
-						else
-							devour_delay = 360
-
-						src.visible_message(span_danger("[src] begins grotesquely devouring [L]'s flesh"))
-						playsound(src.loc, 'sound/gore/flesh_eat_03.ogg', 50, 1)
-
-						if(do_after(src, devour_delay, target = L))
-							if(QDELETED(L))
-								return
-
-							var/obj/item/bodypart/limb
-							var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-							var/selected_zone = src.zone_selected
-
-							var/purifying = FALSE
-							if(istype(L, /mob/living/carbon/human))
-								var/mob/living/carbon/human/H = L
-								if((islist(H.faction) && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
-									purifying = TRUE
-
-							if(selected_zone in limb_list)
-								limb = L.get_bodypart(selected_zone)
-								if(limb)
-									limb.dismember()
-									playsound(src.loc, 'sound/combat/dismemberment/dismem (1).ogg', 50, 1)
-									qdel(limb)
-									if(purifying)
-										to_chat(src, span_bloody("Feast of the righteous, your teeth sink into blemished flesh. The abyss within is relished."))
-										src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_NUTRITIOUS)
-										src.apply_status_effect(/datum/status_effect/buff/foodbuff)
-									else
-										to_chat(src, span_bloody("Wallowing in guilt as you savour the untainted. This was not meant to be devoured."))
-										src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_DECENT)
-									return
-
-							for(var/zone in limb_list)
-								limb = L.get_bodypart(zone)
-								if(limb)
-									limb.dismember()
-									playsound(src.loc, 'sound/combat/dismemberment/dismem (1).ogg', 50, 1)
-									qdel(limb)
-									if(purifying)
-										to_chat(src, span_bloody("Feast of the righteous, your teeth sink into blemished flesh. The abyss within is relished."))
-										src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_NUTRITIOUS)
-										src.apply_status_effect(/datum/status_effect/buff/foodbuff)
-									else
-										to_chat(src, span_bloody("Wallowing in guilt as you savour the untainted. This was not meant to be devoured."))
-										src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_DECENT)
-									return
-
-							limb = L.get_bodypart(BODY_ZONE_CHEST)
-							if(limb)
-								if(!limb.dismember())
-									L.gib()
-								playsound(src.loc, 'sound/combat/dismemberment/dismem (1).ogg', 50, 1)
-								if(purifying)
-									to_chat(src, span_bloody("You devour the rest of the corruptive veil, unleashing what lies within."))
-									src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_NUTRITIOUS)
-									src.apply_status_effect(/datum/status_effect/buff/foodbuff)
-								else
-									to_chat(src, span_bloody("You collapse the body of the victim of a sorry fate. Their undeserving organs spill out."))
-									src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_DECENT)
-								return
-							to_chat(src, span_bloody("You tear into [L]'s flesh!"))
-							playsound(src.loc, 'sound/gore/flesh_eat_03.ogg', 50, 1)
-							if(hascall(L, "gib"))
-								L.gib()
-							else
-								qdel(L)
-							to_chat(src, span_bloody("Such simple creature does not bring you a proper feast."))
-							playsound(src.loc, 'sound/combat/dismemberment/dismem (1).ogg', 50, 1)
-							src.reagents?.add_reagent(/datum/reagent/consumable/nutriment, SNACK_DECENT)
-							return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)
 				A.onbite(src)
@@ -501,7 +411,7 @@
 				if(ishuman(A))
 					var/mob/living/carbon/human/U = src
 					var/mob/living/carbon/human/V = A
-					var/thiefskill = src.mind.get_skill_level(/datum/skill/misc/stealing) + (has_world_trait(/datum/world_trait/matthios_fingers) ? 1 : 0)
+					var/thiefskill = src.mind.get_skill_level(/datum/skill/misc/stealing)
 					var/stealroll = roll("[thiefskill]d6")
 					var/targetperception = (V.STAPER)
 					var/exp_to_gain = STAINT
@@ -538,8 +448,7 @@
 								put_in_active_hand(picked)
 								to_chat(src, span_green("I stole [picked]!"))
 								exp_to_gain *= src.mind.get_learning_boon(thiefskill)
-								if(V.client && V.stat != DEAD)
-									GLOB.vanderlin_round_stats[STATS_ITEMS_PICKPOCKETED]++
+								GLOB.vanderlin_round_stats["items_pickpocketed"]++
 								if(has_flaw(/datum/charflaw/addiction/kleptomaniac))
 									sate_addiction()
 							else

@@ -17,7 +17,7 @@
 		if(!open)
 			to_chat(user, "<span class='warning'>Open me.</span>")
 			return
-	. = ..()
+	..()
 
 /obj/item/paper/scroll/getonmobprop(tag)
 	. = ..()
@@ -70,7 +70,7 @@
 			dat += "[info]<br>"
 			dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
 			dat += "</body></html>"
-			user << browse(dat, "window=reading;size=460x460;can_close=0;can_minimize=0;can_maximize=0;can_resize=0")
+			user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0")
 		else
 			user.hud_used.reads.icon_state = "scroll"
 			user.hud_used.reads.show()
@@ -85,8 +85,9 @@
 		return "<span class='warning'>I'm too far away to read it.</span>"
 
 /obj/item/paper/scroll/Initialize()
+	open = FALSE
 	update_icon_state()
-	. = ..()
+	..()
 
 /obj/item/paper/scroll/rmb_self(mob/user)
 	attack_right(user)
@@ -142,7 +143,7 @@
 /obj/item/paper/scroll/cargo/examine(mob/user)
 	. = ..()
 	if(signedname)
-		. += "This was signed by [signedname] the [signedjob]."
+		. += "It was signed by [signedname] the [signedjob]."
 
 	//for each order, add up total price and display orders
 
@@ -188,9 +189,9 @@
 		info += "<ul>"
 		for(var/datum/supply_pack/A in orders)
 			if(!A.contraband)
-				info += "<li style='color:#06080F;font-size:11px;font-family:\"Segoe Script\"'>[A.name] x[orders[A]] - [A.cost * orders[A]] mammons</li><br/>"
+				info += "<li style='color:#06080F;font-size:11px;font-family:\"Segoe Script\"'>[A.name] - [A.cost] mammons</li><br/>"
 			else
-				info += "<li style='color:#610018;font-size:11px;font-family:\"Segoe Script\"'>[A.name] x[orders[A]] - [A.cost * orders[A]] mammons</li><br/>"
+				info += "<li style='color:#610018;font-size:11px;font-family:\"Segoe Script\"'>[A.name] - [A.cost] mammons</li><br/>"
 		info += "</ul>"
 
 	info += "<br/></font>"
@@ -218,7 +219,7 @@
 
 /obj/item/paper/confession/attackby(atom/A, mob/living/user, params)
 	if(signed)
-		return
+		return ..()
 	if(istype(A, /obj/item/natural/feather))
 		attempt_confession(user)
 		return TRUE
@@ -237,46 +238,32 @@
 		return
 	icon_state = "confession"
 
+/obj/item/paper/confession/attack(mob/living/carbon/human/M, mob/user)
+	testing("paper confession offer. target is [M], user is [user].")
+	if(signed)
+		return ..()
+	if(M.stat >= UNCONSCIOUS) //unconscious cannot talk to confess, but soft crit can
+		return ..()
+	if(!ishuman(M))
+		return ..()
+	to_chat(user, span_info("I courteously offer the confession to [M]."))
+	attempt_confession(M, user)
+	return
+
 /obj/item/paper/confession/proc/attempt_confession(mob/living/carbon/human/M, mob/user)
 	if(!ishuman(M))
 		return
-	var/input = alert(M, "Sign the confession of your true nature?", "CONFESSION OF [confession_type == "antag" ? "VILLAINY" : "FAITH"]", "Yes", "Lie", "No")
+	var/input = alert(M, "Sign the confession of your true nature?", "CONFESSION OF [confession_type == "antag" ? "VILLAINY" : "FAITH"]", "Yes", "No")
 	if(M.stat >= UNCONSCIOUS)
-		return
-	if(!M.CanReach(src))
 		return
 	if(signed)
 		return
 	testing("[M] is signing the confession.")
 	if(input == "Yes")
-		playsound(src, 'sound/items/write.ogg', 50, FALSE, ignore_walls = FALSE)
-		M.visible_message(span_info("[M] has agreed to confess their true [confession_type == "antag" ? "villainy" : "faith"]."), span_info("I agree to confess my true nature."), vision_distance = COMBAT_MESSAGE_RANGE)
-		M.confess_sins(confession_type, resist=FALSE, interrogator=user, torture=FALSE, confession_paper = src, false_result = TRUE)
-	else if(input == "Lie")
-		var/fake = TRUE
-		if(confession_type == "patron")
-			var/list/divine_gods = list()
-			for(var/datum/patron/path as anything in GLOB.patrons_by_faith[/datum/faith/divine_pantheon] + GLOB.patrons_by_faith[/datum/faith/psydon])
-				if(!path.name)
-					continue
-				var/pref_name = path.display_name ? path.display_name : path.name
-				divine_gods[pref_name] = path
-			if(length(divine_gods)) // sanity check
-				var/fake_patron = input(M, "Who will you pretend your patron is?", "DECEPTION") as null|anything in divine_gods
-				if(!fake)
-					fake_patron = pick(divine_gods)
-				fake = divine_gods[fake_patron]
-		if(M.stat >= UNCONSCIOUS)
-			return
-		if(!M.CanReach(src))
-			return
-		if(signed)
-			return
-		playsound(src, 'sound/items/write.ogg', 50, FALSE, ignore_walls = FALSE)
-		M.visible_message(span_info("[M] has agreed to confess their true [confession_type == "antag" ? "villainy" : "faith"]."), span_info("I agree to confess my true nature."), vision_distance = COMBAT_MESSAGE_RANGE)
-		M.confess_sins(confession_type, resist=FALSE, interrogator=user, torture=FALSE, confession_paper = src, false_result = fake)
+		M.visible_message(span_info("[M] has agreed to confess their true [confession_type == "antag" ? "villainy" : "faith"]."), span_info("I agree to confess my true nature."))
+		M.confess_sins(confession_type, resist=FALSE, user=user, torture=FALSE, confession_paper = src)
 	else
-		M.visible_message(span_boldwarning("[M] refused to sign the confession!"), span_boldwarning("I refused to sign the confession!"), vision_distance = COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_boldwarning("[M] refused to sign the confession!"), span_boldwarning("I refused to sign the confession!"))
 	return
 
 /obj/item/paper/confession/read(mob/user)
@@ -358,7 +345,7 @@
 	real_names |= GLOB.roundstart_court_agents
 
 /obj/item/paper/scroll/frumentarii
-	name = "frumentarii scroll"
+	name = "Frumentarii scroll"
 	desc = "A list of the hand's fingers. Strike a candidate with this to allow them servitude. Use a writing utensil to cross out a finger."
 	old_render = FALSE
 
@@ -427,7 +414,7 @@
 
 
 /obj/item/paper/scroll/keep_plans
-	name = "keep architectural drawings"
+	name = "Keep Architectural Drawings"
 	desc = "Paper etched with the floor plans for the entire keep."
 
 /obj/item/paper/scroll/keep_plans/read(mob/user)
@@ -437,7 +424,7 @@
 
 
 /obj/item/paper/scroll/sold_manifest
-	name = "shipping manifest"
+	name = "Shipping Manifest"
 	old_render = FALSE
 	var/list/count = list()
 	var/list/items = list()
@@ -502,8 +489,7 @@
 	info += "<br/></font>"
 
 	info += "<font size=\"2\" face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[writers_name] Shipwright of [faction]</font>"
-	info += "<br/>"
-	info += "<font size=\"2\" face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>Time: [gameTimestamp("hh:mm:ss", world.time - SSticker.round_start_time)]</font>"
+
 	info += "</div>"
 
 /obj/item/paper/scroll/sell_price_changes/proc/generated_test_data()

@@ -12,14 +12,8 @@
 	icon_state = "stairs"
 	anchored = TRUE
 	layer = 2
-	obj_flags = CAN_BE_HIT | IGNORE_SINK
+	obj_flags = CAN_BE_HIT
 	nomouseover = TRUE
-	var/should_sink = FALSE
-
-/obj/structure/stairs/Initialize(mapload)
-	. = ..()
-	if(should_sink)
-		obj_flags &= ~IGNORE_SINK
 
 /obj/structure/stairs/stone
 	name = "stone stairs"

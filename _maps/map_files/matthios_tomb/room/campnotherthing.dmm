@@ -81,7 +81,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/cave)
 "v" = (
-/mob/living/simple_animal/hostile/retaliate/troll/axe,
+/mob/living/simple_animal/hostile/retaliate/troll,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/metal,
 /area/rogue/under/cave)

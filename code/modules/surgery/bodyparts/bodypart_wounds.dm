@@ -227,8 +227,6 @@
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
 		if(applied)
-			if(user?.client)
-				GLOB.vanderlin_round_stats[STATS_CRITS_MADE]++
 			return applied
 	return FALSE
 
@@ -288,8 +286,6 @@
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
 		if(applied)
-			if(user?.client)
-				GLOB.vanderlin_round_stats[STATS_CRITS_MADE]++
 			return applied
 	return FALSE
 
@@ -318,8 +314,6 @@
 	if(bclass in GLOB.artery_bclasses)
 		crit_classes += "artery"
 
-	if(!length(crit_classes))
-		return FALSE
 	switch(pick(crit_classes))
 		if("dislocation")
 			if(damage_dividend >= 1)
@@ -416,8 +410,6 @@
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
 		if(applied)
-			if(user?.client)
-				GLOB.vanderlin_round_stats[STATS_CRITS_MADE]++
 			return applied
 	return FALSE
 
@@ -427,8 +419,6 @@
 		return FALSE
 	if(owner && ((owner.status_flags & GODMODE) || HAS_TRAIT(owner, TRAIT_PIERCEIMMUNE)))
 		return FALSE
-	if(istype(embedder, /obj/item/natural/worms/leech))
-		GLOB.vanderlin_round_stats[STATS_LEECHES_EMBEDDED]++
 	LAZYADD(embedded_objects, embedder)
 	embedder.is_embedded = TRUE
 	embedder.forceMove(src)
@@ -453,7 +443,7 @@
 		return FALSE
 	LAZYREMOVE(embedded_objects, embedder)
 	embedder.is_embedded = FALSE
-	embedder.unembedded(owner)
+	embedder.unembedded()
 	if(!QDELETED(embedder))
 		var/drop_location = owner?.drop_location() || drop_location()
 		if(drop_location)

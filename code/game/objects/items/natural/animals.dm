@@ -42,7 +42,7 @@
 /obj/item/natural/fur // a piece of skin with animal hair on it. Could be called a fur but its untanned and also encompasses rat skins and goat skins so pelt is more suitable at least to my ears.
 	name = "fur"
 	icon_state = "wool1"
-	desc = "Pelt from one of Dendor's creachers."
+	desc = "pelt from one of Dendor's creachers."
 	dropshrink = 0.90
 	force = 0
 	throwforce = 0
@@ -52,23 +52,23 @@
 	sellprice = 5
 
 /obj/item/natural/fur/gote
-	desc = "Pelt from a gote."
+	desc = "from a gote."
 	icon_state = "pelt_gote"
 
 /obj/item/natural/fur/volf
-	desc = "Pelt from a volf."
+	desc = "from a volf."
 	icon_state = "pelt_volf"
 
 /obj/item/natural/fur/mole
-	desc = "Pelt from a mole."
+	desc = "from a mole."
 	icon_state = "pelt_mole"
 
 /obj/item/natural/fur/rous
-	desc = "Pelt from a rous."
+	desc = "from a rous."
 	icon_state = "pelt_rous"
 
 /obj/item/natural/fur/cabbit
-	desc = "Pelt from a cabbit."
+	desc = "from a cabbit."
 	icon_state = "wool2"
 
 /obj/item/natural/head
@@ -102,19 +102,6 @@
 	twohands_required = TRUE
 	headpricemin = 80
 	headpricemax = 230
-
-/obj/item/natural/head/troll/axe
-	name = "troll head"
-	desc = "The head of a once mighty warrior troll."
-	icon_state = "trollhead_axe"
-	headpricemin = 90
-	headpricemax = 250
-
-/obj/item/natural/head/troll/cave
-	name = "cave troll head"
-	icon_state = "cavetrollhead"
-	headpricemin = 120
-	headpricemax = 280
 
 /obj/item/natural/head/rous
 	name = "rous head"

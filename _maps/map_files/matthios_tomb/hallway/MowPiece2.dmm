@@ -164,8 +164,8 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/cave)
 "zE" = (
-/obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/cobblerock,
 /area/rogue/under/cave)
 "Bz" = (

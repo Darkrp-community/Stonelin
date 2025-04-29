@@ -41,7 +41,7 @@
 		p.client.screen |= p.client.mouseovertext
 	return TRUE
 
-/obj/structure/soul/handle_mouseover(location, control, params)
+/obj/item/soul/handle_mouseover(location, control, params)
 	return TRUE
 
 /obj/structure/handle_mouseover(location, control, params)

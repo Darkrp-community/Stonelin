@@ -3,7 +3,11 @@
 	tutorial = "As a Pilgrim, you begin far outside the safety of the city and must reach it in order to ply your trade. \
 	Alternatively, you can build your own settlement and enjoy the terrible dangers nature has to offer."
 	flag = ADVENTURER
+<<<<<<< HEAD
 	department_flag = SK_OUTSIDERS // STONEKEEP EDIT
+=======
+	department_flag = PEASANTS
+>>>>>>> parent of 81b8313fd (Merge branch 'main' into pr/38)
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_PILGRIM
 	faction = FACTION_STATION
@@ -21,7 +25,6 @@
 
 	same_job_respawn_delay = 0
 	can_have_apprentices = FALSE
-	selection_color = "#a33096"
 
 /datum/job/pilgrim/after_spawn(mob/living/spawned, client/player_client)
 	..()

@@ -4,7 +4,7 @@
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
 /datum/supply_pack/rawmats/glass
-	name = "Glass Panes (6)"
+	name = "Glass Panes"
 	cost = 30
 	contains = list(
 		/obj/item/natural/glass,
@@ -16,7 +16,7 @@
 	)
 
 /datum/supply_pack/rawmats/copper
-	name = "Copper Ore (4)"
+	name = "Copper Ore"
 	cost = 45
 	contains = list(
 		/obj/item/ore/copper,
@@ -26,7 +26,7 @@
 	)
 
 /datum/supply_pack/rawmats/tin
-	name = "Tin Ore (4)"
+	name = "Tin Ore"
 	cost = 45
 	contains = list(/obj/item/ore/tin,
 		/obj/item/ore/tin,
@@ -35,7 +35,7 @@
 	)
 
 /datum/supply_pack/rawmats/iron
-	name = "Iron Ore (4)"
+	name = "Iron Ore"
 	cost = 65
 	contains = list(
 		/obj/item/ore/iron,
@@ -45,7 +45,7 @@
 	)
 
 /datum/supply_pack/rawmats/coal
-	name = "Coal (6)"
+	name = "Coal"
 	cost = 40
 	contains = list(
 		/obj/item/ore/coal,
@@ -56,7 +56,7 @@
 	)
 
 /datum/supply_pack/rawmats/cloth
-	name = "Fiber Strands (5)"
+	name = "Fiber Strands"
 	cost = 8
 	contains = list(
 		/obj/item/natural/fibers,
@@ -67,7 +67,7 @@
 	)
 
 /datum/supply_pack/rawmats/cloth
-	name = "Cloth (5)"
+	name = "Cloth"
 	cost = 15
 	contains = list(
 		/obj/item/natural/cloth,
@@ -78,7 +78,7 @@
 	)
 
 /datum/supply_pack/rawmats/feather
-	name = "Feathers (5)"
+	name = "Feathers"
 	cost = 15
 	contains = list(
 		/obj/item/natural/feather,
@@ -89,7 +89,7 @@
 	)
 
 /datum/supply_pack/rawmats/silk
-	name = "Silk (5)"
+	name = "Silk"
 	cost = 28
 	contains = list(
 		/obj/item/natural/silk,
@@ -100,7 +100,7 @@
 	)
 
 /datum/supply_pack/rawmats/ash
-	name = "Fertillizing Ash (6)"
+	name = "Fertillizing Ash"
 	cost = 15
 	contains = list(
 		/obj/item/ash,
@@ -111,7 +111,7 @@
 	)
 
 /datum/supply_pack/rawmats/sinew
-	name = "Animal Bone and Sinew (3+3)"
+	name = "Animal Bone and Sinew"
 	cost = 20
 	contains = list(
 		/obj/item/alch/bone,
@@ -127,21 +127,3 @@
 	contains = list(
 		/obj/item/riddleofsteel
 	)
-
-/datum/supply_pack/rawmats/lumber
-	name = "Lumber"
-	cost = 30
-	contains = list(/obj/item/natural/wood/plank,
-	/obj/item/natural/wood/plank,
-	/obj/item/natural/wood/plank,
-	/obj/item/natural/wood/plank,
-	/obj/item/natural/wood/plank,)
-
-/datum/supply_pack/rawmats/blocks
-	name = "Stone Blocks"
-	cost = 30
-	contains = list(/obj/item/natural/bundle/stoneblock,
-	/obj/item/natural/bundle/stoneblock,
-	/obj/item/natural/bundle/stoneblock,
-	/obj/item/natural/bundle/stoneblock,
-	/obj/item/natural/bundle/stoneblock,)
