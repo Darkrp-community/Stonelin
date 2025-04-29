@@ -26,7 +26,7 @@
 	desc = "Sturdy, durable, flexible. Will keep you alive in style."
 	max_integrity = 350
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BITE, BCLASS_TWIST) // No blunt crits on leather, EVER.
 	armor = ARMOR_LEATHER_GOOD
 
 //obj/item/clothing/armor/leather/masterwork
