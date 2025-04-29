@@ -137,7 +137,7 @@
 
 /datum/supply_pack/armor/bracers//only until we get the iron bracers/jack of plates ingame
 	name = "Steel Bracers"
-	cost = 30
+	cost = 50 // This should not be allowed but if it exists, make it expensive as hell as a punishment.
 	contains = /obj/item/clothing/wrists/bracers
 
 /datum/supply_pack/armor/angle_gloves
