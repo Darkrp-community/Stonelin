@@ -74,7 +74,7 @@
 /obj/item/clothing/shoes/boots/leather/advanced
 	name = "hardened leather boots"
 	desc = "Sturdy, durable, flexible. A marvel of the dark ages that exists solely to protect your toes."
-	max_integrity = 350
+	max_integrity = 300
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = ARMOR_LEATHER_GOOD
 
