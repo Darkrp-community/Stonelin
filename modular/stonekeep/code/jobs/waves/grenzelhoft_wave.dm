@@ -60,7 +60,7 @@ Spawn in the forest area.
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-		H.cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_grenzelhoft.ogg'
 
 /datum/migrant_role/sk/grenzelhoft/countess
 	name = "Grenzelhoft Countess"

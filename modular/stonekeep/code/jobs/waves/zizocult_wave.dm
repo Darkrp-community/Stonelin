@@ -188,8 +188,8 @@
 	shared_wave_type = list(/datum/migrant_wave/evil_knight,/datum/migrant_wave/varyag_raiders, /datum/migrant_wave/zizo_cult)
 	can_roll = FALSE
 	roles = list(
-//		/datum/migrant_role/sk/zizo/herald = 1,
-		/datum/migrant_role/sk/zizo/hellgoblin = 1
+		/datum/migrant_role/sk/zizo/herald = 1,
+//		/datum/migrant_role/sk/zizo/hellgoblin = 1
 )
 	greet_text = "Zizo is your master, and too long has these lands been allowed to forget."
 

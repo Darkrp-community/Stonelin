@@ -206,6 +206,7 @@
 	icon = 'modular/stonekeep/icons/temple.dmi'
 	icon_state = "sandstone"
 	pixel_y = 32
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/fluff/walldeco/pillar/doric
 	icon_state = "doric"
@@ -623,6 +624,67 @@
 	. = ..()
 	icon_state = "livebush_[rand(1,3)]"
 
+/obj/structure/flora/tree/neu/brambles
+	name = "brambles"
+	desc = ""
+	icon = 'modular/stonekeep/icons/pigflora.dmi'
+	icon_state = "bramblesc"
+	stump_type = /obj/item/grown/log/tree/stick
+	max_integrity = 120
+	destroy_sound = 'sound/misc/woodhit.ogg'
+	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	alpha = 255
+	pixel_x = 0
+	opacity = TRUE
+	density = TRUE
+	color = "#5a5a5b"
+/obj/structure/flora/tree/neu/brambles/Initialize()
+	. = ..()
+	icon_state = "bramblesc"
+	color = "#ffffff"
+	dir = pick(GLOB.cardinals)
+/obj/structure/flora/tree/neu/brambles/north
+	icon_state = "bramblesn"
+	color = "#daff6c"
+/obj/structure/flora/tree/neu/brambles/north/Initialize()
+	. = ..()
+	icon_state = "bramblesn"
+/obj/structure/flora/tree/neu/brambles/west
+	icon_state = "bramblesw"
+	color = "#67ff76"
+/obj/structure/flora/tree/neu/brambles/west/Initialize()
+	. = ..()
+	icon_state = "bramblesw"
+/obj/structure/flora/tree/neu/brambles/south
+	icon_state = "brambless"
+	color = "#4a4aff"
+/obj/structure/flora/tree/neu/brambles/south/Initialize()
+	. = ..()
+	icon_state = "brambless"
+/obj/structure/flora/tree/neu/brambles/east
+	icon_state = "bramblese"
+	color = "#f57e7e"
+/obj/structure/flora/tree/neu/brambles/east/Initialize()
+	. = ..()
+	icon_state = "bramblese"
+/obj/structure/flora/tree/neu/brambles_corner
+	name = "brambles"
+	desc = ""
+	icon = 'modular/stonekeep/icons/pigflora.dmi'
+	icon_state = "bramblescorner"
+	stump_type = /obj/item/grown/log/tree/stick
+	max_integrity = 120
+	destroy_sound = 'sound/misc/woodhit.ogg'
+	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	alpha = 255
+	opacity = TRUE
+	density = TRUE
+	pixel_x = 0
+	color = "#45979e"
+/obj/structure/flora/tree/neu/brambles_corner/Initialize()
+	. = ..()
+	icon_state = "bramblescorner"
+	color = "#ffffff"
 /obj/structure/punji_sticks
 	icon = 'modular/stonekeep/icons/pigflora.dmi'
 
@@ -1034,3 +1096,12 @@
 /obj/structure/fluff/walldeco/mines/wallbroken
 	icon_state = "support4"
 
+
+/obj/structure/bed
+	sleepy = 1
+/obj/structure/bed/inn
+	sleepy = 2
+/obj/structure/bed/inn/double
+	sleepy = 2
+/obj/structure/bed/wool
+	sleepy = 1.5

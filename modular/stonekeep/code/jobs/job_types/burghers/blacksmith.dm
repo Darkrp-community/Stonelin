@@ -14,7 +14,7 @@
 	display_order = BLACKSMITH_ORDER
 	give_bank_account = 30
 	min_pq = -25
-	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/outfit/job/stonekeep/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()

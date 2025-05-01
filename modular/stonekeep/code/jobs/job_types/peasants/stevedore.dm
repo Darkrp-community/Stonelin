@@ -22,7 +22,7 @@
 	give_bank_account = TRUE
 	min_pq = -50
 	display_order = STEVEDORE_ORDER
-	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/job/grabber/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

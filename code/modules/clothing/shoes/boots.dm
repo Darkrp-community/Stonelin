@@ -74,11 +74,11 @@
 /obj/item/clothing/shoes/boots/leather/advanced
 	name = "hardened leather boots"
 	desc = "Sturdy, durable, flexible. A marvel of the dark ages that exists solely to protect your toes."
-	max_integrity = 200
+	max_integrity = 300
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
-	armor = list("blunt" = 50, "slash" = 40, "stab" = 20, "piercing" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER_GOOD
 
-/obj/item/clothing/shoes/boots/leather/masterwork
+/*//obj/item/clothing/shoes/boots/leather/masterwork
 	name = "masterwork leather boots"
 	desc = "These boots are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
 	max_integrity = 300
@@ -88,6 +88,7 @@
 /obj/item/clothing/shoes/boots/leather/masterwork/Initialize()
 	. = ..()
 	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
+*/
 
 /obj/item/clothing/shoes/boots/furlinedboots
 	name = "fur lined boots"
@@ -96,12 +97,12 @@
 	icon_state = "furlinedboots"
 	item_state = "furlinedboots"
 	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20,  "piercing" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER_GOOD
 	salvage_result = /obj/item/natural/fur
 	salvage_amount = 1
 	item_weight = 3
 
-/obj/item/clothing/shoes/boots/furlinedanklets
+/*//obj/item/clothing/shoes/boots/furlinedanklets
 	name = "fur lined anklets"
 	desc = "Leather anklets lined with fur, foot remains bare."
 	gender = PLURAL
@@ -124,7 +125,7 @@
 	armor = list("blunt" = 5, "slash" = 5, "stab" = 5,  "piercing" = 0, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
 	salvage_result = /obj/item/natural/cloth
 	salvage_amount = 1
-	item_weight = 2
+*/
 
 /obj/item/clothing/shoes/boots/armor/vampire
 	name = "ancient ceremonial boots"

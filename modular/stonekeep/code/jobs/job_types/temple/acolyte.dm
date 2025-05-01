@@ -17,7 +17,7 @@
 		"Aasimar"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the Temple of the Ten not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
-	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/pestra, /datum/patron/divine/eora)
 	outfit = /datum/outfit/job/stonekeep/acolyte
 
 	give_bank_account = TRUE
@@ -28,7 +28,7 @@
 /datum/outfit/job/stonekeep/acolyte
 	name = "Acolyte"
 	jobtype = /datum/job/stonekeep/acolyte
-	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/pestra, /datum/patron/divine/eora)
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/stonekeep/acolyte/pre_equip(mob/living/carbon/human/H)

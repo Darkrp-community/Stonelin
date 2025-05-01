@@ -4,28 +4,39 @@
 
 ///WOOD
 
-/datum/crafting_recipe/roguetown/turfs/woodfloor
-	name = "floor (rough wood)"
-	craftdiff = 0
-
 /datum/crafting_recipe/roguetown/turfs/woodwall
 	name = "wall (rough wood)"
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result = /turf/closed/wall/mineral/wood
 
 /datum/crafting_recipe/roguetown/turfs/daubwall
 	name = "wall (daub)"
+	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/dirtclod= 1,)
+	result = /turf/closed/wall/mineral/decowood
 
 /datum/crafting_recipe/roguetown/turfs/woodwindow
 	name = "murder hole (wood)"
 	result = /turf/closed/wall/mineral/wood/window
+	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/turfs/dwoodwall
 	name = "wall (dark wood)"
 	craftdiff = 2
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result = /turf/closed/wall/mineral/wooddark
 
 /datum/crafting_recipe/roguetown/turfs/dwoodwindow
 	name = "murderhole (dark wood)"
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result = /turf/closed/wall/mineral/wooddark/window
 
 
+/datum/crafting_recipe/roguetown/turfs/woodfloor
+	name = "floor (rough wood)"
+	craftdiff = 0
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result = /turf/open/floor/ruinedwood
+	skillcraft = /datum/skill/craft/carpentry
 /datum/crafting_recipe/roguetown/turfs/woodfloorplank
 	name = "floor (plank)"
 	result = /turf/open/floor/wood
@@ -133,13 +144,18 @@
 /datum/crafting_recipe/roguetown/turfs/tentwall
 	name = "tent wall"
 	result = /turf/closed/wall/mineral/tent
+	reqs = list(/obj/item/grown/log/tree/stick = 1,
+				/obj/item/natural/cloth = 1)
 
 /datum/crafting_recipe/roguetown/turfs/tentdoor
 	name = "tent door"
 	result = /obj/structure/roguetent
+	reqs = list(/obj/item/grown/log/tree/stick = 1,
+				/obj/item/natural/cloth = 1)
 
 /datum/crafting_recipe/roguetown/turfs/twig
 	name = "floor (twig)"
+	reqs = list(/obj/item/grown/log/tree/stick = 3)
 /datum/crafting_recipe/roguetown/turfs/twig/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return

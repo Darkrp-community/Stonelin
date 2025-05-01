@@ -95,15 +95,16 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/kikko
-	name = "Turtleshell jacket (+Hide 2x) {Kikko-Gane}"
-	recipe_name = "a Kikko Gane Do"
+	name = "Turtleshell jacket (+2 cured leather) Kikko-Gane"
+	recipe_name = "a Kikko Leather Do"
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/leather/splint/kikko
+
 	craftdiff = 1
 //cheaper on iron, but has many sticks. Proper for this armor's context.
 /datum/anvil_recipe/armor/rattanarmor
-	name = "Rattan armor (+Bar x2, +Stick x4) {Teng jia}" //Téng jiǎ
+	name = "Rattan armor (+Bar x2, +Stick x4) Teng jia" //Téng jiǎ
 	recipe_name = "a Rattan Armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
@@ -111,21 +112,19 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/kikkoarmor //cheaper brigadine with hide.
-	name = "Turtleshell Full Armor (+Bar x2, +Hide 2x) {Kikko gusoku}"
+	name = "Turtleshell Full Armor (+Bar x2,+ 2 cured leather) Kikko gusoku"
 	recipe_name = "a Kikko Gusoku"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide, /obj/item/natural/hide)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad
 	craftdiff = 3
 
 //'feet'
 /datum/anvil_recipe/armor/kusaritabi
-	name = "Chainmail footwear x2 {Kusari-Tabi}"
-	recipe_name = "a pair of Kusari-Tabi"
+	name = "Chainmail footwear {Kusari-Tabi}"
+	recipe_name = "a pair of Kusari-Tabi"//the boots aren't supposed to be made in duos
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/shoes/boots/armor/light/kusaritabi
-	createmultiple = TRUE
-	createditem_num = 1
 
 /datum/anvil_recipe/armor/suneate
 	name = "Plated shin-guards {Suneate}"
@@ -307,50 +306,38 @@
 
 //'neck'
 /datum/anvil_recipe/armor/shood
-	name = "Foldable hood x2 {Karuta zukin}"
-	recipe_name = "a pair of Karuta Zukin"
+	name = "Foldable hood {Karuta zukin}"
+	recipe_name = "a Karuta Zukin"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/chaincoif/karuta_zukin
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 2
 
 /datum/anvil_recipe/armor/ihood
-	name = "Chainmail hood x2 {Kuzari zukin}"
+	name = "Chainmail hood"//coifs aren't made in duos anymore since they can be smelted for material
+	recipe_name = "a Kusari Zukin"
+	name = "Chainmail hood {Kuzari zukin}"
 	recipe_name = "a pair of Kusari Zukin"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/neck/chaincoif/iron/kusari_zukin
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 0
+
 
 //'pants'
 /datum/anvil_recipe/armor/ihaidate
-	name = "Foldable Thighguards x2 {Haidate tatami}"
+	name = "Foldable Thighguard {Haidate tatami}"//pants aren't made in duos anymore since they can be smelted for material
 	recipe_name = "a pair of Haidate Tatami"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/pants/chainlegs/iron/haidate_tatami
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 0
 
 /datum/anvil_recipe/armor/shaidate
-	name = "Plate Thighguards x2 {Haidate sendan}"
+	name = "Plate Thighguard {Haidate sendan}"
 	recipe_name = "a pair of Haidate Sendan"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/pants/chainlegs/sendan
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 2
 
 /datum/anvil_recipe/armor/superhaidate
-	name = "Plated Trousers x2 {Yoroi-hakama}"
+	name = "Plated Trousers {Yoroi-hakama}"
 	recipe_name = "a couple of Yoroi-Hakama"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/pants/platelegs/yoroihakama
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 3
 
 //'wrists'
 /datum/anvil_recipe/armor/kote //Protects more limbs, so it is costier.
@@ -361,13 +348,10 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/weeper
-	name = "Weeper Bracers x2"
+	name = "Weeper Bracers"
 	recipe_name = "a couple of Weeping Bracers"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/wrists/bracers/mountainstar
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 3
 
 
 

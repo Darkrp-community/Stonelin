@@ -1945,7 +1945,7 @@
 
 	return mutable_appearance('modular/stonekeep/kaizoku/icons/weapons/bows.dmi', overlay_icon)
 
-obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/examine(mob/user)
+/obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/examine(mob/user)
 	. = ..()
 	var/remaining_ammo = 0
 	if(magazine)

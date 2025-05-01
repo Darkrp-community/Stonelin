@@ -13,10 +13,10 @@
 	cost = 27
 	contains = /obj/item/weapon/sword/iron
 
-/datum/supply_pack/weapons/sword
-	name = "Steel Arming Sword"
-	cost = 30
-	contains = /obj/item/weapon/sword
+///datum/supply_pack/weapons/sword
+//	name = "Steel Arming Sword"
+//	cost = 30
+//	contains = /obj/item/weapon/sword
 
 /datum/supply_pack/weapons/greatsword
 	name = "Iron Zweihander"
@@ -28,10 +28,10 @@
 	cost = 28
 	contains = /obj/item/weapon/mace
 
-/datum/supply_pack/weapons/smace
-	name = "Flanged Steel Mace"
-	cost = 28
-	contains = /obj/item/weapon/mace/steel
+///datum/supply_pack/weapons/smace
+//	name = "Flanged Steel Mace"
+//	cost = 28
+//	contains = /obj/item/weapon/mace/steel
 
 /datum/supply_pack/weapons/greatmace
 	name = "Iron Warclub"
@@ -43,15 +43,20 @@
 	cost = 26
 	contains = /obj/item/weapon/axe
 
-/datum/supply_pack/weapons/saxe
-	name = "Steel Axe"
-	cost = 29
-	contains = /obj/item/weapon/axe/steel
+/datum/supply_pack/weapons/waraxe
+	name = "Iron war Axe"
+	cost = 40 //a bit more since is 2 iron bars to make, and deadlier
+	contains = /obj/item/weapon/polearm/halberd/bardiche/warcutter
 
-/datum/supply_pack/weapons/halberd
-	name = "Halberd"
-	cost = 51
-	contains = /obj/item/weapon/polearm/halberd
+///datum/supply_pack/weapons/saxe
+//	name = "Steel Axe"
+//	cost = 29
+//	contains = /obj/item/weapon/axe/steel
+
+///datum/supply_pack/weapons/halberd
+//	name = "Halberd"
+//	cost = 51
+//	contains = /obj/item/weapon/polearm/halberd
 
 /datum/supply_pack/weapons/huntingknife
 	name = "Iron Hunting Knife"
@@ -63,10 +68,10 @@
 	cost = 22
 	contains = /obj/item/weapon/knife/dagger
 
-/datum/supply_pack/weapons/sdagger
-	name = "Steel Dagger"
-	cost = 26
-	contains = /obj/item/weapon/knife/dagger/steel
+///datum/supply_pack/weapons/sdagger
+//	name = "Steel Dagger"
+//	cost = 26
+//	contains = /obj/item/weapon/knife/dagger/steel
 
 /datum/supply_pack/weapons/spear
 	name = "Iron Spear"
@@ -78,10 +83,10 @@
 	cost = 29
 	contains = /obj/item/weapon/flail
 
-/datum/supply_pack/weapons/sflail
-	name = "Steel Flail"
-	cost = 32
-	contains = /obj/item/weapon/flail/sflail
+///datum/supply_pack/weapons/sflail
+//	name = "Steel Flail"
+//	cost = 32
+//	contains = /obj/item/weapon/flail/sflail
 
 /datum/supply_pack/weapons/whip
 	name = "Leather Whip"
@@ -156,3 +161,19 @@
 	name = "Crossbow Bolt"
 	cost = 2
 	contains = /obj/item/ammo_casing/caseless/bolt
+
+///datum/supply_pack/weapons/tossbladeiron
+//	name = "Iron Tossblade Belt"
+//	cost = 20
+//	contains = /obj/item/storage/belt/leather/knifebelt/black/iron
+
+///datum/supply_pack/weapons/tossbladesteel
+//	name = "Steel Tossblade Belt"
+//	cost = 40
+//	contains = /obj/item/storage/belt/leather/knifebelt/black/steel
+
+/datum/supply_pack/weapons/tossbladeiron//trowing belts are banned due to extremely big storage, not the knifes even if they are limited to iron
+	name = "Iron Tossblade"
+	cost = 20
+	contains =/obj/item/weapon/knife/throwingknife
+

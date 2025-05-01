@@ -6,7 +6,7 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/lord
 	tutorial = "Elevated upon your throne through a web of intrigue and political upheaval, you are the absolute authority of these lands and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error in their ways."
-	cmode_music = 'sound/music/cmode/combat_scholar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_scholar.ogg'
 
 /datum/outfit/job/stonekeep/lord/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -47,9 +47,10 @@
 	result = list(/obj/item/clothing/face/shepherd/rag)
 	reqs = list(/obj/item/natural/cloth = 1)
 
-/datum/crafting_recipe/roguetown/sewing/linedanklet
+/*/datum/crafting_recipe/roguetown/sewing/linedanklet
 	name = "cloth anklet"
 	result = list(/obj/item/clothing/shoes/boots/clothlinedanklets)
+*/
 
 /datum/crafting_recipe/roguetown/sewing/Reyepatch
 	name = "right eye patch"

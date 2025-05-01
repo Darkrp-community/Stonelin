@@ -52,7 +52,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	penfactor = AP_POLEARM_THRUST
 	swingdelay = 1
-	misscost = 10
+	misscost = 8
 	item_damage_type = "stab"
 
 /datum/intent/polearm/thrust/spear
@@ -96,7 +96,7 @@
 	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
 	reach = 2
 	swingdelay = 1
-	misscost = 10
+	misscost = 8
 	item_damage_type = "slash"
 
 /*------------\
@@ -113,7 +113,7 @@
 	chargetime = 1.5
 	damfactor = 1.2
 	swingdelay = 2
-	misscost = 20
+	misscost = 15
 	warnie = "mobwarning"
 	item_damage_type = "slash"
 

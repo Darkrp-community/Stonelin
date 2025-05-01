@@ -87,7 +87,7 @@
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
-	smeltresult = null
+	smeltresult = /obj/item/ingot/steel//they aren't made in duos now, makes sense to be smelted for material
 	clothing_flags = CANT_SLEEP_IN
 
 	armor = ARMOR_MAILLE
@@ -123,7 +123,7 @@
 	name = "iron chain coif"
 	desc = "A chain coif made of interwoven iron rings. Affordable protection against arrows and blades, \
 			but should be used as padding rather than relied upon as armor."
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 	armor = ARMOR_MAILLE_IRON
 	max_integrity = INTEGRITY_STRONG

@@ -194,3 +194,7 @@
 
 /datum/slapcraft_recipe/masonry/structure/stonerailing
 	steps = null
+
+
+/datum/repeatable_crafting_recipe/arcyne/manabloom_powder
+	starting_atom = null

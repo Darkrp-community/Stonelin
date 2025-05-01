@@ -28,7 +28,7 @@
 
 	magic_user = TRUE
 	give_bank_account = 120
-	cmode_music = 'sound/music/cmode/combat_scholar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_scholar.ogg'
 
 /datum/outfit/job/stonekeep/courtwizard/pre_equip(mob/living/carbon/human/H)
 	..()

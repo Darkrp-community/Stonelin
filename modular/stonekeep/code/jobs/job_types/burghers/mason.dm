@@ -20,7 +20,7 @@
 //	display_order = MASON_ORDER
 	give_bank_account = 8
 	min_pq = -50
-	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/outfit/job/stonekeep/mason/pre_equip(mob/living/carbon/human/H)
 	..()

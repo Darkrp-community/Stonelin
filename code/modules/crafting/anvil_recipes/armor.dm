@@ -61,6 +61,13 @@
 	created_item = /obj/item/clothing/pants/chainlegs/iron
 	craftdiff = 0
 
+/datum/anvil_recipe/armor/iron/chainkilt
+	name = "Iron Chain Kilt"
+	recipe_name = "a short Chain Kilt"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/pants/chainlegs/kilt/iron
+	craftdiff = 0
+
 /datum/anvil_recipe/armor/iron/chaincoif
 	name = "Iron Chain Coif"
 	recipe_name = "a Chain Coif"
@@ -86,7 +93,6 @@
 	recipe_name = "maille shirt"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/armor/chainmail/iron
-
 
 /datum/anvil_recipe/armor/iron/plate
 	name = "Iron Plate Armor (+Bar x2)"
@@ -131,25 +137,37 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/shoes/boots/armor/light
 
-/datum/anvil_recipe/armor/iron/nasal_helmet
-	name = "Nasal helmet"
-	recipe_name = "a Nasal helmet"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/head/helmet/nasal
-	craftdiff = 1
-
 /datum/anvil_recipe/armor/iron/skullcap
-	name = "Skullcap"
-	recipe_name = "a skullcap"
+	name = "Skullcap x2"
+	recipe_name = "a pair of skullcaps"
 	created_item = /obj/item/clothing/head/helmet/skullcap
+	createmultiple = TRUE
+	createditem_num = 1
 
 /datum/anvil_recipe/armor/iron/splint
-	name = "Splint Armor (+Hide)"
+	name = "Splint Armor (+2 cured leather)"
 	recipe_name = "durable light armor"
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/hide)
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/leather/splint
 	craftdiff = 1
+
+/datum/anvil_recipe/armor/iron/splintlegs
+	name = "Splint chausses (+2 cured leather)"
+	recipe_name = "durable light armor for the legs"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/pants/splintlegs
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/iron/splintbracers
+	name = "Splint vambraces (+2 cured leather)"
+	recipe_name = "durable light armor for the arms"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/wrists/bracers/splint
+	craftdiff = 1
+
 
 // --------- STEEL -----------
 /datum/anvil_recipe/armor/steel/bevor
@@ -159,11 +177,21 @@
 	created_item = /obj/item/clothing/neck/bevor
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/steel/nasal_helmet
+	name = "Nasal helmet x2"
+	recipe_name = "a pair of Nasal helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/helmet/nasal
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 1
+
+
 /datum/anvil_recipe/armor/steel/brigadine
-	name = "Brigandine (+Bar x2, +Cloth)"
+	name = "Brigandine (+Bar x2, +2 cured leather)"
 	recipe_name = "a Brigandine"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/brigandine
 	craftdiff = 3
 
@@ -179,6 +207,13 @@
 	recipe_name = "a pair of Chain Chausses"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/pants/chainlegs
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/chainkilt_steel
+	name = "Chain Kilt"
+	recipe_name = "a long Chain Kilt"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/pants/chainlegs/kilt
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/chaincoif
@@ -242,10 +277,12 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/helmetkettle
-	name = "Kettle Helmet"
-	recipe_name = "a Kettle Helmet"
+	name = "Kettle Helmet x2"
+	recipe_name = "a pair of Kettle Helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/kettle
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/helmetslitkettle
@@ -254,6 +291,13 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/kettle/slit
 	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/spangenhelm
+	name = "Spangenhelm"
+	recipe_name = "a nasal helm with built in eye protection"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/helmet/heavy/viking
+	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/froghelmet
 	name = "Frog Helmet"
@@ -379,6 +423,22 @@
 	additional_items = list(/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/helmet/heavy/decorated/bascinet
 	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/halfplate_decrorated
+	name = "Decorated Half-plate (+Steel Bar x2, + Gold Bar)"
+	recipe_name = "a decorated Half-Plate Armor"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel, /obj/item/ingot/gold)
+	created_item = /obj/item/clothing/armor/plate/decorated
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/steel/halfplate_decrorated_corset
+	name = "Decorated Half-plate With Corset (+Steel Bar x2, + Gold Bar, + Silk x3)"
+	recipe_name = "a decorated Half-Plate Armor with Corset"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel, /obj/item/ingot/gold, /obj/item/natural/silk, /obj/item/natural/silk, /obj/item/natural/silk)
+	created_item = /obj/item/clothing/armor/plate/decorated/corset
+	craftdiff = 4
 
 // --------- GOLD -----------
 /datum/anvil_recipe/armor/gold/mask

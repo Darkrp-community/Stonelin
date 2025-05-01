@@ -183,7 +183,7 @@
 	if(prob(20))
 		cloak = /obj/item/clothing/cloak/raincloak/brown
 	if(prob(50))
-		shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+		shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	if(prob(20))
 		head = /obj/item/clothing/head/helmet/leather
 

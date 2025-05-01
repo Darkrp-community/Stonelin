@@ -67,7 +67,7 @@
 	chargedloop = /datum/looping_sound/flailswing
 	keep_looping = TRUE
 	recovery = 10
-	misscost = 10
+	misscost = 8
 	attack_verb = list("smashes")
 	damfactor = 1.2
 	penfactor = AP_FLAIL_SMASH

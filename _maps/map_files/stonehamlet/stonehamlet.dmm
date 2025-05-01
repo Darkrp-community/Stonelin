@@ -2227,12 +2227,11 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/hamlet)
 "dey" = (
-/obj/item/grown/log/tree/small,
-/obj/structure/closet/crate/chest/old_crate,
-/obj/item/grown/log/tree/small,
-/obj/item/key/mason,
-/turf/open/floor/herringbone,
-/area/rogue/indoors/shelter/town/dwarf)
+/obj/structure/fluff/walldeco/masonflag{
+	pixel_x = -32
+	},
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "dez" = (
 /turf/closed/wall/mineral/roofwall/middle,
 /area/rogue/indoors/town/shop)
@@ -2516,6 +2515,9 @@
 /area/rogue/outdoors/exposed/church)
 "dwd" = (
 /obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/iron,
+/obj/item/ore/iron,
+/obj/item/ore/iron,
 /obj/item/ore/iron,
 /obj/item/ore/iron,
 /obj/item/ore/iron,
@@ -3187,12 +3189,10 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/hamlet/advguild)
 "erL" = (
-/obj/structure/closet/crate/chest/crate,
-/obj/item/flint{
-	pixel_x = -1
-	},
-/obj/item/clothing/face/cigarette/rollie/nicotine,
-/turf/open/floor/herringbone,
+/obj/structure/rack,
+/obj/item/weapon/pick,
+/obj/item/weapon/pick,
+/turf/open/floor/cobble,
 /area/rogue/indoors/shelter/town/dwarf)
 "erT" = (
 /obj/effect/decal/rockedge{
@@ -5412,6 +5412,7 @@
 /area/rogue/under/catacombs)
 "hqs" = (
 /obj/machinery/light/fueled/wallfire{
+	pixel_x = -16;
 	pixel_y = 32
 	},
 /turf/open/floor/cobble,
@@ -11502,8 +11503,7 @@
 "phv" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = null;
-	name = "feldsher hospital"
+	name = "Hospital"
 	},
 /obj/effect/mapping_helpers/door/access/town/clinic,
 /turf/open/floor/wood,
@@ -11949,7 +11949,7 @@
 	desc = "The heavy doors keyhole is fitted for a ring.";
 	locked = 1;
 	lockid = "guild";
-	name = "makers guild"
+	name = "Makers guildhall"
 	},
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/dwarfin)
@@ -14076,6 +14076,13 @@
 	},
 /turf/open/floor/churchrough,
 /area/rogue/indoors/town/church/chapel)
+"sts" = (
+/obj/item/grown/log/tree/small,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/grown/log/tree/small,
+/obj/item/key/mason,
+/turf/open/floor/herringbone,
+/area/rogue/indoors/shelter/town/dwarf)
 "stQ" = (
 /turf/closed/wall/mineral/decostone/cand,
 /area/rogue/indoors/soilsons)
@@ -14218,6 +14225,14 @@
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/exposed/under/basement)
+"sDd" = (
+/obj/structure/closet/crate/chest/crate,
+/obj/item/flint{
+	pixel_x = -1
+	},
+/obj/item/clothing/face/cigarette/rollie/nicotine,
+/turf/open/floor/herringbone,
+/area/rogue/indoors/shelter/town/dwarf)
 "sDW" = (
 /turf/closed/wall/mineral/decostone,
 /area/rogue/indoors/town/church/chapel)
@@ -16201,7 +16216,7 @@
 "vgm" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/clothing/head/roguehood/random,
-/turf/open/floor/concrete,
+/turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "vgs" = (
 /obj/effect/decal/haycorner{
@@ -18193,7 +18208,7 @@
 "xWY" = (
 /obj/structure/mineral_door/bars{
 	lockid = "graveyard";
-	name = "iron gate"
+	name = "Halls of Pestra"
 	},
 /turf/open/floor/blocks/moss,
 /area/rogue/indoors/town/clinic_large)
@@ -18466,6 +18481,7 @@
 /obj/item/ore/copper,
 /obj/item/ore/copper,
 /obj/item/ore/copper,
+/obj/item/ore/tin,
 /obj/item/ore/tin,
 /turf/open/floor/concrete,
 /area/rogue/under/town/basement)
@@ -75959,7 +75975,7 @@ aEO
 aEO
 aKv
 ahK
-ahK
+dey
 ahK
 ahK
 ahK
@@ -117356,7 +117372,7 @@ sNs
 sNs
 keR
 yaJ
-xqT
+erL
 xqT
 xqT
 xqT
@@ -118570,8 +118586,8 @@ qgS
 hmf
 keR
 qIz
-rdU
-rdU
+mvy
+sDd
 tRX
 keR
 nwW
@@ -118771,10 +118787,10 @@ sNs
 qgS
 hmf
 keR
+xqT
 rdU
 rdU
-rdU
-erL
+mvy
 keR
 nwW
 sNs
@@ -118976,7 +118992,7 @@ keR
 hqs
 rdU
 rdU
-dey
+mvy
 keR
 yls
 sNs
@@ -119176,8 +119192,8 @@ sNs
 sNs
 keR
 vgm
-rdU
-rdU
+mvy
+sts
 tRX
 keR
 dcK
@@ -119378,8 +119394,8 @@ sNs
 sNs
 wSE
 keR
-keR
 gjg
+keR
 keR
 wSE
 sNs

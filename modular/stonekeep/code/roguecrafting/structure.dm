@@ -38,6 +38,7 @@
 	name = "composter"
 	result = /obj/structure/composter
 	craftdiff = 1
+	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/structure/carpentry/roguebin // Bins are easier to craft than barrels for pure convenience.
 	name = "bin"
@@ -75,6 +76,7 @@
 	verbage = "construct"
 	verbage_tp = "constructs"
 	craftdiff = 1
+	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/structure/carpentry/chest
 	name = "chest"
@@ -187,6 +189,9 @@
 	verbage = "construct"
 	verbage_tp = "constructs"
 	ontile = TRUE
+	reqs = list(/obj/item/grown/log/tree/small=2,
+	/obj/item/natural/wood/plank = 2)
+
 /datum/crafting_recipe/roguetown/structure/carpentry/stairsd/TurfCheck(mob/user, turf/T)
 	var/turf/checking = get_step(T, user.dir)
 	if(!checking)

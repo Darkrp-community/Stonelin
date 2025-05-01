@@ -18,7 +18,7 @@
 		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	cmode_music = 'sound/music/cmode/combat_quarte.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/outfit/job/stonekeep/feldsher/pre_equip(mob/living/carbon/human/H)
 	..()

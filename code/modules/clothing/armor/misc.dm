@@ -121,6 +121,8 @@
 	blocksound = PLATEHIT
 	sellprice = VALUE_SNOWFLAKE_STEEL
 	armor = ARMOR_PLATE_BAD
+	armor_class = AC_MEDIUM
+	body_parts_covered = COVERAGE_TORSO//this way the roundstart zybantu mercenary armor is on pair with the other roles, a full brigandine doesn't seem fair on a merc role.
 	// add armor plate bad from defines
 
 	max_integrity = INTEGRITY_STRONG

@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	/datum/job/gatemaster::title,
 	/datum/job/jailor::title,
 	/datum/job/dungeoneer::title,
-	/datum/job/mayor::title,
+	/datum/job/town_elder::title,
 	/datum/job/forestwarden::title,
 	/datum/job/forestguard::title,
 	/datum/job/stonekeep/garrison::title,
@@ -41,6 +41,12 @@ GLOBAL_LIST_INIT(church_positions, list(
 GLOBAL_PROTECT(church_positions)
 
 GLOBAL_LIST_INIT(serf_positions, list(
+	/datum/job/scribe::title,
+	/datum/job/stonekeep/guildmaster::title,
+	/datum/job/stonekeep/blacksmith::title,
+	/datum/job/stonekeep/feldsher::title,
+	/datum/job/stonekeep/nitemaster::title,
+	/datum/job/stonekeep/hammerite::title,
 	/datum/job/merchant::title,
 	/datum/job/innkeep::title,
 	/datum/job/armorsmith::title,
@@ -50,36 +56,28 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	/datum/job/artificer::title,
 	/datum/job/matron::title,
 	/datum/job/physicker::title,
-	/datum/job/scribe::title,
-	/datum/job/stonekeep/guildmaster::title,
-	/datum/job/stonekeep/blacksmith::title,
-	/datum/job/stonekeep/feldsher::title,
-	/datum/job/stonekeep/mason::title,
-	/datum/job/stonekeep/nitemaster::title,
 	/datum/job/gaffer::title,
-	/datum/job/stonekeep/hammerite::title,
+	/datum/job/butler::title,
 	))
 GLOBAL_PROTECT(serf_positions)
 
 GLOBAL_LIST_INIT(peasant_positions, list(
+	/datum/job/bandit::title,
+	/datum/job/stonekeep/nitemaiden::title,
+	/datum/job/stonekeep/weaver::title,
+	/datum/job/stonekeep/woodsman::title,
 	/datum/job/stonekeep/elder::title,
 	/datum/job/farmer::title,
 	/datum/job/miner::title,
-	/datum/job/grabber::title,
 	/datum/job/butcher::title,
 	/datum/job/cook::title,
 	/datum/job/carpenter::title,
 	/datum/job/hunter::title,
 	/datum/job/fisher::title,
-	/datum/job/cheesemaker::title,
 	/datum/job/mercenary::title,
 	/datum/job/bard::title,
 	/datum/job/prisoner::title,
 	/datum/job/vagrant::title,
-	/datum/job/bandit::title,
-	/datum/job/stonekeep/nitemaiden::title,
-	/datum/job/stonekeep/weaver::title,
-	/datum/job/stonekeep/woodsman::title,
 ))
 GLOBAL_PROTECT(peasant_positions)
 
@@ -87,6 +85,8 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	/datum/job/bapprentice::title,
 	/datum/job/wapprentice::title,
 	/datum/job/servant::title,
+	/datum/job/tapster::title,
+	/datum/job/gaffer_assistant::title,
 	/datum/job/orphan::title,
 	))
 GLOBAL_PROTECT(apprentices_positions)
@@ -98,9 +98,18 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 ))
 GLOBAL_PROTECT(youngfolk_positions)
 
+GLOBAL_LIST_INIT(company_positions, list(
+	/datum/job/merchant::title,
+	/datum/job/shophand::title,
+	/datum/job/grabber::title,
+	))
+GLOBAL_PROTECT(company_positions)
+
 GLOBAL_LIST_INIT(allmig_positions, list(
-	/datum/job/adventurer::title,
 	/datum/job/pilgrim::title,
+	/datum/job/adventurer::title,
+	/datum/job/mercenary::title,
+	/datum/job/bandit::title,
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(
@@ -119,6 +128,7 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.church_positions
 	sorting_order += GLOB.serf_positions
+	sorting_order += GLOB.company_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
@@ -126,7 +136,7 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	return sorting_order
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_TOWNER = list("titles" = peasant_positions | apprentices_positions | youngfolk_positions | serf_positions),
+	EXP_TYPE_TOWNER = list("titles" = peasant_positions | apprentices_positions | youngfolk_positions | serf_positions | company_positions),
 	EXP_TYPE_NOBLE = list("titles" = noble_positions),
 	EXP_TYPE_CHURCH = list("titles" = church_positions),
 	EXP_TYPE_GUARDS = list("titles" = garrison_positions),

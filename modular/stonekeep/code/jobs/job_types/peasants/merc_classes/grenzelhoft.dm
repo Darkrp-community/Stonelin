@@ -10,7 +10,7 @@
 	category_tags = list(CTAG_SKMERCENARY)
 	maximum_possible_slots = 5
 
-	cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_grenzelhoft.ogg'
 
 /datum/outfit/job/stonekeep/merc/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()

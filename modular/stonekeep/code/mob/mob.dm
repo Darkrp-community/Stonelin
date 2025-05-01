@@ -142,12 +142,12 @@
 /datum/outfit/savageorc
 //	shirt = /obj/item/clothing/shirt/tribalrag	Vanderlin clothing
 	pants =	/obj/item/clothing/pants/loincloth/brown
-	shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 
 /datum/outfit/savageorc2
 //	shirt = /obj/item/clothing/shirt/tribalrag
 	pants =	/obj/item/clothing/pants/loincloth/brown
-	shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	head = /obj/item/clothing/head/helmet/leather
 
 /obj/effect/mob_spawn/human/orc/corpse/orcmarauder
@@ -285,14 +285,20 @@
 /mob/living/simple_animal/hostile/retaliate/wolf
 	base_intents = list(/datum/intent/simple/critterbite)
 	base_endurance = 15
+	melee_damage_lower = 14
+	melee_damage_upper = 20
 
 /mob/living/simple_animal/hostile/retaliate/bigrat
 	base_intents = list(/datum/intent/simple/critterbite)
 	base_endurance = 10
+	melee_damage_lower = 10
+	melee_damage_upper = 14
 
 /mob/living/simple_animal/hostile/retaliate/spider
 	base_intents = list(/datum/intent/simple/critterbite)
 	base_endurance = 15
+	melee_damage_lower = 16
+	melee_damage_upper = 22
 
 /datum/intent/simple/trollrip
 	name = "horrific bite"
@@ -312,10 +318,10 @@
 	icon_state = "instrike"
 	attack_verb = list("bites")
 	animname = "blank22"
-	blade_class = BCLASS_CUT
+	blade_class = BCLASS_BITE
 	hitsound = "smallslash"
 	chargetime = 0
-	penfactor = 5
+	penfactor = 10
 	swingdelay = 1.5 SECONDS
 	candodge = TRUE
 	canparry = TRUE
@@ -441,7 +447,7 @@
 
 /mob/living/simple_animal/hostile/insanegnome/Initialize()
 	. = ..()
-	emote(pick( "laugh"), TRUE)
+	playsound(src, pick('modular/stonekeep/sound/vo/mobs/gnome/laugh.ogg','modular/stonekeep/sound/vo/mobs/gnome/giggle.ogg'), 100, 0) // Bandaid fix since it shouldn't call emote on init
 
 /mob/living/simple_animal/hostile/insanegnome/death(gibbed)
 	playsound(src.loc, 'modular/stonekeep/sound/vo/mobs/gnome/scream.ogg', 50)

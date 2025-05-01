@@ -463,6 +463,7 @@
 "kY" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/effect/spawner/map_spawner/loot,
+/obj/item/clothing/gloves/fencer,
 /turf/open/floor/church,
 /area/rogue/indoors)
 "la" = (
@@ -1317,7 +1318,6 @@
 "Fg" = (
 /obj/structure/closet/crate/drawer/random,
 /obj/effect/spawner/map_spawner/loot,
-/obj/item/clothing/gloves/leather/masterwork,
 /turf/open/floor/carpet,
 /area/rogue/indoors)
 "Fh" = (

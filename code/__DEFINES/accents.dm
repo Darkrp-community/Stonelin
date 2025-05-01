@@ -23,7 +23,7 @@ GLOBAL_LIST_INIT(accent_list, list(
 //	ACCENT_ELF = strings("accents/russian_replacement.json", "russian"),
 //	ACCENT_TIEFLING = strings("accents/spanish_replacement.json", "spanish"),
 //	ACCENT_HORC = strings("accents/halforc_replacement.json", "halforc"),
-	ACCENT_GRENZ = strings("accents/grenz_replacement.json", "grenz"),
+	ACCENT_GRENZ = strings("accents/SKgrenzelhoft_replacement.json", "grenzelhoft"),
 //	ACCENT_PIRATE = strings("accents/pirate_replacement.json", "pirate"),
 	ACCENT_MIDDLE_SPEAK = strings("accents/middlespeak.json", "full"),
 ))

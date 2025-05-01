@@ -7,7 +7,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Aasimar",
@@ -37,11 +36,11 @@
 	belt = /obj/item/storage/belt/leather
 	neck = /obj/item/clothing/neck/psycross/silver/malum_steel
 	beltr = /obj/item/storage/belt/pouch/coins/poor
-	beltl = /obj/item/weapon/pick
+	beltl = /obj/item/key/mason
 	backr = /obj/item/weapon/hammer/sledgehammer
 	backl = /obj/item/storage/backpack/backpack
 	head = /obj/item/clothing/head/helmet/leather/minershelm
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/weapon/knife/villager = 1, /obj/item/key/mason = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/weapon/knife/villager = 1)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/labor/mining, 4, TRUE)
