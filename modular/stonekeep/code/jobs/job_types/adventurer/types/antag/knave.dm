@@ -25,7 +25,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
@@ -39,13 +39,13 @@
 	pants = /obj/item/clothing/pants/trou/leather
 	shirt = /obj/item/clothing/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/boots
-	mask = /obj/item/clothing/face/facemask/steel
+	mask = /obj/item/clothing/face/facemask
 	var/armor2choose = pickweight(list("Vest" = 2, "Gambeson" = 1))
 	switch(armor2choose)
 		if("Vest")
 			armor = /obj/item/clothing/armor/leather/vest/random
 		if("Gambeson")
-			armor = /obj/item/clothing/armor/gambeson
+			armor = /obj/item/clothing/armor/gambeson/arming//this one is dark
 	backr = /obj/item/storage/backpack/satchel
 	H.change_stat(STATKEY_SPD, 2)
 	H.change_stat(STATKEY_END, 1)
@@ -63,13 +63,9 @@
 			beltr = /obj/item/ammo_holder/quiver/bolts
 			beltl = /obj/item/weapon/knife/dagger
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/lockpickring/mundane = 1) //rogue gets lockpicks
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		if("Bow & Sword") //Poacher
 			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-			beltr = /obj/item/weapon/sword/short //steel sword like literally every adventurer gets
+			beltr = /obj/item/weapon/sword/iron //iron sword like literally every adventurer gets
 			head = /obj/item/clothing/head/helmet/leather/volfhelm //cool hat
 			neck = /obj/item/clothing/neck/coif
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/restraints/legcuffs/beartrap = 2) //poacher gets mantraps
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)

@@ -1,4 +1,4 @@
-/datum/advclass/mercenary/sk/blackoak
+/datum/advclass/mercenary/sk/blackoak//a mercenary with a steel helmet + very good cuirass, iron weapons as malums for a fairer start
 	name = "Black Oak's Guardian"
 	tutorial = "A shady guardian of the Black Oaks, a mercenary band in all but offical name. Commonly taking caravan contracts through the thickest of forests."
 	allowed_sexes = list(MALE, FEMALE)
@@ -8,7 +8,7 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/blackoak
 	category_tags = list(CTAG_SKMERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 6
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish2.ogg'
 
 /datum/outfit/job/stonekeep/merc/blackoak/pre_equip(mob/living/carbon/human/H)
@@ -21,7 +21,7 @@
 	armor = /obj/item/clothing/armor/cuirass/elven
 	backr = /obj/item/weapon/polearm/spear
 	backl = /obj/item/storage/backpack/satchel
-	beltl = /obj/item/weapon/knife/dagger/steel/special
+	beltl = /obj/item/weapon/knife/dagger
 	shirt = /obj/item/clothing/shirt/undershirt/black
 	pants = /obj/item/clothing/pants/trou/leather
 	neck = /obj/item/clothing/neck/chaincoif
@@ -38,7 +38,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 
-		H.merctype = 4
+		H.merctype = 6
 
 		H.change_stat("endurance", 2)
 		H.change_stat("strength", 1)

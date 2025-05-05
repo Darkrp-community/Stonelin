@@ -12,7 +12,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/toweryakko
 	category_tags = list(CTAG_SKMERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 6
 
 
 /datum/outfit/job/roguetown/mercenary/toweryakko/pre_equip(mob/living/carbon/human/H)
@@ -28,7 +28,7 @@
 	backr = /obj/item/weapon/shield/abyssaltower
 	beltr = /obj/item/weapon/sword/scimitar/falchion/yuntoudao
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	shirt = /obj/item/clothing/armor/chainmail/tatami
+	shirt = /obj/item/clothing/armor/gambeson/light/hitatare/random // we remove a full chainmaille for a light gambeson
 	pants = /obj/item/clothing/pants/chainlegs/iron/haidate_tatami
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
@@ -39,12 +39,12 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(3,4), TRUE) //ultrafocus on sword and shield.
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE) //ultrafocus on sword and shield.
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(3,4), TRUE) //ultrafocus on sword and shield.
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) //ultrafocus on sword and shield.
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.burakumin = TRUE //They will not receive the explosive mask, as these have already been exiled. They do not require masks to exist on a society.

@@ -17,10 +17,10 @@
 
 /datum/outfit/job/sk/adventurer/barbarian/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)  //funger reference
 	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
@@ -52,13 +52,13 @@
 	switch(weapontype)
 		if("Sword")
 			beltr = /obj/item/weapon/sword/iron
-			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if("Club")
-			beltr = /obj/item/weapon/mace/woodclub
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+			beltr = /obj/item/weapon/mace/spiked
+			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		if("Axe")
 			beltr = /obj/item/weapon/axe/iron
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)

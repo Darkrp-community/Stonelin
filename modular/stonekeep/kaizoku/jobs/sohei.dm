@@ -7,38 +7,49 @@
 //THIS ROLE IS FAR FROM FINISHED! The coder that voluntered in helping me on the Abyssanctum spells quitted. So someone willing and able is VERY necessary.
 //Contact Monochrome9090 for further information.
 
-/datum/advclass/combat/sk/abyss/sohei //Low-abyssanctum tier.
-	name = "Underling Sohei"
-	tutorial = "Senso Soheis are the Abyssanctum war disciples from the Tideweaver branch, the direct \
-	continuation of the champions of old age. Their duty is to protect the shrines and spiritual entities \
-	from demonic corruption."
+/datum/job/sohei
+	title = "Tideseeker"
+	tutorial = "The Tideseekers are the abyssanctum war disciples from the tideweaver branch, the direct \
+	continuation of the champions of old age. Their duty is to protect the shrines, spiritual entities \
+	and the pantheonistic church from demonic corruption. Their holy order started to accept other branches \
+	of Abyssanctum, to aid further against the demonic hordes."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		//humen - need to settle Heartfeltean culture on this one.
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
 		"Changeling",
+		"Undine",
 		"Skylancer",
-		"Ogrun",
-		"Undine"
+		"Ogrun"
 	)
-	outfit = /datum/outfit/job/sk/adventurer/abyss/sohei
-	category_tags = list(CTAG_ADVENTURER)
-	vampcompat = FALSE
-	maximum_possible_slots = 2 //Only two, united with Yamabushi.
-	pickprob = 100
+	display_order = SOHEI_ORDER
+	department_flag = CHURCHMEN
+	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
+	flag = SK_SOHEI
+	faction = FACTION_STATION
+	total_positions = 2
+	spawn_positions = 2
+	bypass_lastclass = TRUE
+	outfit = /datum/outfit/job/sk/abyss/sohei
+	min_pq = 0
+	selection_color = "#c2a45d"
+	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
+	allowed_patrons = list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
 
-/datum/outfit/job/sk/adventurer/abyss/sohei
-	allowed_patrons = list(/datum/patron/divine/abyssor)
-
-/datum/outfit/job/sk/adventurer/abyss/sohei/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/sk/abyss/sohei/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/clothing/head/soheicloth
-	armor = /obj/item/clothing/armor/cuirass/sanmaido
+	armor = /obj/item/clothing/armor/cuirass/nanbando
+	cloak = /obj/item/clothing/cloak/raincloak/guardiancloak/black
 	wrists = /obj/item/clothing/neck/psycross/silver/abyssanctum
-	shirt = /obj/item/clothing/armor/chainmail/iron/tatami
+	shirt = /obj/item/clothing/suit/roguetown/shirt/eastshirt2
 	shoes = /obj/item/clothing/shoes/boots/jikatabi
 	head = /obj/item/clothing/head/helmet/skullcap/hachigane
 	beltr = /obj/item/weapon/knife/hunting/sai //Two sais so they can perform sai-dualwelding.
 	beltl = /obj/item/weapon/knife/hunting/sai
+	gloves = /obj/item/clothing/gloves/leather/eastgloves2
 
 	var/background = pickweight(list("thunder" = 1, "deluge" = 1, "ocean" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
 	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3)) // Rolls for various polearms.
@@ -84,14 +95,10 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(0,1,1), TRUE)
-		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 2)
-		H.change_stat("perception", -2) //imagine training meditation so hard you end up edging your own eyes, but start noticing spirits. (schizophrenia)
+		H.change_stat("perception", -2) //(schizophrenia)
 		H.change_stat("speed", -1)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
@@ -102,6 +109,3 @@
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	if(H.patron != /datum/patron/divine/abyssor)
-		H.patron = GLOB.patronlist[/datum/patron/divine/abyssor]
-		to_chat(H, "<span class='warning'>I am a Abyssanctum, loyal to The World Whale. May the tides of fate guide me to honor.")

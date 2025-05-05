@@ -2,7 +2,7 @@
 	title = "Hammerite"
 	tutorial = "As a long-standing and dedicated member of the Maker's Guild, you have risen to the illustrious rank of Master Builder. \
 				Your work is praise to Malum, either through excavation or construction, \
-				if only you had the time to rebuild what has been lost to the ruin of time."
+				if only you had the time to rebuild what has been lost to the ruin of time... your work will shape the future."
 	faction = FACTION_STATION
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -21,46 +21,51 @@
 	spawn_positions = 2
 	bypass_lastclass = TRUE
 	min_pq = -50
-//	allowed_patrons = list(/datum/patron/divine/malum)
+  allowed_patrons = list(/datum/patron/divine/malum) //town guild is formed by malumites only
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_dwarf.ogg'
 
 /datum/outfit/job/stonekeep/hammerite/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.patron != /datum/patron/divine/malum)
-		H.set_patron(/datum/patron/divine/malum)
+	if(H.mind)
+		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+
+		H.grant_language(/datum/language/dwarvish)
+
+/datum/outfit/job/stonekeep/hammerite/pre_equip(mob/living/carbon/human/H)
+	..()
 	ring = /obj/item/key/guildring
 	pants = /obj/item/clothing/pants/tights/makers
 	armor = /obj/item/clothing/armor/leather/vest/black
 	shirt = /obj/item/clothing/shirt/undershirt/red
 	shoes = /obj/item/clothing/shoes/boots/leather
 	belt = /obj/item/storage/belt/leather
-	neck = /obj/item/clothing/neck/psycross/silver/malum_steel
+	neck = /obj/item/clothing/neck/coif
 	beltr = /obj/item/storage/belt/pouch/coins/poor
-	beltl = /obj/item/key/mason
+	beltl = /obj/item/weapon/pick
 	backr = /obj/item/weapon/hammer/sledgehammer
 	backl = /obj/item/storage/backpack/backpack
-	head = /obj/item/clothing/head/helmet/leather/minershelm
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/weapon/knife/villager = 1)
-	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/labor/mining, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 4, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("constitution", 1)
-		if(!H.has_language(/datum/language/dwarvish))
-			H.grant_language(/datum/language/dwarvish)
-			to_chat(H, "<span class='info'>My life has been shaped by working for the Dwarf-dominated Maker's Guild. I can speak Dwarvish with ,d before my speech.</span>")
+	head = /obj/item/clothing/head/helmet/leather/headscarf
+	backpack_contents = list( /obj/item/weapon/chisel = 1, /obj/item/flint = 1, /obj/item/weapon/knife/villager = 1, /obj/item/key/mason = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_INT, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_CON, 1)
+	H.change_stat(STATKEY_SPD, -1)
+
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/helmet/leather/minershelm

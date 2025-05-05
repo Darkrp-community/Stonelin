@@ -15,12 +15,15 @@
 
 /datum/outfit/job/stonekeep/bandit/ronin/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) //for the sake of duelism trope, there is a chance to get 4xp sword.
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) //all bandits get lv 3 in weapons + a lot of versatility
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.burakumin = TRUE //Other abyssariads will easily notice a Ronin, compared to other races. This is partially intended.
 
@@ -49,19 +52,15 @@
 		if("Fulldaisho")
 			beltl = /obj/item/weapon/sword/uchigatana
 			to_chat(H, "<span class='info'>I managed to retain my full Daisho, even without masters to finance my activities.</span>")
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if("Reformed")
 			beltl = /obj/item/weapon/flail/sflail/kusarifundo
 			to_chat(H, "<span class='info'>My sword was broken during battle, and from the blade, I made one anew. This is all what remains of my deceased master.</span>")
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 		if("Savagekiller")
 			beltr = /obj/item/weapon/axe/battle/ono
 			to_chat(H, "<span class='info'>I killed a sanguinary savage and took from him his axe, and grinded the steel into a more efficient Ono. I've conquered a WHALER's soul, and will DOMINATE HIS WAYS.</span>")
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		if("Antidaisho")
 			beltr = /obj/item/weapon/sword/scimitar/falchion/yuntoudao
 			to_chat(H, "<span class='info'>The Daisho is obsolete. My sword is made to do more than draw blood - It should grind my enemies into mince.</span>")
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE

@@ -16,10 +16,10 @@
 
 /datum/outfit/job/stonekeep/bandit/sawbones/pre_equip(mob/living/carbon/human/H)
 	..()
-	mask = /obj/item/clothing/face/facemask/steel
-	head = /obj/item/clothing/head/tophat
+	mask = /obj/item/clothing/face/facemask
+	head = /obj/item/clothing/neck/coif
 	armor = /obj/item/clothing/armor/leather/vest/butcher
-	shirt = /obj/item/clothing/shirt/shortshirt
+	shirt = /obj/item/clothing/armor/gambeson/arming//dark gambeson
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/weapon/knife/cleaver /// proper self defense an tree aquiring
 	pants = /obj/item/clothing/pants/trou
@@ -30,15 +30,15 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) //needed for getting into hideout
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
 	H.change_stat("intelligence", 3)
 	H.change_stat("fortune", 1)
 	if(H.age == AGE_OLD)

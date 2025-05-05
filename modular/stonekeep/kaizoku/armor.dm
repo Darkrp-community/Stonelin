@@ -971,7 +971,7 @@
 	body_parts_covered = HEAD|HAIR|EARS|MOUTH
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR //it is not hiding facial hair when put on the neck. No idea how to fix.
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
-	alternate_worn_layer = MASK_LAYER
+	alternate_worn_layer = MOUTH_LAYER
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 
@@ -1687,19 +1687,19 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/random/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random/Initialize()
 	. = ..()
 	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/military/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military/Initialize()
 	. = ..()
 	color = pick("#534b40", "#685542", "#264d26")
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono/Initialize()
 	. = ..()
 	color = "#9b874f"
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/AdjustClothes(mob/user)
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED

@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/advclass/combat/sk/abyss/onmyoji //Considered 'high-abyssanctum', as Onmyojis actually makes part of their religion. (Also, their mana are sourced from Abyssor due to soul exchanging.)
-	name = "Onmyoji"
+	name = "Stormcaller"
 	tutorial = "The Chosen of the Pressuring Depth, spiritcallers of Abyssor, sage of the oceans. The Onmyojis are celestial magicians skilled in divination \
 	and manifesting the powers of the sea as intermediaries between the Abyssariads and the Abyssal realm. The Onmyojis are empowered in the same way Abyssor \
 	was empowered, in the depths of the Weeping God's pressuring tears."

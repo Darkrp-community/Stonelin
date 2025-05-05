@@ -213,6 +213,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 	var/datum/browser/popup = new(src, "Nautical Oath", "Warning. This is a RP tool, not a guideline or forced directions.", 500, 600)
 	popup.set_content(html_content)
 	popup.open()
+
 /* Seems somewhat redundant?
 /datum/species/abyssariad/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
@@ -363,7 +364,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 			src.forceMove(target)
 			src.start_pulling(pulling,supress_message = TRUE) // Teleport the silly person. If they are on another Z-level above, then that's their fault. Get clapped ONCE MORE.
 
-/mob/living/carbon/human/proc/fly_up() //The code is not working on Stonelin port. But it was working on Stonekeep.
+/mob/living/carbon/human/proc/fly_up()
 	set name = "Fly Up"
 	set category = "ABYSSAL"
 	var/obj/item/mainhand = get_active_held_item()

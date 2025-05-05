@@ -121,7 +121,6 @@
 #define TRAIT_KAIZOKU	"Foglander Cultured"
 #define TRAIT_GOODLOVER	"Fabled Lover"
 #define TRAIT_LIMPDICK "limp_dick"
-#define TRAIT_MINCED "minced"
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_DARKLING "Darkling"
 #define TRAIT_CHANGELING_METABOLISM	"Changeling Metabolism"

@@ -1,9 +1,3 @@
-/////////////////////////////////////////////////////Abyssariad Pattern for Combat Skills/////////////////////////////////////////////////////////
-//'Civilian/Low Abyssanctum' Combat Roles - 3 LEVELS MAX in Combat Skill (Normal) - Many reasons. Mostly religious and Finantial.				//
-//'Zamurai/High Abyssanctum' Combat Roles - 4 lEVELS MAX in Combat Skill (Rare) - Plenty of Reasons. Leading religious and Demon-slaying.		//
-//'Champion' Combat Roles - 5 LEVELS MAX in Combat SKill (Unique) - Little Reason to go to Rockhill besides Royal Expedition/Rockhill's Captain.//
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /datum/advclass/combat/sk/abyss/shrinekeepers //Low-abyssanctum role, but its efficiency requires champion-tier levels entirely because of unarmed skills. They are NOT champions.
 	name = "Shrinekeeper"
 	allowed_sexes = list(MALE, FEMALE)
@@ -64,7 +58,3 @@
 		H.change_stat(STATKEY_SPD, 1)
 
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-
-	if(H.patron != /datum/patron/divine/abyssor)
-		H.patron = GLOB.patronlist[/datum/patron/divine/abyssor]
-		to_chat(H, "<span class='warning'>I am a Abyssanctum, loyal to The World Whale. May the tides of fate guide me to honor.")

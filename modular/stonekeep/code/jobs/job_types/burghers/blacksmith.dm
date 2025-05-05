@@ -5,7 +5,8 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list("Humen","Elf","Aasimar","Half-Elf","Dwarf")
+	allowed_races = list("Humen","Aasimar","Half-Elf","Dwarf")
+	allowed_patrons = list(/datum/patron/divine/malum)//town guild is formed by malumites only
 
 	tutorial = "Yours is a busy life, a churning forge, the ring of hammer on anvil, the hiss of quenched steel, \
 				these are the sounds you live by. You will never starve as the armies of the world tear themselves apart."
@@ -47,12 +48,7 @@
 	backl =	/obj/item/weapon/hammer/sledgehammer
 	beltr = /obj/item/key/blacksmith
 	shirt = /obj/item/clothing/shirt/shortshirt/makers
-	switch(H.patron?.type)
-		if(/datum/patron/divine/malum)
-			neck = /obj/item/clothing/neck/psycross/silver/malum_steel
-			backpack_contents = list(/obj/item/storage/belt/pouch/coins/mid)
-		else
-			neck = /obj/item/storage/belt/pouch/coins/mid
+	neck = /obj/item/storage/belt/pouch/coins/mid//may be too much but they need to hire miners/mercenaries
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", -1)

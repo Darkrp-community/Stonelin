@@ -11,12 +11,13 @@
 /datum/outfit/job/sk/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, pick(0,0,1), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
@@ -26,7 +27,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
-	shirt = /obj/item/clothing/shirt/undershirt/black
+	shirt = /obj/item/clothing/armor/gambeson/arming//dark gambeson
 	gloves = /obj/item/clothing/gloves/fingerless
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots
@@ -34,12 +35,12 @@
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/weapon/mace/cudgel // TEMP until I make a blackjack- for now though this will do.
 	beltl = /obj/item/storage/belt/pouch/coins/poor
-	backpack_contents = list(/obj/item/lockpick, /obj/item/weapon/knife/dagger/steel, /obj/item/clothing/face/shepherd/rag)
+	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/weapon/knife/dagger/steel = 1, /obj/item/clothing/face/shepherd/rag = 1, /obj/item/weapon/knife/throwingknife = 1)
 	ADD_TRAIT(H, TRAIT_THIEVESGUILD, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, TRAIT_GENERIC)
-	H.change_stat(STATKEY_STR, -2)
-	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_STR, -1)
+	H.change_stat(STATKEY_PER, 1)
 	H.change_stat(STATKEY_END, 1)
 	H.change_stat(STATKEY_SPD, 2)
 	H.grant_language(/datum/language/thievescant)

@@ -8,18 +8,23 @@
 	name = "Zamurai"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-	//humen - need to settle Heartfeltean culture on this one.
-	"Changeling",
-	"Skylancer",
-	"Ogrun")
+		"Humen", //Remember to put the 'abyssal' proc.
+		"Changeling",
+		"Undine",
+		"Skylancer",
+		"Ogrun"
+	)
 	outfit = /datum/outfit/job/sk/adventurer/abyss/zamurai
-	maximum_possible_slots = 0
-	pickprob = 0
+	maximum_possible_slots = 1
+	pickprob = 15 //Very low chance.
 	tutorial = "A lower-ranking zamurai serving the warrior caste that became adrift during a expedition, \
 	keeping their trusty steed. They are expected to uphold their oficial duties and following the strict \
 	martial code of the Abyssal Tide, at least on paper."
 	category_tags = list(CTAG_ADVENTURER)
 	horse = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame/saddled
+
+/datum/outfit/job/sk/adventurer/abyss/zamurai
+	allowed_patrons = list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
 
 /datum/advclass/combat/sk/abyss/zamurai/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)
@@ -32,10 +37,10 @@
 	gloves = /obj/item/clothing/gloves/leather/abyssal //kote already protects the hands.
 	belt = /obj/item/storage/belt/kaizoku/leather/daisho/random
 	shirt = /obj/item/clothing/armor/gambeson/light/hitatare/zamurai //weaker gambeson. Has way more DRIP. (Doesn't matter for balance, shutup)
-	armor = /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad //Paying off for 4 swordskill instead of 5.
+	armor = /obj/item/clothing/armor/medium/surcoat/heartfelt //Paying off for 4 swordskill instead of 5.
 	head = /obj/item/clothing/head/helmet/visored/zunari //fucking-shit-up knight helmet tier. Sacrificed some to keep that one.
 	wrists = /obj/item/clothing/wrists/bracers/kote //Cooler Bracer that protects the hands.
-	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
 
 	to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened warrior in lacquered armor whom lands I own and control. Yet, here I stand in unfamiliar lands no different of my own.</span>"))
 

@@ -9,7 +9,7 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/steppesman
 	category_tags = list(CTAG_SKMERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 6
 
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_steppe.ogg'
 
@@ -26,10 +26,10 @@
 	beltl= /obj/item/ammo_holder/quiver/arrows
 	shirt = /obj/item/clothing/shirt/undershirt
 	pants = /obj/item/clothing/pants/tights/red
-	neck = /obj/item/storage/belt/pouch/coins/poor
+	neck = /obj/item/clothing/neck/coif/cloth
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/weapon/knife/hunting = 1)
+	backpack_contents = list(/obj/item/weapon/knife/hunting = 1, /obj/item/storage/belt/pouch/coins/poor = 1)
 	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 		beltr = /obj/item/weapon/sword/sabre/piandao

@@ -538,7 +538,7 @@
 	name = "ararebo"
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
 	icon_state = "ararebo"
-	desc = "A large, iron-capped club used by Abyssariads as a armor-breaking tool. Most suitable to breach Grezenholftean cuirass while still holding a shield in the off-hand."
+	desc = "A large, iron-capped club used by Abyssariads as a armor-breaking tool. Most suitable to breach Grenzeholftean cuirass while still holding a shield in the off-hand."
 
 /obj/item/weapon/mace/ararebo/dustcurse/dropped()
 	. = ..()
@@ -674,7 +674,7 @@
 // =================================================================
 // ========================		KNIFE	============================
 
-/obj/item/weapon/huntingknife/kunai //Practically a villager knife with more utility. It helps others to climb walls.
+/obj/item/weapon/knife/dagger/kunai //Practically a villager knife with more utility. It helps others to climb walls.
 	name = "kunai"
 	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
@@ -1353,7 +1353,7 @@
 			desc = "The traditional wakizashi used by abyssariads for centuries, with a lack of a pommel and a broader handguard for hand protection. The sorii of the blade improves the cutting power."
 		if(3)
 			name = "shirasaya wakizashi"
-			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito covering the "
+			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito."
 	icon_state = "wakizashi[design]"
 
 /datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
@@ -1379,7 +1379,7 @@
 
 /obj/item/weapon/sword/dragonslayer //It's a sword, yes. It will be used as a sword? My dudes we moving that one like warhammers at this point. So it's blunt at this point.
 	name = "dragonslayer eclipse sword"
-	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for fnesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
+	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for finesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
 	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/polearm/chop) //This is practically a mace... that can chop off heads since it's sharp.
 	icon_state = "eclipse_sword"
 	resistance_flags = FIRE_PROOF

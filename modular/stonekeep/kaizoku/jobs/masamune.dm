@@ -25,7 +25,7 @@
 	backl = /obj/item/storage/backpack/backpack
 	shoes = /obj/item/clothing/shoes/boots/jikatabi
 	shirt = /obj/item/clothing/shirt/looseshirt
-	backpack_contents = list(/obj/item/flint= 1, /obj/item/ore/coal=1, /obj/item/ore/iron=1, /obj/item/weapon/huntingknife/kunai= 1, /obj/item/rogue/artisankit= 1)
+	backpack_contents = list(/obj/item/flint= 1, /obj/item/ore/coal=1, /obj/item/ore/iron=1, /obj/item/weapon/knife/dagger/kunai= 1, /obj/item/rogue/artisankit= 1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)

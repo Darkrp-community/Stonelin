@@ -1,11 +1,6 @@
 // =================================================================
 // ========================		CRAFTING	========================
 
-
-
-//Kaizoku Smithing content. I humbly ask for help; A way in which only people with the trait "Kaizoku", being the ones able to make Kaizoku weapons and armor. In another hand,
-//they cannot make most (exceptions; the objects that have no abyssariad alternative) armors and weapons.
-
 //'armor'
 /datum/anvil_recipe/armor/nanbando
 	name = "Abyssal half-plate (+Bar x3) {Nanbando-sode}"
@@ -309,7 +304,7 @@
 	name = "Foldable hood {Karuta zukin}"
 	recipe_name = "a Karuta Zukin"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/neck/chaincoif/karuta_zukin
+	created_item = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 
 /datum/anvil_recipe/armor/ihood
 	name = "Chainmail hood"//coifs aren't made in duos anymore since they can be smelted for material
@@ -486,7 +481,7 @@
 	recipe_name = "a Kunai"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/weapon/huntingknife/kunai
+	created_item = /obj/item/weapon/knife/dagger/kunai
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/tanto

@@ -152,3 +152,12 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 
 
 #define GATOR_HEALTH 220
+
+
+//Kaizoku Unique Roles
+
+#define SK_MASTERSOHEI		(1<<0)
+#define SK_SOHEI			(1<<1)
+
+#define MASTERSOHEI_ORDER	25
+#define SOHEI_ORDER			29

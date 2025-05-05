@@ -77,7 +77,7 @@
 			backl = /obj/item/storage/backpack/satchel
 			beltr = /obj/item/ammo_holder/quiver/arrows
 			if(prob(60))
-				beltl = /obj/item/weapon/huntingknife/kunai //so they HAVE something to use in melee combat.
+				beltl = /obj/item/weapon/knife/dagger/kunai //so they HAVE something to use in melee combat.
 			else
 				beltl = /obj/item/weapon/knife/steel/tanto // luckyroll. Now you have a short-short sword.
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
@@ -89,10 +89,6 @@
 			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
-
-
-
-
 
 		if("Shuhen (Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
 			H.set_blindness(0)
@@ -157,7 +153,7 @@
 			cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/jizamurai
 			mask = /obj/item/clothing/face/kaizoku/menpo/steel/half
 			mouth = /obj/item/clothing/face/cigarette/pipe/westman
-			neck = /obj/item/clothing/neck/chaincoif/karuta_zukin
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 			shirt = /obj/item/clothing/armor/gambeson/light/hitatare/rich
 			pants = /obj/item/clothing/pants/trou/tobi/random
 			beltr = /obj/item/weapon/sword/short/wakizashi

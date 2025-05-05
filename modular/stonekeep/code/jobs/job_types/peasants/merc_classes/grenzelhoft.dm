@@ -8,7 +8,7 @@
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/grenzelhoft
 	category_tags = list(CTAG_SKMERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 6
 
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_grenzelhoft.ogg'
 
@@ -22,9 +22,10 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)	//Big sword user so - really helps them.
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1,1,2), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE) // Equal chance between skilled and average, can use a cudgel to beat less dangerous targets into submission
-		H.mind?.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick (2,3), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
@@ -34,7 +35,7 @@
 		H.update_body()
 
 	beltr = /obj/item/storage/belt/pouch/coins/poor
-	neck = /obj/item/clothing/neck/chaincoif
+	neck = /obj/item/clothing/neck/chaincoif/iron
 	pants = /obj/item/clothing/pants/grenzelpants
 	shoes = /obj/item/clothing/shoes/grenzelhoft
 	gloves = /obj/item/clothing/gloves/angle/grenzel
@@ -49,7 +50,7 @@
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
-	H.merctype = 2
+	H.merctype = 6
 
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)

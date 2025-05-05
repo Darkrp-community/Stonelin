@@ -58,7 +58,7 @@ It´s pretty good. Also extra good mood boost for sex, but still a bit barebones
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, pick(2,3,4), TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)//we know why
 		H.mind?.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)

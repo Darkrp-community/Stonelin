@@ -66,6 +66,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/labor/taming, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick(1,2), TRUE)//boar hunting
 
 /datum/advclass/sk/woodsman/lumberjack
 	name = "Lumberjack"
@@ -75,9 +76,9 @@
 
 /datum/outfit/job/stonekeep/woodsman_lumberjack/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguehood/random/heavy
+	head = /obj/item/clothing/head/hatfur
 	wrists = /obj/item/clothing/wrists/bracers/leather
-	armor = /obj/item/clothing/armor/gambeson/light/striped
+	armor = /obj/item/clothing/armor/leather/hide
 	beltl = /obj/item/weapon/knife/villager
 	backl = /obj/item/weapon/polearm/halberd/bardiche/woodcutter
 	shoes = /obj/item/clothing/shoes/shortboots
@@ -86,3 +87,4 @@
 	H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick(1,2), TRUE)//boar hunting

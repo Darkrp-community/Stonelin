@@ -24,71 +24,67 @@
 	..()
 	H.virginity = TRUE
 
-	armor = /obj/item/clothing/armor/cuirass // Halfplate has been made heavy armor, billions must make due.
-	shirt = /obj/item/clothing/shirt/shortshirt/random
+	armor = /obj/item/clothing/armor/cuirass/iron // Halfplate has been made heavy armor, billions must make due.
+	shirt = /obj/item/clothing/armor/gambeson/light
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots/leather
 	belt = /obj/item/storage/belt/leather
-	beltl = /obj/item/weapon/mace
+	beltl = /obj/item/weapon/mace/spiked
 	beltr = /obj/item/storage/belt/pouch/coins/poor
+	head = /obj/item/clothing/neck/chaincoif/iron//this way they get a cut/stab protection on the head, while they carry a realistic padded coif to mitigate blunt damage and don't have hair in the chain
 
-	switch(H.patron?.type)
+	switch(H.patron?.type)//dendor cleric removed until i get to work on the forest guardian class
 		if(/datum/patron/divine/astrata)
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
-			neck = /obj/item/clothing/neck/chaincoif
-		if(/datum/patron/divine/dendor)
-			head = /obj/item/clothing/head/antlerhood
-			neck = /obj/item/clothing/neck/coif
-			wrists = /obj/item/clothing/neck/psycross/silver/dendor
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak
-			beltr = /obj/item/weapon/knife/stone
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/necra)
 			head = /obj/item/clothing/head/padded/deathface
 			wrists = /obj/item/clothing/neck/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/eora)
 			wrists = /obj/item/clothing/neck/psycross/silver/eora
 			cloak = /obj/item/clothing/cloak/stabard/templar/eora
-			neck = /obj/item/clothing/neck/chaincoif/iron
+			neck = /obj/item/clothing/neck/coif/cloth
 			H.virginity = FALSE
 		if(/datum/patron/divine/ravox)
 			wrists = /obj/item/clothing/neck/psycross/silver/ravox
 			cloak =  /obj/item/clothing/cloak/stabard/templar/ravox
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/noc)
 			wrists = /obj/item/clothing/neck/psycross/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
-			neck = /obj/item/clothing/neck/chaincoif
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/pestra)
 			wrists = /obj/item/clothing/neck/psycross/silver/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
-			neck = /obj/item/clothing/neck/chaincoif/iron
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/abyssor)
 			wrists = /obj/item/clothing/neck/psycross/silver/abyssor
 			cloak = /obj/item/clothing/cloak/tabard/crusader
-			neck = /obj/item/clothing/neck/chaincoif/iron
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/malum)
 			wrists = /obj/item/clothing/neck/psycross/silver/malum
 			cloak = /obj/item/clothing/cloak/stabard/templar/malum
-			neck = /obj/item/clothing/neck/gorget
+			neck = /obj/item/clothing/neck/coif/cloth
 		if(/datum/patron/divine/xylix)
 			wrists = /obj/item/clothing/neck/psycross/silver/xylix
 			cloak = /obj/item/clothing/cloak/tabard/crusader
-			neck = /obj/item/clothing/neck/chaincoif/iron
+			neck = /obj/item/clothing/neck/coif/cloth
 		else // Failsafe
 			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
 			wrists = /obj/item/clothing/neck/psycross/silver // Give us a silver psycross for protection against lickers
-			neck = /obj/item/clothing/neck/chaincoif/iron
+			neck = /obj/item/clothing/neck/coif/cloth
 
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
