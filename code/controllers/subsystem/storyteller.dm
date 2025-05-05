@@ -389,7 +389,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...the dream bends unnaturally, as though something, or someone, believes the world is not real...",
 				"...a presence drifts through the dream, disjointed and frantic, as if seeking a truth no one else can see...",
 				"...flickers of false memories, impossible places... someone’s mind is unraveling inside the dream..."
-			)
+			),
 			"Unknown" = list(
 					"... something lingers in the darkness",
 					"... you feel an unseen presence watching",

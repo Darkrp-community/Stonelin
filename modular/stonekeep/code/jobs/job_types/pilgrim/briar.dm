@@ -68,7 +68,9 @@
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
-	if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
+	var/datum/bodypart_feature/hair/feature = H.get_bodypart_feature_of_slot(BODYPART_FEATURE_FACIAL_HAIR)
+	var/datum/sprite_accessory/hair/facial/feature_type = SPRITE_ACCESSORY(feature.accessory_type)
+	if(feature_type.briarhairbuff == TRUE) // Is the facial hair we're wearing one that grants us the boons of Dendor?
 		C.devotion += 40
 
 /datum/outfit/job/sk/pilgrim/briar

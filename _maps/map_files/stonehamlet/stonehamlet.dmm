@@ -7489,7 +7489,7 @@
 /turf/closed/wall/mineral/stone,
 /area/rogue/outdoors/mountains)
 "kdJ" = (
-/obj/item/mortar{
+/obj/item/reagent_containers/glass/mortar{
 	pixel_y = 5
 	},
 /obj/structure/table/stone_end{
@@ -11766,7 +11766,7 @@
 /obj/structure/table/wood/reinforced_alt{
 	dir = 1
 	},
-/obj/item/mortar{
+/obj/item/reagent_containers/glass/mortar{
 	pixel_y = 5
 	},
 /turf/open/floor/cobble,

@@ -109,7 +109,7 @@
 /datum/sprite_accessory/ears/none
 	name = "None"
 	icon_state = null
-
+/*
 /datum/sprite_accessory/ears/elf
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "Elf"
@@ -168,7 +168,7 @@
 	hasinner = 1
 	color_src = HAIR
 	specuse = list("cattan")
-
+*/
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 

@@ -192,7 +192,7 @@ Spawn in the bog area.
 	H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg'
 	if(H.dna.species.id == "human")	// safeguard if its unlocked for more abyssariads later
 		H.skin_tone = SKIN_COLOR_TROPICALDRY
-	H.hairstyle = /datum/sprite_accessory/hair/kaizoku
+	H.set_hair_style(/datum/sprite_accessory/hair/kaizoku)
 
 
 

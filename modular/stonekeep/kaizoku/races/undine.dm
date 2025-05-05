@@ -26,13 +26,12 @@
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "Kappae", "tail_human" = "Kappav")
+//	default_features = list("mcolor" = "FFF", "ears" = "Kappae", "tail_human" = "Kappav")
 	use_skintones = 1
 //	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	use_f = TRUE
-	mutant_bodyparts = list("ears","tail_human")
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/male/ms_kappa.dmi'
@@ -40,7 +39,7 @@
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 
-	hairyness = ""
+	hairyness = "t1"
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
 //	minrace_pq = 0
@@ -59,6 +58,30 @@
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	// Usual 0+0+0+1+1+0+0 = 2, switching only strength for speed, so they are balanced alike the abyssariads.
+
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/kappa,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/kappa,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+	)
+
+	customizers = list(
+		/datum/customizer/organ/ears/kappa,
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/tail/kappa,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/face_detail,
+	)
 
 /datum/species/elf/undine/check_roundstart_eligible()
 	return TRUE

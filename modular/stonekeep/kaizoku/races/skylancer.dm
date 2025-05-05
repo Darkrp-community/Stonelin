@@ -44,8 +44,7 @@
 	limbs_icon_f = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/female/ftan.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	hairyness = ""
-	mutant_bodyparts = list("ears","tail_human")
+	hairyness = "t2"
 	use_f = TRUE
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
@@ -62,15 +61,32 @@
 	specstats = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
-	mutanteyes = /obj/item/organ/eyes/rogue/tengu
 //	minrace_pq = 0
 
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/tengu,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/wings,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+	)
+
 	customizers = list(
+		/datum/customizer/organ/ears/tengu,
 		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/tail/tengu,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/face_detail,
 	)
+
 	body_markings = list(
 		/datum/body_marking/tonage,
 	)

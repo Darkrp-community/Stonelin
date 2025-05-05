@@ -2368,7 +2368,7 @@
 /obj/structure/table/stone_end{
 	dir = 8
 	},
-/obj/item/mortar{
+/obj/item/reagent_containers/glass/mortar{
 	pixel_y = 5
 	},
 /obj/item/natural/worms/grub_silk,

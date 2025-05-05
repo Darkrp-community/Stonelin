@@ -11,7 +11,7 @@
 
 /datum/job/scribe,
 /datum/job/artificer,
-/datum/job/physicker,
+/datum/job/courtphys,
 /datum/job/armorsmith,
 /datum/job/weaponsmith,
 /datum/job/tailor,

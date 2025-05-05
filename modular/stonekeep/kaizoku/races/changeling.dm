@@ -41,7 +41,7 @@ Future plan:
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail_human" = "Onetail")
+//	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail_human" = "Onetail")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
 //	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -53,8 +53,7 @@ Future plan:
 	limbs_icon_f = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/female/ft_kit.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	hairyness = ""
-	mutant_bodyparts = list("ears","tail_human")
+	hairyness = "t3"
 	use_f = FALSE
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
@@ -75,17 +74,36 @@ Future plan:
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
-	mutanttongue = /obj/item/organ/tongue/kitsune
+//	mutanttongue = /obj/item/organ/tongue/kitsune
 //	minrace_pq = 0
 	// 1(str)-1+1-0.5+0.5+1(spd)+0 = 2 specstats. Balance adjusted.
 	//statsvalue reference by Dova
 	//Strength and Speed are 1, everything else is .5, all races are +2 or +3 except Humen
+
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/kitsune_ears,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/kitsune,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+	)
+
 	customizers = list(
+		/datum/customizer/organ/ears/kitsune,
 		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/tail/kitsune,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
-		/datum/customizer/bodypart_feature/accessory
+		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/face_detail,
 	)
+
 	body_markings = list(
 		/datum/body_marking/tonage,
 	)

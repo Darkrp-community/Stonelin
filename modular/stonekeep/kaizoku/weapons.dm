@@ -752,7 +752,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
-	walking_stick = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -763,7 +762,6 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
-	walking_stick = TRUE
 	embedding = list(
 		"embed_chance" = 75,
 		"embedded_pain_multiplier" = 10,
@@ -884,7 +882,6 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	dropshrink = 0.8
 	blade_dulling = DULLING_BASHCHOP
-	walking_stick = TRUE
 	wlength = WLENGTH_LONG
 	sharpness = IS_BLUNT
 	minstr = 8
@@ -1837,7 +1834,7 @@
 		to_chat(user, "<span class='warning'>You carefully decock the crossbow.</span>")
 		cocked = FALSE
 	else
-		if(user.get_num_arms(FALSE) < 2)
+		if(user.usable_hands < 2)
 			return FALSE
 		if(user.get_inactive_held_item())
 			to_chat(user, "<span class='warning'>You require two hands to stirrup the weapon.</span>")
@@ -1849,7 +1846,7 @@
 	update_icon()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/chukonu/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	if(user.get_num_arms(FALSE) < 2)
+	if(user.usable_hands < 2)
 		return FALSE
 	if(user.get_inactive_held_item())
 		to_chat(user, "<span class='warning'>You require a free hand to pull the lever.</span>")

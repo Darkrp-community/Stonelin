@@ -351,7 +351,7 @@ GLOBAL_LIST_INIT(custodian_handsoff, world.file2list("strings/rt/custodian_hands
 	var/mob/living/target = A
 	var/crit_roll = rand(1, 2)
 
-	if(target.IsStun() || target.IsKnockdown() || target.lying) // Prioritize Execution move if target is stunned or paralyzed
+	if(target.IsStun() || target.IsKnockdown() || body_position == LYING_DOWN) // Prioritize Execution move if target is stunned or paralyzed
 		Execution(target)
 		return  // You're very unlucky if NPC Execution happened.
 

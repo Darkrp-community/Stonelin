@@ -384,77 +384,258 @@ get_accent_list()
 	gender = NEUTER
 	specuse = list("abyssariad")
 
-//Abyssariad accessories.
+// Kaizoku bodyparts
+// ACCESORIES ARE DEPRECATED. USE SPRITE ACCESSORY AND ORGANS.
 
-//kaizoku bodyparts
+// FOX EARS
+
+// Changeling ears organ
+/obj/item/organ/ears/kitsune_ears
+	name = "Fox Ears"
+	accessory_type = /datum/sprite_accessory/ears/kitsune_upright
+
+/datum/customizer/organ/ears/kitsune
+	customizer_choices = list(/datum/customizer_choice/organ/ears/kitsune_ears)
+	allows_disabling = FALSE
+
+// Foxears customizer choices
+/datum/customizer_choice/organ/ears/kitsune_ears
+	name = "Fox ears"
+	organ_type = /obj/item/organ/ears/kitsune_ears
+	sprite_accessories = list(/datum/sprite_accessory/ears/kitsune_upright,
+							/datum/sprite_accessory/ears/kitsune_side,
+							/datum/sprite_accessory/ears/kitsune_thick,
+							/datum/sprite_accessory/ears/kitsune_onedown)
+
+// Upright Fox ears
+/datum/sprite_accessory/ears/kitsune_upright
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Upright Fox Ears"
+	icon_state = "ears_upright"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// Side fox ears
+/datum/sprite_accessory/ears/kitsune_side
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Sideways Fox Ears"
+	icon_state = "ears_lying"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// Thick fox ears
+/datum/sprite_accessory/ears/kitsune_thick
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Thick Fox Ears"
+	icon_state = "ears_thick"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// One-down fox ears
+/datum/sprite_accessory/ears/kitsune_onedown
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Curious Fox Ears"
+	icon_state = "ears_stoned"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// FOX TAILS
+
+/obj/item/organ/tail/kitsune
+	name = "Fox Tails"
+	accessory_type = /datum/sprite_accessory/tails/human/onetail
+
+/datum/customizer/organ/tail/kitsune
+	customizer_choices = list(/datum/customizer_choice/organ/tail/kitsune)
+
+/datum/customizer_choice/organ/tail/kitsune
+	name = "Fox Tails"
+	organ_type = /obj/item/organ/tail/kitsune
+	sprite_accessories = list(/datum/sprite_accessory/tails/human/onetail,
+							/datum/sprite_accessory/tails/human/twotails,
+							/datum/sprite_accessory/tails/human/threetails)
+
 /datum/sprite_accessory/tails/human/onetail
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "Onetail"
+	name = "Fox tail"
 	icon_state = "onetail"
-	specuse = list("human", "dwarf", "elf", "aasimar", "abyssariad", "Changeling", "changeling")
+	specuse = list("abyssariad", "Changeling", "changeling")
 	gender = NEUTER
-	color_src = HAIR
-	offsetti = TRUE
+	color_key_defaults = list(KEY_HAIR_COLOR)
 
-/datum/sprite_accessory/ears/upright
+/datum/sprite_accessory/tails/human/twotails
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "Upright"
-	icon_state = "upright"
-	specuse = list("human", "dwarf","aasimar", "abyssariad", "Changeling", "changeling")
-	color_src = HAIR
-	offsetti = TRUE
+	name = "Two Foxtails"
+	icon_state = "twotails"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	gender = NEUTER
+	color_key_defaults = list(KEY_HAIR_COLOR)
 
-/datum/sprite_accessory/tails/human/oni //Yes. It's a fucking tail now, I'm bullshitting my way out of this tiefling problem until we got horns fixed.
+/datum/sprite_accessory/tails/human/threetails
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "Onihorn"
+	name = "Three Foxtails"
+	icon_state = "threetails"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	gender = NEUTER
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// ONI PARTS
+
+// Oni Horns
+
+/obj/item/organ/horns/oni
+	name = "ogrun horns"
+	accessory_type = /datum/sprite_accessory/horns/oni
+
+/datum/customizer/organ/horns/oni
+	customizer_choices = list(/datum/customizer_choice/organ/horns/oni)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/horns/oni
+	name = "Ogrun Horn"
+	organ_type = /obj/item/organ/horns/oni
+	sprite_accessories = list(
+		/datum/sprite_accessory/horns/oni)
+
+/datum/sprite_accessory/horns/oni
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Ogrun horn"
 	icon_state = "onihorn"
 	specuse = list("abyssariad", "Ogrun", "ogrun")
-	color_src = 0
-	offsetti = TRUE
+	color_key_defaults = list(KEY_SKIN_COLOR)
 	gender = NEUTER
 
-/datum/sprite_accessory/tails/human/kappav
-	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "Kappav"
-	icon_state = "kappav"
-	specuse = list("abyssariad", "Kappa", "Undine")
-	gender = NEUTER
-	color_src = HAIR
-	offsetti = TRUE
+// Oni Ears
 
-/datum/sprite_accessory/tails/human/tenguv //Wings DO NOT WORK, so I set it as tails. If you want to fix that, go ahead.
-	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "TenguV"
-	icon_state = "tenguv"
-	specuse = list("abyssariad", "Tengu", "Skylancer")
-	gender = NEUTER
-	color_src = HAIR
-	offsetti = TRUE
-
-/datum/sprite_accessory/ears/tengus
-	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
-	name = "TenguS"
-	icon_state = "tengus"
-	specuse = list("abyssariad", "Tengu", "Skylancer")
-	color_src = HAIR
-	offsetti = TRUE
+/obj/item/organ/ears/oni
+	name = "ogrun ears"
+	accessory_type = /datum/sprite_accessory/ears/oni
 
 /datum/sprite_accessory/ears/oni
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Ogrun"
-	icon_state = "oni"
+	icon_state = "ears_oni"
 	specuse = list("abyssariad", "Ogrun", "ogrun")
-	color_src = SKINCOLOR
-	offsetti = TRUE
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/customizer/organ/ears/oni
+	customizer_choices = list(/datum/customizer_choice/organ/ears/oni)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/ears/oni
+	name = "Ogrun ears"
+	organ_type = /obj/item/organ/ears/oni
+	sprite_accessories = list(/datum/sprite_accessory/ears/oni)
+
+// SKYLANCERS
+
+// TENGU WINGS
+
+// These are tails as placeholders. If wings slots are able to be done successfully, refactor this into wings.
+/obj/item/organ/tail/wings
+	name = "Wings"
+	desc = "Wings, like those of zads, but enormous in size. Belonging to a Skylancer, most likely."
+	accessory_type = /datum/sprite_accessory/tails/human/tengu
+
+/datum/sprite_accessory/tails/human/tengu
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Tengu wings"
+	icon_state = "tenguv"
+	specuse = list("abyssariad", "Tengu", "Skylancer")
+	gender = NEUTER
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+/datum/customizer/organ/tail/tengu
+	customizer_choices = list(/datum/customizer_choice/organ/tail/tengu)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/tengu
+	name = "Skylancer wings"
+	organ_type = /obj/item/organ/tail/wings
+	sprite_accessories = list(/datum/sprite_accessory/tails/human/tengu)
+
+// TENGU EARS
+
+/obj/item/organ/ears/tengu
+	name = "Skylancer ears"
+	accessory_type = /datum/sprite_accessory/ears/tengu
+
+/datum/sprite_accessory/ears/tengu
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Skylancer ears"
+	icon_state = "ears_tengu"
+	specuse = list("abyssariad", "Tengu", "Skylancer")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+/datum/customizer/organ/ears/tengu
+	customizer_choices = list(/datum/customizer_choice/organ/ears/tengu)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/ears/tengu
+	name = "Skylancer ears"
+	organ_type = /obj/item/organ/ears/tengu
+	sprite_accessories = list(/datum/sprite_accessory/ears/tengu)
+
+// UNDINES
+
+// KAPPA SHELL
+
+/obj/item/organ/tail/kappa
+	name = "Turtle Shell"
+	desc = "The hard back of an Undine."
+	accessory_type = /datum/sprite_accessory/tails/human/kappa
+
+//TODO: Customizable shell color
+/datum/sprite_accessory/tails/human/kappa
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Undine shell"
+	icon_state = "kappav"
+	specuse = list("abyssariad", "Kappa", "Undine")
+	gender = NEUTER
+	default_colors = "#044D1D" // Placeholder until color select is set up
+	// Once shells can be customized, the following should be the pre-selectable colors:
+	// #044d1d = Bogman
+	// #3c966e = Lushman
+	// #1d8c74 = Chrysanfolk
+	// #13727d = Riverfolk
+	// #074778 = Seadweller
+	// #201e96 = Saltstained
+	// #420963 = Orchid
+	// #8c348c = Amaranth
+	// #856d18 = Goldstrive
+
+/datum/customizer/organ/tail/kappa
+	customizer_choices = list(/datum/customizer_choice/organ/tail/kappa)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/kappa
+	name = "Undine shell"
+	organ_type = /obj/item/organ/tail/kappa
+	sprite_accessories = list(/datum/sprite_accessory/tails/human/kappa)
+
+// KAPPA EARS
+
+/obj/item/organ/ears/kappa
+	name = "Undine ears"
+	accessory_type = /datum/sprite_accessory/ears/kappae
+
+/datum/customizer/organ/ears/kappa
+	customizer_choices = list(/datum/customizer_choice/organ/ears/kappa)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/ears/kappa
+	name = "Undine ears"
+	organ_type = /obj/item/organ/ears/kappa
+	sprite_accessories = list(/datum/sprite_accessory/ears/kappae)
 
 /datum/sprite_accessory/ears/kappae
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Kappae"
 	icon_state = "kappae"
 	specuse = list("abyssariad", "Kappa", "Undine")
-	color_src = SKINCOLOR
-	offsetti = TRUE
+	color_key_defaults = list(KEY_SKIN_COLOR)
 
+// END OF KAIZOKU RACES BODYPARTS
 
 /datum/sprite_accessory/detail
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc", "abyssariad")
@@ -546,6 +727,7 @@ get_accent_list()
 	stressadd = 1
 	desc = "<span class='red'>Filthy corrupted whaler. Never forget the Storm Lord.</span>"
 
+// TODO: Employ this tongue so they can open and close their spooky maws
 /obj/item/organ/tongue/kitsune
 	name = "changeling tongue"
 	desc = "The tongue that inwardly bends the moldable changeling skull into a glasgow smile, or other shapes depending on their branch."
@@ -558,7 +740,7 @@ get_accent_list()
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_TONGUE
 
-
+// TODO: Employ custom tengu eyes for intended purposes (unknown as of time of editing Kaizoku code)
 /obj/item/organ/eyes/rogue/tengu
 	name = "tengu eyes"
 	desc = ""
@@ -579,32 +761,3 @@ get_accent_list()
 				who.say(pick(GLOB.custodian_handsoff))
 			return
 	..()
-
-
-
-/datum/sprite_accessory/wings/none
-	name = "None"
-	icon_state = "none"
-
-/datum/sprite_accessory/wings
-	icon = 'modular/stonekeep/kaizoku/icons/body_details/wings.dmi'
-
-/datum/sprite_accessory/wings_open
-	icon = 'modular/stonekeep/kaizoku/icons/body_details/wings.dmi'
-
-/datum/sprite_accessory/wings/angel
-	name = "Angel"
-	icon_state = "angel"
-	color_src = 0
-	dimension_x = 46
-	center = TRUE
-	dimension_y = 34
-	locked = TRUE
-
-/datum/sprite_accessory/wings_open/angel
-	name = "Angel"
-	icon_state = "angel"
-	color_src = 0
-	dimension_x = 46
-	center = TRUE
-	dimension_y = 34

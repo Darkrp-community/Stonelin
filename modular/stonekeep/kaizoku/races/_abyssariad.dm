@@ -474,7 +474,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 		REMOVE_TRAIT(src, TRAIT_STRONGBITE, TRAIT_GENERIC)
 
 	// Apply Changes
-	update_mutant_bodyparts()
+//	update_mutant_bodyparts()
 	update_icon()
 	update_body()
 

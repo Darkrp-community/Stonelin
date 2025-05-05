@@ -229,7 +229,7 @@
 
 /datum/crafting_recipe/roguetown/alchmortar
 	name = "alchemy ( stone mortar )"
-	result = /obj/item/mortar
+	result = /obj/item/reagent_containers/glass/mortar
 	reqs = list(/obj/item/natural/stone = 3)
 	tools = list(/obj/item/weapon/chisel)
 	verbage = "crafts"

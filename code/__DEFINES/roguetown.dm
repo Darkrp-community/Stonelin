@@ -9,7 +9,7 @@
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Zizo. Used for church/faith roles.
 #define RACES_PLAYER_NONHERETICAL		list("Humen", "Half-Elf", "Elf", "Dwarf", "Aasimar")
 /// Races who are non-exotic to Vanderlin. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
-#define RACES_PLAYER_NONEXOTIC			list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf", "Tiefling", "Half-Orc", "Aasimar")
+#define RACES_PLAYER_NONEXOTIC			list("Humen", "Hollow-Kin", "Harpies", "Half-Elf", "Dark Elf", "Elf", "Dwarf", "Tiefling", "Half-Orc", "Aasimar")
 ///Races that lack lux
 #define RACES_PLAYER_LUXLESS			list("Kobold", "Rakshari", "Dark Elf", "Tiefling", "Half-Orc", "Dark Elf")
 /// Races who are affiliated with Grenzelhoft or Psydon specifically.
@@ -20,7 +20,7 @@
 #define RACES_PLAYER_ELF_D				list("Half-Elf", "Dark Elf", "Elf")
 
 /// Patreon only races.
-#define RACES_PLAYER_PATREON			list("Kobold")
+#define RACES_PLAYER_PATREON			list("Kobold", "Hollow-Kin")
 
 
 
