@@ -287,7 +287,7 @@
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 		if(/datum/patron/divine/eora)
 			neck = /obj/item/clothing/neck/psycross/silver/eora
-			H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
+			H.cmode_music = 'modular/Stonekeep/sound/cmode/church/CombatEora.ogg'
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 		if(/datum/patron/divine/noc)
 			neck = /obj/item/clothing/neck/psycross/noc
