@@ -35,7 +35,7 @@
 	outfit = /datum/outfit/job/sk/abyss/sohei
 	min_pq = 0
 	selection_color = "#c2a45d"
-	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/combat_templar.ogg'
 	allowed_patrons = list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
 
 /datum/outfit/job/sk/abyss/sohei/pre_equip(mob/living/carbon/human/H)

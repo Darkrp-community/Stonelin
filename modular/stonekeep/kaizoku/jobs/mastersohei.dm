@@ -25,7 +25,7 @@
 	outfit = /datum/outfit/job/stonekeep/mastersohei
 	min_pq = 0
 	selection_color = "#c2a45d"
-	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/combat_templar.ogg'
 	spells = list(
 		/obj/effect/proc_holder/spell/self/convertrole/sohei,
 	)
