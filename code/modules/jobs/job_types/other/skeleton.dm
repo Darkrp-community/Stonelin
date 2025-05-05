@@ -17,7 +17,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ALL
-	cmode_music = 'sound/music/cmode/antag/combatskeleton.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/antag/combatskeleton.ogg'
 
 	outfit = /datum/outfit/job/skeleton
 	give_bank_account = FALSE
@@ -161,7 +161,7 @@
 /datum/job/skeleton/zizoid
 	title = "Cult Summon"
 	outfit = /datum/outfit/job/skeleton/zizoid
-	cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
+	cmode_music = 'modular/Stonekeep/sound/cmode/antag/combat_cult.ogg'
 
 /datum/job/skeleton/zizoid/after_spawn(mob/living/spawned, client/player_client)
 	..()

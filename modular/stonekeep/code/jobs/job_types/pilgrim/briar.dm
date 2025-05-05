@@ -11,7 +11,7 @@
 	category_tags = list(CTAG_PILGRIM)
 	tutorial = "Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental."
 	allowed_patrons = list(/datum/patron/divine/dendor)
-	cmode_music = 'sound/music/cmode/combat_dendor.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_dendor.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/sk/pilgrim/briar/pre_equip(mob/living/carbon/human/H)

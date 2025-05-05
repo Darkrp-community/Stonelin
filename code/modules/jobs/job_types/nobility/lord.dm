@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	give_bank_account = 500
 	selection_color = "#7851A9"
 
-	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/combat_noble.ogg'
 	can_have_apprentices = FALSE
 
 /datum/job/lord/get_informed_title(mob/mob)

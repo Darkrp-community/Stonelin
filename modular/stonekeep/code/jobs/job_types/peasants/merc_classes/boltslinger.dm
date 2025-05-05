@@ -50,7 +50,7 @@
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", 1)
-		H.cmode_music = 'sound/music/cmode/combat_guard.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_guard.ogg'
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	if(H.dna.species.id == "dwarf")
-		H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_dwarf.ogg'

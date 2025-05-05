@@ -13,7 +13,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	apprentice_name = "Forager"
-	cmode_music = 'sound/music/cmode/combat_guard.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_guard.ogg'
 
 /datum/outfit/job/stonekeep/woodsman/pre_equip(mob/living/carbon/human/H)
 	..()

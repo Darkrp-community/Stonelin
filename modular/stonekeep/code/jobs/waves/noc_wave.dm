@@ -41,7 +41,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 
-		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_cult.ogg'
 
 		var/list/spells = list(/obj/effect/proc_holder/spell/self/convertrole/templar, /obj/effect/proc_holder/spell/self/convertrole/monk, /obj/effect/proc_holder/spell/self/convertrole/churchling)
 		for(var/S in spells)

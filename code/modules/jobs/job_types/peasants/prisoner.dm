@@ -25,7 +25,7 @@
 	outfit = /datum/outfit/job/prisoner
 	give_bank_account = 173
 
-	cmode_music = 'sound/music/cmode/towner/CombatPrisoner.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/towner/CombatPrisoner.ogg'
 	can_have_apprentices = FALSE
 
 /datum/outfit/job/prisoner/pre_equip(mob/living/carbon/human/H)

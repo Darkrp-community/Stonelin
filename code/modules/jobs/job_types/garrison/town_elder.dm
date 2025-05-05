@@ -281,41 +281,41 @@
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			neck = /obj/item/clothing/neck/psycross/silver/astrata
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/divine/necra)
 			neck = /obj/item/clothing/neck/psycross/silver/necra
-			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/church/CombatGravekeeper.ogg'
 		if(/datum/patron/divine/eora)
 			neck = /obj/item/clothing/neck/psycross/silver/eora
-			H.cmode_music = 'modular/Stonekeep/sound/cmode/church/CombatEora.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/church/CombatEora.ogg'
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 		if(/datum/patron/divine/noc)
 			neck = /obj/item/clothing/neck/psycross/noc
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/divine/pestra)
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/divine/dendor)
 			neck = /obj/item/clothing/neck/psycross/silver/dendor
-			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatForestGarrison.ogg'
 		if(/datum/patron/divine/abyssor)
 			neck = /obj/item/clothing/neck/psycross/silver/abyssor
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 			H.mind?.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 		if(/datum/patron/divine/ravox)
 			neck = /obj/item/clothing/neck/psycross/silver/ravox
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatOutlander2.ogg'
 			H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		if(/datum/patron/divine/xylix)
 			neck = /obj/item/clothing/neck/psycross/silver/xylix
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 			H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 		if(/datum/patron/divine/malum)
 			neck = /obj/item/clothing/neck/psycross/silver/malum
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 		else // Failsafe
 			neck = /obj/item/clothing/neck/psycross/silver
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+			H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)

@@ -55,7 +55,7 @@ Spawns in forest area.
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	H.cmode_music = 'sound/music/cmode/nobility/CombatKnight.ogg'
+	H.cmode_music = 'modular/stonekeep/sound/cmode/nobility/CombatKnight.ogg'
 
 /datum/migrant_role/sk/errant/squire
 	name = "Errant Squire"
@@ -100,7 +100,7 @@ Spawns in forest area.
 	if(H.gender == MALE && H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
+	H.cmode_music = 'modular/Stonekeep/sound/cmode/garrison/CombatGarrison.ogg'
 
 /datum/migrant_wave/knight_errant
 	name = "The Knightly journey"

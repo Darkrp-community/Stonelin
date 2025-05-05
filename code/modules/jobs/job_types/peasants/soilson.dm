@@ -22,7 +22,7 @@
 
 	outfit = /datum/outfit/job/farmer
 	give_bank_account = 20
-	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/towner/CombatTowner.ogg'
 
 /datum/outfit/job/farmer
 	job_bitflag = BITFLAG_CONSTRUCTOR

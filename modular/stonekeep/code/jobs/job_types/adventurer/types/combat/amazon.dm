@@ -7,7 +7,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	min_pq = -10
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/outfit/job/sk/adventurer/amazon/pre_equip(mob/living/carbon/human/H)
 	..()

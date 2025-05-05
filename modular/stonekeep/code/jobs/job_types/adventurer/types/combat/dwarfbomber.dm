@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/sk/adventurer/dwarfbomb
 	min_pq = -10
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/adventurer/CombatWarrior.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatWarrior.ogg'
 
 /datum/outfit/job/sk/adventurer/dwarfbomb/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -24,7 +24,7 @@
 	outfit = /datum/outfit/job/forestwarden
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/guard/forest_guard)
 	give_bank_account = 45
-	cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatForestGarrison.ogg'
 
 /datum/outfit/job/forestwarden
 	job_bitflag = BITFLAG_GARRISON

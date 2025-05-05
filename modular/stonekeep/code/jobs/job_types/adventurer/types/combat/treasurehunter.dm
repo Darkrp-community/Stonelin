@@ -8,7 +8,7 @@
 	outfit = /datum/outfit/job/sk/adventurer/treasurehunter
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/CombatGravekeeper.ogg'
 
 /datum/outfit/job/sk/adventurer/treasurehunter/pre_equip(mob/living/carbon/human/H)
 	..()

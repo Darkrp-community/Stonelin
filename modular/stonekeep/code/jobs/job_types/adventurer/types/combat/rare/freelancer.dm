@@ -10,7 +10,7 @@
 	pickprob = 10
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatOutlander3.ogg'
 
 /datum/outfit/job/sk/adventurer/lancer/pre_equip(mob/living/carbon/human/H)
 	..()

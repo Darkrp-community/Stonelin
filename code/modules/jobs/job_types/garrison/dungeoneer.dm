@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/dungeoneer
 	give_bank_account = 50
 
-	cmode_music = 'sound/music/cmode/nobility/CombatDungeoneer.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/CombatDungeoneer.ogg'
 
 /datum/outfit/job/dungeoneer
 	job_bitflag = BITFLAG_GARRISON

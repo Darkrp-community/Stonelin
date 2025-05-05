@@ -21,7 +21,7 @@
 
 	outfit = /datum/outfit/job/undertaker
 	give_bank_account = TRUE
-	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/CombatGravekeeper.ogg'
 
 /datum/outfit/job/undertaker
 	allowed_patrons = list(/datum/patron/divine/necra)

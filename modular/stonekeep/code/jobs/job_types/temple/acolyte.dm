@@ -23,7 +23,7 @@
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE
-	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/combat_templar.ogg'
 
 /datum/outfit/job/stonekeep/acolyte
 	name = "Acolyte"

@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/job/sk/adventurer/bladesinger
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
-	cmode_music = 'sound/music/cmode/adventurer/CombatWarrior.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatWarrior.ogg'
 
 
 /datum/outfit/job/sk/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)

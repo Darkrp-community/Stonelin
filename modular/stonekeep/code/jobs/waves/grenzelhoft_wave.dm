@@ -114,7 +114,7 @@ Spawn in the forest area.
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-		H.cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/nobility/combat_noble.ogg'
 
 /datum/migrant_role/sk/grenzelhoft/preacher
 	name = "Grenzelhoft Preacher"
@@ -147,7 +147,7 @@ Spawn in the forest area.
 			H.grant_language(/datum/language/oldpsydonic)
 			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		H.set_patron(/datum/patron/psydon)
-		H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
+		H.cmode_music = 'modular/Stonekeep/sound/cmode/church/CombatInquisitor.ogg'
 
 /datum/migrant_role/sk/grenzelhoft/swordmaster
 	name = "Grenzelhoft Swordmaster"

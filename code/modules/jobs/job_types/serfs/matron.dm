@@ -20,7 +20,7 @@
 	outfit = /datum/outfit/job/matron
 	give_bank_account = 35
 	can_have_apprentices = TRUE
-	cmode_music = 'sound/music/cmode/nobility/combat_spymaster.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/combat_spymaster.ogg'
 
 /datum/outfit/job/matron/pre_equip(mob/living/carbon/human/H)
 	..()

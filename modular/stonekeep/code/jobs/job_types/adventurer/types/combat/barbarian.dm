@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/sk/adventurer/barbarian
 	min_pq = -10
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatOutlander2.ogg'
 
 /datum/outfit/job/sk/adventurer/barbarian
 	allowed_patrons = list(/datum/patron/divine/ravox, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/dendor, /datum/patron/godless, /datum/patron/inhumen/graggar)

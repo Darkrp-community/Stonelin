@@ -60,7 +60,7 @@
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 		H.set_patron(/datum/patron/inhumen/zizo)
-		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_cult.ogg'
 
 		SSmapping.retainer.cultists |= H
 //	owner.special_role = "Zizoid Lackey"

@@ -19,7 +19,7 @@
 
 	outfit = /datum/outfit/job/innkeep_son
 	can_have_apprentices = FALSE
-	cmode_music = 'sound/music/cmode/towner/CombatInn.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/towner/CombatInn.ogg'
 
 /datum/outfit/job/innkeep_son
 	job_bitflag = BITFLAG_CONSTRUCTOR

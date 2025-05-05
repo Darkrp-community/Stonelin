@@ -17,7 +17,7 @@
 
 	outfit = /datum/outfit/job/courtphys
 	give_bank_account = 100
-	cmode_music = 'sound/music/cmode/nobility/combat_physician.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/combat_physician.ogg'
 
 /datum/outfit/job/courtphys
 	job_bitflag = BITFLAG_ROYALTY

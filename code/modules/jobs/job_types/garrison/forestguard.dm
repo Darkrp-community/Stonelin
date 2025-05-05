@@ -23,7 +23,7 @@
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	give_bank_account = 30
-	cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatForestGarrison.ogg'
 
 	outfit = /datum/outfit/job/forestguard
 	advclass_cat_rolls = list(CTAG_FORGARRISON = 20)

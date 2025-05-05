@@ -26,7 +26,7 @@
 	outfit = /datum/outfit/job/gatemaster	//Default outfit.
 	advclass_cat_rolls = list(CTAG_GATEMASTER = 20)	//Handles class selection.
 	give_bank_account = 30
-	cmode_music = 'sound/music/cmode/garrison/CombatGatekeeper.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatGatekeeper.ogg'
 	give_bank_account = 15
 
 /datum/outfit/job/gatemaster

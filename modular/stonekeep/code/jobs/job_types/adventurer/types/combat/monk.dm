@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/sk/adventurer/monk
 	min_pq = -10
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatMonk.ogg'
 	vampcompat = FALSE
 
 /datum/outfit/job/sk/adventurer/monk

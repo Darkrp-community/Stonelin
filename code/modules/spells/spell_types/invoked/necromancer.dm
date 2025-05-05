@@ -203,7 +203,7 @@
 	src.base_fortune = 6
 
 
-	cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_cult.ogg'
 
 	set_patron(master.patron)
 	copy_known_languages_from(master,FALSE)

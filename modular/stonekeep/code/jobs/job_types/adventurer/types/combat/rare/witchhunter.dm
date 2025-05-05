@@ -17,7 +17,7 @@
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
-	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/CombatInquisitor.ogg'
 
 /datum/outfit/job/sk/adventurer/witchhunter/pre_equip(mob/living/carbon/human/H)
 	..()

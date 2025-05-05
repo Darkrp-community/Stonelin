@@ -17,7 +17,7 @@
 	spawn_positions = 2
 	display_order = TEMPLAR_ORDER
 	give_bank_account = 10
-	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/combat_templar.ogg'
 
 /datum/outfit/job/stonekeep/templar
 	name = "Templar"

@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 
 
-	owner.current.cmode_music = 'sound/music/cmode/antag/CombatThrall.ogg'
+	owner.current.cmode_music = 'modular/stonekeep/sound/cmode/antag/CombatThrall.ogg'
 	owner.current.AddSpell(new /obj/effect/proc_holder/spell/targeted/transfix)
 	vamp_look()
 	. = ..()

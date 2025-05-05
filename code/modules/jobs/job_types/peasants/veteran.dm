@@ -60,7 +60,7 @@
 	backr = /obj/item/storage/backpack/satchel/black
 	cloak = /obj/item/clothing/cloak/half/vet
 	belt = /obj/item/storage/belt/leather/black
-	H.cmode_music = 'sound/music/cmode/adventurer/CombatWarrior.ogg'
+	H.cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatWarrior.ogg'
 	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
@@ -120,7 +120,7 @@
 	r_hand = /obj/item/weapon/polearm/spear/billhook
 	belt = /obj/item/storage/belt/leather/black
 	cloak = /obj/item/clothing/cloak/half/vet
-	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
+	H.cmode_music = 'modular/Stonekeep/sound/cmode/garrison/CombatGarrison.ogg'
 	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/rope/chain = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -175,7 +175,7 @@
 	backr = /obj/item/storage/backpack/satchel/black
 	belt = /obj/item/storage/belt/leather/black
 	cloak = /obj/item/clothing/cloak/half/vet
-	H.cmode_music = 'sound/music/cmode/nobility/CombatDungeoneer.ogg'
+	H.cmode_music = 'modular/Stonekeep/sound/cmode/nobility/CombatDungeoneer.ogg'
 	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -256,7 +256,7 @@
 	backr = /obj/item/storage/backpack/satchel/black
 	belt = /obj/item/storage/belt/leather/black
 	cloak = /obj/item/clothing/cloak/half/vet
-	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
+	H.cmode_music = 'modular/Stonekeep/sound/cmode/adventurer/CombatOutlander.ogg'
 	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)

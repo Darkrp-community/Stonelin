@@ -19,7 +19,7 @@
 	min_pq = 0
 	bypass_lastclass = TRUE
 	is_foreigner = TRUE
-	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/church/CombatInquisitor.ogg'
 
 /datum/job/stonekeep/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

@@ -65,7 +65,7 @@ Their default should be aligned with the crown and have some limited objective, 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
-	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
+	H.cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatGarrison.ogg'
 	H.verbs |= /mob/proc/haltyell
 	l_hand = /obj/item/flashlight/flare/torch/prelit
 
@@ -158,7 +158,7 @@ Their default should be aligned with the crown and have some limited objective, 
 		H.change_stat(STATKEY_END, pick(-1,0,1,2,3))
 		H.change_stat(STATKEY_CON, pick(-1,0,1,2,3))
 		H.change_stat(STATKEY_INT, pick(-4,-3,-2,-1,0,1))
-	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
+	H.cmode_music = 'modular/Stonekeep/sound/cmode/garrison/CombatGarrison.ogg'
 	H.verbs |= /mob/proc/haltyell
 
 

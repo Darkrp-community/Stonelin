@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	H.set_patron(/datum/patron/inhumen/zizo)
 
 	owner.special_role = "Zizoid Lackey"
-	H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
+	H.cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_cult.ogg'
 	owner.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/maniac.ogg', 80, FALSE, pressure_affected = FALSE)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise

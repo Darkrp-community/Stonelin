@@ -3,7 +3,7 @@
 	flag = DEATHKNIGHT
 
 	outfit = /datum/outfit/job/deathknight
-	cmode_music = 'sound/music/cmode/combat_weird.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_weird.ogg'
 
 /datum/job/skeleton/knight/after_spawn(mob/living/carbon/spawned, client/player_client)
 	SSmapping.find_and_remove_world_trait(/datum/world_trait/death_knight)

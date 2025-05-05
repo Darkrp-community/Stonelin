@@ -18,7 +18,7 @@
 
 	outfit = /datum/outfit/job/beastmaster
 	give_bank_account = TRUE
-	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/towner/CombatTowner.ogg'
 
 /datum/outfit/job/beastmaster
 	job_bitflag = BITFLAG_CONSTRUCTOR

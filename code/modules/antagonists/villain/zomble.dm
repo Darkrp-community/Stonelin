@@ -94,7 +94,7 @@
 	stored_experience = owner.skill_experience.Copy()
 	owner.known_skills = list()
 	owner.skill_experience = list()
-	zombie.cmode_music ='sound/music/cmode/combat_weird.ogg'
+	zombie.cmode_music ='modular/stonekeep/sound/cmode/combat_weird.ogg'
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from
 	var/datum/language_holder/mob_language = zombie.get_language_holder()
 	prev_language = mob_language.copy()
@@ -205,7 +205,7 @@
 			zombie_part.rotted = TRUE
 		zombie_part.update_disabled()
 	zombie.update_body()
-	zombie.cmode_music = 'sound/music/cmode/combat_weird.ogg'
+	zombie.cmode_music = 'modular/stonekeep/sound/cmode/combat_weird.ogg'
 	zombie.set_patron(/datum/patron/inhumen/zizo)
 
 	for(var/datum/status_effect/effect in zombie.status_effects) //necessary to prevent exploits

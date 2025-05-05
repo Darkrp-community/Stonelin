@@ -25,7 +25,7 @@
 
 	wander = FALSE
 
-	cmode_music = 'sound/music/cmode/antag/combat_goblin.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_goblin.ogg'
 
 /mob/living/carbon/human/species/rousman/npc/Initialize()
 	. = ..()

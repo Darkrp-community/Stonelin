@@ -15,7 +15,7 @@
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = -10
 	maximum_possible_slots = 2
-	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/adventurer/CombatSorcerer.ogg'
 
 /datum/outfit/job/sk/adventurer/mage
 

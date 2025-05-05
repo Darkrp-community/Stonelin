@@ -20,7 +20,7 @@
 
 	outfit = /datum/outfit/job/magician
 	give_bank_account = 120
-	cmode_music = 'sound/music/cmode/nobility/CombatCourtMagician.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/CombatCourtMagician.ogg'
 	magic_user = TRUE
 
 /datum/outfit/job/magician

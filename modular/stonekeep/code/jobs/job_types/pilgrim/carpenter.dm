@@ -51,4 +51,4 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
 	if(H.dna.species.id == "dwarf")
-		H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
+		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_dwarf.ogg'

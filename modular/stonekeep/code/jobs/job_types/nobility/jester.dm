@@ -24,7 +24,7 @@
 	min_pq = -20
 	give_bank_account = TRUE
 
-	cmode_music = 'sound/music/cmode/combat_jester.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_jester.ogg'
 
 /datum/outfit/job/stonekeep/jester/pre_equip(mob/living/carbon/human/H)
 	..()

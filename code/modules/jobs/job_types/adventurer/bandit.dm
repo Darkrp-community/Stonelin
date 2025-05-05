@@ -23,7 +23,7 @@
 	same_job_respawn_delay = 30 MINUTES
 
 	can_have_apprentices = FALSE
-	cmode_music = 'sound/music/cmode/antag/combat_bandit2.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/antag/combat_bandit2.ogg'
 
 /datum/job/bandit/after_spawn(mob/living/spawned, client/player_client)
 	..()

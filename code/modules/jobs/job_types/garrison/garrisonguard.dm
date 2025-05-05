@@ -20,7 +20,7 @@
 	outfit = /datum/outfit/job/guardsman	//Default outfit.
 	advclass_cat_rolls = list(CTAG_GARRISON = 20)	//Handles class selection.
 	give_bank_account = 30
-	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/garrison/CombatGarrison.ogg'
 
 /datum/job/guardsman/after_spawn(mob/living/spawned, client/player_client)
 	..()

@@ -18,7 +18,7 @@
 
 	outfit = /datum/outfit/job/orphan
 	can_have_apprentices = FALSE
-	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/towner/CombatTowner.ogg'
 
 /datum/job/orphan/New()
 	. = ..()

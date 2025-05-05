@@ -21,7 +21,7 @@
 
 	outfit = /datum/outfit/job/royalguard
 	give_bank_account = 30
-	cmode_music = 'sound/music/cmode/nobility/CombatKnight.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/nobility/CombatKnight.ogg'
 
 /datum/job/royalguard/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	..()

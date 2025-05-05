@@ -56,7 +56,7 @@ The word serf means something completely different than what the original maker 
 	outfit = null
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_PILGRIM = 15)
-	cmode_music = 'sound/music/cmode/combat_guard.ogg'
+	cmode_music = 'modular/stonekeep/sound/cmode/combat_guard.ogg'
 
 /datum/job/stonekeep
 	min_pq = 0
