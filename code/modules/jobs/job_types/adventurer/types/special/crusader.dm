@@ -36,12 +36,15 @@
 
 	switch(H.patron?.name)
 		if("Astrata")
+			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
 		if("Necra")
+			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 			wrists = /obj/item/clothing/neck/psycross/silver/necra
 		if("Psydon")
+			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 			wrists = /obj/item/clothing/neck/psycross/silver
 			head = /obj/item/clothing/head/helmet/heavy/psydonbarbute
 			if(H.gender == FEMALE) // Silver for female, gold for male
@@ -49,6 +52,7 @@
 			else
 				cloak = /obj/item/clothing/cloak/stabard/crusader
 		else // Failsafe
+			H.cmode_music = 'sound/music/cmode/adventurer/CombatIntense.ogg'
 			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold version regardless of gender or patron
 			wrists = /obj/item/clothing/neck/psycross/silver
 
@@ -70,6 +74,9 @@
 	H.change_stat(STATKEY_STR, 1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	if(H.dna?.species)
+		if(H.dna.species.id == "human")
+			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 
 	// Females are crossbow and dagger based
 	if(H.gender == FEMALE)
