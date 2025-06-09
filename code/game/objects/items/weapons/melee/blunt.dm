@@ -409,6 +409,7 @@
 	name = "dwarven warhammer"
 	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
+	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_GREAT
 	swingsound = BLUNTWOOSH_HUGE
 	sellprice = 100
