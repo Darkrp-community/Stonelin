@@ -1020,7 +1020,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						to_chat(user, "<font color='purple'>Flawed aspects: [selected_patron.flaws]</font>")
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
 						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
-						to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
+//to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
 
 				if("voice")
 					var/new_voice = input(user, "SELECT YOUR HERO'S VOICE COLOR", "THE THROAT","#"+voice_color) as color|null

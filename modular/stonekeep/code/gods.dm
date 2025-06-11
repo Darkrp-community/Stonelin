@@ -7,8 +7,8 @@
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
-	boons = "Your stamina regeneration delay is lowered during daytime."
-	added_traits = list(TRAIT_APRICITY)
+	//boons = "Your stamina regeneration delay is lowered during daytime."
+	//added_traits = list(TRAIT_APRICITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
@@ -26,8 +26,8 @@
 	flaws = "Cynical, Isolationist, Unfiltered Honesty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Suppressing Truth, Indulging Lust, Destroying Books"
-	boons = "You learn and teach apprentices slightly better."
-	added_traits = list(TRAIT_TUTELAGE)
+	//boons = "You learn and teach apprentices slightly better."
+	//added_traits = list(TRAIT_TUTELAGE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
 	t2 = /obj/effect/proc_holder/spell/invoked/blindness
@@ -45,8 +45,8 @@
 	flaws = "Madness, Rebelliousness, Disorderliness"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
-	boons = "You are immune to kneestingers."
-	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
+	//boons = "You are immune to kneestingers."
+	//added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/self/beastsense
@@ -64,8 +64,8 @@
 	flaws= "Unforgiving, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Forgetfulness"
-	boons = "Leeches will not latch onto you in dirty water."
-	added_traits = list(TRAIT_LEECHIMMUNE)
+	//boons = "Leeches will not latch onto you in dirty water."
+	//added_traits = list(TRAIT_LEECHIMMUNE)
 /* NEEDS KAIZOKU TO WORK ROGTODO
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/abyssal
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
@@ -89,8 +89,8 @@
 	flaws = "Unchanging, Apathetic, Strict"
 	worshippers = "Dark Elves, Gravekeepers, Mourners"
 	sins = "Undeath"
-	boons = "You may see the presence of a soul in a body."
-	added_traits = list(TRAIT_SOUL_EXAMINE)
+	//boons = "You may see the presence of a soul in a body."
+	//added_traits = list(TRAIT_SOUL_EXAMINE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/soulspeak
@@ -108,8 +108,8 @@
 	flaws = "Careless, Aggressive, Prideful"
 	worshippers = "Warriors, Sellswords, Guardsmen"
 	sins = "Cowardice, Hesitation, Stagnation"
-	boons = "Your used weapons dull slower."
-	added_traits = list(TRAIT_SHARPER_BLADES)
+	//boons = "Your used weapons dull slower."
+	//added_traits = list(TRAIT_SHARPER_BLADES)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/self/call_to_arms
 	t2 = /obj/effect/proc_holder/spell/self/divine_strike
@@ -127,8 +127,8 @@
 	flaws = "Petulance, Deception, Gambling-Prone"
 	worshippers = "Cheats, Performers, The Hopeless"
 	sins = "Boredom, Predictability, Routine"
-	boons = "You can rig different forms of gambling in your favor."
-	added_traits = list(TRAIT_BLACKLEG)
+	//boons = "You can rig different forms of gambling in your favor."
+	//added_traits = list(TRAIT_BLACKLEG)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/vicious_mimicry
 	t2 = /obj/effect/proc_holder/spell/invoked/wheel
@@ -152,8 +152,8 @@
 	flaws = "Drunkard, Crude, Sloppy"
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "´Curing´ Abnormalities, Refusing to help the ill, Failure to prepare"
-	boons = "You may consume rotten food without being sick."
-	added_traits = list(TRAIT_ROT_EATER)
+	//boons = "You may consume rotten food without being sick."
+	//added_traits = list(TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
@@ -171,8 +171,8 @@
 	flaws = "Obsessive, Exacting, Overbearing"
 	worshippers = "Smiths, Miners, Sculptors"
 	sins = "Cheating, Shoddy Work, Suicide"
-	boons = "You recover more energy when sleeping."
-	added_traits = list(TRAIT_BETTER_SLEEP)
+	//boons = "You recover more energy when sleeping."
+	//added_traits = list(TRAIT_BETTER_SLEEP)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/vigorouscraft
 	t2 = /obj/effect/proc_holder/spell/invoked/hammerfall
@@ -190,8 +190,8 @@
 	flaws= "Naive, Impulsive, Ignorant"
 	worshippers = "Mothers, Artists, Married Couples"
 	sins = "Sadism, Abandonment, Ruining Beauty"
-	boons = "You can understand others' needs better."
-	added_traits = list(TRAIT_EXTEROCEPTION)
+	//boons = "You can understand others' needs better."
+	//added_traits = list(TRAIT_EXTEROCEPTION)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/instill_perfection
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
