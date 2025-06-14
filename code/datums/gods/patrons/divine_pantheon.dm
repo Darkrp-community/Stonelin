@@ -64,7 +64,7 @@
 	flaws = "Madness, Rebelliousness, Disorderliness"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
-	boons = "You are immune to kneestingers."
+	boons = "None."
 	//added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
