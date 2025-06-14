@@ -123,7 +123,17 @@
 	time = 4 SECONDS
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/carpentry/woodshield/iplank
+/datum/crafting_recipe/roguetown/carpentry/heater
+	name = "heater shield"
+	result = /obj/item/weapon/shield/heater
+	reqs = list(/obj/item/natural/wood/plank = 2,
+				/obj/item/natural/hide/cured = 1)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+//removes awesome buckler shield crafting
+
+/*/datum/crafting_recipe/roguetown/carpentry/woodshield/iplank
 	name = "iron buckler"
 	result = /obj/item/weapon/shield/tower/buckleriron/iplank
 	reqs = list(/obj/item/natural/wood/plank = 3,
@@ -138,7 +148,7 @@
 				/obj/item/ingot/steel = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
-
+*/
 /datum/crafting_recipe/roguetown/carpentry/artable//the recipe is needed for most of carptentry/engineering works
 	name = "Artificier Table"
 	result = /obj/machinery/artificer_table

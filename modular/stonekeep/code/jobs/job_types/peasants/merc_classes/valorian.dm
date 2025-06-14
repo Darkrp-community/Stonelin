@@ -56,7 +56,7 @@
 			H.adjust_skillrank(/datum/skill/combat/polearms, pick(2,3), TRUE)
 			H.change_stat("STATKEY_STR,", 1)
 		if("Valorian Swordsman")//og valorian swordsman from stonekeep
-			backl= /obj/item/weapon/shield/tower/buckleriron/iplank
+			backl= /obj/item/weapon/shield/tower/buckleriron
 			r_hand = pick (/obj/item/weapon/sword/rapier/ironestoc, /obj/item/weapon/sword/scimitar/messer)
 			head = /obj/item/clothing/head/helmet/bascinet//one piece of steel per subclass
 			neck =	/obj/item/clothing/neck/gorget

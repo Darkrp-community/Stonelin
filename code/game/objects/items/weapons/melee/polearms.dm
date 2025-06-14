@@ -84,7 +84,7 @@
 	attack_verb = list("bashes", "strikes", "swings")
 	reach = 2
 	chargetime = 1
-	item_damage_type = "slash"
+	item_damage_type = "blunt"
 
 /*-----------\
 | Cut intent |

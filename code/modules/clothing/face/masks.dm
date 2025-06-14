@@ -192,7 +192,7 @@
 	sellprice = 100
 	smeltresult = /obj/item/ingot/gold
 
-/obj/item/clothing/face/facemask/adept//for future return of the adepts
+/obj/item/clothing/face/facemask/adept//eventmin adept mask
 	name = "iron mask"
 	icon_state = "iadept"
 	desc = "A heavy iron mask that both conceals and protects the face, this one is shaped by a psycross visor."

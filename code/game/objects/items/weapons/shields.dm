@@ -344,7 +344,7 @@
 	desc = "A gigantic, horseman shield used by the desert riders."
 	icon_state = "rider_shield"
 
-/obj/item/weapon/shield/tower/buckleriron/iplank
+/*/obj/item/weapon/shield/tower/buckleriron/iplank
 	name = "iron buckler"
 	desc = "A small and humble iron shield with wooden planks on it, more of a training weapon than a shield, yet extremely popular on poor warriors, militias and novice craftmen since is a good practice."
 	icon_state = "iplank"
@@ -385,4 +385,4 @@
 	max_integrity = 280
 	melting_material = /datum/material/steel
 	melt_amount = 75
-
+*/
