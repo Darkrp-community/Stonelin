@@ -12,6 +12,7 @@
 /obj/item/clothing/neck/coif/cloth/rousman
 	name = "padded headwrap"
 	desc = "A simple and stinky headwrap."
+	icon = 'icons/roguetown/mob/monster/rousman.dmi'
 	allowed_race = list("rousman")
 	icon_state = "rousman_headwrap_item"
 	item_state = "rousman_headwrap"
