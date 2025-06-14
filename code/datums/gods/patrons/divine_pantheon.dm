@@ -24,7 +24,7 @@
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
-	boons = "Your stamina regeneration delay is lowered during daytime."
+	boons = "None."
 	//added_traits = list(TRAIT_APRICITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
