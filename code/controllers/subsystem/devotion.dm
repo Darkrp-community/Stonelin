@@ -23,7 +23,7 @@
 	/// How much progression is gained per process call
 	var/passive_progression_gain = 0
 	/// How much devotion is gained per prayer cycle
-	var/prayer_effectiveness = 2
+	var/prayer_effectiveness = 5 //Stonekeep edit under request.
 
 /datum/devotion/cleric_holder/New(mob/living/carbon/human/holder, god)
 	. = ..()
