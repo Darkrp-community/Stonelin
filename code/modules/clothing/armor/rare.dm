@@ -80,3 +80,12 @@
 
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	item_weight = 7 * STEEL_MULTIPLIER
+
+// Psyrant plate armor, very rare and special for events
+/obj/item/clothing/armor/rare/psyrant
+	name = "Blackplate regalia"
+	desc = "Adorned in the sigil of Psydonia, forged by the treasures of the late Psyrant. This tank of plate armor contains the burning ambition of a royal house endeavored to retrieve lost glory"
+	icon_state = "psyrant_chest"
+	allowed_race = list("human")
+	body_parts_covered = COVERAGE_FULL
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
