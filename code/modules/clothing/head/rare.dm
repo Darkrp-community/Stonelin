@@ -90,3 +90,41 @@
 	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 	smeltresult = /obj/item/ingot/bronze
+
+
+//............... Psyrant Helmet ............... //
+/obj/item/clothing/head/rare/psyrant
+	name = "Blackplate plate helmet"
+	desc = "Upon the deposing of the Psyrant, they adorned this helm in religious fervor - The Forgotten God created Psydonia from blood and sacrifice, so shall they raze their old home for a new beginning."
+	icon_state = "psyhelm"
+	allowed_race = list("human")
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	clothing_flags = CANT_SLEEP_IN
+	body_parts_covered = HEAD_NECK
+	prevent_crits = ALL_CRITICAL_HITS
+	adjustable = CAN_CADJUST
+
+/obj/item/clothing/head/rare/psyrant/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 50, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "[initial(icon_state)]_raised"
+			body_parts_covered = COVERAGE_HEAD
+			flags_inv = HIDEEARS
+			flags_cover = null
+			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT) // Vulnerable to eye stabbing while visor is open
+			block2add = null
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+	else // Failsafe.
+		to_chat(user, "<span class='warning'>Wear the helmet on your head to open and close the visor.</span>")
+		return
