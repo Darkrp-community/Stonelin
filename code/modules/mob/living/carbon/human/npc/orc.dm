@@ -48,7 +48,6 @@
 	job = "Ambush Orc"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)//they are meant to be war tools like the Aasimars except being inhumen abominations
 	equipOutfit(new /datum/outfit/job/npc/orc/ambush)
 	ambushable = FALSE
 
