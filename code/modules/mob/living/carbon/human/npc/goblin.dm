@@ -233,7 +233,7 @@
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()
-	faction = list(FACTION_ORCS)
+	faction = list(FACTION_GRAGGAR)
 	name = "goblin"
 	real_name = "goblin"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)

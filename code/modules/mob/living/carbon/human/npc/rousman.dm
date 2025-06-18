@@ -224,7 +224,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()
-	faction = list(FACTION_RATS, FACTION_ORCS)//both are graggarian creations that are collaborating to bring chaos
+	faction = list(FACTION_GRAGGAR)//both are graggarian creations that are collaborating to bring chaos
 	name = "rousman"
 	real_name = "rousman"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
