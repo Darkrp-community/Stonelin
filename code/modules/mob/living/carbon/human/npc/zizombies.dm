@@ -35,7 +35,7 @@
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOSTAMINA, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_STUNIMMUNE, TRAIT_GENERIC)//the undead shouldn't freeze in pain
+	ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC) //the undead shouldn't freeze in pain
 	equipOutfit(new /datum/outfit/job/species/zizombie/npc/random)
 	dodgetime = 15
 	canparry = TRUE
