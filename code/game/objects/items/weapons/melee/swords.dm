@@ -903,7 +903,9 @@
 		/datum/intent/sword/cut,
 	)
 	gripped_intents = list(
-		/datum/intent/sword/thrust,
+		/datum/intent/sword/thrust/estoc,
+		/datum/intent/sword/lunge,
+		/datum/intent/sword/strike,
 		/datum/intent/sword/cut,
 	)
 	bigboy = FALSE
