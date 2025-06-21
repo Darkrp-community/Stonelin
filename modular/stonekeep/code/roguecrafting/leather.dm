@@ -189,7 +189,7 @@
 	name = "armor (heavy leather coat)"
 	result = /obj/item/clothing/armor/leather/heavy/coat
 	reqs = 	list(/obj/item/natural/hide/cured = 4, /obj/item/reagent_containers/food/snacks/tallow = 1)
-	craftdiff = 3//as far as i know, we don't got roles with lv5 skincrafting so moving it to lv3, a skilled hunter can finally make use of his skilled skincrafting to distinguish from a ranger
+	craftdiff = 3 // Coat, so it has less coverage, therefore easier, hunters can craft
 
 
 /*=========		SHOES	==========*/
