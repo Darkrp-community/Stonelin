@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/sk/zybantine
-	name = "Zybantu Desert Rider"
+	name = "Zybantine Mamluk"
 	tutorial = "A cutthroat, killer, Scum from the western countries, you and other riders have headed into foreign lands to make even greater coin than you had prior, being honest killing as mercenaries or raiding."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
