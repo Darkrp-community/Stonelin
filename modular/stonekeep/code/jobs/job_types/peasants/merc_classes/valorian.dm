@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/sk/valorian
 	name = "Valorian Mercenary"
-	tutorial = "A commoner driven by desperation, you sought survival in the service of the Gold Courts of the Valorian Coin Lords,  commoners like you were thrown into brutal duels until it was done, you deserted and escaped your death until end in a mercenary company where the money worths more than loyalty, no money, no mercenary. you aren't a soldier anymore, just a cutthroat and paid killer."
+	tutorial = "Driven by desperation, you sought survival in service to the Gold Courts of the Valorian Coin Lords. Commoners like you were generally used as pawns for political duels to the death, but you grew tired of this abuse and managed to flee from that gruesome indentured servitude. With no other way to earn coin for a living, you sought employment as a mercenary for hire, offering your skills to just about anyone for coin, back to where you once started."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
