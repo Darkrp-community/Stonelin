@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/sk/grenzelhoft
 	name = "Grenzelhoft Mercenary"
-	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild, a great name for a simple band of killers, Their only care is coin, and the procurement of coin, No money, no mercenary."
+	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Adept swordmasters never shying away from a duel, their only care is coin, and the procurement of coin - by any means necessary."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
