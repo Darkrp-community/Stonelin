@@ -150,7 +150,7 @@
 	craftdiff = 2
 */
 /datum/crafting_recipe/roguetown/carpentry/artable//the recipe is needed for most of carptentry/engineering works
-	name = "Artificier Table"
+	name = "Artificer Table"
 	result = /obj/machinery/artificer_table
 	reqs = list(/obj/item/natural/wood/plank = 3)
 	skillcraft = /datum/skill/craft/carpentry
