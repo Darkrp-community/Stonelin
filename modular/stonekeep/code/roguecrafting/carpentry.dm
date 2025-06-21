@@ -129,7 +129,7 @@
 	reqs = list(/obj/item/natural/wood/plank = 2,
 				/obj/item/natural/hide/cured = 1)
 	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 2
+	craftdiff = 3
 
 //removes awesome buckler shield crafting
 
