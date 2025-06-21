@@ -183,7 +183,7 @@
 	name = "armor (heavy leather armor)"
 	result = /obj/item/clothing/armor/leather/heavy
 	reqs = list(/obj/item/natural/hide/cured = 3, /obj/item/reagent_containers/food/snacks/tallow = 1)
-	craftdiff = 3
+	craftdiff = 4 // More coverage, incentive to train leathercrafting, tailors have a chance to start at 4 therefore craftable enough
 
 /datum/crafting_recipe/roguetown/leather/armor/heavycoat
 	name = "armor (heavy leather coat)"
