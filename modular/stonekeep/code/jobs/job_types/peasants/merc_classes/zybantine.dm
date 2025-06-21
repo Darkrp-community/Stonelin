@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/sk/zybantine
 	name = "Zybantine Mamluk"
-	tutorial = "A cutthroat, killer, Scum from the western countries, you and other riders have headed into foreign lands to make even greater coin than you had prior, being honest killing as mercenaries or raiding."
+	tutorial = "A former warrior slave, or mercenary, hailing from the western countries of Zybantu. Whatever led you to abandon servitude under the ziggurat and become a sword for hire, only you know. But now, on Enigma, as a complete foreign with military skills to match, what only matters is how to put them to work for coin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
