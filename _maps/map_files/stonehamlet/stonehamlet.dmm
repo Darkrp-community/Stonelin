@@ -7251,6 +7251,11 @@
 "jFl" = (
 /turf/closed/wall/mineral/decowood,
 /area/rogue/indoors/town/tavern/saiga)
+"jFE" = (
+/obj/structure/fake_machine/balloon_pad,
+/obj/item/roguemachine/merchant,
+/turf/open/floor/tile/kitchen,
+/area/rogue/outdoors/town/roofs)
 "jFF" = (
 /mob/living/carbon/human/species/zizombie/npc/peasant,
 /turf/open/floor/grass,
@@ -10271,6 +10276,12 @@
 /obj/item/reagent_containers/glass/bottle,
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/town/roofs)
+"nzt" = (
+/obj/structure/fluff/walldeco/masonflag{
+	pixel_y = -31
+	},
+/turf/open/floor/blocks/moss,
+/area/rogue/outdoors/exposed/townhamlet)
 "nzV" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/clothing/neck/coif/cloth,
@@ -14431,12 +14442,6 @@
 /obj/item/reagent_containers/food/snacks/fat,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/tavern/saiga)
-"sLR" = (
-/obj/structure/fluff/walldeco/masonflag{
-	pixel_y = 32
-	},
-/turf/open/floor/grass,
-/area/rogue/outdoors/exposed/townhamlet)
 "sLU" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -15663,6 +15668,12 @@
 /obj/effect/spawner/map_spawner/catacomb_random,
 /turf/open/floor/dirt/muddie,
 /area/rogue/under/catacombs)
+"uuw" = (
+/obj/structure/fluff/walldeco/masonflag{
+	pixel_y = 32
+	},
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "uuO" = (
 /obj/structure/bookcase,
 /obj/item/book/beardling,
@@ -16195,11 +16206,6 @@
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
-"vbu" = (
-/obj/structure/fake_machine/balloon_pad,
-/obj/item/roguemachine/merchant,
-/turf/open/floor/tile/kitchen,
-/area/rogue/outdoors/town/roofs)
 "vbI" = (
 /obj/structure/rack,
 /obj/item/storage/belt/pouch,
@@ -16624,10 +16630,6 @@
 /obj/structure/ladder,
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/town/roofs)
-"vDO" = (
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame,
-/turf/open/floor/hay,
-/area/rogue/indoors/town/manor/stone)
 "vEs" = (
 /obj/structure/fake_machine/vendor,
 /turf/closed/wall/mineral/decowood,
@@ -17714,12 +17716,6 @@
 /obj/structure/bed/inn,
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern/saiga)
-"xbS" = (
-/obj/structure/fluff/walldeco/masonflag{
-	pixel_y = -31
-	},
-/turf/open/floor/blocks/moss,
-/area/rogue/outdoors/exposed/townhamlet)
 "xbW" = (
 /obj/structure/rack,
 /obj/item/grown/log/tree/small,
@@ -77666,7 +77662,7 @@ tPb
 tPb
 tme
 ibJ
-sLR
+uuw
 nBJ
 aEO
 kKj
@@ -78668,7 +78664,7 @@ nBJ
 bgs
 nBJ
 giW
-xbS
+nzt
 oON
 fAM
 fAM
@@ -82065,7 +82061,7 @@ sMe
 ewr
 tTg
 eNe
-vDO
+eBp
 aRB
 qTO
 iPQ
@@ -159051,7 +159047,7 @@ sNs
 pao
 vwd
 dYg
-vbu
+jFE
 dYg
 aLq
 aLq
