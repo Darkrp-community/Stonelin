@@ -587,10 +587,6 @@
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/woods/stone)
-"tl" = (
-/obj/effect/spawner/map_spawner/maybe_saiga,
-/turf/open/floor/grass/transition,
-/area/rogue/outdoors/woods/stone)
 "ts" = (
 /obj/structure/fermentation_keg/distiller,
 /turf/open/floor/ruinedwood,
@@ -32116,7 +32112,7 @@ xt
 en
 so
 so
-tl
+en
 xt
 DA
 xt
