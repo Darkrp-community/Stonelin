@@ -14431,6 +14431,12 @@
 /obj/item/reagent_containers/food/snacks/fat,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/tavern/saiga)
+"sLR" = (
+/obj/structure/fluff/walldeco/masonflag{
+	pixel_y = 32
+	},
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "sLU" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -16189,6 +16195,11 @@
 /obj/machinery/light/fueled/torchholder/c,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
+"vbu" = (
+/obj/structure/fake_machine/balloon_pad,
+/obj/item/roguemachine/merchant,
+/turf/open/floor/tile/kitchen,
+/area/rogue/outdoors/town/roofs)
 "vbI" = (
 /obj/structure/rack,
 /obj/item/storage/belt/pouch,
@@ -16335,13 +16346,12 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/cell)
 "viS" = (
-/obj/structure/door/viewport{
-	desc = "This door has a built-in viewport. The keyhole is shaped to accept a ring.";
-	dir = 1;
-	lockid = null;
-	name = "smithy"
-	},
 /obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/stone{
+	desc = "The heavy doors keyhole is fitted for a ring.";
+	lockid = "guild";
+	name = "Makers guildhall"
+	},
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/dwarfin)
 "vjI" = (
@@ -16614,6 +16624,10 @@
 /obj/structure/ladder,
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/town/roofs)
+"vDO" = (
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame,
+/turf/open/floor/hay,
+/area/rogue/indoors/town/manor/stone)
 "vEs" = (
 /obj/structure/fake_machine/vendor,
 /turf/closed/wall/mineral/decowood,
@@ -17700,6 +17714,12 @@
 /obj/structure/bed/inn,
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern/saiga)
+"xbS" = (
+/obj/structure/fluff/walldeco/masonflag{
+	pixel_y = -31
+	},
+/turf/open/floor/blocks/moss,
+/area/rogue/outdoors/exposed/townhamlet)
 "xbW" = (
 /obj/structure/rack,
 /obj/item/grown/log/tree/small,
@@ -77646,7 +77666,7 @@ tPb
 tPb
 tme
 ibJ
-ahK
+sLR
 nBJ
 aEO
 kKj
@@ -78648,7 +78668,7 @@ nBJ
 bgs
 nBJ
 giW
-nBJ
+xbS
 oON
 fAM
 fAM
@@ -82045,7 +82065,7 @@ sMe
 ewr
 tTg
 eNe
-eBp
+vDO
 aRB
 qTO
 iPQ
@@ -159031,7 +159051,7 @@ sNs
 pao
 vwd
 dYg
-dYg
+vbu
 dYg
 aLq
 aLq

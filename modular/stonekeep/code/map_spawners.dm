@@ -441,7 +441,7 @@
 	spawned = list(
 		/mob/living/simple_animal/hostile/retaliate/saiga = 40,
 		/mob/living/simple_animal/hostile/retaliate/saigabuck = 50,
-		/mob/living/simple_animal/hostile/retaliate/saiga/saigakid = 10)
+		/mob/living/simple_animal/hostile/retaliate/saiga/saigakid/boy = 10)
 
 /obj/effect/spawner/map_spawner/maybe_cabbit
 	icon = 'modular/stonekeep/icons/misc.dmi'
