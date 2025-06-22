@@ -8039,10 +8039,6 @@
 /obj/structure/fermentation_keg/water,
 /turf/open/floor/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
-"kLo" = (
-/mob/living/simple_animal/hostile/retaliate/saiga/horse,
-/turf/open/floor/hay,
-/area/rogue/indoors/town/manor/stone)
 "kLJ" = (
 /obj/structure/fermentation_keg/random/water,
 /obj/machinery/light/fueled/torchholder/c,
@@ -82252,7 +82248,7 @@ dDQ
 fbb
 qlO
 vss
-kLo
+eBp
 qTO
 iPQ
 wAA
