@@ -782,7 +782,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 		var/obj/item/bodypart/part = H.get_bodypart(selected)
 
 		var/purifying = FALSE
-		if((islist(H.faction) && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+		if((islist(H.faction) && (FACTION_ORCS in H.faction))|| (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
 			purifying = TRUE
 
 		// Handle limb devouring

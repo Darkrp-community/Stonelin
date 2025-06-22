@@ -35,7 +35,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc,
 			/obj/item/weapon/axe/boneaxe,
 			/obj/effect/decal/cleanable/blood)
-	faction = list(FACTION_ORCS)
+	faction = list(FACTION_GRAGGAR)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = TRUE
 	ai_controller = /datum/ai_controller/orc

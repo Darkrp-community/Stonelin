@@ -35,7 +35,7 @@
 	H.burakumin = TRUE //They will not receive the explosive mask, as these have already been exiled. They do not require masks to exist on a society.
 
 	beltr = /obj/item/storage/belt/pouch/coins/poor
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono
 	pants = /obj/item/clothing/pants/trou/tobi/kabukimono
 	shoes = /obj/item/clothing/shoes/shortboots/cloudhead/kabukimono
 	gloves = /obj/item/clothing/gloves/leather/abyssal/kabukimono

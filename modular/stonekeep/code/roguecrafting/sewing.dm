@@ -21,6 +21,13 @@
 
 /obj/item/storage/sack/crafted
 	sellprice = 4
+
+/datum/crafting_recipe/roguetown/sewing/sackbag//a bag with a piece of cloth
+	name = "cloth knapsack"
+	result = /obj/item/storage/backpack/satchel/cloth
+	reqs = list(/obj/item/storage/sack = 1,
+				/obj/item/natural/cloth = 1)
+
 /datum/crafting_recipe/roguetown/sewing/burial_shroud
 	name = "winding sheet"
 	result = list(/obj/item/burial_shroud)

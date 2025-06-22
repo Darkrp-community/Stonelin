@@ -120,14 +120,14 @@
 	i_type = "Contraptions"
 	category = "Contraptions"
 
-/datum/artificer_recipe/contraptions/metalizer
+/*/datum/artificer_recipe/contraptions/metalizer
 	name = "Wood Metalizer (+1 Wooden Cog)"
 	required_item = /obj/item/ingot/bronze
 	additional_items = list(/obj/item/gear/wood = 1)
 	created_item = /obj/item/contraption/wood_metalizer
 	hammers_per_item = 12
 	craftdiff = 4
-
+*/
 /datum/artificer_recipe/contraptions/smelter
 	name = "Portable Smelter (+1 Coal)"
 	required_item = /obj/item/ingot/bronze

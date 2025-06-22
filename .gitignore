@@ -236,3 +236,4 @@ config/admins.txt
 /stonekeep.json
 code/_compile_options.dm
 *.m.dme
+/tools/tgs_test

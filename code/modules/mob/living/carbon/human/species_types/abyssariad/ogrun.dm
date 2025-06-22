@@ -22,10 +22,6 @@
 	and flesh made them industrial creatures who use strength as tool for refined work. Their bodies are highly \
 	adaptive, allowing regenerations in a clutch, or making men fear their powerful nature.\
 	\n\n\
-	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
-	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
-	known for their extreme loyalty.\
-	\n\n\
 	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
 
 	skin_tone_wording = "Championage Branch"

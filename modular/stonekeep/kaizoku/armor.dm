@@ -60,7 +60,6 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "nanbandoc"
 	item_state = "nanbandoc"
-	body_parts_covered = CHEST
 
 /obj/item/clothing/armor/plate/full/nanbando
 	name = "abyssal full plate"
@@ -207,9 +206,9 @@
 		return
 	qdel(src)
 
-/obj/item/clothing/armor/cuirass/sanmaido
+/obj/item/clothing/armor/cuirass/iron/sanmaido
 	name = "three-plates cuirass"
-	desc = "The 'San mai-do', a cost-effective cuirass composed of three main plates riveted together. Usually painted black, it is favored by poor foot soldiers and warrior monks."
+	desc = "The 'San mai-do', a cost-effective cuirass composed of three main iron plates riveted together. It is favored by poor foot soldiers and warrior monks."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -292,21 +291,6 @@
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
 	sewrepair = TRUE //this armor's utility.
 
-/obj/item/clothing/armor/leather/jacket/haori
-	name = "haori"
-	desc = "a traditional jacket meant to be worn over a kimono."
-	icon_state = "haori"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
-
-/obj/item/clothing/armor/leather/jacket/haori/random/Initialize()
-	color = pick(GLOB.peasant_dyes)
-	..()
-
-/obj/item/clothing/armor/leather/jacket/haori/dark
-	color = CLOTHING_SOOT_BLACK
-
 //New Rare Heartfelt equipment
 /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad
 	name = "abyssariad kikko gusoku"
@@ -355,49 +339,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
-	var/picked = FALSE
-
-/obj/item/clothing/armor/gambeson/light/hitatare/zamurai/proc/get_player_input()
-	if(!ishuman(loc))
-		return
-
-	var/list/colors = list(
-	"PURPLE"="#865c9c",
-	"RED"="#933030",
-	"BROWN"="#685542",
-	"GREEN"="#79763f",
-	"BLUE"="#395480",
-	"YELLOW"="#b5b004",
-	"TEAL"="#249589",
-	"WHITE"="#ffffff",
-	"ORANGE"="#b86f0c",
-	"MAJENTA"="#962e5c")
-	var/mob/living/carbon/human/L = loc
-	var/choice = input(L, "Choose a color.", "ZAMURAI COLORPLEX") as anything in colors
-	var/playerchoice = colors[choice]
-	picked = TRUE
-	detail_color = playerchoice
-	update_icon()
-	for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
-		testing("clothes to color are [V]")
-		if(V.colorgrenz)
-			V.detail_color = playerchoice
-			V.update_icon()
-	L.regenerate_icons()
-
-/obj/item/clothing/armor/gambeson/light/hitatare/zamurai/Initialize()
-	. = ..()
-	if(!picked)
-		INVOKE_ASYNC(src, PROC_REF(get_player_input))
-
-/obj/item/clothing/armor/gambeson/light/hitatare/zamurai/update_icon()
-	cut_overlays()
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
 
 // Randomized color Hitatare
 /obj/item/clothing/armor/gambeson/light/hitatare/random/Initialize()
@@ -479,7 +420,7 @@
 
 /obj/item/clothing/armor/ceramic/reinforced
 	name = "marauder trollhunter armor"
-	desc = "The heavy armor used by the tribalistic Undine marauder forces under the flag of Abyssariads from the Flag Islands. Made of ceramic-like material from lava forges."
+	desc = "The heavy armor used by the tribalistic undine marauder forces under the flag of abyssariads from the Fog Islands. Made of ceramic-like material from lava forges."
 	icon_state = "marauder_chest"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
@@ -541,6 +482,9 @@
 /obj/item/clothing/cloak/raincloak/guardiancloak/random/Initialize()
 	color = pick(GLOB.peasant_dyes)
 	..()
+
+/obj/item/clothing/cloak/raincloak/guardiancloak/curator
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/red
 	color = CLOTHING_BLOOD_RED
@@ -818,7 +762,7 @@
 	icon_state = "yugake"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/leather/abyssal
 	name = "abyssal gloves"
@@ -826,7 +770,7 @@
 	icon_state = "abyssalgloves"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/leather/abyssal/black
 	color = CLOTHING_SOOT_BLACK
@@ -847,7 +791,7 @@
 	icon_state = "falconrygloves"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/chain/kikko
 	name = "turtle-shell steel gauntlets"
@@ -863,7 +807,7 @@
 	desc = "Gauntlets made of iron in a shape that seems alike the shells of a turtle."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/plate/lamellaetekko
 	name = "lamellae gauntlets"
@@ -871,8 +815,7 @@
 	icon_state = "tatamitekko" //that's not a tatami design.
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
-	armor = ARMOR_PLATE_BAD
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
 
 // =================================================================
 // ========================		HEAD	============================
@@ -908,11 +851,12 @@
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
 
-/obj/item/clothing/head/tengai/yamabushi
-	name = "yamabushi lay-monk hat"
+/obj/item/clothing/head/tengai/curator
+	name = "curator lay-monk hat"
 	icon_state = "stengai"
-	desc = "A tengai painted in black tar traditionally worn by Abyssanctum yamabushis."
+	desc = "A tengai painted in red tar traditionally worn by Abyssanctum curators."
 	bloody_icon_state = "helmetblood"
+	flags_inv = HIDEEARS|HIDEFACE
 
 /obj/item/clothing/head/tengai/gasa
 	name = "umbrella hat"
@@ -956,12 +900,14 @@
 	flags_inv = HIDEEARS
 	desc = "A large hat providing ample shade and protection from the elements, including rain."
 	bloody_icon_state = null
+	flags_inv = HIDEEARS|HIDEFACE
 
-/obj/item/clothing/head/tengai/sandogasa/yamabushi
-	name = "yamabushi large umbrella hat"
+/obj/item/clothing/head/tengai/sandogasa/curator
+	name = "curator large umbrella hat"
 	icon_state = "ssandogasa"
-	desc = "A sandogasa painted in black tar traditionally worn by Abyssanctum yamabushis."
+	desc = "A sandogasa painted in red tar traditionally worn by Abyssanctum curator."
 	bloody_icon_state = null
+	flags_inv = HIDEEARS|HIDEFACE
 
 /obj/item/clothing/head/soheicloth
 	name = "sohei coverings"
@@ -975,21 +921,17 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 
-/obj/item/clothing/head/soheicloth/thunder
-	name = "thunder sohei coverings"
-	color = CLOTHING_THUNDER
+/obj/item/clothing/head/soheicloth/tideweaver
+	name = "tideweaver sohei coverings"
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/clothing/head/soheicloth/deluge
-	name = "deluge sohei coverings"
-	color = CLOTHING_STORM
+/obj/item/clothing/head/soheicloth/purifier
+	name = "purifier sohei coverings"
+	color = CLOTHING_PURIFIER
 
-/obj/item/clothing/head/soheicloth/ocean
-	name = "sea sohei coverings"
-	color = CLOTHING_SEA
-
-/obj/item/clothing/head/soheicloth/island
-	name = "island sohei coverings"
-	color = CLOTHING_ISLAND
+/obj/item/clothing/head/soheicloth/curator
+	name = "curator sohei coverings"
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/head/shinobi_zukin
 	name = "shinobi hood"
@@ -1086,9 +1028,8 @@
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-
-	armor = ARMOR_PLATE
 	body_parts_covered = HEAD_EXCEPT_MOUTH
+	detail_tag = "_det"
 
 /obj/item/clothing/head/helmet/visored/zunari/cursed/Initialize()
 	. = ..()
@@ -1100,7 +1041,6 @@
 	if(QDELETED(src))
 		return
 	qdel(src)
-
 
 /obj/item/clothing/head/helmet/leather/malgai
 	name = "leather malgai"
@@ -1186,25 +1126,20 @@
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 
-/obj/item/clothing/head/helmet/skullcap/hachigane/thunder
-	name = "thunder forehead protector"
+/obj/item/clothing/head/helmet/skullcap/hachigane/tideweaver
+	name = "tideweaver forehead protector"
 	desc = "Simple, lamellar head protection. Marked in yellow for the mountainous magicians and monks who praises Abyssor's thunders."
-	color = CLOTHING_THUNDER
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/clothing/head/helmet/skullcap/hachigane/deluge
-	name = "deluge forehead protector"
-	desc = "Simple, lamellar head protection. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
-	color = CLOTHING_STORM
-
-/obj/item/clothing/head/helmet/skullcap/hachigane/ocean
-	name = "ocean forehead protector"
+/obj/item/clothing/head/helmet/skullcap/hachigane/purifier
+	name = "purifier forehead protector"
 	desc = "Simple, lamellar head protection. Marked in light blue for the expeditionary magicians and monks of Abyssanctum's faith, long married to the seas."
-	color = CLOTHING_SEA
+	color = CLOTHING_PURIFIER
 
-/obj/item/clothing/head/helmet/skullcap/hachigane/island
-	name = "island forehead protector"
+/obj/item/clothing/head/helmet/skullcap/hachigane/curator
+	name = "curator forehead protector"
 	desc = "Simple, lamellar head protection. Marked in red for the soilgazers of Abyssanctum's faith, those bent in ensuring no plague shall reach their blessed islands. "
-	color = CLOTHING_ISLAND
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/head/helmet/ironpot/rattan
 	name = "tengpai dou"
@@ -1328,21 +1263,17 @@
 	. = ..()
 	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
 
-/obj/item/clothing/head/wizhat/onmyoji/thunder
-	name = "thunder stormcaller warhat"
-	color = CLOTHING_THUNDER
+/obj/item/clothing/head/wizhat/onmyoji/tideweaver
+	name = "tideweaver stormcaller warhat"
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/clothing/head/wizhat/onmyoji/deluge
-	name = "deluge stormcaller warhat"
-	color = CLOTHING_STORM
+/obj/item/clothing/head/wizhat/onmyoji/purifier
+	name = "purifier stormcaller warhat"
+	color = CLOTHING_PURIFIER
 
-/obj/item/clothing/head/wizhat/onmyoji/ocean
-	name = "ocean stormcaller warhat"
-	color = CLOTHING_SEA
-
-/obj/item/clothing/head/wizhat/onmyoji/island
-	name = "island stormcaller warhat"
-	color = CLOTHING_ISLAND
+/obj/item/clothing/head/wizhat/onmyoji/curator
+	name = "curator stormcaller warhat"
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/head/wizhat/onmyoji/black
 	color = CLOTHING_SOOT_BLACK
@@ -1407,6 +1338,10 @@
 	icon_state = "bloodhunter"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
+
+/obj/item/clothing/head/bardhat/bloodhunter/yharnam
+	name = "bloodhunter hat"
+	color = "#0e305c"
 
 /obj/item/clothing/head/helmet/leather/malgai/kaizoku/female
 	name = "lady hat"
@@ -1661,6 +1596,9 @@
 	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
 	..()
 
+/obj/item/clothing/face/kaizoku/eyeband/tideweaver
+	color = CLOTHING_TIDEWEAVER
+
 /obj/item/clothing/face/kaizoku/eyeband/leonardo //katanas
 	color = "#4f47be"
 
@@ -1678,7 +1616,7 @@
 // =================================================================
 // ========================		NECK	============================
 
-/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+/obj/item/clothing/neck/chaincoif/karuta_zukin
 	name = "foldable lamellae hood"
 	desc = "The 'Karuta Zukin', a protective hood composed of rectangular plates sewn onto a fabric backing, offering a more solid \
 	defense while remaining flexible."
@@ -1687,38 +1625,17 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
 
-/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random/Initialize()
+/obj/item/clothing/neck/chaincoif/karuta_zukin/random/Initialize()
 	. = ..()
 	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
 
-/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military/Initialize()
+/obj/item/clothing/neck/chaincoif/karuta_zukin/military/Initialize()
 	. = ..()
 	color = pick("#534b40", "#685542", "#264d26")
 
-/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono/Initialize()
+/obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono/Initialize()
 	. = ..()
 	color = "#9b874f"
-
-/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/AdjustClothes(mob/user)
-	if(loc == user)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			if(toggle_icon_state)
-				icon_state = "[initial(icon_state)]_t"
-			flags_inv = null
-			body_parts_covered = NECK
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-				H.update_inv_head()
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-			flags_inv = HIDEEARS|HIDEHAIR
-			if(user)
-				if(ishuman(user))
-					var/mob/living/carbon/H = user
-					H.update_inv_neck()
-					H.update_inv_head()
 
 /obj/item/clothing/neck/chaincoif/iron/kusari_zukin
 	name = "iron kusari zukin"
@@ -1727,9 +1644,10 @@
 	icon_state = "kusari_zukin"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
+	detail_tag = "_det"
 
 /obj/item/clothing/neck/psycross/silver/abyssanctum
-	name = "reformist abyssanctum amulet"
+	name = "abyssanctum amulet"
 	desc = "Despair thee not at the abyssal depths, for where light doth fade, vessels of might shall be therein carved, as Abyssor and the Weeper guide their own."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
@@ -1813,21 +1731,17 @@
 	color = pick(GLOB.peasant_dyes)
 	..()
 
-/obj/item/clothing/pants/trou/tobi/thunder
-	name = "thunder tobi pants"
-	color = CLOTHING_THUNDER
+/obj/item/clothing/pants/trou/tobi/tideweaver
+	name = "tideweaver tobi pants"
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/clothing/pants/trou/tobi/deluge
-	name = "deluge tobi pants"
-	color = CLOTHING_STORM
+/obj/item/clothing/pants/trou/tobi/purifier
+	name = "purifier tobi pants"
+	color = CLOTHING_PURIFIER
 
-/obj/item/clothing/pants/trou/tobi/ocean
-	name = "ocean tobi pants"
-	color = CLOTHING_SEA
-
-/obj/item/clothing/pants/trou/tobi/island
-	name = "island tobi pants"
-	color = CLOTHING_ISLAND
+/obj/item/clothing/pants/trou/tobi/curator
+	name = "curator tobi pants"
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/pants/trou/tobi/dark
 	color = CLOTHING_SOOT_BLACK
@@ -1871,6 +1785,9 @@
 
 /obj/item/clothing/pants/tights/hakama/eidolon
 	color = CLOTHING_EIDOLON
+
+/obj/item/clothing/pants/tights/hakama/curator
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/pants/trou/leather/shinobizubon
 	name = "shinobi zubon"
@@ -1985,7 +1902,7 @@
 
 /obj/item/clothing/shirt/rags/monkgarb
 	name = "monk samue"
-	desc = "The Samue is the clothing used by Abyssanctum monks engaged on the act of Samu, most proper for those performing temple maintenance and mountain hiking."
+	desc = "The samue is the clothing used by Abyssanctum monks engaged on the act of Samu, most proper for those performing temple maintenance and mountain hiking."
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/shirt.dmi'
 	mob_overlay_icon ='modular/stonekeep/kaizoku/icons/clothing/shirt.dmi'
@@ -1999,6 +1916,9 @@
 /obj/item/clothing/shirt/rags/monkgarb/random/Initialize()
 	color = pick(GLOB.peasant_dyes)
 	..()
+
+/obj/item/clothing/shirt/rags/monkgarb/tideweaver
+	color = CLOTHING_TIDEWEAVER
 
 /obj/item/clothing/shirt/tunic/kamishimo //I know this is actually a Kataginu, but it is know more as 'Kamishimo', even if lacking a Hakama. Because HAKAMA is its own thing here.
 	name = "shoulder robe"
@@ -2084,25 +2004,20 @@
 	color = pick_assoc(GLOB.noble_dyes)
 	..()
 
-/obj/item/clothing/shirt/robe/wizard/guardian/thunder
-	name = "thunder onmyoji's warfare garb"
+/obj/item/clothing/shirt/robe/wizard/guardian/tideweaver
+	name = "tideweaver onmyoji's warfare garb"
 	desc = "The garbs used by Abyssariad magicians during times of warfare. Marked in yellow for the mountainous magicians and monks who praises Abyssor's thunders."
-	color = CLOTHING_THUNDER
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/clothing/shirt/robe/wizard/guardian/deluge
-	name = "deluge stormcaller's warfare garb"
-	desc = "The garbs used by Abyssariad magicians during times of warfare. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
-	color = CLOTHING_STORM
-
-/obj/item/clothing/shirt/robe/wizard/guardian/ocean
-	name = "sea onmyoji's warfare garb"
+/obj/item/clothing/shirt/robe/wizard/guardian/purifier
+	name = "purifier onmyoji's warfare garb"
 	desc = "The garbs used by Abyssariad magicians during times of warfare.  Marked in light blue for the expeditionary magicians and monks of Abyssanctum's faith, long married to the seas."
-	color = CLOTHING_SEA
+	color = CLOTHING_PURIFIER
 
-/obj/item/clothing/shirt/robe/wizard/guardian/island
-	name = "island onmyoji's warfare garb"
+/obj/item/clothing/shirt/robe/wizard/guardian/curator
+	name = "curator onmyoji's warfare garb"
 	desc = "The garbs used by Abyssariad magicians during times of warfare. Marked in red for the soilgazers of Abyssanctum's faith, those bent in ensuring no plague shall reach their blessed islands. "
-	color = CLOTHING_ISLAND
+	color = CLOTHING_CURATOR
 
 /obj/item/clothing/shirt/kaizoku/robe
 	slot_flags = ITEM_SLOT_ARMOR
@@ -2146,39 +2061,46 @@
 	new /obj/item/reagent_containers/food/snacks/fogdart(src)
 	new /obj/item/weapon/tetsubishi(src)
 
-/obj/item/storage/belt/kaizoku/leather/daisho/thunder
-	name = "thunder daisho belt"
-	color = CLOTHING_THUNDER
+/obj/item/storage/belt/kaizoku/leather/daisho/tideweaver
+	name = "tideweaver daisho belt"
+	color = CLOTHING_TIDEWEAVER
 
-/obj/item/storage/belt/kaizoku/leather/daisho/storm
-	name = "storm daisho belt"
-	color = CLOTHING_STORM
+/obj/item/storage/belt/kaizoku/leather/daisho/purifier
+	name = "purifier daisho belt"
+	color = CLOTHING_PURIFIER
 
-/obj/item/storage/belt/kaizoku/leather/daisho/ocean
-	name = "sea daisho belt"
-	color = CLOTHING_SEA
-
-/obj/item/storage/belt/kaizoku/leather/daisho/island
-	name = "island daisho belt"
-	color = CLOTHING_ISLAND
+/obj/item/storage/belt/kaizoku/leather/daisho/curator
+	name = "curator daisho belt"
+	color = CLOTHING_CURATOR
 
 /obj/item/storage/backpack/satchel/ninja/PopulateContents()
 	new /obj/item/grenade/smoke_bomb(src)
 	new /obj/item/grenade/smoke_bomb/poison(src)
 	new /obj/item/throwing_star/ninja(src)
 
+/obj/item/storage/belt/kaizoku/leather/pursebelt
+	name = "pursebelt"
+	desc = "Cloth wrap that curls under the pants with some exposed purses. It is kept hidden for aesthestic sake."
+	icon_state = "hiddensash"
+	sellprice = 5
+	alternate_worn_layer = DAMAGE_LAYER
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/belts.dmi'
+	mob_overlay_icon ='modular/stonekeep/kaizoku/icons/clothing/belts.dmi'
+
 // =================================================================
 // ========================	BRACERS	================================
 
 /obj/item/clothing/wrists/bracers/kote
 	name = "armored sleeve"
-	desc = "The 'sashinuki kote', armored sleeves and gloves knitted into a jacketed layer. It belongs as one of the armor component of sangu, together with suneate and haidate."
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/wrists.dmi'
-	mob_overlay_icon ='modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
-	body_parts_covered = ARMS|HANDS //bracer that protects hands and arms. Costier. Why no one made something with this theme before?
+	desc = "Armored sleeves and gloves part of the samurai sangu set."
 	icon_state = "kote"
 	item_state = "kote"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
+	body_parts_covered = ARMS|HANDS
+	color = null
+	detail_tag = "_det"
 
 /obj/item/clothing/wrists/bracers/kote/cursed/Initialize()
 	. = ..()
@@ -2248,3 +2170,461 @@
 	sewrepair = TRUE
 	anvilrepair = null
 	alternate_worn_layer = BELT_LAYER //Keep them exposed above armor and tabards.
+
+//area for zamurai for the sake of easeness
+
+/obj/item/clothing/armor/gambeson/light/hitatare/zamurai
+	detail_tag = "_det"
+	detail_color = CLOTHING_WHITE
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	var/picked = FALSE
+	colorgrenz = TRUE
+
+/obj/item/clothing/armor/gambeson/light/hitatare/zamurai/proc/get_player_input()
+	if(!ishuman(loc))
+		return
+
+	var/list/colors = list(
+		"PURPLE"="#865c9c",
+		"RED"="#933030",
+		"BROWN"="#685542",
+		"GREEN"="#79763f",
+		"BLUE"="#395480",
+		"YELLOW"="#b5b004",
+		"TEAL"="#249589",
+		"STEEL"="#ffffff",
+		"ORANGE"="#b86f0c",
+		"Royal Majenta"="#962e5c")
+
+	var/mob/living/carbon/human/L = loc
+
+	var/det_choice = input(L, "Color of your lacquered plates", "Choose a light tone") as anything in colors
+	var/base_choice = input(L, "Color of the padding", "Choose a dark tone") as anything in colors
+
+	var/det_color = colors[det_choice]
+	var/base_color = colors[base_choice]
+
+	picked = TRUE
+	detail_color = det_color
+	update_icon()
+
+	for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+		if(V.colorgrenz)
+			V.detail_color = det_color
+			if(istype(V, /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai))
+				var/obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai/S = V
+				S.base_color = base_color
+			else if(istype(V, /obj/item/clothing/wrists/bracers/kote/zamurai))
+				var/obj/item/clothing/wrists/bracers/kote/zamurai/K = V
+				K.base_color = base_color
+			V.update_icon()
+
+	L.regenerate_icons()
+
+/obj/item/clothing/armor/gambeson/light/hitatare/zamurai/Initialize()
+	. = ..()
+	if(!picked)
+		var/mob/living/carbon/human/L = loc
+		if(!istype(L))
+			return
+		if(!L.client)
+			return
+		INVOKE_ASYNC(src, PROC_REF(get_player_input))
+
+/obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai
+	detail_tag = "_det"
+	colorgrenz = TRUE
+	var/base_color = null
+
+/obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai/update_icon()
+	cut_overlays()
+	if(base_color)
+		color = base_color
+	else
+		color = initial(color)
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/wrists/bracers/kote/zamurai
+	detail_tag = "_det"
+	colorgrenz = TRUE
+	var/base_color = null
+
+/obj/item/clothing/wrists/bracers/kote/zamurai/update_icon()
+	cut_overlays()
+	if(base_color)
+		color = base_color
+	else
+		color = initial(color)
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/wrists/bracers/kote/zamurai/update_overlays(mob/living/carbon/human/H)
+	. = ..()
+
+	if(base_color)
+		for(var/image/I in overlays)
+			if(I.icon == mob_overlay_icon && I.icon_state == icon_state)
+				I.color = base_color
+
+/obj/item/clothing/head/helmet/visored/zunari/zamurai
+	detail_tag = "_det"
+	colorgrenz = TRUE
+	var/base_icon_state = "zunari_kabuto"
+
+/obj/item/clothing/head/helmet/visored/zunari/zamurai/update_icon()
+	cut_overlays()
+	var/visor_suffix = ""
+	if(adjustable == CADJUSTED)
+		visor_suffix = "_raised"
+	icon_state = "[base_icon_state][visor_suffix]"
+	color = initial(color)
+
+	if(get_detail_tag())
+		var/overlay_icon_state = "[base_icon_state][get_detail_tag()][visor_suffix]"
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, overlay_icon_state))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/head/helmet/visored/zunari/zamurai/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 50, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			body_parts_covered = COVERAGE_HEAD
+			flags_inv = HIDEEARS
+			flags_cover = null
+			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+
+		if(istype(src, /obj/item/clothing/head/helmet/visored/zunari/zamurai))
+			src:update_icon()
+
+		if(ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+		user.update_fov_angles()
+	else // Failsafe.
+		to_chat(user, "<span class='warning'>Wear the helmet on your head to open and close the visor.</span>")
+		return
+
+///////////////////////////////////// New Garrison
+
+/obj/item/clothing/armor/brigandine/neogarrison
+	name = "TEMPLATE GARRISON ARMOR"
+	desc = "you should not see this"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
+	icon_state = "flhcustodian"
+	detail_tag = ""
+	detail_color = null
+	color = null
+	var/picked = FALSE
+	var/has_mini = FALSE
+	var/mini_color = null
+	var/mini_tag = ""
+
+/obj/item/clothing/armor/brigandine/neogarrison/Initialize()
+	. = ..()
+	if(picked)
+		return
+
+	var/mob/living/carbon/human/L = loc
+	if(!istype(L) || !L.client)
+		return
+
+	if(L.dna.species?.id != "abyssariad")
+		name = "heartfelt plated coat"
+		desc = "Plated coat used by Heartfelteans"
+		icon_state = "hfhcustodian"
+	else
+		name = "foglander coat-of-knives"
+		desc = "Armored coat used by Foglanders"
+		icon_state = "flhcustodian"
+
+	INVOKE_ASYNC(src, PROC_REF(get_player_input))
+
+/obj/item/clothing/armor/brigandine/neogarrison/proc/get_player_input()
+	if(!ishuman(loc))
+		return
+
+	var/list/colors = list(
+		"PURPLE"="#865c9c",
+		"RED"="#933030",
+		"BROWN"="#685542",
+		"GREEN"="#79763f",
+		"BLUE"="#395480",
+		"YELLOW"="#b5b004",
+		"TEAL"="#249589",
+		"STEEL"="#ffffff",
+		"ORANGE"="#b86f0c",
+		"Royal Majenta"="#962e5c")
+
+	detail_tag = ""
+	detail_color = null
+	has_mini = FALSE
+	mini_color = null
+	mini_tag = ""
+
+	if(GLOB.lordprimary)
+		var/list/choices = list("Battle coat" = "_det", "Cloak" = "_det1")
+		var/choice = input(loc, "Choose your armor plating style", "Armor Customization") as null|anything in choices
+		if(choice)
+			detail_tag = choices[choice]
+			detail_color = GLOB.lordprimary
+			mini_tag = "_mini"
+			has_mini = TRUE
+			mini_color = GLOB.lordsecondary
+	else
+		detail_tag = "_og"
+		if(alert(loc, "Do you want to apply a colored mini-lining?", "Mini-Lining", "Yes", "No") == "Yes")
+			has_mini = TRUE
+			var/color_choice = input(loc, "Choose your mini-lining color", "Mini-Lining Color") as null|anything in colors
+			if(color_choice)
+				mini_tag = "_mini"
+				mini_color = colors[color_choice]
+
+	picked = TRUE
+	update_icon()
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_armor()
+
+/obj/item/clothing/armor/brigandine/neogarrison/update_icon()
+	cut_overlays()
+
+	if(icon_state)
+		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
+		base.alpha = 255
+		base.appearance_flags = RESET_COLOR
+		add_overlay(base)
+
+	if(detail_tag && detail_tag != "_og")
+		var/mutable_appearance/DET = mutable_appearance(icon, "[icon_state][detail_tag]")
+		DET.appearance_flags = RESET_COLOR
+		if(detail_color)
+			DET.color = detail_color
+		add_overlay(DET)
+
+	if(has_mini && mini_tag)
+		var/mutable_appearance/MU = mutable_appearance(icon, "[icon_state][mini_tag]")
+		MU.appearance_flags = RESET_COLOR
+		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
+			MU.color = mini_color
+		add_overlay(MU)
+
+	if(detail_tag && detail_tag != "_og")
+		var/image/I1 = image(icon, "[icon_state][detail_tag]")
+		if(detail_color)
+			I1.color = detail_color
+		overlays += I1
+
+	if(has_mini && mini_tag)
+		var/image/I2 = image(icon, "[icon_state][mini_tag]")
+		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
+			I2.color = mini_color
+		overlays += I2
+
+/obj/item/clothing/armor/brigandine/neogarrison/proc/get_additional_worn_overlays(file)
+	var/list/extra = list()
+	if(detail_tag && detail_tag != "_og")
+		var/image/B = image(file, "[icon_state][detail_tag]")
+		if(detail_color)
+			B.color = detail_color
+		extra += B
+	if(has_mini && mini_tag)
+		var/image/I = image(file, "[icon_state][mini_tag]")
+		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
+			I.color = mini_color
+		extra += I
+	return extra
+
+/obj/item/clothing/armor/brigandine/neogarrison/worn_overlays(isinhands, file2use)
+	var/list/extras = ..(isinhands, file2use)
+	if(detail_tag && detail_tag != "_og")
+		var/image/B = image(file2use, "[icon_state][detail_tag]")
+		if(detail_color)
+			B.color = detail_color
+		extras += B
+	if(has_mini && mini_tag)
+		var/image/I = image(file2use, "[icon_state][mini_tag]")
+		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
+			I.color = mini_color
+		extras += I
+	return extras
+
+/obj/item/clothing/neck/bevor/crabstain
+	name = "crabstain bevor"
+	desc = "A crab-like throat and neck protector favored by coastal guards, with jagged lips similar to carcinized sea creatures. \
+			The ridged mechanisms can be opened with the tongue to allow the user to eat."
+	icon_state = "crabstain"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
+	adjustable = CAN_CADJUST
+	alternate_worn_layer = MOUTH_LAYER
+
+/obj/item/clothing/neck/bevor/crabstain/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_open"
+			flags_inv = null
+			body_parts_covered = NECK|EARS
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_neck()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEEARS|HIDEHAIR
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_neck()
+
+/obj/item/clothing/neck/gorget/lazerrain
+	name = "lazerrain aegis"
+	icon_state = "lazerrain"
+	desc = "Compact, interlocking iron bands that slip beneath armor to ensure your neck will remain secured from slashes and punctures."
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
+	alternate_worn_layer = MOUTH_LAYER
+
+/obj/item/clothing/armor/leather/splint/battlecoat
+	name = "custodian battlecoat"
+	desc = "A light custodian gear made of interconnected hexagonal iron plates stitched under a thick coat for protection."
+	icon_state = "hflcustodian"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
+
+/obj/item/clothing/armor/leather/splint/battlecoat/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		update_icon()
+
+	var/mob/living/carbon/human/L = loc
+	if(!istype(L) || !L.client)
+		return
+
+	if(L.dna.species?.id != "abyssariad")
+		desc = "A light custodian gear made of interconnected hexagonal iron plates stitched under a thick coat for protection."
+		icon_state = "hflcustodian"
+	else
+		desc = "A light custodian overwear based on foglander godwenkai of ancient championage roots, with reinforced hexagonal plates under it."
+		icon_state = "fllcustodian"
+
+/obj/item/clothing/armor/leather/splint/battlecoat/update_icon()
+	cut_overlays()
+	if(icon_state)
+		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
+		base.alpha = 255
+		base.appearance_flags = RESET_COLOR
+		add_overlay(base)
+
+	if(GLOB.lordprimary)
+		var/mutable_appearance/det = mutable_appearance(icon, "[icon_state]_det")
+		det.appearance_flags = RESET_COLOR
+		det.color = GLOB.lordprimary
+		add_overlay(det)
+
+/obj/item/clothing/armor/leather/splint/battlecoat/worn_overlays(isinhands, file2use)
+	var/list/extras = ..(isinhands, file2use)
+	if(GLOB.lordprimary)
+		var/image/det_img = image(file2use, "[icon_state]_det")
+		//det_img.layer = ARMOR_LAYER
+		det_img.color = GLOB.lordprimary
+		extras += det_img
+	return extras
+
+/obj/item/clothing/head/helmet/leather/paddedt
+	name = "custodian bearskin"
+	desc = "A furcap commonly used by foglander grenadiers for identification became commonly used by others \
+	forces over centuries, usually ceremonial, with leather padding it becomes protective."
+	icon_state = "paddedt"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
+
+/obj/item/clothing/head/helmet/leather/paddedt/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		update_icon()
+
+/obj/item/clothing/head/helmet/leather/paddedt/update_icon()
+	cut_overlays()
+	if(icon_state)
+		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
+		base.alpha = 255
+		base.appearance_flags = RESET_COLOR
+		add_overlay(base)
+
+	if(GLOB.lordprimary)
+		var/mutable_appearance/det = mutable_appearance(icon, "[icon_state]_det")
+		det.appearance_flags = RESET_COLOR
+		det.color = GLOB.lordprimary
+		add_overlay(det)
+
+/obj/item/clothing/head/helmet/leather/paddedt/worn_overlays(isinhands, file2use)
+	var/list/extras = ..(isinhands, file2use)
+	if(GLOB.lordprimary)
+		var/image/det_img = image(file2use, "[icon_state]_det")
+		//det_img.layer = HEAD_LAYER
+		det_img.color = GLOB.lordprimary
+		extras += det_img
+	return extras
+
+/obj/item/clothing/head/helmet/kettle/fs_kettle
+	name = "custodian kettle"
+	desc = "Infantry skull protection. It goes great with a gorget."
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
+	icon_state = "hfs_kettle"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/helmet/kettle/fs_kettle/Initialize()
+	. = ..()
+	var/mob/living/carbon/human/L = loc
+	if(!istype(L) || !L.client)
+		return
+
+	if(L.dna.species?.id != "abyssariad")
+		desc = "Skull protector of heartfeltean design. Square-looking, it protects against blows from above, what you need during sieges."
+		icon_state = "hfs_kettle"
+	else
+		desc = "Infantry headgear of Foglander design in a bowl-like silhouette, having a large brim protecting the eyes from the sun."
+		icon_state = "ffs_kettle"
+
+/obj/item/clothing/cloak/raincloak/guardsman
+	name = "custodian capelet"
+	desc = "a shoulder-length cape used by heartfeltean duelists. Proper for distractions and hide blades under."
+	icon_state = "guardcloak"
+	body_parts_covered = CHEST|GROIN
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	inhand_mod = FALSE
+	hoodtype = null
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
+
+/obj/item/clothing/cloak/raincloak/guardsman/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordsecondary)
+	else
+		color = CLOTHING_BLOOD_RED

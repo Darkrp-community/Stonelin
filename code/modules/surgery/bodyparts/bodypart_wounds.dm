@@ -209,7 +209,7 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				if(HAS_TRAIT(src, TRAIT_BRITTLE))
 					attempted_wounds += /datum/wound/fracture
 				else
@@ -220,7 +220,7 @@
 			if(HAS_TRAIT(src, TRAIT_BRITTLE))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				attempted_wounds += /datum/wound/dislocation
 				attempted_wounds += /datum/wound/fracture
 		if("artery")
@@ -230,13 +230,13 @@
 				else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 					dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				attempted_wounds += /datum/wound/artery
 		if("scarring")
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
@@ -289,7 +289,7 @@
 				var/fracture_type = /datum/wound/fracture/chest
 				if(zone_precise == BODY_ZONE_PRECISE_GROIN)
 					fracture_type = /datum/wound/fracture/groin
-				if(prob(used))
+				if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 					attempted_wounds += fracture_type
 		if("artery")
 			if(user && (bclass in GLOB.artery_strong_bclasses) && istype(user.rmb_intent, /datum/rmb_intent/strong))
@@ -297,7 +297,7 @@
 			else if(user && istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				if((zone_precise == BODY_ZONE_PRECISE_STOMACH) && !resistance)
 					attempted_wounds += /datum/wound/slash/disembowel
 				if(owner.has_wound(/datum/wound/fracture/chest) || (bclass in GLOB.artery_heart_bclasses))
@@ -308,7 +308,7 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
@@ -350,7 +350,7 @@
 		if("dislocation")
 			if(damage_dividend >= 1)
 				used = round(damage_dividend * 20 + (dam / 6), 1)
-				if(prob(used))
+				if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 					if(HAS_TRAIT(src, TRAIT_BRITTLE))
 						attempted_wounds += /datum/wound/fracture/neck
 					else
@@ -404,7 +404,7 @@
 					if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 						dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				var/artery_type = /datum/wound/artery
 				if(zone_precise == BODY_ZONE_PRECISE_NECK)
 					artery_type = /datum/wound/artery/neck

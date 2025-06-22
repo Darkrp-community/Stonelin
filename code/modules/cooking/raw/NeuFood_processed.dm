@@ -520,7 +520,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = CHEESE_NUTRITION)
 	w_class = WEIGHT_CLASS_TINY
 	tastes = list("cheese" = 1)
-	foodtype = GRAIN
+	foodtype = DAIRY //Stonekeep edit. Let Changelings EAT CHEESE.
 	eat_effect = null
 	rotprocess = SHELFLIFE_DECENT
 	become_rot_type = null

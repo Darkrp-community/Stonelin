@@ -68,9 +68,9 @@
 	else
 		backr = /obj/item/weapon/mace/goden/otsuchi //Somewhat worse than normal mace
 	if(prob(50))
-		head = /obj/item/clothing/head/tengai/yamabushi
+		head = /obj/item/clothing/head/tengai/curator
 	else
-		head = /obj/item/clothing/head/tengai/sandogasa/yamabushi
+		head = /obj/item/clothing/head/tengai/sandogasa/curator
 
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)

@@ -41,10 +41,10 @@
 	pants = /obj/item/clothing/pants/trou/tobi/random
 
 	H.become_blind("TRAIT_GENERIC")
-	var/wokoutype = list("LinYou (Ambusher)","Dustrider (Scout)","Muqian (Towerdweller)","Shuhen (Militia)","Kaizoku (Navy)", "Jizamurai (Enforcer)")
+	var/wokoutype = list("LinYou Ambusher","Dustrider Scout","Muqian Chainstrider","Shuhen Militia","Kaizoku Deckhand", "Jizamurai Enforcer")
 	var/specialization = input("Choose your culture", "Available culture") as anything in wokoutype
 	switch(specialization) //as far I know, all roles here are meant to be balanced.
-		if("LinYou (Ambusher)") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
+		if("LinYou Ambusher") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
 			var/roll = rand(1, 100)
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/chainmail/rattan
@@ -68,7 +68,7 @@
 			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Dustrider (Scout)") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse. Only Dodge expert.
+		if("Dustrider Scout") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse. Only Dodge expert.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/leather/hide/dustwalker
 			shirt = /obj/item/clothing/armor/gambeson/heavy/deelcoat
@@ -90,7 +90,7 @@
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
 
-		if("Shuhen (Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
+		if("Shuhen Chainstrider")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/plate/mirror/iron
 			head = /obj/item/clothing/head/tengai/gasa
@@ -115,7 +115,7 @@
 			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Muqian (Towerdweller)") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails for combat. 'Kusari/Chain-People'
+		if("Muqian Towerdweller") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails for combat. 'Kusari/Chain-People'
 			H.set_blindness(0)
 			shirt = /obj/item/clothing/armor/chainmail/hauberk/kusari
 			neck = /obj/item/clothing/neck/chaincoif/iron/kusari_zukin
@@ -131,7 +131,7 @@
 			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Kaizoku (Navy)") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
+		if("Kaizoku Deckhand") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/leather/vest/kaizoku
 			head = /obj/item/clothing/head/helmet/leather/malgai/kaizoku
@@ -146,14 +146,14 @@
 			H.change_stat(STATKEY_END, 3)
 			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-		if("Jizamurai (Enforcer)")
+		if("Jizamurai Enforcer")
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/leather/splint/kikko/military
 			head = /obj/item/clothing/head/tengai/gasa
 			cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/jizamurai
 			mask = /obj/item/clothing/face/kaizoku/menpo/steel/half
 			mouth = /obj/item/clothing/face/cigarette/pipe/westman
-			neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+			neck = /obj/item/clothing/neck/chaincoif/karuta_zukin
 			shirt = /obj/item/clothing/armor/gambeson/light/hitatare/rich
 			pants = /obj/item/clothing/pants/trou/tobi/random
 			beltr = /obj/item/weapon/sword/short/wakizashi

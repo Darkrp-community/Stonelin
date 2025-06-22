@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/sk/grenzelhoft
-	name = "Grenzelhoft"
-	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin."
+	name = "Grenzelhoft Mercenary"
+	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Adept swordmasters never shying away from a duel, their only care is coin, and the procurement of coin - by any means necessary."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -58,4 +58,3 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 	H.skin_tone = SKIN_COLOR_ICECAP
-

@@ -47,6 +47,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR
 
+	boobed = FALSE
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_VEST
 	max_integrity = INTEGRITY_STANDARD

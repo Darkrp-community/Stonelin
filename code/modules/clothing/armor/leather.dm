@@ -1,9 +1,10 @@
 /obj/item/clothing/armor/leather
 	name = "leather armor"
-	desc = "A light armor typically made out of boiled leather. Offers slight protection from most weapons."
+	desc = "A light padded armor made out of boiled leather. Offers slight protection from most weapons."
 	icon_state = "leather"
 	resistance_flags = FLAMMABLE
 	blade_dulling = DULLING_BASHCHOP
+	sleeved = FALSE
 	blocksound = SOFTHIT
 	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
 	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
@@ -54,9 +55,10 @@
 //................ Splint Mail ............... //
 /obj/item/clothing/armor/leather/splint
 	name = "splint armor"
-	desc = "The smell of a leather coat, with pieces of recycled metal from old breastplates or cooking utensils riveted to the inside."
+	desc = "The mix of a leather armor and light iron plates, cheap, durable and preferred by poor warriors and true rogues."
 	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
+	boobed = FALSE//is a splint armor not a chainkini
 
 	armor = ARMOR_MAILLE_IRON
 	prevent_crits = ALL_EXCEPT_STAB

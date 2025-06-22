@@ -1,15 +1,19 @@
 /datum/advclass/mercenary/sk/boltslinger
-	name = "Boltslinger"
-	tutorial = "A cutthroat and a soldier of fortune, your mastery of the crossbow has brought you to many battlefields, all in pursuit of mammon."
+	name = "Boltslinger"//mercenaries without theme who want to be neutral, basic guys since is free for all to join
+	tutorial = "A cutthroat and a soldier of fortune, your mastery of crossbows has brought you to many battlefields, all in pursuit of mammon."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
+		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Half-Orc",
+		"Kobold",
+		"Changeling","Skylancer","Ogrun","Undine",
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/boltslinger
 	category_tags = list(CTAG_SKMERCENARY)

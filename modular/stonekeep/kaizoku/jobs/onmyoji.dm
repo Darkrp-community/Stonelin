@@ -36,26 +36,22 @@
 
 	var/yesno = list("Yes. I am Iron-hearted.","No. I am Civilian.")
 	var/military = input("Sworn to the Fog Island ranks?", "Emperor's regiment?") as anything in yesno
-	var/background = pickweight(list("thunder" = 1, "deluge" = 1, "ocean" = 1, "island" = 1)) //This is just flavour in the same way Soheis are. Wait, are they related??? Leave it to the Players to explain.
+	var/background = pickweight(list("tideweaver" = 1, "ocean" = 1, "island" = 1)) //This is just flavour in the same way Soheis are. Wait, are they related??? Leave it to the Players to explain.
 	switch(military) //Just clothes.
 		if("Yes. I am Iron-hearted.") //Cooler clothing. Roleplay-wise, an champion-type, theme unique solely to Kaizoku as far I'm aware.
 			switch(background)
-				if("thunder")
-					armor = /obj/item/clothing/shirt/robe/wizard/guardian/thunder
-					head = /obj/item/clothing/head/wizhat/onmyoji/thunder
-					pants = /obj/item/clothing/pants/trou/tobi/thunder
-				if("deluge")
-					armor = /obj/item/clothing/shirt/robe/wizard/guardian/deluge
-					head = /obj/item/clothing/head/wizhat/onmyoji/deluge
-					pants = /obj/item/clothing/pants/trou/tobi/deluge
+				if("tideweaver")
+					armor = /obj/item/clothing/shirt/robe/wizard/guardian/tideweaver
+					head = /obj/item/clothing/head/wizhat/onmyoji/tideweaver
+					pants = /obj/item/clothing/pants/trou/tobi/tideweaver
 				if("ocean")
-					armor = /obj/item/clothing/shirt/robe/wizard/guardian/ocean
-					head = /obj/item/clothing/head/wizhat/onmyoji/ocean
-					pants = /obj/item/clothing/pants/trou/tobi/ocean
+					armor = /obj/item/clothing/shirt/robe/wizard/guardian/purifier
+					head = /obj/item/clothing/head/wizhat/onmyoji/purifier
+					pants = /obj/item/clothing/pants/trou/tobi/purifier
 				if("island")
-					armor = /obj/item/clothing/shirt/robe/wizard/guardian/island
-					head = /obj/item/clothing/head/wizhat/onmyoji/island
-					pants = /obj/item/clothing/pants/trou/tobi/island
+					armor = /obj/item/clothing/shirt/robe/wizard/guardian/curator
+					head = /obj/item/clothing/head/wizhat/onmyoji/curator
+					pants = /obj/item/clothing/pants/trou/tobi/curator
 			H.set_blindness(0)
 		if("No. I am a Civilian.)") //Just continue and replace.
 			H.set_blindness(0)

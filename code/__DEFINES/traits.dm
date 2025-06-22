@@ -137,9 +137,11 @@
 #define TRAIT_DARKLING "Darkling"
 #define TRAIT_CHANGELING_METABOLISM	"Changeling Metabolism"
 #define TRAIT_DESECRANT	"Desecrant"
+#define TRAIT_ADMINTEST_CRIT "Debug guaranteed critchance"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."), //STONEKEEP EDIT
+	TRAIT_ADMINTEST_CRIT = span_info("ADMIN TOOL: Guaranteed chance to crit with every attack."),
 	TRAIT_DARKLING = span_info("I am a creature of the dark and am sensitive to the light. The hateful sun is especially harsh on my eyes, and I prefer to sleep during the dae."), //STONEKEEP EDIT
 	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.", //STONEKEEP EDIT
 	TRAIT_CHANGELING_METABOLISM = span_info("My metabolism breaks down demonic impurity. Now, I crave flesh rather than what is green."), // STONEKEEP EDIT

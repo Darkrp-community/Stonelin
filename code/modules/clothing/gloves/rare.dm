@@ -55,3 +55,11 @@
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
 	item_weight = 6 * STEEL_MULTIPLIER
+
+//............... Psyrant Gauntlets ............... //
+/obj/item/clothing/gloves/rare/psyrant
+	name = "Blackplate gauntlets"
+	desc = "Plated gauntles, hammered into the ambitious and snarled shape of gripping hands, ready to reclaim what was stolen"
+	icon_state = "psygloves"
+	allowed_race = list("human")
+	item_weight = 7 * STEEL_MULTIPLIER

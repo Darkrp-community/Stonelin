@@ -1,5 +1,7 @@
 // =================================================================
 // ========================		BOMBS	============================
+#define ZATANA_WOOSH			list('modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(1).ogg','modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(2).ogg','modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(3).ogg')
+
 /obj/item/grenade
 	name = "grenade"
 	desc = ""
@@ -1219,6 +1221,7 @@
 	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. As a Zatana, the curved blade favor powerfull chopping strikes - but lacks a protective crossguard and the curve makes it less efficient in thrusting."
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/64.dmi'
 	icon_state = "uchigatana"
+	swingsound = ZATANA_WOOSH
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -1253,6 +1256,7 @@
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/64.dmi'
 	icon_state = "tachi"
 	item_state = "tachi"
+	swingsound = ZATANA_WOOSH
 	pixel_y = -16
 	pixel_x = -18
 
@@ -1324,6 +1328,7 @@
 	icon_state = "wakizashi1"
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+	swingsound = ZATANA_WOOSH
 
 /obj/item/weapon/sword/short/wakizashi/Initialize()
 	. = ..()
@@ -1626,8 +1631,7 @@
 /obj/structure/kaizoku/crate/fogbeast
 	name = "fogbeast crate"
 	desc = "Something neighs from the inside. The crate is unusually heavy."
-	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse // until runtiem fixed
-
+	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/handcannon
 	name = "huochong handcannon"

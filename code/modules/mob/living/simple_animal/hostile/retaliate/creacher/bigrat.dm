@@ -8,7 +8,7 @@
 	pixel_x = -16
 	pixel_y = -8
 
-	faction = list(FACTION_RATS)
+	faction = list(FACTION_GRAGGAR)
 	emote_hear = list("squeaks.")
 	emote_see = list("cleans its nose.")
 	turns_per_move = 3

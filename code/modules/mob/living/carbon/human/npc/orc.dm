@@ -13,7 +13,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	vitae_pool = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
 
-	flee_in_pain = TRUE
+	flee_in_pain = FALSE//they aren't afraid of a fight and they can be cheesed for backstab kills if they do, mutants made for war don't run.
 	stand_attempts = 6
 	a_intent = INTENT_HELP
 	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)
@@ -155,13 +155,12 @@
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()
-	faction = list(FACTION_ORCS)
+	faction = list(FACTION_GRAGGAR)
 	name = "orc"
 	real_name = "orc"
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
 //	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -174,8 +173,8 @@
 	name = "orc"
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
-	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
+//no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS)
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = ""
@@ -256,66 +255,23 @@
 	H.base_speed = 12
 	H.base_constitution = 13
 	H.base_endurance = 13
-	armor = /obj/item/clothing/armor/leather/hide/orc
-	if(prob(20))
-		armor = /obj/item/clothing/armor/chainmail/iron/orc
-	if(prob(20))
-		head = /obj/item/clothing/head/helmet/leather
-	if(prob(10))
-		head = /obj/item/clothing/head/helmet/orc
-	var/loadout = rand(1,5)
+	armor = pick (/obj/item/clothing/armor/leather/hide/orc, /obj/item/clothing/armor/chainmail/iron/orc, /obj/item/clothing/armor/plate/orc)
+	head = /obj/item/clothing/head/helmet/orc
+	var/loadout = rand(1,3)
 	switch(loadout)
-		if(1) //Stolen Tool armed raider
-			r_hand = /obj/item/weapon/axe/iron
-		if(2) //Stolen Tool armed raider
-			r_hand = /obj/item/weapon/mace/copperbludgeon
-		if(3) //Stolen Tool armed raider
-			r_hand = /obj/item/weapon/polearm/spear/bonespear
-			if(prob(30))
-				r_hand = /obj/item/weapon/axe/boneaxe
-		if(4) //armored sword/flail/daggers
-			r_hand = /obj/item/weapon/mace/spiked
-			if(prob(20))
-				l_hand = /obj/item/weapon/sword/short
-			if(prob(20))
-				r_hand = /obj/item/weapon/knife/cleaver/combat
-				l_hand = /obj/item/weapon/knife/dagger
-		if(5) //heavy armored sword/flail/shields
-			if(prob(20))
-				r_hand = /obj/item/weapon/mace
-				l_hand = /obj/item/weapon/whip
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
-			else
-				r_hand = /obj/item/weapon/sword/short
-				l_hand = /obj/item/weapon/sword/short
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
-			if(prob(80))
-				head = /obj/item/clothing/head/helmet/orc
-				armor = /obj/item/clothing/armor/plate/orc
-				pants = /obj/item/clothing/armor/leather/hide/orc
-				r_hand = /obj/item/weapon/flail
-			else
-				head = /obj/item/clothing/head/helmet/orc
-				armor = /obj/item/clothing/armor/plate/orc
-				r_hand = /obj/item/weapon/axe/battle
-			if(prob(50))
-				r_hand = /obj/item/weapon/sword/iron
-				l_hand = /obj/item/weapon/shield/wood
-				head = /obj/item/clothing/head/helmet/orc
-			else
-				r_hand = /obj/item/weapon/mace/spiked
-				l_hand = /obj/item/weapon/shield/wood
-				armor = /obj/item/clothing/armor/plate/orc
-			if(prob(30))
-				r_hand = /obj/item/weapon/sword/scimitar/messer
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
+		if(1) //one handed armed + shield
+			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/mace/copperbludgeon, /obj/item/weapon/axe/boneaxe, /obj/item/weapon/mace/spiked)
+			l_hand = /obj/item/weapon/shield/wood
+		if(2) //dual wield
+			r_hand = pick (/obj/item/weapon/knife/cleaver/combat, /obj/item/weapon/knife/dagger, /obj/item/weapon/whip)
+			l_hand = /obj/item/weapon/sword/short
+		if(3) //pikeman
+			r_hand = pick (/obj/item/weapon/polearm/spear/billhook, /obj/item/weapon/polearm/spear, /obj/item/weapon/polearm/spear/bonespear)
+			l_hand = /obj/item/weapon/shield/wood
 
-//NEW ORCS WITH DIFFERENT GEAR AND SHIT
+//Orc tiers from tribal to warlord
 /mob/living/carbon/human/species/orc/tribal
-	name = "Tribal Orc"
+	name = "Tribal Orc"//savage orcs who aren't part of a warband of graggar, low level in weapons and armor
 	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/tribal
 	ambushable = FALSE
@@ -336,40 +292,34 @@
 
 /datum/outfit/job/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
+	armor = /obj/item/clothing/armor/leather/hide/orc
+	cloak = /obj/item/clothing/cloak/raincloak/brown
 	H.base_strength = 13
 	H.base_speed = 13
 	H.base_constitution = 13
 	H.base_endurance = 13
 	var/loadout = rand(1,5)
 	switch(loadout)
-		if(1) //Dual Axe Warrior
-			r_hand = /obj/item/weapon/axe/stone
-			l_hand = /obj/item/weapon/axe/stone
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(1) //axe Warrior
+			r_hand = /obj/item/weapon/axe/boneaxe
+			l_hand = /obj/item/weapon/shield/wood
 		if(2) //Long Club Caveman
-			r_hand = /obj/item/weapon/polearm/woodstaff
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			r_hand = /obj/item/weapon/mace/goden/shillelagh
 		if(3) //Club Caveman
 			r_hand = /obj/item/weapon/mace/woodclub
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			l_hand = /obj/item/weapon/shield/wood
 		if(4) //dagger fighter
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/weapon/knife/stone
 			l_hand = /obj/item/weapon/knife/stone
 		if(5) //Spear hunter
-			r_hand = /obj/item/weapon/polearm/spear/stone
-			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			r_hand = /obj/item/weapon/polearm/spear/bonespear
+			l_hand = /obj/item/weapon/shield/wood
 
 
 //////////////////////////////////////////////////////////
 
 /mob/living/carbon/human/species/orc/warrior
-	name = "Warrior Orc"
+	name = "Warrior Orc"//average fighters of the horde, iron gear and lot of power
 	ai_controller = /datum/ai_controller/human_npc
 	var/loadout = /datum/outfit/job/npc/orc/warrior
 	ambushable = FALSE
@@ -387,53 +337,23 @@
 
 /datum/outfit/job/npc/orc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
+	armor = pick (/obj/item/clothing/armor/chainmail/iron/orc, /obj/item/clothing/armor/plate/orc)
+	head = /obj/item/clothing/head/helmet/orc
 	H.base_strength = 13
 	H.base_speed = 13
 	H.base_constitution = 14
 	H.base_endurance = 14
-	var/loadout = rand(1,5)
+	var/loadout = rand(1,4)
 	switch(loadout)
-		if(1) //Marauder with Sword and Shield
-			r_hand = /obj/item/weapon/sword/iron
+		if(1) //one handed armed + shield
+			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/flail, /obj/item/weapon/mace/spiked)
 			l_hand = /obj/item/weapon/shield/wood
-			armor = /obj/item/clothing/armor/chainmail/iron/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/leather
-		if(2) //Marauder with Axe and Shield
-			r_hand = /obj/item/weapon/axe/iron
+		if(2) //dual wield
+			r_hand = pick (/obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/knife/dagger, /obj/item/weapon/flail, /obj/item/weapon/axe/iron, /obj/item/weapon/mace/spiked)
+			l_hand = pick (/obj/item/weapon/sword/short, /obj/item/weapon/knife/dagger)
+		if(3) //pikeman
+			r_hand = pick (/obj/item/weapon/polearm/spear/billhook, /obj/item/weapon/polearm/spear,/obj/item/weapon/polearm/spear/bronze)
 			l_hand = /obj/item/weapon/shield/wood
-			armor = /obj/item/clothing/armor/chainmail/iron/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/leather
-		if(3) //Club Caveman
-			r_hand = /obj/item/weapon/flail
-			l_hand = /obj/item/weapon/sword/scimitar/messer
-			armor = /obj/item/clothing/armor/chainmail/iron/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/leather
-		if(4) //dagger fighter
-			armor = /obj/item/clothing/armor/chainmail/iron/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			r_hand = /obj/item/weapon/sword/iron
-			l_hand = /obj/item/weapon/sword/short
-			head = /obj/item/clothing/head/helmet/leather
-		if(5) //Marauder Ironblade
-			if(prob(50))
-				r_hand = /obj/item/weapon/mace/spiked
-				l_hand = /obj/item/weapon/shield/wood
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
-			else
-				r_hand = /obj/item/weapon/mace/spiked
-				l_hand = /obj/item/weapon/sword/scimitar/messer
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
-				cloak = /obj/item/clothing/cloak/raincloak/brown
-			if(prob(30))
-				r_hand = /obj/item/weapon/axe/iron
-				armor = /obj/item/clothing/armor/plate/orc
-				head = /obj/item/clothing/head/helmet/orc
-				cloak = /obj/item/clothing/cloak/raincloak/brown
 
 
 
@@ -459,6 +379,9 @@
 
 /datum/outfit/job/npc/orc/marauder/pre_equip(mob/living/carbon/human/H)
 	..()
+	armor = /obj/item/clothing/armor/plate/orc
+	head = /obj/item/clothing/head/helmet/orc
+	cloak = /obj/item/clothing/cloak/volfmantle//kinda elite orcs with better armor secured + some steel weapons
 	H.base_strength = 12
 	H.base_speed = 12
 	H.base_constitution = 13
@@ -466,33 +389,17 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
-			r_hand = /obj/item/weapon/sword/iron
-			l_hand = /obj/item/weapon/axe/iron
-			armor = /obj/item/clothing/armor/plate/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/orc
+			r_hand = /obj/item/weapon/sword/scimitar
+			l_hand = /obj/item/weapon/shield/tower
 		if(2) //Marauder with Axe and Shield
 			r_hand = /obj/item/weapon/axe/battle
-			armor = /obj/item/clothing/armor/plate/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/orc
 		if(3) //Warhammer Caveman
 			r_hand = /obj/item/weapon/mace/goden/steel/warhammer
-			armor = /obj/item/clothing/armor/plate/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/orc
-		if(4) //dagger fighter
-			armor = /obj/item/clothing/armor/plate/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(4) //
 			r_hand = /obj/item/weapon/mace/steel
 			l_hand = /obj/item/weapon/shield/tower
-			head = /obj/item/clothing/head/helmet/orc
 		if(5) //Marauder Ironblade
-			r_hand = /obj/item/weapon/polearm/halberd/bardiche
-			armor = /obj/item/clothing/armor/plate/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			head = /obj/item/clothing/head/helmet/orc
-
+			r_hand = /obj/item/weapon/sword/long
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /mob/living/carbon/human/species/orc/warlord
@@ -519,21 +426,22 @@
 	H.base_constitution = 14
 	H.base_endurance = 14
 	armor = /obj/item/clothing/armor/plate/orc/warlord
+	cloak = /obj/item/clothing/cloak/raincloak/red
 	head = /obj/item/clothing/head/helmet/orc/warlord
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord
-			r_hand = /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe
+			r_hand = /obj/item/weapon/polearm/halberd
 		if(2) //Greatsword Warlord
-			r_hand = /obj/item/weapon/mace/goden
+			r_hand = /obj/item/weapon/sword/long/greatsword
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/weapon/whip/antique
 			l_hand = /obj/item/weapon/sword/short
 		if(4) // Big Sword and Big Shield
 			r_hand = /obj/item/weapon/sword/scimitar/falchion
-			l_hand = /obj/item/weapon/shield/tower/buckleriron
+			l_hand = /obj/item/weapon/shield/tower/metal
 		if(5) //Anti Knight STR Build
-			r_hand = /obj/item/weapon/flail/sflail
+			r_hand = /obj/item/weapon/flail/peasant
 
 
 /mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills

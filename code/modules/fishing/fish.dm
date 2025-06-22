@@ -10,6 +10,7 @@
 	max_integrity = 50
 	sellprice = 10
 	dropshrink = 0.6
+	foodtype = MEAT //Stonekeep edit. The default would be 'Grain' without this.
 	slices_num = 1
 	slice_bclass = BCLASS_CHOP
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)

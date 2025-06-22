@@ -31,7 +31,7 @@
 
 /datum/crafting_recipe/roguetown/cloththree
 	name = "cloth (x3)"
-	result = list(/obj/item/natural/cloth = 3)
+	result = list(/obj/item/natural/cloth, /obj/item/natural/cloth, /obj/item/natural/cloth)//fixes the output of the cloth
 	reqs = list(/obj/item/natural/fibers = 6)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing

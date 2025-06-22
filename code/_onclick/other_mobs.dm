@@ -206,7 +206,7 @@
 	var/poisonkiss = FALSE
 	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		dam2do *= 2
-	if(HAS_TRAIT(user, TRAIT_CHANGELING_METABOLISM))
+	if(HAS_TRAIT(user, TRAIT_CHANGELING_METABOLISM)) //Stonekeep edit
 		poisonkiss = TRUE
 	if(!HAS_TRAIT(user, TRAIT_STRONGBITE))
 		if(!affecting.has_wound(/datum/wound/bite))
@@ -351,7 +351,7 @@
 				if(HAS_TRAIT(src, TRAIT_NO_BITE))
 					to_chat(src, span_warning("I can't bite."))
 					return
-				if(HAS_TRAIT(src, TRAIT_CHANGELING_METABOLISM) && ismob(A))
+				if(HAS_TRAIT(src, TRAIT_CHANGELING_METABOLISM) && ismob(A)) //Stonekeep edit
 					var/mob/living/L = A
 					if(L && (L.stat == DEAD || L.stat == UNCONSCIOUS))
 						changeNext_move(mmb_intent.clickcd)
@@ -377,7 +377,7 @@
 							var/purifying = FALSE
 							if(istype(L, /mob/living/carbon/human))
 								var/mob/living/carbon/human/H = L
-								if((islist(H.faction) && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+								if((islist(H.faction) && (FACTION_ORCS in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
 									purifying = TRUE
 
 							if(selected_zone in limb_list)

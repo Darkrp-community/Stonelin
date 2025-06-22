@@ -37,10 +37,10 @@
 	gloves = /obj/item/clothing/gloves/leather/abyssal //kote already protects the hands.
 	belt = /obj/item/storage/belt/kaizoku/leather/daisho/random
 	shirt = /obj/item/clothing/armor/gambeson/light/hitatare/zamurai //weaker gambeson. Has way more DRIP. (Doesn't matter for balance, shutup)
-	armor = /obj/item/clothing/armor/medium/surcoat/heartfelt //Paying off for 4 swordskill instead of 5.
-	head = /obj/item/clothing/head/helmet/visored/zunari //fucking-shit-up knight helmet tier. Sacrificed some to keep that one.
-	wrists = /obj/item/clothing/wrists/bracers/kote //Cooler Bracer that protects the hands.
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
+	armor = /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai //Paying off for 4 swordskill instead of 5.
+	head = /obj/item/clothing/head/helmet/visored/zunari/zamurai //fucking-shit-up knight helmet tier. Sacrificed some to keep that one.
+	wrists = /obj/item/clothing/wrists/bracers/kote/zamurai //Cooler Bracer that protects the hands.
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
 
 	to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened warrior in lacquered armor whom lands I own and control. Yet, here I stand in unfamiliar lands no different of my own.</span>"))
 
@@ -74,12 +74,12 @@
 	var/zamuraitype = list("Odashibushi(Melee)","Yumibushi(Ranged)")
 	var/specialization = input("Choose your Specialization", "Available Specialization") as anything in zamuraitype
 	switch(specialization)
-		if("Odashibushi(Melee)") //Not as sword-specialized as Swordmaster, but have better armor.
+		if("Odashibushi(Melee)")
 			H.set_blindness(0)
 			backr = /obj/item/weapon/sword/long/greatsword/odachi
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			if(H.mind)
-				H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
+				H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 				H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 				H.change_stat(STATKEY_CON, 1)
 				H.change_stat(STATKEY_END, 1)

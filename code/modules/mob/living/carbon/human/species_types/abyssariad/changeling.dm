@@ -6,14 +6,6 @@
 
 //	( + Hard Bite perk )
 //	( - 'Bite' intention always set a warning state. )
-/*
->>>MAJOR NEED! Please, someone code in a "Felinid"-like system for the changeling, but instead of CRINGE 'CUTESY' BS, I want
-help to portray Changeling's bloodthirsty nature. The 'Eldritch Jaw', which is essentially, "wagging_tail" system
-for the mouth THAT opens with a automatic emote (bite intention).<<<
-Future plan:
--Physical Extension, Kitsune-bi; Immune to fire, put fires on others by touch and need no water, but takes damage from water sources, including water splash from buckets.
--Can only eat meat from all sources. Uncooked or cooked meat, fat, tallows, bones, corpses, gibs. Cannot eat vegetables, cereals, fruits. Exceptions only comes to Sake and Rice.
-*/
 
 /mob/living/carbon/human/species/abyssariad/changeling
 	race = /datum/species/abyssariad/changeling
@@ -24,15 +16,11 @@ Future plan:
 	desc = "<b>Storm branched Champions</b><br>\
 	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, the changelings are an \
 	honor-bound race wild as the storms, hermetically humble, yet quick tempered. \
-	Their principles are always extreme, such as being the most fierce duelists or martial pacifists, but never in-between. \
+	Their principles are always extreme, such as being the most fierce duelists or pacifists, but rarely in-between. \
 	\n\n\
 	Their mask-like facial bones and fleshbending physiology exposes their predatorial divine making, built to consume \
 	corruption and purify decay, but this leaves them unable to ingest many of the creations of the soil. \
 	Their traditional form is standardized, but some outcasts strays to carve out a distinct physical identity. \
-	\n\n\
-	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
-	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
-	known for their extreme loyalty.\
 	\n\n\
 	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
 
@@ -44,7 +32,6 @@ Future plan:
 //	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail_human" = "Onetail")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
-	toxic_food = VEGETABLES|FRUIT|GRAIN
 	disliked_food = NONE
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT

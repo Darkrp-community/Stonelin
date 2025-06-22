@@ -35,6 +35,7 @@
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOSTAMINA, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC) //the undead shouldn't freeze in pain
 	equipOutfit(new /datum/outfit/job/species/zizombie/npc/random)
 	dodgetime = 15
 	canparry = TRUE
@@ -234,26 +235,20 @@
 	H.base_speed = 7
 	H.base_constitution = 10
 	H.base_endurance = 16//the zombies shouldn't get tired after all
-	shirt = /obj/item/clothing/shirt/undershirt/vagrant
+	shirt = pick (/obj/item/clothing/shirt/undershirt/vagrant, /obj/item/clothing/armor/gambeson/light)
 	pants = /obj/item/clothing/pants/tights/vagrant
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	wrists = /obj/item/clothing/wrists/bracers/leather
-	head = /obj/item/clothing/head/roguehood/random
-	var/loadout = rand(1,6)
+	neck = pick (/obj/item/clothing/neck/coif,/obj/item/clothing/neck/coif/cloth)
+	head = pick (/obj/item/clothing/head/roguehood/random, /obj/item/clothing/head/headband, /obj/item/clothing/head/armingcap, /obj/item/clothing/head/chaperon)
+	var/loadout = rand(1,3)
 	switch(loadout)
-		if(1) //Axe Warrior
-			r_hand = /obj/item/weapon/axe/iron
-		if(2) //Long Stick Fighter
-			r_hand = /obj/item/weapon/polearm/woodstaff
-		if(3) //Club Caveman
-			r_hand = /obj/item/weapon/mace/woodclub
-		if(4) //Stabbity Stabbity your Knight is now horizontality
-			r_hand =/obj/item/weapon/pitchfork
-		if(5) //Bonk Build
-			r_hand = /obj/item/weapon/thresher
-		if(6) //Bonk Build
-			r_hand = /obj/item/weapon/hoe
-
+		if(1)
+			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/mace/woodclub, /obj/item/weapon/mace/cudgel/carpenter, /obj/item/weapon/pick, /obj/item/weapon/hammer)
+		if(2)
+			r_hand = pick (/obj/item/weapon/polearm/woodstaff, /obj/item/weapon/polearm/woodstaff/quarterstaff, /obj/item/weapon/hoe, /obj/item/weapon/pitchfork, /obj/item/weapon/sickle/scythe)
+		if(3)
+			r_hand = pick (/obj/item/weapon/thresher, /obj/item/weapon/flail/towner, /obj/item/weapon/sickle, /obj/item/weapon/shovel, /obj/item/weapon/knife/villager)
 
 ///////////////////////////////////////////////////////////// EVENTMIN ZIZOMBIES
 /mob/living/carbon/human/species/zizombie/npc/ambush/after_creation()

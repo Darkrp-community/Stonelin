@@ -338,3 +338,51 @@
 				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 			if("onback")
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/weapon/shield/tower/horseman
+	name = "desert rider shield"
+	desc = "A gigantic, horseman shield used by the desert riders."
+	icon_state = "rider_shield"
+
+/*/obj/item/weapon/shield/tower/buckleriron/iplank
+	name = "iron buckler"
+	desc = "A small and humble iron shield with wooden planks on it, more of a training weapon than a shield, yet extremely popular on poor warriors, militias and novice craftmen since is a good practice."
+	icon_state = "iplank"
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
+	force = 10
+	throwforce = 10
+	dropshrink = 0.75
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = 1 // small, tiny shield
+	resistance_flags = FIRE_PROOF
+	wdefense = 4
+	coverage = 45
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 200
+	melting_material = /datum/material/iron
+	melt_amount = 75
+
+/obj/item/weapon/shield/tower/buckleriron/splank
+	name = "Steel buckler"
+	desc = "A great craftmanship of steel, a light and powerful steel buckler popular on the hands of skilled warriors who can afford such pieces."
+	icon_state = "splank"
+	slot_flags = ITEM_SLOT_BACK
+	force = 15
+	throwforce = 10
+	dropshrink = 0.75
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = 0 // this one is bigger
+	resistance_flags = FIRE_PROOF
+	wdefense = 5
+	coverage = 60
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 280
+	melting_material = /datum/material/steel
+	melt_amount = 75
+*/

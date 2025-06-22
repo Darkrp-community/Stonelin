@@ -1,11 +1,9 @@
-
-
 /datum/devotion/cleric_holder/proc/grant_spells_sohei(mob/living/carbon/human/H)
 	if(!H || !H.mind)
 		return
 
 	var/datum/patron/A = H.patron
-	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/gale_palm, A.t0)
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/gale_palm, A.t0) //Placeholder. Need to change this for a Sohei-only.
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue
@@ -109,159 +107,6 @@
 			C.adjustFireLoss(4)
 			C.Jitter(3)
 
-// =================================================================
-// =====================	STRUCTURE	============================
-
-/obj/structure/frontierjustice
-	name = "frontier justice"
-	desc = "The manifestation extrajudicidal punishment by vigilantism, or performed by evil doers to instill fear. One may never know."
-	icon = 	'modular/stonekeep/kaizoku/icons/mapset/frontierjustice.dmi'
-	icon_state = "edgy1"
-	anchored = TRUE
-	density = FALSE
-	opacity = 0
-	blade_dulling = DULLING_CUT
-	max_integrity = 50
-	layer = ABOVE_OBJ_LAYER
-	destroy_sound = 'sound/foley/bodyfall (1).ogg'
-
-/obj/structure/frontierjustice/Initialize()
-	. = ..()
-	icon_state = "edgy[rand(1,5)]"
-
-/obj/structure/frontierjustice/examine_status(mob/user)
-	if(max_integrity)
-		var/healthpercent = (obj_integrity/max_integrity) * 100
-		switch(healthpercent)
-			if(50 to 99)
-				return  "The flesh is still in place."
-			if(25 to 50)
-				return  "Damage has set its toll."
-			if(1 to 25)
-				return  "<span class='warning'>The corpse is almost butchered.</span>"
-
-/obj/structure/frontierjustice/Destroy()
-	var/turf/T = loc
-	if(isturf(T)) // Ensure `T` is a valid turf
-		var/obj/item/reagent_containers/food/snacks/meat/steak/meat_piece = new(T)
-		if(meat_piece)
-			meat_piece.name = "humen meat" //funny
-	. = ..()
-
-/obj/structure/frontierjustice/dead
-	name = "fated as you"
-	desc = "Killed off and left to rot."
-	icon_state = "dead1"
-	destroy_sound = 'sound/combat/dismemberment/dismem (1).ogg'
-
-/obj/structure/frontierjustice/dead/Initialize()
-	. = ..()
-	icon_state = "dead1" //had to put that otherwise OG frontier justice would kill it off
-
-/obj/structure/frontierjustice/canibalism
-	name = "the meal"
-	desc = "Poor victim of the greenskins or wood elven."
-	icon_state = "cannibalism1"
-	destroy_sound = 'sound/combat/dismemberment/dismem (1).ogg'
-
-/obj/structure/frontierjustice/canibalism/Initialize()
-	. = ..()
-	icon_state = "cannibalism[rand(1,2)]"
-
-/obj/structure/frontierjustice/canibalism/Destroy()
-	var/turf/T = loc
-	if(isturf(T)) // Ensure `T` is a valid turf
-		var/obj/item/reagent_containers/food/snacks/cooked/frysteak/meat_piece = new(T)
-		if(meat_piece)
-			meat_piece.name = "cooked humen meat" //funny
-			meat_piece.desc = "A slab of manflesh, slow-cooked over glowing coals."
-	. = ..()
-
-/obj/structure/frontierjustice/crossed
-	name = "believer"
-	desc = "If one forgot the meaning of some religious symbols, surely this will remind them."
-	icon_state = "crossed1"
-	destroy_sound = 'sound/foley/breaksound.ogg'
-
-/obj/structure/frontierjustice/crossed/Initialize()
-	. = ..()
-	icon_state = "crossed[rand(1,3)]"
-
-/obj/structure/frontierjustice/caged
-	name = "cage"
-	desc = "Better check if someone is already inside, awaiting for salvation that never came."
-	icon_state = "cage1"
-	destroy_sound = 'sound/combat/hits/blunt/metalblunt (2).ogg'
-
-/obj/structure/frontierjustice/caged/Initialize()
-	. = ..()
-	icon_state = "cage[rand(1,3)]"
-
-/obj/structure/frontierjustice/caged/Destroy()
-	. = ..()
-
-
-// =================================================================
-// ========================		TURF	============================
-
-/turf/closed/wall/mineral/stone/abyssal
-	name = "abyssal ishigaki wall"
-	desc = "Made from large, interlocking uncut stones without the use of mortar, so a castle is built above it. However, many make simple walls out of it."
-	icon = 	'modular/stonekeep/kaizoku/icons/wallset/abyssalstone.dmi'
-	icon_state = "abyssabyssal"
-	sheet_type = /obj/item/natural/stone
-	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
-	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	above_floor = /turf/open/floor/blocks
-	baseturfs = list(/turf/open/floor/blocks)
-	climbdiff = 1
-	damage_deflection = 10
-
-/turf/closed/wall/mineral/stone/abyssal/window
-	name = "abyssal ishigaki window"
-	desc = "An simple hole within a Ishigaki wall."
-	opacity = FALSE
-	max_integrity = 800
-
-/turf/closed/wall/mineral/stone/window/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && ((mover.pass_flags & PASSTABLE) || (mover.pass_flags & PASSGRILLE)) )
-		return 1
-	return ..()
-
-/turf/closed/wall/mineral/stone/abyssal/window/Initialize()
-	. = ..()
-	icon_state = "abyssal"
-	var/mutable_appearance/M = mutable_appearance(icon, "abyssalhole", layer = ABOVE_NORMAL_TURF_LAYER)
-	add_overlay(M)
-
-/turf/closed/wall/mineral/wood/abyssal
-	name = "wagoya wall"
-	desc = "wooden wall of abyssal architecture that uses wooden joinery that fits together seamlessly to avoid use of nails or screws, increasing protection against earthshakes."
-	icon = 	'modular/stonekeep/kaizoku/icons/wallset/eastern_wood.dmi'
-	icon_state = "wood"
-	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
-	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-	above_floor = /turf/open/floor/woodturned
-	baseturfs = list(/turf/open/floor/woodturned)
-	neighborlay = "dirtedge"
-	climbdiff = 3
-
-/turf/closed/wall/mineral/wood/abyssal/window
-	name = "wagoya no sama"
-	desc = "A murderhole on a wooden wall that lacks nails and screws."
-	opacity = FALSE
-	max_integrity = 550
-
-/turf/closed/wall/mineral/wood/abyssal/window/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && ((mover.pass_flags & PASSTABLE) || (mover.pass_flags & PASSGRILLE)) )
-		return 1
-	return ..()
-
-/turf/closed/wall/mineral/wood/abyssal/window/Initialize()
-	. = ..()
-	var/mutable_appearance/M = mutable_appearance(icon, "woodhole", layer = ABOVE_NORMAL_TURF_LAYER)
-	add_overlay(M)
-
 /datum/status_effect/debuff/shaken
 	id = "shaken"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/shaken
@@ -359,7 +204,7 @@
 			target.cursed_freak_out()
 			return FALSE
 		if(target.mob_biotypes & MOB_UNDEAD)
-			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
+			target.visible_message(span_danger("[target] is lit asunder!"), span_userdanger("I've been lit from an divine source!"))
 			target.adjustFireLoss(30)
 			target.adjust_divine_fire_stacks(1)
 			target.IgniteMob()
@@ -369,10 +214,9 @@
 		var/conditional_buff = FALSE
 		var/situational_bonus = 15
 
-		if(user.patron.type == /datum/patron/divine/abyssor)
-			target.visible_message(span_info("A mist of salt-scented vapour settles on [target]!"), span_notice("I'm invigorated by healing vapours!"))
-			if (istype(get_turf(target), /turf/open/water) || istype(get_turf(user), /turf/open/water))
-				conditional_buff = TRUE
+		target.visible_message(span_info("A mist of salt-scented vapour settles on [target]!"), span_notice("I'm invigorated by healing vapours!"))
+		if(istype(get_turf(target), /turf/open/water) || istype(get_turf(user), /turf/open/water))
+			conditional_buff = TRUE
 
 		if(conditional_buff)
 			to_chat(user, "Channeling my patron's power is easier in these conditions!")
@@ -409,7 +253,7 @@
 	overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	action_icon_state = "spell0"
 	action_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
-	releasedrain = 30
+	releasedrain = 0
 	chargedrain = 0
 	chargetime = 0
 	devotion_cost = 25
@@ -421,6 +265,7 @@
 	req_items = list(/obj/item/clothing/neck/psycross/silver/abyssanctum)
 	sound = 'sound/magic/magic_nulled.ogg'
 	invocation_type = "none"
+	miracle = TRUE
 	//invocation = "delivers sharp jabs and a sudden clap, unleashing a freezing shockwave that forms and launches a jagged ice spike."
 
 	associated_skill = /datum/skill/magic/holy
@@ -436,7 +281,7 @@
 	range = 7
 	hitsound = 'sound/blank.ogg'
 	nondirectional_sprite = TRUE
-	impact_effect_type = /obj/effect/temp_visual/icespikeproj_projectile_impact //See if we can set it to be a projectile if CMODE, and a invocation if !CMODE
+	impact_effect_type = /obj/effect/temp_visual/icespikeproj_projectile_impact
 
 /obj/effect/temp_visual/icespikeproj_projectile_impact
 	name = "purifying spike"
@@ -454,15 +299,15 @@
 			C.adjustFireLoss(rand(50, 100)) //Random damage between 50 and 100. Very brutal, and proper for killing demons. Cold damage will come together with it after.
 			C.Knockdown(40) //Purification successful. You will be paralyzed.
 			C.Paralyze(1)
-			C.apply_status_effect(/datum/status_effect/debuff/chilled)
+			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
 			C.flash_fullscreen("whiteflash3")
 			return
-		if((C.faction && C.faction == "orcs")|| (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Fixed Runtime. // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
+		if((islist(C.faction) && (FACTION_ORCS in C.faction))|| (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Fixed Runtime. // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
 			C.visible_message("<span class='danger'>[target]'s body is distorced by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
 			C.adjustFireLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
 			C.Knockdown(20) //Purification successful. You will be paralyzed.
 			C.Paralyze(1) // Creatures with demon essence from Apotheosis war gets the second end of the stick.
-			C.apply_status_effect(/datum/status_effect/debuff/chilled)
+			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
 			C.flash_fullscreen("whiteflash3")
 			return
 		if(C.dna.species?.id == "abyssariad"||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures. This proves their 'divinity' and purity ingame.
@@ -472,7 +317,7 @@
 		else //Does not paralyze.
 			C.visible_message("<span class='danger'>[target]'s body is being crushed!</span>", "<span class='userdanger'>I feel a suffocating pressure building on my body!</span>")
 			C.adjustFireLoss(rand(20, 35)) //Normal creatures will still suffer the effects of Barotrauma, yet less in terms of damage. Will still freeze.
-			C.apply_status_effect(/datum/status_effect/debuff/chilled)
+			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
 			C.flash_fullscreen("whiteflash3")
 			return
 
@@ -482,7 +327,7 @@
 // ===================================================================================================================
 
 /obj/effect/proc_holder/spell/invoked/rake
-	name = "glacial harpoon"
+	name = "glacial tether"
 	overlay_state = "rake"
 	overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	action_icon_state = "rake"
@@ -497,6 +342,7 @@
 	invocation = "Praise the ocean! Praise the undying abyss! PRAISE ME!!!"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/rake/cast(list/targets, mob/living/user)
 	if(!istype(user, /mob/living))
@@ -545,9 +391,11 @@
 						L.blur_eyes(10)
 						L.apply_status_effect(/datum/status_effect/debuff/freezingsevere)
 
+	return TRUE
+
 /obj/structure/ice_spike_wall
-	name = "harpoon"
-	desc = "... The harpoon that anchor storms, as not all prayers are spoken - many are hurled, tearing through lies as it once did flesh.."
+	name = "tether"
+	desc = "... The tether that anchor storms, as not all prayers are spoken - many are hurled, tearing through lies as it once did flesh..."
 	icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	icon_state = "icewall"
 	density = TRUE
@@ -591,6 +439,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	req_items = list(/obj/item/clothing/neck/psycross/silver/abyssanctum)
+	miracle = TRUE
 
 /turf/open/proc/apply_ice_turf()
 	var/prev_icon_state = icon_state //that code saves the original attributes of the turf to avoid a black void.
@@ -636,7 +485,7 @@
 	tomb.encased_mob = owner
 	if(istype(owner, /mob/living/carbon/human))
 		tomb.buckle_mob(owner, TRUE, check_loc = FALSE)
-		if(owner.patron && owner.patron.type == /datum/patron/divine/abyssor)
+		if(owner.patron && is_abyssorfaithful(owner.patron))
 			to_chat(src, "<span class='debug'>Abyssor follower = no processing..</span>")
 			tomb.processing = FALSE
 		else
@@ -657,7 +506,7 @@
 
 /obj/structure/abyssaltomb
 	name = "abyssal tomb"
-	desc = "A solid block of ice encasing a victim inside a pocket dimension deep on the ocean. One requires to break the coffin to be released from such depths."
+	desc = "... The anchor of judgment within crystalline walls, the cold that mimics the gravity of guilt for the rewritting of what is sin."
 	icon = 'modular/stonekeep/kaizoku/icons/misc/freezesprite.dmi'
 	icon_state = "icespyre"
 	density = TRUE
@@ -761,7 +610,7 @@
 	action_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	releasedrain = 30
 	chargedrain = 0
-	chargetime = 0
+	chargetime = 30
 	devotion_cost = 25
 	range = 8
 	recharge_time = 15 SECONDS
@@ -777,6 +626,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	devotion_cost = 20
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/gale_palm/cast(list/targets, mob/living/user)
 	if(!user || !targets.len)
@@ -791,33 +641,70 @@
 	for(var/mob/living/target in T.contents)
 		if(target == user)
 			continue
+
+		var/turf/start = get_turf(user)
+		var/turf/end = get_turf(target)
+		if(!start || !end)
+			continue
+
+		// Animate gust traveling tile-by-tile
+		var/turf/current = start
+		spawn()
+			while(current != end)
+				var/obj/effect/windgust/gust = new(current)
+				gust.layer = ABOVE_MOB_LAYER
+				QDEL_IN(gust, 2)
+				current = get_step_towards(current, end)
+				sleep(1)
+
+		var/special = FALSE
+		if(istype(target, /mob/living))
+			var/mob/living/carbon/human/H = target
+			if((islist(H.faction) && (FACTION_ORCS in H.faction)) || (H.mob_biotypes & MOB_UNDEAD))
+				special = TRUE
+
 		target.visible_message(span_danger("[target] is struck by the forceful wind!"))
 
-		var/obj/item/W = target.get_active_held_item()// Disarm code.
-		if(W)
-			var/turf/item_target = get_edge_target_turf(user, get_dir(user, get_step_away(target, user)))
-			target.dropItemToGround(W)
-			if(item_target)
-				W.throw_at(item_target, 6, 1)
-			target.visible_message(span_danger("[W] is ripped from [target]'s hand by the wind!"))
+		if(!special)
+			var/obj/item/W = target.get_active_held_item()
+			if(W)
+				var/turf/item_target = get_edge_target_turf(user, get_dir(user, get_step_away(target, user)))
+				target.dropItemToGround(W)
+				if(item_target)
+					W.throw_at(item_target, 6, 1)
+				target.visible_message(span_danger("[W] is ripped from [target]'s hand by the wind!"))
 
-		var/distance = rand(2, 4) // Additional pushing code
+		var/distance = rand(2, 4)
 		var/turf/throw_to = get_edge_target_turf(user, get_dir(user, get_step_away(target, user)))
 		if(throw_to)
 			target.throw_at(throw_to, distance, 2, user)
 
-		if(target.cmode) // Additional knockback code. Might be nerfed.
+		if(target.cmode)
 			if(prob(40))
 				target.AdjustKnockdown(rand(1, 2))
-				target.visible_message(span_warning("The wind forces [target] to stumble"))
+				target.visible_message(span_warning("The wind forces [target] to stumble."))
 		else
 			target.AdjustKnockdown(rand(5, 8))
 			target.visible_message(span_danger("[target] is knocked flat!"))
 
-		target.do_attack_animation(user, ATTACK_EFFECT_SMASH)
-
 	return TRUE
 
+/obj/effect/windgust
+	name = ""
+	desc = ""
+	icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	icon_state = "winds"
+	anchored = TRUE
+	mouse_opacity = 0
+	layer = ABOVE_MOB_LAYER
+	blend_mode = BLEND_DEFAULT
+	pixel_x = 0
+	pixel_y = 0
+
+/obj/effect/windgust/Initialize()
+	. = ..()
+	animate(src, alpha = 0, time = 5) // simple fade out
+	QDEL_IN(src, 6)
 // ====================================================================================================
 // HEAVENLY PILLAR - RAISE PEOPLE FOR FUN, MIGHT MAKE THEM FALL. CAN HELP IN INVADING PLACES - TIER 2
 // ====================================================================================================
@@ -830,7 +717,7 @@
 	action_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	releasedrain = 30
 	chargedrain = 0
-	chargetime = 0
+	chargetime = 40
 	devotion_cost = 45
 	recharge_time = 30 SECONDS
 	range = 8
@@ -841,52 +728,76 @@
 	associated_skill = /datum/skill/magic/holy
 	invocation_type = "none"
 	antimagic_allowed = TRUE
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/heavens_pillar/cast(list/targets, mob/living/user = usr)
 	if(!istype(user, /mob/living))
 		return FALSE
 
-	if(!targets.len || !isturf(targets[1]))
-		to_chat(user, span_warning("This spell requires solid, suitable ground to be manifested."))
+	if(!targets.len)
+		to_chat(user, span_warning("This spell requires a solid ground or a target to anchor itself."))
 		return FALSE
 
-	var/turf/T = targets[1]
-	if(isclosedturf(T))
-		to_chat(user, span_warning("You need powerful winds to move such solid walls."))
+	var/turf/T
+	var/mob/living/target_mob
+
+	if(isturf(targets[1]))
+		T = targets[1]
+	else if(ismob(targets[1]))
+		target_mob = targets[1]
+		T = get_turf(target_mob)
+
+	if(!T || isclosedturf(T))
+		to_chat(user, span_warning("This spell requires open, stable ground."))
 		return FALSE
 
 	var/turf/above = get_step_multiz(T, UP)
 	var/turf/ceiling = above ? get_step_multiz(above, UP) : null
 
-	var/obj/structure/heavenpillar/P = new /obj/structure/heavenpillar(T)
-	P.name = "Heaven’s Pillar"
+	// Show warning effect
+	var/obj/effect/tempwarning = new /obj/effect/overlay(T)
+	tempwarning.name = "rising wind"
+	tempwarning.icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	tempwarning.icon_state = "swirly"
+	tempwarning.layer = EFFECTS_LAYER
+	tempwarning.anchored = TRUE
+	tempwarning.pixel_y = 0
+	QDEL_IN(tempwarning, 10) // 1 second
 
-	var/turf/open/floor/above_tile
-	if(above && istype(above, /turf/open/transparent/openspace))
-		above_tile = new /turf/open/floor/eyeofstorm(above)
-		above_tile.name = "eye of the storm"
-		above_tile.desc = "The fierce winds keeps you in place, somehow. But its force weakens."
-		above_tile.icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
-		above_tile.icon_state = "eye"
-		above_tile.overlays += image('modular/stonekeep/kaizoku/icons/misc/spells.dmi', "eye")
+	// Delay the real effect by 1 second
+	spawn(10)
+		if(!T || QDELETED(T))
+			return
 
-		spawn(150)
-			if(above_tile && above_tile.loc)
-				above_tile.ChangeTurf(/turf/open/transparent/openspace)
+		var/obj/structure/heavenpillar/P = new /obj/structure/heavenpillar(T)
+		P.name = "Heaven’s Pillar"
 
-	for(var/mob/living/M in T.contents)
-		if(ceiling && !istransparentturf(ceiling))
-			M.visible_message(span_danger("[M] is slammed into the ceiling as the heavenly pillar erupts beneath them!"))
-			M.adjustBruteLoss(rand(20, 35))
-			M.throw_at(get_step_away(M, T), 2, 1)
-		else if(above)
-			M.visible_message(span_notice("[M] is caught and raised upwards!"))
-			M.forceMove(above)
-			M.Stun(20)
+		var/turf/open/floor/above_tile
+		if(above && istype(above, /turf/open/transparent/openspace))
+			above_tile = new /turf/open/floor/eyeofstorm(above)
+			above_tile.name = "eye of the storm"
+			above_tile.desc = "The fierce winds keep you in place, somehow. But its force weakens."
+			above_tile.icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+			above_tile.icon_state = "eye"
+			above_tile.overlays += image('modular/stonekeep/kaizoku/icons/misc/spells.dmi', "eye")
 
-	QDEL_IN(P, 150)
+			spawn(150)
+				if(above_tile && above_tile.loc)
+					above_tile.ChangeTurf(/turf/open/transparent/openspace)
 
-	to_chat(user, span_info("In mysterious ways, the wind compacts itself like matter."))
+		for(var/mob/living/M in T.contents)
+			if(ceiling && !istransparentturf(ceiling))
+				M.visible_message(span_danger("[M] is slammed into the ceiling as the heavenly pillar erupts beneath them!"))
+				M.adjustBruteLoss(rand(20, 35))
+				M.throw_at(get_step_away(M, T), 2, 1)
+			else if(above)
+				M.visible_message(span_notice("[M] is caught and raised upwards!"))
+				M.forceMove(above)
+				M.Stun(20)
+
+		QDEL_IN(P, 150)
+
+	to_chat(user, span_info("You channel winds to rise like solid stone..."))
 	return TRUE
 
 /obj/structure/heavenpillar
@@ -931,6 +842,7 @@
 	invocation_type = "shout"
 	invocation = "THE WINDS OF JUGDMENT DEVOURS THE WICKED!!!"
 	associated_skill = /datum/skill/magic/holy
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/maelstrom/cast(list/targets, mob/living/user)
 	if(!targets.len || !isturf(targets[1]))
@@ -1015,7 +927,7 @@
 // ===================================================================
 // SURGING BOLT - ATTACK SPELL, TIER 1. YOU'RE LIKELY TO SPARK YOURSELF.
 // ===================================================================
-/obj/effect/proc_holder/spell/invoked/gale_palm
+/obj/effect/proc_holder/spell/invoked/surging_bolt
 	name = "Lightening chain"
 	overlay_state = "chain"
 	overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
@@ -1038,6 +950,7 @@
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/surging_bolt/cast(list/targets, mob/living/user)
 	if(!targets.len)
@@ -1115,6 +1028,104 @@
 			var/angle = arctan(dy, dx)
 			L.transform = matrix(angle, MATRIX_ROTATE)
 
+// ====================================================================================================
+// VEIL OF THUNDER, A SUPPORT SPELL. TIER 2
+// ====================================================================================================
+
+/mob/living
+	var/datum/lightning_shield/shield_status //This is necessary for tracking, because qdels suck balls.
+
+/obj/effect/proc_holder/spell/invoked/warkraft
+	name = "veil of spirits"
+	overlay_state = "waternet"
+	overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	action_icon_state = "waternet"
+	action_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	devotion_cost = 45
+	recharge_time = 30 SECONDS
+	invocation = "Storm, earth, and water, heed my call!" //Yes. That's a reference.
+	chargedloop = /datum/looping_sound/invokegen
+	req_items = list(/obj/item/clothing/neck/psycross/silver/abyssanctum)
+	warnie = "sydwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	charging_slowdown = 2
+	active = FALSE
+	invocation = "The spirits are relentless. Your time has come!"
+	invocation_type = "shout"
+	associated_skill = /datum/skill/magic/holy
+	antimagic_allowed = FALSE
+	miracle = TRUE
+
+/obj/effect/proc_holder/spell/invoked/warkraft/cast(list/targets, mob/living/user)
+	if(!targets.len || !isliving(targets[1]))
+		to_chat(user, span_warning("You have the feeling you need to choose a person for this spell."))
+		return FALSE
+
+	var/mob/living/target = targets[1]
+
+	if(target.shield_status)
+		qdel(target.shield_status)
+
+	var/datum/lightning_shield/L = new
+	L.activate(target)
+	target.shield_status = L
+
+	to_chat(user, span_info("Spheres of power envelops [target] in a spinning motion."))
+	return TRUE
+
+/datum/lightning_shield
+	var/mob/living/owner
+	var/overlay
+	var/intensity = 15
+	var/duration = 120 // 12 seconds
+
+/datum/lightning_shield/proc/activate(mob/living/M)
+	owner = M
+	if(!owner)
+		return
+	if(!overlay)
+		overlay = mutable_appearance('modular/stonekeep/kaizoku/icons/misc/spells.dmi', "littleangels")
+	owner.overlays += overlay
+	owner.shield_status = src
+	spawn(duration)
+		if(owner == M && owner.shield_status == src)
+			src.deactivate()
+
+/datum/lightning_shield/proc/deactivate()
+	if(owner)
+		owner.overlays -= overlay
+		if(owner.shield_status == src)
+			owner.shield_status = null
+	qdel(src)
+
+/datum/lightning_shield/proc/on_attacked_by_weapon(mob/living/attacker)
+	if(!attacker || !isliving(attacker)) return
+	attacker.visible_message(span_danger("[attacker] is shocked by abyssal lightning!"))
+	attacker.adjustFireLoss(intensity)
+	attacker.Paralyze(10)
+	attacker.Jitter(20)
+	attacker.electrocute_act(1)
+	playsound(get_turf(attacker), 'sound/magic/lightning.ogg', 70, TRUE)
+	new /obj/effect/temp_visual/lightning(get_turf(attacker))
+
+/mob/living/attackby(obj/item/I, mob/living/user, params)
+	if(shield_status)
+		shield_status.on_attacked_by_weapon(user)
+	..()
+	return
+
+/obj/effect/temp_visual/lightning
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "shield"
+	duration = 10
+	light_outer_range = 2
+	layer = FLY_LAYER
+	randomdir = FALSE
+
 // ===================================================================
 // HEARTBRINGER - REVIVAL SPELL, TIER 3
 // ===================================================================
@@ -1138,6 +1149,7 @@
 	invocation = "Abyssor, I plea- Take away this soul from the dark one!"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
+	miracle = TRUE
 
 /obj/effect/proc_holder/spell/invoked/revival_spark/cast(list/targets, mob/living/user)
 	if(!targets.len || !isliving(targets[1]))
@@ -1147,16 +1159,16 @@
 	var/mob/living/target = targets[1]
 
 	if(target.stat != DEAD)
-		to_chat(user, span_warning("[target] requires to be dead to perform this magic."))
+		to_chat(user, span_warning("[target] requires to be dead to perform this manifestation of Abyssor's will"))
 		return FALSE
 
 	var/turf/T = get_turf(user)
 	if(!istype(T, /turf/open/water))
-		to_chat(user, span_warning("One must draw the forces from Abyssor by standing on water."))
+		to_chat(user, span_warning("One must draw the forces from Abyssor by standing on water"))
 		return FALSE
 
 	if(HAS_TRAIT(target, TRAIT_NECRA_CURSE))
-		to_chat(user, span_warning("That soul has been touched by a polytheistic dark goddess."))
+		to_chat(user, span_warning("That soul has been touched by a polytheistic dark goddess"))
 		return FALSE
 
 	playsound(T, 'sound/weather/rain/thunder_1.ogg', 80, TRUE)
@@ -1237,98 +1249,14 @@
 	target.emote("gasp")
 	target.apply_status_effect(/datum/status_effect/debuff/revive)
 
-// ====================================================================================================
-// VEIL OF THUNDER, A SUPPORT SPELL. TIER 2
-// ====================================================================================================
-
-/mob/living
-	var/datum/lightning_shield/shield_status //This is necessary for tracking, because qdels suck balls.
-
-/obj/effect/proc_holder/spell/invoked/warkraft
-	name = "veil of thunder"
-	action_icon_state = "waternet"
-	overlay_state = "waternet"
-	releasedrain = 30
-	chargedrain = 0
-	chargetime = 0
-	devotion_cost = 45
-	recharge_time = 30 SECONDS
-	invocation = "Storm, earth, and water, heed my call!" //Yes. That's a reference.
-	chargedloop = /datum/looping_sound/invokegen
-	req_items = list(/obj/item/clothing/neck/psycross/silver/abyssanctum)
-	warnie = "sydwarning"
-	no_early_release = TRUE
-	movement_interrupt = FALSE
-	charging_slowdown = 2
-	active = FALSE
-	invocation = "The spirits are relentless. Your time has come!"
-	invocation_type = "shout"
-	associated_skill = /datum/skill/magic/holy
-	antimagic_allowed = FALSE
-	associated_skill = /datum/skill/magic/holy
-
-/obj/effect/proc_holder/spell/invoked/warkraft/cast(list/targets, mob/living/user)
-	if(!targets.len || !isliving(targets[1]))
-		to_chat(user, span_warning("You have the feeling you need to choose a person for this spell."))
-		return FALSE
-
-	var/mob/living/target = targets[1]
-
-	if(target.shield_status)
-		qdel(target.shield_status)
-
-	var/datum/lightning_shield/L = new
-	L.activate(target)
-	target.shield_status = L
-
-	to_chat(user, span_info("Spheres of power envelops [target] in a spinning motion."))
-	return TRUE
-
-/datum/lightning_shield
-	var/mob/living/owner
-	var/overlay
-	var/intensity = 15
-	var/duration = 120 // 12 seconds
-
-/datum/lightning_shield/proc/activate(mob/living/M)
-	owner = M
-	if(!owner)
-		return
-	if(!overlay)
-		overlay = mutable_appearance('icons/effects/effects.dmi', "shield")
-	owner.overlays += overlay
-	owner.shield_status = src
-	spawn(duration)
-		if(owner == M && owner.shield_status == src)
-			src.deactivate() // fixed reference
-
-/datum/lightning_shield/proc/deactivate() // fixed path
-	if(owner)
-		owner.overlays -= overlay
-		if(owner.shield_status == src)
-			owner.shield_status = null
-	qdel(src)
-
-/datum/lightning_shield/proc/on_attacked_by_weapon(mob/living/attacker)
-	if(!attacker || !isliving(attacker)) return
-	attacker.visible_message(span_danger("[attacker] is shocked by abyssal lightning!"))
-	attacker.adjustFireLoss(intensity)
-	attacker.Paralyze(10)
-	attacker.Jitter(20)
-	attacker.electrocute_act(1)
-	playsound(get_turf(attacker), 'sound/magic/lightning.ogg', 70, TRUE)
-	new /obj/effect/temp_visual/lightning(get_turf(attacker))
-
-/mob/living/attackby(obj/item/I, mob/living/user, params)
-	if(shield_status)
-		shield_status.on_attacked_by_weapon(user)
-	..()
-	return
-
-/obj/effect/temp_visual/lightning
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "shield"
-	duration = 10
-	light_outer_range = 2
-	layer = FLY_LAYER
-	randomdir = FALSE
+/proc/is_abyssorfaithful(datum/patron/P)
+	var/list/valid = list(
+		/datum/patron/divine/abyssor,
+		/datum/patron/abyssanctum/tideweaver,
+		/datum/patron/abyssanctum/curator,
+		/datum/patron/abyssanctum/purifier
+	)
+	for(var/type in valid)
+		if(istype(P, type))
+			return TRUE
+	return FALSE

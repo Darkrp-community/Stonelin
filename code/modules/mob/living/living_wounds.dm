@@ -178,7 +178,7 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round((health / maxHealth) * 20 + (dam / 3), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				var/fracture_type = /datum/wound/fracture/chest
 				if(check_zone(zone_precise) == BODY_ZONE_HEAD)
 					fracture_type = /datum/wound/fracture/head
@@ -190,7 +190,7 @@
 				else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 					dam += 30
 			used = round(max(dam / 3, 1), 1)
-			if(prob(used))
+			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				attempted_wounds += /datum/wound/artery/chest
 
 	for(var/wound_type in shuffle(attempted_wounds))

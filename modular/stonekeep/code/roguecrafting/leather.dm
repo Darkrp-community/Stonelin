@@ -30,10 +30,10 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/leather/whip
+/datum/crafting_recipe/roguetown/leather/shirt
 	name = "shirt (tribal)"
 	result = /obj/item/clothing/shirt/tribalrag
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide = 1)
 	craftdiff = 0
 
 
@@ -80,25 +80,28 @@
 
 /datum/crafting_recipe/roguetown/leather/waterskin
 	name = "waterskin"
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	result = /obj/item/reagent_containers/glass/bottle/waterskin
 
 /datum/crafting_recipe/roguetown/leather/quiver
 	name = "quiver"
 	result = /obj/item/ammo_holder/quiver
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 
 /datum/crafting_recipe/roguetown/leather/belt
 	name = "belt (leather)"
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	result = list(/obj/item/storage/belt/leather)
 
 /datum/crafting_recipe/roguetown/leather/pouch
 	name = "leather pouch"
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	result = list(/obj/item/storage/belt/pouch)
 
 /datum/crafting_recipe/roguetown/leather/backpack
 	name = "storage (backpack)"
 	result = /obj/item/storage/backpack/backpack
-	reqs = list(/obj/item/natural/hide = 4)
+	reqs = list(/obj/item/natural/hide/cured = 4)
 	craftdiff = 2
 
 
@@ -110,13 +113,41 @@
 	craftdiff = 1
 	req_imperial = TRUE
 
-
 /datum/crafting_recipe/roguetown/leather/armor/haori
-	name = "armor (haori jacket) {fl}"
-	result = list(/obj/item/clothing/armor/leather/jacket/haori)
+	name = "armor (unruly backcoat) {fl}"
+	result = list(/obj/item/clothing/cloak/eastcloak2)
 	reqs = list(/obj/item/natural/hide = 2)
 	req_islander = TRUE
 
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (curator cloak) {fl}"
+	result = list(/obj/item/clothing/cloak/curator)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (susohiki attire) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/susohiki)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (dobuku robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit3)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (michiyuki robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit2)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (haori robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit1)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/leather/armor/corset
 	name = "armor (corset)"
@@ -179,14 +210,14 @@
 /datum/crafting_recipe/roguetown/leather/armor/heavy
 	name = "armor (heavy leather armor)"
 	result = /obj/item/clothing/armor/leather/heavy
-	reqs = list(/obj/item/natural/hide/cured = 3, /obj/item/reagent_containers/food/snacks/fat = 1)
-	craftdiff = 4
+	reqs = list(/obj/item/natural/hide/cured = 3, /obj/item/reagent_containers/food/snacks/tallow = 1)
+	craftdiff = 4 // More coverage, incentive to train leathercrafting, tailors have a chance to start at 4 therefore craftable enough
 
 /datum/crafting_recipe/roguetown/leather/armor/heavycoat
-	name = "armor (heavy leather coat"
+	name = "armor (heavy leather coat)"
 	result = /obj/item/clothing/armor/leather/heavy/coat
-	reqs = 	list(/obj/item/natural/hide/cured = 4, /obj/item/reagent_containers/food/snacks/fat = 1)
-	craftdiff = 5
+	reqs = 	list(/obj/item/natural/hide/cured = 4, /obj/item/reagent_containers/food/snacks/tallow = 1)
+	craftdiff = 3 // Coat, so it has less coverage, therefore easier, hunters can craft
 
 
 /*=========		SHOES	==========*/
@@ -279,13 +310,13 @@
 	name = "shoes (heavy leather boots)"
 	result = /obj/item/clothing/shoes/boots/leather/heavy
 	reqs = 	list(/obj/item/natural/hide/cured = 2, /obj/item/reagent_containers/food/snacks/tallow = 1)
-	craftdiff = 4
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/leather/boots_fencing
 	name = "shoes (fencing boots)"
 	result = /obj/item/clothing/shoes/boots/leather/fencing
 	reqs = 	list(/obj/item/natural/hide/cured = 2, /obj/item/ingot/iron = 1)
-	craftdiff = 5
+	craftdiff = 3
 
 
 /*=========		GLOVES	==========*/
@@ -317,7 +348,7 @@
 	name = "gloves (fencing)"
 	result = /obj/item/clothing/gloves/fencer
 	reqs = 	list(/obj/item/natural/hide/cured = 2)
-	craftdiff = 4
+	craftdiff = 3
 
 
 
@@ -343,7 +374,7 @@
 	name = "pants (padded leather)"
 	result = /obj/item/clothing/pants/trou/leather/padded
 	reqs = 	list(/obj/item/natural/hide/cured = 2, /obj/item/natural/cloth = 2)
-	craftdiff = 5
+	craftdiff = 3
 
 
 /*=========		BRACERS	==========*/
@@ -361,7 +392,7 @@
 	name = "bracers (heavy leather)"
 	result = /obj/item/clothing/wrists/bracers/leather/heavy
 	reqs = 	list(/obj/item/natural/hide/cured = 2, /obj/item/reagent_containers/food/snacks/tallow = 1)
-	craftdiff = 4
+	craftdiff = 3
 
 
 /*=========		HEAD & NECK	==========*/

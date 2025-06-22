@@ -33,7 +33,8 @@
 /datum/patron/abyssanctum/purifier
 	name = "Purifier Doctrine"
 	domain = "Abyssor, with faith empowered by natural disasters, the tornadoes"
-	desc = "Purifiers of the spirit and flesh by blade and rite against the burden unseen. Their dreams are warning splinter of the Tide of Fate."
+	desc = "Purifiers of the spirit and flesh by rites against the burden unseen. Their dreams are warning splinter of the Tide of Fate, \
+	believing it must be changed just much it should be protected."
 	flaws= "Reckless, Stubborn, Destructive - Intolerant"
 	worshippers = "Exorcists, talisman makers, survivors of demonic incursions. The Shrinekeepers."
 	sins = "Fear, Hubris, Forgetfulness - Hesitation"
@@ -57,7 +58,8 @@
 /datum/patron/abyssanctum/curator
 	name = "Curator Doctrine"
 	domain = "Abyssor, with faith empowered by natural disasters, the thunderstorms"
-	desc = "The tailors of sacred weaving, binding wounds and lore to guide the lost across the dying world as the bridge for salvation and beyond"
+	desc = "The protectors of knowledge, binding wounds and lore to guide the lost across the dying world as the bridge for \
+	salvation and beyond. Believers that no knowledge must ever be censored."
 	flaws = "Reckless, Stubborn, Destructive - Overtrusting"
 	worshippers = "The common folk, storytellers, ship doctors and educators. The Yamabushi."
 	sins = "Fear, Hubris, Forgetfulness - Intellectual arrogance"
@@ -82,7 +84,8 @@
 /datum/patron/abyssanctum/tideweaver
 	name = "Tideweaver Doctrine"
 	domain = "Abyssor, with faith empowered by natural disasters, the blizzards"
-	desc = "Guardians of the sacred order, who believes that purification must be brought by the sword, the filter as aggressive as natural disasters."
+	desc = "Guardians of the sacred weaving, who believes that purification must be brought by the ways of the blade and reconstruction, \
+	the filter as aggressive as natural disasters."
 	flaws = "Reckless, Stubborn, Destructive - Unyielding"
 	worshippers = "Abyssal Warriors, Sea raiders, Generals. The Soheis."
 	sins = "Fear, Hubris, Forgetfulness - Disobedience"
@@ -104,3 +107,15 @@
 	storyteller = /datum/storyteller/abyssor
 
 #define ALL_ABYSSANCTUM_DOCTRINE list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
+
+/*
+GLOBAL_LIST_INIT(abyssanctum_speak, world.file2list('strings/rt/abyssanctum_speak.txt'))
+
+/datum/emote/living/pray/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+
+	if(istype(patron, /datum/patron/abyssanctum))
+		if(GLOB.abyssanctum_speak && length(GLOB.abyssanctum_speak))
+			var/abyssangel = pick(GLOB.abyssanctum_speak)
+			to_chat(follower, span_notice("<i>[abyssangel]</i>"))
+*/

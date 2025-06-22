@@ -38,6 +38,19 @@
 				to_chat(H,"<span class='warning'>What the hell was that thing?!</span>")
 				H.adjust_disgust(25 + 30 * fraction)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "toxic_food", /datum/mood_event/disgusting_food)
+			// STONEKEEP EDIT
+			if(HAS_TRAIT(H, TRAIT_CHANGELING_METABOLISM))
+				if(foodtype & MEAT) //If: Meat, short-circuits the rest.
+					to_chat(H, "<span class='notice'>The flavor of prey... exquisite.</span>")
+					H.adjust_disgust(-5 + -2.5 * fraction)
+				else if(foodtype & (GRAIN | VEGETABLES)) //If plant, bad.
+					to_chat(H, "<span class='warning'>What is this plant-ridden filth?</span>")
+					H.adjust_disgust(25 + 30 * fraction)
+				else //Anything else means free game.
+					to_chat(H, "<span class='notice'>Edible... but not satisfying.</span>")
+				last_check_time = world.time
+				return
+			// END OF STONEKEEP EDIT
 			else if(foodtype & H.dna.species.disliked_food)
 				to_chat(H,"<span class='notice'>That didn't taste very good...</span>")
 				H.adjust_disgust(11 + 15 * fraction)

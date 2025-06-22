@@ -76,3 +76,15 @@
 	color = null
 	blocksound = PLATEHIT
 	item_weight = 7 * STEEL_MULTIPLIER
+
+//............... Psyrant Boots ............... //
+/obj/item/clothing/shoes/boots/rare/psyrant
+	name = "Blackplate Boots"
+	allowed_race = list("human")
+	desc = "Segemented plates sown with precision and tactful skill ensure liquid like movement - it's reinforced strength ensure a firm stomp against those of lesser makings"
+	body_parts_covered = FEET|LEGS
+	icon_state = "psyboots"
+	item_state = "psyboots"
+	color = null
+	blocksound = PLATEHIT
+	item_weight = 7 * STEEL_MULTIPLIER

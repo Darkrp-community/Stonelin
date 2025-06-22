@@ -3,7 +3,7 @@
 
 //'armor'
 /datum/anvil_recipe/armor/nanbando
-	name = "Abyssal half-plate (+Bar x3) {Nanbando-sode}"
+	name = "Abyssal half-plate (+Bar x2) {Nanbando-sode}"
 	recipe_name = "a Nanban-Dou-Sode"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
@@ -18,7 +18,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/nanbandofull
-	name = "Abyssal fullplate (+Bar x4) {Nanban-Do-Gusoku}"
+	name = "Abyssal fullplate (+Bar x3) {Nanban-Do-Gusoku}"
 	recipe_name = "a Nanban-Do-Gusoku"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel,/obj/item/ingot/steel)
@@ -32,7 +32,6 @@
 	created_item = /obj/item/clothing/armor/chainmail/tatami
 	craftdiff = 2
 
-// huh. We can make these uniquely then. Since we can't make the iron chainmail for the european counterparts?... why?
 /datum/anvil_recipe/armor/irontatami
 	name = "Iron foldeable armor {Karuta-gane}"
 	recipe_name = "a Tatami Karuta-Gane"
@@ -43,7 +42,7 @@
 	createditem_num = 1
 
 /datum/anvil_recipe/armor/kusari
-	name = "Chainmail Robe (+Bar x2) {Kusari-Katabira}"
+	name = "Chainmail Robe (+Bar){Kusari-Katabira}"
 	recipe_name = "a Kusari-Katabira"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
@@ -51,15 +50,15 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/imirror
-	name = "Iron disk chestplate (+Bar x3) {Melong bzhi}"
+	name = "Iron disk chestplate (+Bar x2){Melong bzhi}"
 	recipe_name = "a Iron Mirror Armor"
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
+	additional_items = list(/obj/item/ingot/iron)
 	created_item = /obj/item/clothing/armor/plate/mirror/iron
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/mirror
-	name = "Steel disk chestplate (+Bar x3) {Melong bzhi}"
+	name = "Steel disk chestplate (+Bar x3){Melong bzhi}"
 	recipe_name = "a Steel Mirror Armor"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
@@ -67,7 +66,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/oyoroi
-	name = "Compact great armor (+Bar x3, +Cloth) {O-yoroi}"
+	name = "Compact great armor (+Bar x3, +Cloth){O-yoroi}"
 	recipe_name = "a Incomplete O-Yoroi"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
@@ -75,7 +74,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/oyoroigusoku //costier version. Only really viable if you got what to waste.
-	name = "Full great armor (+Bar x4, +Cloth x2) {O-yoroi gusoku}"
+	name = "Full great armor (+Bar x4, +Cloth x2){O-yoroi gusoku}"
 	recipe_name = "a O-Yoroi Gusoku"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth, /obj/item/natural/cloth)
@@ -86,11 +85,11 @@
 	name = "Three-plate cuirass {Sanmai-Do}"
 	recipe_name = "a Sanmai-Do"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/armor/cuirass/sanmaido
+	created_item = /obj/item/clothing/armor/cuirass/iron/sanmaido
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/kikko
-	name = "Turtleshell jacket (+2 cured leather) Kikko-Gane"
+	name = "Turtleshell jacket (+2 cured leather){Kikko-Gane}"
 	recipe_name = "a Kikko Leather Do"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
@@ -99,7 +98,7 @@
 	craftdiff = 1
 //cheaper on iron, but has many sticks. Proper for this armor's context.
 /datum/anvil_recipe/armor/rattanarmor
-	name = "Rattan armor (+Bar x2, +Stick x4) Teng jia" //Téng jiǎ
+	name = "Rattan armor (+Bar x2, +Stick x4){Teng jia}" //Téng jiǎ
 	recipe_name = "a Rattan Armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
@@ -107,7 +106,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/kikkoarmor //cheaper brigadine with hide.
-	name = "Turtleshell Full Armor (+Bar x2,+ 2 cured leather) Kikko gusoku"
+	name = "Turtleshell Full Armor (+Bar x2,+ 2 cured leather){Kikko gusoku}"
 	recipe_name = "a Kikko Gusoku"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
@@ -304,7 +303,7 @@
 	name = "Foldable hood {Karuta zukin}"
 	recipe_name = "a Karuta Zukin"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	created_item = /obj/item/clothing/neck/chaincoif/karuta_zukin
 
 /datum/anvil_recipe/armor/ihood
 	name = "Chainmail hood"//coifs aren't made in duos anymore since they can be smelted for material

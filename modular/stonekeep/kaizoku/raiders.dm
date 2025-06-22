@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(custodian_handsoff, world.file2list("strings/rt/custodian_hands
 		if(1)
 			r_hand = /obj/item/weapon/sword/scimitar/messer/dao
 			l_hand = /obj/item/weapon/shield/wood/rattan
-			armor = /obj/item/clothing/armor/cuirass/sanmaido
+			armor = /obj/item/clothing/armor/cuirass/iron/sanmaido
 			head = /obj/item/clothing/head/helmet/kettle/jingasa
 		if(2)
 			r_hand = /obj/item/weapon/mace/steel/ararebo
@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(custodian_handsoff, world.file2list("strings/rt/custodian_hands
 	shoes = /obj/item/clothing/shoes/boots/armor/suneate/cursed
 	belt = /obj/item/storage/belt/kaizoku/leather/daisho/random
 	wrists = /obj/item/clothing/wrists/bracers/kote/cursed
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin
 
 	var/loadout = rand(1, 4)
 	switch(loadout)
@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(custodian_handsoff, world.file2list("strings/rt/custodian_hands
 	shoes = /obj/item/clothing/shoes/boots/armor/suneate/cursed
 	belt = /obj/item/storage/belt/kaizoku/leather/daisho/random
 	wrists = /obj/item/clothing/wrists/bracers/kote/cursed
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin
 
 	var/loadout = rand(1, 4)
 	switch(loadout)

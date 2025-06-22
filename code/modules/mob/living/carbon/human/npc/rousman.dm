@@ -141,7 +141,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS)
 	nojumpsuit = 1
 	sexes = 1
-	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
+//	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
 	damage_overlay_type = ""
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "rousman"
@@ -224,7 +224,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()
-	faction = list(FACTION_RATS)
+	faction = list(FACTION_GRAGGAR)//both are graggarian creations that are collaborating to bring chaos
 	name = "rousman"
 	real_name = "rousman"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
@@ -289,17 +289,17 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	var/loadout = rand(1,4)
 	switch(loadout)
 		if(1) //Grats, you got all the good armor
-			armor = /obj/item/clothing/armor/cuirass/iron/rousman
-			head = /obj/item/clothing/head/helmet/rousman
+			armor = /obj/item/clothing/armor/cuirass/iron/rousman/splint
+			head = /obj/item/clothing/head/helmet/rousman/splint
 			ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 		if(2) //Plate armor with chance of getting a helm
-			armor = /obj/item/clothing/armor/cuirass/iron/rousman
+			armor = /obj/item/clothing/armor/cuirass/iron/rousman/splint
 			ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			if(prob(50))
-				head = /obj/item/clothing/head/helmet/rousman
+				head = /obj/item/clothing/head/helmet/rousman/splint
 		if(3) //Helm with chance of getting plate armor
 			if(prob(50))
-				armor = /obj/item/clothing/armor/cuirass/iron/rousman
+				armor = /obj/item/clothing/armor/cuirass/iron/rousman/splint
 				ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			else
 				armor = /obj/item/clothing/armor/leather/hide/rousman
@@ -410,3 +410,193 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 		var/mob/living/carbon/human/H = AM
 		if(H.ambushable == TRUE && hole.already_ambushed == FALSE)
 			hole.ambush(H)
+
+//ROUSMAN TIERS FOR EVENTS & DUNGEONS
+
+//slaves are the worst of the rousmen, feel free to toss them like goblins because they are pretty much the same, big numbers if you want to end the adventurers
+
+/mob/living/carbon/human/species/rousman/slave
+	name = "Slave"
+	ai_controller = /datum/ai_controller/human_npc
+	var/loadout = /datum/outfit/job/npc/rousman/slave
+	ambushable = FALSE
+
+/mob/living/carbon/human/species/rousman/slave/after_creation()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+	job = "Slave"
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	equipOutfit(/datum/outfit/job/npc/rousman/slave)
+	dodgetime = 13
+	canparry = TRUE
+	flee_in_pain = TRUE
+	wander = TRUE
+
+/mob/living/carbon/human/species/rousman/slave/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+
+
+/datum/outfit/job/npc/rousman/slave/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.base_strength = rand(6, 10)
+	H.base_perception = rand(6, 10)
+	H.base_intelligence = rand(2, 5)
+	H.base_constitution = rand(4, 8)
+	H.base_endurance = rand(7, 10)
+	H.base_speed = rand(10, 15)
+	head = /obj/item/clothing/neck/coif/cloth/rousman
+	armor = /obj/item/clothing/armor/leather/hide/rousman
+
+	var/loadout = rand(1,3)
+	switch(loadout)
+		if(1)
+			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/mace/woodclub, /obj/item/weapon/mace/cudgel/carpenter, /obj/item/weapon/pick, /obj/item/weapon/hammer)
+		if(2)
+			r_hand = pick (/obj/item/weapon/polearm/spear/stone/copper, /obj/item/weapon/polearm/spear/stone)
+		if(3)
+			r_hand = pick (/obj/item/weapon/flail/towner, /obj/item/weapon/sickle, /obj/item/weapon/knife/villager)
+
+/mob/living/carbon/human/species/rousman/warrior
+	name = "warrior"
+	ai_controller = /datum/ai_controller/human_npc
+	var/loadout = /datum/outfit/job/npc/rousman/warrior
+	ambushable = FALSE
+
+// the rousmen warriors are a medium level threat, they aren't cannon fodder but either a full warrior or either comparable to an orc warrior, they are at towner level with some armor watch out their big numbers since they can break armors due to be using actual weapons
+/mob/living/carbon/human/species/rousman/warrior/after_creation()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+	job = "warrior"
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	equipOutfit(/datum/outfit/job/npc/rousman/warrior)
+	dodgetime = 13
+	canparry = TRUE
+	flee_in_pain = TRUE
+	wander = TRUE
+
+/mob/living/carbon/human/species/rousman/warrior/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+
+
+/datum/outfit/job/npc/rousman/warrior/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.base_strength = rand(9, 11)
+	H.base_perception = rand(6, 10)
+	H.base_intelligence = rand(2, 5)
+	H.base_constitution = rand(7, 8)
+	H.base_endurance = rand(7, 10)
+	H.base_speed = rand(10, 15)
+	head = /obj/item/clothing/head/helmet/rousman/splint
+	armor = /obj/item/clothing/armor/cuirass/iron/rousman/splint
+
+	var/loadout = rand(1,3)
+	switch(loadout)
+		if(1)//normal shield + hand weapon infantry
+			r_hand = pick (/obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/flail, /obj/item/weapon/sword/short, /obj/item/weapon/mace/warhammer)
+			l_hand = /obj/item/weapon/shield/wood
+		if(2)//pikemen
+			r_hand = /obj/item/weapon/polearm/spear
+			l_hand = /obj/item/weapon/shield/tower
+		if(3)//killers
+			r_hand = pick (/obj/item/weapon/polearm/halberd/bardiche/warcutter, /obj/item/weapon/sword/long/heirloom, /obj/item/weapon/polearm/halberd/bardiche)
+
+
+// the champions of the rous-men are actual warriors comparable to orcs, the biggest rouses around get the best armors and weapons including some decent training for them
+
+/mob/living/carbon/human/species/rousman/champion
+	name = "champion"
+	ai_controller = /datum/ai_controller/human_npc
+	var/loadout = /datum/outfit/job/npc/rousman/champion
+	ambushable = FALSE
+
+/mob/living/carbon/human/species/rousman/champion/after_creation()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+	job = "champion"
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	equipOutfit(/datum/outfit/job/npc/rousman/champion)
+	dodgetime = 13
+	canparry = TRUE
+	flee_in_pain = FALSE//trained to win
+	wander = TRUE
+
+/mob/living/carbon/human/species/rousman/champion/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+
+
+/datum/outfit/job/npc/rousman/champion/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.base_strength = rand(12, 13)
+	H.base_perception = rand(6, 10)
+	H.base_intelligence = rand(2, 5)
+	H.base_constitution = rand(9, 11)
+	H.base_endurance = rand(9, 11)
+	H.base_speed = rand(10, 15)
+	head = /obj/item/clothing/head/helmet/rousman
+	armor = /obj/item/clothing/armor/cuirass/iron/rousman
+	cloak = /obj/item/clothing/cloak/raincloak/red
+
+	var/loadout = rand(1,3)
+	switch(loadout)
+		if(1)//good shield + hand weapon infantry
+			r_hand = pick (/obj/item/weapon/sword/scimitar, /obj/item/weapon/flail/sflail, /obj/item/weapon/axe/steel, /obj/item/weapon/mace/warhammer/steel)
+			l_hand = /obj/item/weapon/shield/tower/metal
+		if(2)//pikemen
+			r_hand = /obj/item/weapon/polearm/spear/billhook
+			l_hand = /obj/item/weapon/shield/tower/metal
+		if(3)//killers
+			r_hand = pick (/obj/item/weapon/sword/long/greatsword/zwei, /obj/item/weapon/polearm/halberd, /obj/item/weapon/mace/goden/steel)
+
+//kaizoku geared rousmen, they like to call themselves fearsome warriors of the sinistar when they just robbed the corpses of some poor kaizoku warriors
+
+/mob/living/carbon/human/species/rousman/zamurous
+	name = "ZAMURAI!"
+	ai_controller = /datum/ai_controller/human_npc
+	var/loadout = /datum/outfit/job/npc/rousman/zamurous
+	ambushable = FALSE
+
+/mob/living/carbon/human/species/rousman/zamurous/after_creation()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+	job = "ZAMURAI!"
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	equipOutfit(/datum/outfit/job/npc/rousman/zamurous)
+	dodgetime = 13
+	canparry = TRUE
+	flee_in_pain = FALSE//DEATH BEFORE DISHONORU!
+	wander = TRUE
+
+/mob/living/carbon/human/species/rousman/zamurous/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+
+
+/datum/outfit/job/npc/rousman/zamurous/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.base_strength = rand(12, 13)
+	H.base_perception = rand(6, 10)
+	H.base_intelligence = rand(2, 5)
+	H.base_constitution = rand(9, 11)
+	H.base_endurance = rand(9, 11)
+	H.base_speed = rand(10, 15)
+	head = /obj/item/clothing/head/helmet/rousman/kaizoku
+	armor = /obj/item/clothing/armor/cuirass/iron/rousman/kaizoku
+
+	var/loadout = rand(1,2)
+	switch(loadout)
+		if(1)//zatana warrior
+			r_hand = /obj/item/weapon/sword/short/wakizashi
+		if(2)//pikemen
+			r_hand = /obj/item/weapon/polearm/spear/yari
+
+

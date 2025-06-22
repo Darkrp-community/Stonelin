@@ -180,7 +180,7 @@ Design philosphy:
 	shirt = /obj/item/clothing/shirt/shortshirt/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 	head = /obj/item/clothing/head/tengai/gasa
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
 	wrists = /obj/item/clothing/wrists/bracers/leather/khudagach
 	beltr = /obj/item/ammo_holder/quiver/arrows
 	beltl = /obj/item/weapon/knife/steel/tanto
@@ -227,7 +227,7 @@ Design philosphy:
 	shirt = /obj/item/clothing/shirt/shortshirt/merc
 	beltr = /obj/item/weapon/sword/rapier
 	head = /obj/item/clothing/head/tengai/gasa
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
 	beltl = /obj/item/weapon/knife/steel/tanto
 	backpack_contents = list(/obj/item/storage/keyring/garrison)
 

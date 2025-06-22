@@ -45,7 +45,7 @@
 	if(H.charflaw)
 		QDEL_NULL(H.charflaw)
 	H.update_body()
-	H.faction = list(FACTION_ORCS)
+	H.faction = list(FACTION_GRAGGAR)
 	H.name = "goblin"
 	H.real_name = "goblin"
 	ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)

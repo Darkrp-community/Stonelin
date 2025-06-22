@@ -1,8 +1,6 @@
 /datum/advclass/mercenary/sk/valorian
-	name = "Valorian Fighter"
-	tutorial = "Born of humble origins and driven by desperation, you sought survival in the service of the Gold Courts of the Valorian Coin Lords.  <br>\
-	There, commoners like you were thrown into brutal duels, mere pawns in the Coin Lords' power struggles�pitted against one another to settle disputes for the wealthy elite. You never sought glory, only the hope of a payday.  <br>\
-	Fearing the day your luck might run out, you abandoned the bloodshed and signed on as a guard for the Merchant Guild, eventually finding yourself on this remote place, you are an skilled footman with a good shield to fend off any threat."
+	name = "Valorian Mercenary"
+	tutorial = "Driven by desperation, you sought survival in service to the Gold Courts of the Valorian Coin Lords. Commoners like you were generally used as pawns for political duels to the death, but you grew tired of this abuse and managed to flee from that gruesome indentured servitude. With no other way to earn coin for a living, you sought employment as a mercenary for hire, offering your skills to just about anyone for coin, back to where you once started."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

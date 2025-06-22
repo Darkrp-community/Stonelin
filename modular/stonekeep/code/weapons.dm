@@ -11,13 +11,13 @@
 	slot_flags = null
 
 /obj/item/weapon/polearm/eaglebeak
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
 	slot_flags = null
 
 /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe
 	name = "poleaxe"
 	desc = "A poleaxe of simple iron, fracture bone and dissent with simple brute force."
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
 	icon_state = "poleaxe"
 /obj/item/weapon/polearm/eaglebeak/lucerne/poleaxe/getonmobprop(tag)
 	. = ..()
@@ -47,6 +47,7 @@
 
 /obj/item/weapon/polearm/halberd/bardiche/warcutter
 	name = "war axe"
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
 	desc = "Favored by common folk looking to cut a noble whoreson down to size."
 	smeltresult = /obj/item/ingot/iron
 
@@ -123,10 +124,10 @@
 	force = DAMAGE_DAGGER+2
 
 /obj/item/weapon/mace/copperbludgeon
-	name = "studded club"
+	name = "copper club"
 	desc = "A simple wooden club reinforced with some metal bits."
 	icon = 'modular/stonekeep/icons/weapons.dmi'
-	icon_state = "bludgeon"
+	icon_state = "cbludgeon"
 
 /obj/item/weapon/mace/copperbludgeon/getonmobprop(tag)
 	if(tag)
@@ -148,11 +149,11 @@
 
 /obj/item/weapon/flail/militia
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
-	icon_state = "iflail_old"
+	icon_state = "militia"
 
 /obj/item/weapon/flail/towner
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
-	icon_state = "iflail_old"
+	icon_state = "poor"
 
 /obj/item/weapon/axe/iron/getonmobprop(tag)
 	if(tag)

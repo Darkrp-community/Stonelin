@@ -29,7 +29,7 @@ Spawn in the bog area.
 	beltr = /obj/item/storage/belt/pouch/coins/rich
 	beltl = /obj/item/scomstone
 	gloves = /obj/item/clothing/gloves/leather/abyssal/black
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
 	beltl = /obj/item/weapon/sword/long/tachi
 
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
@@ -128,7 +128,7 @@ Spawn in the bog area.
 	armor = /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad //Paying off for 4 swordskill instead of 5.
 	head = /obj/item/clothing/head/helmet/visored/zunari //fucking-shit-up knight helmet tier. Sacrificed some to keep that one.
 	wrists = /obj/item/clothing/wrists/bracers/kote //Cooler Bracer that protects the hands.
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
+	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
 
 	to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened warrior in lacquered armor whom lands I own and control. Yet, here I stand in unfamiliar lands no different of my own.</span>"))
 

@@ -186,7 +186,7 @@
 	icon_state = "uncookedfood"
 
 /datum/status_effect/debuff/uncookedfood/on_apply()
-	if(HAS_TRAIT(owner, TRAIT_NASTY_EATER) || HAS_TRAIT(owner, TRAIT_ORGAN_EATER || HAS_TRAIT(owner, TRAIT_CHANGELING_METABOLISM)))
+	if(HAS_TRAIT(owner, TRAIT_NASTY_EATER) || HAS_TRAIT(owner, TRAIT_ORGAN_EATER) || HAS_TRAIT(owner, TRAIT_CHANGELING_METABOLISM)) //Stonekeep edit
 		return FALSE
 	. = ..()
 	if(iscarbon(owner))

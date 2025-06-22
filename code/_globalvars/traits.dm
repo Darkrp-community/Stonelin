@@ -149,6 +149,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Bad Mood" = TRAIT_BAD_MOOD,
 		"Night Owl" = TRAIT_NIGHT_OWL,
 		"Ugly" = TRAIT_UGLY,
+		"Debug guaranteed critchance" = TRAIT_ADMINTEST_CRIT,
 		"Foglander Cultured" = TRAIT_KAIZOKU,
 		"Changeling Metabolism" = TRAIT_CHANGELING_METABOLISM,
 		"Filthy Desecrant" = TRAIT_DESECRANT,

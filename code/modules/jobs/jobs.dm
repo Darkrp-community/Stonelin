@@ -37,8 +37,8 @@ GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/stonekeep/gravekeeper::title,
 	/datum/job/stonekeep/inquisitor::title,
 	/datum/job/stonekeep/templar::title,
-	/datum/job/mastersohei::title,
-	/datum/job/sohei::title,
+	/datum/job/stonekeep/mastersohei::title,
+	/datum/job/stonekeep/sohei::title,
 	))
 GLOBAL_PROTECT(church_positions)
 

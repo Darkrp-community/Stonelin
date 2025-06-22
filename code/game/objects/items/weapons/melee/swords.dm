@@ -888,34 +888,35 @@
 
 
 /obj/item/weapon/sword/rapier/ironestoc
-	name = "estoc"
-	desc = "A sword possessed of a quite long and tapered blade that is intended to be thrust between the \
-	gaps in an opponent's armor. The hilt is wrapped tight in black leather."
+	name = "iron estoc"
+	desc = "A simple sword of valorian origin, favored by their design and unique sword styles."
 	icon_state = "estoc"
-	force = 12
-	force_wielded = 25
-	icon = 'icons/roguetown/weapons/64.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	icon = 'icons/roguetown/weapons/32.dmi'
+	bigboy = FALSE
+	pixel_y = 0
+	pixel_x = 0
+	dropshrink = FALSE
+	force = DAMAGE_SWORD
+	force_wielded = DAMAGE_SWORD_WIELD//we nerf the overbuffs of vanderlin on a common iron sword being better than a zweihander or a steel rapier
 	possible_item_intents = list(
-		/datum/intent/sword/chop,
-		/datum/intent/sword/strike,
+		/datum/intent/sword/thrust,
+		/datum/intent/sword/cut,
 	)
 	gripped_intents = list(
 		/datum/intent/sword/thrust/estoc,
 		/datum/intent/sword/lunge,
-		/datum/intent/sword/chop,
 		/datum/intent/sword/strike,
+		/datum/intent/sword/cut,
 	)
-	bigboy = TRUE
+	bigboy = FALSE
 	gripsprite = TRUE
-	wlength = WLENGTH_GREAT
+	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_BULKY
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/swords
-	max_blade_int = 300
-	wdefense = GREAT_PARRY
+	max_blade_int = 150//iron tier
+	wdefense = GOOD_PARRY
 	wbalance = DODGE_CHANCE_NORMAL
 
 /obj/item/weapon/estoc/getonmobprop(tag)

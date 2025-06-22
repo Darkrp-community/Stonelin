@@ -40,12 +40,11 @@
 	This one is made of steel and have riveting edges along its blade."
 	icon_state = "eastsword2"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
-	name = "rapier"
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	gripped_intents = null
+	swingsound = ZATANA_WOOSH
 	parrysound = "rapier"
-	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
 	wbalance = VERY_HARD_TO_DODGE
 
@@ -55,26 +54,29 @@
 	This one is made of steel and imbued in gold. Proper for a Muqian lord."
 	icon_state = "eastsword3"
 
-/obj/item/clothing/armor/leather/jacket/eastsuit
+/obj/item/clothing/armor/leather/jacket/eastsuit1
+	name = "haori robe"
+	desc = "The short coat usually worn over a kimono, adorned with white lapels."
 	icon_state = "eastsuit1"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
 
-/obj/item/clothing/armor/leather/jacket/eastsuit/Initialize()
-	. = ..()
-	var/design = rand(1, 3)
-	switch(design)
-		if(1)
-			name = "haori robe"
-			desc = "The short coat usually worn over a kimono, adorned with white lapels."
-		if(2)
-			name = "michiyuki robe"
-			desc = "A thick overcoat commonly used by islanders for travelling on damp bogs with thorny bushes."
-		if(3)
-			name = "dobuku robe"
-			desc = "A robe usually worn by aristocrats of the lower caste."
-	icon_state = "eastsuit[design]"
+/obj/item/clothing/armor/leather/jacket/eastsuit2
+	name = "michiyuki robe"
+	desc = "A thick overcoat commonly used by islanders for travelling on damp bogs with thorny bushes."
+	icon_state = "eastsuit2"
+	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
+
+/obj/item/clothing/armor/leather/jacket/eastsuit3
+	name = "dobuku robe"
+	desc = "A robe usually worn by aristocrats of the lower caste."
+	icon_state = "eastsuit3"
+	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
 
 /obj/item/clothing/armor/leather/jacket/susohiki
 	name = "susohiki attire"
@@ -84,12 +86,12 @@
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
 
-/obj/item/clothing/cloak/tideweaver
-	name = "tideweaver cloak"
-	desc = "A brown cloak with white swirls, the symbol of the Tideweavers made in rawhide leather."
+/obj/item/clothing/cloak/curator
+	name = "curator cloak"
+	desc = "A rawhide coat used by the Abyssanctum Curators on the back, replacing a more expensive cloak as a symbol of humbleness. Sadly, the unruly does the same."
 	color = null
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
-	icon_state = "eastcloak1"
+	icon_state = "eastcloak2"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
@@ -99,11 +101,11 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 
 /obj/item/clothing/cloak/eastcloak2
-	name = "unruly coat"
-	desc = "A common leather coat being used in a way perceived by the foglanders to be 'unruly', usually used by dangerous gangsters, or spoiled brats."
+	name = "unruly backcoat"
+	desc = "A common leather coat with white whirls recognized for being a gangster symbol, 'for the unruly', or spoiled brats trying to mimic Curators ways of dressing."
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
 	color = null
-	icon_state = "eastcloak2"
+	icon_state = "eastcloak1"
 	sleevetype = "shirt"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
@@ -122,7 +124,7 @@
 
 /obj/item/clothing/gloves/leather/eastgloves2
 	name = "abyssanctum armwrappers"
-	desc = "Thick leather wraps that extends to cover one arm, while keeping the other covering only the wrist. Symbol of a purifier on duty for recognization ease."
+	desc = "Thick leather wraps that extends to cover one arm, while keeping the other covering only the wrist. Symbol of a tideweaver on duty for recognization ease."
 	icon_state = "eastgloves2"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
@@ -142,8 +144,8 @@
 	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/pants/trou/leather/eastpants1
-	name = "cut-throat's pants"
-	desc = "Islander pants, with leather insewns."
+	name = "ascetical pants"
+	desc = "Islander ascetical pants, used by Abyssanctum."
 	icon_state = "eastpants1"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
@@ -160,6 +162,7 @@
 /obj/item/ammo_holder/cscabbard
 	name = "iron chokuto scabbard"
 	icon_state = "simplescab0"
+	item_state = "simplescab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Sturdy scabbard for batting away blows, made in lacquered iron and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -181,6 +184,7 @@
 /obj/item/ammo_holder/cscabbard/scscabbard
 	name = "steel chokuto scabbard"
 	icon_state = "steelscab0"
+	item_state = "steelscab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Sturdy scabbard for batting away blows, made in lacquered steel and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -191,6 +195,7 @@
 /obj/item/ammo_holder/cscabbard/dcscabbard
 	name = "decorated chokuto scabbard"
 	icon_state = "goldscab0"
+	item_state = "goldscab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Ornate scabbard for batting away blows, made in lacquered steel and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -201,7 +206,7 @@
 /obj/item/clothing/suit/roguetown/shirt/eastshirt1
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "battle shirt"
-	desc = "The black shirt typically used recognized to be part of Fog Island's military attire. Usually replaced with stiffer clothing."
+	desc = "The black shirt typically used recognized to be part of Fog Island's military attire, with cloth covering the face. Usually replaced with stiffer clothing."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "eastshirt1"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
@@ -228,3 +233,10 @@
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	armor = list("blunt" = 10, "slash" = 10, "stab" = 10,  "piercing" = 5, "fire" = 0, "acid" = 0)
+
+/obj/item/ammo_holder/cscabbard/scscabbard/loaded/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/weapon/sword/muqian/A = new(src)
+		ammo_list += A
+	update_icon()

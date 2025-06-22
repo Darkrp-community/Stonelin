@@ -127,7 +127,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	worn_x_dimension = 64
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	worn_y_dimension = 64
 	rotprocess = SHELFLIFE_DECENT
 	sellprice = 0 // spoil too quickly to export
@@ -174,7 +174,7 @@
 	tastes = list("strawberry" = 1)
 	faretype = FARE_NEUTRAL
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
 	dropshrink = 0.75
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
@@ -188,7 +188,7 @@
 	tastes = list("raspberry" = 1)
 	faretype = FARE_NEUTRAL
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
 	dropshrink = 0.75
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
@@ -202,7 +202,7 @@
 	tastes = list("blackberry" = 1)
 	faretype = FARE_NEUTRAL
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
 	dropshrink = 0.75
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
@@ -215,7 +215,7 @@
 	tastes = list("berry" = 1)
 	faretype = FARE_NEUTRAL
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
 	dropshrink = 0.75
 	var/color_index = "good"
 	rotprocess = SHELFLIFE_SHORT
@@ -288,7 +288,7 @@
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 1, /datum/reagent/berrypoison = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 1)
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -301,7 +301,7 @@
 	icon_state = "swampweedd"
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
-	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment/plantfiber = 1)
+	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = null
@@ -318,7 +318,7 @@
 	bitesize_mod = 1
 	foodtype = VEGETABLES
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment/plantfiber = 1, /datum/reagent/berrypoison = 2)
+	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 2)
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -332,7 +332,7 @@
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
 	eat_effect = /datum/status_effect/debuff/badmeal
-	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment/plantfiber = 1)
+	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
 	rotprocess = null
 	sellprice = 1
@@ -348,7 +348,7 @@
 	filling_color = "#88c8a0"
 	bitesize = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	rotprocess = SHELFLIFE_LONG
 	slices_num = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/veg/cabbage_sliced
@@ -367,7 +367,7 @@
 	filling_color = "#fdfaca"
 	bitesize = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	chopping_sound = TRUE
 	rotprocess = SHELFLIFE_LONG
 
@@ -395,7 +395,7 @@
 	eat_effect = null
 	foodtype = VEGETABLES
 	chopping_sound = TRUE
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	bitesize = 1
 	rotprocess = null
 
@@ -461,7 +461,7 @@
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/veg/turnip_sliced
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	chopping_sound = TRUE
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_EXTREME
@@ -494,7 +494,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 2, /datum/reagent/consumable/sugar = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 5)
 	dropshrink = 0.8
 	rotprocess = null
 	mill_result = /obj/item/reagent_containers/food/snacks/sugar
@@ -515,7 +515,7 @@
 	icon_state = "fyritius"
 	tastes = list("tastes like a burning coal and fire" = 1)
 	bitesize = 1
-	list_reagents = list(/datum/reagent/consumable/nutriment/plantfiber = 2, /datum/reagent/toxin/fyritiusnectar = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	dropshrink = 0.8
 	rotprocess = null
 	w_class = WEIGHT_CLASS_TINY

@@ -22,10 +22,6 @@
 	they can use their wings to fly, but it is severely exhausting, while remaining lightweight is necessary to do so, \
 	so much that even their bones are hollow to remain light and oxygenated, lowering their physical resilience for vigor.\
 	\n\n\
-	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
-	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
-	known for their extreme loyalty.\
-	\n\n\
 	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
 
 	skin_tone_wording = "Championage Branch"
