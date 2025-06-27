@@ -2,7 +2,7 @@
 	title = "Dungeoneer"
 	flag = DUNGEONEER
 	department_flag = GARRISON // we should move this to the keep since that is where they now work, tending to the prisoners.
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 

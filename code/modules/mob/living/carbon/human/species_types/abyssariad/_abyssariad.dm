@@ -43,8 +43,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 /datum/species/abyssariad
 	name = "foglander"
 	id = "abyssariad"
-	max_age = 1250 //The year Abyssariads have been created by Abyssor.
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = WABBAJACK
 
 /datum/species/abyssariad/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()

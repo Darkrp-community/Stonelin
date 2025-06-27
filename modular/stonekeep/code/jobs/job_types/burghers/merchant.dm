@@ -3,7 +3,7 @@
 	flag = MERCHANT
 	department_flag = SERFS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE )
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	min_pq = 0
 	bypass_lastclass = TRUE
 	total_positions = 1

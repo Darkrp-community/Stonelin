@@ -9,7 +9,6 @@
 	pixel_y = 1
 
 	faction = list("bears")
-	turns_per_move = 4
 	move_to_delay = 2
 	vision_range = 5
 	aggro_vision_range = 5

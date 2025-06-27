@@ -2,7 +2,7 @@
 	title = "Servant"
 	flag = SERVANT
 	department_flag = APPRENTICES
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 

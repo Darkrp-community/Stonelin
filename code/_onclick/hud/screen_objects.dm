@@ -1811,6 +1811,10 @@
 
 	return info
 
+/atom/movable/screen/vis_holder
+	icon = ""
+	invisibility = INVISIBILITY_MAXIMUM
+
 /atom/movable/screen/stamina
 	name = "stamina"
 	icon_state = "fat100"

@@ -24,7 +24,7 @@
 	\
 	THIS IS A SHUNNED RACE. EXPECT A MORE DIFFICULT EXPERIENCE."
 
-	specstats = list("strength" = -1, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 2, "fortune" = 0)
+	specstats_m = list("strength" = -1, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = 0, "perception" = -1, "intelligence" = 1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 
 #define DELF_SCORPION "5f665b"
@@ -60,7 +60,7 @@
 	but is often also the cause of endless bickering and infighting over minute details. \
 	Dwarves are hearty and stout but not known for their speed or eyesight..."
 
-	specstats = list("strength" = 1, "perception" = -1, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
+	specstats_m = list("strength" = 1, "perception" = -1, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
 	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = 2, "fortune" = 0)
 
 //DWARF SKIN TONES
@@ -111,7 +111,7 @@
 	Now, the Elves have integrated into the multiple races realms in the known world, \
 	some forming relationships and strong bonds."
 
-	specstats = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 0)
+	specstats_m = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -2, "perception" = 2, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = 0)
 
 /datum/species/elf/snow/get_skin_list()
@@ -140,20 +140,46 @@
 	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
 	are dominant in their species..."
 
-	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
+	specstats_m = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 1)
 
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
-	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
-	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
-	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
+	offset_features_m = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
+	offset_features_f = list(
+		OFFSET_ID = list(0,-1),\
+		OFFSET_GLOVES = list(0,0),\
+		OFFSET_WRISTS = list(0,0),\
+		OFFSET_HANDS = list(0,0),\
+		OFFSET_CLOAK = list(0,0),\
+		OFFSET_FACEMASK = list(0,-1),\
+		OFFSET_HEAD = list(0,-1),\
+		OFFSET_FACE = list(0,-1),\
+		OFFSET_BELT = list(0,0),\
+		OFFSET_BACK = list(0,-1),\
+		OFFSET_NECK = list(0,-1),\
+		OFFSET_MOUTH = list(0,-1),\
+		OFFSET_PANTS = list(0,0),\
+		OFFSET_SHIRT = list(0,0),\
+		OFFSET_ARMOR = list(0,0),\
+		OFFSET_UNDIES = list(0,0),\
+		)
 
 
 /datum/species/human/northern/get_possible_names(gender = MALE)
@@ -203,20 +229,46 @@
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_aasimar.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_aasimar.dmi'
 	hairyness = ""
-	use_m = TRUE
-	specstats = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
+	swap_female_clothes = TRUE
+	specstats_m = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
 	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
 	species_traits = list(EYECOLOR,HAIR,LIPS,OLDGREY)
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,1), OFFSET_GLOVES_F = list(0,1), OFFSET_WRISTS_F = list(0,1), OFFSET_HANDS_F = list(0,1), \
-	OFFSET_CLOAK_F = list(0,1), OFFSET_FACEMASK_F = list(0,1), OFFSET_HEAD_F = list(0,1), \
-	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
-	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,0), \
-	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
+	offset_features_m = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
+	offset_features_f = list(
+		OFFSET_ID_F = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,0),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,0),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+	)
 
 
 /datum/species/aasimar/get_skin_list()
@@ -262,32 +314,57 @@
 	Half-Elves also typically try to find identity, in a world that sees them primarly as perversions."
 
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	max_age = 500
 	skin_tone_wording = "Half-Elven Identity"
 	disliked_food = NONE
 	liked_food = NONE
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t2"
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
-	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
-	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
-	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	offset_features_m = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+	)
+	offset_features_f = list(
+		OFFSET_ID = list(0,-1),\
+		OFFSET_GLOVES = list(0,0),\
+		OFFSET_WRISTS = list(0,0),\
+		OFFSET_HANDS = list(0,0),\
+		OFFSET_CLOAK = list(0,0),\
+		OFFSET_FACEMASK = list(0,-1),\
+		OFFSET_HEAD = list(0,-1),\
+		OFFSET_FACE = list(0,-1),\
+		OFFSET_BELT = list(0,0),\
+		OFFSET_BACK = list(0,-1),\
+		OFFSET_NECK = list(0,-1),\
+		OFFSET_MOUTH = list(0,-1),\
+		OFFSET_PANTS = list(0,0),\
+		OFFSET_SHIRT = list(0,0),\
+		OFFSET_ARMOR = list(0,0),\
+		OFFSET_UNDIES = list(0,0),\
+		)
+	specstats_m = list("strength" = 0, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	use_skintones = 1
@@ -335,7 +412,7 @@
 	Most of them tend to be extremely perceptive and paranoid, as luck is rarely on their side \
 	and their peculiar anatomy with somewhat fragile, crystalline bones makes them susceptible to injury."
 
-	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
+	specstats_m = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
 	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 1, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
 
 /datum/species/tieberian/get_accent_list()

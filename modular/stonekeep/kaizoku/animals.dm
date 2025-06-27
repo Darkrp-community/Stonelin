@@ -243,8 +243,26 @@
 	base_constitution = 12
 	base_strength = 10
 	base_speed = 15
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid)
 
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare
+	name = "fogbeast mare" // Name distinction because they share the same sprite and all.
+	gender = FEMALE
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/Initialize()
+	AddComponent(/datum/component/obeys_commands, pet_commands)
+	. = ..()
+	AddElement(/datum/element/ai_retaliate)
+
+	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
+
+	if(can_breed)
+		AddComponent(\
+			/datum/component/breed,\
+			list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare, /mob/living/simple_animal/hostile/retaliate/saiga/horse),\
+			3 MINUTES, \
+			list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid = 80, /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid/boy = 20),\
+			CALLBACK(src, PROC_REF(after_birth)),\
+		)
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed(mob/user)
 	..()
@@ -252,16 +270,23 @@
 		AddComponent(/datum/component/riding/fogbeast)
 		deaggroprob = 30
 
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tamed(mob/user)
+	..()
+	if(can_buckle)
+		AddComponent(/datum/component/riding/fogbeast)
+		deaggroprob = 40
+
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
-	name = "fogbeast calf"
+	name = "fogbeast filly" // Name for a young female foal.
+	desc = "The young foal of a fogbeast. This one is a female."
 	icon_state = "horsekid"
 	icon_living = "horsekid"
 	icon_dead = "horsekid_dead"
 	icon_gib = "horsekid_gib"
 
 	animal_species = null
-	gender = NEUTER //Sex will only matter when it gets initializated.
+	gender = FEMALE
 	pass_flags = PASSTABLE | PASSMOB
 	mob_size = MOB_SIZE_SMALL
 
@@ -288,6 +313,17 @@
 	aggressive = FALSE
 	ai_controller = /datum/ai_controller/saiga_kid
 
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid/boy
+	name = "fogbeast colt" // Name for a male young foal.
+	desc = "The young foal of a fogbeast. This one is a male."
+	gender = MALE
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
+	tame = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tame
+	tame = TRUE
+
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/update_icon()
 	cut_overlays()
 	..()
@@ -299,12 +335,14 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
 			add_overlay(mounted)
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
-	tame = TRUE
-
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame/saddled/Initialize()
 	. = ..()
 	var/obj/item/natural/saddle/S = new(src)
 	ssaddle = S
 	update_icon()
 
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tame/saddled/Initialize()
+	. = ..()
+	var/obj/item/natural/saddle/S = new(src)
+	ssaddle = S
+	update_icon()

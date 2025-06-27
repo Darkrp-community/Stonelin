@@ -208,7 +208,7 @@
 			target.adjustFireLoss(30)
 			target.adjust_divine_fire_stacks(1)
 			target.IgniteMob()
-			return TRUE
+			return ..()
 
 		var/healing = 25
 		var/conditional_buff = FALSE
@@ -391,7 +391,7 @@
 						L.blur_eyes(10)
 						L.apply_status_effect(/datum/status_effect/debuff/freezingsevere)
 
-	return TRUE
+	return ..()
 
 /obj/structure/ice_spike_wall
 	name = "tether"
@@ -465,14 +465,14 @@
 			target_mob.visible_message("<span class='warning'>[target_mob] is sealed within a crystalline abyssal tomb!</span>")
 		else
 			to_chat(user, span_warning("<span class='userdanger'>Your target is already immobilized within a frigid tomb from the ocean!</span>"))
-		return TRUE
+		return ..()
 
 	if(isturf(target))
 		var/turf/open/T = target
 		if(!isclosedturf(T))
 			T.apply_ice_turf()
 			to_chat(user, "<span class='warning'>Without a target, the ground becomes victim of the abyssal oppression.</span>")
-			return TRUE
+			return ..()
 		else
 			to_chat(user, "<span class='warning'>There is no space for a proper icespyre or cold to be settled.</span>")
 			return FALSE
@@ -687,7 +687,7 @@
 			target.AdjustKnockdown(rand(5, 8))
 			target.visible_message(span_danger("[target] is knocked flat!"))
 
-	return TRUE
+	return ..()
 
 /obj/effect/windgust
 	name = ""
@@ -798,7 +798,7 @@
 		QDEL_IN(P, 150)
 
 	to_chat(user, span_info("You channel winds to rise like solid stone..."))
-	return TRUE
+	return ..()
 
 /obj/structure/heavenpillar
 	name = "abyssal whirly"
@@ -860,7 +860,7 @@
 			var/obj/structure/maelstrom/Cyclone = new(T)
 			Cyclone.caster = user
 			to_chat(user, span_info("You summon a raging abyssal maelstrom!"))
-	return TRUE
+	return ..()
 
 /obj/structure/maelstrom
 	name = "Abyssal Maelstrom"
@@ -966,7 +966,7 @@
 		return FALSE
 	chain_lightning(user, primary, 2)
 	to_chat(user, span_info("A surge of abyssal lightning leaps forward!"))
-	return TRUE
+	return ..()
 
 /obj/effect/proc_holder/spell/invoked/surging_bolt/proc/chain_lightning(mob/living/true_caster, mob/living/first_target, max_jumps = 2)
 	var/list/affected = list()
@@ -1075,7 +1075,7 @@
 	target.shield_status = L
 
 	to_chat(user, span_info("Spheres of power envelops [target] in a spinning motion."))
-	return TRUE
+	return ..()
 
 /datum/lightning_shield
 	var/mob/living/owner
@@ -1180,7 +1180,7 @@
 	spawn(70) // After 5 seconds total, revive
 		perform_actual_revival(user, target)
 
-	return TRUE
+	return ..()
 
 /proc/create_blue_lightning_storm(mob/living/target)
 	var/turf/T = get_turf(target)

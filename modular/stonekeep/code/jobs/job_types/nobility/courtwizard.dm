@@ -6,7 +6,7 @@
 	spawn_positions = 1
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_MAGICIAN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
 	min_pq = 0
@@ -89,7 +89,7 @@
 /obj/item/clothing/head/wizhat/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind && user.mind.assigned_role == "Court Wizard")
-		if(slot == SLOT_HEAD && istype(user))
+		if(slot == ITEM_SLOT_HEAD && istype(user))
 			user.apply_status_effect(/datum/status_effect/buff/thinking_cap)
 		else
 			user.remove_status_effect(/datum/status_effect/buff/thinking_cap)

@@ -3,7 +3,7 @@
 	flag = SK_COOK
 	department_flag = PEASANTS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	display_order = COOK_ORDER
 	total_positions = 2
 	spawn_positions = 2

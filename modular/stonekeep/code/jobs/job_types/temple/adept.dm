@@ -2,7 +2,7 @@
 	title = "Adept"
 	flag = SK_ADEPT
 	department_flag = CHURCHMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 	bypass_lastclass = TRUE

@@ -840,7 +840,6 @@
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
 	icon_state = "malumrobe"
 	sleeved = null
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0) // I just wanted to give Malumite robes a tiny bit of fire protection because they're craftspeople.
 
 
 

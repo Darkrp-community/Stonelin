@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(custodian_handsoff, world.file2list("strings/rt/custodian_hands
 /mob/living/carbon/human/proc/killyielder(mob/living/target)
 	var/obj/item/bodypart/head = target.get_bodypart(BODY_ZONE_HEAD)
 	if(head)
-		var/obj/item/I = target.get_item_by_slot(SLOT_HEAD) // First, this code selects the head.
+		var/obj/item/I = target.get_item_by_slot(ITEM_SLOT_HEAD) // First, this code selects the head.
 		if(I) //Then proceeds to remove any head protection.
 			target.doUnEquip(I)
 			I.forceMove(get_turf(target))

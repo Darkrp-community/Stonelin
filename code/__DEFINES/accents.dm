@@ -7,9 +7,9 @@
 #define ACCENT_HORC "Half-Orc Accent"
 #define ACCENT_GRENZ "Grenzelhoft Acccent"
 #define ACCENT_ABYSSAL "Abyssal Accent"
+#define ACCENT_ZYBANTINE "Zybantine Accent"
 #define ACCENT_PIRATE "Pirate Accent"
 #define ACCENT_MIDDLE_SPEAK "Middle Speak (Old Half-Orc)"
-#define ACCENT_ZYBANTINE "Zybantine Accent"
 
 GLOBAL_LIST_INIT(accent_list, list(
 	ACCENT_NONE = list(),
@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(accent_list, list(
 //	ACCENT_TIEFLING = strings("accents/spanish_replacement.json", "spanish"),
 //	ACCENT_HORC = strings("accents/halforc_replacement.json", "halforc"),
 	ACCENT_GRENZ = strings("accents/SKgrenzelhoft_replacement.json", "grenzelhoft"),
+	ACCENT_ZYBANTINE = strings("accents/zybantine_replacement.json", "arabic"),
 //	ACCENT_PIRATE = strings("accents/pirate_replacement.json", "pirate"),
 	ACCENT_MIDDLE_SPEAK = strings("accents/middlespeak.json", "full"),
-	ACCENT_ZYBANTINE = strings("accents/zybantine_replacement.json", "arabic"),
 ))

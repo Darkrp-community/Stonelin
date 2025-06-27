@@ -2,7 +2,7 @@
 	title = "Gravekeeper"
 	flag = SK_GRAVETENDER
 	department_flag = CHURCHMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 2
 	spawn_positions = 2
 

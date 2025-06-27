@@ -34,35 +34,60 @@
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
 	disliked_food = NONE
 	liked_food = MEAT
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = WABBAJACK
 	limbs_icon_m = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/male/mt_kit.dmi'
 	limbs_icon_f = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/female/ft_kit.dmi'
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t3"
-	use_f = FALSE
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,1), OFFSET_WRISTS_F = list(0,1), OFFSET_HANDS_F = list(0,1), \
-	OFFSET_CLOAK_F = list(0,1), OFFSET_FACEMASK_F = list(0,0), OFFSET_HEAD_F = list(0,0), \
-	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,0), \
-	OFFSET_NECK_F = list(0,0), OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,1), \
-	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
+	offset_features_m = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
+	offset_features_f = list(
+		OFFSET_ID = list(0,-1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,0),\
+		OFFSET_HEAD = list(0,0),\
+		OFFSET_FACE = list(0,0),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,0),\
+		OFFSET_NECK = list(0,0),\
+		OFFSET_MOUTH = list(0,0),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
 	// Lore explanation for stats:
 	// Qualities: +Dense muscles ; higher fast-twitch fiber
 	// =>Disadvantage: -Lower Stationary Acuity; They are better at noticing movements, bad at noticing stationary objects. Bad with bows by nature. Foxes have that IRL because of nightvision. At least they have more reason to have it than Dark Elves.
 	// -Low fat mass, high muscle mass. Streamlined body structure that minimizes resistance and maximizes intense muscular movements.
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
+	specstats_m = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 //	mutanttongue = /obj/item/organ/tongue/kitsune
 //	minrace_pq = 0
-	// 1(str)-1+1-0.5+0.5+1(spd)+0 = 2 specstats. Balance adjusted.
+	// 1(str)-1+1-0.5+0.5+1(spd)+0 = 2 specstats_m. Balance adjusted.
 	//statsvalue reference by Dova
 	//Strength and Speed are 1, everything else is .5, all races are +2 or +3 except Humen
 

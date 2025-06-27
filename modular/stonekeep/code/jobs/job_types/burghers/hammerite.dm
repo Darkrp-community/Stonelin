@@ -3,7 +3,7 @@
 	tutorial = "As a long-standing and dedicated member of the Maker's Guild, you have risen to the illustrious rank of Master Builder. \
 				Your work is praise to Malum, either through excavation or construction, \
 				if only you had the time to rebuild what has been lost to the ruin of time... your work will shape the future."
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

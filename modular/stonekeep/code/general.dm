@@ -1325,7 +1325,7 @@
 /obj/item/clothing/ring/gold/goldstrengh/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldstrengh)
 
@@ -1347,7 +1347,7 @@
 /obj/item/clothing/ring/gold/goldspeed/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldspeed)
 
@@ -1369,7 +1369,7 @@
 /obj/item/clothing/ring/gold/goldend/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldend)
 
@@ -1391,7 +1391,7 @@
 /obj/item/clothing/ring/gold/goldconst/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldconst)
 
@@ -1413,7 +1413,7 @@
 /obj/item/clothing/ring/gold/goldluck/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldluck)
 
@@ -1436,7 +1436,7 @@
 /obj/item/clothing/ring/gold/goldper/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldper)
 
@@ -1459,7 +1459,7 @@
 /obj/item/clothing/ring/gold/goldint/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind)
-		if(slot == SLOT_RING && istype(user))
+		if(slot == ITEM_SLOT_RING && istype(user))
 			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 			user.apply_status_effect(/datum/status_effect/buff/goldint)
 

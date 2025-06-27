@@ -2,7 +2,7 @@
 	title = "Captain"
 	flag = CAPTAIN
 	department_flag = NOBLEMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 

@@ -31,12 +31,12 @@
 //	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	use_f = TRUE
+	swap_male_clothes = TRUE
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = WABBAJACK
 	limbs_icon_m = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/male/ms_kappa.dmi'
 	limbs_icon_f = 'modular/stonekeep/kaizoku/icons/abyssariad_bodies/female/fs_kappa.dmi'
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 
 	hairyness = "t1"
@@ -44,17 +44,43 @@
 	soundpack_f = /datum/voicepack/female/elf
 //	minrace_pq = 0
 
-	offset_features = list(OFFSET_ID = list(0,-1), OFFSET_GLOVES = list(0,-1), OFFSET_WRISTS = list(0,-1),\
-	OFFSET_CLOAK = list(0,-1), OFFSET_FACEMASK = list(0,-1), OFFSET_HEAD = list(0,-1), \
-	OFFSET_FACE = list(0,-1), OFFSET_BELT = list(0,-1), OFFSET_BACK = list(0,-1), \
-	OFFSET_NECK = list(0,-1), OFFSET_MOUTH = list(0,-1), OFFSET_PANTS = list(0,-1), \
-	OFFSET_SHIRT = list(0,-1), OFFSET_ARMOR = list(0,-1), OFFSET_HANDS = list(0,-1), OFFSET_UNDIES = list(0,-1), \
-	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,-1), OFFSET_WRISTS_F = list(0,-1), OFFSET_HANDS_F = list(0,-2), \
-	OFFSET_CLOAK_F = list(0,-1), OFFSET_FACEMASK_F = list(0,-2), OFFSET_HEAD_F = list(0,-2), \
-	OFFSET_FACE_F = list(0,-2), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-2), \
-	OFFSET_NECK_F = list(0,-2), OFFSET_MOUTH_F = list(0,-2), OFFSET_PANTS_F = list(0,-1), \
-	OFFSET_SHIRT_F = list(0,-1), OFFSET_ARMOR_F = list(0,-1), OFFSET_UNDIES_F = list(0,-1))
-	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
+	offset_features_m = list(
+		OFFSET_ID = list(0,-1),\
+		OFFSET_GLOVES = list(0,-1),\
+		OFFSET_WRISTS = list(0,-1),\
+		OFFSET_CLOAK = list(0,-1),\
+		OFFSET_FACEMASK = list(0,-1),\
+		OFFSET_HEAD = list(0,-1),\
+		OFFSET_FACE = list(0,-1),\
+		OFFSET_BELT = list(0,-1),\
+		OFFSET_BACK = list(0,-1),\
+		OFFSET_NECK = list(0,-1),\
+		OFFSET_MOUTH = list(0,-1),\
+		OFFSET_PANTS = list(0,-1),\
+		OFFSET_SHIRT = list(0,-1),\
+		OFFSET_ARMOR = list(0,-1),\
+		OFFSET_HANDS = list(0,-1),\
+		OFFSET_UNDIES = list(0,-1),\
+	)
+	offset_features_f = list(
+		OFFSET_ID = list(0,-1),\
+		OFFSET_GLOVES = list(0,-1),\
+		OFFSET_WRISTS = list(0,-1),\
+		OFFSET_HANDS = list(0,-2),\
+		OFFSET_CLOAK = list(0,-1),\
+		OFFSET_FACEMASK = list(0,-2),\
+		OFFSET_HEAD = list(0,-2),\
+		OFFSET_FACE = list(0,-2),\
+		OFFSET_BELT = list(0,-1),\
+		OFFSET_BACK = list(0,-2),\
+		OFFSET_NECK = list(0,-2),\
+		OFFSET_MOUTH = list(0,-2),\
+		OFFSET_PANTS = list(0,-1),\
+		OFFSET_SHIRT = list(0,-1),\
+		OFFSET_ARMOR = list(0,-1),\
+		OFFSET_UNDIES = list(0,-1)
+		)
+	specstats_m = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	// Usual 0+0+0+1+1+0+0 = 2, switching only strength for speed, so they are balanced alike the abyssariads.

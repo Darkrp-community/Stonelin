@@ -66,18 +66,29 @@
 	layer = 2.5
 	brightness = 6
 	bulb_colour = "#ff9933"
-	on = TRUE
 	var/carbon = 0
 	var/cooking = 0
 	var/actively_smelting = FALSE
 	var/list/ore = list()
+	// Temperature vars from light/fueled
+	var/temperature_change = 30
+	var/temperature_weight = 1
+	var/temperature_falloff = 0.9
+
+// You're operating with magma, it gives off heat
+/obj/machinery/light/magmaforge/seton()
+	. = ..()
+	if(temperature_change)
+		propagate_temp_change(temperature_change, temperature_weight, temperature_falloff)
 
 /obj/machinery/light/magmaforge/Initialize()
-	. = ..()
+	GLOB.fires_list += src
+	if(carbon < 1)
+		carbon = rand(1, 3)
 	on = TRUE
 	update_icon()
-	set_light(brightness, 0, 1, bulb_colour)
-	START_PROCESSING(SSmachines, src)
+	seton(TRUE)
+	. = ..()
 
 /obj/machinery/light/magmaforge/examine(mob/user)
 	. = ..()

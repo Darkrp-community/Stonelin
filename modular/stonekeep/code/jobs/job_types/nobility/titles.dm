@@ -4,7 +4,7 @@
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 
@@ -28,7 +28,7 @@
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 
@@ -51,7 +51,7 @@
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
 

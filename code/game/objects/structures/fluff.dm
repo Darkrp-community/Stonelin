@@ -176,9 +176,7 @@
 	smooth_fences()
 
 /obj/structure/fluff/railing/fence/Destroy()
-	for(var/obj/structure/fluff/railing/fence/F in orange(1))
-		if(F.dir == dir)
-			F.smooth_fences(TRUE)
+	smooth_fences()
 	return ..()
 
 /obj/structure/fluff/railing/fence/OnCrafted(dirin, mob/user)
@@ -315,7 +313,7 @@
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 40)
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 40, extrarange = SHORT_RANGE_SOUND_EXTRARANGE)
 	dir = pick(GLOB.cardinals)
 	return ..()
 
@@ -385,16 +383,16 @@
 	metalizer_result = /obj/item/gear/metal/bronze
 
 /obj/structure/fluff/clock/Initialize()
+	. = ..()
 	soundloop = new(src, FALSE)
 	soundloop.start()
-	. = ..()
 	var/static/list/loc_connections = list(COMSIG_ATOM_EXIT = PROC_REF(on_exit))
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/fluff/clock/Destroy()
 	if(soundloop)
-		soundloop.stop()
-	..()
+		QDEL_NULL(soundloop)
+	return ..()
 
 /obj/structure/fluff/clock/obj_break(damage_flag, silent)
 	if(!broke)
@@ -482,8 +480,8 @@
 
 /obj/structure/fluff/wallclock/Destroy()
 	if(soundloop)
-		soundloop.stop()
-	..()
+		QDEL_NULL(soundloop)
+	return ..()
 
 /obj/structure/fluff/wallclock/examine(mob/user)
 	. = ..()
@@ -1213,7 +1211,7 @@
 
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
-	..()
+	return ..()
 
 /obj/structure/fluff/psycross/proc/AOE_flash(mob/user, range = 15, power = 5, targeted = FALSE)
 	var/list/mob/targets = get_flash_targets(get_turf(src), range, FALSE)
@@ -1317,7 +1315,7 @@
 		var/obj/item/ring = new /obj/item/clothing/ring/gold/burden(loc)
 		ADD_TRAIT(user, TRAIT_BURDEN, type)
 		user.put_in_hands(ring)
-		user.equip_to_slot_if_possible(ring, SLOT_RING, FALSE, FALSE, TRUE, TRUE)
+		user.equip_to_slot_if_possible(ring, ITEM_SLOT_RING, FALSE, FALSE, TRUE, TRUE)
 		to_chat(user, span_danger("Once your hand is close enough to the ring, it jumps upwards and burrows itself onto your palm"))
 		ring_destroyed = FALSE
 		update_icon()

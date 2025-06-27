@@ -47,7 +47,7 @@ The word serf means something completely different than what the original maker 
 	tutorial = "Pilgrims begin far outside of the town and must reach it in order to ply their various trades. Sometimes, they build their own settlements and enjoy the terrible nature."
 	display_order = PILGRIM_ORDER	// STONEKEEP EDIT
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	total_positions = 20
 	spawn_positions = 20
 	min_pq = -20
@@ -60,7 +60,7 @@ The word serf means something completely different than what the original maker 
 
 /datum/job/stonekeep
 	min_pq = 0
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE

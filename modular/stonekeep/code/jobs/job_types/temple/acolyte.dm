@@ -2,7 +2,7 @@
 	title = "Acolyte"
 	flag = SK_ACOLYTE
 	department_flag = CHURCHMEN
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order =  ACOLYTE_ORDER
 	total_positions = 4

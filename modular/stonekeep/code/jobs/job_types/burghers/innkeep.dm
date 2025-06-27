@@ -3,7 +3,7 @@
 	flag = SK_INNKEEP
 	department_flag = SERFS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	bypass_lastclass = TRUE
 	total_positions = 1
 	spawn_positions = 1

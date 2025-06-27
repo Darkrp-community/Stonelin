@@ -10,3 +10,4 @@
 //#include "..\..\_maps\map_files\stonehamlet\map_adjustment_stonehamlet.dm"
 #include "..\..\_maps\map_files\rosewood\map_adjustment_rosewood.dm"
 #include "..\..\_maps\map_files\daftmarsh\map_adjustment_daftmarsh.dm"
+#include "..\..\_maps\map_files\whitepalacepass\map_adjustment_whitepalacepass.dm"

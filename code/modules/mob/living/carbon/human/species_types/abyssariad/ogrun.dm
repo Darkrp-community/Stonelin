@@ -32,34 +32,59 @@
 	default_features = list("mcolor" = "FFF", "ears" = "Ogrun", "tail_human" = "Onihorn")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, Onis are the newest ones on the fold, and they become Orcs mentally if they stray away from Abyssor.
-	max_age = 430 //The year Onis became part of the Abyssariads. Roughly after the Blood Apotheosis
 //	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = MEAT
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	hairyness = "t2"
-	use_m = TRUE
+	swap_female_clothes = TRUE
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,1), OFFSET_GLOVES_F = list(0,1), OFFSET_WRISTS_F = list(0,1), OFFSET_HANDS_F = list(0,1), \
-	OFFSET_CLOAK_F = list(0,1), OFFSET_FACEMASK_F = list(0,1), OFFSET_HEAD_F = list(0,1), \
-	OFFSET_FACE_F = list(0,1), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
-	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
-	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	specstats = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
+	offset_features_m = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
+	offset_features_f = list(
+		OFFSET_ID = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
+	specstats_m = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
 //	minrace_pq = 0
-// 1(str)-0.5-0.5+1+1+0(spd)+0 = 2 = 2.0 specstats. Balance adjusted.
+// 1(str)-0.5-0.5+1+1+0(spd)+0 = 2 = 2.0 specstats_m. Balance adjusted.
 //statsvalue reference by Dova
 //Strength and Speed are 1, everything else is .5, all races are +2 or +3 except Humen. So we keeping it as +2 for balance reasons.
 

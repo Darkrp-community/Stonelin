@@ -3,7 +3,7 @@
 	flag = SK_HAND
 	department_flag = NOBLEMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_STATION
+	faction = FACTION_TOWN
 	display_order = HAND_ORDER
 	bypass_lastclass = TRUE
 	total_positions = 1

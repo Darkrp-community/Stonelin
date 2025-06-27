@@ -594,7 +594,6 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	speak_chance = 5
-	turns_per_move = 1
 	move_to_delay = 1
 	base_constitution = 14
 	base_strength = 12
@@ -747,7 +746,7 @@
 /obj/item/clothing/head/jester/artefact/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(user.patron == /datum/patron/divine/xylix)
-		if(slot == SLOT_HEAD && istype(user))
+		if(slot == ITEM_SLOT_HEAD && istype(user))
 			user.apply_status_effect(/datum/status_effect/buff/xylix_cap)
 			body_parts_covered = FULL_BODY
 		else
