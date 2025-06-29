@@ -1036,6 +1036,12 @@
 	icon_state = "brownkey"
 	lockid = "mason"
 
+/obj/item/key/maker
+	name = "maker's key"
+	desc = "This bronze key is stamped with the Makers Guild symbol."
+	icon_state = "brownkey"
+	lockid = "maker"
+
 /obj/item/key/guildring
 	name = "guild ring"
 	desc = "The wearer is a proud member of the Makers' guild. It looks like its made to fit into some kind of lock."

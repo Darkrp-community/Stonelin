@@ -490,12 +490,11 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/rtfield)
 "aHu" = (
-/obj/structure/door/stone{
-	desc = "The heavy doors keyhole is fitted for a ring.";
-	lockid = "guild";
-	name = "makers guildhall"
-	},
 /obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/viewport{
+	dir = 1;
+	lockid = "maker"
+	},
 /turf/open/floor/concrete,
 /area/rogue/under/town/basement)
 "aHM" = (
@@ -1365,6 +1364,11 @@
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/cell)
+"bTV" = (
+/obj/effect/spawner/map_spawner/tallgrass,
+/obj/structure/flora/grass,
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "bUc" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
@@ -1494,6 +1498,11 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/hamlet)
+"cao" = (
+/obj/machinery/light/fueled/firebowl/standing,
+/obj/structure/flora/grass,
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "cav" = (
 /obj/structure/flora/grass/bush_meagre,
 /turf/open/floor/grass,
@@ -2319,6 +2328,7 @@
 /obj/structure/fluff/walldeco/masonflag{
 	pixel_x = -32
 	},
+/obj/structure/flora/grass,
 /turf/open/floor/grass,
 /area/rogue/outdoors/exposed/townhamlet)
 "dez" = (
@@ -3380,11 +3390,9 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/church)
 "evA" = (
-/obj/structure/fake_machine/scomm{
-	plane = -3
-	},
-/turf/closed/wall/mineral/craftstone,
-/area/rogue/indoors/town/shop)
+/obj/structure/flora/rogueflower/random,
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/church)
 "evC" = (
 /obj/item/natural/stone,
 /turf/open/floor/naturalstone/rough,
@@ -3554,6 +3562,7 @@
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/clothing/neck/psycross/silver/malum,
 /obj/item/paper/reminder_about_dwarfs,
+/obj/item/key/maker,
 /turf/open/floor/wood,
 /area/rogue/under/town/basement)
 "eCA" = (
@@ -4388,6 +4397,7 @@
 /area/rogue/outdoors/town/roofs)
 "fGR" = (
 /obj/effect/spawner/map_spawner/graverandom,
+/obj/structure/flora/rogueflower/random,
 /turf/open/floor/grass,
 /area/rogue/outdoors/exposed/church)
 "fGX" = (
@@ -5072,6 +5082,10 @@
 /obj/structure/fluff/walldeco/bigpainting/lake,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/hamlet/advguild)
+"gEm" = (
+/obj/structure/fake_machine/scomm/l,
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "gEE" = (
 /mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/blocks/moss,
@@ -5989,9 +6003,9 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/church)
 "hNt" = (
-/obj/item/storage/eggbasket,
-/turf/open/floor/dirt/road,
-/area/rogue/indoors/soilsons)
+/obj/structure/fake_machine/scomm/l,
+/turf/open/floor/wood,
+/area/rogue/indoors/town/manor/stone)
 "hNv" = (
 /obj/structure/chair/wood/alt/chair_noble/red{
 	dir = 1
@@ -6437,6 +6451,10 @@
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/grass,
 /area/rogue/outdoors/exposed/church)
+"irU" = (
+/obj/structure/handcart/corpse,
+/turf/open/floor/blocks,
+/area/rogue/under/catacombs)
 "isp" = (
 /obj/structure/table/wood/large_new/yellow{
 	dir = 5
@@ -8054,6 +8072,11 @@
 /obj/effect/spawner/map_spawner/hauntz_random,
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/exposed/church)
+"kyZ" = (
+/obj/machinery/light/fueled/torchholder/r,
+/obj/structure/flora/grass,
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "kzf" = (
 /obj/structure/stairs/stone/church{
 	dir = 1
@@ -9321,6 +9344,11 @@
 /obj/structure/chair/stool,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/hamlet)
+"meO" = (
+/obj/structure/ladder,
+/obj/structure/fake_machine/scomm/l,
+/turf/open/floor/wood,
+/area/rogue/indoors/town/manor/stone)
 "mfd" = (
 /obj/structure/flora/grass,
 /obj/machinery/light/fueled/firebowl/stump{
@@ -10583,11 +10611,11 @@
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/cell)
 "nEk" = (
-/obj/structure/door/red{
-	lockid = "mason";
-	name = "hammerite quarters"
-	},
 /obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/viewport{
+	dir = 4;
+	lockid = "maker"
+	},
 /turf/open/floor/concrete,
 /area/rogue/indoors/shelter/town/dwarf)
 "nEF" = (
@@ -12199,10 +12227,11 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "pEF" = (
-/obj/structure/door/green{
-	name = "shop door"
-	},
 /obj/effect/mapping_helpers/access/keyset/town/smith,
+/obj/structure/door/viewport{
+	dir = 8;
+	lockid = "maker"
+	},
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/dwarfin)
 "pEK" = (
@@ -12305,12 +12334,10 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/town/roofs)
 "pLR" = (
-/obj/structure/door/stone{
-	desc = "The heavy doors keyhole is fitted for a ring.";
-	lockid = "guild";
-	name = "Makers guildhall"
+/obj/structure/door/viewport{
+	dir = 8;
+	lockid = "maker"
 	},
-/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/dwarfin)
 "pMf" = (
@@ -12605,6 +12632,10 @@
 /obj/structure/fake_machine/balloon_pad,
 /turf/open/floor/hexstone,
 /area/rogue/outdoors/town/roofs)
+"qdC" = (
+/obj/structure/fake_machine/scomm/l,
+/turf/open/floor/dirt/road,
+/area/rogue/outdoors/exposed/townhamlet)
 "qdJ" = (
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
@@ -13552,6 +13583,11 @@
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/exposed/townhamlet)
+"rhM" = (
+/obj/machinery/light/fueled/wallfire/candle,
+/obj/structure/handcart/corpse,
+/turf/open/floor/blocks,
+/area/rogue/under/catacombs)
 "rhO" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 4;
@@ -13711,6 +13747,10 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/hamlet/advguild)
+"rqD" = (
+/obj/structure/handcart,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/shop)
 "rqO" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 9
@@ -13868,6 +13908,10 @@
 	},
 /turf/open/floor/grass,
 /area/rogue/outdoors/exposed/townhamlet)
+"rAs" = (
+/obj/structure/fake_machine/scomm/l,
+/turf/open/floor/wood,
+/area/rogue/indoors/town/garrison)
 "rAu" = (
 /obj/structure/fluff/traveltile{
 	aportalgoesto = "hamlet-bog";
@@ -14336,11 +14380,11 @@
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "sku" = (
-/obj/structure/door/red{
-	lockid = "mason";
-	name = "workshop"
-	},
 /obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/viewport{
+	dir = 8;
+	lockid = "maker"
+	},
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "skC" = (
@@ -14500,7 +14544,7 @@
 /obj/item/grown/log/tree/small,
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/grown/log/tree/small,
-/obj/item/key/mason,
+/obj/item/key/maker,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "stQ" = (
@@ -16755,10 +16799,9 @@
 /area/rogue/indoors/town/cell)
 "viS" = (
 /obj/effect/mapping_helpers/access/locker,
-/obj/structure/door/stone{
-	desc = "The heavy doors keyhole is fitted for a ring.";
-	lockid = "guild";
-	name = "Makers guildhall"
+/obj/structure/door/viewport{
+	dir = 1;
+	lockid = "maker"
 	},
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/dwarfin)
@@ -47638,7 +47681,7 @@ nIx
 nIx
 nIx
 iBX
-mHk
+rhM
 bZv
 bZv
 bZv
@@ -48042,7 +48085,7 @@ nIx
 nIx
 nIx
 iBX
-nIx
+irU
 bZv
 bZv
 bZv
@@ -76720,8 +76763,8 @@ wxZ
 xus
 xus
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 uzL
 xus
@@ -76887,7 +76930,7 @@ frW
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 qoZ
 seu
@@ -77089,7 +77132,7 @@ sNs
 sNs
 sNs
 ahK
-ahK
+xus
 ahK
 qoZ
 seu
@@ -77292,7 +77335,7 @@ sNs
 sNs
 sNs
 ahK
-ahK
+xus
 qoZ
 seu
 sGc
@@ -77708,7 +77751,7 @@ qnM
 seu
 pnR
 sLe
-aKi
+rqD
 sKo
 nBJ
 bgs
@@ -78523,7 +78566,7 @@ nBJ
 bgs
 nBJ
 qoZ
-qoZ
+qdC
 qoZ
 ibJ
 eMy
@@ -78546,7 +78589,7 @@ qoZ
 xus
 xus
 qoZ
-ahK
+xus
 oBT
 tUg
 tUg
@@ -78557,7 +78600,7 @@ tUg
 tUg
 fBN
 lrL
-hNt
+pmK
 iLd
 jzP
 jzP
@@ -78748,7 +78791,7 @@ vUL
 qoZ
 xus
 qoZ
-ahK
+xus
 frW
 uzI
 tUg
@@ -78766,7 +78809,7 @@ nII
 nII
 uWa
 nha
-ahK
+kwb
 qoZ
 qoZ
 ahK
@@ -79169,7 +79212,7 @@ pmK
 pmK
 vbZ
 lrL
-ahK
+kwb
 ahK
 qoZ
 ozH
@@ -79305,7 +79348,7 @@ ddu
 hkd
 ddu
 cXo
-iow
+hNt
 iow
 iow
 quN
@@ -79321,7 +79364,7 @@ qyP
 seu
 qyP
 qyP
-evA
+seu
 bRy
 nIl
 pKh
@@ -79516,12 +79559,12 @@ sNs
 sNs
 ahK
 qoZ
-ahK
+gEm
 xus
 ahK
 ahK
-nrB
-ahK
+wxZ
+xus
 ahK
 qoZ
 bgs
@@ -79716,14 +79759,14 @@ quN
 eXm
 sNs
 sNs
-dmY
+cao
 qoZ
 qoZ
 ahK
 ahK
-ahK
-ahK
-ahK
+xus
+xus
+xus
 ahK
 qoZ
 nBJ
@@ -79738,22 +79781,22 @@ qoZ
 qoZ
 gIz
 udo
-ahK
-ahK
-nrB
+xus
+xus
+wxZ
 ahK
 nBJ
 kRw
 nBJ
 nBJ
 nrB
+xus
+xus
+xus
 ahK
 ahK
-ahK
-ahK
-ahK
-ahK
-ahK
+xus
+xus
 wzq
 qoZ
 qoZ
@@ -79919,11 +79962,11 @@ iZV
 sNs
 sNs
 vDh
-ahK
+xus
 qoZ
 qoZ
 ahK
-ahK
+xus
 ahK
 ahK
 qoZ
@@ -79941,20 +79984,20 @@ oTH
 qoZ
 qoZ
 ahK
-ahK
+xus
 ahK
 ahK
 qoZ
 qoZ
 qoZ
+xus
+xus
 ahK
 ahK
+xus
 ahK
-ahK
-ahK
-ahK
-ahK
-ahK
+xus
+xus
 ahK
 qoZ
 qoZ
@@ -80729,16 +80772,16 @@ sNs
 dlE
 ahK
 qoZ
-ahK
+xus
 ahK
 ahK
 ahK
 mFm
 ahK
 ahK
-ahK
-ahK
-bHh
+xus
+xus
+kyZ
 ahK
 ahK
 mDE
@@ -80921,7 +80964,7 @@ ddu
 ddu
 wvY
 cnH
-nDi
+meO
 iow
 iow
 cnH
@@ -80929,7 +80972,7 @@ eXm
 sNs
 sNs
 dtM
-ahK
+xus
 qoZ
 bBI
 jFl
@@ -81382,7 +81425,7 @@ dbN
 dbN
 dbN
 dbN
-gzR
+evA
 gzR
 jya
 xus
@@ -81585,7 +81628,7 @@ aHT
 gzR
 dbN
 dbN
-gzR
+evA
 jya
 xus
 qoZ
@@ -81725,7 +81768,7 @@ qTO
 iPQ
 iPQ
 iPQ
-iPQ
+rAs
 oOx
 iPQ
 oOx
@@ -82976,7 +83019,7 @@ lSz
 qoZ
 ahK
 ahK
-ahK
+xus
 ahK
 fZB
 gzR
@@ -83178,7 +83221,7 @@ lSz
 qoZ
 ahK
 ahK
-ahK
+xus
 mOl
 jbn
 gzR
@@ -83378,10 +83421,10 @@ uQi
 tUg
 qoZ
 qoZ
+xus
+xus
 ahK
-ahK
-ahK
-ahK
+xus
 fZB
 gzR
 dbN
@@ -83580,10 +83623,10 @@ uQi
 jLF
 lSz
 qoZ
+xus
 ahK
 ahK
-ahK
-ahK
+xus
 fZB
 gzR
 dbN
@@ -83784,7 +83827,7 @@ vXX
 qoZ
 ahK
 ahK
-ahK
+xus
 ahK
 qIv
 gzR
@@ -84380,10 +84423,10 @@ gTS
 gTS
 frf
 fJZ
-ahK
-ahK
-ahK
-ahK
+xus
+xus
+xus
+xus
 ahK
 ahK
 ahK
@@ -84585,7 +84628,7 @@ fJZ
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 ahK
 bHh
@@ -84787,7 +84830,7 @@ fJZ
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 aKv
 aEO
@@ -84989,7 +85032,7 @@ fJZ
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 aEO
 vfv
@@ -85191,8 +85234,8 @@ fJZ
 fJZ
 fJZ
 fJZ
-ahK
-ahK
+xus
+xus
 aEO
 rBA
 rBA
@@ -85394,7 +85437,7 @@ mJw
 qbz
 fJZ
 ahK
-ahK
+xus
 aEO
 rBA
 gBi
@@ -85410,7 +85453,7 @@ fZB
 bUL
 bUL
 gzR
-gzR
+evA
 gzR
 kpr
 gzR
@@ -85429,7 +85472,7 @@ ahK
 qoZ
 qoZ
 xus
-ahK
+xus
 aEO
 oIv
 reF
@@ -85596,15 +85639,15 @@ vbQ
 qbz
 fJZ
 ahK
-ahK
+xus
 aKv
 aEO
 aEO
 aEO
 aKv
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 tUg
 ahK
@@ -85613,7 +85656,7 @@ gzR
 bRV
 luU
 bRV
-gzR
+evA
 kpr
 gzR
 gzR
@@ -85798,7 +85841,7 @@ fJZ
 fJZ
 fJZ
 ahK
-ahK
+xus
 ahK
 ahK
 ahK
@@ -85806,7 +85849,7 @@ ahK
 tUg
 ahK
 ahK
-ahK
+xus
 ahK
 ahK
 ahK
@@ -86199,10 +86242,10 @@ gTS
 gTS
 fJZ
 ahK
+xus
 ahK
-ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 ahK
@@ -86211,14 +86254,14 @@ ahK
 nBJ
 ahK
 tUg
-ahK
-ahK
+xus
+xus
 ahK
 nkC
 bUL
 rxY
 rxY
-gzR
+evA
 dbN
 dbN
 gzR
@@ -86400,10 +86443,10 @@ gTS
 iOB
 gTS
 fJZ
-ahK
-ahK
-ahK
-ahK
+xus
+xus
+xus
+xus
 ahK
 ahK
 ahK
@@ -86413,13 +86456,13 @@ nBJ
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 ahK
 fZB
 gzR
 bRV
-gzR
+evA
 usY
 gzR
 kpr
@@ -86602,7 +86645,7 @@ fJZ
 fJZ
 fJZ
 fJZ
-ahK
+xus
 tUg
 tUg
 ahK
@@ -86614,13 +86657,13 @@ wgY
 nBJ
 nBJ
 ahK
-ahK
+xus
 ahK
 ahK
 ahK
 nkC
 gzR
-gzR
+evA
 fiA
 fiA
 gzR
@@ -86816,8 +86859,8 @@ nBJ
 nBJ
 ahK
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 jbn
@@ -86825,7 +86868,7 @@ gzR
 gzR
 gzR
 gzR
-gzR
+evA
 kpr
 gzR
 jbn
@@ -87020,14 +87063,14 @@ ahK
 nBJ
 ahK
 ahK
-ahK
+xus
 ahK
 fZB
 gzR
 gzR
-gzR
-gzR
-gzR
+evA
+evA
+evA
 dbN
 rxY
 jbn
@@ -87044,9 +87087,9 @@ qIv
 ahK
 qoZ
 qoZ
-vSu
+bTV
 ahK
-ahK
+xus
 hAl
 keC
 eVr
@@ -87220,13 +87263,13 @@ uzL
 uzL
 ahK
 ahK
+xus
 ahK
 ahK
-ahK
-ahK
+xus
 fZB
 gzR
-gzR
+evA
 bRV
 bRV
 bRV
@@ -87239,16 +87282,16 @@ byh
 gzR
 kpr
 gzR
-gzR
+evA
 gzR
 bUL
 qIv
 xus
 qoZ
 qoZ
+xus
 ahK
-ahK
-ahK
+xus
 ahK
 ahK
 fpV
@@ -87419,7 +87462,7 @@ uzL
 uzL
 uzL
 uzL
-ahK
+xus
 ahK
 ahK
 uzL
@@ -87438,7 +87481,7 @@ gzR
 fiA
 rxY
 gzR
-gzR
+evA
 kpr
 fGR
 bRV
@@ -87448,9 +87491,9 @@ fZB
 ahK
 qoZ
 qoZ
-ahK
-ahK
-ahK
+xus
+xus
+xus
 ahK
 ahK
 ahK
@@ -87835,7 +87878,7 @@ gzR
 aHT
 gzR
 gzR
-gzR
+evA
 gzR
 gzR
 gzR
@@ -87846,7 +87889,7 @@ gzR
 gzR
 kuj
 wCG
-gzR
+evA
 gzR
 qIv
 ahK
@@ -88030,22 +88073,22 @@ uzL
 uzL
 uzL
 uzL
-ahK
-ahK
+xus
+xus
 fZB
 gzR
 gzR
 usY
 bRV
 bRV
-gzR
+evA
 gzR
 gzR
 gzR
 gzR
 gzR
 bUL
-gzR
+evA
 fiA
 rxY
 rxY
@@ -88238,7 +88281,7 @@ fZB
 gzR
 gzR
 gzR
-gzR
+evA
 gzR
 gzR
 gzR
@@ -88451,7 +88494,7 @@ gzR
 gzR
 gzR
 gzR
-gzR
+evA
 gzR
 gzR
 jbn
@@ -88847,7 +88890,7 @@ ahK
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 ahK
 ahK
@@ -89049,8 +89092,8 @@ ahK
 ahK
 ahK
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 tUg
@@ -89254,7 +89297,7 @@ uzL
 ahK
 ahK
 uzL
-tUg
+hAl
 tUg
 tUg
 uzL
@@ -89265,7 +89308,7 @@ ahK
 ahK
 qoZ
 qoZ
-ahK
+xus
 ahK
 kTh
 wiK
@@ -89457,7 +89500,7 @@ ahK
 ahK
 tUg
 tUg
-tUg
+hAl
 ahK
 ahK
 ahK
@@ -89467,7 +89510,7 @@ ahK
 qoZ
 qoZ
 qoZ
-ahK
+xus
 ahK
 wiK
 kTh
@@ -89659,7 +89702,7 @@ ahK
 ahK
 tUg
 tUg
-ahK
+xus
 ahK
 ahK
 ahK
@@ -89863,14 +89906,14 @@ ahK
 ahK
 uzL
 ahK
-ahK
+xus
 ahK
 ahK
 qoZ
 qoZ
 qoZ
 ahK
-ahK
+xus
 ahK
 oVL
 kTh
@@ -90063,15 +90106,15 @@ ahK
 ahK
 uzL
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 qoZ
 qoZ
 qoZ
 ahK
-ahK
+xus
 ahK
 jgc
 kTh
@@ -90273,7 +90316,7 @@ qoZ
 qoZ
 ahK
 ahK
-ahK
+xus
 ahK
 xus
 wiK
@@ -90463,8 +90506,8 @@ ahK
 ahK
 ahK
 ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 ahK
@@ -91076,10 +91119,10 @@ ahK
 ahK
 ahK
 ahK
+xus
 ahK
-ahK
-ahK
-ahK
+xus
+xus
 ahK
 ahK
 uzL
@@ -91275,7 +91318,7 @@ ahK
 ahK
 ahK
 ahK
-ahK
+xus
 ahK
 ahK
 ahK
@@ -91476,8 +91519,8 @@ ahK
 ahK
 uzL
 ahK
-ahK
-ahK
+xus
+xus
 rWN
 cSs
 rWN
