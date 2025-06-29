@@ -15,8 +15,9 @@ body:
     multiple: true
     description: Where did the bug happen?
     options:
-      - Vanderlin
-      - Rosewood
+      - Stone Hamlet
+      - Roguetown
+      - Daft Marsh
 
 - type: textarea
   id: issue-summary

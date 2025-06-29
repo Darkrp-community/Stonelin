@@ -136,7 +136,7 @@
 
 /datum/advclass/consort/lowborn
 	name = "Lowborn Consort"
-	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Vanderlin Keep."
+	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Stonekeep."
 	outfit = /datum/outfit/job/stonekeep/consort/lowborn
 
 	category_tags = list(CTAG_CONSORT)

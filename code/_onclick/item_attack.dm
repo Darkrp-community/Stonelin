@@ -64,10 +64,11 @@
 	return FALSE
 
 /obj/attackby(obj/item/I, mob/living/user, params)
-	if(!user.cmode)
+	// STONEKEEP EDIT: DEATH TO SLAPCRAFT
+	/*if(!user.cmode)
 		if(user.try_recipes(src, I, user))
 			user.changeNext_move(CLICK_CD_FAST)
-			return TRUE
+			return TRUE */
 	if(I.obj_flags_ignore)
 		return I.attack_obj(src, user)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))

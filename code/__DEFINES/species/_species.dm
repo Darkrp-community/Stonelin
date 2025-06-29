@@ -75,7 +75,7 @@
 	RACE_HALF_ORC,\
 )
 
-/// Races not considered discriminated against in Vanderlin. Used for nobility, etc.
+/// Races not considered discriminated against in Stonekeep. Used for nobility, etc.
 #define RACES_PLAYER_NONDISCRIMINATED list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -96,7 +96,7 @@
 	RACE_TRITON,\
 )
 
-/// Races who are non-exotic to Vanderlin. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
+/// Races who are non-exotic to Enigma. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
 #define RACES_PLAYER_NONEXOTIC list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\

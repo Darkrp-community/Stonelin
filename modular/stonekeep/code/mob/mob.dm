@@ -591,4 +591,4 @@
 	dodgetime = 17
 
 	///this mob was updated to new ai
-	ai_controller = /datum/ai_controller/spider
+	ai_controller = /datum/ai_controller/haunt

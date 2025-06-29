@@ -14,5 +14,5 @@
 
 /obj/item/natural/poo/horse
 	name = "droppings"
-	desc = "Fecal matter from some animal."
+	desc = "Fecal matter from some equine animal."
 	icon_state = "horsepoo"

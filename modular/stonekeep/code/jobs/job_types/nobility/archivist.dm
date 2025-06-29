@@ -1,6 +1,6 @@
 /datum/job/stonekeep/archivist
 	title = "Archivist"
-	tutorial = "A well-traveled and well-learned seeker of knowledge, the Archivist's mind has been touched by Noc himself. They settled in Vanderlin some time ago, coming to the Isle of Enigma with the hope of unraveling its mysteries. If they can expand their library and teach the masses, Psydonia may yet enter a new age of enlightenment."
+	tutorial = "A well-traveled and well-learned seeker of knowledge, the Archivist's mind has been touched by Noc himself. They settled in Enigma some time ago, coming to Stonekeep with the hope of unraveling its mysteries. If they can expand their library and teach the masses, the world may yet enter a new age of enlightenment."
 	flag = SK_ARCHIVIST
 	department_flag = NOBLEMEN
 	total_positions = 0

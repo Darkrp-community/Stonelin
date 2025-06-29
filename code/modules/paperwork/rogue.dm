@@ -319,7 +319,7 @@
 	if(!signee)
 		. += span_info("Present to a Guild representative for signing.")
 	else
-		. += span_info("SIGNEE: [signee], [signeejob] of Vanderlin.")
+		. += span_info("SIGNEE: [signee], [signeejob] of Stonekeep.")
 
 /obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))

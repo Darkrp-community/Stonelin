@@ -83,7 +83,7 @@ SUBSYSTEM_DEF(mapping)
 		var/old_config = config
 		config = global.config.defaultmap
 		if(!config || config.defaulted)
-			to_chat(world, "<span class='boldannounce'>Unable to load next or default map config, defaulting to Vanderlin</span>")
+			to_chat(world, "<span class='boldannounce'>Unable to load next or default map config, defaulting to Stone Hamlet.</span>")
 			config = old_config
 	if(map_adjustment)
 		map_adjustment.on_mapping_init()

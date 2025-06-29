@@ -203,22 +203,21 @@
 			. = 1
 	..()
 
+// FOGBEAST: KAIZOKU HORSES
 
-
-
-
-// horses runtime init /tame
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse
-	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
+/mob/living/simple_animal/hostile/retaliate/fogbeast
 	name = "fogbeast"
-	desc = "A huge and elegant beast that gallops across open fields with hooves deadlier than any sword. Long extinct from the mainlands, it is the favourite beasts of Fog Islanders and Heartfelteans."
+	desc = "A huge and elegant beast that gallops across open fields with hooves deadlier than any sword. \
+			Long extinct from the mainlands, it is the favourite beasts of Fog Islanders and Heartfelteans."
+	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
 	icon_state = "horse"
 	icon_living = "horse"
 	icon_dead = "horse_dead"
 	icon_gib = "horse_gib"
-	faction = list("saiga")
+	faction = list("saiga") // mounted frens
+	ai_controller = /datum/ai_controller/fogbeast
 	gender = MALE
+	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_see = list("grazes on grass.", "whinnies softly.", "stamps a hoof.", "gazes upon the horizon.", "'s tail whips mosquitos away.")
 	move_to_delay = 7
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 2,
@@ -236,19 +235,222 @@
 	health =  MALE_MOOBEAST_HEALTH
 	maxHealth =  MALE_MOOBEAST_HEALTH
 
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/grain/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/grain/oat,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/apple)
+
 	tame_chance = 40 // Foglander horses are easier to tame due to centuries of domestication, but you won't see them naturally on Stonekeep.
+	bonus_tame_chance = 15
+	pooptype = /obj/item/natural/poo/horse
+
+	base_intents = list(/datum/intent/simple/hind_kick)
+	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	melee_damage_lower = 15
+	melee_damage_upper = 25
+	environment_smash = ENVIRONMENT_SMASH_NONE
 
 	retreat_distance = 10
 	minimum_distance = 10
+
 	base_constitution = 12
 	base_strength = 10
 	base_speed = 15
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare
-	name = "fogbeast mare" // Name distinction because they share the same sprite and all.
-	gender = FEMALE
+	can_buckle = TRUE
+	buckle_lying = FALSE
+	can_saddle = TRUE
+	aggressive = TRUE
+	remains_type = /obj/structure/remains/generic
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/Initialize()
+	var/static/list/pet_commands = list(
+		/datum/pet_command/idle,
+		/datum/pet_command/free,
+		/datum/pet_command/good_boy,
+		/datum/pet_command/follow,
+		/datum/pet_command/attack,
+		/datum/pet_command/fetch,
+		/datum/pet_command/play_dead,
+		/datum/pet_command/protect_owner,
+		/datum/pet_command/aggressive,
+		/datum/pet_command/calm,
+	)
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/Initialize()
+	AddComponent(/datum/component/obeys_commands, pet_commands)
+	. = ..()
+	AddElement(/datum/element/ai_retaliate)
+
+	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
+
+	AddComponent(\
+		/datum/component/breed,\
+		can_breed_with = list(/mob/living/simple_animal/hostile/retaliate/fogmare, /mob/living/simple_animal/hostile/retaliate/fogbeast),\
+		breed_timer = 2 MINUTES\
+	)
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/update_icon()
+	cut_overlays()
+	..()
+	if(stat != DEAD)
+		if(ssaddle)
+			var/mutable_appearance/saddlet = mutable_appearance(icon, "saddle-above", 4.3)
+			add_overlay(saddlet)
+			saddlet = mutable_appearance(icon, "saddle")
+			add_overlay(saddlet)
+		if(has_buckled_mobs())
+			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
+			add_overlay(mounted)
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+		if("pain")
+			return pick('sound/vo/mobs/saiga/pain (1).ogg','sound/vo/mobs/saiga/pain (2).ogg','sound/vo/mobs/saiga/pain (3).ogg')
+		if("death")
+			return pick('sound/vo/mobs/saiga/death (1).ogg','sound/vo/mobs/saiga/death (2).ogg')
+		if("idle")
+			return pick('sound/vo/mobs/saiga/idle (1).ogg','sound/vo/mobs/saiga/idle (2).ogg','sound/vo/mobs/saiga/idle (3).ogg','sound/vo/mobs/saiga/idle (4).ogg','sound/vo/mobs/saiga/idle (5).ogg','sound/vo/mobs/saiga/idle (6).ogg','sound/vo/mobs/saiga/idle (7).ogg')
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/simple_limb_hit(zone)
+	if(!zone)
+		return ""
+	switch(zone)
+		if(BODY_ZONE_PRECISE_R_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_L_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_NOSE)
+			return "snout"
+		if(BODY_ZONE_PRECISE_MOUTH)
+			return "snout"
+		if(BODY_ZONE_PRECISE_SKULL)
+			return "head"
+		if(BODY_ZONE_PRECISE_EARS)
+			return "head"
+		if(BODY_ZONE_PRECISE_NECK)
+			return "neck"
+		if(BODY_ZONE_PRECISE_L_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_R_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_L_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_R_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_STOMACH)
+			return "stomach"
+		if(BODY_ZONE_HEAD)
+			return "head"
+		if(BODY_ZONE_R_LEG)
+			return "leg"
+		if(BODY_ZONE_L_LEG)
+			return "leg"
+		if(BODY_ZONE_R_ARM)
+			return "foreleg"
+		if(BODY_ZONE_L_ARM)
+			return "foreleg"
+	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/taunted(mob/user)
+	emote("aggro")
+	return
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/tamed(mob/user)
+	..()
+	deaggroprob = 40
+	if(can_buckle)
+		AddComponent(/datum/component/riding/fogbeast)
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/tame
+	tame = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/fogbeast/tame/saddled/Initialize()
+	. = ..()
+	var/obj/item/natural/saddle/S = new(src)
+	ssaddle = S
+	update_icon()
+
+// FOGBEAST MARE.
+// NEEDS ITS OWN CREATURE DEFINE, DO NOT MAKE A CHILD OF FOGBEAST.
+/mob/living/simple_animal/hostile/retaliate/fogmare
+	name = "fogbeast mare" // Name distinction because they share the same sprite and all.
+	desc = "A huge and elegant beast that gallops across open fields with hooves deadlier than any sword. \
+			Long extinct from the mainlands, it is the favourite beasts of Fog Islanders and Heartfelteans."
+	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
+	icon_state = "horse"
+	icon_living = "horse"
+	icon_dead = "horse_dead"
+	icon_gib = "horse_gib"
+	faction = list("saiga")
+	ai_controller = /datum/ai_controller/fogbeast
+	gender = FEMALE
+	animal_species = /mob/living/simple_animal/hostile/retaliate/fogbeast
+	footstep_type = FOOTSTEP_MOB_SHOE
+	emote_see = list("grazes on grass.", "whinnies softly.", "stamps a hoof.", "gazes upon the horizon.", "'s tail whips mosquitos away.")
+	move_to_delay = 7
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 2,
+						/obj/item/natural/hide = 1,
+						/obj/item/alch/bone = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 4,
+						/obj/item/reagent_containers/food/snacks/fat = 2,
+						/obj/item/natural/hide = 3,
+						/obj/item/alch/bone = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 5,
+						/obj/item/reagent_containers/food/snacks/fat = 2,
+						/obj/item/natural/hide = 4,
+						/obj/item/alch/bone = 3)
+
+	health =  FEMALE_MOOBEAST_HEALTH
+	maxHealth =  FEMALE_MOOBEAST_HEALTH
+
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/grain/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/grain/oat,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/apple)
+	tame_chance = 40 // Foglander horses are easier to tame due to centuries of domestication, but you won't see them naturally on Stonekeep.
+	bonus_tame_chance = 15
+
+	pooptype = /obj/item/natural/poo/horse
+
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	melee_damage_lower = 15
+	melee_damage_upper = 25
+	environment_smash = ENVIRONMENT_SMASH_NONE
+
+	retreat_distance = 10
+	minimum_distance = 10
+
+	base_constitution = 12
+	base_strength = 10
+	base_speed = 15
+
+	can_buckle = TRUE
+	buckle_lying = FALSE
+	can_saddle = TRUE
+	aggressive = TRUE
+	remains_type = /obj/structure/remains/generic
+
+	var/can_breed = TRUE
+
+	var/static/list/pet_commands = list(
+		/datum/pet_command/idle,
+		/datum/pet_command/free,
+		/datum/pet_command/good_boy,
+		/datum/pet_command/follow,
+		/datum/pet_command/attack,
+		/datum/pet_command/fetch,
+		/datum/pet_command/play_dead,
+		/datum/pet_command/protect_owner,
+		/datum/pet_command/aggressive,
+		/datum/pet_command/calm,
+	)
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/Initialize()
 	AddComponent(/datum/component/obeys_commands, pet_commands)
 	. = ..()
 	AddElement(/datum/element/ai_retaliate)
@@ -258,25 +460,97 @@
 	if(can_breed)
 		AddComponent(\
 			/datum/component/breed,\
-			list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare, /mob/living/simple_animal/hostile/retaliate/saiga/horse),\
+			list(/mob/living/simple_animal/hostile/retaliate/fogmare, /mob/living/simple_animal/hostile/retaliate/fogbeast),\
 			3 MINUTES, \
-			list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid = 80, /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid/boy = 20),\
+			list(/mob/living/simple_animal/hostile/retaliate/fogmare/filly = 80, /mob/living/simple_animal/hostile/retaliate/fogmare/filly/colt = 20),\
 			CALLBACK(src, PROC_REF(after_birth)),\
 		)
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed(mob/user)
+/mob/living/simple_animal/hostile/retaliate/fogmare/proc/after_birth(mob/living/simple_animal/hostile/retaliate/fogmare/filly, mob/living/partner)
+	return
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/update_icon()
+	cut_overlays()
 	..()
+	if(stat != DEAD)
+		if(ssaddle)
+			var/mutable_appearance/saddlet = mutable_appearance(icon, "saddle-above", 4.3)
+			add_overlay(saddlet)
+			saddlet = mutable_appearance(icon, "saddle")
+			add_overlay(saddlet)
+		if(has_buckled_mobs())
+			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
+			add_overlay(mounted)
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+		if("pain")
+			return pick('sound/vo/mobs/saiga/pain (1).ogg','sound/vo/mobs/saiga/pain (2).ogg','sound/vo/mobs/saiga/pain (3).ogg')
+		if("death")
+			return pick('sound/vo/mobs/saiga/death (1).ogg','sound/vo/mobs/saiga/death (2).ogg')
+		if("idle")
+			return pick('sound/vo/mobs/saiga/idle (1).ogg','sound/vo/mobs/saiga/idle (2).ogg','sound/vo/mobs/saiga/idle (3).ogg','sound/vo/mobs/saiga/idle (4).ogg','sound/vo/mobs/saiga/idle (5).ogg','sound/vo/mobs/saiga/idle (6).ogg','sound/vo/mobs/saiga/idle (7).ogg')
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/simple_limb_hit(zone)
+	if(!zone)
+		return ""
+	switch(zone)
+		if(BODY_ZONE_PRECISE_R_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_L_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_NOSE)
+			return "snout"
+		if(BODY_ZONE_PRECISE_MOUTH)
+			return "snout"
+		if(BODY_ZONE_PRECISE_SKULL)
+			return "head"
+		if(BODY_ZONE_PRECISE_EARS)
+			return "head"
+		if(BODY_ZONE_PRECISE_NECK)
+			return "neck"
+		if(BODY_ZONE_PRECISE_L_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_R_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_L_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_R_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_STOMACH)
+			return "stomach"
+		if(BODY_ZONE_HEAD)
+			return "head"
+		if(BODY_ZONE_R_LEG)
+			return "leg"
+		if(BODY_ZONE_L_LEG)
+			return "leg"
+		if(BODY_ZONE_R_ARM)
+			return "foreleg"
+		if(BODY_ZONE_L_ARM)
+			return "foreleg"
+	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/tamed(mob/user)
+	..()
+	deaggroprob = 40
 	if(can_buckle)
 		AddComponent(/datum/component/riding/fogbeast)
-		deaggroprob = 30
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tamed(mob/user)
-	..()
-	if(can_buckle)
-		AddComponent(/datum/component/riding/fogbeast)
-		deaggroprob = 40
+/mob/living/simple_animal/hostile/retaliate/fogmare/tame
+	tame = TRUE
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
+/mob/living/simple_animal/hostile/retaliate/fogmare/tame/saddled/Initialize()
+	. = ..()
+	var/obj/item/natural/saddle/S = new(src)
+	ssaddle = S
+	update_icon()
+
+// FOGBEAST FOALS
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/filly
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
 	name = "fogbeast filly" // Name for a young female foal.
 	desc = "The young foal of a fogbeast. This one is a female."
@@ -290,7 +564,7 @@
 	pass_flags = PASSTABLE | PASSMOB
 	mob_size = MOB_SIZE_SMALL
 
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince = 1)
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1,
 								/obj/item/natural/hide = 1)
@@ -298,7 +572,7 @@
 	health = CALF_HEALTH
 	maxHealth = CALF_HEALTH
 
-	base_intents = list(/datum/intent/simple/headbutt)
+	base_intents = list(/datum/intent/simple/hind_kick)
 	melee_damage_lower = 1
 	melee_damage_upper = 6
 
@@ -307,42 +581,17 @@
 	base_speed = 5
 	defprob = 50
 	pixel_x = -16
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/saiga/horse
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/fogmare
 	tame = TRUE
 	can_buckle = FALSE
 	aggressive = FALSE
-	ai_controller = /datum/ai_controller/saiga_kid
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid/boy
+	can_breed = FALSE
+
+	ai_controller = /datum/ai_controller/fogbeast_foal
+
+/mob/living/simple_animal/hostile/retaliate/fogmare/filly/colt
 	name = "fogbeast colt" // Name for a male young foal.
 	desc = "The young foal of a fogbeast. This one is a male."
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/fogbeast
 	gender = MALE
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
-	tame = TRUE
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tame
-	tame = TRUE
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/update_icon()
-	cut_overlays()
-	..()
-	if(stat != DEAD)
-		if(ssaddle)
-			var/mutable_appearance/saddlet = mutable_appearance(icon, "saddle", 4.3)
-			add_overlay(saddlet)
-		if(has_buckled_mobs())
-			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
-			add_overlay(mounted)
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame/saddled/Initialize()
-	. = ..()
-	var/obj/item/natural/saddle/S = new(src)
-	ssaddle = S
-	update_icon()
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/mare/tame/saddled/Initialize()
-	. = ..()
-	var/obj/item/natural/saddle/S = new(src)
-	ssaddle = S
-	update_icon()

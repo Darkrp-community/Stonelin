@@ -43,10 +43,10 @@
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	if(istype(I,/obj/item/pestle))
-		if(!to_grind)
-			if(user.try_recipes(src, I, user))
-				user.changeNext_move(CLICK_CD_FAST)
-				return TRUE
+		if(!to_grind) // STONEKEEP EDIT: DEATH TO SLAPCRAFTING
+			//if(user.try_recipes(src, I, user))
+			//	user.changeNext_move(CLICK_CD_FAST)
+			//	return TRUE
 			to_chat(user, "<span class='warning'>There's nothing to grind.</span>")
 			return
 

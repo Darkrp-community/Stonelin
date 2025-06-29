@@ -347,15 +347,15 @@
 	"Dance of the Mages" = 'sound/instruments/harp (4).ogg',
 	"Trickster Wisps" = 'sound/instruments/harp (5).ogg',
 	"On the Breeze" = 'sound/instruments/harp (6).ogg',
-	"Never Enough" = 'sound/instruments/harp (7).ogg',
+	"Determination" = 'sound/instruments/harp (7).ogg',
 	"Sundered Heart" = 'sound/instruments/harp (8).ogg',
-	"Corridors of Time" = 'sound/instruments/harp (9).ogg',
-	"Determination" = 'sound/instruments/harp (10).ogg',
+	"A Paladin in Love" = 'sound/instruments/harp (9).ogg',
+	"Never Enough" = 'sound/instruments/harp (10).ogg',
 	)
 
 /obj/item/instrument/flute // small rats approach a little when begin playing
 	name = "flute"
-	desc = "A cacophonous wind-instrument, played primarily by humens all around Psydonia."
+	desc = "A cacophonous wind-instrument, played primarily by humens all around Grimoria."
 	icon_state = "flute"
 	icon_prefix = "flute" // used for inhands switch
 	dynamic_icon = TRUE // used for inhands switch

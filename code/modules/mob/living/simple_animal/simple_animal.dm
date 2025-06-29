@@ -732,8 +732,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if(user.mind)
 				var/amt = user.get_skill_level(/datum/skill/misc/riding)
 				if(amt)
-					amt = clamp(amt, 0, 4) //higher speed amounts are a little wild. Max amount achieved at expert riding.
-					riding_datum.vehicle_move_delay -= (amt/5 + 1.5)
+					amt = clamp(amt, 0, 5) // STONEKEEP EDIT: Max amount achieved at Master riding.
+					riding_datum.vehicle_move_delay -= (amt/5 + 1)
 					riding_datum.vehicle_move_delay -= 3
 			if(loc != oldloc)
 				var/obj/structure/door/MD = locate() in loc

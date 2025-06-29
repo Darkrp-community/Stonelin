@@ -572,6 +572,7 @@
 #include "code\datums\ai\controllers\dryad.dm"
 #include "code\datums\ai\controllers\fiend.dm"
 #include "code\datums\ai\controllers\fish_boss.dm"
+#include "code\datums\ai\controllers\fogbeast.dm"
 #include "code\datums\ai\controllers\frog.dm"
 #include "code\datums\ai\controllers\gator.dm"
 #include "code\datums\ai\controllers\glimmerwing.dm"

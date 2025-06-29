@@ -1631,7 +1631,7 @@
 /obj/structure/kaizoku/crate/fogbeast
 	name = "fogbeast crate"
 	desc = "Something neighs from the inside. The crate is unusually heavy."
-	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
+	mob_path = /mob/living/simple_animal/hostile/retaliate/fogbeast/tame
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/handcannon
 	name = "huochong handcannon"
