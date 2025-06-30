@@ -179,7 +179,7 @@
 	createditem_num = 1
 	craftdiff = 0 // To train with
 
-/datum/anvil_recipe/weapons/iron/dagger_iron
+/datum/anvil_recipe/weapons/iron/dagger_peasant
 	name = "3x Villager Knives"
 	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing

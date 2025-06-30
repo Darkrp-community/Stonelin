@@ -95,6 +95,13 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/armor/chainmail/iron
 
+/datum/anvil_recipe/armor/iron/cuirass
+	name = "Iron Cuirass"
+	recipe_name = "Cuirass"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/armor/cuirass/iron
+
+
 /datum/anvil_recipe/armor/iron/plate
 	name = "Iron Plate Armor (+Bar x2)"
 	recipe_name = "heavy armor made of iron plates"

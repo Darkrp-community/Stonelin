@@ -13,20 +13,20 @@
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
 
-/datum/crafting_recipe/roguetown/sewing/sack
+/datum/crafting_recipe/roguetown/sewing/clothsack
 	name = "sack"
-	result = /obj/item/storage/sack
+	result = list(/obj/item/storage/sack)
 	reqs = list(/obj/item/natural/fibers = 1,
 				/obj/item/natural/cloth = 1)
 
 /obj/item/storage/sack/crafted
 	sellprice = 4
 
-/datum/crafting_recipe/roguetown/sewing/sackbag//a bag with a piece of cloth
+/datum/crafting_recipe/roguetown/sewing/sacksatchel//a bag with a piece of cloth
 	name = "cloth knapsack"
-	result = /obj/item/storage/backpack/satchel/cloth
-	reqs = list(/obj/item/storage/sack = 1,
-				/obj/item/natural/cloth = 1)
+	result = list(/obj/item/storage/backpack/satchel/cloth)
+	reqs = list(/obj/item/natural/fibers = 1,
+				/obj/item/natural/cloth = 2)
 
 /datum/crafting_recipe/roguetown/sewing/burial_shroud
 	name = "winding sheet"
@@ -134,7 +134,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/cape
 	name = "cloak (desert cape)"
-	result = /obj/item/clothing/cloak/cape/crusader
+	result = list(/obj/item/clothing/cloak/cape/crusader)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 3
@@ -230,7 +230,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/robe/wizard
 	name = "robes (wizard)"
-	result = /obj/item/clothing/shirt/robe/wizard
+	result = list(/obj/item/clothing/shirt/robe/wizard)
 	craftdiff = 3
 
 
@@ -266,7 +266,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/undershirt
 	name = "shirt (under)"
-	result = /obj/item/clothing/shirt/undershirt/priest
+	result = list(/obj/item/clothing/shirt/undershirt/priest)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
@@ -391,11 +391,11 @@
 
 /datum/crafting_recipe/roguetown/sewing/fancyhat/courtier
 	name = "hat (courtier)"
-	result = /obj/item/clothing/head/courtierhat
+	result = list(/obj/item/clothing/head/courtierhat)
 
 /datum/crafting_recipe/roguetown/sewing/fancyhat/courtier
 	name = "hat (bard)"
-	result = /obj/item/clothing/head/bardhat
+	result = list(/obj/item/clothing/head/bardhat)
 
 /datum/crafting_recipe/roguetown/sewing/armingcap
 	name = "hat (wizard)"
