@@ -1118,6 +1118,13 @@
 /obj/item/storage/keyring/merchant_hamlet
 	keys = list(/obj/item/key/merchant)
 
+/obj/item/storage/keyring/blacksmith_hamlet
+	keys = list(/obj/item/key/blacksmith, /obj/item/key/maker)
+
+/obj/item/storage/keyring/hammerite_hamlet
+	keys = list(/obj/item/key/maker)
+
+
 /obj/item/storage/meatbag
 	dropshrink = 0.8
 

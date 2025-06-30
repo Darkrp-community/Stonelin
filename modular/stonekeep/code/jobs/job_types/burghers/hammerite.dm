@@ -59,7 +59,7 @@
 	backr = /obj/item/weapon/hammer/sledgehammer
 	backl = /obj/item/storage/backpack/backpack
 	head = /obj/item/clothing/head/helmet/leather/headscarf
-	backpack_contents = list( /obj/item/weapon/chisel = 1, /obj/item/flint = 1, /obj/item/weapon/knife/villager = 1, /obj/item/key/maker = 1, /obj/item/flashlight/flare/torch/lantern = 1)
+	backpack_contents = list( /obj/item/weapon/chisel = 1, /obj/item/flint = 1, /obj/item/weapon/knife/villager = 1, /obj/item/storage/keyring/hammerite_hamlet = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 
 	H.change_stat(STATKEY_STR, 1)
 	H.change_stat(STATKEY_INT, 2)

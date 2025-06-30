@@ -3561,6 +3561,7 @@
 /obj/item/clothing/neck/psycross/silver/malum,
 /obj/item/paper/reminder_about_dwarfs,
 /obj/item/key/maker,
+/obj/item/key/blacksmith,
 /turf/open/floor/wood,
 /area/rogue/under/town/basement)
 "eCA" = (
@@ -3597,6 +3598,13 @@
 "eEA" = (
 /turf/open/floor/naturalstone/rough,
 /area/rogue/under/mountains)
+"eFj" = (
+/obj/machinery/light/fueled/wallfire/candle/lamp/lamptern{
+	pixel_x = 18;
+	pixel_y = 0
+	},
+/turf/open/floor/cobble/mossy,
+/area/rogue/outdoors/exposed/townhamlet)
 "eFz" = (
 /obj/structure/lever/wall{
 	pixel_x = 13;
@@ -10789,6 +10797,14 @@
 /obj/effect/spawner/map_spawner/hauntz_random,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
+"nQV" = (
+/obj/structure/flora/grass/bush_meagre,
+/obj/machinery/light/fueled/wallfire/candle/lamp/lamptern{
+	pixel_x = -15;
+	pixel_y = -24
+	},
+/turf/open/floor/grass,
+/area/rogue/outdoors/exposed/townhamlet)
 "nRx" = (
 /obj/structure/stairs{
 	dir = 8;
@@ -12237,7 +12253,7 @@
 /obj/effect/mapping_helpers/access/keyset/town/smith,
 /obj/structure/door/viewport{
 	dir = 8;
-	lockid = "maker"
+	lockid = "blacksmith"
 	},
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/dwarfin)
@@ -81951,11 +81967,11 @@ sNs
 ahK
 rKU
 ahK
-vUh
+nQV
 xus
 vUh
 ahK
-vUh
+nQV
 vUh
 kwb
 rEH
@@ -83567,11 +83583,11 @@ xus
 ahK
 rKU
 lcu
+eFj
 lcu
 lcu
 lcu
-lcu
-lcu
+eFj
 lcu
 tSd
 tSd

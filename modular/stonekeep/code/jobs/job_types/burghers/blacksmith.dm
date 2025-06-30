@@ -46,7 +46,7 @@
 	belt = /obj/item/storage/belt/leather
 	cloak = /obj/item/clothing/cloak/apron/makers
 	backl =	/obj/item/weapon/hammer/sledgehammer
-	beltr = /obj/item/key/maker
+	beltr = /obj/item/storage/keyring/blacksmith_hamlet
 	shirt = /obj/item/clothing/shirt/shortshirt/makers
 	neck = /obj/item/storage/belt/pouch/coins/mid//may be too much but they need to hire miners/mercenaries
 	H.change_stat("strength", 1)

@@ -126,6 +126,12 @@
 	icon_state = "brownkey"
 	lockids = list(ACCESS_SMITH)
 
+/obj/item/key/maker
+	name = "maker's key"
+	desc = "The key for the town Guild."
+	icon_state = "brownkey"
+	lockids = list(ACCESS_MAKER)
+
 /obj/item/key/butcher
 	name = "butcher key"
 	desc = "There's some dried blood on this key, it's probably the butchers."
