@@ -1988,7 +1988,11 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/church)
 "cKx" = (
-/obj/machinery/artificer_table,
+/obj/structure/table/stone_small,
+/obj/item/ore/coal,
+/obj/item/storage/crucible,
+/obj/item/weapon/tongs,
+/obj/machinery/light/fueled/wallfire/candle/lamp/temple/malum,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "cKE" = (
@@ -6881,6 +6885,12 @@
 	},
 /turf/open/floor/grass,
 /area/rogue/outdoors/exposed/townhamlet)
+"iUq" = (
+/obj/item/mould/ingot{
+	pixel_y = -4
+	},
+/turf/open/floor/herringbone,
+/area/rogue/indoors/shelter/town/dwarf)
 "iVD" = (
 /obj/structure/flora/grass,
 /turf/open/floor/ruinedwood/decayed,
@@ -6962,6 +6972,13 @@
 /obj/structure/fermentation_keg/water,
 /turf/open/floor/dirt,
 /area/rogue/indoors/shelter/mountains)
+"iZx" = (
+/obj/structure/bars/pipe{
+	dir = 4;
+	icon_state = "pipe"
+	},
+/turf/closed/wall/mineral/stonebrick,
+/area/rogue/indoors/shelter/town/dwarf)
 "iZK" = (
 /obj/structure/handcart{
 	dir = 4;
@@ -7075,6 +7092,10 @@
 /obj/machinery/light/fueled/wallfire/candle/lamp/lamptern,
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manor/stone)
+"jeD" = (
+/obj/structure/chimney,
+/turf/open/floor/herringbone,
+/area/rogue/outdoors/town/roofs)
 "jeQ" = (
 /turf/open/floor/rooftop/dark/corner1{
 	dir = 8
@@ -9783,6 +9804,10 @@
 "mCn" = (
 /turf/open/floor/grass,
 /area/rogue/under/mountains)
+"mCy" = (
+/obj/machinery/artificer_table,
+/turf/open/floor/cobble,
+/area/rogue/indoors/shelter/town/dwarf)
 "mCV" = (
 /obj/structure/fluff/walldeco/bath/wallrope{
 	dir = 10;
@@ -10295,8 +10320,12 @@
 /turf/open/floor/rooftop/green,
 /area/rogue/outdoors/town/roofs)
 "njq" = (
-/obj/machinery/artificer_table,
 /obj/machinery/light/fueled/wallfire/candle/r,
+/obj/machinery/light/fueled/smelter,
+/obj/structure/bars/pipe{
+	dir = 6;
+	icon_state = "pipe"
+	},
 /turf/open/floor/herringbone,
 /area/rogue/indoors/shelter/town/dwarf)
 "njW" = (
@@ -16813,7 +16842,7 @@
 /obj/effect/mapping_helpers/access/locker,
 /obj/structure/door/viewport{
 	dir = 1;
-	lockid = "maker"
+	lockid = "blacksmith"
 	},
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/dwarfin)
@@ -118378,10 +118407,10 @@ sNs
 sNs
 sNs
 sNs
-keR
+iZx
 njq
-mvy
-xqT
+iUq
+mCy
 leM
 xKZ
 gdS
@@ -158780,7 +158809,7 @@ sNs
 sNs
 sNs
 pao
-vEF
+jeD
 vEF
 vEF
 vEF
