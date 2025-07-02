@@ -140,7 +140,7 @@
 
 
 
-/obj/item/clothing/cloak/cape/crusader/ComponentInitialize()
+/obj/item/clothing/cloak/cape/crusader/Initialize(mapload, ...)
 	. = ..()
 	AddComponent(/datum/component/storage/concrete/grid/cloak/lord)
 

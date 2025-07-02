@@ -350,7 +350,7 @@
 		user.update_inv_mouth()
 	else
 		icon_state = "rosa"
-		user.update_icon()
+		user.update_appearance()
 
 /obj/item/alch/euphorbia
 	name = "euphorbia"

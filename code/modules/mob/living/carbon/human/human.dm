@@ -74,11 +74,19 @@
 
 	. = ..()
 
+	if(!CONFIG_GET(flag/disable_human_mood))
+		AddComponent(/datum/component/mood)
 	AddComponent(/datum/component/personal_crafting)
 	AddElement(/datum/element/footstep, footstep_type, 1, -6)
 	GLOB.human_list += src
 	if(ai_controller && flee_in_pain)
 		AddElement(/datum/element/ai_flee_while_in_pain)
+
+/mob/living/carbon/human/Destroy()
+	QDEL_NULL(physiology)
+	QDEL_NULL(sexcon)	//STONEKEEP EDIT
+	GLOB.human_list -= src
+	return ..()
 
 /mob/living/carbon/human/ZImpactDamage(turf/T, levels)
 	var/mob/living/carbon/V = src
@@ -124,17 +132,6 @@
 	create_dna(src)
 	randomize_human(src)
 	dna.initialize_dna()
-
-/mob/living/carbon/human/ComponentInitialize()
-	. = ..()
-	if(!CONFIG_GET(flag/disable_human_mood))
-		AddComponent(/datum/component/mood)
-
-/mob/living/carbon/human/Destroy()
-	QDEL_NULL(sexcon)	//STONEKEEP EDIT
-	QDEL_NULL(physiology)
-	GLOB.human_list -= src
-	return ..()
 
 /mob/living/carbon/human/Stat()
 	..()
@@ -398,7 +395,7 @@
 	if(!client || !hud_used)
 		return
 	if(hud_used.clock)
-		hud_used.clock.update_icon()
+		hud_used.clock.update_appearance()
 
 /mob/living/carbon/human/update_health_hud(stamina_only = FALSE)
 	if(!client || !hud_used)
@@ -497,7 +494,7 @@
 					hud_used.energy.icon_state = "stam10"
 
 	if(hud_used.zone_select && !stamina_only)
-		hud_used.zone_select.update_icon()
+		hud_used.zone_select.update_appearance()
 
 /mob/living/carbon/human/fully_heal(admin_revive = FALSE)
 	dna?.species.spec_fully_heal(src)
@@ -761,6 +758,11 @@
 		ADD_TRAIT(src, TRAIT_FOREIGNER, TRAIT_GENERIC)
 	else
 		REMOVE_TRAIT(src, TRAIT_FOREIGNER, TRAIT_GENERIC)
+
+	if(HAS_TRAIT(target, TRAIT_FACELESS))
+		ADD_TRAIT(src, TRAIT_FACELESS, TRAIT_GENERIC)
+	else
+		REMOVE_TRAIT(src, TRAIT_FACELESS, TRAIT_GENERIC)
 
 	regenerate_icons()
 
