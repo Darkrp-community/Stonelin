@@ -31,11 +31,11 @@
 	icon_state = "magician"
 	spookysounds = SPOOKY_MYSTICAL
 	spookynight = SPOOKY_MYSTICAL
-	droning_sound = 'sound/music/area/magiciantower og mix.ogg'
+	droning_sound = 'sound/music/area/magiciantower.ogg'
 
 /area/rogue/under/tomb/indoors/royal
 	icon_state = "manor"
-	droning_sound = 'sound/music/area/manor2.ogg'
+	droning_sound = 'sound/music/area/manornight.ogg'
 
 /area/rogue/under/tomb/indoors/church
 	icon_state = "church"

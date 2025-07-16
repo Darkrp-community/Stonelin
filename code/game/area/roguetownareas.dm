@@ -393,9 +393,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/manor
 	name = "Manor"
 	icon_state = "manor"
-	droning_sound = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
+	droning_sound = 'sound/music/area/manor.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/manornight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
 /area/rogue/indoors/town/manor/Initialize()
@@ -457,20 +457,20 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /*	..................   Areas to play with the music a bit   ................... */
 /area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'sound/music/area/Fulminate.ogg'
+	droning_sound = 'sound/music/area/IntotheNight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
 
 /area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'sound/music/area/Fulminate.ogg'
+	droning_sound = 'sound/music/area/IntotheNight.ogg'
 
 /area/rogue/indoors/town/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	droning_sound = list('sound/music/area/inn.ogg', 'sound/music/area/ACircleofFaun.ogg')
+	droning_sound_night = list('sound/music/area/AFallenWarriorStandsAgain.ogg', 'sound/music/area/TheOneWhoCarvedItAll.ogg')
 	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
 
 /area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	droning_sound = list('sound/music/area/inn.ogg', 'sound/music/area/ACircleofFaun.ogg')
+	droning_sound_night = list('sound/music/area/AFallenWarriorStandsAgain.ogg', 'sound/music/area/TheOneWhoCarvedItAll.ogg')
 
 /area/rogue/indoors/town/garrison
 	name = "Garrison"

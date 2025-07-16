@@ -23,25 +23,25 @@
 	name = "stone hamlet"
 	icon_state = "town"
 	alpha = 150
-	droning_sound = 'sound/music/area/StreetsofWhiterun.ogg'
+	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/towngen.ogg'
+	droning_sound_night = 'sound/music/area/townstreets.ogg'
 
 /area/rogue/indoors/town/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	droning_sound = list('sound/music/area/inn.ogg', 'sound/music/area/ACircleofFaun.ogg')
+	droning_sound_night = list('sound/music/area/AFallenWarriorStandsAgain.ogg', 'sound/music/area/TheOneWhoCarvedItAll.ogg')
 	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
 
 /area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	droning_sound = list('sound/music/area/inn.ogg', 'sound/music/area/ACircleofFaun.ogg')
+	droning_sound_night = list('sound/music/area/AFallenWarriorStandsAgain.ogg', 'sound/music/area/TheOneWhoCarvedItAll.ogg')
 
 /area/rogue/indoors/town/manor/stone
 	name = "stonehill manor"
 	alpha = 50
-	droning_sound = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
+	droning_sound = 'sound/music/area/manor.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/manornight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "Stonehill manor"
 
@@ -59,20 +59,20 @@
 /area/rogue/indoors/town/church
 	name = "temple"
 	icon_state = "church"
-	droning_sound = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = 'sound/music/area/churchnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
 	icon_state = "church"
-	droning_sound = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = 'sound/music/area/churchnight.ogg'
 
 /area/rogue/indoors/town/bath/redhouse
 	name = "baths"
-	droning_sound = 'sound/music/area/Fulminate.ogg'
+	droning_sound = 'sound/music/area/IntotheNight.ogg'
 
 
 
@@ -277,9 +277,9 @@
 	first_time_text = "The Maze"
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/xylixarea.ogg'
-	droning_sound_dusk = 'sound/music/area/xylixarea.ogg'
-	droning_sound_night = 'sound/music/area/xylixarea.ogg'
+	droning_sound = 'sound/music/area/clocktower_ambience.ogg'
+	droning_sound_dusk = 'sound/music/area/clocktower_ambience.ogg'
+	droning_sound_night = 'sound/music/area/clocktower_ambience.ogg'
 
 /area/rogue/under/zizochurch
 	name = "zizos church"
@@ -287,9 +287,9 @@
 	first_time_text = "Church of the Lost"
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
-	droning_sound_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
-	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	droning_sound = 'sound/music/area/Temple.ogg'
+	droning_sound_dusk = 'sound/music/area/Temple.ogg'
+	droning_sound_night = 'sound/music/area/Temple.ogg'
 
 /area/rogue/under/catacombs/dwarfoutpost
 	name = "dungeon (outpost)"
