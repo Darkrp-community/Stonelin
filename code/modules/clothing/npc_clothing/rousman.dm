@@ -4,7 +4,7 @@
 	item_state = "rousman-ironhat"
 	smeltresult = /obj/item/ingot/iron
 	icon = 'icons/roguetown/mob/monster/rousman.dmi'
-	allowed_race = list("rousman")
+	allowed_race = list(SPEC_ID_ROUSMAN)
 	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	sellprice = 10
@@ -24,7 +24,7 @@
 	icon = 'icons/roguetown/mob/monster/rousman.dmi'
 	smeltresult = /obj/item/ingot/iron
 	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 0, "fire" = 0, "acid" = 0)
-	allowed_race = list("rousman")
+	allowed_race = list(SPEC_ID_ROUSMAN)
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 100//nearly iron tier
@@ -61,7 +61,7 @@
 	icon_state = "rousman_loincloth_item"
 	item_state = "rousman_loincloth"
 	icon = 'icons/roguetown/mob/monster/rousman.dmi'
-	allowed_race = list("rousman")
+	allowed_race = list(SPEC_ID_ROUSMAN)
 	armor = list("blunt" = 30, "slash" = 30, "stab" = 30,  "piercing" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN
 	sellprice = 0

@@ -12,14 +12,14 @@
 	icon_state = "fat"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-	possible_item_intents = list(/datum/intent/splash, /datum/intent/food)
+	possible_item_intents = list(/datum/intent/food, /datum/intent/splash)
 
-/obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/user, proximity)
+/obj/item/reagent_containers/food/snacks/fat/attack(mob/living/M, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/food)
 		return ..()
 
-	if(!isliving(M))
-		return
+	if(!isliving(M) || (M != user))
+		return ..()
 
 	user.visible_message("[user] starts to oil up [M]", "You start to oil up [M]")
 	if(!do_after(user, 5 SECONDS, M))
@@ -804,7 +804,7 @@
 
 /obj/item/reagent_containers/food/snacks/jellycake_pear
 	name = "pear gelatine cake"
-	desc = "A mildly unappetising dessert, fittingly considered a delicacy by orcs. This flavor is a strange fusion of Zybantine and Orcish cuisines."
+	desc = "A mildly unappetising dessert, fittingly considered a delicacy by orcs. This flavor is a strange fusion of Zalad and Orcish cuisines."
 	icon_state = "peargelatinecake"
 	dropshrink = 0.8
 	slice_path = /obj/item/reagent_containers/food/snacks/jellyslice_pear

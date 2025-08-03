@@ -7,6 +7,11 @@
 /atom
 	layer = TURF_LAYER
 	plane = GAME_PLANE
+	appearance_flags = TILE_BOUND
+
+	/// pass_flags that we are. If any of this matches a pass_flag on a moving thing, by default, we let them through.
+	var/pass_flags_self = NONE
+
 	var/level = 2
 
 	///If non-null, overrides a/an/some in all cases
@@ -83,6 +88,11 @@
 
 	///AI controller that controls this atom. type on init, then turned into an instance during runtime
 	var/datum/ai_controller/ai_controller
+
+	///The config type to use for greyscaled sprites. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config
+	///A string of hex format colors to be used by greyscale sprites, ex: "#0054aa#badcff"
+	var/greyscale_colors
 
 	///Icon-smoothing behavior.
 	var/smoothing_flags = NONE
@@ -189,6 +199,8 @@
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
 
+	update_greyscale()
+
 	//atom color stuff
 	if(color)
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
@@ -261,7 +273,22 @@
 
 ///Can the mover object pass this atom, while heading for the target turf
 /atom/proc/CanPass(atom/movable/mover, turf/target)
+	SHOULD_CALL_PARENT(TRUE)
+	if(mover.movement_type & PHASING)
+		return TRUE
+	. = CanAllowThrough(mover, target)
+	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
+	if(!mover.generic_canpass)
+		return mover.CanPassThrough(src, target, .)
+
+/// Returns true or false to allow the mover to move through src
+/atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
+	SHOULD_CALL_PARENT(TRUE)
 	if(istype(mover, /mob/camera))
+		return TRUE
+	if(mover.pass_flags & pass_flags_self)
+		return TRUE
+	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
 		return TRUE
 	return !density
 
@@ -379,11 +406,16 @@
 /**
  * React to a hit by a projectile object
  *
- * Default behaviour is to send the COMSIG_ATOM_BULLET_ACT and then call on_hit() on the projectile
+ * Default behaviour is to send the [COMSIG_ATOM_BULLET_ACT] and then call [on_hit][/obj/projectile/proc/on_hit] on the projectile
+ *
+ * @params
+ * P - projectile
+ * def_zone - zone hit
+ * piercing_hit - is this hit piercing or normal?
  */
-/atom/proc/bullet_act(obj/projectile/P, def_zone)
+/atom/proc/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
-	. = P.on_hit(src, 0, def_zone)
+	. = P.on_hit(src, 0, def_zone, piercing_hit)
 
 ///Return true if we're inside the passed in atom
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
@@ -415,6 +447,9 @@
 
 /atom/proc/get_inspect_button()
 	return ""
+
+/atom/proc/get_inspect_entries()
+	return list()
 
 /**
  * Called when a mob examines (shift click or verb) this atom
@@ -552,6 +587,32 @@
 	SHOULD_CALL_PARENT(TRUE)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_OVERLAYS, .)
+
+/// Handles updates to greyscale value updates.
+/// The colors argument can be either a list or the full color string.
+/// Child procs should call parent last so the update happens after all changes.
+/atom/proc/set_greyscale(list/colors, new_config)
+	SHOULD_CALL_PARENT(TRUE)
+	if(istype(colors))
+		colors = colors.Join("")
+	if(!isnull(colors) && greyscale_colors != colors) // If you want to disable greyscale stuff then give a blank string
+		greyscale_colors = colors
+
+	if(!isnull(new_config) && greyscale_config != new_config)
+		greyscale_config = new_config
+
+	update_greyscale()
+
+/// Checks if this atom uses the GAGS system and if so updates the icon
+/atom/proc/update_greyscale()
+	SHOULD_CALL_PARENT(TRUE)
+	if(greyscale_colors && greyscale_config)
+		icon = SSgreyscale.GetColoredIconByType(greyscale_config, greyscale_colors)
+	if(!smoothing_flags) // This is a bitfield but we're just checking that some sort of smoothing is happening
+		return
+	update_atom_colour()
+	QUEUE_SMOOTH(src)
+
 
 /**
  * An atom we are buckled or is contained within us has tried to move
@@ -734,8 +795,7 @@
  * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
  */
 /atom/proc/HandleTurfChange(turf/T)
-	for(var/a in src)
-		var/atom/A = a
+	for(var/atom/A as anything in src)
 		A.HandleTurfChange(T)
 
 /**
@@ -1240,6 +1300,10 @@
 		arguments -= "priority"
 		atom_cast.filters += filter(arglist(arguments))
 	UNSETEMPTY(filter_data)
+
+/obj/item/update_filters()
+	. = ..()
+	update_item_action_buttons()
 
 /atom/movable/proc/get_filter(name)
 	if(filter_data && filter_data[name])

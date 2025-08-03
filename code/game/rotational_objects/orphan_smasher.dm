@@ -57,6 +57,23 @@
 	completed_items.Cut()
 	return ..()
 
+/obj/structure/orphan_smasher/examine(mob/user)
+	. = ..()
+	var/next_step
+	if(!working)
+		next_step = pre_start_list[length(step_list) + 1]
+		. += span_notice("[src] is currently OFF.")
+	else
+		next_step = post_start_list[length(step_list) + 1]
+		. += span_notice("[src] is currently ON.")
+	switch(next_step)
+		if(STEP_FIDDLE)
+			. += span_notice("To toggle the machine, use RMB.")
+		if(STEP_BUTTON)
+			. += span_notice("To toggle the machine, use Ctrl+Click.")
+		if(STEP_LEVER)
+			. += span_notice("To toggle the machine, use MMB.")
+
 /obj/structure/orphan_smasher/process()
 	if(!working)
 		return
@@ -113,11 +130,12 @@
 	try_step(STEP_BUTTON, user)
 	return TRUE
 
-/obj/structure/orphan_smasher/attack_right(mob/user)
-	if(!user.Adjacent(src))
+/obj/structure/orphan_smasher/attack_hand_secondary(mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
 	try_step(STEP_FIDDLE, user)
-	return TRUE
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/orphan_smasher/attack_hand(mob/user)
 	. = ..()
@@ -303,7 +321,7 @@
 
 /obj/structure/material_bin
 	name = "auto anvil hopper"
-	desc = ""
+	desc = "The storage can be opened and closed with RMB."
 
 	icon = 'icons/obj/autosmithy.dmi'
 	icon_state = "material"
@@ -326,10 +344,18 @@
 	else
 		icon_state = initial(icon_state)
 
-/obj/structure/material_bin/attack_right(mob/user)
+/obj/structure/material_bin/attack_hand_secondary(mob/user, params)
 	. = ..()
-	user.visible_message(span_danger("[user] starts to [opened ? "close" : "open"] [src]!"), span_danger("You start to [opened ? "close" : "open"] [src]!"))
-	if(!do_after(user, 2.5 SECONDS, src))
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
+	user.visible_message(span_danger("[user] starts to [opened ? "close" : "open"] [src]."), span_danger("You start to [opened ? "close" : "open"] [src]."))
+	if(!do_after(user, 2.5 SECONDS, src))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	opened = !opened
 	update_appearance(UPDATE_ICON_STATE)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_HIDE_ALL)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+#undef STEP_FIDDLE
+#undef STEP_LEVER
+#undef STEP_BUTTON

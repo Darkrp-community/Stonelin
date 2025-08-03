@@ -7,8 +7,7 @@
 	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
-	display_order = JDO_HAND
-	allowed_sexes = list(MALE, FEMALE)
+
 	allowed_races = RACES_PLAYER_ALL
 	outfit = /datum/outfit/job/npc/goblin
 	give_bank_account = FALSE

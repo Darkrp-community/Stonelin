@@ -154,9 +154,10 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 /obj/item/natural/stone/on_consume(mob/living/eater)
 	if(!magic_power)
 		return
-	eater.mind?.spell_points += magic_power * 0.1
+	eater.spell_points += magic_power * 0.1
 	eater.mana_pool?.adjust_mana(magic_power * 25)
 	to_chat(eater, span_warning("I feel magic flowing from my stomach."))
+
 /*
 	This right here is stone lore,
 	Yakub from BBC lore has inspired me
@@ -267,33 +268,36 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 		to_chat(user, span_info("The [src] slips through dead fingers..."))
 		user.dropItemToGround(src, TRUE)
 
-/obj/item/natural/stone/pre_attack_right(atom/A, mob/living/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(A, /obj/item/natural/stone))
+/obj/item/natural/stone/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(istype(weapon, /obj/item/natural/stone))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
 		user.visible_message(span_info("[user] strikes the stones together."))
 		if(prob(10))
 			var/datum/effect_system/spark_spread/S = new()
-			var/turf/front = get_step(user,user.dir)
+			var/turf/front = get_step(user, user.dir)
 			S.set_up(1, 1, front)
 			S.start()
-		return
-	if(istype(A, /obj/item/natural/rock))
+		user.changeNext_move(CLICK_CD_FAST)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if(istype(weapon, /obj/item/natural/rock))
 		user.visible_message(span_info("[user] strikes the stone against the rock.</span>"))
 		playsound(src.loc, 'sound/items/stonestone.ogg', 100)
 		if(prob(35))
 			var/datum/effect_system/spark_spread/S = new()
-			var/turf/front = get_step(user,user.dir)
+			var/turf/front = get_step(user, user.dir)
 			S.set_up(1, 1, front)
 			S.start()
-		return
-	. = ..()
+		user.changeNext_move(CLICK_CD_FAST)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/living/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
 	var/list/offhand_types = typecacheof(list(/obj/item/weapon/hammer, /obj/item/natural/stone, /obj/item/natural/stoneblock))
 	var/item = user.get_inactive_held_item()
 	if(user.used_intent.type == /datum/intent/chisel && is_type_in_typecache(item, offhand_types))
+		user.changeNext_move(CLICK_CD_MELEE)
 		var/skill_level = user.get_skill_level(/datum/skill/craft/masonry)
 		var/work_time = (4 SECONDS - (skill_level * 5))
 		if(istype(W, /obj/item/weapon/chisel))
@@ -327,7 +331,6 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	force_wielded = 15
 	gripped_intents = list(INTENT_GENERIC)
 	w_class = WEIGHT_CLASS_HUGE
-	twohands_required = TRUE
 	var/obj/item/ore/mineralType = null
 	var/mineralAmt = 1
 	blade_dulling = DULLING_BASH
@@ -335,6 +338,8 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	destroy_sound = 'sound/foley/smash_rock.ogg'
 	attacked_sound = 'sound/foley/hit_rock.ogg'
 
+/obj/item/natural/rock/apply_components()
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
 /obj/item/natural/rock/Initialize()
 	. = ..()
@@ -368,7 +373,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			var/obj/item/S = new /obj/item/natural/stone(src.loc)
 			S.pixel_x = rand(25,-25)
 			S.pixel_y = rand(25,-25)
-		GLOB.vanderlin_round_stats[STATS_ROCKS_MINED]++
+		record_round_statistic(STATS_ROCKS_MINED)
 	qdel(src)
 
 /obj/item/natural/rock/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
@@ -381,9 +386,12 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 				S.set_up(1, 1, front)
 				S.start()
 
-/obj/item/natural/rock/pre_attack_right(atom/A, mob/living/user, params)
+/obj/item/natural/rock/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(A, /obj/item/natural/rock))
+	if(istype(weapon, /obj/item/natural/rock))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
 		user.visible_message(span_info("[user] strikes the rocks together."))
 		if(prob(10))
@@ -391,8 +399,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			var/turf/front = get_step(user,user.dir)
 			S.set_up(1, 1, front)
 			S.start()
-		return
-	. = ..()
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/natural/rock/attackby(obj/item/W, mob/living/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)

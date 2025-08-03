@@ -2,7 +2,7 @@
 /client/verb/wiki(query as text)
 	set name = "Wiki"
 	set desc = ""
-	set category = "Memory"
+	set category = "OOC"
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
 		if(query)
@@ -30,7 +30,7 @@
 /client/verb/rules()
 	set name = "Rules"
 	set desc = ""
-	set category = "Memory"
+	set category = "OOC"
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
 		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
@@ -43,7 +43,7 @@
 /client/verb/github()
 	set name = "Github"
 	set desc = ""
-	set category = "Memory"
+	set category = "OOC"
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
 		if(browser_alert(src, "This will open the Github repository in your browser. Are you sure?", null, DEFAULT_INPUT_CHOICES) != CHOICE_YES)
@@ -137,16 +137,6 @@
 	popup.set_content(dat.Join())
 	popup.open()
 
-/client/verb/changelog()
-	set name = "Changelog"
-	set category = "OOC"
-	set hidden = 1
-	src << browse('html/changelog.html', "window=changes;size=675x650")
-	if(prefs.lastchangelog != GLOB.changelog_hash)
-		prefs.lastchangelog = GLOB.changelog_hash
-		prefs.save_preferences()
-		winset(src, "infowindow.changelog", "font-style=;")
-
 /client/verb/set_fixed()
 	set name = "IconSize"
 	set category = "Options"
@@ -211,15 +201,17 @@
 		fps = prefs.clientfps
 		prefs.save_preferences()
 
-/*
-/client/verb/set_blur()
-	set name = "AAOn"
-	set category = "Options"
+/client/verb/changelog()
+	set name = "Changelog"
+	set category = "OOC"
 
-	winset(src, "mapwindow.map", "zoom-mode=blur")
+	if(!GLOB.changelog_browser)
+		GLOB.changelog_browser = new /datum/changelog()
 
-/client/verb/set_normal()
-	set name = "AAOff"
-	set category = "Options"
+	var/datum/browser/log = new(usr, "changelog", "CHANGES OF THE WORLD", 680, 650)
+	log.set_content(GLOB.changelog_browser.built_html)
+	log.open()
 
-	winset(src, "mapwindow.map", "zoom-mode=normal")*/
+	if(prefs.lastchangelog != GLOB.changelog_hash)
+		prefs.lastchangelog = GLOB.changelog_hash
+		prefs.save_preferences()

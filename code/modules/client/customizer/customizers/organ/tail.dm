@@ -95,7 +95,7 @@
 	allows_accessory_color_customization = FALSE
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/hawk,
-		)
+	)
 
 
 
@@ -151,9 +151,6 @@
 							/datum/sprite_accessory/tail/twotails,
 							/datum/sprite_accessory/tail/threetails)
 
-/obj/item/organ/tail/triton
-	accessory_type = /datum/sprite_accessory/tail/triton
-
 /datum/customizer/organ/tail/triton
 	customizer_choices = list(/datum/customizer_choice/organ/tail/triton)
 	allows_disabling = FALSE
@@ -164,10 +161,7 @@
 	allows_accessory_color_customization = FALSE
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/triton,
-		)
-
-/obj/item/organ/tail/kobold
-	accessory_type = /datum/sprite_accessory/tail/kobold
+	)
 
 /datum/customizer/organ/tail/kobold
 	customizer_choices = list(/datum/customizer_choice/organ/tail/kobold)
@@ -180,4 +174,16 @@
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/kobold,
 		/datum/sprite_accessory/tail/kobold/alt,
-		)
+	)
+
+/datum/customizer/organ/tail/medicator
+	customizer_choices = list(/datum/customizer_choice/organ/tail/medicator)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/medicator
+	name = "Medicator Plumage"
+	organ_type = /obj/item/organ/tail/medicator
+	allows_accessory_color_customization = FALSE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/medicator
+	)

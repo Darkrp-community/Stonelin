@@ -13,11 +13,10 @@
 	min_pq = 15
 	bypass_lastclass = TRUE
 
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	outfit = /datum/outfit/job/captain
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/guard)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/guard)
 	give_bank_account = 120
 	cmode_music = 'sound/music/cmode/antag/CombatSausageMaker.ogg'
 	noble_income = 11
@@ -84,7 +83,7 @@
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	if(H.dna?.species?.id == "human")
+	if(H.dna?.species?.id == SPEC_ID_HUMEN)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 
 /obj/effect/proc_holder/spell/self/convertrole

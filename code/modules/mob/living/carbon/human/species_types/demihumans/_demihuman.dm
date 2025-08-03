@@ -1,9 +1,17 @@
+	/*=================*
+	*				   *
+	*	 Hollow-kin	   *
+	*				   *
+	*==================*/
+
+// ( -1 STR, +2 PER, +1 INT, -1 CON, +1 SPD, -1 FOR)
+
 /mob/living/carbon/human/species/demihuman
 	race = /datum/species/demihuman
 
 /datum/species/demihuman
 	name = "Hollow-Kin"
-	id = "demihuman"
+	id = SPEC_ID_HOLLOWKIN
 	desc = "Amber Hollow is a \"nation\" to the North of Stonekeep and East of Rosewood. It is located atop a great, earthen mound of tightly-rooted Redwoods. At this mound's peak lies a chasm, bordered by a woven, almost quilt-like ring of sequoias. This chasm is the largest entry point of many in Psydonia to Subterra, the land of the drow.\
 	This ring has been built upon and turned into a civilization of Hollowkin, a people showing traits of an animal nature. These people are short lived, diverse, and have an insatiable hatred for drow. This hate has been from their long standing political neighbor, the dark-elven kingdoms of Subterra.\
 	The patrons of these people are by in large Dendor and Xylix. They view freedom to be of the upmost importance due to their dark-elven neighbors' tendencies toward slavery and their own history of subjugation. They worship Dendor for the boon of their animalistic nature, seeing him as the provider for their traits and talents.\
@@ -11,7 +19,7 @@
 	The history of their origin was centuries ago, and the true nature of their existence is largely lost to the Hollowkin. The drow still recall, of course, viciously mocking their creations from deep within their caves, treating them but nothing more than animals or pets. The Hollowkin react violently to drow attempts at oppression, this leads to conflicts across the world of Psydonia.\
 	To the unaligned observer, Hollowkin are often seen amongst bandit bands, Working openly with Agents of Matthios, conflating the idea of freedom between the two deities. There is, of course, the old wives' tales that circulate... how Hollowkin lead to infestations of Werewolves. Weather this is true or not is unknown to the normal man, but to those familiar with the horrendous magics used by the drow, they have no choice but to assume. To Orcs and goblins, they are good eats.\
 	Hollowkin are often denied nobility due to these rumors alone, though their animalism certainly does not help. If one miraculously does appear in the court, they are treated at best like a pet, though more likely distrusted as just another bandit people of Amber Hollow."
-
+	allowed_pronouns = PRONOUNS_LIST
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR, HAIR ,FACEHAIR, LIPS, STUBBLE, OLDGREY)
@@ -65,8 +73,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STAT_PERCEPTION = 1)
-	specstats_f = list(STAT_PERCEPTION = 1)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_SPD = 1, STATKEY_LCK = -1)
+	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_SPD = 1, STATKEY_LCK = -1)
 
 	enflamed_icon = "widefire"
 

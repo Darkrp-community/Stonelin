@@ -63,22 +63,12 @@ SUBSYSTEM_DEF(nightshift)
 
 /mob/living/carbon/human/update_tod(todd)
 	if(client)
-		var/area/areal = get_area(src)
-		if(!cmode)
-			SSdroning.play_area_sound(areal, src.client)
-		SSdroning.play_loop(areal, src.client)
+		refresh_looping_ambience()
 	if(todd == "dawn")
 		/*if(HAS_TRAIT(src, TRAIT_VAMP_DREAMS)) STONEKEEP EDIT
 			apply_status_effect(/datum/status_effect/debuff/vamp_dreams) */
 		if(HAS_TRAIT(src, TRAIT_NIGHT_OWL))
 			add_stress(/datum/stressevent/night_owl_dawn)
-	if(todd == "day")
-		if(HAS_TRAIT(src, TRAIT_DARKLING) && !HAS_TRAIT(src, TRAIT_NOSTAMINA) && !HAS_TRAIT(src, TRAIT_NOSLEEP))
-			apply_status_effect(/datum/status_effect/debuff/sleepytime)
-			add_stress(/datum/stressevent/sleepytime)
-	if(todd == "night")
-		if(HAS_TRAIT(src, TRAIT_DARKLING))	// STONEKEEP EDIT
-			return ..()
 
 	if(todd == "night")
 		if(HAS_TRAIT(src, TRAIT_NIGHT_OWL))
@@ -86,6 +76,8 @@ SUBSYSTEM_DEF(nightshift)
 		if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 			return ..()
 		if(HAS_TRAIT(src, TRAIT_NOSLEEP))
+			return ..()
+		if(HAS_TRAIT(src, TRAIT_DARKLING))	// STONEKEEP EDIT
 			return ..()
 		if(tiredness >= 100)
 			apply_status_effect(/datum/status_effect/debuff/sleepytime)

@@ -1,8 +1,7 @@
 /*datum/advclass/combat/paladin
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_PLAYER_NONDISCRIMINATED
+	allowed_races = RACES_PLAYER_ALL
 	outfit = /datum/outfit/job/adventurer/paladin
 	maximum_possible_slots = 1
 	min_pq = 2
@@ -11,6 +10,16 @@
 
 /datum/outfit/job/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.dna && ((H.dna.species.id in RACES_PLAYER_HERETICAL_RACE) || (H.dna.species.id in list(SPEC_ID_HARPY, SPEC_ID_TRITON, SPEC_ID_MEDICATOR))) && !istype(H.patron, /datum/patron/inhumen))
+		var/list/inhumen = list(
+			/datum/patron/inhumen/graggar,
+			/datum/patron/inhumen/zizo,
+			/datum/patron/inhumen/matthios,
+			/datum/patron/inhumen/baotha
+		)
+		var/picked = pick(inhumen)
+		H.set_patron(picked)
+		to_chat(H, span_warning("My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron]."))
 	H.virginity = TRUE
 
 	switch(H.patron?.type)
@@ -128,7 +137,7 @@
 			H.grant_language(/datum/language/celestial)
 			to_chat(H, "<span class='info'>I can speak Celestial with ,c before my speech.</span>")
 	if(H.dna?.species)
-		if(H.dna.species.id == "human")
+		if(H.dna.species.id == SPEC_ID_HUMEN)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Paladins, while devout warriors spent WAY too much time studying the blade. No more acolyte+
