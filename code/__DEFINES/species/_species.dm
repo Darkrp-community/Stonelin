@@ -20,6 +20,12 @@
 #define SPEC_ID_ROUSMAN	"rousman"
 #define SPEC_ID_ZIZOMBIE "zizombie"
 
+// STONEKEEP RACES
+#define SPEC_ID_FOX "Changeling"
+#define SPEC_ID_KAPPA "Undine"
+#define SPEC_ID_TENGU "Skylancer"
+#define SPEC_ID_ONI "Ogrun"
+
 /// List of all species
 #define ALL_RACES_LIST list(\
 	SPEC_ID_HUMEN,\
@@ -42,6 +48,38 @@
 	SPEC_ID_ROUSMAN,\
 	SPEC_ID_ZIZOMBIE,\
 	SPEC_ID_HUMAN_SPACE,\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	)
+
+/// List of all Stonekeep races
+
+#define ALL_RACES_SK_LIST list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_ROUSMAN,\
+	SPEC_ID_ZIZOMBIE,\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	)
+
+/// List of all Kaizoku Foglander-specific races
+#define ALL_KAIZOKU_RACES list(\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
 	)
 
 /// Species where females get underwear, no underwear for kobold, rakshari, medicator and triton, dwarves handled seperately
@@ -197,6 +235,9 @@
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_MEDICATOR,\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
 )
 
 /// Vanderlin royalty
@@ -214,6 +255,8 @@
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
 	SPEC_ID_MEDICATOR,\
+	SPEC_ID_FOX,\
+	SPEC_ID_TENGU,\
 )
 
 /// Foreigner Nobility Species - No Tiefling (you know why) or hollow-kin or medicators (too young to have nobles mayhaps)
@@ -230,6 +273,8 @@
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_KOBOLD,\
+	SPEC_ID_FOX,\
+	SPEC_ID_TENGU,\
 )
 
 /// Nonnative species - Anything not native to Psydonia.
@@ -247,4 +292,5 @@
 	SPEC_ID_KOBOLD,\
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_HOLLOWKIN,\
+	SPEC_ID_ONI,\
 )

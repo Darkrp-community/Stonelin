@@ -457,3 +457,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_WIELDED "wielded"
 /// The items needs two hands to be carried
 #define TRAIT_NEEDS_TWO_HANDS "needstwohands"
+
+// Debug guaranteed crit chance for testing purposes, almost always crits
+#define TRAIT_ADMINTEST_CRIT "Debug guaranteed critchance"
+
