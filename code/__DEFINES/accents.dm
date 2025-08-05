@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(accent_list, list(
 //	ACCENT_HORC = strings("accents/halforc_replacement.json", "halforc"),
 // 	ACCENT_TRITON = strings("accents/triton_replacement.json", "triton"),
 	ACCENT_GRENZ = strings("accents/SKgrenzelhoft_replacement.json", "grenzelhoft"),
-	ACCENT_ZYBANTINE = strings("accents/zybantine_replacement.json", "arabic"),
+	ACCENT_ZYBANTINE = strings("accents/zalad_replacement.json", "arabic"),
 //	ACCENT_PIRATE = strings("accents/pirate_replacement.json", "pirate"),
 	ACCENT_MIDDLE_SPEAK = strings("accents/middlespeak.json", "full"),
 	ACCENT_ZALAD = strings("accents/zalad_replacement.json", "arabic"),
