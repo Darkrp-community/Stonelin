@@ -44,9 +44,9 @@
 	if(H.mind)
 		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 
-		var/list/spells = list(/obj/effect/proc_holder/spell/self/convertrole/templar, /obj/effect/proc_holder/spell/self/convertrole/monk, /obj/effect/proc_holder/spell/self/convertrole/churchling)
+		var/list/spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/nocite)
 		for(var/S in spells)
-			H.mind.AddSpell(new S)
+			H.add_spell(new S)
 
 	var/obj/item/weapon/polearm/woodstaff/aries/noc/P = new()
 	H.put_in_hands(P, forced = TRUE)
@@ -67,3 +67,18 @@
 	greet_text = "Too long the Moon Prince has been refused his rightful place as the primary God by the cult of his sister Astrata. It is time to right this wrong. They call you apostate, but you know you see the truth."
 
 
+/datum/action/cooldown/spell/undirected/list_target/convert_role/nocite // Placeholder ROGTODO make it not shit
+	name = "Recruit Nocite"
+	button_icon_state = "recruit_templar"
+
+	new_role = "Templar"
+	recruitment_faction = "Church"
+	recruitment_message = "Serve NOC, %RECRUIT!"
+	accept_message = "FOR THE MOON PRINCE!"
+	refuse_message = "I refuse."
+
+/datum/action/cooldown/spell/undirected/list_target/convert_role/nocite/on_conversion(mob/living/carbon/human/cast_on)
+	. = ..()
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(cast_on, cast_on.patron)
+	C.grant_spells_templar(cast_on)
+	cast_on.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

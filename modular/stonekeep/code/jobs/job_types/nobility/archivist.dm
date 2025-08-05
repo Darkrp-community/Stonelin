@@ -14,8 +14,9 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	spells = list(/obj/effect/proc_holder/spell/self/learnspell, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-
+	spells = list(
+		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
+	)
 	outfit = /datum/outfit/job/stonekeep/archivist
 	display_order = 9
 	give_bank_account = 100
@@ -48,7 +49,7 @@
 
 		H.grant_language(/datum/language/elvish)
 		H.grant_language(/datum/language/dwarvish)
-		H.grant_language(/datum/language/zybantine)
+		H.grant_language(/datum/language/zalad)
 		H.grant_language(/datum/language/celestial)
 		H.grant_language(/datum/language/hellspeak)
 		H.grant_language(/datum/language/oldpsydonic)

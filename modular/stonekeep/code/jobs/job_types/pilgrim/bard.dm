@@ -37,7 +37,7 @@
 	H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/music, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
+	H.add_spell(new /datum/action/cooldown/spell/undirected/list_target/vicious_mockery)
 	head = /obj/item/clothing/head/bardhat
 	shoes = /obj/item/clothing/shoes/boots
 	pants = /obj/item/clothing/pants/tights/random

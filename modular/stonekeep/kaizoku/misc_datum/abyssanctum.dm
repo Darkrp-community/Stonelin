@@ -9,7 +9,7 @@
 /datum/patron/abyssanctum
 	name = null
 	associated_faith = /datum/faith/abyssanctum
-	t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
+// SPELL NEEDS UPDATE TO VANDERLIN	t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
 
 	profane_words = list()
 	confess_lines = list(
@@ -40,10 +40,10 @@
 	sins = "Fear, Hubris, Forgetfulness - Hesitation"
 	boons = "Weeper's hymn. You can detect unclean spirits and directly resist demonic influence. You may control the two edges of the land" //Wind-based holy spells.
 	added_traits = list(TRAIT_LEECHIMMUNE, TRAIT_KAIZOKU) //Leech Immune will change later.
-	t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal //remember to make a different one for this.
-	t1 = /obj/effect/proc_holder/spell/invoked/gale_palm
-	t2 = /obj/effect/proc_holder/spell/invoked/heavens_pillar
-	t3 = /obj/effect/proc_holder/spell/invoked/maelstrom
+// SPELL NEEDS UPDATE TO VANDERLIN		t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal //remember to make a different one for this.
+// SPELL NEEDS UPDATE TO VANDERLIN		t1 = /obj/effect/proc_holder/spell/invoked/gale_palm
+// SPELL NEEDS UPDATE TO VANDERLIN		t2 = /obj/effect/proc_holder/spell/invoked/heavens_pillar
+// SPELL NEEDS UPDATE TO VANDERLIN		t3 = /obj/effect/proc_holder/spell/invoked/maelstrom
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -65,10 +65,10 @@
 	sins = "Fear, Hubris, Forgetfulness - Intellectual arrogance"
 	boons = "Knowledge of the Drowned. You can recharge your mana on healing waters and commune with sea relics. You may control the spears of the storm" //Lightening-based holy spells.
 	added_traits = list(TRAIT_LEECHIMMUNE, TRAIT_KAIZOKU) //Leech Immune will change later.
-	t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/surging_bolt
-	t2 = /obj/effect/proc_holder/spell/invoked/warkraft
-	t3 = /obj/effect/proc_holder/spell/invoked/revival_spark
+// SPELL NEEDS UPDATE TO VANDERLIN		t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
+// SPELL NEEDS UPDATE TO VANDERLIN		t1 = /obj/effect/proc_holder/spell/invoked/surging_bolt
+// SPELL NEEDS UPDATE TO VANDERLIN		t2 = /obj/effect/proc_holder/spell/invoked/warkraft
+// SPELL NEEDS UPDATE TO VANDERLIN		t3 = /obj/effect/proc_holder/spell/invoked/revival_spark
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -91,10 +91,10 @@
 	sins = "Fear, Hubris, Forgetfulness - Disobedience"
 	boons = "Soulside Connection. You always see your fellow faithful at its core. You may control the blades of the tides." //Ice-based holy spells.
 	added_traits = list(TRAIT_LEECHIMMUNE, TRAIT_KAIZOKU) //Leech Immune will change later.
-	t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
-	t2 = /obj/effect/proc_holder/spell/invoked/rake
-	t3 = /obj/effect/proc_holder/spell/invoked/icebind
+// SPELL NEEDS UPDATE TO VANDERLIN		t0 = /obj/effect/proc_holder/spell/invoked/abyssal_heal
+// SPELL NEEDS UPDATE TO VANDERLIN		t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
+// SPELL NEEDS UPDATE TO VANDERLIN		t2 = /obj/effect/proc_holder/spell/invoked/rake
+// SPELL NEEDS UPDATE TO VANDERLIN		t3 = /obj/effect/proc_holder/spell/invoked/icebind
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",

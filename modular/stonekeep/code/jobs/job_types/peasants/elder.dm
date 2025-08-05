@@ -5,7 +5,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/town_militia)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/militia)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

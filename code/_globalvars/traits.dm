@@ -160,6 +160,14 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Loved By Kittens" = TRAIT_KITTEN_MOM,
 		"Waterbreathing" = TRAIT_WATER_BREATHING,
 		"Moonwater Elixir" = TRAIT_MOONWATER_ELIXIR,
+	 	"Foglander Cultured" = TRAIT_KAIZOKU, // STONEKEEP
+ 		"Fabled Lover" = TRAIT_GOODLOVER, // STONEKEEP
+		"limp_dick" = TRAIT_LIMPDICK, // STONEKEEP
+		"sexpass" = TRAIT_SEXPASS, // STONEKEEP
+		"Darkling" = TRAIT_DARKLING, // STONEKEEP
+		"Changeling Metabolism" = TRAIT_CHANGELING_METABOLISM, // STONEKEEP
+		"Desecrant" = TRAIT_DESECRANT, // STONEKEEP
+		"Debug guaranteed critchance" = TRAIT_ADMINTEST_CRIT, // STONEKEEP
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -262,6 +270,12 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
 	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
+	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."), //STONEKEEP EDIT
+	TRAIT_ADMINTEST_CRIT = span_info("ADMIN TOOL: Guaranteed chance to crit with every attack."),
+	TRAIT_DARKLING = span_info("I am a creature of the dark and am sensitive to the light. The hateful sun is especially harsh on my eyes, and I prefer to sleep during the dae."), //STONEKEEP EDIT
+	TRAIT_KAIZOKU = span_info("Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture."), //STONEKEEP EDIT
+	TRAIT_CHANGELING_METABOLISM = span_info("My metabolism breaks down demonic impurity. Now, I crave flesh rather than what is green."), // STONEKEEP EDIT
+	TRAIT_DESECRANT = span_info("I've forsaken honor and on the path of becoming Dai, for my soul is diseased and Abyssor looks down on me."), // STONEKEEP EDIT
 ))
 
 /// value -> trait name, generated on use from trait_by_type global

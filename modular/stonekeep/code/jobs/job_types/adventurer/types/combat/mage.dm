@@ -43,11 +43,12 @@
 			backl = /obj/item/storage/backpack/backpack
 			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			H.change_stat("intelligence", 1)
+			H.adjust_spellpoints(2)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", -2)
 		H.change_stat("endurance", -1)
 		H.change_stat("speed", -2)
-		H.mind.adjust_spellpoints(7)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+
+		H.adjust_spellpoints(5)
+		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)

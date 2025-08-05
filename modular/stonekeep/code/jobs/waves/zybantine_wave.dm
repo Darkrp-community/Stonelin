@@ -56,8 +56,8 @@
 		honorary = "Amirah"
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
+	if(!H.has_language(/datum/language/zalad))
+		H.grant_language(/datum/language/zalad)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 	H.change_stat(STATKEY_INT, 1)
 	H.change_stat(STATKEY_END, 2)
@@ -93,8 +93,8 @@
 	neck = /obj/item/clothing/neck/keffiyeh/red
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
+	if(!H.has_language(/datum/language/zalad))
+		H.grant_language(/datum/language/zalad)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
@@ -162,8 +162,8 @@
 	backl = /obj/item/storage/backpack/satchel
 	head = /obj/item/clothing/neck/keffiyeh/red
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor, /obj/item/lockpick)
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
+	if(!H.has_language(/datum/language/zalad))
+		H.grant_language(/datum/language/zalad)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

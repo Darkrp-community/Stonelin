@@ -6,7 +6,7 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/town_militia)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/militia)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -69,14 +69,6 @@
 			H.change_stat("intelligence", 2)
 	H.verbs |= /mob/proc/haltyell
 
-/obj/effect/proc_holder/spell/self/convertrole/town_militia
-	name = "Recruit Militia"
-	new_role = "Town Militiaman"
-	overlay_state = "recruit_guard"
-	recruitment_faction = "Garrison"
-	recruitment_message = "Join the Town Militia, %RECRUIT!"
-	accept_message = "I swear fealty to protect the town!"
-	refuse_message = "I refuse."
 
 /datum/job/roguetown/militia //just used to change the title
 	title = "Town Militiaman"

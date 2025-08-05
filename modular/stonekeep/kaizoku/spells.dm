@@ -3,11 +3,11 @@
 		return
 
 	var/datum/patron/A = H.patron
-	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/gale_palm, A.t0) //Placeholder. Need to change this for a Sohei-only.
+	var/list/spelllist = list(/datum/action/cooldown/spell/undirected/touch/entangler, A.t0) //Placeholder. Need to change this for a Sohei-only.
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue
-		H.mind.AddSpell(new spell_type)
+		H.add_spell(new spell_type)
 	level = CLERIC_T0
 	max_devotion = 150
 
@@ -175,7 +175,7 @@
 // ===================================================================
 // GENERAL SPELL - REPLACEMENT FOR LESSER HEAL - TIER 0
 // ===================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/abyssal_heal
 	name = "Healing Mist"
 	overlay_state = "purification"
@@ -238,7 +238,7 @@
 		target.adjustOxyLoss(-healing)
 		return ..()
 	return FALSE
-
+*/
 // ===================================================================
 // TIDEWAVER ESTUARY
 // ICE/WATER-BASED SPELLS, FOCUS ON BEING AGGRESSIVE AND DEALING DAMAGE.
@@ -246,7 +246,7 @@
 // ===============================================================================================================
 // PURIFYING FILTER, PROJECTILE. BAD AGAINST 'NORMALS', WORSE AGAINST 'PURE', EFFICIENT AGAINST IMPURES, TIER 1
 // ===============================================================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/projectile/purify
 	name = "Purifying filter"
 	overlay_state = "icespike"
@@ -289,7 +289,7 @@
 	icon_state = "icespikeproj_break"
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 3
-
+*/
 /obj/projectile/magic/purify/on_hit(atom/target, mob/living/user, blocked = FALSE)
 	..()
 	var/mob/living/carbon/C = target
@@ -299,7 +299,7 @@
 			C.adjustFireLoss(rand(50, 100)) //Random damage between 50 and 100. Very brutal, and proper for killing demons. Cold damage will come together with it after.
 			C.Knockdown(40) //Purification successful. You will be paralyzed.
 			C.Paralyze(1)
-			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
+			C.apply_status_effect(/datum/status_effect/debuff/frostbite)
 			C.flash_fullscreen("whiteflash3")
 			return
 		if((islist(C.faction) && (FACTION_ORCS in C.faction))|| (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Fixed Runtime. // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
@@ -307,7 +307,7 @@
 			C.adjustFireLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
 			C.Knockdown(20) //Purification successful. You will be paralyzed.
 			C.Paralyze(1) // Creatures with demon essence from Apotheosis war gets the second end of the stick.
-			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
+			C.apply_status_effect(/datum/status_effect/debuff/frostbite)
 			C.flash_fullscreen("whiteflash3")
 			return
 		if(C.dna.species?.id == "abyssariad"||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures. This proves their 'divinity' and purity ingame.
@@ -317,7 +317,7 @@
 		else //Does not paralyze.
 			C.visible_message("<span class='danger'>[target]'s body is being crushed!</span>", "<span class='userdanger'>I feel a suffocating pressure building on my body!</span>")
 			C.adjustFireLoss(rand(20, 35)) //Normal creatures will still suffer the effects of Barotrauma, yet less in terms of damage. Will still freeze.
-			C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
+			C.apply_status_effect(/datum/status_effect/debuff/frostbite)
 			C.flash_fullscreen("whiteflash3")
 			return
 
@@ -325,7 +325,7 @@
 // GLACIAL HARPOON, TIER 2 IN PURE HURT JUICE. YOU CAN MOVE AWAY, BUT YOU WISH TO NOT GET TRAPPED ON WALLS.
 // ADDITIONAL ASSET. IT ALSO DOESN'T CARE ABOUT WALLS. BECAUSE THIS SPELL IS EVIL.
 // ===================================================================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/rake
 	name = "glacial tether"
 	overlay_state = "rake"
@@ -392,7 +392,7 @@
 						L.apply_status_effect(/datum/status_effect/debuff/freezingsevere)
 
 	return ..()
-
+*/
 /obj/structure/ice_spike_wall
 	name = "tether"
 	desc = "... The tether that anchor storms, as not all prayers are spoken - many are hurled, tearing through lies as it once did flesh..."
@@ -419,7 +419,7 @@
 // BAROTRAUMA BIND, VERY POWERFUL AND NASTY. TIER 3
 // ===================================================================
 
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/icebind
 	name = "Barotrauma Bind" //People faithful to Abyssor will instantly be released from this spell.
 	overlay_state = "devilman"
@@ -479,7 +479,7 @@
 
 	to_chat(user, span_warning("<span class='userdanger'>Your spell fails to take hold, victimless.</span>"))
 	return FALSE
-
+*/
 /datum/status_effect/abyssaltomb/on_apply()
 	tomb = new /obj/structure/abyssaltomb(get_turf(owner)) // Create the ice tomb, THEN move the victim inside
 	tomb.encased_mob = owner
@@ -601,7 +601,7 @@
 // ===================================================================
 // GALEFORCE - THROW PEOPLE AROUND - TIER 1
 // ===================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/gale_palm
 	name = "Galeforce"
 	overlay_state = "demonslaying"
@@ -688,7 +688,7 @@
 			target.visible_message(span_danger("[target] is knocked flat!"))
 
 	return ..()
-
+*/
 /obj/effect/windgust
 	name = ""
 	desc = ""
@@ -708,7 +708,7 @@
 // ====================================================================================================
 // HEAVENLY PILLAR - RAISE PEOPLE FOR FUN, MIGHT MAKE THEM FALL. CAN HELP IN INVADING PLACES - TIER 2
 // ====================================================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/heavens_pillar
 	name = "Heavenly Pillar"
 	overlay_state = "swirly"
@@ -799,7 +799,7 @@
 
 	to_chat(user, span_info("You channel winds to rise like solid stone..."))
 	return ..()
-
+*/
 /obj/structure/heavenpillar
 	name = "abyssal whirly"
 	desc = "The heavens crumble, skies held by one truth. It rises in pride, but under this sacred weight, no one touches the legitimate crown.."
@@ -823,7 +823,7 @@
 // ====================================================================================================
 // The Maelstrom, VERY dangerous bastard. You better cast that one and RUN the HELL away. - TIER 3
 // ====================================================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/maelstrom
 	name = "The Maelstrom"
 	overlay_state = "waterspirit"
@@ -908,7 +908,7 @@
 				M.adjustBruteLoss(rand(2, 5))
 		else if(get_dist(M, center) <= 1)
 			M.adjustBruteLoss(rand(1, 3))
-
+*/
 /obj/structure/maelstrom_warning
 	name = "Condensing Winds"
 	desc = "... All that scatter must return as winds does not spiral in wonder. The enkindled will be stripped of impurity, the soul beyond matter.."
@@ -927,6 +927,7 @@
 // ===================================================================
 // SURGING BOLT - ATTACK SPELL, TIER 1. YOU'RE LIKELY TO SPARK YOURSELF.
 // ===================================================================
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/surging_bolt
 	name = "Lightening chain"
 	overlay_state = "chain"
@@ -1027,14 +1028,14 @@
 			// Rotate properly
 			var/angle = arctan(dy, dx)
 			L.transform = matrix(angle, MATRIX_ROTATE)
-
+*/
 // ====================================================================================================
 // VEIL OF THUNDER, A SUPPORT SPELL. TIER 2
 // ====================================================================================================
 
 /mob/living
 	var/datum/lightning_shield/shield_status //This is necessary for tracking, because qdels suck balls.
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/warkraft
 	name = "veil of spirits"
 	overlay_state = "waternet"
@@ -1076,7 +1077,7 @@
 
 	to_chat(user, span_info("Spheres of power envelops [target] in a spinning motion."))
 	return ..()
-
+*/
 /datum/lightning_shield
 	var/mob/living/owner
 	var/overlay
@@ -1129,7 +1130,7 @@
 // ===================================================================
 // HEARTBRINGER - REVIVAL SPELL, TIER 3
 // ===================================================================
-
+/* SPELL NEEDS UPDATE TO VANDERLIN
 /obj/effect/proc_holder/spell/invoked/revival_spark
 	name = "Heartbringer"
 	overlay_state = "graydream"
@@ -1200,7 +1201,7 @@
 
 		spawn(L.duration)
 			L.heal_surroundings()
-
+*/
 /obj/effect/temp_visual/lightning_blue
 	icon = 'icons/effects/32x96.dmi'
 	icon_state = "lightning"

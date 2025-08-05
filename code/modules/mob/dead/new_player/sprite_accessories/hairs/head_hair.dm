@@ -1321,27 +1321,19 @@
 	icon_state = "pirate_e"
 	gender = MALE
 	under_layer = TRUE
-<<<<<<< HEAD
-	specuse = list("elf", "tiefling", "halforc")
-=======
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/princely
 	name = "Princely"
 	icon_state = "princely"
 	gender = MALE
-<<<<<<< HEAD
-	specuse = list("elf")
+	specuse = list(SPEC_ID_ELF)
 
 /datum/sprite_accessory/hair/head/raider
 	name = "Raider"
 	icon_state = "raider"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
-=======
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/rogue
 	name = "Rogue"
@@ -1353,17 +1345,13 @@
 	name = "Romantic"
 	icon_state = "romantic"
 	gender = MALE
-<<<<<<< HEAD
 	specuse = list("elf")
 
 /datum/sprite_accessory/hair/head/ronin
 	name = "Ronin"
 	icon_state = "ronin"
 	gender = MALE
-	specuse = list("human", "elf", "aasimar", "tiefling", "halforc")
-=======
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/scribe
 	name = "Scribe"
@@ -1432,15 +1420,6 @@
 	gender = MALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
-=======
-/datum/sprite_accessory/hair/head/tied_sidecut
-	name = "Tied sidecut"
-	icon_state = "tsidecut"
-	gender = MALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
->>>>>>> vander/main
 /datum/sprite_accessory/hair/head/trimmed
 	name = "Trimmed"
 	icon_state = "trimmed"
@@ -1453,30 +1432,12 @@
 	gender = MALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
-=======
-/datum/sprite_accessory/hair/head/wildside
-	name = "Wild Sidecut"
-	icon_state = "wildside"
-	gender = MALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
->>>>>>> vander/main
 /datum/sprite_accessory/hair/head/woodsman_elf
 	name = "Woodsman"
 	icon_state = "woodsman_e"
 	gender = MALE
 	specuse = list(SPEC_ID_ELF)
 
-<<<<<<< HEAD
-=======
-/datum/sprite_accessory/hair/head/zaladin
-	name = "Zaladin"
-	icon_state = "zaladin" // orginal name gelled
-	gender = MALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
->>>>>>> vander/main
 /datum/sprite_accessory/hair/head/vagabond
 	name = "Vagabond"
 	icon_state = "vagabond"
@@ -1523,19 +1484,8 @@
 	under_layer = TRUE
 	specuse = list(SPEC_ID_HUMEN)
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/bun
 	name = "Bun"
-=======
-/datum/sprite_accessory/hair/head/buns
-	name = "Buns"
-	icon_state = "buns_f" // original name twinbuns
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/lowbun
-	name = "Bun (Low)"
->>>>>>> vander/main
 	icon_state = "bun-low"
 	gender = FEMALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
@@ -1574,23 +1524,7 @@
 	name = "Damsel"
 	icon_state = "damsel"
 	gender = FEMALE
-<<<<<<< HEAD
 	specuse = list("human", "aasimar", "tiefling", "halforc")
-=======
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/emma
-	name = "Emma"
-	icon_state = "emma"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/empress
-	name = "Empress"
-	icon_state = "empress_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/fancy_femelf
 	name = "Fancy"
@@ -1598,15 +1532,6 @@
 	gender = FEMALE
 	specuse = list(SPEC_ID_ELF)
 
-<<<<<<< HEAD
-=======
-/datum/sprite_accessory/hair/head/felfhair_fatherless
-	name = "Fatherless"
-	icon_state = "fatherless_elf_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_ELF)
-
->>>>>>> vander/main
 /datum/sprite_accessory/hair/head/grumpy_f
 	name = "Grumpy"
 	icon_state = "grumpy_f"
@@ -1707,11 +1632,7 @@
 	name = "Nun"
 	icon_state = "nun"
 	gender = FEMALE
-<<<<<<< HEAD
-	specuse = list("human", "dwarf", "aasimar", "tiefling", "halforc")
-=======
-	specuse = list(SPEC_ID_HALF_ORC)
->>>>>>> vander/main
+	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/performer
 	name = "Performer"
@@ -1765,11 +1686,7 @@
 	name = "Shrinekeeper"
 	icon_state = "shrine_f"
 	gender = FEMALE
-<<<<<<< HEAD
-	specuse = list("elf", "tiefling")
-=======
 	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING, SPEC_ID_HUMEN)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/soilbride
 	name = "Soilbride"
@@ -1813,33 +1730,9 @@
 	gender = FEMALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/tomboy
 	name = "Tomboy"
 	icon_state = "tomboy"
-=======
-/datum/sprite_accessory/hair/head/tomboy1
-	name = "Tomboy 1"
-	icon_state = "tomboy_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/tomboy2
-	name = "Tomboy 2"
-	icon_state = "tomboy2_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/tomboy3
-	name = "Tomboy 3"
-	icon_state = "rogue_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/twintail_floor
-	name = "Twintail Floor"
-	icon_state = "twintail_floor"
->>>>>>> vander/main
 	gender = FEMALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
@@ -1849,15 +1742,6 @@
 	gender = FEMALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
-=======
-/datum/sprite_accessory/hair/head/wildcutf
-	name = "Wild Sidecut"
-	icon_state = "wildside_f"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
->>>>>>> vander/main
 /datum/sprite_accessory/hair/head/wisp
 	name = "Wisp"
 	icon_state = "wisp_f"
@@ -1870,170 +1754,26 @@
 	gender = FEMALE
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
-
-=======
-/datum/sprite_accessory/hair/head/shorthime
-	name = "Hime Cut (Short)"
-	icon_state = "shorthime"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/spicy
-	name = "Spicy"
-	icon_state = "spicy"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/stacy
-	name = "Stacy"
-	icon_state = "stacy"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/stacybun
-	name = "Stacy (Bun)"
-	icon_state = "stacy_bun"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/zoey
-	name = "Zoey"
-	icon_state = "zoey"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/mediumbraid
-	name = "Medium Braid"
-	icon_state = "mediumbraid"
-	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 //////////////////////////////
 // UNISEX Hair Definitions  //
 //////////////////////////////
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/baum
 	name = "Baum"
 	icon_state = "baum"
-=======
-/datum/sprite_accessory/hair/head/martial
-	name = "Martial"
-	icon_state = "martial"
-	gender = NEUTER
-	specuse = list(SPEC_ID_AASIMAR)
-
-/datum/sprite_accessory/hair/head/shaved
-	name = "Shaved"
-	icon_state = "shaved"
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-	gender = NEUTER
-	under_layer = TRUE
-
-/datum/sprite_accessory/hair/head/runt
-	name = "Runt"
-	icon_state = "runt"
->>>>>>> vander/main
 	gender = NEUTER
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/birdnest
 	name = "Birdnest"
 	icon_state = "birdnest"
-=======
-/datum/sprite_accessory/hair/head/majestic_elf
-	name = "Majestie"
-	icon_state = "majestic_elf"
-	gender = NEUTER
-	specuse = list(SPEC_ID_ELF)
-
-// Hairs below ported from Azure
-
-/datum/sprite_accessory/hair/head/gloomy
-	name = "Gloomy"
-	icon_state = "gloomy"
->>>>>>> vander/main
 	gender = NEUTER
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/chastity
 	name = "Chastity"
 	icon_state = "chastity"
-=======
-/datum/sprite_accessory/hair/head/gloomylong
-	name = "Gloomy (Long)"
-	icon_state = "gloomylong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/shortmessy
-	name = "Messy (Short)"
-	icon_state = "shortmessy"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/mediumessy
-	name = "Messy (Medium)"
-	icon_state = "mediummessy"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/inari
-	name = "Inari"
-	icon_state = "inari"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/ziegler
-	name = "Ziegler"
-	icon_state = "ziegler"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/gronnbraid
-	name = "Gronn Braid"
-	icon_state = "zone"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/grenzelcut
-	name = "Grenzel Cut"
-	icon_state = "grenzelcut"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/fluffy
-	name = "Fluffy"
-	icon_state = "fluffy"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/fluffyshort
-	name = "Fluffy (Short)"
-	icon_state = "fluffyshort"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/fluffylong
-	name = "Fluffy (Long)"
-	icon_state = "fluffylong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/jay
-	name = "Jay"
-	icon_state = "jay"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/hairfre
-	name = "Hairfre"
-	icon_state = "hairfre"
->>>>>>> vander/main
 	gender = NEUTER
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
@@ -2055,219 +1795,9 @@
 	gender = NEUTER
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
-<<<<<<< HEAD
 /datum/sprite_accessory/hair/head/herder
 	name = "Herder"
 	icon_state = "herder"
-=======
-/datum/sprite_accessory/hair/head/kobeni_2
-	name = "Kobeni (Alt)"
-	icon_state = "kobeni_2"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/gloomy_short
-	name = "Gloomy (Short)"
-	icon_state = "gloomy_short"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/gloomy_medium
-	name = "Gloomy (Medium)"
-	icon_state = "gloomy_medium"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/gloomy_long
-	name = "Gloomy (Long)"
-	icon_state = "gloomy_long"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/emo_long
-	name = "Emo Long (New)"
-	icon_state = "emo_long"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/dreadlocks_long
-	name = "Dreadlocks Long"
-	icon_state = "dreadlocks_long"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/rows1
-	name = "Row 1"
-	icon_state = "rows1"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/rows2
-	name = "Row 2"
-	icon_state = "rows2"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/rowbraid
-	name = "Row Braid"
-	icon_state = "rowbraid"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/rowdualtail
-	name = "Row Dual Tail"
-	icon_state = "rowdualtail"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/rowbun
-	name = "Row Bun"
-	icon_state = "rowbun"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/long_over_eye_alt
-	name = "Long Over Eye (Alt)"
-	icon_state = "long_over_eye_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/sabitsuki
-	name = "Sabitsuki"
-	icon_state = "sabitsuki"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/cotton
-	name = "Cotton"
-	icon_state = "cotton"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/cottonalt
-	name = "Cotton (Alt)"
-	icon_state = "cottonalt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/bushy
-	name = "Bushy"
-	icon_state = "bushy"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/bushy_alt
-	name = "Bushy (Alt)"
-	icon_state = "bushy_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/curtains
-	name = "Curtains"
-	icon_state = "curtains"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/glamourh
-	name = "Glamourh"
-	icon_state = "glamourh"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/wavylong
-	name = "Wavy Long"
-	icon_state = "wavylong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/straightshort
-	name = "Straight Short"
-	icon_state = "straightshort"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/straightlong
-	name = "Straight Long"
-	icon_state = "straightlong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/fluffball
-	name = "Fluffball"
-	icon_state = "fluffball"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_long
-	name = "Halfshave Long"
-	icon_state = "halfshave_long"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_long_alt
-	name = "Halfshave Long (Alt)"
-	icon_state = "halfshave_long_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_messy
-	name = "Halfshave Messy"
-	icon_state = "halfshave_messy"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_messylong
-	name = "Halfshave Messy Long"
-	icon_state = "halfshave_messylong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_messy_alt
-	name = "Halfshave Messy (Alt)"
-	icon_state = "halfshave_messy_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_messylong_alt
-	name = "Halfshave Messy Long (Alt)"
-	icon_state = "halfshave_messylong_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_glamorous
-	name = "Halfshave Glamorous"
-	icon_state = "halfshave_glamorous"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/halfshave_glamorous_alt
-	name = "Halfshave Glamorous (Alt)"
-	icon_state = "halfshave_glamorous_alt"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/thicklong
-	name = "Thick Long"
-	icon_state = "thicklong"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/thickshort
-	name = "Thick Short"
-	icon_state = "thickshort"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/thickcurly
-	name = "Thick Curly"
-	icon_state = "thickcurly"
-	gender = NEUTER
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
-
-/datum/sprite_accessory/hair/head/baum
-	name = "Baum"
-	icon_state = "baum"
->>>>>>> vander/main
 	gender = NEUTER
 	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
@@ -2428,7 +1958,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
 	icon_state = "freespirit"
 	gender = NEUTER
-<<<<<<< HEAD
 	specuse = list("abyssariad")
 
 /datum/sprite_accessory/hair/head/novice
@@ -2479,9 +2008,6 @@
 	icon_state = "alsoprotagonist"
 	gender = NEUTER
 	specuse = list("abyssariad")
-=======
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
->>>>>>> vander/main
 
 /datum/sprite_accessory/hair/head/triton
 	name = "Base Triton"

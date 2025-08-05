@@ -20,6 +20,7 @@
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 2
 
+
 /datum/outfit/job/sk/adventurer/abyss/onmyoji
 	allowed_patrons = list(/datum/patron/divine/abyssor)
 
@@ -66,8 +67,9 @@
 	H.change_stat("constitution", -1)
 	H.change_stat("endurance", -1)
 	H.change_stat("speed", -2)
-	//placeholder spells.
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball) //They are intended to have their own powers. I will make that later in the future with the help of another coder.
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/forcewall_weak)
+	H.adjust_spellpoints(5)
+	H.add_spell(/datum/action/cooldown/spell/projectile/lightning)
+	H.add_spell(/datum/action/cooldown/spell/projectile/fetch)
+	H.add_spell(/datum/action/cooldown/spell/undirected/forcewall/breakable)
+
+

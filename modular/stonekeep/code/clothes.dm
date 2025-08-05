@@ -809,7 +809,8 @@
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
 	icon_state = "eorarobes"
 	var/fanatic_wear = FALSE
-/obj/item/clothing/shirt/robe/eora/attack_right(mob/user)
+/obj/item/clothing/shirt/robe/eora/attack_hand_secondary(mob/user, params)
+	. = ..()
 	switch(fanatic_wear)
 		if(FALSE)
 			name = "open eoran robe"
@@ -851,6 +852,7 @@
 /obj/item/clothing/armor/brigandine/sheriff
 	detail_tag = "_det"
 	detail_color = CLOTHING_ROYAL_PURPLE
+	uses_lord_coloring = LORD_PRIMARY
 
 /obj/item/clothing/armor/brigandine/sheriff/update_icon()
 	cut_overlays()
@@ -860,25 +862,6 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-
-/obj/item/clothing/armor/brigandine/sheriff/lordcolor(primary,secondary)
-	detail_color = primary
-	update_icon()
-
-/obj/item/clothing/armor/brigandine/sheriff/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
-	update_icon()
-
-/obj/item/clothing/armor/brigandine/sheriff/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
-
-
-
 
 
 /obj/item/clothing/shirt/dress/gen/sexy/Initialize()
@@ -937,25 +920,7 @@
 /obj/item/clothing/shirt/tunic/noblecoat/court
 	picked = TRUE
 	colorgrenz = FALSE
-
-/obj/item/clothing/shirt/tunic/noblecoat/court/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
-
-/obj/item/clothing/shirt/tunic/noblecoat/court/lordcolor(primary,secondary)
-	detail_color = secondary
-	update_icon()
-	if(ismob(loc))
-		var/mob/L = loc
-		L.update_inv_armor()
-
-/obj/item/clothing/shirt/tunic/noblecoat/court/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
-
+	uses_lord_coloring = LORD_PRIMARY
 
 /obj/item/clothing/shirt/robe/weaver/Initialize()
 	color = pick_assoc(GLOB.noble_dyes)
@@ -999,6 +964,8 @@
 //	color = CLOTHING_WHITE
 //	detail_color = "#422413"
 //	alternate_worn_layer =  WRISTSLEEVE_LAYER
+	color = CLOTHING_CHALK_WHITE
+	uses_lord_coloring = LORD_PRIMARY
 /obj/item/clothing/shirt/dress/velvetdress/sleeveless
 	icon_state = "velvetdress_less"
 	item_state = "velvetdress_less"
@@ -1012,23 +979,6 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-/obj/item/clothing/shirt/dress/velvetdress/court/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
-
-/obj/item/clothing/shirt/dress/velvetdress/court/lordcolor(secondary)
-	detail_color = secondary
-	update_icon()
-	if(ismob(loc))
-		var/mob/L = loc
-		L.update_inv_armor()
-
-/obj/item/clothing/shirt/dress/velvetdress/court/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
 
 
 /obj/item/clothing/shirt/dress/nobledress

@@ -26,9 +26,15 @@
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
 	outfit = /datum/outfit/job/stonekeep/courtwizard
 
-	magic_user = TRUE
 	give_bank_account = 120
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_scholar.ogg'
+	spells = list(
+		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
+	)
+	magic_user = TRUE
+	spell_points = 16
+	attunements_max = 6
+	attunements_min = 4
 
 /datum/outfit/job/stonekeep/courtwizard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -75,13 +81,7 @@
 		H.change_stat("intelligence", 4)
 		H.change_stat("constitution", -2)
 		H.change_stat("speed", -2)
-		H.mind.adjust_spellpoints(8)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 
-		H.generate_random_attunements(rand(4,6))
 
 
 //............... Unique Court Mage Stuff ...........................

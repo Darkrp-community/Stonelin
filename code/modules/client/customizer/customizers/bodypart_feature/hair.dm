@@ -178,7 +178,6 @@
 		/datum/sprite_accessory/hair/head/trimmed,
 		/datum/sprite_accessory/hair/head/warrior,
 		/datum/sprite_accessory/hair/head/woodsman_elf,
-		/datum/sprite_accessory/hair/head/zaladin,
 		/datum/sprite_accessory/hair/head/vagabond,
 		/datum/sprite_accessory/hair/head/zybantu,
 		/datum/sprite_accessory/hair/head/amazon,

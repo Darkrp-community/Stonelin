@@ -44,7 +44,7 @@
 	if(H.mind)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/barbrage)
+		H.add_spell(new /datum/action/cooldown/spell/undirected/barbrage)
 		H.set_patron(/datum/patron/inhumen/graggar)
 		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_barbarian.ogg'
 	var/helmet2choose = pickweight(list("Horned" = 1, "Varyag" = 1))

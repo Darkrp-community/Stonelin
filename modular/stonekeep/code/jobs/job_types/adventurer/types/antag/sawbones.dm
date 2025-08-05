@@ -45,5 +45,5 @@
 		H.change_stat("speed", -1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 1)
-	H?.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+	H.add_spell(new /datum/action/cooldown/spell/diagnose)
 	ADD_TRAIT(H, TRAIT_FORAGER, TRAIT_GENERIC)

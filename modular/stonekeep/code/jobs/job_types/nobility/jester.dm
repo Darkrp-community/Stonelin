@@ -17,8 +17,11 @@
 		You command a position of a fool, envious of the position your superiors have upon you. \
 		Your cheap tricks and illusions of intelligence will only work for so long, \
 		and someday you'll find yourself at the end of something sharper than you."
-
-	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
+	spells = list(
+		/datum/action/cooldown/spell/undirected/joke,
+		/datum/action/cooldown/spell/undirected/tragedy,
+		/datum/action/cooldown/spell/undirected/list_target/vicious_mockery,
+	)
 	outfit = /datum/outfit/job/stonekeep/jester
 	display_order = 10
 	min_pq = -20
@@ -49,7 +52,7 @@
 	H.adjust_skillrank(/datum/skill/misc/athletics, pick(4,4,4,4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/music, pick(1,2,3,4,5,6), TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, pick(1,2,3,4,5,6), TRUE)
-	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery) // Mock people to your heart's content!
+	H.add_spell(new /datum/action/cooldown/spell/undirected/list_target/vicious_mockery) // Mock people to your heart's content!
 	H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
 
 	H.base_intelligence = rand(4, 16)

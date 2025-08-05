@@ -665,7 +665,8 @@ get_accent_list()
 /obj/structure/bed/bedbox/attack_paw(mob/user)
 	return attack_hand(user)
 
-/obj/structure/bed/bedbox/attack_right(mob/living/user)
+/obj/structure/bed/bedbox/attack_hand_secondary(mob/user, params)
+	. = ..()
 	if(opened) //Appears if open. Doesn't matter if the player is inside or not.
 		to_chat(user, span_warning("You cannot force the deadbolt into reach the mechanism without closing the doors first."))
 		return
@@ -802,7 +803,7 @@ get_accent_list()
 		if((islist(H.faction) && (FACTION_ORCS in H.faction)) || (H.mob_biotypes & MOB_UNDEAD)) //The undead and the Graggarious forces are gatekept.
 			to_chat(H, span_danger("The Abyssgate scorches your corrupted blood!"))
 			H.Immobilize(10)
-			H.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/)
+			H.apply_status_effect(/datum/status_effect/debuff/frostbite)
 			H.adjustFireLoss(5)
 			H.Stun(20)
 			playsound(src, pick('modular/stonekeep/kaizoku/sound/evil.ogg','modular/stonekeep/kaizoku/sound/evil2.ogg','modular/stonekeep/kaizoku/sound/evil3.ogg'), 35, TRUE, ignore_walls = FALSE)

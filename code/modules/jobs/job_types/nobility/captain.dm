@@ -85,7 +85,7 @@
 
 	if(H.dna?.species?.id == SPEC_ID_HUMEN)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
-
+*/
 /obj/effect/proc_holder/spell/self/convertrole
 	name = "Recruit Beggar"
 	desc = "Recruit someone to your cause."
@@ -189,4 +189,4 @@
 	recruitment_message = "Join the Forest Garrison, %RECRUIT!"
 	accept_message = "I swear to protect the forest!"
 	refuse_message = "I refuse."
-*/
+

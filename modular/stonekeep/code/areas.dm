@@ -8,74 +8,74 @@
 /area/rogue/indoors/town/hamlet
 	name = "indoors"
 	alpha = 150
-	droning_sound = 'sound/music/area/indoor.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/deliverer.ogg'
+	background_track = 'sound/music/area/indoor.ogg'
+	background_track_dusk = 'sound/music/area/septimus.ogg'
+	background_track_night = 'sound/music/area/deliverer.ogg'
 	converted_type = /area/rogue/outdoors/exposed/townhamlet
 
 /area/rogue/indoors/town/hamlet/advguild
 	name = "adventurers guild"
-	droning_sound = 'sound/music/area/advguild.ogg'
-	droning_sound_dusk = 'sound/music/area/advguild.ogg'
-	droning_sound_night = 'sound/music/area/advguild.ogg'
+	background_track = 'sound/music/area/advguild.ogg'
+	background_track_dusk = 'sound/music/area/advguild.ogg'
+	background_track_night = 'sound/music/area/advguild.ogg'
 
 /area/rogue/outdoors/exposed/townhamlet
 	name = "stone hamlet"
 	icon_state = "town"
 	alpha = 150
-	droning_sound = 'sound/music/area/StreetsofWhiterun.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/towngen.ogg'
+	background_track = 'sound/music/area/StreetsofWhiterun.ogg'
+	background_track_dusk = null
+	background_track_night = 'sound/music/area/towngen.ogg'
 
 /area/rogue/indoors/town/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
+	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
 	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
 
 /area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	droning_sound_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
+	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
 
 /area/rogue/indoors/town/manor/stone
 	name = "stonehill manor"
 	alpha = 50
-	droning_sound = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
-	droning_sound_dusk = null
-	droning_sound_night = null
+	background_track = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
+	background_track_dusk = null
+	background_track_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "Stonehill manor"
 
 /area/rogue/indoors/town/garrison
 	name = "garrison"
 	alpha = 100
-	droning_sound = list('sound/music/area/manorgarri.ogg', 'sound/music/area/Wanyada.ogg')
-	droning_sound_dusk = null
-	droning_sound_night = null
-	droning_sound_dusk = null
-	droning_sound_night = null
+	background_track = list('sound/music/area/manorgarri.ogg', 'sound/music/area/Wanyada.ogg')
+	background_track_dusk = null
+	background_track_night = null
+	background_track_dusk = null
+	background_track_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
 
 /area/rogue/indoors/town/church
 	name = "temple"
 	icon_state = "church"
-	droning_sound = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/churchnight.ogg'
+	background_track = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	background_track_dusk = null
+	background_track_night = 'sound/music/area/churchnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
 	icon_state = "church"
-	droning_sound = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/churchnight.ogg'
+	background_track = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	background_track_dusk = null
+	background_track_night = 'sound/music/area/churchnight.ogg'
 
 /area/rogue/indoors/town/bath/redhouse
 	name = "baths"
-	droning_sound = 'sound/music/area/Fulminate.ogg'
+	background_track = 'sound/music/area/Fulminate.ogg'
 
 
-
+c
 
 /area/rogue/outdoors/rtfield/plague_district
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zizombie)
@@ -85,11 +85,9 @@
 	first_time_text = "PLAGUE DISTRICT"
 	color = "#d4da75"
 	name = "danger (plague district)"
-	droning_sound = 'sound/music/area/underworlddrone.ogg'
-	ambientsounds = 'sound/ambience/creepywind.ogg'
-	ambientnight = 'sound/ambience/creepywind.ogg'
-	spookysounds = SPOOKY_MYSTICAL
-	spookynight = SPOOKY_MYSTICAL
+	background_track = 'sound/music/area/underworlddrone.ogg'
+	ambient_index = AMBIENCE_MYSTICAL
+	droning_index = DRONING_FOREST_NIGHT
 
 /area/rogue/outdoors/rtfield/outlaw
 	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush/outlaw = 50)
@@ -97,13 +95,9 @@
 	first_time_text = ""
 	color = "#e9baa3"
 	ambush_times = list("day","dawn","night","dusk")
-	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/forestnight.ogg'
-	ambientsounds = AMB_FORESTDAY
-	ambientnight = AMB_FORESTNIGHT
-	spookysounds = SPOOKY_CROWS
-	spookynight = SPOOKY_FOREST
+	background_track = 'sound/music/area/forest.ogg'
+	background_track_dusk = 'sound/music/area/septimus.ogg'
+	background_track_night = 'sound/music/area/forestnight.ogg'
 
 
 /area/rogue/outdoors/rtfield/hamlet
@@ -130,11 +124,7 @@
 /area/rogue/under/lavamonastery
 	name = "danger(monastery)"
 	icon_state = "cavelava"
-	ambientsounds = AMB_CAVELAVA
-	ambientnight = AMB_CAVELAVA
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg'
 	converted_type = /area/rogue/outdoors/exposed/decap
 
 /area/rogue/under/cavelava
@@ -163,9 +153,9 @@
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/troll = 5,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
-	droning_sound = 'sound/music/area/decap.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
+	background_track = 'sound/music/area/decap.ogg'
+	background_track_dusk = null
+	background_track_night = null
 	first_time_text = "MOUNT DECAPITATION"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
@@ -205,9 +195,9 @@
 
 /area/rogue/outdoors/beach
 	name = "beach"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Oceansanct.ogg'
-	droning_sound_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Town_in_Rogue.ogg'
-	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Defenestration.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Oceansanct.ogg'
+	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Town_in_Rogue.ogg'
+	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Defenestration.ogg'
 
 /area/rogue/under/cave/abandoned_mine
 	name = "abandoned mine"
@@ -218,28 +208,28 @@
 				/mob/living/simple_animal/hostile/retaliate/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 5,
 				/mob/living/simple_animal/hostile/retaliate/mole = 10)
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/under/town/caverogue/deep
 	first_time_text = "DEEP MINESHAFT"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/towerofwise
 	name = "danger (tower of the wise)"
 	icon_state = "cave"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/cave/volf
 	name = "danger (volf cave)"
 	icon_state = "cave"
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/wolf)
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/cave/bear
 	name = "danger (bear cave)"
 	icon_state = "cave"
-	droning_sound = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/indoors/shelter/woods/spider
 	name = "danger (spider nest)"
@@ -256,13 +246,11 @@
 	name = "catacombs"
 	icon_state = "cavewet"
 	first_time_text = "Catacombs"
-//	ambientsounds = AMB_CAVEWATER
-//	ambientnight = AMB_CAVEWATER
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
-	droning_sound_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
-	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	droning_index = DRONING_CAVE_GENERIC
+	ambient_index = AMBIENCE_CAVE
+	background_track = 'sound/music/area/caves.ogg'
+	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
+	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 	ambush_times = list("night","dawn","dusk","day")
 	ambush_types = list(
 				/turf/open/water/swamp)
@@ -275,21 +263,19 @@
 	name = "dungeon (xylix maze)"
 	icon_state = "cavewet"
 	first_time_text = "The Maze"
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/xylixarea.ogg'
-	droning_sound_dusk = 'sound/music/area/xylixarea.ogg'
-	droning_sound_night = 'sound/music/area/xylixarea.ogg'
+	droning_index = DRONING_CAVE_GENERIC
+	ambient_index = AMBIENCE_CAVE
+	background_track = 'sound/music/area/xylixarea.ogg'
+	background_track_dusk = 'sound/music/area/xylixarea.ogg'
+	background_track_night = 'sound/music/area/xylixarea.ogg'
 
 /area/rogue/under/zizochurch
 	name = "zizos church"
 	icon_state = "cavewet"
 	first_time_text = "Church of the Lost"
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
-	droning_sound_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
-	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'sound/music/area/caves.ogg'
+	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
+	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 
 /area/rogue/under/catacombs/dwarfoutpost
 	name = "dungeon (outpost)"
@@ -307,13 +293,11 @@
 	name = "necropolis"
 	icon_state = "cave"
 	first_time_text = "Necropolis"
-	ambientsounds = AMB_CAVEWATER
-	ambientnight = AMB_CAVEWATER
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
-	droning_sound_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
-	droning_sound_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	droning_index = DRONING_CAVE_GENERIC
+	ambient_index = AMBIENCE_CAVE
+	background_track = 'sound/music/area/caves.ogg'
+	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
+	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 	ambush_times = list("night","dawn","dusk","day")
 	ambush_types = list(
 				/turf/open/water/swamp)

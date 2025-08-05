@@ -69,7 +69,7 @@
 	C.holder_mob = H
 	C.grant_spells_sohei(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/icebind)
+//	H.add_spell(new /obj/effect/proc_holder/spell/invoked/icebind)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //It's meant to be only heavy armor, but Kusari is medium. Idk how templar is doing, but in my testing, the armor was freaked.
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

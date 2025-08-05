@@ -164,12 +164,8 @@
 	detail_color = GLOB.lordprimary
 	update_icon()
 
-/obj/item/clothing/armor/brigandine/oyoroi/captain/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary, GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
+/obj/item/clothing/armor/brigandine/oyoroi/captain
+	uses_lord_coloring = LORD_PRIMARY
 
 /obj/item/clothing/armor/brigandine/oyoroi/captain/lordcolor(primary, secondary)
 	detail_tag = "_met"
@@ -179,9 +175,7 @@
 		var/mob/L = loc
 		L.update_inv_armor()
 
-/obj/item/clothing/armor/brigandine/oyoroi/captain/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
+
 
 /obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku
 	name = "complete great lamellar armor"
@@ -491,24 +485,7 @@
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/guard
 	color = CLOTHING_BLOOD_RED
-
-/obj/item/clothing/cloak/raincloak/guardiancloak/guard/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
-
-/obj/item/clothing/cloak/raincloak/guardiancloak/lordcolor(primary,secondary)
-	color = secondary
-	update_icon()
-	if(ismob(loc))
-		var/mob/L = loc
-		L.update_inv_cloak()
-
-/obj/item/clothing/cloak/raincloak/guardiancloak/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
+	uses_lord_coloring = LORD_PRIMARY
 
 /obj/item/clothing/cloak/raincloak/horocloak
 	name = "horo cloak"
@@ -590,13 +567,7 @@
 	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
 	detail_color = CLOTHING_PLUM_PURPLE
-
-/obj/item/clothing/cloak/stabard/haramaki/jinbaori/guard/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
+	uses_lord_coloring = LORD_PRIMARY
 
 /obj/item/clothing/cloak/stabard/haramaki/jinbaori/guard/lordcolor(primary,secondary)
 	color = primary
@@ -605,10 +576,6 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
-
-/obj/item/clothing/cloak/stabard/haramaki/jinbaori/guard/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
 
 /obj/item/clothing/cloak/stabard/haramaki/jinbaori/raider
 	name = "raider jinbaori"
@@ -622,25 +589,19 @@
 	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
 	detail_color = CLOTHING_PLUM_PURPLE
+	uses_lord_coloring = LORD_PRIMARY
 
-/obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai/attack_right(mob/user)
+/obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai/attack_hand_secondary(mob/user, params)
+	. = ..()
 	return
 
-/obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
-	else
-		GLOB.lordcolor += src
 
-/obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai/Destroy()
-	GLOB.lordcolor -= src
-	return ..()
 
 /obj/item/clothing/cloak/stabard/haramaki/odoshi/toweryakko
 	color = "#804d97"
 
-/obj/item/clothing/cloak/stabard/haramaki/odoshi/toweryakko/attack_right(mob/user)
+/obj/item/clothing/cloak/stabard/haramaki/odoshi/toweryakko/attack_hand_secondary(mob/user, params)
+	. = ..()
 	return
 
 /obj/item/clothing/cloak/stabard/haramaki/odoshi/raider
@@ -1514,7 +1475,8 @@
 	desc = "A mask that glorifies a Ogrun warrior. It portrays the mostly perfect perception of the race, so efficiently it became the standards for Fog island military due to its intimidation value."
 	colorable_var = TRUE
 
-/obj/item/clothing/face/kaizoku/menpo/facemask/colourable/attack_right(mob/user)
+/obj/item/clothing/face/kaizoku/menpo/facemask/colourable/attack_hand_secondary(mob/user, params)
+	. = ..()
 	if(colorable_var == TRUE)
 		if(picked)
 			return
@@ -2621,10 +2583,5 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/cloaks.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
-
-/obj/item/clothing/cloak/raincloak/guardsman/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordsecondary)
-	else
-		color = CLOTHING_BLOOD_RED
+	color = CLOTHING_BLOOD_RED
+	uses_lord_coloring = LORD_PRIMARY

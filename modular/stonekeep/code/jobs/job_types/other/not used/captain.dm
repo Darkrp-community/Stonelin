@@ -79,9 +79,3 @@
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-/obj/effect/proc_holder/spell/self/convertrole
-	name = "Recruit Beggar"
-	desc = "Recruit someone to your cause."
-	overlay_state = "recruit_bog"
-	antimagic_allowed = TRUE
-	recharge_time  = 100

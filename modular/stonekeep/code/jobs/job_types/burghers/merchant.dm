@@ -34,7 +34,6 @@
 /datum/outfit/job/stonekeep/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	neck = /obj/item/clothing/neck/horus
 	backr = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/veryrich = 1, /obj/item/merctoken = 1)
 	beltr = /obj/item/weapon/sword/iron/jian
