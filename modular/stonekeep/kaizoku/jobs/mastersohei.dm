@@ -26,9 +26,9 @@
 	min_pq = 0
 	selection_color = "#c2a45d"
 	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
-	spells = list(
-		/obj/effect/proc_holder/spell/self/convertrole/sohei,
-	)
+//	spells = list(
+//		/obj/effect/proc_holder/spell/self/convertrole/sohei,
+//	)
 
 /datum/outfit/job/stonekeep/mastersohei/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -73,7 +73,7 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //It's meant to be only heavy armor, but Kusari is medium. Idk how templar is doing, but in my testing, the armor was freaked.
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-
+/* VANDERLIN COMPLIANCE
 /obj/effect/proc_holder/spell/self/convertrole/sohei
 	name = "Recruit Tideseeker"
 	new_role = "Tideseeker"
@@ -118,3 +118,4 @@
 	recruit.advjob = "Tideseeker"
 	recruit.migrant_type = null
 	recruit.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+*/

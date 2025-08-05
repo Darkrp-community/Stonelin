@@ -167,7 +167,7 @@
 	craft_time = 10 SECONDS
 	crafting_message = "starts rolling a westleach zig"
 	craftdiff = 0
-	uses_attacked_atom = TRUE
+//	uses_attacked_atom = TRUE
 	subtypes_allowed = TRUE
 
 /datum/repeatable_crafting_recipe/sigsweet
@@ -182,7 +182,7 @@
 	craft_time = 10 SECONDS
 	crafting_message = "starts rolling a swampweed zig"
 	craftdiff = 0
-	uses_attacked_atom = TRUE
+//	uses_attacked_atom = TRUE
 	subtypes_allowed = TRUE
 
 

@@ -12,7 +12,7 @@
 	for(var/i in 1 to amount)
 		new /obj/item/natural/silk (get_turf(src))
 	user.visible_message(span_notice("[user] snips [src] up into silk."))
-	user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT / 2)) //We're getting experience for harvesting silk!
+	user.adjust_experience(/datum/skill/misc/sewing, (user.STAINT / 2)) //We're getting experience for harvesting silk!
 	playsound(src, 'sound/items/flint.ogg', 100, TRUE)
 	qdel(src)
 	return TRUE

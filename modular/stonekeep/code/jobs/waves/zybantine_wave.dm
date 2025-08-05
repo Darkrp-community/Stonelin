@@ -82,7 +82,7 @@
 /datum/outfit/job/sk_migration/zyb/janissary/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
-	head = /obj/item/clothing/head/helmet/sallet/zybantine
+	head = /obj/item/clothing/head/helmet/sallet/zalad
 	gloves = /obj/item/clothing/gloves/angle
 	belt = /obj/item/storage/belt/leather/shalal
 	armor = /obj/item/clothing/armor/brigandine/coatplates

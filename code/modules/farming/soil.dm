@@ -131,7 +131,7 @@
 		if(LAZYLEN(seeds))
 			attacking_item = pick(seeds)
 
-	if(istype(attacking_item, /obj/item/neuFarm/seed || istype(attacking_item, /obj/item/herbseed))) //SLOP OBJECT PROC SHARING
+	if(istype(attacking_item, /obj/item/neuFarm/seed )) //SLOP OBJECT PROC SHARING
 		playsound(src, pick('sound/foley/touch1.ogg','sound/foley/touch2.ogg','sound/foley/touch3.ogg'), 100, TRUE)	// STONEKEEP EDIT
 		if(do_after(user, get_farming_do_time(user, 15), src))
 			if(old_item)

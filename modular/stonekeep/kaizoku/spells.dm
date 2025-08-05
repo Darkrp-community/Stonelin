@@ -2,13 +2,13 @@
 	if(!H || !H.mind)
 		return
 
-	var/datum/patron/A = H.patron
-	var/list/spelllist = list(/datum/action/cooldown/spell/undirected/touch/entangler, A.t0) //Placeholder. Need to change this for a Sohei-only.
-	for(var/spell_type in spelllist)
-		if(!spell_type || H.mind.has_spell(spell_type))
-			continue
-		H.add_spell(new spell_type)
-	level = CLERIC_T0
+//	var/datum/patron/A = H.patron
+//	var/list/spelllist = list(/datum/action/cooldown/spell/undirected/touch/entangler, A.t0) //Placeholder. Need to change this for a Sohei-only.
+//	for(var/spell_type in spelllist)				ROGTODO this shit was broken by Vandelrin
+//		if(!spell_type || H.mind.has_spell(spell_type))
+//			continue
+//		H.add_spell(new spell_type)
+//	level = CLERIC_T0
 	max_devotion = 150
 
 

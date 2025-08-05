@@ -954,13 +954,15 @@
 
 	var/mob/living/caster = owner
 	var/exp_to_gain = caster.get_stat(associated_stat) + (cost_in * experience_modifer) / 2
-
+/* Since sleep xp was commented out this breaks
 	var/datum/mind/owner_mind = owner.mind
+
 	if(owner_mind && experience_sleep || (experience_sleep_threshold && (skill_level >= experience_sleep_threshold)))
 		// Check to make sure that experience max is adhered to even when using sleep exp
 		if(!owner_mind.sleep_adv.enough_sleep_xp_to_advance(associated_skill, experience_max_skill - skill_level))
 			owner_mind.add_sleep_experience(associated_skill, exp_to_gain)
 		return
+*/
 	owner.adjust_experience(associated_skill, exp_to_gain)
 
 /// Try to begin the casting process on mouse down
