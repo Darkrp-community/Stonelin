@@ -47,6 +47,21 @@
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "Stonehill manor"
 
+/area/rogue/indoors/town/makers
+	name = "makers quarter"
+	icon_state = "dwarfin"
+	background_track = 'modular/stonekeep/sound/area/dwarf.ogg'
+	background_track_dusk = null
+	background_track_night = null
+	first_time_text = "The Makers' Quarter"
+	converted_type = /area/rogue/outdoors/exposed/makers
+
+/area/rogue/outdoors/exposed/makers
+	icon_state = "dwarf"
+	background_track = 'modular/stonekeep/sound/area/dwarf.ogg'
+	background_track_dusk = null
+	background_track_night = null
+
 /area/rogue/indoors/town/garrison
 	name = "garrison"
 	alpha = 100
@@ -121,6 +136,7 @@
 /area/rogue/under/cave/sumpgrotto
 	name = "sump grotto"
 	first_time_text = "Sump Grotto"
+	background_track = 'modular/stonekeep/sound/area/caves.ogg'
 	ambush_types = list(
 				/turf/open/floor/dirt/muddie, /turf/open/floor/naturalstone/rough)
 	ambush_times = list("day","dawn","night","dusk")
@@ -136,6 +152,7 @@
 
 /area/rogue/under/cavelava
 	first_time_text = ""
+	background_track = 'modular/stonekeep/sound/area/caves.ogg'
 
 /area/rogue/outdoors/rtfield/spooky		// haunts ambush and dug down hidden treasure
 	ambush_mobs = list(/mob/living/simple_animal/hostile/haunt = 50)
