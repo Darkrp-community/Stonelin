@@ -401,8 +401,6 @@
 	if(prob(1))
 		open_up()
 
-
-
 /obj/structure/chair/pew/left
 	name = "pew"
 

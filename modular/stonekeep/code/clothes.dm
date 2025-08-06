@@ -868,10 +868,6 @@
 	color = pick( CLOTHING_ROYAL_MAJENTA, CLOTHING_MAGE_BLUE, CLOTHING_ROYAL_PURPLE	, CLOTHING_SALMON)
 	..()
 
-/obj/item/clothing/shirt/dress/gen/random/Initialize()
-	color = pick_assoc(GLOB.noble_dyes)
-	..()
-
 /obj/item/clothing/shirt/tunic/noblecoat
 	name = "fancy coat"
 	desc = "A fancy tunic and coat combo. How elegant."
@@ -916,12 +912,12 @@
 		if(!L.client)
 			return
 		INVOKE_ASYNC(src, PROC_REF(get_player_input))
-
+/* cucked by upstream
 /obj/item/clothing/shirt/tunic/noblecoat/court
 	picked = TRUE
 	colorgrenz = FALSE
 	uses_lord_coloring = LORD_PRIMARY
-
+*/
 /obj/item/clothing/shirt/robe/weaver/Initialize()
 	color = pick_assoc(GLOB.noble_dyes)
 	..()
@@ -969,7 +965,7 @@
 /obj/item/clothing/shirt/dress/velvetdress/sleeveless
 	icon_state = "velvetdress_less"
 	item_state = "velvetdress_less"
-
+/* cucked by upstream
 /obj/item/clothing/shirt/dress/velvetdress/court/update_icon()
 	cut_overlays()
 	if(get_detail_tag())
@@ -978,7 +974,7 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-
+*/
 
 
 /obj/item/clothing/shirt/dress/nobledress

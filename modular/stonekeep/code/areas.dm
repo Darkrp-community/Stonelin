@@ -8,9 +8,9 @@
 /area/rogue/indoors/town/hamlet
 	name = "indoors"
 	alpha = 150
-	background_track = 'sound/music/area/indoor.ogg'
-	background_track_dusk = 'sound/music/area/septimus.ogg'
-	background_track_night = 'sound/music/area/deliverer.ogg'
+	background_track = 'modular/stonekeep/sound/area/indoor.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/septimus.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/deliverer.ogg'
 	converted_type = /area/rogue/outdoors/exposed/townhamlet
 
 /area/rogue/indoors/town/hamlet/advguild
@@ -50,7 +50,7 @@
 /area/rogue/indoors/town/garrison
 	name = "garrison"
 	alpha = 100
-	background_track = list('sound/music/area/manorgarri.ogg', 'sound/music/area/Wanyada.ogg')
+	background_track = list('modular/stonekeep/sound/area/manorgarri.ogg', 'modular/stonekeep/sound/area/notwanyada.ogg')
 	background_track_dusk = null
 	background_track_night = null
 	background_track_dusk = null
@@ -92,7 +92,7 @@
 	first_time_text = "PLAGUE DISTRICT"
 	color = "#d4da75"
 	name = "danger (plague district)"
-	background_track = 'sound/music/area/underworlddrone.ogg'
+	background_track = 'modular/stonekeep/sound/area/underworlddrone.ogg'
 	ambient_index = AMBIENCE_MYSTICAL
 	droning_index = DRONING_FOREST_NIGHT
 
@@ -102,9 +102,9 @@
 	first_time_text = ""
 	color = "#e9baa3"
 	ambush_times = list("day","dawn","night","dusk")
-	background_track = 'sound/music/area/forest.ogg'
-	background_track_dusk = 'sound/music/area/septimus.ogg'
-	background_track_night = 'sound/music/area/forestnight.ogg'
+	background_track = 'modular/stonekeep/sound/area/forest.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/septimus.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/forestnight.ogg'
 
 
 /area/rogue/outdoors/rtfield/hamlet
@@ -160,7 +160,7 @@
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/troll = 5,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
-	background_track = 'sound/music/area/decap.ogg'
+	background_track = 'modular/stonekeep/sound/area/decap.ogg'
 	background_track_dusk = null
 	background_track_night = null
 	first_time_text = "MOUNT DECAPITATION"
@@ -255,7 +255,7 @@
 	first_time_text = "Catacombs"
 	droning_index = DRONING_CAVE_GENERIC
 	ambient_index = AMBIENCE_CAVE
-	background_track = 'sound/music/area/caves.ogg'
+	background_track = 'modular/stonekeep/sound/area/caves.ogg'
 	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
 	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 	ambush_times = list("night","dawn","dusk","day")
@@ -302,7 +302,7 @@
 	first_time_text = "Necropolis"
 	droning_index = DRONING_CAVE_GENERIC
 	ambient_index = AMBIENCE_CAVE
-	background_track = 'sound/music/area/caves.ogg'
+	background_track = 'modular/stonekeep/sound/area/caves.ogg'
 	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
 	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
 	ambush_times = list("night","dawn","dusk","day")
