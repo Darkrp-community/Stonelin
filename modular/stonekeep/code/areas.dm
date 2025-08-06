@@ -15,33 +15,35 @@
 
 /area/rogue/indoors/town/hamlet/advguild
 	name = "adventurers guild"
-	background_track = 'sound/music/area/advguild.ogg'
-	background_track_dusk = 'sound/music/area/advguild.ogg'
-	background_track_night = 'sound/music/area/advguild.ogg'
+	background_track = 'modular/stonekeep/sound/area/advguild.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/advguild.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/advguild.ogg'
 
 /area/rogue/outdoors/exposed/townhamlet
 	name = "stone hamlet"
 	icon_state = "town"
 	alpha = 150
-	background_track = 'sound/music/area/StreetsofWhiterun.ogg'
-	background_track_dusk = null
-	background_track_night = 'sound/music/area/towngen.ogg'
+	background_track = 'modular/stonekeep/sound/area/towngen.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/towngen.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/townstreets.ogg'
 
 /area/rogue/indoors/town/tavern/saiga
-	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	background_track = list('modular/stonekeep/sound/area/Folia1490.ogg', 'modular/stonekeep/sound/area/TheBanneredMare.ogg','modular/stonekeep/sound/area//LeTourdion.ogg','modular/stonekeep/sound/area/JaimSansPenserLaidure.ogg')
+	background_track_dusk = list('modular/stonekeep/sound/area/ACircleofFaun.ogg', 'modular/stonekeep/sound/area/inn.ogg' )
+	background_track_night = list('modular/stonekeep/sound/area/AFallenWarriorStandsAgain.ogg', 'modular/stonekeep/sound/area/TheOneWhoCarvedItAll.ogg' )
 	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
 
 /area/rogue/outdoors/exposed/tavern/saiga
-	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
-	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
+	background_track = list('modular/stonekeep/sound/area/Folia1490.ogg', 'modular/stonekeep/sound/area/TheBanneredMare.ogg','modular/stonekeep/sound/area//LeTourdion.ogg','modular/stonekeep/sound/area/JaimSansPenserLaidure.ogg')
+	background_track_dusk = list('modular/stonekeep/sound/area/ACircleofFaun.ogg', 'modular/stonekeep/sound/area/inn.ogg' )
+	background_track_night = list('modular/stonekeep/sound/area/AFallenWarriorStandsAgain.ogg', 'modular/stonekeep/sound/area/TheOneWhoCarvedItAll.ogg' )
 
 /area/rogue/indoors/town/manor/stone
 	name = "stonehill manor"
 	alpha = 50
-	background_track = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
-	background_track_dusk = null
-	background_track_night = null
+	background_track = 'modular/stonekeep/sound/area/manor.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/manor.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/manornight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "Stonehill manor"
 
@@ -59,9 +61,9 @@
 /area/rogue/indoors/town/church
 	name = "temple"
 	icon_state = "church"
-	background_track = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	background_track = 'modular/stonekeep/sound/area/temple.ogg'
 	background_track_dusk = null
-	background_track_night = 'sound/music/area/churchnight.ogg'
+	background_track_night = 'sound/music/area/templenight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
@@ -72,10 +74,10 @@
 
 /area/rogue/indoors/town/bath/redhouse
 	name = "baths"
-	background_track = 'sound/music/area/Fulminate.ogg'
+	background_track = 'modular/stonekeep/sound/area/Fulminate.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/IntoTheNight.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/IntoTheNight.ogg'
 
-
-c
 
 /area/rogue/outdoors/rtfield/plague_district
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zizombie)
@@ -265,17 +267,17 @@ c
 	first_time_text = "The Maze"
 	droning_index = DRONING_CAVE_GENERIC
 	ambient_index = AMBIENCE_CAVE
-	background_track = 'sound/music/area/xylixarea.ogg'
-	background_track_dusk = 'sound/music/area/xylixarea.ogg'
-	background_track_night = 'sound/music/area/xylixarea.ogg'
+	background_track = 'modular/stonekeep/sound/area/clocktower_ambience.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/clocktower_ambience.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/xylixarea.ogg'
 
 /area/rogue/under/zizochurch
 	name = "zizos church"
 	icon_state = "cavewet"
 	first_time_text = "Church of the Lost"
-	background_track = 'sound/music/area/caves.ogg'
-	background_track_dusk = 'modular/stonekeep/kaizoku/sound/ambience/Bucolic.ogg'
-	background_track_night = 'modular/stonekeep/kaizoku/sound/ambience/Nebula.ogg'
+	background_track = 'modular/stonekeep/sound/area/zizochurch.ogg'
+	background_track_dusk = 'modular/stonekeep/sound/area/zizochurch.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/zizochurch.ogg'
 
 /area/rogue/under/catacombs/dwarfoutpost
 	name = "dungeon (outpost)"

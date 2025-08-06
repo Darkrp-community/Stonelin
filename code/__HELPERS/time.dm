@@ -92,7 +92,7 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		T.maptext_height = 209
 		T.maptext_x = 12
 		T.maptext_y = -120
-		playsound_local(src, 'sound/misc/newday.ogg', 60, FALSE)
+		playsound_local(src, 'modular/stonekeep/sound/newday_bell.ogg', 80, FALSE) // STONEKEEP EDIT
 		animate(T, alpha = 255, time = 10, easing = EASE_IN)
 		addtimer(CALLBACK(src, PROC_REF(clear_area_text), T), 35)
 	else if(GLOB.tod == "day")

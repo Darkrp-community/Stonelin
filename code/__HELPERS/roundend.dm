@@ -142,7 +142,7 @@
 
 	for(var/mob/M in GLOB.mob_list)
 		M.do_game_over()
-		M.playsound_local(M, 'sound/music/credits.ogg', 100, FALSE)
+		M.playsound_local(M, 'modular/stonekeep/sound/credits_sk.ogg', 100, FALSE)
 
 	for(var/datum/callback/cb as anything in round_end_events)
 		cb.InvokeAsync()
