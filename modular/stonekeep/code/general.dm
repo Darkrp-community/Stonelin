@@ -145,6 +145,7 @@
 	icon_state = "certificate"
 /obj/item/paper/certificate/update_icon_state()
 	icon_state = "certificate"
+
 /obj/item/paper/certificate/Initialize()
 	..()
 	icon = 'modular/stonekeep/icons/misc.dmi'
@@ -714,11 +715,12 @@
 	slice_sound = TRUE
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
-/obj/item/reagent_containers/food/snacks/tallow/update_icon()
+/obj/item/reagent_containers/food/snacks/tallow/update_icon_state()
 	if(slices_num)
 		icon_state = "tallow"
 	else
 		icon_state = "tallowslice"
+	return ..()
 
 /obj/item/reagent_containers/food/snacks/tallow/on_consume(mob/living/eater)
 	..()
@@ -743,7 +745,7 @@
 	desc = ""
 	icon = 'modular/stonekeep/icons/64x64.dmi'
 	icon_state = "astrata"
-	plane = -3
+	plane = 1
 	pixel_x = -19
 
 /*	..................   Necra Shrine   ................... */
@@ -752,7 +754,7 @@
 	desc = ""
 	icon = 'modular/stonekeep/icons/64x64.dmi'
 	icon_state = "necra"
-	plane = -3
+	plane = 1
 	pixel_x = -16
 
 /*	..................   Dendor Shrine   ................... */
@@ -761,7 +763,7 @@
 	desc = ""
 	icon = 'modular/stonekeep/icons/64x64.dmi'
 	icon_state = "mystical"
-	plane = -3
+	plane = 1
 	pixel_x = -10
 
 /*	..................   Abyssor Shrine   ................... */
@@ -771,7 +773,7 @@
 	icon = 'modular/stonekeep/icons/96x96.dmi'
 	icon_state = "abyssor"
 	bound_width = 64
-	plane = -3
+	plane = 1
 	pixel_x = -25
 
 /*	..................   Abandoned Malum Shrine (Dromkis revenge)   ................... */	// Not meant to be craftable, its abandoned and got a reward for relight it, special for malumites
@@ -781,7 +783,7 @@
 	icon = 'modular/stonekeep/icons/64x64.dmi'
 	icon_state = "malum"
 	bound_width = 64
-	plane = -3
+	plane = 1
 	var/datum/looping_sound/fireloop/soundloop
 	var/refueled
 	var/on
