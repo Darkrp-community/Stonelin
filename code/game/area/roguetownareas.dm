@@ -568,12 +568,12 @@
 	background_track = 'sound/music/area/Fulminate.ogg'
 
 /area/rogue/indoors/town/tavern/saiga
-	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
+	background_track = list('sound/music/area/Folia1490.ogg')
 	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
 	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
 
 /area/rogue/outdoors/exposed/tavern/saiga
-	background_track = list('sound/music/area/Folia1490.ogg', 'sound/music/area/TheBanneredMare.ogg')
+	background_track = list('sound/music/area/Folia1490.ogg')
 	background_track_night = list('sound/music/area/LeTourdion.ogg', 'sound/music/area/JaimSansPenserLaidure.ogg')
 
 /area/rogue/indoors/town/garrison

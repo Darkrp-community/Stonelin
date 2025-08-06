@@ -57,20 +57,25 @@
 	background_track_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
+/area/rogue/under/tomb/indoors/magic
+	background_track = 'modular/stonekeep/sound/area/magiciantower.ogg'
+
+/area/rogue/under/tomb/indoors/royal
+	background_track = 'modular/stonekeep/sound/area/manornight.ogg'
 
 /area/rogue/indoors/town/church
 	name = "temple"
 	icon_state = "church"
 	background_track = 'modular/stonekeep/sound/area/temple.ogg'
 	background_track_dusk = null
-	background_track_night = 'sound/music/area/templenight.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/templenight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
 	icon_state = "church"
-	background_track = list('modular/stonekeep/kaizoku/sound/ambience/Syzygy.ogg', 'sound/music/area/Temple.ogg')
+	background_track = 'modular/stonekeep/sound/area/temple.ogg'
 	background_track_dusk = null
-	background_track_night = 'sound/music/area/churchnight.ogg'
+	background_track_night = 'modular/stonekeep/sound/area/templenight.ogg'
 
 /area/rogue/indoors/town/bath/redhouse
 	name = "baths"
