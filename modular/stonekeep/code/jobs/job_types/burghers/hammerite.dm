@@ -5,12 +5,7 @@
 				if only you had the time to rebuild what has been lost to the ruin of time... your work will shape the future."
 	faction = FACTION_TOWN
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar",
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	outfit = /datum/outfit/job/stonekeep/hammerite
 	flag = SK_MASON

@@ -9,11 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_ROYALTY
 	allowed_sexes = list(MALE, FEMALE)
 
 	tutorial = "Coin, Coin, Coin! Oh beautiful coin: \

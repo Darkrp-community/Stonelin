@@ -5,7 +5,7 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list("Humen","Aasimar","Half-Elf","Dwarf")
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_patrons = list(/datum/patron/divine/malum)//town guild is formed by malumites only
 
 	tutorial = "Yours is a busy life, a churning forge, the ring of hammer on anvil, the hiss of quenched steel, \

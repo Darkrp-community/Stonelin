@@ -8,13 +8,7 @@
 	bypass_lastclass = TRUE
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf"
-	)
+	allowed_races = RACES_PLAYER_GRENZ
 	allowed_sexes = list(MALE)
 	tutorial = "You were a convicted criminal, the lowest scum of the land. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to the Forgotten. You will not let him down."
 

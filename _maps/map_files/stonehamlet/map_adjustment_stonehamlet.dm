@@ -53,7 +53,9 @@
 
 		/datum/job/inquisitor,
 		/datum/job/monk,
-		/datum/job/gatemaster,)
+		/datum/job/gatemaster,
+		/datum/job/mageapprentice,
+		/datum/job/soilchild,)
 
 
 

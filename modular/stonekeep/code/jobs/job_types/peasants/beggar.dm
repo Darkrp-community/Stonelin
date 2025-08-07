@@ -7,15 +7,7 @@
 	total_positions = 15
 	spawn_positions = 15
 	min_pq = -100
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Dwarf",
-		"Half-Elf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_DELVESALLOWED
 	outfit = /datum/outfit/job/stonekeep/beggar
 	banned_leprosy = FALSE
 	bypass_lastclass = TRUE

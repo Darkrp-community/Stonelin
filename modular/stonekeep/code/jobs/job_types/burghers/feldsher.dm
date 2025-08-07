@@ -11,13 +11,7 @@
 	give_bank_account = 100
 	min_pq = 0
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE, FEMALE)
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 

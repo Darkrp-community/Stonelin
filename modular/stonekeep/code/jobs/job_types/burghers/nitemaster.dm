@@ -6,14 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Dwarf",
-		"Elf",
-		"Half-Elf",
-		"Dark Elf",
-		"Tiefling"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 
 	tutorial = "Even nobles can be disgraced and fall on hard times, despite inheriting a fine bathhouse building. <br>\
 	For whatever reason you have traded your reputation for a supply of drugs and nitemaidens to employ and profit from. The licenses can be bought from the Feldsher, or just make a forgery yourself to save money. <br>\

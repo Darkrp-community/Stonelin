@@ -2,10 +2,7 @@
 	name = "Grenzelhoft Mercenary"
 	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Adept swordmasters never shying away from a duel, their only care is coin, and the procurement of coin - by any means necessary."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_MANLIEST
 	outfit = /datum/outfit/job/stonekeep/merc/grenzelhoft
 	category_tags = list(CTAG_SKMERCENARY)
 	maximum_possible_slots = 6

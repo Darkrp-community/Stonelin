@@ -9,13 +9,7 @@
 	spawn_positions = 4
 
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the Temple of the Ten not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/pestra, /datum/patron/divine/eora)
 	outfit = /datum/outfit/job/stonekeep/acolyte

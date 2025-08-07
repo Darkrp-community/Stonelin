@@ -12,12 +12,7 @@ the like.
 	spawn_positions = 5
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Changeling",
-		"Skylancer",
-		"Ogrun"
-	)
+	allowed_races = RACES_PLAYER_FOGISLANDERS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "You are a soldier in the town garrison, an Ashigaru from the Fog Islands. Treaties and alliances matter little to you, your Lord has ordered you to obey the local ruler and their Sheriff, maintaining order."
 	display_order = GARRISON_ORDER

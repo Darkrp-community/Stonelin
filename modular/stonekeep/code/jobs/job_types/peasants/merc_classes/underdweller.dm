@@ -3,8 +3,8 @@
 	tutorial = "A member of the Underdwellers, you've taken many of the deadliest contracts known to man in literal underground circles. Drow or Dwarf, you've put your differences aside for coin and adventure."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Dwarf",
-		"Dark Elf"
+		SPEC_ID_DWARF,\
+		SPEC_ID_DROW,\
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/underdweller
 	category_tags = list(CTAG_SKMERCENARY)

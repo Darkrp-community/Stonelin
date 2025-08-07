@@ -3,8 +3,8 @@
 	tutorial = "Driven by desperation, you sought survival in service to the Gold Courts of the Valorian Coin Lords. Commoners like you were generally used as pawns for political duels to the death, but you grew tired of this abuse and managed to flee from that gruesome indentured servitude. With no other way to earn coin for a living, you sought employment as a mercenary for hire, offering your skills to just about anyone for coin, back to where you once started."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
-		"Half-Elf"
+		SPEC_ID_HUMEN,\
+		SPEC_ID_HALF_ELF,\
 	)
 
 	outfit = /datum/outfit/job/stonekeep/merc/valorian

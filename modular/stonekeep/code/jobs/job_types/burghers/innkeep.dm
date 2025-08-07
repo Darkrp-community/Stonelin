@@ -8,13 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	tutorial = "Liquor, lodging, and lavish meals... your business is the beating heart of Rockhill. You're the one who provides the the hardworking townsfolk with a place to eat and drink their sorrows away, and accommodations for weary travelers passing through."
 

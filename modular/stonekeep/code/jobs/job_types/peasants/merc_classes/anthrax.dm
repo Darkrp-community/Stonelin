@@ -2,7 +2,7 @@
 	name = "Anthrax"
 	tutorial = "With the brutal dismantlement of drow society, the talents of the redeemed Anthraxi were no longer needed. Yet where one door closes, another opens - the decadent mortals of the overworld clamber over each other to bid for your blade. Show them your craft."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Dark Elf")
+	allowed_races = list(SPEC_ID_DROW)
 	outfit = /datum/outfit/job/stonekeep/merc/anthrax
 	category_tags = list(CTAG_SKMERCENARY)
 	maximum_possible_slots = 5

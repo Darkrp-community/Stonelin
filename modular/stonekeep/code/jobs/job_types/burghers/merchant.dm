@@ -9,16 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar",
-		"Rakshari"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 
 	tutorial = "You were born into wealth, \
 	learning from before you could talk about the basics of mathematics. \

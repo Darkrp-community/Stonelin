@@ -121,7 +121,7 @@
 		COOLDOWN_START(src, medicator_cough_cooldown, 15 MINUTES)
 
 /datum/species/medicator/check_roundstart_eligible()
-	return TRUE
+	return FALSE
 
 /datum/species/medicator/qualifies_for_rank(rank, list/features)
 	return TRUE

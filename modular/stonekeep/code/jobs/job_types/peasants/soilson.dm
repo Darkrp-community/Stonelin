@@ -6,14 +6,7 @@
 	spawn_positions = 4
 	display_order = SOILSON_ORDER
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar",
-		"Dark Elf",
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	tutorial = "It is a simple life you live, your basic understanding of life is something many would be envious of if they knew how perfect it was. You know a good day's work, the sweat on your brow is yours: Famines and plague may take its toll, but you know how to celebrate life well. Till the soil and produce fresh food for those around you, and maybe youll be more than an unsung hero someday."
 	cmode_music = 'sound/music/cmode/combat_guard.ogg'
 

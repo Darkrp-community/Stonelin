@@ -3,9 +3,8 @@
 	tutorial = "A mercenary from hailing from the wild frontier steppes. There are three things you value most; saigas, freedom, and coin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
-		"Half-Elf",
-		"Aasimar"
+		SPEC_ID_HUMEN,\
+		SPEC_ID_HALF_ELF,\
 	)
 	outfit = /datum/outfit/job/stonekeep/merc/steppesman
 	category_tags = list(CTAG_SKMERCENARY)

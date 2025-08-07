@@ -716,11 +716,11 @@
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /obj/item/reagent_containers/food/snacks/tallow/update_icon_state()
+	. = ..()
 	if(slices_num)
 		icon_state = "tallow"
 	else
 		icon_state = "tallowslice"
-	return ..()
 
 /obj/item/reagent_containers/food/snacks/tallow/on_consume(mob/living/eater)
 	..()

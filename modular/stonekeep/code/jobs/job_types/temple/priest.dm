@@ -1,11 +1,5 @@
 /datum/job/priest
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	tutorial = "You are a devoted follower of Astrata. The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom. It is up to you to shephard the flock into a Ten-fearing future."
 	display_order = PRIEST_ORDER
 	department_flag = CHURCHMEN

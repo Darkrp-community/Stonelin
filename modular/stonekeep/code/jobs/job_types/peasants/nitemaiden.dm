@@ -9,13 +9,7 @@ It´s pretty good. Also extra good mood boost for sex, but still a bit barebones
 	total_positions = 3
 	spawn_positions = 3
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Tiefling",
-		"Dark Elf"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 	allowed_sexes = list(FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	tutorial = "You are a woman of low status in your community, but while your work has little honor, it serves keep the population cleaner and the unmarried men less unruly. \

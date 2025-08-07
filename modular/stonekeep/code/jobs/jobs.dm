@@ -21,7 +21,7 @@ The word serf means something completely different than what the original maker 
 /datum/job/adventurer
 	flag = SK_ADVENTURER	// STONEKEEP EDIT
 	department_flag = OUTSIDERS
-	allowed_races = ALL_RACES_BY_NAME	// STONEKEEP EDIT
+	allowed_races = ALL_RACES_SK_LIST	// STONEKEEP EDIT
 	display_order = ADVENTURER_ORDER	// STONEKEEP EDIT
 	min_pq = 0	// STONEKEEP EDIT
 	selection_color = "#d7d8df"		// STONEKEEP EDIT
@@ -43,7 +43,7 @@ The word serf means something completely different than what the original maker 
 /datum/job/pilgrim
 	flag = SK_PILGRIM	// STONEKEEP EDIT
 	department_flag = OUTSIDERS
-	allowed_races = RACES_PLAYER_ALL	// STONEKEEP EDIT
+	allowed_races = ALL_RACES_SK_LIST	// STONEKEEP EDIT
 	tutorial = "Pilgrims begin far outside of the town and must reach it in order to ply their various trades. Sometimes, they build their own settlements and enjoy the terrible nature."
 	display_order = PILGRIM_ORDER	// STONEKEEP EDIT
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -68,16 +68,4 @@ The word serf means something completely different than what the original maker 
 	allowed_sexes = list(MALE, FEMALE)
 
 /datum/job/goblin
-	allowed_races = list(
-		"Humen",
-		"Rakshari",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar",
-		"Half-Orc",
-		"Kobold",
-		"Changeling","Skylancer","Ogrun","Undine",
-	)
+	allowed_races = ALL_RACES_SK_LIST

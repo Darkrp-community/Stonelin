@@ -9,11 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/guard)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE)
 	tutorial = "Appointed by your liege Lord to uphold their Law and be their champion in times of strife. You command the garrison, to help keep order and peace within the Lords demesne and defend it against the many dangers of the land."
 	outfit = /datum/outfit/job/stonekeep/sheriff
@@ -21,6 +17,7 @@
 
 	selection_color = "#a13322"
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
+	min_pq = 0
 
 /datum/job/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

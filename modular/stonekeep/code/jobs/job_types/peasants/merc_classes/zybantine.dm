@@ -2,15 +2,7 @@
 	name = "Zybantine Mamluk"
 	tutorial = "A former warrior slave, or mercenary, hailing from the western countries of Zybantu. Whatever led you to abandon servitude under the ziggurat and become a sword for hire, only you know. But now, on Enigma, as a complete foreign with military skills to match, what only matters is how to put them to work for coin."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_ZYBANTINE
 	outfit = /datum/outfit/job/stonekeep/merc/zybantine
 	category_tags = list(CTAG_SKMERCENARY)
 	maximum_possible_slots = 5

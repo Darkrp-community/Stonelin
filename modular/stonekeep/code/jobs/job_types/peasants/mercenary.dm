@@ -10,15 +10,7 @@
 	bypass_lastclass = TRUE
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_ALL
 	tutorial = "<br>Blood stained hands, do you even see it when they line your palms with golden treasures?  <br><br>\
 	You are a paid killer, redeemable only by fact that your loyalty can be bought,  \
 	gold is the great hypocritical lubricant in life, founding empires, driving brothers to kill one another.  <br><br>\

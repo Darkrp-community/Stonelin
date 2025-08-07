@@ -8,12 +8,7 @@
 	bypass_lastclass = TRUE
 	total_positions = 1
 	spawn_positions = 1
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_ROYALTY
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/stonekeep/hand
 

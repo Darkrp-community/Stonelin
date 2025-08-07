@@ -5,13 +5,7 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar",
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE, FEMALE)
 
 	tutorial = "There are ancient secrets within stone, something your creed has known since man built upon dirt. Youve pride in your work, youre the only reason this place doesnt fall apart. The King could replace you in a heartbeat, prove to them why youre the Master Mason."

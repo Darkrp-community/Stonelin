@@ -7,7 +7,7 @@
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen"
+		SPEC_ID_HUMEN
 	)
 	allowed_sexes = list(MALE)
 

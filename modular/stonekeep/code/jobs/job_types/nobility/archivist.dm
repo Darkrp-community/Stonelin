@@ -7,13 +7,7 @@
 	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_ROYALTY
 	spells = list(
 		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
 	)

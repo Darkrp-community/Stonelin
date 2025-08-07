@@ -6,14 +6,7 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = RACES_PLAYER_DELVESALLOWED
 	tutorial = "As a servant of Necra, you embody the sanctity of her domain, ensuring the dead rest peacefully within the earth. You are the bane of grave robbers and necromancers, and your holy magic brings undead back into Necra's embrace: the only rightful place for lost souls."
 
 	outfit = /datum/outfit/job/stonekeep/gravekeeper
