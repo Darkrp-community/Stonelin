@@ -168,6 +168,8 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Changeling Metabolism" = TRAIT_CHANGELING_METABOLISM, // STONEKEEP
 		"Desecrant" = TRAIT_DESECRANT, // STONEKEEP
 		"Debug guaranteed critchance" = TRAIT_ADMINTEST_CRIT, // STONEKEEP
+		"Violator of the Coven" = TRAIT_VIOLATOR,
+		"Endless Slumber" = TRAIT_TORPOR,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS

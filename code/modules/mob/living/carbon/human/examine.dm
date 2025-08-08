@@ -164,13 +164,17 @@
 			if((real_name in GLOB.outlawed_players) && HAS_TRAIT(user, TRAIT_KNOWBANDITS))
 				. += span_userdanger("BANDIT!")
 
+			if(mind && mind.special_role == "Vampire Lord")
+				var/datum/component/vampire_disguise/disguise_comp = GetComponent(/datum/component/vampire_disguise)
+				if(!disguise_comp.disguised)
+					. += span_userdanger("A MONSTER!")
+
 		if(!is_bandit && (real_name in GLOB.outlawed_players))
 			. += span_userdanger("OUTLAW!")
 
-		if(mind?.special_role == "Vampire Lord")
-			. += span_userdanger("A MONSTER!")
-			if(mind && mind.special_role == "Tiefling Herald")	// STONEKEEP EDIT
-				. += "<span class='userdanger'>Has a evil aura!</span>"
+		if(mind && mind.special_role == "Tiefling Herald")	// STONEKEEP EDIT
+			. += "<span class='userdanger'>Has a evil aura!</span>"
+
 		var/list/known_frumentarii = user.mind?.cached_frumentarii
 		if(name in known_frumentarii)
 			. += span_greentext("<b>[m1] an agent of the court!</b>")
@@ -583,7 +587,7 @@
 
 	// Characters with the hunted flaw will freak out if they can't see someone's face.
 	if(!appears_dead)
-		if(skipface && user.has_flaw(/datum/charflaw/hunted))
+		if(skipface && user.has_flaw(/datum/charflaw/hunted) && user != src)
 			user.add_stress(/datum/stressevent/hunted)
 
 	if(!obscure_name && (flavortext || (headshot_link && src.client?.patreon?.has_access(ACCESS_ASSISTANT_RANK)))) // only show flavor text if there is a flavor text and we show headshot
@@ -605,6 +609,13 @@
 
 	if(HAS_TRAIT(user, TRAIT_SEEPRICES) && sellprice)
 		. += "Is worth around [sellprice] mammons."
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		var/hierarchy_text = get_clan_hierarchy_examine(human_user)
+		if(hierarchy_text)
+			. += hierarchy_text
+
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!

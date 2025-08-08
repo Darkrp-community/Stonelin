@@ -1,0 +1,121 @@
+{
+    "2025-08-03": {
+        "PotatoTomahto": [
+            {
+                "rscadd": "scabbards"
+            },
+            {
+                "qol": "inventory click behavior closer to tg"
+            },
+            {
+                "balance": "fire spread tweaks"
+            }
+        ]
+    },
+    "2025-08-04": {
+        "Arkatos": [
+            {
+                "bugfix": "Fixed an issue where you could duplicate the monarch's crown when summoning it."
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "bugfix": "Learning a spell from the spell tree will override that spell if it is present to assure it stays."
+            },
+            {
+                "bugfix": "Rituos will have it spells removed correctly and will not remove arcyne eye or prestidigitation."
+            },
+            {
+                "bugfix": "The learn spell... spell should get properly removed when appropiate."
+            },
+            {
+                "bugfix": "Removing all spells no longer will give a message for every single spell."
+            }
+        ]
+    },
+    "2025-08-05": {
+        "SarmentiCampbell": [
+            {
+                "rscadd": "Zizo's Cleric/Paladin will be able to create cursed water rather than blessed water, healing the undead rather than living being."
+            },
+            {
+                "bugfix": "Transact won't use kobolds as currency."
+            },
+            {
+                "bugfix": "Bloodrage will now properly apply the status effect."
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "bugfix": "Unfix learn spell removal to fix spell tree visual bug."
+            },
+            {
+                "code_imp": "Issue reports are now uploaded to github via bot and do not require users to use github directly, it is still preferable to use github if possible."
+            }
+        ]
+    },
+    "2025-08-06": {
+        "PineappleMan929": [
+            {
+                "balance": "Butler/Housekeep and Servants have mathematics skills"
+            }
+        ],
+        "Arkatos": [
+            {
+                "bugfix": "Fixed an issue where actors menu was not opening"
+            },
+            {
+                "rscadd": "Added ascendant effects for gods' interventions, which makes them stronger and more impactful when the relevant god is ascendant."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "balance": "fire, silver, ocean's embrace, plant health n growth"
+            }
+        ],
+        "Eagletanker": [
+            {
+                "balance": "Monarch now has Medium Armor"
+            }
+        ]
+    },
+    "2025-08-07": {
+        "Arkatos": [
+            {
+                "bugfix": "Fixed an issue where the game failed to start properly."
+            }
+        ]
+    },
+    "2025-08-08": {
+        "ApolloVector": [
+            {
+                "balance": "Female Antharax now has expert whips"
+            }
+        ],
+        "Arkatos": [
+            {
+                "rscadd": "Added a new triumph buy option to buy an extra influence for any storyteller."
+            },
+            {
+                "rscadd": "Triumph buys that already took effect cannot be refunded."
+            },
+            {
+                "qol": "You can no longer cancel triumph buys of others."
+            },
+            {
+                "qol": "Triumph buys now refund 100% of their cost."
+            },
+            {
+                "qol": "Failed triumph buys will now automatically refund. Roll with no fear!"
+            },
+            {
+                "bugfix": "Fixed an issue where printing press could not find all books or printed random books."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "balance": "death to gaffer. long live merchant"
+            }
+        ]
+    }
+}

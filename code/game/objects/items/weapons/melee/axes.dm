@@ -89,7 +89,7 @@
 
 	wbalance = EASY_TO_DODGE
 	wlength = WLENGTH_SHORT
-	smeltresult = /obj/item/ash //is a wooden log and a stone hammered in the top
+	smeltresult = /obj/item/fertilizer/ash //is a wooden log and a stone hammered in the top
 	melting_material = null
 	sellprice = 10
 

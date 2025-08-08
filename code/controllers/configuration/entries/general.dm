@@ -208,7 +208,6 @@
 	config_entry_value = "https://wiki.stonekeep.xyz/index.php/Main_Page"
 
 /datum/config_entry/string/forumurl
-	config_entry_value = ""
 
 /datum/config_entry/string/rulesurl
 	config_entry_value = "https://wiki.stonekeep.xyz/index.php/Rules"
@@ -510,3 +509,11 @@
 /datum/config_entry/number/hard_deletes_overrun_limit
 	min_val = 0
 	default = 0
+
+//API key for Github Issues.
+/datum/config_entry/string/issue_key
+	protection = CONFIG_ENTRY_HIDDEN
+
+//Endpoint for Github Issues, the `owner/repo` part.
+/datum/config_entry/string/issue_slug
+	protection = CONFIG_ENTRY_LOCKED

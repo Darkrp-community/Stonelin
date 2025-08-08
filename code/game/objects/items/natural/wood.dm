@@ -246,7 +246,7 @@
 	experimental_inhand = FALSE
 	firefuel = 5 MINUTES
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	bundletype = /obj/item/natural/bundle/plank
 
 /obj/item/natural/bundle/plank
@@ -271,7 +271,7 @@
 	icon1step = 5
 	icon2 = "planks2"
 	icon2step = 10
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 /obj/item/grown/log/tree/essence
 	name = "essence of lumber"

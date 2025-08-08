@@ -215,7 +215,7 @@
 		spawned.set_apprentice_name(apprentice_name)
 
 	add_spells(spawned)
-	spawned.adjust_spellpoints(spell_points)
+	spawned.adjust_spell_points(spell_points)
 	spawned.generate_random_attunements(rand(attunements_min, attunements_max))
 
 	var/list/used_stats = ((spawned.gender == FEMALE) && jobstats_f) ? jobstats_f : jobstats
@@ -382,8 +382,9 @@
 				H.mind.special_items["Champion Circlet"] = /obj/item/clothing/head/crown/sparrowcrown
 			give_special_items(H)
 	for(var/list_key in SStriumphs.post_equip_calls)
-		var/datum/triumph_buy/thing = SStriumphs.post_equip_calls[list_key]
-		thing.on_activate(H)
+		var/datum/triumph_buy/bought_triumph_buy = SStriumphs.post_equip_calls[list_key]
+		bought_triumph_buy.on_activate(H)
+		bought_triumph_buy.on_post_equip(H)
 	return
 
 /// Returns an atom where the mob should spawn in.

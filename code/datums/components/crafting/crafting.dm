@@ -1,132 +1,14 @@
-/datum/component/personal_crafting
-	var/busy
-	var/viewing_category = 1 //typical powergamer starting on the Weapons tab
-	var/viewing_subcategory = 1
-	var/list/categories = list(
-				CAT_NONE = CAT_NONE,
-			)
+//Mind helpers
 
-	var/cur_category = CAT_NONE
-	var/cur_subcategory = CAT_NONE
-	var/datum/action/innate/crafting/button
-	var/display_craftable_only = TRUE
-	var/display_compact = TRUE
+/datum/mind/proc/teach_crafting_recipe(R)
+	if(!learned_recipes)
+		learned_recipes = list()
+	learned_recipes |= R
 
-/datum/component/personal_crafting/Initialize()
-	if(!ismob(parent))
-		return COMPONENT_INCOMPATIBLE
-	var/mob/living/L = parent
-	L.craftingthing = src
-
-/datum/component/personal_crafting/Destroy(force)
-	if(parent)
-		var/mob/living/L = parent
-		L.craftingthing = null
-	return ..()
-
-/*	This is what procs do:
-	get_environment - gets a list of things accessable for crafting by user
-	get_surroundings - takes a list of things and makes a list of key-types to values-amounts of said type in the list
-	check_contents - takes a recipe and a key-type list and checks if said recipe can be done with available stuff
-	check_tools - takes recipe, a key-type list, and a user and checks if there are enough tools to do the stuff, checks bugs one level deep
-	construct_item - takes a recipe and a user, call all the checking procs, calls do_after, checks all the things again, calls del_reqs, creates result, calls CheckParts of said result with argument being list returned by deel_reqs
-	del_reqs - takes recipe and a user, loops over the recipes reqs var and tries to find everything in the list make by get_environment and delete it/add to parts list, then returns the said list
-*/
-/datum/component/personal_crafting/proc/check_contents(datum/crafting_recipe/R, list/contents)
-	contents = contents["other"]
-	main_loop:
-		for(var/A in R.reqs)
-			var/needed_amount = R.reqs[A]
-			for(var/B in contents)
-				if(ispath(B, A))
-					if(!R.subtype_reqs && (B in subtypesof(A)))
-						continue
-					if (R.blacklist.Find(B))
-						continue
-					if(contents[B] >= R.reqs[A])
-						continue main_loop
-					else
-						needed_amount -= contents[B]
-						if(needed_amount <= 0)
-							continue main_loop
-						else
-							continue
-			return FALSE
-	for(var/A in R.chem_catalysts)
-		if(contents[A] < R.chem_catalysts[A])
-			return FALSE
-	return TRUE
-
-/datum/component/personal_crafting/proc/get_environment(mob/user)
-	. = list()
-	for(var/obj/item/I in user.held_items)
-		. += I
-	if(!isturf(user.loc))
+/datum/mind/proc/forget_crafting_recipe(R)
+	if(!learned_recipes)
 		return
-	var/list/L = block(get_step(user, SOUTHWEST), get_step(user, NORTHEAST))
-	for(var/turf/T as anything in L)
-		if(T.Adjacent(user))
-			for(var/atom/movable/AM as anything in T)
-				if(AM.flags_1 & HOLOGRAM_1)
-					continue
-				. += AM
-
-/obj/item/proc/can_craft_with()
-	return TRUE
-
-/datum/component/personal_crafting/proc/get_surroundings(mob/user)
-	. = list()
-	.["tool_behaviour"] = list()
-	.["other"] = list()
-	for(var/obj/item/I in get_environment(user))
-		if(!I.can_craft_with())
-			continue
-		if(I.flags_1 & HOLOGRAM_1)
-			continue
-		if(istype(I, /obj/item/natural/bundle))
-			var/obj/item/natural/bundle/B = I
-			.["other"][B.stacktype] += B.amount
-		else if(I.tool_behaviour)
-			.["tool_behaviour"] += I.tool_behaviour
-			.["other"][I.type] += 1
-		else
-			if(istype(I, /obj/item/reagent_containers))
-				var/obj/item/reagent_containers/RC = I
-				if(RC.is_drainable())
-					for(var/datum/reagent/A in RC.reagents.reagent_list)
-						.["other"][A.type] += A.volume
-			.["other"][I.type] += 1
-
-/datum/component/personal_crafting/proc/check_tools(mob/user, datum/crafting_recipe/R, list/contents)
-	if(!R.tools.len)
-		return TRUE
-	var/list/possible_tools = list()
-	var/list/present_qualities = list()
-	present_qualities |= contents["tool_behaviour"]
-	for(var/obj/item/I in user.contents)
-		if(istype(I, /obj/item/storage))
-			for(var/obj/item/SI in I.contents)
-				possible_tools += SI.type
-				if(SI.tool_behaviour)
-					present_qualities.Add(SI.tool_behaviour)
-
-		possible_tools += I.type
-
-		if(I.tool_behaviour)
-			present_qualities.Add(I.tool_behaviour)
-
-	possible_tools |= contents["other"]
-
-	main_loop:
-		for(var/A in R.tools)
-			if(A in present_qualities)
-				continue
-			else
-				for(var/I in possible_tools)
-					if(ispath(I, A))
-						continue main_loop
-			return FALSE
-	return TRUE
+	learned_recipes -= R
 
 /atom/proc/OnCrafted(dirin, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
@@ -145,6 +27,8 @@
 /obj/structure/OnCrafted(dirin, mob/user)
 	obj_flags |= CAN_BE_HIT
 	. = ..()
+
+// EVERYTHING BELOW ISNT IN VANDERLIN, WHATS THIS DOING HERE? ROGTODO
 
 /datum/crafting_recipe/proc/TurfCheck(mob/user, turf/T)
 	if(istype(T, /turf/open/water))
