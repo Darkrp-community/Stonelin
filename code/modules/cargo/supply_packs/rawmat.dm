@@ -121,13 +121,13 @@
 		/obj/item/alch/sinew,
 		/obj/item/alch/sinew
 	)
-/*/datum/supply_pack/rawmats/riddle_of_steel yeah thug hunter, this one is out
+/datum/supply_pack/rawmats/riddle_of_steel
 	name = "Riddle of Steel"
 	cost = 600
 	contains = list(
 		/obj/item/riddleofsteel
 	)
-*/
+
 
 /datum/supply_pack/rawmats/lumber
 	name = "Lumber"

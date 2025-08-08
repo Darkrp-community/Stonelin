@@ -250,54 +250,13 @@
 	output = /obj/item/clothing/cloak/apron/brown
 	craftdiff = 2
 
-/datum/repeatable_crafting_recipe/leather/cloakfur
-	name = "fur cloak"
-	attacked_atom = /obj/item/natural/hide
-	requirements = list(
-		/obj/item/natural/hide = 2,
-		/obj/item/natural/fur = 1,
-	)
-	output = /obj/item/clothing/cloak/raincloak/furcloak
-
-/datum/repeatable_crafting_recipe/leather/quiver
-	name = "quiver"
-	requirements = list(
-		/obj/item/natural/hide/cured = 2,
-		/obj/item/natural/fibers = 2,
-	)
-	output = /obj/item/ammo_holder/quiver
-
-/datum/repeatable_crafting_recipe/leather/dartpouch
-	name = "dart pouch"
+/datum/repeatable_crafting_recipe/leather/furlinedanklets
+	name = "fur lined anklets"
 	requirements = list(
 		/obj/item/natural/hide/cured = 1,
-		/obj/item/natural/fibers = 1,
+		/obj/item/natural/fur = 1,
 	)
-	output = /obj/item/ammo_holder/dartpouch
-
-/datum/repeatable_crafting_recipe/leather/tribal_cloak
-	name = "tribal pelt"
-	attacked_atom = /obj/item/natural/hide
-	requirements = list(
-		/obj/item/natural/hide = 1,
-	)
-	output = /obj/item/clothing/cloak/tribal
-
-/datum/repeatable_crafting_recipe/leather/tribal_shoes
-	name = "tribal shoes"
-	attacked_atom = /obj/item/natural/hide
-	requirements = list(
-		/obj/item/natural/hide = 1,
-	)
-	output = /obj/item/clothing/shoes/tribal
-
-//datum/repeatable_crafting_recipe/leather/furlinedanklets
-//	name = "fur lined anklets"
-//	requirements = list(
-//		/obj/item/natural/hide/cured = 1,
-//		/obj/item/natural/fur = 1,
-//	)
-//	output = /obj/item/clothing/shoes/boots/furlinedanklets
+	output = /obj/item/clothing/shoes/boots/furlinedanklets
 
 /datum/repeatable_crafting_recipe/leather/heavygloves
 	name = "heavy leather gloves"
@@ -503,62 +462,63 @@
 	requirements = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
-
+/*
 /// MASTERWORK
 
-//datum/repeatable_crafting_recipe/leather/standalone/boots/masterwork
-//	name = "masterwork leather boots"
-//	output = /obj/item/clothing/shoes/boots/leather/masterwork
-//	attacked_atom = /obj/item/clothing/shoes/boots/leather
-//	requirements = list(/obj/item/clothing/shoes/boots/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/boots/masterwork
+	name = "masterwork leather boots"
+	output = /obj/item/clothing/shoes/boots/leather/masterwork
+	attacked_atom = /obj/item/clothing/shoes/boots/leather
+	requirements = list(/obj/item/clothing/shoes/boots/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
-///datum/repeatable_crafting_recipe/leather/standalone/gloves/masterwork
-//	name = "masterwork leather gloves"
-//	output = /obj/item/clothing/gloves/leather/masterwork
-//	attacked_atom = /obj/item/clothing/gloves/leather
-//	requirements = list(/obj/item/clothing/gloves/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/gloves/masterwork
+	name = "masterwork leather gloves"
+	output = /obj/item/clothing/gloves/leather/masterwork
+	attacked_atom = /obj/item/clothing/gloves/leather
+	requirements = list(/obj/item/clothing/gloves/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
 /datum/repeatable_crafting_recipe/leather/standalone/bracers
 	abstract_type = /datum/repeatable_crafting_recipe/leather/standalone/bracers
 
-///datum/repeatable_crafting_recipe/leather/standalone/bracers/masterwork
-//	name = "masterwork leather bracers"
-//	output = /obj/item/clothing/wrists/bracers/leather/masterwork
-//	attacked_atom = /obj/item/clothing/wrists/bracers/leather
-//	requirements = list(/obj/item/clothing/wrists/bracers/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/bracers/masterwork
+	name = "masterwork leather bracers"
+	output = /obj/item/clothing/wrists/bracers/leather/masterwork
+	attacked_atom = /obj/item/clothing/wrists/bracers/leather
+	requirements = list(/obj/item/clothing/wrists/bracers/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
-///datum/repeatable_crafting_recipe/leather/standalone/coat/masterwork
-//	name = "masterwork leather coat"
-//	output = /obj/item/clothing/armor/leather/masterwork
-//	attacked_atom = /obj/item/clothing/armor/leather
-//	requirements = list(/obj/item/clothing/armor/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/coat/masterwork
+	name = "masterwork leather coat"
+	output = /obj/item/clothing/armor/leather/masterwork
+	attacked_atom = /obj/item/clothing/armor/leather
+	requirements = list(/obj/item/clothing/armor/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
-///datum/repeatable_crafting_recipe/leather/standalone/helmet/masterwork
-//	name = "masterwork leather helmet"
-//	output = /obj/item/clothing/head/helmet/leather/masterwork
-//	attacked_atom = /obj/item/clothing/head/helmet/leather
-//	requirements = list(/obj/item/clothing/head/helmet/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/helmet/masterwork
+	name = "masterwork leather helmet"
+	output = /obj/item/clothing/head/helmet/leather/masterwork
+	attacked_atom = /obj/item/clothing/head/helmet/leather
+	requirements = list(/obj/item/clothing/head/helmet/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
-///datum/repeatable_crafting_recipe/leather/standalone/chausses/masterwork
-//	name = "masterwork leather chausses"
-//	output = /obj/item/clothing/pants/trou/leather/masterwork
-//	attacked_atom = /obj/item/clothing/pants/trou/leather
-//	requirements = list(/obj/item/clothing/pants/trou/leather = 1,
-//				/obj/item/natural/cured/essence = 1,
-//				/obj/item/natural/fibers = 1)
-//	craftdiff = 5
+/datum/repeatable_crafting_recipe/leather/standalone/chausses/masterwork
+	name = "masterwork leather chausses"
+	output = /obj/item/clothing/pants/trou/leather/masterwork
+	attacked_atom = /obj/item/clothing/pants/trou/leather
+	requirements = list(/obj/item/clothing/pants/trou/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
+*/

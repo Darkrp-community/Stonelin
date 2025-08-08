@@ -48,7 +48,7 @@
 	H.change_stat("speed", -1)
 	H.change_stat("strength", 1)
 	if(H.mind)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/adventurer_license)
+		H.mind.teach_crafting_recipe(/datum/blueprint_recipe/adventurer_license)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BURDEN, type)
@@ -60,11 +60,9 @@
 	..()
 	to_chat(H, reminder)
 
-/datum/crafting_recipe/adventurer_license
+/datum/blueprint_recipe/adventurer_license
 	name = "Produce a license (Adventurer)"
-	time = 4 SECONDS
-	req_table = TRUE
-	tools = /obj/item/natural/feather
+	construct_tool = /obj/item/natural/feather
 	required_materials = list(/obj/item/paper = 1)
 	result_type = /obj/item/paper/certificate/adventurer
-	category = CAT_NONE
+

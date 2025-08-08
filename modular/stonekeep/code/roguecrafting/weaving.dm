@@ -4,9 +4,7 @@
 // They all require a loom
 
 /datum/blueprint_recipe/weaving
-	structurecraft = /obj/machinery/loom
 	skillcraft = /datum/skill/misc/sewing
-	subtype_reqs = TRUE // so you can use any subtype of fur
 	required_materials = list(/obj/item/natural/silk = 2)
 	craftdiff = 1
 
@@ -24,7 +22,7 @@
 	name = "mask (silk)"
 	result_type = list(/obj/item/clothing/face/shepherd)
 	required_materials = list(/obj/item/natural/silk = 1)
-	sellprice = 30
+
 
 /*========= SKILL LEVEL: 2 REQUIRED ==========*/
 
@@ -78,7 +76,6 @@
 	name = "cloak (silk half cloak)"
 	result_type = list(/obj/item/clothing/cloak/half)
 	craftdiff = 2
-	sellprice = 19
 
 /datum/blueprint_recipe/weaving/bathrobe
 	name = "bathrobe"
@@ -86,19 +83,16 @@
 	required_materials = list(/obj/item/natural/silk = 2,
 				/obj/item/natural/fur = 1)
 	craftdiff = 2
-	sellprice = 10
 
 /datum/blueprint_recipe/weaving/mundies
 	name = "masculine smallclothes"
 	result_type = list(/obj/item/undies)
 	craftdiff = 2
-	sellprice = 20
 
 /datum/blueprint_recipe/weaving/fundies
 	name = "feminine smallclothes"
 	result_type = list(/obj/item/undies/f)
 	craftdiff = 2
-	sellprice = 20
 
 /datum/blueprint_recipe/weaving/chaperonesilk
 	name = "hat (chaperone)"
@@ -136,38 +130,32 @@
 	name = "shirt (formal silks)"
 	result_type = list(/obj/item/clothing/shirt/undershirt/puritan)
 	craftdiff = 3
-	sellprice = 35
 
 /datum/blueprint_recipe/weaving/silkdress
 	name = "dress (chemise)"
 	result_type = list (/obj/item/clothing/shirt/dress/silkdress/random)
 	craftdiff = 3
-	sellprice = 30
 
 /datum/blueprint_recipe/weaving/barmaid
 	name = "dress (innkeep)"
 	result_type = list (/obj/item/clothing/shirt/dress)
 	craftdiff = 3
-	sellprice = 27
 
 /datum/blueprint_recipe/weaving/valorian
 	name = "dress (valorian)"
 	result_type = list(/obj/item/clothing/shirt/dress/valorian)
 	craftdiff = 3
-	sellprice = 20
 
 /datum/blueprint_recipe/weaving/silkpantaloons
 	name = "trousers (silk pantaloons)"
 	result_type = list (/obj/item/clothing/pants/pantaloons/random)
 	craftdiff = 3
-	sellprice = 20
 
 /datum/blueprint_recipe/weaving/cape_silk
 	name = "cloak (silk cape)"
 	result_type = list(/obj/item/clothing/cloak/cape/silk/random)
 	required_materials = list(/obj/item/natural/silk = 3)
 	craftdiff = 3
-	sellprice = 40
 
 
 /*========= SKILL LEVEL: 4 REQUIRED ==========*/
@@ -178,7 +166,6 @@
 	required_materials = list(/obj/item/natural/silk = 4,
 				/obj/item/natural/cloth = 1)
 	craftdiff = 4
-	sellprice = 60
 
 /datum/blueprint_recipe/weaving/armordress
 	name = "armor (padded dress)"
@@ -186,14 +173,12 @@
 	required_materials = list(/obj/item/natural/silk = 4,
 				/obj/item/natural/cloth = 1)
 	craftdiff = 4
-	sellprice = 80
 
 /datum/blueprint_recipe/weaving/eorastraps
 	name = "robe (eora straps)"
 	result_type = list(/obj/item/clothing/shirt/robe/eora)
 	required_materials = list(/obj/item/natural/silk = 3)
 	craftdiff = 4
-	sellprice = 50
 
 /*========= SKILL LEVEL: 5 REQUIRED ==========*/
 

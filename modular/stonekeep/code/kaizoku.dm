@@ -394,14 +394,14 @@ get_accent_list()
 					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
 					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
 					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
-					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/reinforcedarmor)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/reinforcedhelmet)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/mediumhelmet)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/mediumarmor)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/lighthelmet)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/lightarmor)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/obsidian_spear)
+//					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/obsidian_club)
 					H.verbs |= /mob/proc/croak
 
 /* Add to kaizok jobs
@@ -572,7 +572,7 @@ get_accent_list()
 	buckleverb = "lay"
 	debris = list(/obj/item/natural/wood/plank = 1)
 
-	var/base_icon_state = "boxbed"
+	base_icon_state = "boxbed"
 	var/opened = TRUE
 	var/locked = FALSE
 	var/welded = FALSE

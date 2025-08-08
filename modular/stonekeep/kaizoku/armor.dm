@@ -2241,7 +2241,7 @@
 /obj/item/clothing/head/helmet/visored/zunari/zamurai
 	detail_tag = "_det"
 	colorgrenz = TRUE
-	var/base_icon_state = "zunari_kabuto"
+	base_icon_state = "zunari_kabuto"
 
 /obj/item/clothing/head/helmet/visored/zunari/zamurai/update_icon()
 	cut_overlays()

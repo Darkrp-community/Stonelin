@@ -63,7 +63,7 @@
 	)
 	uncommon_pool = list(
 		// Better armor
-		/datum/supply_pack/armor/studleather_masterwork,
+		//datum/supply_pack/armor/studleather_masterwork,
 		/datum/supply_pack/armor/chainmail_hauberk,
 		// Apparel
 		/datum/supply_pack/apparel/raincloak_random,

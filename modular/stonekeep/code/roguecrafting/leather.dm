@@ -4,10 +4,9 @@
 // They all require a needle
 
 /datum/blueprint_recipe/leather
-	tools = list(/obj/item/needle)
+	construct_tool = list(/obj/item/needle)
 	skillcraft = /datum/skill/craft/tanning
 	craftdiff = 0
-	subtype_reqs = TRUE // so you can use any subtype of fur
 	required_materials = list(/obj/item/natural/hide/cured  = 1)
 
 
@@ -44,7 +43,7 @@
 	required_materials = list(/obj/item/natural/fur/volf = 1,
 	/obj/item/natural/head/volf = 1)
 	craftdiff = 2
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/cloak
 	name = "cloak (leather)"
@@ -111,43 +110,43 @@
 	result_type = /obj/item/clothing/armor/leather/basic
 	required_materials = list(/obj/item/natural/hide/cured = 2)
 	craftdiff = 1
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (unruly backcoat) {fl}"
 	result_type = list(/obj/item/clothing/cloak/eastcloak2)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (curator cloak) {fl}"
 	result_type = list(/obj/item/clothing/cloak/curator)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (susohiki attire) {fl}"
 	result_type = list(/obj/item/clothing/armor/leather/jacket/susohiki)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (dobuku robe) {fl}"
 	result_type = list(/obj/item/clothing/armor/leather/jacket/eastsuit3)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (michiyuki robe) {fl}"
 	result_type = list(/obj/item/clothing/armor/leather/jacket/eastsuit2)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/haori
 	name = "armor (haori robe) {fl}"
 	result_type = list(/obj/item/clothing/armor/leather/jacket/eastsuit1)
 	required_materials = list(/obj/item/natural/hide = 2)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/corset
 	name = "armor (corset)"
@@ -175,7 +174,7 @@
 /datum/blueprint_recipe/leather/armor/abyssal
 	name = "armor (leather lamellar)"
 	result_type = /obj/item/clothing/armor/leather/abyssal
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/dustwalker
 	name = "armor (cavalry)"
@@ -183,7 +182,7 @@
 	required_materials = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fur = 1)
 	craftdiff = 2
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/shozoku
 	name = "armor (stealthy)"
@@ -191,14 +190,14 @@
 	required_materials = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
 	craftdiff = 2
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/kaizoku	// ROGTODO should be silk according to desc
 	name = "armor (heartfeltean vest)"
 	result_type = /obj/item/clothing/armor/leather/vest/kaizoku
 	required_materials = list(/obj/item/natural/hide = 2)
 	craftdiff = 2
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/armor/hide
 	name = "armor (fur)"
@@ -235,27 +234,27 @@
 /datum/blueprint_recipe/leather/sandals
 	name = "shoes (sandals)"
 	result_type = /obj/item/clothing/shoes/sandals
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/shoes
 	name = "shoes (simple}"
 	result_type = /obj/item/clothing/shoes/simpleshoes
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/jikatabi
 	name = "shoes (jikatabi)"
 	result_type = list(/obj/item/clothing/shoes/boots/jikatabi)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/cloudhead
 	name = "shoes (cloudhead)"
 	result_type = /obj/item/clothing/shoes/shortboots/cloudhead
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/geta
 	name = "shoes (geta sandals)"
 	result_type = /obj/item/clothing/shoes/sandals/geta
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/furlinedboots
 	name = "shoes (fur lined boots)"
@@ -267,43 +266,43 @@
 /datum/blueprint_recipe/leather/boots
 	name = "shoes (leather boots) {ip}"
 	result_type = /obj/item/clothing/shoes/boots/leather
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 1
 
 /datum/blueprint_recipe/leather/boots_short
 	name = "shoes (short boots)"
 	result_type = /obj/item/clothing/shoes/shortboots
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 1
 
 /datum/blueprint_recipe/leather/gladiator
 	name = "shoes (gladiator sandals)"
 	result_type = /obj/item/clothing/shoes/gladiator
 	craftdiff = 2
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/boots_noble
 	name = "shoes (noble boots)"
 	result_type = /obj/item/clothing/shoes/nobleboot
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 2
 
 /datum/blueprint_recipe/leather/boots_dark
 	name = "shoes (riding boots)"
 	result_type = /obj/item/clothing/shoes/ridingboots
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 2
 
 /datum/blueprint_recipe/leather/boots_dark
 	name = "shoes (riding boots)"
 	result_type = /obj/item/clothing/shoes/ridingboots
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 2
 
 /datum/blueprint_recipe/leather/boots_dark
 	name = "shoes (dark boots)"
 	result_type = /obj/item/clothing/shoes/boots
-	req_imperial = TRUE
+//	req_imperial = TRUE
 	craftdiff = 3
 
 /datum/blueprint_recipe/leather/boots_heavy
@@ -327,7 +326,7 @@
 /datum/blueprint_recipe/leather/abyssalgloves
 	name = "gloves (abyssal)"
 	result_type = /obj/item/clothing/gloves/leather/abyssal
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/falcon
 	name = "gloves (falconry)"
@@ -335,7 +334,7 @@
 	required_materials = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fur = 1)
 	craftdiff = 1
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/heavygloves
 	name = "gloves (heavy leather)"
@@ -357,12 +356,12 @@
 	name = "pants (leather)"
 	result_type = list(/obj/item/clothing/pants/trou/leather)
 	required_materials = list(/obj/item/natural/hide/cured = 2)
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/furtobi
 	name = "pants (fur)"
 	result_type = list(/obj/item/clothing/pants/trou/leather/fur)
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/pants_heavy
 	name = "pants (heavy leather)"
@@ -381,12 +380,12 @@
 /datum/blueprint_recipe/leather/bracers
 	name = "bracers (leather)"
 	result_type = /obj/item/clothing/wrists/bracers/leather
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/khudagach
 	name = "bracers (archery)"
 	result_type = /obj/item/clothing/wrists/bracers/leather/khudagach
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/bracers_hardened
 	name = "bracers (heavy leather)"
@@ -418,28 +417,28 @@
 	result_type = /obj/item/clothing/head/helmet/leather/malgai
 	required_materials = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/kaizokuhat
 	name = "hat (heartfeltean)"
 	result_type = /obj/item/clothing/head/helmet/leather/malgai/kaizoku
 	required_materials = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/kaizokuhat/female
 	name = "hat (female heartfeltean)"
 	result_type = /obj/item/clothing/head/helmet/leather/malgai/kaizoku/female
 	required_materials = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/arisan
 	name = "helmet (cavalry headgear)"
 	required_materials = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
 	craftdiff = 2
-	req_islander = TRUE
+//	req_islander = TRUE
 
 /datum/blueprint_recipe/leather/coif
 	name = "coif (leather)"
@@ -451,7 +450,7 @@
 	result_type = /obj/item/clothing/head/helmet/leather
 	required_materials = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
-	req_imperial = TRUE
+//	req_imperial = TRUE
 
 /datum/blueprint_recipe/leather/antlerhood
 	name = "hood (antler)"

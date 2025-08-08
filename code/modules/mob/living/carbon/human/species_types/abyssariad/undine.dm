@@ -200,61 +200,62 @@
 	set name = "Croak"
 	set category = "Noises"
 	emote("croak")
-
+/*
 // Unique Undine Recipes. They are actually meant to be RACIAL. But I'm too bad at doing that.
 
-/datum/crafting_recipe/reinforcedarmor //3-tier,  medium armor. Requires troll horns.
+/datum/blueprint_recipe/reinforcedarmor //3-tier,  medium armor. Requires troll horns.
 	name = "Reinforced Tribal Armor"
 	time = 8 SECONDS
 	required_materials = list(/obj/item/alch/bone = 5, /obj/item/alch/sinew = 2, /obj/item/natural/hide = 3, /obj/item/alch/horn = 1)
 	result_type = /obj/item/clothing/armor/ceramic/reinforced
 	category = CAT_NONE
 
-/datum/crafting_recipe/reinforcedhelmet //3-tier, medium armor. Requires troll horns.
+/datum/blueprint_recipe/reinforcedhelmet //3-tier, medium armor. Requires troll horns.
 	name = "Reinforced Tribal Helmet"
 	time = 8 SECONDS
 	required_materials = list(/obj/item/alch/bone = 3, /obj/item/alch/sinew = 2, /obj/item/natural/hide = 2, /obj/item/alch/horn = 1) //Costs less since it is a helmet. Still requires troll horns.
 	result_type = /obj/item/clothing/head/helmet/ceramic/reinforced
 	category = CAT_NONE
 
-/datum/crafting_recipe/mediumhelmet //2-tiers, medium armor. The materials can be adquired naturally by butchering.
+/datum/blueprint_recipe/mediumhelmet //2-tiers, medium armor. The materials can be adquired naturally by butchering.
 	name = "Medium Tribal helmet"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/alch/bone = 2, /obj/item/alch/sinew = 1, /obj/item/natural/hide = 1, /obj/item/natural/cloth = 4)
 	result_type = /obj/item/clothing/head/helmet/ceramic/medium
 	category = CAT_NONE
 
-/datum/crafting_recipe/mediumarmor //2-tiers, medium armor. The materials can be adquired naturally by butchering.
+/datum/blueprint_recipe/mediumarmor //2-tiers, medium armor. The materials can be adquired naturally by butchering.
 	name = "Medium Tribal Armor"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/alch/bone = 3, /obj/item/alch/sinew = 2, /obj/item/natural/hide = 2, /obj/item/natural/cloth = 4)
 	result_type = /obj/item/clothing/armor/ceramic
 	category = CAT_NONE
 
-/datum/crafting_recipe/lighthelmet //1-tiers, light armor. The materials can be adquired naturally by butchering.
+/datum/blueprint_recipe/lighthelmet //1-tiers, light armor. The materials can be adquired naturally by butchering.
 	name = "Light Tribal Helmet"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/alch/bone = 1, /obj/item/natural/cloth = 4)
 	result_type = /obj/item/clothing/head/helmet/ceramic
 	category = CAT_NONE
 
-/datum/crafting_recipe/lightarmor //1-tier, light armor. The materials can be adquired naturally by butchering.
+/datum/blueprint_recipe/lightarmor //1-tier, light armor. The materials can be adquired naturally by butchering.
 	name = "Light Tribal Armor"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/alch/bone = 2, /obj/item/natural/cloth = 4)
 	result_type = /obj/item/clothing/armor/ceramic/light
 	category = CAT_NONE
 
-/datum/crafting_recipe/obsidian_club
+/datum/blueprint_recipe/obsidian_club
 	name = "Obsidian Club"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/stone =  4, /obj/item/fertilizer/ash = 1)
 	result_type = /obj/item/weapon/mace/ararebo/obsidian
 	category = CAT_NONE
 
-/datum/crafting_recipe/obsidian_spear
+/datum/blueprint_recipe/obsidian_spear
 	name = "Obsidian Spear"
 	time = 4 SECONDS
 	required_materials = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/cloth = 1, /obj/item/natural/stone =  2, /obj/item/fertilizer/ash = 1)
 	result_type = /obj/item/weapon/polearm/spear/stone/obsidian
 	category = CAT_NONE
+*/

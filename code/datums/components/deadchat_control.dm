@@ -79,7 +79,7 @@
 	for(var/vote in votes)
 		if(votes[vote] > prev_value)
 			prev_value = votes[vote]
-			result_type = vote
+			result = vote
 
 	if(result in inputs)
 		return result

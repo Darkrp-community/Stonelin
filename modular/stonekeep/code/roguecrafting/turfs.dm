@@ -59,23 +59,11 @@
 	required_materials = list(/obj/item/natural/stone = 1)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 0
-/datum/blueprint_recipe/turfs/stonefloor/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor))
-		return
-	return TRUE
+	floor_object = TRUE
 
 /datum/blueprint_recipe/turfs/stonefloor/cobblerock
 	name = "road (cobblerock)"
 	result_type = /turf/open/floor/cobblerock/alt
-/datum/blueprint_recipe/turfs/stonefloor/cobblerock/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor/dirt))
-		if(!istype(T, /turf/open/floor/grass))
-			return
-	return TRUE
 
 /datum/blueprint_recipe/turfs/stonefloor/block
 	name = "floor (stone block)"
@@ -92,45 +80,22 @@
 	name = "wall (rough stone)"
 	result_type = /turf/closed/wall/mineral/stone
 	required_materials = list(/obj/item/natural/stone = 2)
-/datum/blueprint_recipe/turfs/stonewall/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor))
-		return
-	return TRUE
+	floor_object = TRUE
 
 /datum/blueprint_recipe/turfs/stonewindow
 	name = "murder hole (stone)"
 	required_materials = list(/obj/item/natural/stoneblock = 2)
-/datum/blueprint_recipe/turfs/stonewindow/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor))
-		return
-	return TRUE
 
 /datum/blueprint_recipe/turfs/stonewall/brick
 	name = "wall (stone brick)"
 	result_type = /turf/closed/wall/mineral/stonebrick
 	required_materials = list(/obj/item/natural/stoneblock = 2)
 	craftdiff = 2
-/datum/blueprint_recipe/turfs/stonewall/brick/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor))
-		return
-	return TRUE
 
 /datum/blueprint_recipe/turfs/fancyswall
 	name = "wall (decorated stone)"
 	required_materials = list(/obj/item/natural/stoneblock = 2)
 	craftdiff = 3
-/datum/blueprint_recipe/turfs/fancyswall/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor))
-		return
-	return TRUE
 
 /datum/blueprint_recipe/turfs/craftstone
 	name = "wall (craftstone)"
@@ -156,14 +121,7 @@
 /datum/blueprint_recipe/turfs/twig
 	name = "floor (twig)"
 	required_materials = list(/obj/item/grown/log/tree/stick = 3)
-/datum/blueprint_recipe/turfs/twig/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/floor/dirt))
-		if(!istype(T, /turf/open/floor/grass))
-			return
-	return TRUE
-
+	floor_object = TRUE
 
 
 

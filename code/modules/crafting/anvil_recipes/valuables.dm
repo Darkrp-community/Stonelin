@@ -64,7 +64,7 @@
 	name = "Golden Rontz Ring"
 	recipe_name = "a Golden Rontz Ring"
 	req_bar = /obj/item/ingot/gold
-	additional_items = list(/obj/item/gem/red)
+	additional_items = list(/obj/item/gem)
 	created_item = /obj/item/clothing/ring/gold/rontz
 	craftdiff = 2
 
@@ -134,7 +134,7 @@
 	name = "Silver Rontz Ring"
 	recipe_name = "a Silver Rontz Ring"
 	req_bar = /obj/item/ingot/silver
-	additional_items = list(/obj/item/gem/red)
+	additional_items = list(/obj/item/gem)
 	created_item = /obj/item/clothing/ring/silver/rontz
 	craftdiff = 1
 

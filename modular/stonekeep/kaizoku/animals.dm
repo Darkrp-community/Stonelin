@@ -64,7 +64,7 @@
 			if(dead)
 				to_chat(user, "<span class='warning'>It's dead.</span>")
 				return
-			var/datum/antagonist/vampire/VD = user.mind.has_antag_datum(/datum/antagonist/vampire)
+/*			var/datum/antagonist/vampire/VD = user.mind.has_antag_datum(/datum/antagonist/vampire)
 			if(do_after(user, 30, target = src))
 				user.visible_message("<span class='warning'>[user] drinks from [src]!</span>",\
 				"<span class='warning'>I drink from [src]!</span>")
@@ -77,6 +77,8 @@
 				var/mob/living/carbon/V = user
 				V.add_stress(/datum/stressevent/drankrat)
 			return
+			got fucked by upstream
+*/
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/friedfrog

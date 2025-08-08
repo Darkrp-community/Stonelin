@@ -50,7 +50,7 @@
 /obj/item/dice/Initialize()
 	. = ..()
 	if(!result)
-		result_type = roll(sides)
+		result = roll(sides)
 	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/dice/suicide_act(mob/user)
@@ -210,13 +210,13 @@
 	. = ..()
 
 /obj/item/dice/proc/diceroll(mob/user)
-	result_type = roll(sides)
+	result = roll(sides)
 	if(rigged != DICE_NOT_RIGGED && result != rigged_value)
 		if(rigged == DICE_BASICALLY_RIGGED)
 			if(prob(80))
-				result_type = rigged_value
+				result = rigged_value
 		else if(rigged == DICE_TOTALLY_RIGGED)
-			result_type = rigged_value
+			result = rigged_value
 	if(!permanently_rigged)
 		rigged = DICE_NOT_RIGGED
 		rigged_value = null
@@ -231,9 +231,9 @@
 		comment = "Ouch, bad luck."
 	update_appearance(UPDATE_OVERLAYS)
 	if(initial(icon_state) == "d00")
-		result_type = (result - 1)*10
+		result = (result - 1)*10
 	if(special_faces.len == sides)
-		result_type = special_faces[result]
+		result = special_faces[result]
 	if(user != null) //Dice was rolled by someone
 		user.visible_message(span_notice("[user] has rolled [src]. It lands on [result]. [comment]"), \
 							span_notice("I roll [src]. It lands on [result]. [comment]"), \

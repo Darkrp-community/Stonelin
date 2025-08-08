@@ -1178,7 +1178,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					var/list/flawslist = GLOB.character_flaws.Copy()
 					var/result = browser_input_list(user, "SELECT YOUR HERO'S FLAW", "PERFECTION IS IMPOSSIBLE", flawslist, FALSE)
 					if(result)
-						result_type = flawslist[result]
+						result = flawslist[result]
 						var/datum/charflaw/C = new result()
 						charflaw = C
 						if(charflaw.desc)

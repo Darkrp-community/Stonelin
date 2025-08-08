@@ -4,103 +4,15 @@
 	verbage = "build"
 	verbage_tp = "builds"
 
-/datum/blueprint_recipe/structure/TurfCheck(mob/user, turf/T)
-	if(istype(T,/turf/open/transparent/openspace))
-		return FALSE
-	return ..()
-
-
-/*	.................   Unique Dendor recipes   ................... */
-/datum/crafting_recipe/dendor
-	always_availible = FALSE
-	craftdiff = 0
-	category = CAT_NONE
-	subtype_reqs = TRUE // so you can use any subtype of the items
-
-/datum/crafting_recipe/dendor/visage
-	name = "druids mask (unique)"
-	required_materials = list(/obj/item/grown/log/tree/small = 1)
-	result_type = /obj/item/clothing/face/druid
-
-/datum/crafting_recipe/dendor/shrine
-	name = "growing shrine to Dendor (unique)"
-	required_materials = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/thorn = 3,
-				/obj/item/natural/head/gote = 1)
-	result_type = /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
-	verbage = "consecrate"
-	verbage_tp = "consecrates"
-	craftsound = 'sound/foley/Building-01.ogg'
-
-/datum/crafting_recipe/dendor/shillelagh
-	name = "Shillelagh (unique)"
-	result_type = /obj/item/weapon/mace/goden/shillelagh
-	required_materials = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/fertilizer/ash = 1,
-				/obj/item/reagent_containers/food/snacks/fat =1 )
-	craftdiff = 1
-
-/datum/crafting_recipe/dendor/forestdelight
-	name = "forest guardian offering (unique)"
-	required_materials = list(/obj/item/bait/bloody = 1,
-				/obj/item/reagent_containers/food/snacks/produce/swampweed_dried = 1,
-				/obj/item/reagent_containers/food/snacks/raisins = 1 )
-	result_type = /obj/item/bait/forestdelight
-
-/datum/crafting_recipe/dendor/shrine/saiga
-	name = "stinging shrine to Dendor (unique)"
-	required_materials = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/thorn = 3,
-				/obj/item/natural/head/saiga = 1)
-	result_type = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
-
-/datum/crafting_recipe/dendor/shrine/volf
-	name = "devouring shrine to Dendor (unique)"
-	required_materials = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/thorn = 3,
-				/obj/item/natural/head/volf = 1)
-	result_type = /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
-
-/datum/crafting_recipe/dendor/sacrifice_growing
-	name = "green sacrifice to Dendor (unique)"
-	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
-	required_materials = list(/obj/item/natural/worms/grub_silk = 1,
-				/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,
-				/obj/item/reagent_containers/food/snacks/produce/poppy = 1)
-	result_type = /obj/item/blessing_of_dendor_growing
-	verbage = "make"
-	verbage_tp = "make"
-	craftsound = 'sound/foley/burning_sacrifice.ogg'
-
-/datum/crafting_recipe/dendor/sacrifice_stinging
-	name = "yellow sacrifice to Dendor (unique)"
-	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
-	required_materials = list(/obj/item/reagent_containers/food/snacks/fish/eel = 1,
-				/obj/item/reagent_containers/food/snacks/produce/westleach = 1,
-				/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry = 1)
-	result_type = /obj/item/blessing_of_dendor_stinging
-	verbage = "make"
-	verbage_tp = "make"
-	craftsound = 'sound/foley/burning_sacrifice.ogg'
-
-/datum/crafting_recipe/dendor/sacrifice_devouring
-	name = "red sacrifice to Dendor (unique)"
-	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
-	required_materials = list(/obj/item/bait/bloody = 2)
-	result_type = /obj/item/blessing_of_dendor_devouring
-	verbage = "make a"
-	verbage_tp = "make a"
-	craftsound = 'sound/foley/burning_sacrifice.ogg'
 
 
 /*========= CARPENTRY SKILL ==========*/
 /datum/blueprint_recipe/structure/carpentry
 	skillcraft = /datum/skill/craft/carpentry
-	time = 3 SECONDS
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 
 /datum/blueprint_recipe/structure/carpentry/stool
 	name = "chair (stool)"
@@ -144,13 +56,7 @@
 	required_materials = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpent"
 	verbage_tp = "carpents"
-	wallcraft = TRUE
 	craftdiff = 1
-/datum/blueprint_recipe/structure/carpentry/wallladder/TurfCheck(mob/user, turf/T)
-	var/turf/check_turf = get_step(T, user.dir)
-	if(!isclosedturf(check_turf))
-		return FALSE
-	return TRUE
 
 /datum/blueprint_recipe/structure/carpentry/sign
 	name = "custom sign"
@@ -172,7 +78,6 @@
 	name = "sturdy chest"
 	icon_state = "chest_neu"
 	base_icon_state = "chest_neu"
-	sellprice = 6
 
 /datum/blueprint_recipe/structure/carpentry/closet
 	name = "closet"
@@ -262,36 +167,14 @@
 	craftdiff = 2
 
 /obj/structure/fermentation_keg/crafted
-	sellprice = 6
 
 /datum/blueprint_recipe/structure/carpentry/stairsd
 	name = "stairs (down)"
 	result_type = /obj/structure/stairs/d
 	verbage = "construct"
 	verbage_tp = "constructs"
-	ontile = TRUE
 	required_materials = list(/obj/item/grown/log/tree/small=2,
 	/obj/item/natural/wood/plank = 2)
-
-/datum/blueprint_recipe/structure/carpentry/stairsd/TurfCheck(mob/user, turf/T)
-	var/turf/checking = get_step(T, user.dir)
-	if(!checking)
-		return FALSE
-	if(!istype(checking,/turf/open/transparent/openspace))
-		return FALSE
-	checking = get_step_multiz(checking, DOWN)
-	if(!checking)
-		return FALSE
-	if(!isopenturf(checking))
-		return FALSE
-	if(istype(checking,/turf/open/transparent/openspace))
-		return FALSE
-	for(var/obj/structure/S in checking)
-		if(istype(S, /obj/structure/stairs))
-			return FALSE
-		if(S.density)
-			return FALSE
-	return TRUE
 
 
 
@@ -300,7 +183,7 @@
 	result_type = /obj/structure/bed
 	required_materials = list(/obj/item/grown/log/tree/small=2,
 				/obj/item/natural/cloth = 1)
-	tools = list(/obj/item/needle)
+	construct_tool = list(/obj/item/needle)
 	craftdiff = 2
 
 /datum/blueprint_recipe/structure/carpentry/door
@@ -314,11 +197,6 @@
 	result_type = /obj/structure/fluff/railing/wood
 	required_materials = list(/obj/item/grown/log/tree/small=2)
 	craftdiff = 2
-/datum/blueprint_recipe/structure/carpentry/railing/TurfCheck(mob/user, turf/T)
-	for(var/obj/structure/S in T)
-		if(istype(S, /obj/structure/fluff/railing))
-			if(user.dir == S.dir)
-				return FALSE
 
 /datum/blueprint_recipe/structure/carpentry/easel
 	name = "painting (easel)"
@@ -349,7 +227,6 @@
 /*========= MASONRY SKILL ==========*/
 /datum/blueprint_recipe/structure/masonry
 	skillcraft = /datum/skill/craft/masonry
-	time = 3 SECONDS
 	verbage = "mason"
 	verbage_tp = "masons"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -377,7 +254,6 @@
 	result_type = /obj/machinery/light/fueled/oven
 	required_materials = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/stone = 3)
-	wallcraft = TRUE
 	craftdiff = 1
 
 /datum/blueprint_recipe/structure/masonry/window
@@ -429,35 +305,18 @@
 	verbage = "tie"
 	verbage_tp = "ties"
 	craftsound = 'sound/foley/noose_idle.ogg'
-	ontile = TRUE
-/datum/blueprint_recipe/structure/noose/TurfCheck(mob/user, turf/T)
-	var/turf/checking = get_step_multiz(T, UP)
-	if(!checking)
-		return FALSE
-	if(isopenturf(checking))
-		return FALSE
-	if(istype(checking,/turf/open/transparent/openspace))
-		return FALSE
-	for(var/obj/structure/noose/N in T)
-		return FALSE
-	return TRUE
 
 /datum/blueprint_recipe/structure/fence
 	name = "palisade (s x2)"
 	result_type = /obj/structure/fluff/railing/fence
 	required_materials = list(/obj/item/grown/log/tree/stake = 2)
-	ontile = TRUE
 	craftsound = 'sound/foley/Building-01.ogg'
-	buildsame = TRUE
+
 
 /datum/blueprint_recipe/structure/fence/alt
 	name = "palisade (l)"
 	required_materials = list(/obj/item/grown/log/tree/small = 1)
-/datum/blueprint_recipe/structure/fence/TurfCheck(mob/user, turf/T)
-	for(var/obj/structure/S in T)
-		if(istype(S, /obj/structure/fluff/railing))
-			if(user.dir == S.dir)
-				return FALSE
+
 
 /datum/blueprint_recipe/structure/bed // This one's not in carpentry because it's just a shitty pile of sticks and cloth.
 	name = "bed (terrible)"
@@ -576,12 +435,7 @@
 	required_materials = list(/obj/item/grown/log/tree/small = 1,
 					/obj/item/gear = 1)
 	craftdiff = 1
-/datum/blueprint_recipe/structure/engineer/trapdoor/TurfCheck(mob/user, turf/T)
-	if(istype(T,/turf/open/transparent/openspace))
-		return TRUE
-	if(istype(T,/turf/open/lava))
-		return TRUE // its just too hilarious not to allow this
-	return ..()
+	floor_object = TRUE
 
 /datum/blueprint_recipe/structure/engineer/pressure
 	name = "pressure plate"
@@ -612,11 +466,4 @@
 	required_materials = list(/obj/item/ingot/iron = 1,
 					/obj/item/gear = 1)
 	craftdiff = 1
-/datum/blueprint_recipe/structure/engineer/passage/TurfCheck(mob/user, turf/T)
-	if(istype(T,/turf/open/transparent/openspace))
-		return FALSE
-	if(istype(T,/turf/open/lava))
-		return FALSE
-	if(istype(T,/turf/open/water))
-		return FALSE
-	return ..()
+

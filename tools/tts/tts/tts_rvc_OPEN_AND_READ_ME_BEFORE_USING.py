@@ -98,7 +98,7 @@ def text_to_speech():
 	if use_voice_name_mapping:
 		voice = voice_name_mapping_reversed[voice]
 
-	result_type = None
+	result = None
 	with io.BytesIO() as data_bytes:
 		with torch.no_grad():
 			tts.tts_to_file(text=text, speaker=voice, file_path=data_bytes)
@@ -142,7 +142,7 @@ def text_to_speech():
 				data_bytes,
 				format="wav",
 			)
-			result_type = send_file(io.BytesIO(data_bytes.getvalue()), mimetype="audio/wav")
+			result = send_file(io.BytesIO(data_bytes.getvalue()), mimetype="audio/wav")
 	request_count += 1
 	return result
 
@@ -155,7 +155,7 @@ def text_to_speech_blips():
 	if use_voice_name_mapping:
 		voice = voice_name_mapping_reversed[voice]
 
-	result_type = None
+	result = None
 	with io.BytesIO() as data_bytes:
 		with torch.no_grad():
 			result_sound = AudioSegment.empty()
@@ -228,7 +228,7 @@ def text_to_speech_blips():
 					new_sound = new_sound.set_frame_rate(40000)
 				result_sound = new_sound if result_sound is None else result_sound + new_sound
 			result_sound.export(data_bytes, format='wav')
-		result_type = send_file(io.BytesIO(data_bytes.getvalue()), mimetype="audio/wav")
+		result = send_file(io.BytesIO(data_bytes.getvalue()), mimetype="audio/wav")
 	request_count += 1
 	return result
 

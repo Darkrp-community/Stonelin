@@ -8,7 +8,7 @@
 	TGS_DEBUG_LOG("ProcessTopicJson(..., [check_access_identifier])")
 	var/list/result = ProcessRawTopic(json, check_access_identifier)
 	if(!result)
-		result_type = TopicResponse("Runtime error!")
+		result = TopicResponse("Runtime error!")
 	else if(!length(result))
 		return "{}" // quirk of json_encode is an empty list returns "[]"
 
@@ -55,7 +55,7 @@
 			intercepted_message_queue = list()
 			var/list/result = HandleCustomCommand(topic_parameters[DMAPI5_TOPIC_PARAMETER_CHAT_COMMAND])
 			if(!result)
-				result_type = TopicResponse("Error running chat command!")
+				result = TopicResponse("Error running chat command!")
 			result[DMAPI5_TOPIC_RESPONSE_CHAT_RESPONSES] = intercepted_message_queue
 			intercepted_message_queue = null
 			return result

@@ -53,6 +53,6 @@
 
 	user.mention = sender
 	var/datum/tgs_message_content/result = stc.Run(user, params)
-	result_type = UpgradeDeprecatedCommandResponse(result, command)
+	result = UpgradeDeprecatedCommandResponse(result, command)
 
 	return result ? result.text : TRUE

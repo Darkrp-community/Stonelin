@@ -65,7 +65,7 @@
 	name = "cloth"
 	result_type = /obj/item/natural/cloth
 	required_materials = list(/obj/item/natural/fibers = 2)
-	tools = list(/obj/item/needle)
+	construct_tool = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	verbage = "sew"
 	verbage_tp = "sews"
@@ -74,7 +74,7 @@
 	name = "cloth (x3)"
 	result_type = list(/obj/item/natural/cloth, /obj/item/natural/cloth, /obj/item/natural/cloth)//fixes the output of the cloth
 	required_materials = list(/obj/item/natural/fibers = 6)
-	tools = list(/obj/item/needle)
+	construct_tool = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	verbage = "sew"
 	verbage_tp = "sews"
@@ -89,7 +89,6 @@
 	result_type = /obj/item/clothing/face/cigarette/rollie/nicotine
 	required_materials = list(/obj/item/reagent_containers/food/snacks/produce/dry_westleach = 1,
 				/obj/item/paper = 1)
-	time = 10 SECONDS
 	verbage = "roll"
 	verbage_tp = "rolls"
 
@@ -98,7 +97,6 @@
 	result_type = /obj/item/clothing/face/cigarette/rollie/cannabis
 	required_materials = list(/obj/item/reagent_containers/food/snacks/produce/swampweed_dried = 1,
 				/obj/item/paper = 1)
-	time = 10 SECONDS
 	verbage = "roll"
 	verbage_tp = "rolls"
 
@@ -123,7 +121,7 @@
 	result_type = /obj/item/fishingrod
 	required_materials = list(/obj/item/grown/log/tree/small = 1,
 		/obj/item/natural/fibers = 2)
-	tools = list(/obj/item/weapon/knife)
+	construct_tool = list(/obj/item/weapon/knife)
 	craftdiff = 1
 
 /obj/item/fishingrod/crafted
@@ -133,28 +131,24 @@
 	result_type = /obj/item/bait
 	required_materials = list(/obj/item/storage/sack = 1,
 				/obj/item/reagent_containers/food/snacks/produce/grain/wheat = 2)
-	subtype_reqs = TRUE
 
 /datum/blueprint_recipe/sbaita
 	name = "bait (sweetbait apple)"
 	result_type = /obj/item/bait/sweet
 	required_materials = list(/obj/item/storage/sack = 1,
 				/obj/item/reagent_containers/food/snacks/produce/fruit/apple = 2)
-	subtype_reqs = TRUE
 
 /datum/blueprint_recipe/sbait
 	name = "bait (sweetbait berry)"
 	result_type = /obj/item/bait/sweet
 	required_materials = list(/obj/item/storage/sack = 1,
 				/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry = 2)
-	subtype_reqs = TRUE
 
 /datum/blueprint_recipe/bloodbait
 	name = "bait (bloodbait)"
 	result_type = /obj/item/bait/bloody
 	required_materials = list(/obj/item/storage/sack = 1,
 				/obj/item/reagent_containers/food/snacks/meat = 1)
-	subtype_reqs = TRUE
 
 /datum/blueprint_recipe/earnecklace
 	name = "ear necklace"
@@ -174,7 +168,6 @@
 	result_type = list(/obj/item/fishing/bait/meat,
 				/obj/item/fishing/bait/meat)
 	required_materials = list(/obj/item/reagent_containers/food/snacks/meat/mince = 1)
-	subtype_reqs = TRUE
 	verbage = "starts rolling some bait"
 	verbage_tp = "starts rolling some bait"
 
@@ -256,30 +249,28 @@
 	name = "alchemny ( stone pestle )"
 	result_type = /obj/item/pestle
 	required_materials = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/weapon/chisel)
+	construct_tool = list(/obj/item/weapon/chisel)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
 
 /datum/blueprint_recipe/pestle/bone
 	name = "alchemy ( bone pestle )"
 	required_materials = list(/obj/item/alch/bone = 1)
-	tools = /obj/item/weapon/knife
-	subtype_reqs = TRUE
+	construct_tool = /obj/item/weapon/knife
 	skillcraft = /datum/skill/craft/crafting
 
 /datum/blueprint_recipe/alchmortar
 	name = "alchemy ( stone mortar )"
 	result_type = /obj/item/reagent_containers/glass/mortar
 	required_materials = list(/obj/item/natural/stone = 3)
-	tools = list(/obj/item/weapon/chisel)
+	construct_tool = list(/obj/item/weapon/chisel)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
 
 /datum/blueprint_recipe/alchmortar/bone
 	name = "alchemy ( bone mortar )"
 	required_materials = list(/obj/item/alch/bone = 3)
-	tools = /obj/item/weapon/knife
-	subtype_reqs = TRUE
+	construct_tool = /obj/item/weapon/knife
 	skillcraft = /datum/skill/craft/crafting
 
 
@@ -408,15 +399,7 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
-/datum/blueprint_recipe/bomb
-	name = "bomb"
-	result_type = /obj/item/bomb/homemade
-	required_materials = list(/obj/item/natural/cloth = 1,
-				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
-				/obj/item/reagent_containers/glass/bottle = 1)
-	craftdiff = 2
-	skillcraft = /datum/skill/craft/bombs
-	subtype_reqs = TRUE
+
 
 /*========= LITERATURE CRAFTING ==========*/
 /datum/blueprint_recipe/paperscroll
@@ -428,15 +411,14 @@
 				/obj/item/paper/scroll)
 	required_materials = list(/obj/item/grown/log/tree/small = 1,
 	/datum/reagent/water = 50)
-	tools = list(/obj/item/weapon/knife/hunting)
-	structurecraft = /obj/machinery/tanningrack
+	construct_tool = list(/obj/item/weapon/knife/hunting)
 	craftdiff = 1
 
 /datum/blueprint_recipe/readingscroll
 	name = "novice's guide to literature"
 	result_type = list(/obj/item/literary)
 	required_materials = list(/obj/item/paper/scroll = 3)
-	tools = list(/obj/item/natural/feather)
+	construct_tool = list(/obj/item/natural/feather)
 	skillcraft = /datum/skill/misc/reading
 	craftdiff = 2
 	verbage = "write"
@@ -471,9 +453,8 @@
 	name = "confession"
 	result_type = /obj/item/paper/confession
 	required_materials = list(/obj/item/paper = 1)
-	tools = list(/obj/item/natural/feather)
+	construct_tool = list(/obj/item/natural/feather)
 	skillcraft = /datum/skill/misc/reading
-	always_availible = FALSE
 	craftsound = null
 	craftdiff = 0
 
@@ -529,7 +510,7 @@
 	name = "quarterstaff (iron)"
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/weapon/polearm/woodstaff/quarterstaff = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	result_type = list(/obj/item/weapon/polearm/woodstaff/quarterstaff/iron)
 	craftdiff = 2
 
@@ -539,7 +520,7 @@
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/rope = 1,
 			/obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	result_type = list(/obj/item/weapon/thresher)
 	craftdiff = 1
 
@@ -548,7 +529,7 @@
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/rope/chain = 1,
 			/obj/item/weapon/thresher = 1)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	result_type = list(/obj/item/weapon/thresher/military)
 	craftdiff = 2
 
@@ -556,7 +537,7 @@
 	name = "studded club"
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	result_type = list(/obj/item/weapon/mace/cudgel/carpenter, /obj/item/weapon/mace/cudgel/carpenter)
 	craftdiff = 2
 
@@ -588,7 +569,6 @@
 	result_type = /obj/item/clothing/face/skullmask
 	required_materials = list(/obj/item/alch/bone = 3,
 				/obj/item/natural/fibers = 1)
-	sellprice = 10
 	verbage = "crafted"
 	craftdiff = 0
 
@@ -647,7 +627,7 @@
 // ---------	LUMBERJACKING RECIPE		-------------
 /datum/blueprint_recipe/lumberjacking
 	skillcraft = /datum/skill/labor/lumberjacking
-	tools = list(/obj/item/weapon/knife/hunting = 1)
+	construct_tool = list(/obj/item/weapon/knife/hunting = 1)
 /*
 /datum/blueprint_recipe/lumberjacking/cart_upgrade
 	name = "upgrade cog"

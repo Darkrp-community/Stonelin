@@ -41,7 +41,7 @@
 
 		if(H.age == AGE_OLD)
 			H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/license_nitemaiden)
+		H.mind.teach_crafting_recipe(/datum/blueprint_recipe/license_nitemaiden)
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 4)
 	H.change_stat("constitution", -1)
@@ -53,9 +53,8 @@
 
 
 /*	.................   Unique Feldsher recipes   ................... */
-/datum/crafting_recipe/license_nitemaiden
+/datum/blueprint_recipe/license_nitemaiden
 	name = "Produce a icense (Nitemaiden)"
-	time = 4 SECONDS
 	required_materials = list(/obj/item/paper = 1,
 		/obj/item/natural/feather = 1)
 	result_type = /obj/item/paper/certificate/health

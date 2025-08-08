@@ -10,11 +10,6 @@
 | Crafting Recipes |
 \-----------------*/
 
-/datum/crafting_recipe
-	var/req_imperial = FALSE
-	var/req_islander = FALSE
-
-
 /datum/blueprint_recipe/structure/stonetable
 	name = "stone table (long mid)"
 	result_type = /obj/structure/table/stone
@@ -22,7 +17,6 @@
 	verbage = "build"
 	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
-	time = 4 SECONDS
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 3
 /datum/blueprint_recipe/structure/stonetable/end
@@ -87,14 +81,14 @@
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/weapon/flail/towner = 1,
 			/obj/item/ingot/iron = 10)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	craftdiff = 2
 
 /datum/blueprint_recipe/militia_flail
 	name = "militia flail"
 	skillcraft = /datum/skill/craft/carpentry
 	required_materials = list(/obj/item/weapon/flail/towner = 1, /obj/item/ingot/iron = 10)
-	tools = list(/obj/item/weapon/hammer)
+	construct_tool = list(/obj/item/weapon/hammer)
 	craftdiff = 3
 
 

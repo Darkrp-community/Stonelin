@@ -264,8 +264,8 @@
 				if(recipe.craftdiff > 0)
 					amt2raise += (recipe.craftdiff * 10)
 				if(amt2raise > 0)
-					user.mind.add_sleep_experience(recipe.skillcraft, amt2raise, FALSE)
-
+				//	user.mind.add_sleep_experience(recipe.skillcraft, amt2raise, FALSE)
+					user.adjust_experience(recipe.skillcraft, amt2raise, FALSE)
 		qdel(src)
 		return TRUE
 

@@ -67,7 +67,7 @@
 	H.change_stat("constitution", -1)
 	H.change_stat("endurance", -1)
 	H.change_stat("speed", -2)
-	H.adjust_spellpoints(5)
+	H.adjust_spell_points(5)
 	H.add_spell(/datum/action/cooldown/spell/projectile/lightning)
 	H.add_spell(/datum/action/cooldown/spell/projectile/fetch)
 	H.add_spell(/datum/action/cooldown/spell/undirected/forcewall/breakable)

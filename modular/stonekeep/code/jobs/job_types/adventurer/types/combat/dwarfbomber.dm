@@ -21,7 +21,7 @@
 	backr = /obj/item/storage/backpack/backpack
 	beltl = /obj/item/weapon/axe/iron
 	beltr = /obj/item/weapon/hammer/iron
-	backpack_contents = list(/obj/item/bomb = 2, /obj/item/flint = 1, /obj/item/weapon/chisel = 1)
+	backpack_contents = list(/obj/item/explosive/bottle/homemade = 2, /obj/item/flint = 1, /obj/item/weapon/chisel = 1)
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)

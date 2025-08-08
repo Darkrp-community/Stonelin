@@ -3,7 +3,6 @@
 
 /datum/blueprint_recipe/carpentry
 	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE
 	craftdiff = 0
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
@@ -39,7 +38,6 @@
 	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
-	sellprice = 3
 
 /datum/blueprint_recipe/carpentry/woodplatter
 	name = "platters (x2 wooden)"
@@ -62,8 +60,7 @@
 	result_type = list(/obj/item/weapon/polearm/woodstaff/quarterstaff,
 	/obj/item/weapon/polearm/woodstaff/quarterstaff)
 	required_materials = list(/obj/item/grown/log/tree = 1)
-	req_table = TRUE
-	tools = list(/obj/item/weapon/knife)
+	construct_tool = list(/obj/item/weapon/knife)
 	craftdiff = 2
 
 /datum/blueprint_recipe/woodspade
@@ -73,8 +70,6 @@
 			/obj/item/grown/log/tree/stick = 1)
 	craftdiff = 1
 
-/obj/item/weapon/shovel/small/crafted
-	sellprice = 5
 
 
 /*========= SKILL LEVEL: 2 REQUIRED ==========*/
@@ -112,15 +107,12 @@
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
 
-/obj/item/weapon/shield/wood/crafted
-	sellprice = 6
 
 /datum/blueprint_recipe/structure/plough
 	name = "plough"
 	result_type = /obj/structure/plough
 	required_materials = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1)
 	skillcraft = /datum/skill/craft/carpentry
-	time = 4 SECONDS
 	craftdiff = 2
 
 /datum/blueprint_recipe/carpentry/heater

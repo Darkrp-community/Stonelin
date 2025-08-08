@@ -51,19 +51,19 @@
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shillelagh)
+		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/shillelagh)
 
 		if(H.age == AGE_OLD)
 			H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 
 		// the unique Dendor crafting recipes. Dendor shrines (pantheon cross) and alt cosmetic helmet
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/visage)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine/saiga)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine/volf)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_growing)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_stinging)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_devouring)
+		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/visage)
+		H.mind.teach_crafting_recipe(/datum/blueprint_recipe/dendor/shrine)
+		H.mind.teach_crafting_recipe(/datum/blueprint_recipe/dendor/shrine/saiga)
+		H.mind.teach_crafting_recipe(/datum/blueprint_recipe/dendor/shrine/volf)
+		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/sacrifice_growing)
+		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/sacrifice_stinging)
+		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/sacrifice_devouring)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

@@ -133,7 +133,7 @@
 		if(TGS4_TOPIC_CHAT_COMMAND)
 			var/result = HandleCustomCommand(params[TGS4_PARAMETER_DATA])
 			if(result == null)
-				result_type = "Error running chat command!"
+				result = "Error running chat command!"
 			return result
 		if(TGS4_TOPIC_EVENT)
 			intercepted_message_queue = list()

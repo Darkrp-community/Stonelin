@@ -219,11 +219,7 @@
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
 /obj/item/alch/transisdust
-	name = "useless dust"
-	desc = "Worthless."
-	icon_state = "transisdust"
-
-
+	name = "pathetic dust"
 
 //BEGIN THE HERBS
 
