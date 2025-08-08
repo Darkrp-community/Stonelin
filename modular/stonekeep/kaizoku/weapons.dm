@@ -420,7 +420,7 @@
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
 	icon_state = "throwing_ono"
 	max_blade_int = 500
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	wlength = WLENGTH_SHORT
@@ -459,7 +459,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	swingsound = BLUNTWOOSH_HUGE
 	max_integrity = 250
 	minstr = 10
@@ -574,7 +574,7 @@
 	max_integrity = 150
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	minstr = 0
 	throwforce = 25
 
@@ -837,7 +837,7 @@
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	max_blade_int = 100
 
 /obj/item/weapon/polearm/woodstaff/quarterstaff/bostaff

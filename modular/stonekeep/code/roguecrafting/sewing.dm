@@ -3,472 +3,472 @@
 // The only ingridients these recipes can require is CLOTH and FIBRE
 // They all require a needle
 
-/datum/crafting_recipe/roguetown/sewing
+/datum/blueprint_recipe/sewing
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	subtype_reqs = TRUE // so you can use any subtype of fur
 	craftdiff = 0
-	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
+	required_materials = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
 
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
 
-/datum/crafting_recipe/roguetown/sewing/clothsack
+/datum/blueprint_recipe/sewing/clothsack
 	name = "sack"
-	result = list(/obj/item/storage/sack)
-	reqs = list(/obj/item/natural/fibers = 1,
+	result_type = list(/obj/item/storage/sack)
+	required_materials = list(/obj/item/natural/fibers = 1,
 				/obj/item/natural/cloth = 1)
 
 /obj/item/storage/sack/crafted
 	sellprice = 4
 
-/datum/crafting_recipe/roguetown/sewing/sacksatchel//a bag with a piece of cloth
+/datum/blueprint_recipe/sewing/sacksatchel//a bag with a piece of cloth
 	name = "cloth knapsack"
-	result = list(/obj/item/storage/backpack/satchel/cloth)
-	reqs = list(/obj/item/natural/fibers = 1,
+	result_type = list(/obj/item/storage/backpack/satchel/cloth)
+	required_materials = list(/obj/item/natural/fibers = 1,
 				/obj/item/natural/cloth = 2)
 
-/datum/crafting_recipe/roguetown/sewing/burial_shroud
+/datum/blueprint_recipe/sewing/burial_shroud
 	name = "winding sheet"
-	result = list(/obj/item/burial_shroud)
+	result_type = list(/obj/item/burial_shroud)
 
-/datum/crafting_recipe/roguetown/sewing/loincloth
+/datum/blueprint_recipe/sewing/loincloth
 	name = "loincloth"
-	result = list(/obj/item/clothing/pants/loincloth)
-	reqs = list(/obj/item/natural/cloth = 1)
+	result_type = list(/obj/item/clothing/pants/loincloth)
+	required_materials = list(/obj/item/natural/cloth = 1)
 
-/datum/crafting_recipe/roguetown/sewing/clothgloves
+/datum/blueprint_recipe/sewing/clothgloves
 	name = "gloves (fingerless)"
-	result = list(/obj/item/clothing/gloves/fingerless)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/gloves/fingerless)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/cmask
+/datum/blueprint_recipe/sewing/cmask
 	name = "mask"
-	result = list(/obj/item/clothing/face/shepherd/clothmask)
-	reqs = list(/obj/item/natural/cloth = 1)
+	result_type = list(/obj/item/clothing/face/shepherd/clothmask)
+	required_materials = list(/obj/item/natural/cloth = 1)
 
-/datum/crafting_recipe/roguetown/sewing/ragmask
+/datum/blueprint_recipe/sewing/ragmask
 	name = "mask (rag)"
-	result = list(/obj/item/clothing/face/shepherd/rag)
-	reqs = list(/obj/item/natural/cloth = 1)
+	result_type = list(/obj/item/clothing/face/shepherd/rag)
+	required_materials = list(/obj/item/natural/cloth = 1)
 
-/*/datum/crafting_recipe/roguetown/sewing/linedanklet
+/*/datum/blueprint_recipe/sewing/linedanklet
 	name = "cloth anklet"
-	result = list(/obj/item/clothing/shoes/boots/clothlinedanklets)
+	result_type = list(/obj/item/clothing/shoes/boots/clothlinedanklets)
 */
 
-/datum/crafting_recipe/roguetown/sewing/Reyepatch
+/datum/blueprint_recipe/sewing/Reyepatch
 	name = "right eye patch"
-	result = list(/obj/item/clothing/face/eyepatch)
+	result_type = list(/obj/item/clothing/face/eyepatch)
 
-/datum/crafting_recipe/roguetown/sewing/Leyepatch
+/datum/blueprint_recipe/sewing/Leyepatch
 	name = "left eye patch"
-	result = list(/obj/item/clothing/face/eyepatch/left)
+	result_type = list(/obj/item/clothing/face/eyepatch/left)
 
-/datum/crafting_recipe/roguetown/sewing/bedsheetpelt
+/datum/blueprint_recipe/sewing/bedsheetpelt
 	name = "bedsheet (fur)"
-	result = list(/obj/item/bedsheet/pelt)
-	reqs = list(/obj/item/natural/hide = 2,
+	result_type = list(/obj/item/bedsheet/pelt)
+	required_materials = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/sewing/sleepingbag
+/datum/blueprint_recipe/sewing/sleepingbag
 	name = "sleepcloth"
-	result = list(/obj/item/sleepingbag)
-	reqs =  list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/sleepingbag)
+	required_materials =  list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/sewing/bedsheet
+/datum/blueprint_recipe/sewing/bedsheet
 	name = "bedsheet"
-	result = list(/obj/item/bedsheet/cloth)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/bedsheet/cloth)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
 /*=========		CLOAK	==========*/
-/datum/crafting_recipe/roguetown/sewing/jupon
+/datum/blueprint_recipe/sewing/jupon
 	name = "cloak (jupon)"
-	result = list(/obj/item/clothing/cloak/stabard/surcoat)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/cloak/stabard/surcoat)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/apron
+/datum/blueprint_recipe/sewing/apron
 	name = "cloak (apron)"
-	result = list(/obj/item/clothing/cloak/apron)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/cloak/apron)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tabard
+/datum/blueprint_recipe/sewing/tabard
 	name = "cloak (tabard)"
-	result = list(/obj/item/clothing/cloak/tabard)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/cloak/tabard)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tabard/crusader
+/datum/blueprint_recipe/sewing/tabard/crusader
 	name = "cloak (crusader tabard)"
-	result = list(/obj/item/clothing/cloak/tabard/crusader)
+	result_type = list(/obj/item/clothing/cloak/tabard/crusader)
 
-/datum/crafting_recipe/roguetown/sewing/stabard
+/datum/blueprint_recipe/sewing/stabard
 	name = "cloak (surcoat)"
-	result = list(/obj/item/clothing/cloak/stabard)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/cloak/stabard)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/cape
+/datum/blueprint_recipe/sewing/cape
 	name = "cloak (cape)"
-	result = list(/obj/item/clothing/cloak/cape)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/cloak/cape)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/cape
+/datum/blueprint_recipe/sewing/cape
 	name = "cloak (desert cape)"
-	result = list(/obj/item/clothing/cloak/cape/crusader)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/cloak/cape/crusader)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 3
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar
+/datum/blueprint_recipe/sewing/tabard_templar
 	name = "surcoat (templar)"
-	result = list(/obj/item/clothing/cloak/stabard/templar)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/cloak/stabard/templar)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/astrata
+/datum/blueprint_recipe/sewing/tabard_templar/astrata
 	name = "surcoat (solar)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/astrata)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/astrata)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/necra
+/datum/blueprint_recipe/sewing/tabard_templar/necra
 	name = "surcoat (necra)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/necra)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/necra)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/dendor
+/datum/blueprint_recipe/sewing/tabard_templar/dendor
 	name = "surcoat (dendor)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/dendor)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/dendor)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/noc
+/datum/blueprint_recipe/sewing/tabard_templar/noc
 	name = "surcoat (lunar)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/noc)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/noc)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/abyssor
+/datum/blueprint_recipe/sewing/tabard_templar/abyssor
 	name = "surcoat (abyssal)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/abyssor)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/abyssor)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/malum
+/datum/blueprint_recipe/sewing/tabard_templar/malum
 	name = "surcoat (malumite)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/malum)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/malum)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/eora
+/datum/blueprint_recipe/sewing/tabard_templar/eora
 	name = "surcoat (eoran)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/eora)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/eora)
 
-/datum/crafting_recipe/roguetown/sewing/tabard_templar/pestra
+/datum/blueprint_recipe/sewing/tabard_templar/pestra
 	name = "surcoat (pestra)"
-	result = list(/obj/item/clothing/cloak/stabard/templar/pestra)
+	result_type = list(/obj/item/clothing/cloak/stabard/templar/pestra)
 
 
 /*=========		ARMOR	==========*/
-/datum/crafting_recipe/roguetown/sewing/gambeson
+/datum/blueprint_recipe/sewing/gambeson
 	name = "armor (gambeson)"
-	result = /obj/item/clothing/armor/gambeson
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = /obj/item/clothing/armor/gambeson
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/lgambeson
+/datum/blueprint_recipe/sewing/lgambeson
 	name = "armor (light gambeson)"
-	result = list(/obj/item/clothing/armor/gambeson/light)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/armor/gambeson/light)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 	req_imperial = TRUE
-/datum/crafting_recipe/roguetown/sewing/stripedtunic
+/datum/blueprint_recipe/sewing/stripedtunic
 	name = "armor (padded tunic)"
-	result = list(/obj/item/clothing/armor/gambeson/light/striped)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/armor/gambeson/light/striped)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/armingjacket
+/datum/blueprint_recipe/sewing/armingjacket
 	name = "armor (arming jacket)"
-	result = list(/obj/item/clothing/armor/gambeson/arming)
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = list(/obj/item/clothing/armor/gambeson/arming)
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 2)
 	req_imperial = TRUE
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/armingjacket
+/datum/blueprint_recipe/sewing/armingjacket
 	name = "armor (padded gambeson)"
-	result = list(/obj/item/clothing/armor/gambeson/heavy)
-	reqs = list(/obj/item/natural/cloth = 6,
+	result_type = list(/obj/item/clothing/armor/gambeson/heavy)
+	required_materials = list(/obj/item/natural/cloth = 6,
 				/obj/item/natural/fibers = 4)
 	req_imperial = TRUE
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/sewing/robe
+/datum/blueprint_recipe/sewing/robe
 	name = "robes"
-	result = list(/obj/item/clothing/shirt/robe/plain)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/shirt/robe/plain)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/robe/wizard
+/datum/blueprint_recipe/sewing/robe/wizard
 	name = "robes (wizard)"
-	result = list(/obj/item/clothing/shirt/robe/wizard)
+	result_type = list(/obj/item/clothing/shirt/robe/wizard)
 	craftdiff = 3
 
 
 /*========= CLOTHING ==========*/
-/datum/crafting_recipe/roguetown/sewing/clothtrou
+/datum/blueprint_recipe/sewing/clothtrou
 	name = "cloth trousers {ip}"
-	result = list(/obj/item/clothing/pants/trou)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/pants/trou)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/dress
+/datum/blueprint_recipe/sewing/dress
 	name = "dress (plain)"
-	result = list(/obj/item/clothing/shirt/dress/gen)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/shirt/dress/gen)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
-/datum/crafting_recipe/roguetown/sewing/dress/black
+/datum/blueprint_recipe/sewing/dress/black
 	name = "dress (black)"
-	result = list(/obj/item/clothing/shirt/dress/gen/black)
-/datum/crafting_recipe/roguetown/sewing/dress/blue
+	result_type = list(/obj/item/clothing/shirt/dress/gen/black)
+/datum/blueprint_recipe/sewing/dress/blue
 	name = "dress (blue)"
-	result = list(/obj/item/clothing/shirt/dress/gen/blue)
-/datum/crafting_recipe/roguetown/sewing/dress/purple
+	result_type = list(/obj/item/clothing/shirt/dress/gen/blue)
+/datum/blueprint_recipe/sewing/dress/purple
 	name = "dress (purple))"
-	result = list(/obj/item/clothing/shirt/dress/gen/purple)
-/datum/crafting_recipe/roguetown/sewing/dress/sexy
+	result_type = list(/obj/item/clothing/shirt/dress/gen/purple)
+/datum/blueprint_recipe/sewing/dress/sexy
 	name = "dress (seductive)"
-	result = list(/obj/item/clothing/shirt/dress/gen/sexy)
+	result_type = list(/obj/item/clothing/shirt/dress/gen/sexy)
 	craftdiff = 5
 
 
-/datum/crafting_recipe/roguetown/sewing/undershirt
+/datum/blueprint_recipe/sewing/undershirt
 	name = "shirt (under)"
-	result = list(/obj/item/clothing/shirt/undershirt/priest)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/shirt/undershirt/priest)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/shortshirt
+/datum/blueprint_recipe/sewing/shortshirt
 	name = "shirt (short)"
-	result = list(/obj/item/clothing/shirt/shortshirt/uncolored)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/shirt/shortshirt/uncolored)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/clothshirt
+/datum/blueprint_recipe/sewing/clothshirt
 	name = "shirt"
-	result = list(/obj/item/clothing/shirt/undershirt/uncolored)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/shirt/undershirt/uncolored)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/rags
+/datum/blueprint_recipe/sewing/rags
 	name = "shirt (rags)"
-	result = list(/obj/item/clothing/shirt/rags)
-	reqs = list(/obj/item/natural/cloth = 2)
+	result_type = list(/obj/item/clothing/shirt/rags)
+	required_materials = list(/obj/item/natural/cloth = 2)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/clothtights
+/datum/blueprint_recipe/sewing/clothtights
 	name = "trousers (tights)"
-	result = list(/obj/item/clothing/pants/tights/uncolored)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/pants/tights/uncolored)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tunic
+/datum/blueprint_recipe/sewing/tunic
 	name = "shirt (tunic)"
-	result = list(/obj/item/clothing/shirt/tunic/ucolored)
-	reqs = list(/obj/item/natural/cloth = 2)
+	result_type = list(/obj/item/clothing/shirt/tunic/ucolored)
+	required_materials = list(/obj/item/natural/cloth = 2)
 	craftdiff = 2
-/datum/crafting_recipe/roguetown/sewing/tunic/lowcut
+/datum/blueprint_recipe/sewing/tunic/lowcut
 	name = "shirt (low-cut tunic)"
-	result = list(/obj/item/clothing/shirt/undershirt/lowcut)
+	result_type = list(/obj/item/clothing/shirt/undershirt/lowcut)
 
-/datum/crafting_recipe/roguetown/sewing/monkgarb
+/datum/blueprint_recipe/sewing/monkgarb
 	name = "clothes (monk garb)"
-	result = list(/obj/item/clothing/shirt/rags/monkgarb)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/shirt/rags/monkgarb)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/kimono
+/datum/blueprint_recipe/sewing/kimono
 	name = "clothes (kimono)"
-	result = list(/obj/item/clothing/shirt/tunic/kimono)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/shirt/tunic/kimono)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/kamishimo
+/datum/blueprint_recipe/sewing/kamishimo
 	name = "clothes (kamishimo upperside)"
-	result = list(/obj/item/clothing/shirt/tunic/kamishimo)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/shirt/tunic/kamishimo)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tribal
+/datum/blueprint_recipe/sewing/tribal
 	name = "clothes (tribal garb)"
-	result = list(/obj/item/clothing/pants/kaizoku/tribal)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/pants/kaizoku/tribal)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
 
 
 /*=========		HEADWEAR	==========*/
-/datum/crafting_recipe/roguetown/sewing/pcoif
+/datum/blueprint_recipe/sewing/pcoif
 	name = "coif (padded)"
-	result = list(/obj/item/clothing/neck/coif/cloth)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/neck/coif/cloth)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/sewing/fisherhat
+/datum/blueprint_recipe/sewing/fisherhat
 	name = "hat (fisher)"
-	result = list(/obj/item/clothing/head/fisherhat)
-	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
+	result_type = list(/obj/item/clothing/head/fisherhat)
+	required_materials = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/sack
+/datum/blueprint_recipe/sewing/sack
 	name = "hat (sack hood)"
-	result = list(/obj/item/clothing/head/menacing)
-	reqs = list(/obj/item/storage/sack)
+	result_type = list(/obj/item/clothing/head/menacing)
+	required_materials = list(/obj/item/storage/sack)
 
-/datum/crafting_recipe/roguetown/sewing/armingcap
+/datum/blueprint_recipe/sewing/armingcap
 	name = "hat (arming cap)"
-	result = list(/obj/item/clothing/head/armingcap)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/armingcap)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/sewing/headband
+/datum/blueprint_recipe/sewing/headband
 	name = "hat (headband)"
-	result = list(/obj/item/clothing/head/headband)
-	reqs = list(/obj/item/natural/cloth = 1)
+	result_type = list(/obj/item/clothing/head/headband)
+	required_materials = list(/obj/item/natural/cloth = 1)
 
-/datum/crafting_recipe/roguetown/sewing/strawhat
+/datum/blueprint_recipe/sewing/strawhat
 	name = "hat (straw)"
-	result = list(/obj/item/clothing/head/strawhat)
-	reqs = list(/obj/item/natural/fibers = 3)
+	result_type = list(/obj/item/clothing/head/strawhat)
+	required_materials = list(/obj/item/natural/fibers = 3)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/knitcap
+/datum/blueprint_recipe/sewing/knitcap
 	name = "hat (knit cap)"
-	result = list(/obj/item/clothing/head/knitcap)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/head/knitcap)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/fancyhat
+/datum/blueprint_recipe/sewing/fancyhat
 	name = "hat (fancy))"
-	result = list(/obj/item/clothing/head/fancyhat)
-	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
+	result_type = list(/obj/item/clothing/head/fancyhat)
+	required_materials = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 	req_imperial = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/fancyhat/courtier
+/datum/blueprint_recipe/sewing/fancyhat/courtier
 	name = "hat (courtier)"
-	result = list(/obj/item/clothing/head/courtierhat)
+	result_type = list(/obj/item/clothing/head/courtierhat)
 
-/datum/crafting_recipe/roguetown/sewing/fancyhat/courtier
+/datum/blueprint_recipe/sewing/fancyhat/courtier
 	name = "hat (bard)"
-	result = list(/obj/item/clothing/head/bardhat)
+	result_type = list(/obj/item/clothing/head/bardhat)
 
-/datum/crafting_recipe/roguetown/sewing/armingcap
+/datum/blueprint_recipe/sewing/armingcap
 	name = "hat (wizard)"
-	result = list(/obj/item/clothing/head/wizhat)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/wizhat)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/takuhatsugasa
+/datum/blueprint_recipe/sewing/takuhatsugasa
 	name = "hat (takuhatsugasa)"
-	result = list(/obj/item/clothing/head/takuhatsugasa)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/takuhatsugasa)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/torioigasa
+/datum/blueprint_recipe/sewing/torioigasa
 	name = "hat (torioigasa)"
-	result = list(/obj/item/clothing/head/tengai/torioigasa)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/tengai/torioigasa)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/gasa
+/datum/blueprint_recipe/sewing/gasa
 	name = "hat (gasa)"
-	result = list(/obj/item/clothing/head/tengai/gasa)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/tengai/gasa)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/sandogasa
+/datum/blueprint_recipe/sewing/sandogasa
 	name = "hat (sandogasa)"
-	result = list(/obj/item/clothing/head/tengai/sandogasa)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/tengai/sandogasa)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 1
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tengai
+/datum/blueprint_recipe/sewing/tengai
 	name = "hat (tengai)"
-	result = list(/obj/item/clothing/head/tengai)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/tengai)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 1
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/roningasa
+/datum/blueprint_recipe/sewing/roningasa
 	name = "hat (roningasa)"
-	result = list(/obj/item/clothing/head/tengai/roningasa)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/tengai/roningasa)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/zukin
+/datum/blueprint_recipe/sewing/zukin
 	name = "hood (stealthy)"
-	result = list(/obj/item/clothing/head/shinobi_zukin)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/head/shinobi_zukin)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/onmyojigood
+/datum/blueprint_recipe/sewing/onmyojigood
 	name = "hat (war onmyoji)"
-	result = list(/obj/item/clothing/head/wizhat/onmyoji)
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = list(/obj/item/clothing/head/wizhat/onmyoji)
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/onmyojigoofy
+/datum/blueprint_recipe/sewing/onmyojigoofy
 	name = "hat (onmyoji)"
-	result = list(/obj/item/clothing/head/wizhat/onmyoji/eboshi)
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = list(/obj/item/clothing/head/wizhat/onmyoji/eboshi)
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
 	req_islander = TRUE
@@ -479,150 +479,150 @@
 //////////////////////////////////////////
 
 
-/datum/crafting_recipe/roguetown/sewing/yugake
+/datum/blueprint_recipe/sewing/yugake
 	name = "gloves (yugake)"
-	result = list(/obj/item/clothing/gloves/fingerless/yugake)
-	reqs = list(/obj/item/natural/cloth = 1,
+	result_type = list(/obj/item/clothing/gloves/fingerless/yugake)
+	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/hakama
+/datum/blueprint_recipe/sewing/hakama
 	name = "pants (hakama)"
-	result = list(/obj/item/clothing/pants/tights/hakama)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/pants/tights/hakama)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/lillys
+/datum/blueprint_recipe/sewing/lillys
 	name = "small lilly {fl}"
-	result = list(/obj/item/clothing/head/lilly)
-	reqs = list(/obj/item/natural/fibers = 3)
+	result_type = list(/obj/item/clothing/head/lilly)
+	required_materials = list(/obj/item/natural/fibers = 3)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/lillym
+/datum/blueprint_recipe/sewing/lillym
 	name = "medium lilly {fl}"
-	result = list(/obj/item/clothing/head/lilly/medium)
-	reqs = list(/obj/item/natural/fibers = 4)
+	result_type = list(/obj/item/clothing/head/lilly/medium)
+	required_materials = list(/obj/item/natural/fibers = 4)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/lillyb
+/datum/blueprint_recipe/sewing/lillyb
 	name = "big lilly {fl}"
-	result = list(/obj/item/clothing/head/lilly/big)
-	reqs = list(/obj/item/natural/fibers = 5)
+	result_type = list(/obj/item/clothing/head/lilly/big)
+	required_materials = list(/obj/item/natural/fibers = 5)
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/eyeband
+/datum/blueprint_recipe/sewing/eyeband
 	name = "eyeband"
-	result = list(/obj/item/clothing/face/kaizoku/eyeband)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/face/kaizoku/eyeband)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
 
 /*.............. recipes requiring skill 1 ..............*/
 
 
-/datum/crafting_recipe/roguetown/sewing/soheicloth
+/datum/blueprint_recipe/sewing/soheicloth
 	name = "sohei headcovering {fl}"
-	result = list(/obj/item/clothing/head/soheicloth)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/soheicloth)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 	req_islander = TRUE
 
 
 
-/datum/crafting_recipe/roguetown/sewing/mino
+/datum/blueprint_recipe/sewing/mino
 	name = "mino cloak {fl}"
-	result = list(/obj/item/clothing/cloak/raincloak/mino)
-	reqs = list(/obj/item/natural/fibers = 8,
+	result_type = list(/obj/item/clothing/cloak/raincloak/mino)
+	required_materials = list(/obj/item/natural/fibers = 8,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/tobi
+/datum/blueprint_recipe/sewing/tobi
 	name = "tobi trousers {fl}"
-	result = list(/obj/item/clothing/pants/trou/tobi)
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = list(/obj/item/clothing/pants/trou/tobi)
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/hitatare
+/datum/blueprint_recipe/sewing/hitatare
 	name = "light hitatare {fl}"
-	result = list(/obj/item/clothing/armor/gambeson/light/hitatare)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/armor/gambeson/light/hitatare)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 	req_islander = TRUE
 
 /*.............. recipes requiring skill 2 ..............*/
 
-/datum/crafting_recipe/roguetown/sewing/ruankai
+/datum/blueprint_recipe/sewing/ruankai
 	name = "ruankai jacque {fl}"
-	result = /obj/item/clothing/armor/gambeson/ruankai
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = /obj/item/clothing/armor/gambeson/ruankai
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
 	tools = list(/obj/item/needle)
 	craftdiff = 2
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/jinbaori
+/datum/blueprint_recipe/sewing/jinbaori
 	name = "jinbaori {fl}"
-	result = list(/obj/item/clothing/cloak/stabard/haramaki/jinbaori)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/cloak/stabard/haramaki/jinbaori)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 	req_islander = TRUE
 
 
 
-/datum/crafting_recipe/roguetown/sewing/zubon
+/datum/blueprint_recipe/sewing/zubon
 	name = "stealthy trousers {fl}"
-	result = list(/obj/item/clothing/pants/trou/leather/shinobizubon)
-	reqs = list(/obj/item/natural/cloth = 3,
+	result_type = list(/obj/item/clothing/pants/trou/leather/shinobizubon)
+	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2
 	req_islander = TRUE
 
 /*.............. recipes requiring skill 3 ..............*/
 
-/datum/crafting_recipe/roguetown/sewing/halfcloak
+/datum/blueprint_recipe/sewing/halfcloak
 	name = "half cloak"
-	reqs = list(/obj/item/natural/cloth = 2,
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	result = /obj/item/clothing/cloak/half/random
+	result_type = /obj/item/clothing/cloak/half/random
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/guardiancape
+/datum/blueprint_recipe/sewing/guardiancape
 	name = "guardianship cape {fl}"
-	result = list(/obj/item/clothing/cloak/raincloak/guardiancloak)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/cloak/raincloak/guardiancloak)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/onmyojigoofy
+/datum/blueprint_recipe/sewing/onmyojigoofy
 	name = "haramaki bellyband {fl}"
-	result = list(/obj/item/clothing/cloak/stabard/haramaki)
-	reqs = list(/obj/item/natural/cloth = 4,
+	result_type = list(/obj/item/clothing/cloak/stabard/haramaki)
+	required_materials = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
 	req_islander = TRUE
 
 /* .............. recipes requiring skill 4 ..............*/
 
-/datum/crafting_recipe/roguetown/sewing/heartfelthat
+/datum/blueprint_recipe/sewing/heartfelthat
 	name = "heartfelt hat {fl}"
-	result = list(/obj/item/clothing/head/bardhat/bloodhunter)
-	reqs = list(/obj/item/natural/cloth = 2,
+	result_type = list(/obj/item/clothing/head/bardhat/bloodhunter)
+	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/odoshi
+/datum/blueprint_recipe/sewing/odoshi
 	name = "odoshi bodylacing {fl}"
-	result = list(/obj/item/clothing/cloak/stabard/haramaki/odoshi)
-	reqs = list(/obj/item/natural/cloth = 5,
+	result_type = list(/obj/item/clothing/cloak/stabard/haramaki/odoshi)
+	required_materials = list(/obj/item/natural/cloth = 5,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 4
 	req_islander = TRUE

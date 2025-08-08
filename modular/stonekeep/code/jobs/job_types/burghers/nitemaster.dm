@@ -66,8 +66,8 @@
 	time = 4 SECONDS
 	req_table = TRUE
 	tools = /obj/item/natural/feather
-	reqs = list(/obj/item/paper = 1)
-	result = /obj/item/paper/certificate/fake_health
+	required_materials = list(/obj/item/paper = 1)
+	result_type = /obj/item/paper/certificate/fake_health
 	category = CAT_NONE
 
 /datum/crafting_recipe/forgery_adventurer
@@ -75,6 +75,6 @@
 	time = 4 SECONDS
 	req_table = TRUE
 	tools = /obj/item/natural/feather
-	reqs = list(/obj/item/paper = 1)
-	result = /obj/item/paper/certificate/adventurer_fake
+	required_materials = list(/obj/item/paper = 1)
+	result_type = /obj/item/paper/certificate/adventurer_fake
 	category = CAT_NONE

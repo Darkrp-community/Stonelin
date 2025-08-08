@@ -65,6 +65,6 @@
 	time = 4 SECONDS
 	req_table = TRUE
 	tools = /obj/item/natural/feather
-	reqs = list(/obj/item/paper = 1)
-	result = /obj/item/paper/certificate/adventurer
+	required_materials = list(/obj/item/paper = 1)
+	result_type = /obj/item/paper/certificate/adventurer
 	category = CAT_NONE

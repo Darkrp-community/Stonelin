@@ -1,34 +1,149 @@
-//Mind helpers
+/datum/component/personal_crafting/Initialize()
+	if(!ismob(parent))
+		return COMPONENT_INCOMPATIBLE
+	var/mob/living/L = parent
+	L.craftingthing = src
 
-/datum/mind/proc/teach_crafting_recipe(R)
-	if(!learned_recipes)
-		learned_recipes = list()
-	learned_recipes |= R
+/datum/component/personal_crafting
+	var/busy
+	var/viewing_category = 1 //typical powergamer starting on the Weapons tab
+	var/viewing_subcategory = 1
+	var/list/categories = list(
+				CAT_NONE = CAT_NONE,
+			)
 
-/datum/mind/proc/forget_crafting_recipe(R)
-	if(!learned_recipes)
+	var/cur_category = CAT_NONE
+	var/cur_subcategory = CAT_NONE
+	var/datum/action/innate/crafting/button
+	var/display_craftable_only = TRUE
+	var/display_compact = TRUE
+
+
+
+
+/*	This is what procs do:
+	get_environment - gets a list of things accessable for crafting by user
+	get_surroundings - takes a list of things and makes a list of key-types to values-amounts of said type in the list
+	check_contents - takes a recipe and a key-type list and checks if said recipe can be done with available stuff
+	check_tools - takes recipe, a key-type list, and a user and checks if there are enough tools to do the stuff, checks bugs one level deep
+	construct_item - takes a recipe and a user, call all the checking procs, calls do_after, checks all the things again, calls del_reqs, creates result, calls CheckParts of said result with argument being list returned by deel_reqs
+	del_reqs - takes recipe and a user, loops over the recipes reqs var and tries to find everything in the list make by get_environment and delete it/add to parts list, then returns the said list
+*/
+
+
+
+
+/datum/component/personal_crafting/proc/check_contents(datum/crafting_recipe/R, list/contents)
+	contents = contents["other"]
+	main_loop:
+		for(var/A in R.reqs)
+			var/needed_amount = R.reqs[A]
+			for(var/B in contents)
+				if(ispath(B, A))
+					if(!R.subtype_reqs && (B in subtypesof(A)))
+						continue
+					if (R.blacklist.Find(B))
+						testing("foundinblacklist")
+						continue
+					if(contents[B] >= R.reqs[A])
+						continue main_loop
+					else
+						testing("removecontent")
+						needed_amount -= contents[B]
+						if(needed_amount <= 0)
+							continue main_loop
+						else
+							continue
+			return FALSE
+	for(var/A in R.chem_catalysts)
+		if(contents[A] < R.chem_catalysts[A])
+			return FALSE
+	return TRUE
+
+/datum/component/personal_crafting/proc/get_environment(mob/user)
+	. = list()
+	for(var/obj/item/I in user.held_items)
+		. += I
+	if(!isturf(user.loc))
 		return
-	learned_recipes -= R
+	var/list/L = block(get_step(user, SOUTHWEST), get_step(user, NORTHEAST))
+	for(var/A in L)
+		var/turf/T = A
+		if(T.Adjacent(user))
+			for(var/B in T)
+				var/atom/movable/AM = B
+				if(AM.flags_1 & HOLOGRAM_1)
+					continue
+				. += AM
+	for(var/slot in list(SLOT_R_STORE, SLOT_L_STORE))
+		. += user.get_item_by_slot(slot)
+
+/obj/item/proc/can_craft_with()
+	return TRUE
+
+/datum/component/personal_crafting/proc/get_surroundings(mob/user)
+	. = list()
+	.["tool_behaviour"] = list()
+	.["other"] = list()
+	for(var/obj/item/I in get_environment(user))
+		if(!I.can_craft_with())
+			continue
+		if(I.flags_1 & HOLOGRAM_1)
+			continue
+		if(istype(I, /obj/item/natural/bundle))
+			var/obj/item/natural/bundle/B = I
+			.["other"][B.stacktype] += B.amount
+		else if(I.tool_behaviour)
+			.["tool_behaviour"] += I.tool_behaviour
+			.["other"][I.type] += 1
+		else
+			if(istype(I, /obj/item/reagent_containers))
+				var/obj/item/reagent_containers/RC = I
+				if(RC.is_drainable())
+					for(var/datum/reagent/A in RC.reagents.reagent_list)
+						.["other"][A.type] += A.volume
+			.["other"][I.type] += 1
+
+/datum/component/personal_crafting/proc/check_tools(mob/user, datum/crafting_recipe/R, list/contents)
+	if(!R.tools.len)
+		return TRUE
+	var/list/possible_tools = list()
+	var/list/present_qualities = list()
+	present_qualities |= contents["tool_behaviour"]
+	for(var/obj/item/I in user.contents)
+		if(istype(I, /obj/item/storage))
+			for(var/obj/item/SI in I.contents)
+				possible_tools += SI.type
+				if(SI.tool_behaviour)
+					present_qualities.Add(SI.tool_behaviour)
+
+		possible_tools += I.type
+
+		if(I.tool_behaviour)
+			present_qualities.Add(I.tool_behaviour)
+
+	possible_tools |= contents["other"]
+
+	main_loop:
+		for(var/A in R.tools)
+			if(A in present_qualities)
+				continue
+			else
+				for(var/I in possible_tools)
+					if(ispath(I, A))
+						continue main_loop
+			return FALSE
+	return TRUE
 
 /atom/proc/OnCrafted(dirin, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
-	SEND_SIGNAL(user, COMSIG_ITEM_CRAFTED, user, type)
 	record_featured_stat(FEATURED_STATS_CRAFTERS, user)
-	record_featured_object_stat(FEATURED_STATS_CRAFTED_ITEMS, name)
 	add_abstract_elastic_data(ELASCAT_CRAFTING, "[name]", 1)
 	return
-
-/obj/OnCrafted(dirin, mob/user)
-	if(lock)
-		QDEL_NULL(lock)
-		can_add_lock = TRUE
-	. = ..()
 
 /obj/structure/OnCrafted(dirin, mob/user)
 	obj_flags |= CAN_BE_HIT
 	. = ..()
-
-// EVERYTHING BELOW ISNT IN VANDERLIN, WHATS THIS DOING HERE? ROGTODO
 
 /datum/crafting_recipe/proc/TurfCheck(mob/user, turf/T)
 	if(istype(T, /turf/open/water))
@@ -85,6 +200,7 @@
 					return
 				continue
 			if(R.structurecraft && istype(S, R.structurecraft))
+				testing("isstructurecraft")
 				continue
 			if(S.density)
 				to_chat(user, "<span class='warning'>[S] is in the way.</span>")
@@ -122,7 +238,7 @@
 						prob2craft -= (25*R.craftdiff)
 					if(R.skillcraft)
 						if(user.mind)
-							prob2craft += (user.get_skill_level(R.skillcraft) * 25)
+							prob2craft += (user.mind.get_skill_level(R.skillcraft) * 25)
 					else
 						prob2craft = 100
 					if(isliving(user))
@@ -168,13 +284,11 @@
 					if(user.mind && R.skillcraft)
 						if(isliving(user))
 							var/mob/living/L = user
-							var/amt2raise = L.STAINT // STONEKEEP BALANCE EDIT
-							var/boon = L.get_learning_boon(R.skillcraft) // STONEKEEP BALANCE EDIT
+							var/amt2raise = L.STAINT * 2// its different over here
 							if(R.craftdiff > 0) //difficult recipe
 								amt2raise += (R.craftdiff * 10)
 							if(amt2raise > 0)
-								user.adjust_experience(R.skillcraft, amt2raise * boon, FALSE) // STONEKEEP EDIT
-								// user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
+								user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
 					return
 				return 0
 			return "."
@@ -464,6 +578,9 @@
 	if(!A.can_craft_here())
 		to_chat(user, "<span class='warning'>I can't craft here.</span>")
 		return
+//	if(user != parent)
+//		testing("c2")
+//		return
 	var/list/data = list()
 	var/list/catty = list()
 	var/list/surroundings = get_surroundings(user)
@@ -471,6 +588,10 @@
 		var/datum/crafting_recipe/R = rec
 		if(!R.always_availible && !(R.type in user?.mind?.learned_recipes)) //User doesn't actually know how to make this.
 			continue
+
+//		if((R.category != cur_category) || (R.subcategory != cur_subcategory))
+//			continue
+
 		if(check_contents(R, surroundings))
 			if(R.name)
 				data += R
@@ -487,7 +608,7 @@
 
 	// Craft Last Again
 	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(modifiers["right"])
 		var/mob/living/H = user
 		var/r = H.last_crafted
 		construct_item(user, r)

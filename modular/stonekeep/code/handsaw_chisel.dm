@@ -67,7 +67,7 @@
 	firefuel = 5 MINUTES
 	w_class = WEIGHT_CLASS_BULKY
 	bundletype = /obj/item/natural/bundle/plank
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 //................	Wooden plan stack	............... //
 /obj/item/natural/bundle/plank
@@ -95,7 +95,7 @@
 	icon1step = 3
 	icon2 = "plankbundle3"
 	icon2step = 5
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 
 //................	Glass panes	............... //

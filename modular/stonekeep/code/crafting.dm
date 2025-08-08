@@ -15,23 +15,23 @@
 	var/req_islander = FALSE
 
 
-/datum/crafting_recipe/roguetown/structure/stonetable
+/datum/blueprint_recipe/structure/stonetable
 	name = "stone table (long mid)"
-	result = /obj/structure/table/stone
-	reqs = list(/obj/item/natural/stone = 2)
+	result_type = /obj/structure/table/stone
+	required_materials = list(/obj/item/natural/stone = 2)
 	verbage = "build"
 	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
 	time = 4 SECONDS
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 3
-/datum/crafting_recipe/roguetown/structure/stonetable/end
+/datum/blueprint_recipe/structure/stonetable/end
 	name = "stone table (long end)"
-	result = /obj/structure/table/stone_end
+	result_type = /obj/structure/table/stone_end
 
-/datum/crafting_recipe/roguetown/structure/stonetable/small
+/datum/blueprint_recipe/structure/stonetable/small
 	name = "stone table (single)"
-	result = /obj/structure/table/stone_small
+	result_type = /obj/structure/table/stone_small
 
 
 /*--------------\
@@ -82,21 +82,19 @@
 
 
 
-/datum/crafting_recipe/roguetown/woodflail
+/datum/blueprint_recipe/woodflail
 	name = "wooden flail x2"
 	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/weapon/flail/towner = 1,
+	required_materials = list(/obj/item/weapon/flail/towner = 1,
 			/obj/item/ingot/iron = 10)
 	tools = list(/obj/item/weapon/hammer)
-	req_table = TRUE
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/militia_flail
+/datum/blueprint_recipe/militia_flail
 	name = "militia flail"
 	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/weapon/flail/towner = 1, /obj/item/ingot/iron = 10)
+	required_materials = list(/obj/item/weapon/flail/towner = 1, /obj/item/ingot/iron = 10)
 	tools = list(/obj/item/weapon/hammer)
-	req_table = TRUE
 	craftdiff = 3
 
 

@@ -408,7 +408,7 @@
 	armor_class = AC_MEDIUM
 	max_integrity = INTEGRITY_POOR
 	anvilrepair = null //You can't repair 'ceramic' armor. You will need to make a new armor instead.
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	sewrepair = FALSE
 	slot_flags = ITEM_SLOT_ARMOR
 
@@ -1026,7 +1026,7 @@
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
 	body_parts_covered = HEAD|HAIR|EARS|NOSE|MOUTH
 	resistance_flags = FLAMMABLE // Made of leather
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	anvilrepair = null
 	max_integrity = INTEGRITY_STANDARD
 	sewrepair = TRUE
@@ -1050,7 +1050,7 @@
 	desc = "The 'Jingasa, a metal gasa in conical shape. Mainly worn by Ashigarus, it has a wide brim to deflect projectiles and a gap within acting as a buffer zone."
 	icon_state = "jingasa"
 	flags_inv = HIDEEARS
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	bloody_icon = 'icons/effects/blood.dmi'
 	bloody_icon_state = "itemblood"
 	worn_x_dimension = 32
@@ -1335,7 +1335,7 @@
 	icon_state = "ivory_head"
 	armor = ARMOR_PADDED
 	anvilrepair = null
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	sewrepair = FALSE
 	blocksound = SOFTHIT
 	sellprice = 10
@@ -2112,7 +2112,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_TWIST)
 	resistance_flags = null
 	blocksound = SOFTHIT
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'

@@ -180,9 +180,9 @@
 								user.visible_message("<span class='warning'>[user] burns [S].</span>")
 								if(user.client?.prefs.showrolls)
 									to_chat(user, "<span class='warning'>Critfail... [prob2spoil]%.</span>")
-								result = S.cooking(1000, null)
+								result_type = S.cooking(1000, null)
 							else if(chosen_recipe.output)
-								result = new chosen_recipe.output(get_turf(user))
+								result_type = new chosen_recipe.output(get_turf(user))
 
 								if(istype(result, /obj/item/reagent_containers/food/snacks))
 									var/obj/item/reagent_containers/food/snacks/food_result = result

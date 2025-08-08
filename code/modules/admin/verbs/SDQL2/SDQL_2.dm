@@ -828,42 +828,42 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null
 		if(op != "")
 			switch(op)
 				if("+")
-					result = (result + val)
+					result_type = (result + val)
 				if("-")
-					result = (result - val)
+					result_type = (result - val)
 				if("*")
-					result = (result * val)
+					result_type = (result * val)
 				if("/")
-					result = (result / val)
+					result_type = (result / val)
 				if("&")
-					result = (result & val)
+					result_type = (result & val)
 				if("|")
-					result = (result | val)
+					result_type = (result | val)
 				if("^")
-					result = (result ^ val)
+					result_type = (result ^ val)
 				if("%")
-					result = (result % val)
+					result_type = (result % val)
 				if("=", "==")
-					result = (result == val)
+					result_type = (result == val)
 				if("!=", "<>")
-					result = (result != val)
+					result_type = (result != val)
 				if("<")
-					result = (result < val)
+					result_type = (result < val)
 				if("<=")
-					result = (result <= val)
+					result_type = (result <= val)
 				if(">")
-					result = (result > val)
+					result_type = (result > val)
 				if(">=")
-					result = (result >= val)
+					result_type = (result >= val)
 				if("and", "&&")
-					result = (result && val)
+					result_type = (result && val)
 				if("or", "||")
-					result = (result || val)
+					result_type = (result || val)
 				else
 					to_chat(usr, "<span class='danger'>SDQL2: Unknown op [op]</span>")
-					result = null
+					result_type = null
 		else
-			result = val
+			result_type = val
 
 	return result
 
@@ -922,7 +922,7 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null
 				// Need to insert the key like this to prevent duplicate keys fucking up.
 				var/list/dummy = list()
 				dummy[result] = assoc
-				result = dummy
+				result_type = dummy
 			val += result
 
 	else if(expression[i] == "@\[")

@@ -301,7 +301,7 @@ if (length(L) < I) { \
 			if(!(e in result) && !(e in second))
 				result += e
 	else
-		result = first - second
+		result_type = first - second
 	return result
 
 /*
@@ -314,9 +314,9 @@ if (length(L) < I) { \
 		return
 	var/list/result = new
 	if(skiprep)
-		result = difflist(first, second, skiprep)+difflist(second, first, skiprep)
+		result_type = difflist(first, second, skiprep)+difflist(second, first, skiprep)
 	else
-		result = first ^ second
+		result_type = first ^ second
 	return result
 
 /**
@@ -353,7 +353,7 @@ if (length(L) < I) { \
 /proc/pick_weight_recursive(list/list_to_pick)
 	var/result = pickweight(fill_with_ones(list_to_pick))
 	while(islist(result))
-		result = pickweight(fill_with_ones(result))
+		result_type = pickweight(fill_with_ones(result))
 	return result
 
 //Picks a random element from a list based on a weighting system:

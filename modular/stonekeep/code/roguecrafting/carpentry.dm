@@ -1,75 +1,75 @@
 /* CARPENTRY is for pretty much any object made of wood. To see some wooden structures that also use carpentry, go to structure.dm.
 ==========================================================*/
 
-/datum/crafting_recipe/roguetown/carpentry
+/datum/blueprint_recipe/carpentry
 	skillcraft = /datum/skill/craft/carpentry
 	subtype_reqs = TRUE
 	craftdiff = 0
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
 
-/datum/crafting_recipe/roguetown/carpentry/woodbucket
+/datum/blueprint_recipe/carpentry/woodbucket
 	name = "bucket"
-	result = /obj/item/reagent_containers/glass/bucket/wooden
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result_type = /obj/item/reagent_containers/glass/bucket/wooden
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/carpentry/spoon
+/datum/blueprint_recipe/carpentry/spoon
 	name = "spoon"
-	result = list(/obj/item/kitchen/spoon,
+	result_type = list(/obj/item/kitchen/spoon,
 				/obj/item/kitchen/spoon)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/carpentry/rollingpin
+/datum/blueprint_recipe/carpentry/rollingpin
 	name = "rollingpin"
-	result = /obj/item/kitchen/rollingpin
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	result_type = /obj/item/kitchen/rollingpin
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/carpentry/woodbowl
+/datum/blueprint_recipe/carpentry/woodbowl
 	name = "bowls (x3 wooden)"
-	result = list(/obj/item/reagent_containers/glass/bowl,
+	result_type = list(/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/glass/bowl)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/carpentry/woodcup
+/datum/blueprint_recipe/carpentry/woodcup
 	name = "mugs (x3 wooden)"
-	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
+	result_type = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
 				/obj/item/reagent_containers/glass/cup/wooden/crafted,
 				/obj/item/reagent_containers/glass/cup/wooden/crafted)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
 
-/datum/crafting_recipe/roguetown/carpentry/woodplatter
+/datum/blueprint_recipe/carpentry/woodplatter
 	name = "platters (x2 wooden)"
-	result = list(/obj/item/kitchen/platter,
+	result_type = list(/obj/item/kitchen/platter,
 				/obj/item/kitchen/platter)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	required_materials = list(/obj/item/grown/log/tree/small = 1)
 
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
 
-/datum/crafting_recipe/roguetown/carpentry/woodsword
+/datum/blueprint_recipe/carpentry/woodsword
 	name = "wood sword"
-	result = list(/obj/item/weapon/mace/woodclub/train_sword,
+	result_type = list(/obj/item/weapon/mace/woodclub/train_sword,
 					/obj/item/weapon/mace/woodclub/train_sword)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/carpentry/quarterstaff//elaborated quarterstaff only carpenters can do
+/datum/blueprint_recipe/carpentry/quarterstaff//elaborated quarterstaff only carpenters can do
 	name = "quarterstaff"
-	result = list(/obj/item/weapon/polearm/woodstaff/quarterstaff,
+	result_type = list(/obj/item/weapon/polearm/woodstaff/quarterstaff,
 	/obj/item/weapon/polearm/woodstaff/quarterstaff)
-	reqs = list(/obj/item/grown/log/tree = 1)
+	required_materials = list(/obj/item/grown/log/tree = 1)
 	req_table = TRUE
 	tools = list(/obj/item/weapon/knife)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/woodspade
+/datum/blueprint_recipe/woodspade
 	name = "spade"
-	result = /obj/item/weapon/shovel/small
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = /obj/item/weapon/shovel/small
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 			/obj/item/grown/log/tree/stick = 1)
 	craftdiff = 1
 
@@ -80,34 +80,34 @@
 /*========= SKILL LEVEL: 2 REQUIRED ==========*/
 
 
-/datum/crafting_recipe/roguetown/carpentry/recurve
+/datum/blueprint_recipe/carpentry/recurve
 	name = "bow (recurve)"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/short)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/short)
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/reagent_containers/food/snacks/fat = 1,
 	/obj/item/natural/fibers = 4)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/carpentry/handmadebow
+/datum/blueprint_recipe/carpentry/handmadebow
 	name = "bow"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/natural/fibers = 5)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/carpentry/longbow
+/datum/blueprint_recipe/carpentry/longbow
 	name = "bow (longbow)"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
-	reqs = list(/obj/item/grown/log/tree/small = 2,
+	result_type = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
+	required_materials = list(/obj/item/grown/log/tree/small = 2,
 	/obj/item/natural/fibers = 6,
 	/obj/item/reagent_containers/food/snacks/fat = 1)
 	craftdiff = 3
 
 
-/datum/crafting_recipe/roguetown/carpentry/woodshield
+/datum/blueprint_recipe/carpentry/woodshield
 	name = "wooden shield"
-	result = /obj/item/weapon/shield/wood/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = /obj/item/weapon/shield/wood/crafted
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/hide = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
@@ -115,60 +115,60 @@
 /obj/item/weapon/shield/wood/crafted
 	sellprice = 6
 
-/datum/crafting_recipe/roguetown/structure/plough
+/datum/blueprint_recipe/structure/plough
 	name = "plough"
-	result = /obj/structure/plough
-	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1)
+	result_type = /obj/structure/plough
+	required_materials = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	time = 4 SECONDS
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/carpentry/heater
+/datum/blueprint_recipe/carpentry/heater
 	name = "heater shield"
-	result = /obj/item/weapon/shield/heater
-	reqs = list(/obj/item/natural/wood/plank = 2,
+	result_type = /obj/item/weapon/shield/heater
+	required_materials = list(/obj/item/natural/wood/plank = 2,
 				/obj/item/natural/hide/cured = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 3
 
 //removes awesome buckler shield crafting
 
-/*/datum/crafting_recipe/roguetown/carpentry/woodshield/iplank
+/*/datum/blueprint_recipe/carpentry/woodshield/iplank
 	name = "iron buckler"
-	result = /obj/item/weapon/shield/tower/buckleriron/iplank
-	reqs = list(/obj/item/natural/wood/plank = 3,
+	result_type = /obj/item/weapon/shield/tower/buckleriron/iplank
+	required_materials = list(/obj/item/natural/wood/plank = 3,
 				/obj/item/ingot/iron = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/carpentry/woodshield/splank
+/datum/blueprint_recipe/carpentry/woodshield/splank
 	name = "steel buckler"
-	result = /obj/item/weapon/shield/tower/buckleriron/splank
-	reqs = list(/obj/item/natural/wood/plank = 3,
+	result_type = /obj/item/weapon/shield/tower/buckleriron/splank
+	required_materials = list(/obj/item/natural/wood/plank = 3,
 				/obj/item/ingot/steel = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
 */
-/datum/crafting_recipe/roguetown/carpentry/artable//the recipe is needed for most of carptentry/engineering works
+/datum/blueprint_recipe/carpentry/artable//the recipe is needed for most of carptentry/engineering works
 	name = "Artificer Table"
-	result = /obj/machinery/artificer_table
-	reqs = list(/obj/item/natural/wood/plank = 3)
+	result_type = /obj/machinery/artificer_table
+	required_materials = list(/obj/item/natural/wood/plank = 3)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
 
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 /*
-/datum/crafting_recipe/roguetown/carpentry/rproesthetic
+/datum/blueprint_recipe/carpentry/rproesthetic
 	name = "wood arm (L)"
-	result = list(/obj/item/bodypart/l_arm/rproesthetic)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = list(/obj/item/bodypart/l_arm/rproesthetic)
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/gear = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/carpentry/rproesthetic
+/datum/blueprint_recipe/carpentry/rproesthetic
 	name = "wood arm (R)"
-	result = list(/obj/item/bodypart/r_arm/rproesthetic)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	result_type = list(/obj/item/bodypart/r_arm/rproesthetic)
+	required_materials = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/gear = 1)
 	craftdiff = 3
 */

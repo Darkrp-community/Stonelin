@@ -56,9 +56,9 @@
 /datum/crafting_recipe/license_nitemaiden
 	name = "Produce a icense (Nitemaiden)"
 	time = 4 SECONDS
-	reqs = list(/obj/item/paper = 1,
+	required_materials = list(/obj/item/paper = 1,
 		/obj/item/natural/feather = 1)
-	result = /obj/item/paper/certificate/health
+	result_type = /obj/item/paper/certificate/health
 	category = CAT_NONE
 
 

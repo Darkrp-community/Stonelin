@@ -306,7 +306,6 @@
 	icon_state = "sorc1"
 	icon_living = "sorc1"
 	icon_dead = "sorc1"
-	var/base_icon_state = "sorc"
 	maxHealth = 170
 	health = 170
 	base_intents = list(/datum/intent/simple/spear)

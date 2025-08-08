@@ -251,9 +251,9 @@
 
 		var/result
 		if(length(recipe.result_atoms))
-			result = recipe.result_atoms[1]
+			result_type = recipe.result_atoms[1]
 		else
-			result = recipe.mob_to_summon
+			result_type = recipe.mob_to_summon
 
 		add_recipe_to_cache(
 			result,

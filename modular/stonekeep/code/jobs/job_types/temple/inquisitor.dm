@@ -99,4 +99,4 @@
 		-Your fraternal order and the blessed Imperiate have dispatched you to this island for grave import. Imperial spies have uncovered plots by cultists, sub-humens and monsters to overthrow the powers of Rockhill. Stop them at all costs.\n\
 		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to your brothers. Spend your favors wisely.")
 		)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/roguetown/confessional)
+	H.mind.teach_crafting_recipe(/datum/blueprint_recipe/confessional)
