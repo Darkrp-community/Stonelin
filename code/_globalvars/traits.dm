@@ -170,6 +170,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Debug guaranteed critchance" = TRAIT_ADMINTEST_CRIT, // STONEKEEP
 		"Violator of the Coven" = TRAIT_VIOLATOR,
 		"Endless Slumber" = TRAIT_TORPOR,
+		"Boundless Energy" = TRAIT_NOENERGY,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -278,6 +279,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_KAIZOKU = span_info("Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture."), //STONEKEEP EDIT
 	TRAIT_CHANGELING_METABOLISM = span_info("My metabolism breaks down demonic impurity. Now, I crave flesh rather than what is green."), // STONEKEEP EDIT
 	TRAIT_DESECRANT = span_info("I've forsaken honor and on the path of becoming Dai, for my soul is diseased and Abyssor looks down on me."), // STONEKEEP EDIT
+	TRAIT_NOENERGY = span_info("I don't need rest; I won't ever feel fatigue.")
 ))
 
 /// value -> trait name, generated on use from trait_by_type global
