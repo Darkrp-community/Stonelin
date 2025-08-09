@@ -1,1 +1,0 @@
-{"author":"Arkatos","delete-after":true,"changes":[{"rscadd":"Influences balancing, added number of medicators as a possible influence for Pestra."},{"bugfix":"Influence modifier is now correctly applied to negative influences."}]}
