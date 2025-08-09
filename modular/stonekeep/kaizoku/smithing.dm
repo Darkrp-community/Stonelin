@@ -38,9 +38,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/armor/chainmail/iron/tatami
 	craftdiff = 2
-	createmultiple = TRUE
-	createditem_num = 1
-
+	createditem_extra = 1
 /datum/anvil_recipe/armor/kusari
 	name = "Chainmail Robe (+Bar){Kusari-Katabira}"
 	recipe_name = "a Kusari-Katabira"
@@ -133,8 +131,7 @@
 	recipe_name = "a pair of Steel Kikko Tekko"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/gloves/chain/kikko
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/ikikkotekko
@@ -142,8 +139,7 @@
 	recipe_name = "a pair of Iron Kikko Tekko"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/gloves/chain/iron/kikko
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/lamellaetekko
@@ -159,8 +155,7 @@
 	recipe_name = "a pair of Hachinage"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/head/helmet/skullcap/hachigane
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 
 /datum/anvil_recipe/armor/rattanhelmet
 	name = "Rattan Helmet x2 (3s) {Teng tiao}"
@@ -168,8 +163,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/head/helmet/ironpot/rattan
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 
 /obj/item/clothing/head/helmet/visored/abyssalchampion
 /datum/anvil_recipe/armor/abyssalchampion
@@ -200,8 +194,7 @@
 	recipe_name = "a pair of Zijinguan helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/zijinguan
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/jingasa
@@ -209,8 +202,7 @@
 	recipe_name = "a pair of Jingasas"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/helmet/kettle/jingasa
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/toseikabuto
@@ -241,8 +233,7 @@
 	recipe_name = "a pair of Compact Menpo"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/face/kaizoku/menpo/half
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/smenpo
@@ -257,8 +248,7 @@
 	recipe_name = "a Face Mask"
 	req_bar = /obj/item/ingot/steel
 	created_item = (/obj/item/clothing/face/kaizoku/menpo/steel)
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/itribalfish
@@ -266,8 +256,7 @@
 	recipe_name = "a pair of iron Merkkin masks"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/face/kaizoku/menpo/facemask
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/stribalfish
@@ -489,8 +478,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/weapon/knife/steel/tanto
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/kaiken
@@ -499,8 +487,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/weapon/knife/kaiken
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/sai //not made of iron. Still Less damage tho.
@@ -509,8 +496,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/weapon/knife/hunting/sai
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/yari
@@ -520,8 +506,7 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/weapon/polearm/spear/yari
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 
 /datum/anvil_recipe/weapons/katakama
 	name = "Katakama Yari x2 (+w) (+i)"
@@ -557,8 +542,7 @@
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/weapon/polearm/halberd/bardiche/naginata/tsukushi
 	craftdiff = 1
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bisento
@@ -617,8 +601,7 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/weapon/polearm/mancatcher
-	createmultiple = TRUE
-	createditem_num = 1
+	createditem_extra = 1
 
 /datum/anvil_recipe/weapons/onothrow
 	name = "Ono throwing axe (2)"
