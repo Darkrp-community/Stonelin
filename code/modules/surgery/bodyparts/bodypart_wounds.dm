@@ -217,6 +217,9 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				if(HAS_TRAIT(src, TRAIT_BRITTLE))
 					LAZYADD(attempted_wounds, /datum/wound/fracture)
@@ -230,6 +233,8 @@
 			if(HAS_TRAIT(src, TRAIT_BRITTLE))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if((isnull(user) || !user.status_traits) ? prob(used) : (HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used)))
 				if(damage_dividend >= 0.6)
 					LAZYADD(attempted_wounds, /datum/wound/fracture)
@@ -242,12 +247,16 @@
 				else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 					dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if((isnull(user) || !user.status_traits) ? prob(used) : (HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used)))
 				LAZYADD(attempted_wounds, /datum/wound/artery)
 		if("scarring")
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if((isnull(user) || !user.status_traits) ? prob(used) : (HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used)))
 				LAZYADD(attempted_wounds, /datum/wound/scarring)
 
@@ -304,6 +313,8 @@
 				if(HAS_TRAIT(src, TRAIT_BRITTLE))
 					dam += 10
 				used = round(damage_dividend * 20 + (dam / 6), 1)
+				if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+					used -= 10
 				var/fracture_type = /datum/wound/fracture/chest
 				if(zone_precise == BODY_ZONE_PRECISE_GROIN)
 					if(damage_dividend >= 0.7) // Lower body paralysis
@@ -316,6 +327,8 @@
 			else if(user && istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				if((zone_precise == BODY_ZONE_PRECISE_STOMACH) && !resistance)
 					LAZYADD(attempted_wounds, /datum/wound/slash/disembowel)
@@ -327,6 +340,8 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if((isnull(user) || !user.status_traits) ? prob(used) : (HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used)))
 				LAZYADD(attempted_wounds, /datum/wound/scarring)
 
@@ -372,6 +387,8 @@
 		if("dislocation")
 			if(damage_dividend >= 1)
 				used = round(damage_dividend * 20 + (dam / 6), 1)
+				if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+					used -= 10
 				if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 					if(HAS_TRAIT(src, TRAIT_BRITTLE))
 						LAZYADD(attempted_wounds, /datum/wound/fracture/neck)
@@ -383,6 +400,8 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(!owner.stat && (zone_precise in knockout_zones) && !(bclass in GLOB.no_knockout_bclasses) && prob(used))
 				owner.next_attack_msg += " [span_crit("<b>Critical hit!</b> [owner] is knocked out[from_behind ? " FROM BEHIND" : ""]!")]"
 				owner.flash_fullscreen("whiteflash3")
@@ -424,6 +443,8 @@
 					if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 						dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(HAS_TRAIT(user, TRAIT_ADMINTEST_CRIT) || prob(used))
 				var/artery_type = /datum/wound/artery
 				if(zone_precise == BODY_ZONE_PRECISE_NECK)

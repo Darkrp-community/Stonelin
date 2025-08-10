@@ -354,7 +354,7 @@
 	sellprice = 45
 	last_used = 0
 
-/obj/item/weapon/sword/rapier/Initialize(mapload)
+/obj/item/weapon/sword/rapier/silver/Initialize(mapload)
 	. = ..()
 	enchant(/datum/enchantment/silver)
 

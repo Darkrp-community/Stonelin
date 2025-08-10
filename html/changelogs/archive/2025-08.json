@@ -177,5 +177,12 @@
                 "bugfix": "Influence modifier is now correctly applied to negative influences."
             }
         ]
+    },
+    "2025-08-10": {
+        "wgtjunior743": [
+            {
+                "bugfix": "Fix Vampire Lord undisguised unique warning not appearing"
+            }
+        ]
     }
 }
