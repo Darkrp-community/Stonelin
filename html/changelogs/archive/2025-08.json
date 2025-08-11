@@ -197,6 +197,21 @@
                 "balance": "lessened the chance of receiving a mob's jumpscare"
             }
         ],
+        "Wrench-1": [
+            {
+                "rscadd": "Psydonian Whip and Psydonian Flail"
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "bugfix": "altgrip onmob sprite"
+            }
+        ],
+        "Eagletanker": [
+            {
+                "balance": "Corsair no longer has it's perception malus."
+            }
+        ],
         "Arkatos": [
             {
                 "rscadd": "Added a new triumph buy - Psydon's Favourite."
