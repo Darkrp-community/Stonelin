@@ -842,6 +842,7 @@
 "bqg" = (
 /obj/structure/door/window,
 /obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor/stone)
 "bqq" = (
@@ -4045,7 +4046,6 @@
 /area/rogue/outdoors/town/roofs)
 "fxs" = (
 /obj/structure/door/fancy{
-	lockid = "hand";
 	name = "guest room"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -5071,6 +5071,7 @@
 	name = "pilgrims hall"
 	},
 /obj/effect/mapping_helpers/access/keyset/church/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/church)
 "gSj" = (
@@ -7786,6 +7787,7 @@
 	name = "war room"
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors/town/manor/stone)
 "kzy" = (
@@ -8316,10 +8318,6 @@
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/reagent_containers/glass/bottle/poison,
 /obj/item/trash/applecore,
-/obj/item/bomb{
-	pixel_x = 3;
-	pixel_y = 3
-	},
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/magician)
 "llb" = (
@@ -8669,10 +8667,10 @@
 /area/rogue/indoors/soilsons)
 "lKm" = (
 /obj/structure/door/fancy{
-	lockid = "manor";
 	name = "throne room"
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/carpet/lord/right,
 /area/rogue/indoors/town/manor/stone)
 "lKt" = (
@@ -9767,6 +9765,7 @@
 	name = "temple cellar"
 	},
 /obj/effect/mapping_helpers/access/keyset/church/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/church)
 "naZ" = (
@@ -10601,6 +10600,7 @@
 	name = "inquistion chamber"
 	},
 /obj/effect/mapping_helpers/access/keyset/church/inquisition,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors/town/church)
 "oeu" = (
@@ -10891,6 +10891,7 @@
 	name = "Drunken Saiga inn"
 	},
 /obj/effect/mapping_helpers/access/keyset/town/inn,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/tavern/saiga)
 "oxM" = (
@@ -10903,7 +10904,6 @@
 /area/rogue/indoors/town/manor/stone)
 "ozf" = (
 /obj/structure/door/fancy{
-	lockid = "hand";
 	name = "chamber of the hand"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -12264,7 +12264,6 @@
 /area/rogue/outdoors)
 "qkN" = (
 /obj/structure/door/violet{
-	lockid = "bathhouse";
 	name = "private"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -12557,7 +12556,6 @@
 /area/rogue/indoors/soilsons)
 "qDN" = (
 /obj/structure/door/green{
-	lockid = "manor";
 	name = "upper levels"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -13063,7 +13061,6 @@
 /area/rogue/outdoors/rtfield)
 "rja" = (
 /obj/structure/door/stone{
-	lockid = "manor";
 	name = "garden"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -13692,7 +13689,6 @@
 	lockid = null;
 	name = "balcony"
 	},
-/obj/effect/mapping_helpers/access/keyset/town/inn,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/tavern/saiga)
 "sae" = (
@@ -14552,10 +14548,10 @@
 /area/rogue/indoors/town/shop)
 "tkm" = (
 /obj/structure/door/fancy{
-	lockid = "manor";
 	name = "throne room"
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/carpet/lord/left,
 /area/rogue/indoors/town/manor/stone)
 "tku" = (
@@ -16433,6 +16429,7 @@
 	name = "sleeping hall"
 	},
 /obj/effect/mapping_helpers/access/keyset/church,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/church)
 "vGY" = (
@@ -17833,7 +17830,6 @@
 /area/rogue/outdoors/exposed/townhamlet)
 "xGX" = (
 /obj/structure/door{
-	lockid = "manor";
 	name = "servants hall"
 	},
 /obj/effect/mapping_helpers/access/locker,
@@ -18115,6 +18111,7 @@
 	name = "distillery"
 	},
 /obj/effect/mapping_helpers/access/keyset/church,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors/town/church)
 "ycm" = (
