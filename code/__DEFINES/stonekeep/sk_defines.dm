@@ -195,3 +195,32 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	SPEC_ID_DROW,\
 	SPEC_ID_TIEFLING,\
 )
+
+
+/// List of all Stonekeep races
+
+#define ALL_RACES_SK_LIST list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_ROUSMAN,\
+	SPEC_ID_ZIZOMBIE,\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	)
+
+/// List of all Kaizoku Foglander-specific races
+#define ALL_KAIZOKU_RACES list(\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	)
