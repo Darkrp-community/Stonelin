@@ -1,6 +1,7 @@
 /obj/item/clothing/head/padded	// slightly armored subtype for convenience
 	armor = ARMOR_MINIMAL
 	prevent_crits = MINOR_CRITICALS
+	abstract_type = /obj/item/clothing/head/padded
 
 //................ Simple Hats ............... //
 /obj/item/clothing/head/menacing
@@ -23,8 +24,8 @@
 	salvage_result = /obj/item/natural/cloth
 	salvage_amount = 1
 
-/obj/item/clothing/head/headband/red
-	color = CLOTHING_BLOOD_RED
+/obj/item/clothing/head/headband/colored
+	misc_flags = CRAFTING_TEST_EXCLUDE
 
 /obj/item/clothing/head/softcap
 	name = "soft cap"
@@ -32,6 +33,8 @@
 	icon_state = "armingcap"
 	flags_inv = HIDEEARS
 	salvage_result = /obj/item/natural/cloth
+/obj/item/clothing/head/headband/colored/red
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/shawl
 	name = "shawl"
@@ -243,7 +246,10 @@
 /obj/item/clothing/head/headdress/alt
 	icon_state = "headdressalt"
 
-/obj/item/clothing/head/armingcap/dwarf // gnome hat I guess?
+/obj/item/clothing/head/armingcap/colored
+	misc_flags = CRAFTING_TEST_EXCLUDE
+
+/obj/item/clothing/head/armingcap/colored/dwarf // gnome hat I guess?
 	color = "#cb3434"
 
 /obj/item/clothing/head/vampire

@@ -301,20 +301,28 @@
 	H.base_endurance = 13
 	var/loadout = rand(1,5)
 	switch(loadout)
-		if(1) //axe Warrior
-			r_hand = /obj/item/weapon/axe/boneaxe
-			l_hand = /obj/item/weapon/shield/wood
+		if(1) //Dual Axe Warrior
+			r_hand = /obj/item/weapon/axe/stone
+			l_hand = /obj/item/weapon/axe/stone
+			armor = /obj/item/clothing/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(2) //Long Club Caveman
-			r_hand = /obj/item/weapon/mace/goden/shillelagh
+			r_hand = /obj/item/weapon/polearm/woodstaff
+			armor = /obj/item/clothing/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(3) //Club Caveman
 			r_hand = /obj/item/weapon/mace/woodclub
-			l_hand = /obj/item/weapon/shield/wood
+			armor = /obj/item/clothing/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(4) //dagger fighter
+			armor = /obj/item/clothing/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 			r_hand = /obj/item/weapon/knife/stone
 			l_hand = /obj/item/weapon/knife/stone
 		if(5) //Spear hunter
-			r_hand = /obj/item/weapon/polearm/spear/bonespear
-			l_hand = /obj/item/weapon/shield/wood
+			r_hand = /obj/item/weapon/polearm/spear/stone
+			armor = /obj/item/clothing/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 
 
 //////////////////////////////////////////////////////////
@@ -349,12 +357,44 @@
 		if(1) //one handed armed + shield
 			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/flail, /obj/item/weapon/mace/spiked)
 			l_hand = /obj/item/weapon/shield/wood
-		if(2) //dual wield
-			r_hand = pick (/obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/knife/dagger, /obj/item/weapon/flail, /obj/item/weapon/axe/iron, /obj/item/weapon/mace/spiked)
-			l_hand = pick (/obj/item/weapon/sword/short, /obj/item/weapon/knife/dagger)
-		if(3) //pikeman
-			r_hand = pick (/obj/item/weapon/polearm/spear/billhook, /obj/item/weapon/polearm/spear,/obj/item/weapon/polearm/spear/bronze)
+			armor = /obj/item/clothing/armor/chainmail/iron/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/leather
+		if(2) //Marauder with Axe and Shield
+			r_hand = /obj/item/weapon/axe/iron
 			l_hand = /obj/item/weapon/shield/wood
+			armor = /obj/item/clothing/armor/chainmail/iron/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/leather
+		if(3) //Club Caveman
+			r_hand = /obj/item/weapon/flail
+			l_hand = /obj/item/weapon/sword/scimitar/messer
+			armor = /obj/item/clothing/armor/chainmail/iron/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/leather
+		if(4) //dagger fighter
+			armor = /obj/item/clothing/armor/chainmail/iron/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			r_hand = /obj/item/weapon/sword/iron
+			l_hand = /obj/item/weapon/sword/short
+			head = /obj/item/clothing/head/helmet/leather
+		if(5) //Marauder Ironblade
+			if(prob(50))
+				r_hand = /obj/item/weapon/mace/spiked
+				l_hand = /obj/item/weapon/shield/wood
+				armor = /obj/item/clothing/armor/plate/orc
+				head = /obj/item/clothing/head/helmet/orc
+			else
+				r_hand = /obj/item/weapon/mace/spiked
+				l_hand = /obj/item/weapon/sword/scimitar/messer
+				armor = /obj/item/clothing/armor/plate/orc
+				head = /obj/item/clothing/head/helmet/orc
+				cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			if(prob(30))
+				r_hand = /obj/item/weapon/axe/iron
+				armor = /obj/item/clothing/armor/plate/orc
+				head = /obj/item/clothing/head/helmet/orc
+				cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 
 
 
@@ -390,17 +430,32 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
-			r_hand = /obj/item/weapon/sword/scimitar
-			l_hand = /obj/item/weapon/shield/tower
+			r_hand = /obj/item/weapon/sword/iron
+			l_hand = /obj/item/weapon/axe/iron
+			armor = /obj/item/clothing/armor/plate/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/orc
 		if(2) //Marauder with Axe and Shield
 			r_hand = /obj/item/weapon/axe/battle
+			armor = /obj/item/clothing/armor/plate/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/orc
 		if(3) //Warhammer Caveman
 			r_hand = /obj/item/weapon/mace/goden/steel/warhammer
-		if(4) //
+			armor = /obj/item/clothing/armor/plate/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/orc
+		if(4) //dagger fighter
+			armor = /obj/item/clothing/armor/plate/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 			r_hand = /obj/item/weapon/mace/steel
 			l_hand = /obj/item/weapon/shield/tower
 		if(5) //Marauder Ironblade
-			r_hand = /obj/item/weapon/sword/long
+			r_hand = /obj/item/weapon/polearm/halberd/bardiche
+			armor = /obj/item/clothing/armor/plate/orc
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
+			head = /obj/item/clothing/head/helmet/orc
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /mob/living/carbon/human/species/orc/warlord
