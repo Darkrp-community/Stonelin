@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(elastic)
 	compiled |= assoc_list_data // you see why this needs to be an assoc list now?
 
 	// down here is specific to vanderlin so if you are porting this you can take this out
-	compiled["round_data"] = get_round_data()  taking it out then ROGTODO 13
+	compiled["round_data"] = get_round_data()
 
 	assoc_list_data = list()
 	return json_encode(compiled)
