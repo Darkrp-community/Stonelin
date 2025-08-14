@@ -107,7 +107,7 @@
 	bleed_mod = 0.8 // 20% less bleed rate from injuries
 
 /datum/species/aasimar/check_roundstart_eligible()
-	return TRUE
+	return FALSE
 
 /datum/species/aasimar/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()

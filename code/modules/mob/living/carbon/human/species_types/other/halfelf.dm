@@ -115,7 +115,7 @@
 	)
 
 /datum/species/human/halfelf/check_roundstart_eligible()
-	return TRUE
+	return FALSE
 
 /datum/species/human/halfelf/get_skin_list()
 	return sortList(list(
