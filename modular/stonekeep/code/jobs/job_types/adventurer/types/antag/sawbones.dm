@@ -18,7 +18,7 @@
 	..()
 	mask = /obj/item/clothing/face/facemask
 	head = /obj/item/clothing/neck/coif
-	armor = /obj/item/clothing/armor/leather/vest/butcher
+	armor = /obj/item/clothing/armor/leather/vest/colored/butcher
 	shirt = /obj/item/clothing/armor/gambeson/arming//dark gambeson
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/weapon/knife/cleaver /// proper self defense an tree aquiring

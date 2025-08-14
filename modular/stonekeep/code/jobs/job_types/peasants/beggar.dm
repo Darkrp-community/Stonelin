@@ -33,18 +33,18 @@
 	if(prob(10))
 		mouth = /obj/item/clothing/face/cigarette/rollie/cannabis
 	if(prob(10))
-		cloak = /obj/item/clothing/cloak/raincloak/brown
+		cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 	if(prob(10))
 		gloves = /obj/item/clothing/gloves/fingerless
 	if(H.gender == FEMALE)
 		armor = /obj/item/clothing/shirt/rags
 	else
-		pants = /obj/item/clothing/pants/tights/vagrant
+		pants = /obj/item/clothing/pants/tights/colored/vagrant
 		if(prob(50))
-			pants = /obj/item/clothing/pants/tights/vagrant/l
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant
+			pants = /obj/item/clothing/pants/tights/colored/vagrant/l
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 		if(prob(50))
-			shirt = /obj/item/clothing/shirt/undershirt/vagrant/l
+			shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
 	if(H.dna.species?.id == "abyssariad")
 		mask = /obj/item/clothing/face/kaizoku/facemask/dishonor
 		to_chat(H, "<span class='userdanger'>In failure I forfeited my honor and values of the Abyssal Tide. If I am to claim the essence of an Abyssariad once more, I must prove myself worthy.</span>")

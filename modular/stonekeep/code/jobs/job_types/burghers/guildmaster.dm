@@ -16,7 +16,7 @@
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish2.ogg'
 
 /datum/outfit/job/stonekeep/guildmaster/pre_equip(mob/living/carbon/human/H)
-	armor = /obj/item/clothing/shirt/tunic/red
+	armor = /obj/item/clothing/shirt/tunic/colored/red
 	wrists = /obj/item/clothing/wrists/bracers/splint
 	pants = /obj/item/clothing/pants/splintlegs
 	shirt = /obj/item/clothing/armor/chainmail/iron

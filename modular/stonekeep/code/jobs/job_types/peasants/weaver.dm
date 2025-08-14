@@ -16,14 +16,14 @@
 /datum/outfit/job/stonekeep/weaver/pre_equip(mob/living/carbon/human/H)
 	..()
 	armor = /obj/item/clothing/shirt/robe/weaver
-	shirt = /obj/item/clothing/shirt/tunic/random
+	shirt = /obj/item/clothing/shirt/tunic/colored/random
 	shoes = /obj/item/clothing/shoes/shortboots
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/weapon/knife/scissors
 	beltl = /obj/item/key/tailor
 	backr = /obj/item/storage/backpack/satchel
 	neck = /obj/item/storage/belt/pouch/coins/mid
-	pants = /obj/item/clothing/pants/tights/random
+	pants = /obj/item/clothing/pants/tights/colored/random
 	cloak = /obj/item/clothing/cloak/half/random
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/armingcap

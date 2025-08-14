@@ -51,7 +51,7 @@
 	H.mind.teach_crafting_recipe(/datum/blueprint_recipe/forgery_nitemaiden)
 	H.mind.teach_crafting_recipe(/datum/blueprint_recipe/forgery_adventurer)
 	if(H.gender == MALE)
-		head = /obj/item/clothing/head/roguehood/brown
+		head = /obj/item/clothing/head/roguehood/colored/brown
 		armor = /obj/item/clothing/armor/leather/jacket/niteman
 		shirt = /obj/item/clothing/armor/gambeson/arming//dark gambeson who only covers the chest + arms
 		pants = /obj/item/clothing/pants/trou/leather

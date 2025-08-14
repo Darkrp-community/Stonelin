@@ -36,7 +36,7 @@
 	H.change_stat("fortune", 5)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/pantaloons/dark
-		shirt = /obj/item/clothing/shirt/undershirt/black
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
 		armor = /obj/item/clothing/armor/medium/surcoat
 		shoes = /obj/item/clothing/shoes/boots
 		cloak = /obj/item/clothing/cloak/lordcloak
@@ -44,7 +44,7 @@
 			if(H.dna.species.id == "human")
 				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
 	else
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		armor = /obj/item/clothing/armor/gambeson/heavy/winterdress
 		shoes = /obj/item/clothing/shoes/shortboots
 		cloak = /obj/item/clothing/cloak/lordcloak/ladycloak

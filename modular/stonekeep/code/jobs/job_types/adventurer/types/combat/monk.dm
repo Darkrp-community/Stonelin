@@ -19,8 +19,8 @@
 	shoes = /obj/item/clothing/shoes/shortboots
 	armor = /obj/item/clothing/armor/leather/vest/monk
 	if(prob(50))
-		cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-		armor = /obj/item/clothing/shirt/robe/plain
+		cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
+		armor = /obj/item/clothing/shirt/robe/colored/plain
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	belt = /obj/item/storage/belt/leather/rope
 	beltr = /obj/item/storage/belt/pouch/coins/poor

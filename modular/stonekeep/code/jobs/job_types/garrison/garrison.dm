@@ -172,7 +172,7 @@ Design philosphy:
 	..()
 	to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 	armor = /obj/item/clothing/armor/gambeson/heavy/deelcoat
-	shirt = /obj/item/clothing/shirt/shortshirt/merc
+	shirt = /obj/item/clothing/shirt/shortshirt/colored/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 	head = /obj/item/clothing/head/tengai/gasa
 	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military
@@ -219,7 +219,7 @@ Design philosphy:
 	..()
 	to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 	armor = /obj/item/clothing/armor/leather/splint/kikko
-	shirt = /obj/item/clothing/shirt/shortshirt/merc
+	shirt = /obj/item/clothing/shirt/shortshirt/colored/merc
 	beltr = /obj/item/weapon/sword/rapier
 	head = /obj/item/clothing/head/tengai/gasa
 	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/military

@@ -37,9 +37,9 @@
 	H.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
-	pants = /obj/item/clothing/pants/tights/red
+	pants = /obj/item/clothing/pants/tights/colored/red
 	shirt = /obj/item/clothing/shirt/undershirt/webs
-	armor = /obj/item/clothing/shirt/tunic/random
+	armor = /obj/item/clothing/shirt/tunic/colored/random
 
 	H.change_stat(STATKEY_INT, 2)
 	H.change_stat(STATKEY_SPD, 1)
@@ -73,8 +73,8 @@
 	neck = /obj/item/storage/belt/pouch/coins/mid
 	if(H.gender == FEMALE)
 		cloak = /obj/item/clothing/cloak/cape/silk/random
-		armor = /obj/item/clothing/shirt/dress/gen/random
-		pants = /obj/item/clothing/pants/tights/purple
+		armor = /obj/item/clothing/shirt/dress/gen/colored/random
+		pants = /obj/item/clothing/pants/tights/colored/purple
 	if(H.gender == MALE)
 		head = /obj/item/clothing/head/courtierhat
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/natural/bundle/cloth = 2, /obj/item/natural/bundle/fibers = 1, /obj/item/dye_pack/luxury = 1, /obj/item/book/advice_weaving = 1, /obj/item/weapon/knife/villager = 1)

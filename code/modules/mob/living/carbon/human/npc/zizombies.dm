@@ -236,8 +236,8 @@
 	H.base_speed = 7
 	H.base_constitution = 10
 	H.base_endurance = 16//the zombies shouldn't get tired after all
-	shirt = pick (/obj/item/clothing/shirt/undershirt/vagrant, /obj/item/clothing/armor/gambeson/light)
-	pants = /obj/item/clothing/pants/tights/vagrant
+	shirt = pick (/obj/item/clothing/shirt/undershirt/colored/vagrant, /obj/item/clothing/armor/gambeson/light)
+	pants = /obj/item/clothing/pants/tights/colored/vagrant
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	neck = pick (/obj/item/clothing/neck/coif,/obj/item/clothing/neck/coif/cloth)

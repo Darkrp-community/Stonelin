@@ -47,7 +47,7 @@
 
 /datum/blueprint_recipe/leather/cloak
 	name = "cloak (leather)"
-	result_type = /obj/item/clothing/cloak/raincloak/brown
+	result_type = /obj/item/clothing/cloak/raincloak/colored/brown
 
 /datum/blueprint_recipe/leather/apron
 	name = "cloak (leather apron)"
@@ -397,7 +397,7 @@
 /*=========		HEAD & NECK	==========*/
 /datum/blueprint_recipe/leather/hood
 	name = "hood"
-	result_type = /obj/item/clothing/head/roguehood/brown
+	result_type = /obj/item/clothing/head/roguehood/colored/brown
 	required_materials = list(/obj/item/natural/hide = 1)
 
 /datum/blueprint_recipe/leather/papakha

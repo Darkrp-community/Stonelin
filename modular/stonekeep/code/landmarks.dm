@@ -207,7 +207,7 @@
 		/obj/item/clothing/neck/chaincoif = 10,
 		/obj/item/clothing/armor/chainmail = 10,
 		/obj/item/clothing/armor/gambeson = 5,
-		/obj/item/clothing/armor/leather/vest/butler = 10
+		/obj/item/clothing/armor/leather/vest/colored/butler = 10
 		)
 
 /obj/effect/spawner/map_spawner/outpost/personal_item

@@ -81,7 +81,7 @@ Design philosphy:
 	..()
 	to_chat(H, "<span class='warning'>You need to keep your boss, the Nitemaster, happy, or next stop is beggar.")
 	armor = /obj/item/clothing/shirt/dress/gen/sexy
-	cloak = /obj/item/clothing/cloak/raincloak/red
+	cloak = /obj/item/clothing/cloak/raincloak/colored/red
 	H.adjust_skillrank(/datum/skill/misc/lockpicking, pick(1,2), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 

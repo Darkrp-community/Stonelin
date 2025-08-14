@@ -24,7 +24,7 @@ Their default should be aligned with the crown and have some limited objective, 
 
 	pants = /obj/item/clothing/pants/trou/leather
 	cloak = /obj/item/clothing/cloak/half/random
-	shirt = /obj/item/clothing/shirt/undershirt/guardsecond
+	shirt = /obj/item/clothing/shirt/undershirt/colored/guardsecond
 	armor = /obj/item/clothing/armor/medium/scale
 	neck = /obj/item/clothing/neck/gorget
 	shoes = /obj/item/clothing/shoes/boots
@@ -106,7 +106,7 @@ Their default should be aligned with the crown and have some limited objective, 
 /datum/outfit/job/sk_migration/peasant/pre_equip(mob/living/carbon/human/H)
 	..()
 	armor =  pick(/obj/item/clothing/armor/gambeson, /obj/item/clothing/armor/leather)
-	shirt =  pick(/obj/item/clothing/armor/gambeson/light, /obj/item/clothing/shirt/undershirt/random, /obj/item/clothing/shirt/undershirt/uncolored)
+	shirt =  pick(/obj/item/clothing/armor/gambeson/light, /obj/item/clothing/shirt/undershirt/colored/random, /obj/item/clothing/shirt/undershirt/colored/uncolored)
 	pants = /obj/item/clothing/pants/trou
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	belt = /obj/item/storage/belt/leather/rope

@@ -26,8 +26,8 @@
 	neck = /obj/item/clothing/neck/coif/cloth
 	armor = /obj/item/clothing/armor/gambeson
 	cloak = /obj/item/clothing/cloak/stabard/guard
-	shirt = /obj/item/clothing/shirt/undershirt/guard
-	pants = /obj/item/clothing/pants/tights/guard
+	shirt = /obj/item/clothing/shirt/undershirt/colored/guard
+	pants = /obj/item/clothing/pants/tights/colored/guard
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/keyring/guard

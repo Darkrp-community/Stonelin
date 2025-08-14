@@ -220,7 +220,7 @@
 
 /datum/blueprint_recipe/sewing/robe
 	name = "robes"
-	result_type = list(/obj/item/clothing/shirt/robe/plain)
+	result_type = list(/obj/item/clothing/shirt/robe/colored/plain)
 	required_materials = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
@@ -249,13 +249,13 @@
 	craftdiff = 2
 /datum/blueprint_recipe/sewing/dress/black
 	name = "dress (black)"
-	result_type = list(/obj/item/clothing/shirt/dress/gen/black)
+	result_type = list(/obj/item/clothing/shirt/dress/gen/colored/black)
 /datum/blueprint_recipe/sewing/dress/blue
 	name = "dress (blue)"
-	result_type = list(/obj/item/clothing/shirt/dress/gen/blue)
+	result_type = list(/obj/item/clothing/shirt/dress/gen/colored/blue)
 /datum/blueprint_recipe/sewing/dress/purple
 	name = "dress (purple))"
-	result_type = list(/obj/item/clothing/shirt/dress/gen/purple)
+	result_type = list(/obj/item/clothing/shirt/dress/gen/colored/purple)
 /datum/blueprint_recipe/sewing/dress/sexy
 	name = "dress (seductive)"
 	result_type = list(/obj/item/clothing/shirt/dress/gen/sexy)
@@ -271,14 +271,14 @@
 
 /datum/blueprint_recipe/sewing/shortshirt
 	name = "shirt (short)"
-	result_type = list(/obj/item/clothing/shirt/shortshirt/uncolored)
+	result_type = list(/obj/item/clothing/shirt/shortshirt/colored/uncolored)
 	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 //	req_imperial = TRUE
 
 /datum/blueprint_recipe/sewing/clothshirt
 	name = "shirt"
-	result_type = list(/obj/item/clothing/shirt/undershirt/uncolored)
+	result_type = list(/obj/item/clothing/shirt/undershirt/colored/uncolored)
 	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 //	req_imperial = TRUE
@@ -291,14 +291,14 @@
 
 /datum/blueprint_recipe/sewing/clothtights
 	name = "trousers (tights)"
-	result_type = list(/obj/item/clothing/pants/tights/uncolored)
+	result_type = list(/obj/item/clothing/pants/tights/colored/uncolored)
 	required_materials = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 //	req_imperial = TRUE
 
 /datum/blueprint_recipe/sewing/tunic
 	name = "shirt (tunic)"
-	result_type = list(/obj/item/clothing/shirt/tunic/ucolored)
+	result_type = list(/obj/item/clothing/shirt/tunic/colored/ucolored)
 	required_materials = list(/obj/item/natural/cloth = 2)
 	craftdiff = 2
 /datum/blueprint_recipe/sewing/tunic/lowcut

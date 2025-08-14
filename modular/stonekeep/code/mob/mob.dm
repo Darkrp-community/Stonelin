@@ -141,12 +141,12 @@
 
 /datum/outfit/savageorc
 //	shirt = /obj/item/clothing/shirt/tribalrag	Vanderlin clothing
-	pants =	/obj/item/clothing/pants/loincloth/brown
+	pants =	/obj/item/clothing/pants/loincloth/colored/brown
 	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 
 /datum/outfit/savageorc2
 //	shirt = /obj/item/clothing/shirt/tribalrag
-	pants =	/obj/item/clothing/pants/loincloth/brown
+	pants =	/obj/item/clothing/pants/loincloth/colored/brown
 	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	head = /obj/item/clothing/head/helmet/leather
 
@@ -198,15 +198,15 @@
 			armor = /obj/item/clothing/armor/leather/hide/orc
 		if(2)
 			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(3)
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(4)
 			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 		if(5)
 			armor = /obj/item/clothing/armor/leather/hide/orc
-			cloak = /obj/item/clothing/cloak/raincloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 
 /*	..................   Dwarf Underdweller Corpse   ................... */
 /obj/effect/mob_spawn/human/corpse/damaged/underdweller

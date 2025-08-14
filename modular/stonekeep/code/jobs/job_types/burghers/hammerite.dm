@@ -44,8 +44,8 @@
 
 	ring = /obj/item/key/guildring
 	pants = /obj/item/clothing/pants/tights/makers
-	armor = /obj/item/clothing/armor/leather/vest/black
-	shirt = /obj/item/clothing/shirt/undershirt/red
+	armor = /obj/item/clothing/armor/leather/vest/colored/black
+	shirt = /obj/item/clothing/shirt/undershirt/colored/red
 	shoes = /obj/item/clothing/shoes/boots/leather
 	belt = /obj/item/storage/belt/leather
 	neck = /obj/item/clothing/neck/coif

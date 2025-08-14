@@ -294,7 +294,7 @@
 /datum/outfit/job/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
 	armor = /obj/item/clothing/armor/leather/hide/orc
-	cloak = /obj/item/clothing/cloak/raincloak/brown
+	cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 	H.base_strength = 13
 	H.base_speed = 13
 	H.base_constitution = 13
@@ -482,7 +482,7 @@
 	H.base_constitution = 14
 	H.base_endurance = 14
 	armor = /obj/item/clothing/armor/plate/orc/warlord
-	cloak = /obj/item/clothing/cloak/raincloak/red
+	cloak = /obj/item/clothing/cloak/raincloak/colored/red
 	head = /obj/item/clothing/head/helmet/orc/warlord
 	var/loadout = rand(1,5)
 	switch(loadout)

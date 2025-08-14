@@ -49,9 +49,9 @@
 		head = /obj/item/clothing/head/roguehood/random
 		if(prob(70))
 			head = /obj/item/clothing/head/strawhat
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		armor = /obj/item/clothing/armor/gambeson/light/striped
-		shirt = /obj/item/clothing/shirt/undershirt/random
+		shirt = /obj/item/clothing/shirt/undershirt/colored/random
 		shoes = /obj/item/clothing/shoes/simpleshoes
 		belt = /obj/item/storage/belt/leather/rope
 		beltr = /obj/item/key/soilson
@@ -60,7 +60,7 @@
 		head = /obj/item/clothing/head/armingcap
 		if(prob(50))
 			head = /obj/item/clothing/head/roguehood/shawl
-		armor = /obj/item/clothing/shirt/dress/gen/random
+		armor = /obj/item/clothing/shirt/dress/gen/colored/random
 		shirt = /obj/item/clothing/shirt/undershirt
 		shoes = /obj/item/clothing/shoes/simpleshoes
 		belt = /obj/item/storage/belt/leather/rope

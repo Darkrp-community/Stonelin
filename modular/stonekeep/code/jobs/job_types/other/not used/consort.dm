@@ -64,11 +64,11 @@
 /datum/outfit/job/stonekeep/consort/highborn/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/black
-		shirt = /obj/item/clothing/shirt/undershirt/black
+		pants = /obj/item/clothing/pants/tights/colored/black
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
 		armor = /obj/item/clothing/armor/leather/vest/winterjacket
 	else
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		armor = /obj/item/clothing/armor/leather/vest/winterjacket
 		shirt = /obj/item/clothing/armor/gambeson/heavy/winterdress
 
@@ -104,11 +104,11 @@
 /datum/outfit/job/stonekeep/consort/courtesan/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/black
-		shirt = /obj/item/clothing/shirt/undershirt/black
+		pants = /obj/item/clothing/pants/tights/colored/black
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
 		armor = /obj/item/clothing/armor/leather/vest/winterjacket // this is kind of stupid but i love it anyway
 	else
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		shirt = /obj/item/clothing/armor/gambeson/heavy/winterdress
 		armor = /obj/item/clothing/armor/leather/vest/winterjacket
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
@@ -145,8 +145,8 @@
 	. = ..()
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/tights/green
-		shirt = /obj/item/clothing/shirt/undershirt/black
-		armor = /obj/item/clothing/shirt/tunic/green
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
+		armor = /obj/item/clothing/shirt/tunic/colored/green
 	else
 		shirt = /obj/item/clothing/shirt/dress/silkdress/princess
 		armor = /obj/item/clothing/armor/leather/jacket/silk_coat

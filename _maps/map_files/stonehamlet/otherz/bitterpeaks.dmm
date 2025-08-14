@@ -2226,7 +2226,7 @@
 "Re" = (
 /mob/living/carbon/human/species/skeleton/npc/ambush/uneqipped,
 /obj/item/clothing/head/wizhat/gen,
-/obj/item/clothing/shirt/robe/black,
+/obj/item/clothing/shirt/robe/colored/black,
 /obj/item/weapon/polearm/woodstaff/quarterstaff/steel,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/clothing/neck/coif,

@@ -655,7 +655,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods/stone)
 "uT" = (
-/obj/item/clothing/shirt/dress/gen/random,
+/obj/item/clothing/shirt/dress/gen/colored/random,
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/naturalstone,
 /area/rogue/indoors/cave/volf)

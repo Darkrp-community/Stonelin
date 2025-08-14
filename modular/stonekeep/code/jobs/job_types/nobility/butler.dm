@@ -20,7 +20,7 @@
 
 /datum/outfit/job/stonekeep/butler/pre_equip(mob/living/carbon/human/H)
 	..()
-	armor = /obj/item/clothing/armor/leather/vest/butler
+	armor = /obj/item/clothing/armor/leather/vest/colored/butler
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/belt/pouch/coins/mid
@@ -44,13 +44,13 @@
 	H.change_stat("endurance", 1)
 
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/uncolored
-		shirt = /obj/item/clothing/shirt/undershirt/uncolored
+		pants = /obj/item/clothing/pants/tights/colored/uncolored
+		shirt = /obj/item/clothing/shirt/undershirt/colored/uncolored
 		shoes = /obj/item/clothing/shoes/nobleboot
 
 	else
 //		pants = /obj/item/clothing/pants/tights/stockings/white
-		shirt = /obj/item/clothing/shirt/dress/gen/maid
+		shirt = /obj/item/clothing/shirt/dress/gen/colored/maid
 		shoes = /obj/item/clothing/shoes/simpleshoes
 		cloak = /obj/item/clothing/cloak/apron
 		belt = /obj/item/storage/belt/leather/cloth/lady

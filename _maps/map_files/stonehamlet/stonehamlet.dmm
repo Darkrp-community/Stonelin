@@ -6142,19 +6142,19 @@
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/outdoors/exposed/manorgarri)
 "ikR" = (
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	name = "guild ceremonial cloak"
 	},
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	name = "guild ceremonial cloak"
 	},
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	name = "guild ceremonial cloak"
 	},
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	name = "guild ceremonial cloak"
 	},
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	name = "guild ceremonial cloak"
 	},
 /obj/structure/closet/crate/crafted_closet/inn,
@@ -7530,7 +7530,7 @@
 /area/rogue/under/town/basement)
 "khB" = (
 /obj/structure/rack,
-/obj/item/clothing/cloak/raincloak/brown,
+/obj/item/clothing/cloak/raincloak/colored/brown,
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "khI" = (
@@ -8604,7 +8604,7 @@
 	lockid = "tavern";
 	name = "cooks chest"
 	},
-/obj/item/clothing/pants/tights/green,
+/obj/item/clothing/pants/tights/colored/green,
 /obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry/poison,
 /obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry/poison,
 /obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry/poison,
@@ -10621,7 +10621,7 @@
 /turf/open/floor/ruinedwood/turned/alt,
 /area/rogue/indoors/town/church)
 "oeY" = (
-/obj/item/clothing/shirt/tunic/random,
+/obj/item/clothing/shirt/tunic/colored/random,
 /obj/structure/closet/crate/drawer/random{
 	pixel_y = 7
 	},
@@ -12605,7 +12605,7 @@
 /area/rogue/under/town/caverogue/deep)
 "qFT" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/clothing/cloak/raincloak/mortus,
+/obj/item/clothing/cloak/raincloak/colored/mortus,
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs)
 "qGg" = (
@@ -14796,7 +14796,7 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/bottle/wine,
-/obj/item/clothing/armor/leather/vest/innkeep,
+/obj/item/clothing/armor/leather/vest/colored/innkeep,
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/carpet/green,
 /area/rogue/under/town/basement)
@@ -15709,7 +15709,7 @@
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/outdoors/exposed/townhamlet)
 "uKz" = (
-/obj/item/clothing/cloak/raincloak/red,
+/obj/item/clothing/cloak/raincloak/colored/red,
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/bath/redhouse)
@@ -16061,7 +16061,7 @@
 /area/rogue/outdoors/rtfield)
 "vgm" = (
 /obj/structure/closet/crate/crafted_closet/inn,
-/obj/item/clothing/head/roguehood/random,
+/obj/item/clothing/head/roguehood/colored/random,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/makers)
 "vgs" = (

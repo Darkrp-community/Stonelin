@@ -53,9 +53,9 @@
 			shoes = /obj/item/clothing/shoes/sandals
 			armor = /obj/item/clothing/shirt/robe/noc
 		if(/datum/patron/divine/pestra)
-			head = /obj/item/clothing/head/roguehood/brown
+			head = /obj/item/clothing/head/roguehood/colored/brown
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
-			shirt = /obj/item/clothing/shirt/undershirt/green
+			shirt = /obj/item/clothing/shirt/undershirt/colored/green
 			shoes = /obj/item/clothing/shoes/sandals
 			armor = /obj/item/clothing/shirt/robe/phys
 		if(/datum/patron/divine/abyssor)
@@ -70,7 +70,7 @@
 			head = /obj/item/clothing/head/roguehood/random
 			neck = /obj/item/clothing/neck/psycross/silver/xylix
 			shoes = /obj/item/clothing/shoes/boots
-			armor = /obj/item/clothing/shirt/robe/plain
+			armor = /obj/item/clothing/shirt/robe/colored/plain
 			H.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 		if(/datum/patron/divine/malum)
 			head = /obj/item/clothing/head/helmet/leather/minershelm/malumite
@@ -82,7 +82,7 @@
 			head = /obj/item/clothing/head/roguehood/random
 			neck = /obj/item/clothing/neck/psycross/silver
 			shoes = /obj/item/clothing/shoes/boots
-			armor = /obj/item/clothing/shirt/robe/plain
+			armor = /obj/item/clothing/shirt/robe/colored/plain
 
 	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)

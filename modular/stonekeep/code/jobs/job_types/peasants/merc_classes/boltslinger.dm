@@ -19,7 +19,7 @@
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backl = /obj/item/ammo_holder/quiver/bolts
 	shirt = /obj/item/clothing/armor/gambeson/light
-	pants = /obj/item/clothing/pants/tights/random
+	pants = /obj/item/clothing/pants/tights/colored/random
 	neck = /obj/item/clothing/neck/coif/cloth
 	backpack_contents = list(/obj/item/weapon/knife/hunting)
 	if(H.mind)

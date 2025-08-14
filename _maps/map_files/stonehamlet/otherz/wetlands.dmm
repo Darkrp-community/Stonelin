@@ -1750,7 +1750,7 @@
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/weapon/mace/cudgel/rungu,
 /obj/item/clothing/head/jester/artefact,
-/obj/item/clothing/pants/tights/jester,
+/obj/item/clothing/pants/tights/colored/jester,
 /obj/item/clothing/shirt/jester,
 /obj/item/clothing/shoes/jester,
 /turf/open/floor/sandstone/temple,

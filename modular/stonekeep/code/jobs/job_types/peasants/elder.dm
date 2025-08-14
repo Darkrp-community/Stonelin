@@ -22,7 +22,7 @@
 	..()
 	pants = /obj/item/clothing/pants/trou/leather/heavy
 	head = /obj/item/clothing/head/knitcap
-	armor = /obj/item/clothing/armor/leather/vest/butcher
+	armor = /obj/item/clothing/armor/leather/vest/colored/butcher
 	shirt = /obj/item/clothing/shirt/tunic
 	shoes = /obj/item/clothing/shoes/boots
 	neck = /obj/item/storage/belt/pouch/coins/mid

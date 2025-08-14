@@ -32,7 +32,7 @@
 	shoes = /obj/item/clothing/shoes/boots/leather
 	neck = /obj/item/storage/belt/pouch/coins/poor
 	head = /obj/item/clothing/head/brimmed
-	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
 	armor = /obj/item/clothing/armor/leather/hide
 	backr = /obj/item/ammo_holder/quiver/arrows
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow

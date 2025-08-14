@@ -54,12 +54,12 @@
 		H.change_stat("speed", 1)
 		H.change_stat("endurance", 1)
 		shoes = /obj/item/clothing/shoes/simpleshoes
-		pants = /obj/item/clothing/pants/tights/uncolored
-		shirt = /obj/item/clothing/shirt/undershirt/uncolored
+		pants = /obj/item/clothing/pants/tights/colored/uncolored
+		shirt = /obj/item/clothing/shirt/undershirt/colored/uncolored
 		belt = /obj/item/storage/belt/leather/rope
 		beltl = /obj/item/storage/belt/pouch/coins/poor
 		if(H.gender == MALE)
-			armor = /obj/item/clothing/armor/leather/vest/black
+			armor = /obj/item/clothing/armor/leather/vest/colored/black
 		else
 			cloak = /obj/item/clothing/cloak/apron
 

@@ -49,7 +49,7 @@ Spawn in the mountain area.
 	l_hand = /obj/item/weapon/pick/paxe
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/belt/pouch/coins/poor
-	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
 	backl = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather/rope
 	backpack_contents = list(/obj/item/weapon/knife/hunting = 1, /obj/item/rope = 1,/obj/item/natural/cloth = 1, /obj/item/sleepingbag = 1)

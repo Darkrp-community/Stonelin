@@ -96,7 +96,7 @@
 
 /datum/blueprint_recipe/weaving/chaperonesilk
 	name = "hat (chaperone)"
-	result_type = list(/obj/item/clothing/head/chaperon/greyscale/silk)
+	result_type = list(/obj/item/clothing/head/chaperon/colored/greyscale/silk)
 	required_materials = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 2)
 	craftdiff = 4
@@ -133,7 +133,7 @@
 
 /datum/blueprint_recipe/weaving/silkdress
 	name = "dress (chemise)"
-	result_type = list (/obj/item/clothing/shirt/dress/silkdress/random)
+	result_type = list (/obj/item/clothing/shirt/dress/silkdress/colored/random)
 	craftdiff = 3
 
 /datum/blueprint_recipe/weaving/barmaid

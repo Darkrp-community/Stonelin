@@ -20,7 +20,7 @@
 /datum/outfit/job/sk/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/simpleshoes
-	armor = /obj/item/clothing/shirt/robe/mage
+	armor = /obj/item/clothing/shirt/robe/colored/mage
 	belt = /obj/item/storage/belt/leather/rope
 	backr = /obj/item/storage/backpack/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/manapot

@@ -33,7 +33,7 @@
 		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.add_spell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		shoes = /obj/item/clothing/shoes/simpleshoes
 		shirt = /obj/item/clothing/shirt/undershirt
 		belt = /obj/item/storage/belt/leather/rope

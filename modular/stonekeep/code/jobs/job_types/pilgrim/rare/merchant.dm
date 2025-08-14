@@ -35,10 +35,10 @@
 	if(H.gender == FEMALE)
 		armor = /obj/item/clothing/shirt/dress/gen/green
 		head = /obj/item/clothing/head/hatblu
-		cloak = /obj/item/clothing/cloak/raincloak/purple
+		cloak = /obj/item/clothing/cloak/raincloak/colored/purple
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/tights/green
-		shirt = /obj/item/clothing/shirt/undershirt/green
+		shirt = /obj/item/clothing/shirt/undershirt/colored/green
 		cloak = /obj/item/clothing/cloak/half
 		head = /obj/item/clothing/head/fancyhat
 

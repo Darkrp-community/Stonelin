@@ -40,9 +40,9 @@
 	H.add_spell(new /datum/action/cooldown/spell/undirected/list_target/vicious_mockery)
 	head = /obj/item/clothing/head/bardhat
 	shoes = /obj/item/clothing/shoes/boots
-	pants = /obj/item/clothing/pants/tights/random
-	armor = pick(/obj/item/clothing/armor/leather/vest/random, /obj/item/clothing/armor/leather/vest/bard)
-	shirt = pick(/obj/item/clothing/shirt/tunic/black, /obj/item/clothing/shirt/tunic/blue)
+	pants = /obj/item/clothing/pants/tights/colored/random
+	armor = pick(/obj/item/clothing/armor/leather/vest/colored/random, /obj/item/clothing/armor/leather/vest/bard)
+	shirt = pick(/obj/item/clothing/shirt/tunic/colored/black, /obj/item/clothing/shirt/tunic/colored/blue)
 	if(prob(30))
 		gloves = /obj/item/clothing/gloves/fingerless
 	belt = /obj/item/storage/belt/leather

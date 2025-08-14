@@ -36,7 +36,7 @@
 	head = /obj/item/clothing/head/wizhat/gen
 	backr = /obj/item/storage/backpack/satchel
 	cloak = /obj/item/clothing/cloak/black_cloak
-	armor = /obj/item/clothing/shirt/robe/black
+	armor = /obj/item/clothing/shirt/robe/colored/black
 	ring = /obj/item/clothing/ring/gold
 	belt = /obj/item/storage/belt/leather/plaquesilver
 	beltr = /obj/item/storage/keyring/mage
@@ -59,7 +59,7 @@
 			var/honorary = "Archmage"
 			H.real_name = "[honorary] [prev_real_name]"
 			H.name = "[honorary] [prev_name]"
-			armor = /obj/item/clothing/shirt/robe/courtmage
+			armor = /obj/item/clothing/shirt/robe/colored/courtmage
 			head = /obj/item/clothing/head/wizhat
 			H.change_stat("speed", -1)
 			H.change_stat("intelligence", 1)

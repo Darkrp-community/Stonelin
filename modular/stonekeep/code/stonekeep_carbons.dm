@@ -34,16 +34,16 @@
 	if(prob(50))
 		belt = /obj/item/storage/belt/leather/rope
 	if(prob(50))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 	if(prob(50))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 	if(prob(50))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant/l
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
 
 	if(prob(50))
-		pants = /obj/item/clothing/pants/tights/vagrant
+		pants = /obj/item/clothing/pants/tights/colored/vagrant
 	if(prob(50))
-		pants = /obj/item/clothing/pants/tights/vagrant/l
+		pants = /obj/item/clothing/pants/tights/colored/vagrant/l
 
 	if(prob(20))
 		r_hand = /obj/item/natural/stone
@@ -78,14 +78,14 @@
 		belt = /obj/item/storage/belt/leather
 
 	if(prob(50))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 	if(prob(50))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant/l
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
 
 	if(prob(50))
-		pants = /obj/item/clothing/pants/tights/vagrant
+		pants = /obj/item/clothing/pants/tights/colored/vagrant
 	if(prob(50))
-		pants = /obj/item/clothing/pants/tights/vagrant/l
+		pants = /obj/item/clothing/pants/tights/colored/vagrant/l
 
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/bracers/leather
@@ -163,7 +163,7 @@
 /datum/outfit/job/roguetown/npc/orc/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/shirt/tribalrag
-	pants =	/obj/item/clothing/pants/loincloth/brown
+	pants =	/obj/item/clothing/pants/loincloth/colored/brown
 
 
 // -------------------		SAVAGE ORC		--------------------------
@@ -177,11 +177,11 @@
 /datum/outfit/job/roguetown/npc/orc/savage/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/shirt/tribalrag
-	pants =	/obj/item/clothing/pants/loincloth/brown
+	pants =	/obj/item/clothing/pants/loincloth/colored/brown
 	if(prob(20))
 		armor = /obj/item/clothing/armor/leather/hide/orc
 	if(prob(20))
-		cloak = /obj/item/clothing/cloak/raincloak/brown
+		cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 	if(prob(50))
 		shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	if(prob(20))
@@ -215,7 +215,7 @@
 /datum/outfit/job/roguetown/npc/orc/looter/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/shirt/tribalrag
-	pants =	/obj/item/clothing/pants/loincloth/brown
+	pants =	/obj/item/clothing/pants/loincloth/colored/brown
 	if(prob(30))
 		pants = /obj/item/clothing/pants/trou/leather
 	if(prob(50))
@@ -466,16 +466,16 @@
 	H.STASTR = 10
 	H.STAEND = 13
 
-	shirt = /obj/item/clothing/shirt/undershirt/vagrant
+	shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 	if(prob(30))
-		shirt = /obj/item/clothing/shirt/undershirt/vagrant/l
+		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
 	if(prob(30))
-		shirt = /obj/item/clothing/shirt/undershirt/random
-	pants = /obj/item/clothing/pants/tights/random
+		shirt = /obj/item/clothing/shirt/undershirt/colored/random
+	pants = /obj/item/clothing/pants/tights/colored/random
 	if(prob(30))
-		pants = /obj/item/clothing/pants/tights/vagrant
+		pants = /obj/item/clothing/pants/tights/colored/vagrant
 	if(prob(30))
-		pants = /obj/item/clothing/pants/tights/vagrant/l
+		pants = /obj/item/clothing/pants/tights/colored/vagrant/l
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	if(prob(30))
 		shoes = /obj/item/clothing/shoes/boots
@@ -486,7 +486,7 @@
 		belt = /obj/item/storage/belt/leather
 		beltr = /obj/item/reagent_containers/powder/moondust
 	if(prob(10))
-		cloak = /obj/item/clothing/cloak/raincloak/brown
+		cloak = /obj/item/clothing/cloak/raincloak/colored/brown
 	if(prob(10))
 		cloak = /obj/item/clothing/cloak/wickercloak
 	if(prob(10))
@@ -515,7 +515,7 @@
 		if(5)
 			head = /obj/item/clothing/head/helmet/leather
 		if(6)
-			head = /obj/item/clothing/head/roguehood/uncolored
+			head = /obj/item/clothing/head/roguehood/colored/uncolored
 
 	var/wornarmor = rand(1,5)
 	switch(wornarmor)

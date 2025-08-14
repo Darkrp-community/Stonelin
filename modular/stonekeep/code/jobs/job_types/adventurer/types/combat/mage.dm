@@ -21,9 +21,9 @@
 
 /datum/outfit/job/sk/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguehood/mage
+	head = /obj/item/clothing/head/roguehood/colored/mage
 	shoes = /obj/item/clothing/shoes/simpleshoes
-	armor = /obj/item/clothing/shirt/robe/mage
+	armor = /obj/item/clothing/shirt/robe/colored/mage
 	belt = /obj/item/storage/belt/leather/rope
 	backr = /obj/item/storage/backpack/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/manapot
@@ -39,7 +39,7 @@
 		H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if(H.age == AGE_OLD)
 			head = /obj/item/clothing/head/wizhat/gen
-			armor = /obj/item/clothing/shirt/robe/plain
+			armor = /obj/item/clothing/shirt/robe/colored/plain
 			backl = /obj/item/storage/backpack/backpack
 			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			H.change_stat("intelligence", 1)

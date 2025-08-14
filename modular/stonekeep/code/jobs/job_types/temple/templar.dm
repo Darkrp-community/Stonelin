@@ -83,7 +83,7 @@
 
 	armor = /obj/item/clothing/armor/chainmail/hauberk
 	shirt = /obj/item/clothing/armor/gambeson/light
-	pants = /obj/item/clothing/pants/tights/random
+	pants = /obj/item/clothing/pants/tights/colored/random
 	shoes = /obj/item/clothing/shoes/boots
 
 	belt = /obj/item/storage/belt/leather/black/church

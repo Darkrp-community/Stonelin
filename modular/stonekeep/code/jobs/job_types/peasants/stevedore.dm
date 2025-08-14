@@ -19,7 +19,7 @@
 	..()
 /datum/outfit/job/stonekeep/stevedore/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/headband/red
+	head = /obj/item/clothing/head/headband/colored/red
 	wrists = /obj/item/storage/keyring/stevedore
 	beltr = /obj/item/weapon/mace/cudgel
 	beltl = /obj/item/storage/belt/pouch/coins/poor

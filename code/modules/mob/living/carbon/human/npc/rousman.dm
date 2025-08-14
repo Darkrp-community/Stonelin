@@ -547,7 +547,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	H.base_speed = rand(10, 15)
 	head = /obj/item/clothing/head/helmet/rousman
 	armor = /obj/item/clothing/armor/cuirass/iron/rousman
-	cloak = /obj/item/clothing/cloak/raincloak/red
+	cloak = /obj/item/clothing/cloak/raincloak/colored/red
 
 	var/loadout = rand(1,3)
 	switch(loadout)

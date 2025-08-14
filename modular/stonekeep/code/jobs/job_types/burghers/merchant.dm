@@ -40,7 +40,7 @@
 		pants = /obj/item/clothing/pants/tights/sailor
 
 	else
-		shirt = /obj/item/clothing/shirt/tunic/blue
+		shirt = /obj/item/clothing/shirt/tunic/colored/blue
 
 	if(H.dna.species.id == "Rakshari")
 		head = /obj/item/clothing/head/roguehood/pashmina

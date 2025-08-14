@@ -36,8 +36,8 @@
 	H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
-	shirt = pick(/obj/item/clothing/shirt/undershirt/random, /obj/item/clothing/armor/gambeson/light)
-	pants = pick(/obj/item/clothing/pants/tights/random, /obj/item/clothing/pants/trou/leather )
+	shirt = pick(/obj/item/clothing/shirt/undershirt/colored/random, /obj/item/clothing/armor/gambeson/light)
+	pants = pick(/obj/item/clothing/pants/tights/colored/random, /obj/item/clothing/pants/trou/leather )
 	gloves = pick(/obj/item/clothing/gloves/leather, /obj/item/clothing/gloves/fingerless)
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	belt = /obj/item/storage/belt/leather

@@ -21,7 +21,7 @@
 	if(prob(25))
 		cloak = /obj/item/clothing/cloak/volfmantle
 	if(prob(15))
-		cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+		cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
 	if(prob(10))
 		neck = 	/obj/item/clothing/neck/elfears
 	if(prob(5))
