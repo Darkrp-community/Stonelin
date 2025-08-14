@@ -60,8 +60,8 @@
 	but is often also the cause of endless bickering and infighting over minute details. \
 	Dwarves are hearty and stout but not known for their speed or eyesight..."
 
-	specstats_m = list("strength" = 1, "perception" = -1, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = 2, "fortune" = 0)
+	specstats_m = list("strength" = 1, "perception" = -1, "intelligence" = 0, "constitution" = 2, "endurance" = 3, "speed" = -2, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 3, "speed" = -1, "fortune" = 0)
 
 //DWARF SKIN TONES
 #define DWARF_MERCUR "ba9980"
