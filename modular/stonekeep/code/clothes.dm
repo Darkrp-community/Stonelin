@@ -6,19 +6,23 @@
  * * * * * * * * * * * **/
 
 /obj/item/clothing
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 
 /obj/item/clothing/shoes/jester
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 /obj/item/clothing/pants/tights
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 /obj/item/clothing/shirt/jester
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 /obj/item/clothing/armor/cuirass
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 /obj/item/clothing/head/jester
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 
+/obj/item/clothing/shirt/robe
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+/obj/item/clothing/shirt/dress
+	allowed_sex = list(FEMALE)
 
 // =============================================================================
 // ==============================	HEAD	====================================
@@ -26,7 +30,7 @@
 //................ Rabbet Visage ............... //
 /obj/item/clothing/head/padded/rabbetvisage
 	name = "rabbet visage"
-	desc = "A painted wooden rabbet worn by the faithful of Eora, usually during their rituals."
+	desc = "A painted rabbet-mask worn by the Hierodules of Eora for ceremonial purposes."
 	icon_state = "eoramask"
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
@@ -36,6 +40,14 @@
 	worn_y_dimension = 64
 	dynamic_hair_suffix = ""
 	body_parts_covered = HEAD | NOSE | EYES
+	armor = ARMOR_LEATHER	// Thin bronze, decent cut defense but not very solid
+	prevent_crits = CUT_AND_MINOR_CRITS
+	color = "#d6ad4d"
+
+/obj/item/clothing/neck/leathercollar/hierodule
+	desc = "Has small etched depiction of various explicit animal behaviour."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/roguehood/random/heavy
 	desc = "Thick leather, with a reinforced cap under it."
@@ -444,7 +456,7 @@
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 
 
-//................ Templar Helmets. I made the necked ones, I regreet it, better avoid overlap and muddled boundaries ............... //
+//................ Templar Helmets. I made the necked ones, I regret it, better avoid overlap and muddled boundaries ............... //
 /obj/item/clothing/head/helmet/heavy/bucket/templar
 	name = "templar helmet"
 	icon_state = "astrata"
@@ -454,6 +466,8 @@
 
 /obj/item/clothing/head/helmet/heavy/bucket/templar/noc
 	icon_state = "noc"
+	body_parts_covered = HEAD | MOUTH | EARS | HAIR	// sort of openfaced
+	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/heavy/bucket/templar/dendor
 	icon_state = "dendor"
@@ -476,6 +490,9 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 
+
+/obj/item/clothing/head/priestmask
+	color ="#ffffff"
 
 /obj/item/clothing/head/helmet/pestracage	// not great armor value but very durable and best coverage
 	name = "iron cage"
@@ -566,6 +583,12 @@
 	name = "ominous hood"
 	clothing_flags = NONE
 
+/obj/item/clothing/head/helmet/leather/saiga
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/roguehood/nochood
+	color ="#ffffff"
+
 // =============================================================================
 // ==============================	CLOAKS	====================================
 
@@ -607,7 +630,7 @@
 /obj/item/clothing/cloak/half
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	sleeved = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 
 /obj/item/clothing/cloak/half/guard
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -637,7 +660,7 @@
 	slot_flags =  ITEM_SLOT_BACK_L|ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 
 /obj/item/clothing/cloak/wickercloak
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	sleeved = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	slot_flags =  ITEM_SLOT_BACK_L|ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
@@ -651,6 +674,9 @@
 	color = "#491b1b"
 	inhand_mod = FALSE
 
+/obj/item/clothing/cloak/stabard/templar/noc
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 
 // =============================================================================
 // ==============================	ARMOR	====================================
@@ -746,18 +772,20 @@
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
 	icon_state = "desertgown"
 	item_state = "desertgown"
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 
-/obj/item/clothing/shirt/robe/prior
-	name = "prior robes"
+
+/obj/item/clothing/shirt/robe/hierodule
+	name = "vestal robes"
 	desc = ""
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
-	icon_state = "monkcloth"
-	item_state = "monkcloth"
+	icon_state = "hierodule"
+	item_state = "hierodule"
+	boobed = FALSE
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	color = "#ffffff"
 
 /obj/item/clothing/armor/leather/vest/monk
 	name = "monk robes"
@@ -801,6 +829,9 @@
 					H.update_inv_armor()
 					H.update_icon()
 
+/obj/item/clothing/shirt/robe
+	color = "#ffffff"
+
 /obj/item/clothing/shirt/robe/eora
 	name = "eoran robe"
 	desc = "Holy robes, intended for use by followers of Eora. Two layers, some choose to discard the outer one to display their physique."
@@ -843,11 +874,14 @@
 	sleeved = null
 
 
+/obj/item/clothing/armor/corset/hierodule
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	armor = ARMOR_LEATHER
 
-
+/*
 /obj/item/clothing/armor/gambeson/heavy/dress
 	slot_flags = ITEM_SLOT_ARMOR
-
+*/
 //................ Sheriff Brigandine ............... //
 /obj/item/clothing/armor/brigandine/sheriff
 	detail_tag = "_det"
@@ -991,7 +1025,7 @@
 /obj/item/clothing/armor/medium/surcoat
 	color = CLOTHING_WINESTAIN_RED
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
-	allowed_race = ALL_RACES_FOR_REAL
+	allowed_race = ALL_RACES_SK_LIST
 	allowed_sex = list(MALE)	// overlay not added for female cant be arsed to sprite on rn ROGTODO
 
 /obj/item/clothing/armor/brigandine/coatplates
@@ -1021,21 +1055,10 @@
 	max_integrity = INTEGRITY_STANDARD
 	salvage_result = /obj/item/natural/hide/cured
 
-/obj/item/clothing/gloves/fencer
-	name = "fencing gloves"
-	desc = "Excellent quality."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
-	icon_state = "fencergloves"
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	resistance_flags = FLAMMABLE // Made of leather
-
+/obj/item/clothing/gloves/leather/otavan
 	armor = ARMOR_LEATHER
-	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STRONG
-	salvage_result = /obj/item/natural/hide/cured
+//	salvage_result = /obj/item/natural/hide/cured
 
 
 // =============================================================================
@@ -1315,18 +1338,6 @@
 	max_integrity = 200
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = ARMOR_LEATHER
-
-/obj/item/clothing/shoes/boots/leather/fencing
-	name = "fencing boots"
-	desc = "Boots of outstanding craft, your fragile feet has never felt so protected and comfortable before."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
-	icon_state = "fencerboots"
-	item_state = "fencerboots"
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
-	max_integrity = 200
-	armor = ARMOR_LEATHER_GOOD
 
 /obj/item/clothing/shoes/boots/armor/iron
 	name = "iron plated boots"

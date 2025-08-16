@@ -311,9 +311,9 @@
 	required_materials = 	list(/obj/item/natural/hide/cured = 2, /obj/item/reagent_containers/food/snacks/tallow = 1)
 	craftdiff = 3
 
-/datum/blueprint_recipe/leather/boots_fencing
-	name = "shoes (fencing boots)"
-	result_type = /obj/item/clothing/shoes/boots/leather/fencing
+/datum/blueprint_recipe/leather/boots_otavan
+	name = "shoes (otavan boots)"
+	result_type = /obj/item/clothing/shoes/otavan
 	required_materials = 	list(/obj/item/natural/hide/cured = 2, /obj/item/ingot/iron = 1)
 	craftdiff = 3
 
@@ -343,9 +343,9 @@
 				/obj/item/reagent_containers/food/snacks/tallow = 1)
 	craftdiff = 2
 
-/datum/blueprint_recipe/leather/gloves_fencing
-	name = "gloves (fencing)"
-	result_type = /obj/item/clothing/gloves/fencer
+/datum/blueprint_recipe/leather/gloves_otavan
+	name = "gloves (otavan)"
+	result_type = /obj/item/clothing/gloves/leather/otavan
 	required_materials = 	list(/obj/item/natural/hide/cured = 2)
 	craftdiff = 3
 

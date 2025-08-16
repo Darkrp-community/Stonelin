@@ -39,7 +39,7 @@
 
 /obj/item/clothing/shoes/boots/leather/heavy/drakon
 	color = "#c69dd7"
-/obj/item/clothing/gloves/fencer/drakon
+/obj/item/clothing/gloves/leather/otavan/drakon
 	color = "#9377a0"
 /obj/item/clothing/cloak/cape/drakon
 	color = CLOTHING_BLOOD_RED

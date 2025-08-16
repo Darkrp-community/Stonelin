@@ -2,14 +2,7 @@
 	name = "Rogue Mage"
 	tutorial = "Those fools at the academy laughed at you and cast you from the ivory tower of higher learning and magickal practice. No matter - you will ascend to great power one day, but first you need wealth - vast amounts of it. Show those fools in the town what REAL magic looks like."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 	outfit = /datum/outfit/job/stonekeep/bandit/roguemage
 	category_tags = list(CTAG_BANDIT)
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish.ogg'

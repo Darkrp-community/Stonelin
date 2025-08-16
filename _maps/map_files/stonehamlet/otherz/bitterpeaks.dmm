@@ -282,7 +282,7 @@
 /obj/item/clothing/neck/gorget,
 /obj/item/clothing/wrists/bracers/drakon,
 /obj/item/clothing/cloak/cape/drakon,
-/obj/item/clothing/gloves/fencer/drakon,
+/obj/item/clothing/gloves/leather/otavan/drakon,
 /obj/item/clothing/shoes/boots/leather/heavy/drakon,
 /turf/open/floor/blocks/paving,
 /area/rogue/indoors/vampire_manor)
@@ -1346,7 +1346,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/candle/yellow,
-/obj/item/clothing/shirt/robe/prior,
+/obj/item/clothing/shirt/robe/faceless,
 /obj/item/reagent_containers/glass/bottle/tieflingwine_artefact,
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)

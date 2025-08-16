@@ -2,15 +2,7 @@
 	name = "Sellsword"
 	tutorial = "Perhaps a mercenary, perhaps a deserter - at one time, you killed for a master in return for gold. Now you live with no such master over your head - and take what you please."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Aasimar",
-		"Dark Elf"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 	outfit = /datum/outfit/job/stonekeep/bandit/sellsword
 	category_tags = list(CTAG_BANDIT)
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish.ogg'

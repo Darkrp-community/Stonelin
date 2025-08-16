@@ -34,9 +34,11 @@ GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/priest::title,
 	/datum/job/undertaker::title,
 	/datum/job/stonekeep/acolyte::title,
+	/datum/job/stonekeep/moonseer::title,
 	/datum/job/stonekeep/gravekeeper::title,
+	/datum/job/stonekeep/hierodule::title,
 	/datum/job/stonekeep/inquisitor::title,
-	/datum/job/stonekeep/templar::title,
+	/datum/job/templar::title,
 	/datum/job/stonekeep/mastersohei::title,
 	/datum/job/stonekeep/sohei::title,
 	))

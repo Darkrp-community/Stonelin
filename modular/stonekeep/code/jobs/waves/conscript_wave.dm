@@ -38,7 +38,7 @@ Their default should be aligned with the crown and have some limited objective, 
 			var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 			head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 			H.update_fov_angles()
-		else
+		if(2)
 			mask = /obj/item/clothing/face/eyepatch
 			var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 			head?.add_wound(/datum/wound/facial/eyes/right/permanent)
@@ -126,10 +126,9 @@ Their default should be aligned with the crown and have some limited objective, 
 	switch(weapon2choose)
 		if("Polearm")
 			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			r_hand = /obj/item/weapon/polearm/spear
 			if(prob(30))
 				r_hand = /obj/item/weapon/polearm/spear/billhook
-			else
-				r_hand = /obj/item/weapon/polearm/spear
 		if("Flail" )
 			H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 			r_hand = /obj/item/weapon/thresher/military
@@ -137,28 +136,30 @@ Their default should be aligned with the crown and have some limited objective, 
 		if("Godendag")
 			H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 			r_hand = /obj/item/weapon/mace/goden
-	if(H.mind)
-		H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(0,1), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/polearms, pick(0,1), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/whipsflails, pick(0,1), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/knives, pick(1,2), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
-		H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
-		H.change_stat(STATKEY_STR, pick(-1,0,1,2,3))
-		H.change_stat(STATKEY_SPD, pick(-1,0,1))
-		H.change_stat(STATKEY_END, pick(-1,0,1,2,3))
-		H.change_stat(STATKEY_CON, pick(-1,0,1,2,3))
-		H.change_stat(STATKEY_INT, pick(-4,-3,-2,-1,0,1))
+
+	H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/polearms, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/whipsflails, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+
+	H.change_stat(STATKEY_STR, pick(-1,0,1,2,3))
+	H.change_stat(STATKEY_SPD, pick(-1,0,1))
+	H.change_stat(STATKEY_END, pick(-1,0,1,2,3))
+	H.change_stat(STATKEY_CON, pick(-1,0,1,2,3))
+	H.change_stat(STATKEY_INT, pick(-4,-3,-2,-1,0,1))
+
 	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 	H.verbs |= /mob/proc/haltyell
 

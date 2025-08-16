@@ -36,42 +36,6 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
-
-/datum/blueprint_recipe/weaving/stockings_white_silk
-	name = "stockings (white silk)"
-	result_type = list(/obj/item/clothing/pants/tights/stockings/silk/white)
-	required_materials = list(/obj/item/natural/silk = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/blueprint_recipe/weaving/stockings_black_silk
-	name = "stockings (black silk)"
-	result_type = list(/obj/item/clothing/pants/tights/stockings/silk/black)
-	required_materials = list(/obj/item/natural/silk = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/blueprint_recipe/weaving/stockings_blue_silk
-	name = "stockings (blue silk)"
-	result_type = list(/obj/item/clothing/pants/tights/stockings/silk/blue)
-	required_materials = list(/obj/item/natural/silk = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/blueprint_recipe/weaving/stockings_red_silk
-	name = "stockings (red silk)"
-	result_type = list(/obj/item/clothing/pants/tights/stockings/silk/red)
-	required_materials = list(/obj/item/natural/silk = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/blueprint_recipe/weaving/stockings_purple_silk
-	name = "stockings (purple silk)"
-	result_type = list(/obj/item/clothing/pants/tights/stockings/silk/purple)
-	required_materials = list(/obj/item/natural/silk = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
 /datum/blueprint_recipe/weaving/cloak
 	name = "cloak (silk half cloak)"
 	result_type = list(/obj/item/clothing/cloak/half)

@@ -488,12 +488,12 @@
 	name = "None"
 	icon_state = ""
 	gender = FEMALE
-	specuse = ALL_RACES_FOR_REAL
+	specuse = ALL_RACES_SK_LIST
 
 /datum/sprite_accessory/facial_hair/shaved
 	name = "None"
 	icon_state = "facial_shaven"
-	specuse = ALL_RACES_FOR_REAL
+	specuse = ALL_RACES_SK_LIST
 
 /datum/sprite_accessory/facial_hair/brew
 	name = "Brew"

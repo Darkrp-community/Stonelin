@@ -2,14 +2,7 @@
 	name = "Knave"
 	tutorial = "Not all followers of Matthios take by force. Thieves, poachers, and ne'er-do-wells of all forms steal from others from the shadows, long gone before their marks realize their misfortune."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf"
-	)
+	allowed_races = ALL_RACES_SK_LIST
 	outfit = /datum/outfit/job/stonekeep/bandit/knave
 	category_tags = list(CTAG_BANDIT)
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_hellish.ogg'
