@@ -76,7 +76,7 @@
 	icon = 'modular/stonekeep/icons/weapons_64.dmi'
 	icon_state = "crusher"
 
-/obj/item/weapon/polearm/spear/stone/copper	// ROGTODO check it works
+/obj/item/weapon/polearm/spear/stone/copper
 	icon = 'icons/roguetown/weapons/64.dmi'
 
 /obj/item/weapon/polearm/halberd/bardiche/dendor
@@ -237,3 +237,20 @@
 	desc = "Dedicated to the Undermaiden."
 	icon = 'modular/stonekeep/icons/weapons.dmi'
 	icon_state = "necrashield"
+
+
+/obj/item/weapon/mace/goden/steel/malum
+	icon = 'icons/roguetown/weapons/64.dmi'
+	dropshrink = 0.9
+
+/obj/item/weapon/mace/goden/steel/malum/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -8,"sy" = 6,"nx" = 8,"ny" = 6,"wx" = -5,"wy" = 6,"ex" = 0,"ey" = 6,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -24,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+

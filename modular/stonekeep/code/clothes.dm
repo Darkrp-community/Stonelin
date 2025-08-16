@@ -85,7 +85,7 @@
 //................ Malum Acolyte Helmet ............... //
 /obj/item/clothing/head/helmet/leather/minershelm/malumite
 	name = "bowl of fire"
-	desc = "The fires of industry burn ever on, to praise saint Malum."
+	desc = "The fires of industry burn ever on, to praise Malum."
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -674,9 +674,12 @@
 	color = "#491b1b"
 	inhand_mod = FALSE
 
+/obj/item/clothing/cloak/stabard/templar
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+
 /obj/item/clothing/cloak/stabard/templar/noc
 	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+
 
 // =============================================================================
 // ==============================	ARMOR	====================================

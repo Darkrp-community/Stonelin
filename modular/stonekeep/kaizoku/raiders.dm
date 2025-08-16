@@ -3,7 +3,7 @@
 
 #define STAMINA_THRESHOLD 25
 
-/mob/living/carbon
+/mob/living
 	var/abyssariadraider = FALSE //Code for abyssariad NPCs, solely.
 
 GLOBAL_LIST_INIT(custodian_quotes, world.file2list("strings/rt/custodianlines.txt"))

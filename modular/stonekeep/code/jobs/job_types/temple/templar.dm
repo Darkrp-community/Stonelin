@@ -78,7 +78,6 @@
 			beltr =  /obj/item/weapon/knife/hunting/sai
 			backl = /obj/item/storage/backpack/satchel/cloth
 			backpack_contents = list(/obj/item/needle, /obj/item/reagent_containers/glass/bottle/poison)
-
 			ADD_TRAIT(H, TRAIT_DUALWIELDER, TRAIT_GENERIC)
 			H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
@@ -103,10 +102,12 @@
 			H.add_spell(/datum/action/cooldown/spell/undirected/call_to_arms)
 		if(/datum/patron/divine/malum)
 			wrists = /obj/item/clothing/neck/psycross/silver/malum
-			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/malum
+			head = /obj/item/clothing/head/helmet/leather/minershelm/malumite
 			cloak = /obj/item/clothing/cloak/stabard/templar/malum
 			backl = /obj/item/weapon/mace/goden/steel/malum
+			neck = /obj/item/clothing/neck/bevor/iron
 			H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
 			H.add_spell(/datum/action/cooldown/spell/status/vigorous_craft)
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/abyssor

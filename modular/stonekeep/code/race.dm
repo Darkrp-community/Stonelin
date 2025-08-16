@@ -298,6 +298,13 @@
 	"red - maroon" = "612929"
 	))
 
+
+/datum/species/aasimar/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE
+
 // =================================================================================
 /datum/species/human/halfelf
 	name = "Half-Elf"
@@ -390,6 +397,12 @@
 		"Joshua-Aligned" = SKIN_COLOR_JOSHUA_ALIGNED, // - (Middle-Eastern)
 		"Arid-Birthed" = SKIN_COLOR_ARID_BIRTHED, // - (Black)
 	))
+
+/datum/species/human/halfelf/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE
 
 // =================================================================================
 /datum/species/halforc
