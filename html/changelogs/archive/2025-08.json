@@ -418,5 +418,28 @@
                 "bugfix": "better cooking qol"
             }
         ]
+    },
+    "2025-08-17": {
+        "grungussuss": [
+            {
+                "qol": "pointing at items in your inventory displays them above you"
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "rscdel": "Remove Artificer Keys from pilgrims."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "balance": "royal knights no longer get master skill"
+            },
+            {
+                "balance": "swift intent does less damage"
+            },
+            {
+                "balance": "greatswords and halberds do less damage"
+            }
+        ]
     }
 }
