@@ -6,6 +6,20 @@
 #define NORMAL_TOWNER_RACES 	list("Humen","Elf","Half-Elf","Dwarf")
 #define PEASANT_RACES 			list("Humen","Aasimar","Half-Elf","Dwarf")
 
+#define SK_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+#define SK_TEMPLAR_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+
+//STONEKEEP TRAITS
+#define TRAIT_KAIZOKU	"Foglander Cultured"
+#define TRAIT_GOODLOVER	"Fabled Lover"
+#define TRAIT_LIMPDICK "limp_dick"
+#define TRAIT_SEXPASS "sexpass"
+#define TRAIT_DARKLING "Darkling"
+#define TRAIT_CHANGELING_METABOLISM	"Changeling Metabolism"
+#define TRAIT_DESECRANT	"Desecrant"
+//END OF STONEKEEP TRAITS
+
+
 #define FACTION_BURAKUMIN "Burakumin"
 
 #define CTAG_SKMERCENARY 	"CAT_SKMERCENART"  		// Mercenary classes
@@ -37,6 +51,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define CTAG_SKHAND			"CAT_SKHAND"
 #define CTAG_SKWOODSMAN		"CAT_SKWOODSMAN"
 #define CTAG_OLDVETERAN		"CAT_OLDVETERAN"
+#define CTAG_SKACOLYTE		"CAT_SKACOLYTE"
 
 /mob/living/carbon/human
 	// Another Boolean. But this time entirely for Kaizoku content to define those whom Abyssariads considers 'impure', and for champions.

@@ -1116,8 +1116,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						selected_patron = patrons_named[god_input]
 						to_chat(user, "<font color='purple'>Patron: [selected_patron]</font>")
 						to_chat(user, "<font color='purple'>Domain: [selected_patron.domain]</font>")
-						to_chat(user, "<font color='purple'>Background: [selected_patron.desc]</font>")
-						to_chat(user, "<font color='purple'>Flawed aspects: [selected_patron.flaws]</font>")
+						to_chat(user, "<font color='purple'>Description: [selected_patron.desc]</font>")	//SKEDIT
+						to_chat(user, "<font color='purple'>Aspects: [selected_patron.flaws]</font>")	//SKEDIT
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
 						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
 //to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")

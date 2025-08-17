@@ -408,6 +408,12 @@
 /datum/species/halforc
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
+/datum/species/halforc/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE
+
 // =================================================================================
 /datum/species/tieberian
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
@@ -455,3 +461,16 @@
 // =================================================================================
 /datum/species/rakshari
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+
+
+/datum/species/abyssariad/skylancer/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE
+
+/datum/species/abyssariad/ogrun/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE

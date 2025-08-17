@@ -10,7 +10,7 @@
 	min_pq = 0
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
-	allowed_patrons = ALL_CLERIC_PATRONS
+	allowed_patrons = SK_TEMPLAR_PATRONS
 
 	outfit = /datum/outfit/job/stonekeep/templar
 	cmode_music = 'sound/music/cmode/church/combat_templar.ogg'
@@ -18,7 +18,7 @@
 /datum/outfit/job/stonekeep/templar
 	name = "Templar"
 	jobtype = /datum/job/templar
-	allowed_patrons = ALL_CLERIC_PATRONS
+	allowed_patrons = SK_TEMPLAR_PATRONS
 	job_bitflag = BITFLAG_CHURCH
 
 
@@ -42,8 +42,10 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 			backl = /obj/item/weapon/sword/long/exe/astrata
 			beltr = /obj/item/weapon/knife/dagger
+
 			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.add_spell(/datum/action/cooldown/spell/sacred_flame)
+			ADD_TRAIT(H, TRAIT_APRICITY, TRAIT_GENERIC)	// daytime stamina regen bonus
+
 		if(/datum/patron/divine/noc)
 			neck = /obj/item/clothing/neck/psycross/noc
 			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/noc
@@ -51,25 +53,38 @@
 			backr = /obj/item/weapon/shield/tower/buckleriron
 			shirt = /obj/item/clothing/armor/gambeson/light/colored/black
 			beltr = /obj/item/weapon/sword/sabre/noc
+
 			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			ADD_TRAIT(H, TRAIT_DUALWIELDER, TRAIT_GENERIC)
-			H.add_spell(/datum/action/cooldown/spell/undirected/moon_sense)
+			ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
+			H.virginity = TRUE
+			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+			if(!eyes)
+				return
+			eyes.see_in_dark = 3
+			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+			H.update_sight()
+
 		if(/datum/patron/divine/dendor)
 			neck = /obj/item/clothing/neck/psycross/silver/dendor
 			head = /obj/item/clothing/head/helmet/leather/saiga
 			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 			backr = /obj/item/weapon/polearm/halberd/bardiche/dendor
 			beltr = /obj/item/weapon/knife/stone
+
 			H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.add_spell(/datum/action/cooldown/spell/undirected/beast_sense)
+			ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/necra)
 			neck = /obj/item/clothing/neck/psycross/silver/necra
 			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-			beltr = /obj/item/weapon/flail/sflail/necraflail
+			beltr = /obj/item/weapon/flail/sflail
 			backr = /obj/item/weapon/shield/tower/metal/necra
+
 			H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-			H.add_spell(/datum/action/cooldown/spell/burial_rites)
+			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/pestra)
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
 			head = /obj/item/clothing/head/helmet/pestracage
@@ -78,10 +93,13 @@
 			beltr =  /obj/item/weapon/knife/hunting/sai
 			backl = /obj/item/storage/backpack/satchel/cloth
 			backpack_contents = list(/obj/item/needle, /obj/item/reagent_containers/glass/bottle/poison)
+
 			ADD_TRAIT(H, TRAIT_DUALWIELDER, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 			H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 			H.add_spell(/datum/action/cooldown/spell/diagnose/holy)
+
 		if(/datum/patron/divine/eora)
 			head = /obj/item/clothing/head/helmet/sallet/eoran
 			wrists = /obj/item/clothing/neck/psycross/silver/eora
@@ -89,35 +107,43 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			backr = /obj/item/weapon/shield/tower/metal
 			beltr = /obj/item/weapon/sword/arming
+
 			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.virginity = FALSE
-			H.add_spell(/datum/action/cooldown/spell/eoran_bloom)
+			ADD_TRAIT(H, TRAIT_EXTEROCEPTION, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/ravox)
 			wrists = /obj/item/clothing/neck/psycross/silver/ravox
 			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/ravox
 			cloak = /obj/item/clothing/cloak/stabard/templar/ravox
 			backl = /obj/item/weapon/sword/long/ravox
 			beltr = /obj/item/weapon/knife/dagger
+
 			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-			H.add_spell(/datum/action/cooldown/spell/undirected/call_to_arms)
+			ADD_TRAIT(H, TRAIT_SHARPER_BLADES, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/malum)
 			wrists = /obj/item/clothing/neck/psycross/silver/malum
 			head = /obj/item/clothing/head/helmet/leather/minershelm/malumite
 			cloak = /obj/item/clothing/cloak/stabard/templar/malum
 			backl = /obj/item/weapon/mace/goden/steel/malum
 			neck = /obj/item/clothing/neck/bevor/iron
+
 			H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
-			H.add_spell(/datum/action/cooldown/spell/status/vigorous_craft)
+			ADD_TRAIT(H, TRAIT_BETTER_SLEEP, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/helmet/heavy/bucket/templar/abyssor
 			wrists = /obj/item/clothing/neck/psycross/silver/abyssor
 			cloak = /obj/item/clothing/cloak/stabard/templar/abyssor
 			backr = /obj/item/weapon/shield/wood/rattan
-			r_hand = /obj/item/weapon/polearm/spear/abyssor
+			r_hand = /obj/item/weapon/polearm/spear/hoplite
+
 			H.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.add_spell(/datum/action/cooldown/spell/projectile/swordfish)
+			ADD_TRAIT(H, TRAIT_LEECHIMMUNE, TRAIT_GENERIC)
+
 		if(/datum/patron/divine/xylix)
 			head = /obj/item/clothing/head/helmet/heavy/necked/xylix
 			neck = /obj/item/clothing/neck/psycross/silver/xylix
@@ -131,10 +157,10 @@
 					r_hand = /obj/item/weapon/mace/goden
 					H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3,3,4), TRUE)
 				if(3)
-					r_hand = /obj/item/weapon/flail/peasant
-					H.adjust_skillrank(/datum/skill/combat/whipsflails, pick(2,3,3,4), TRUE)
+					r_hand = /obj/item/weapon/sword/rapier
+					H.adjust_skillrank(/datum/skill/combat/swords, pick(2,3,3,4), TRUE)
 
-			H.add_spell(/datum/action/cooldown/spell/undirected/list_target/vicious_mimicry)
+			ADD_TRAIT(H, TRAIT_BLACKLEG, TRAIT_GENERIC)
 
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -142,7 +168,6 @@
 	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
@@ -150,9 +175,6 @@
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-
-	new /datum/devotion/cleric_holder(H, H.patron)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 	if(H.dna?.species)
 		if(H.dna.species.id == "humen")

@@ -107,7 +107,7 @@
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry horcs
 
 /datum/species/halforc/check_roundstart_eligible()
-	return FALSE	// STONEKEEP EDIT
+	return TRUE
 
 /datum/species/halforc/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()

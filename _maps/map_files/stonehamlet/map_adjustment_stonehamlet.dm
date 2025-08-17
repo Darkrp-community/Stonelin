@@ -51,13 +51,10 @@
 		/datum/job/men_at_arms,
 
 		/datum/job/inquisitor,
-		/datum/job/monk,
 		/datum/job/gatemaster,
 		/datum/job/mageapprentice,
 		/datum/job/soilchild,
 
-
-		/datum/job/stonekeep/acolyte,
 		/datum/job/stonekeep/mastersohei,
 		/datum/job/stonekeep/sohei,
 		/datum/job/stonekeep/nitemaster,

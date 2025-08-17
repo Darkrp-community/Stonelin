@@ -515,16 +515,5 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 // Debug guaranteed crit chance for testing purposes, almost always crits
 #define TRAIT_ADMINTEST_CRIT "Debug guaranteed critchance"
 
-
-//STONEKEEP TRAITS
-#define TRAIT_KAIZOKU	"Foglander Cultured"
-#define TRAIT_GOODLOVER	"Fabled Lover"
-#define TRAIT_LIMPDICK "limp_dick"
-#define TRAIT_SEXPASS "sexpass"
-#define TRAIT_DARKLING "Darkling"
-#define TRAIT_CHANGELING_METABOLISM	"Changeling Metabolism"
-#define TRAIT_DESECRANT	"Desecrant"
-#define TRAIT_ADMINTEST_CRIT "Debug guaranteed critchance"
-//END OF STONEKEEP TRAITS
 /// Trait given by echolocation component.
 #define ECHOLOCATION_TRAIT "echolocation"

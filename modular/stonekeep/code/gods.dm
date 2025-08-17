@@ -1,14 +1,14 @@
 // ===========================	PANTHEON	=======================================
 
 /datum/patron/divine/astrata
-	name = "Astrata"
-	domain = "Goddess of Order, the Sun Queen"
-	desc = "The Firstborn of the Forgotten God, twin of Noc, gifted mankind the Sun."
-	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
+	name = "<font color='#7d7459'>Astrata"
+	domain = "<font color='#7d7459'>Order and Light"
+	desc = "<font color='#7d7459'>The Sun-Queen is firstborn of the Forgotten God, twin of Noc, and smile down on mankind as the Sun."
+	flaws = ""
 	worshippers = "Nobles, Zealots, Commoners"
-	sins = "Betrayal, Sloth, Witchcraft"
-	//boons = "Your stamina regeneration delay is lowered during daytime."
-	//added_traits = list(TRAIT_APRICITY)
+	sins = "Oath-breaking, Disobeying hierarchies"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/sacred_flame
 	t2 = /datum/action/cooldown/spell/healing/greater
@@ -20,14 +20,14 @@
 	)
 
 /datum/patron/divine/noc
-	name = "Noc"
-	domain = "God of Knowledge, the Moon Prince"
-	desc = "The Firstborn of the Forgotten God, twin of Astrata, gifted mankind divine wisdom."
-	flaws = "Cynical, Isolationist, Unfiltered Honesty"
+	name = "<font color='#70637d'>Noc"
+	domain = "<font color='#70637d'>Knowledge, Secrets, Meditation"
+	desc = "<font color='#70637d'>The Moon Prince, twin of Astrata, gifted mankind the written language. Man must look to the sky and not dwell on brutish animal behaviour."
+	flaws = null
 	worshippers = "Magic Practitioners, Scholars, Scribes"
-	sins = "Suppressing Truth, Indulging Lust, Destroying Books"
-	//boons = "You learn and teach apprentices slightly better."
-	//added_traits = list(TRAIT_TUTELAGE)
+	sins = "Damaging books, Indulging Lust"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/status/invisibility
 	t2 = /datum/action/cooldown/spell/blindness/miracle
@@ -39,14 +39,14 @@
 	)
 
 /datum/patron/divine/dendor
-	name = "Dendor"
-	domain = "God of Nature and Beasts"
-	desc = "The manifestation of the Force of the chaotic natural world. Driven mad with time."
-	flaws = "Madness, Rebelliousness, Disorderliness"
+	name = "<font color='#4f745b'>Dendor"
+	domain = "<font color='#4f745b'>Forests and Beasts"
+	desc = "<font color='#4f745b'>A madness lies upon Dendor, wild and untamed, both predator and prey."
+	flaws = ""
 	worshippers = "Druids, Beasts, Madmen"
-	sins = "Deforestation, Overhunting, Disrespecting Nature"
-	//boons = "You are immune to kneestingers."
-	//added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
+	sins = "Deforestation, Killing beasts wastefully"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/undirected/bless_crops
 	t2 = /datum/action/cooldown/spell/undirected/beast_sense
@@ -58,14 +58,14 @@
 	)
 
 /datum/patron/divine/abyssor
-	name = "Abyssor"
-	domain = "God of Seas and Storms"
-	desc = "The World-Whale, the sovereign Force of the seas and storms."
-	flaws= "Unforgiving, Stubborn, Destructive"
+	name = "<font color='#63677d'>Abyssor"
+	domain = "<font color='#63677d'>Seas and Storms"
+	desc = "<font color='#63677d'>The World-Whale, immovable, unstoppable, bringer of bounties and ruin alike."
+	flaws= ""
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
-	sins = "Fear, Hubris, Forgetfulness"
-	//boons = "Leeches will not latch onto you in dirty water."
-	//added_traits = list(TRAIT_LEECHIMMUNE)
+	sins = "Hubris, Forgetfulness"
+	boons = ""
+	added_traits = list()
 /* NEEDS KAIZOKU TO WORK ROGTODO
 	t0 = /datum/action/cooldown/spell/healing/abyssal
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
@@ -83,14 +83,14 @@
 	)
 
 /datum/patron/divine/necra
-	name = "Necra"
-	domain = "God of Death and Decay"
-	desc = "The Undermaiden, also known as the Veiled Lady. A feared and respected Force and keeper of the dead."
-	flaws = "Unchanging, Apathetic, Strict"
+	name = "<font color='#78797e'>Necra"
+	domain = "<font color='#78797e'>Death and the Afterlife"
+	desc = "<font color='#78797e'>The Undermaiden keeps the dead in eternal rest."
+	flaws = ""
 	worshippers = "Dark Elves, Gravekeepers, Mourners"
 	sins = "Undeath"
-	//boons = "You may see the presence of a soul in a body."
-	//added_traits = list(TRAIT_SOUL_EXAMINE)
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/burial_rites
 	t2 = /datum/action/cooldown/spell/undirected/soul_speak
@@ -102,14 +102,14 @@
 	)
 
 /datum/patron/divine/ravox
-	name = "Ravox"
-	domain = "Saint of Warfare, Struggle, and Chivalry"
-	desc = "The blade of the Pantheon, a patron of all who have to face their fears in the maelstrom of battle."
-	flaws = "Careless, Aggressive, Prideful"
-	worshippers = "Warriors, Sellswords, Guardsmen"
-	sins = "Cowardice, Hesitation, Stagnation"
-	//boons = "Your used weapons dull slower."
-	//added_traits = list(TRAIT_SHARPER_BLADES)
+	name = "<font color='#846565'>Ravox"
+	domain = "<font color='#846565'>Warfare, Struggle, and Chivalry"
+	desc = "<font color='#846565'>The blade of the Pantheon, a patron of all who have to face their fears in the maelstrom of battle."
+	flaws = ""
+	worshippers = "Warriors, Knights"
+	sins = "Cowardice, Hesitation"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/undirected/call_to_arms
 	t2 = /datum/action/cooldown/spell/undirected/divine_strike
@@ -121,14 +121,14 @@
 	)
 
 /datum/patron/divine/xylix
-	name = "Xylix"
-	domain = "Saint of Trickery, Freedom, and Inspiration"
-	desc = "Perhaps the strangest Jester to have ever lived. Some say the greatest trick he ever pulled was making the world believe he never existed."
-	flaws = "Petulance, Deception, Gambling-Prone"
+	name = "<font color='#63797d'>Xylix"
+	domain = "<font color='#63797d'>Saint of Trickery, Freedom, and Inspiration"
+	desc = "<font color='#63797d'>Perhaps the strangest Jester to have ever lived. Some say the greatest trick he ever pulled was making the world believe he never existed."
+	flaws = ""
 	worshippers = "Cheats, Performers, The Hopeless"
-	sins = "Boredom, Predictability, Routine"
-	//boons = "You can rig different forms of gambling in your favor."
-	//added_traits = list(TRAIT_BLACKLEG)
+	sins = "Boredom, Predictability"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 
 
@@ -148,14 +148,14 @@
 	)
 
 /datum/patron/divine/pestra
-	name = "Pestra"
-	domain = "Saint of Healing, Alchemy, and Prophecy"
-	desc = "A legendary alchemist, they claim she invented the very art. Said to have been a hunchback."
-	flaws = "Drunkard, Crude, Sloppy"
+	name = "<font color='#778465'>Pestra"
+	domain = "<font color='#778465'>Saint of Healing, Alchemy, and Prophecy"
+	desc = "<font color='#778465'>A legendary alchemist, they claim she invented the very art. Said to have been a hunchback."
+	flaws = ""
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
-	sins = "´Curing´ Abnormalities, Refusing to help the ill, Failure to prepare"
-	//boons = "You may consume rotten food without being sick."
-	//added_traits = list(TRAIT_ROT_EATER)
+	sins = "´Curing´ Abnormalities, Refusing to help the ill"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/diagnose
 	t1 = /datum/action/cooldown/spell/healing
 	t2 = /datum/action/cooldown/spell/attach_bodypart
@@ -167,14 +167,14 @@
 	)
 
 /datum/patron/divine/malum
-	name = "Malum"
-	domain = "Saint of Toil, Industry, and Skill"
-	desc = "The perfect dwarf, said to have died while still working at the anvil, despite having become blind from age half a century earlier."
-	flaws = "Obsessive, Exacting, Overbearing"
+	name = "<font color='#827059'>Malum"
+	domain = "<font color='#827059'>Toil and Craftsmanship"
+	desc = "<font color='#827059'>To strive for perfection, to always aspire to greatness in your field, and to love the embers of the red-hot metal as it is struck is to be attuned to Malum."
+	flaws = ""
 	worshippers = "Smiths, Miners, Sculptors"
-	sins = "Cheating, Shoddy Work, Suicide"
-	//boons = "You recover more energy when sleeping."
-	//added_traits = list(TRAIT_BETTER_SLEEP)
+	sins = "Breaking contracts, Shoddy work"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/status/vigorous_craft
 	t2 = /datum/action/cooldown/spell/hammer_fall
@@ -186,14 +186,14 @@
 	)
 
 /datum/patron/divine/eora
-	name = "Eora"
-	domain = "Saint of Love, Life, and Beauty"
-	desc = "The Mother, devoted to love and beauty. Bonds forged by love is truer than any steel."
-	flaws= "Naive, Impulsive, Ignorant"
+	name = "<font color='#825974'>Eora"
+	domain = "<font color='#825974'>Love, Family, Beauty"
+	desc = "<font color='#825974'>The Mother, bonding people together in appreciation of the beauty of the world."
+	flaws= ""
 	worshippers = "Mothers, Artists, Married Couples"
-	sins = "Sadism, Abandonment, Ruining Beauty"
-	//boons = "You can understand others' needs better."
-	//added_traits = list(TRAIT_EXTEROCEPTION)
+	sins = "Abandonment, Defiling beauty"
+	boons = ""
+	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
 	t1 = /datum/action/cooldown/spell/instill_perfection
 	t2 = /datum/action/cooldown/spell/projectile/eora_curse

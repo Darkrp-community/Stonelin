@@ -25,7 +25,7 @@
 	jobtype = /datum/job/monk
 	allowed_patrons = ALL_TEMPLE_PATRONS
 	job_bitflag = BITFLAG_CHURCH
-
+/*
 /datum/outfit/job/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
@@ -173,7 +173,7 @@
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
 
-
+*/
 
 
 

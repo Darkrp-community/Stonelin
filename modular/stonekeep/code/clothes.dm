@@ -27,6 +27,7 @@
 // =============================================================================
 // ==============================	HEAD	====================================
 
+//.....	TEMPLE STUFF
 //................ Rabbet Visage ............... //
 /obj/item/clothing/head/padded/rabbetvisage
 	name = "rabbet visage"
@@ -42,7 +43,7 @@
 	body_parts_covered = HEAD | NOSE | EYES
 	armor = ARMOR_LEATHER	// Thin bronze, decent cut defense but not very solid
 	prevent_crits = CUT_AND_MINOR_CRITS
-	color = "#d6ad4d"
+//	color = "#d6ad4d"
 
 /obj/item/clothing/neck/leathercollar/hierodule
 	desc = "Has small etched depiction of various explicit animal behaviour."
@@ -55,6 +56,152 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
 	salvage_result = /obj/item/natural/hide/cured
+
+//................ Malum Acolyte Helmet ............... //
+/obj/item/clothing/head/helmet/leather/minershelm/malumite
+	name = "bowl of fire"
+	desc = "The fires of industry burn ever on, to praise Malum."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	armor = ARMOR_PLATE_BAD
+
+//................ Templar Helmets. I made the necked ones, I regret it, better avoid overlap and muddled boundaries ............... //
+/obj/item/clothing/head/helmet/heavy/bucket/templar
+	name = "templar helmet"
+	icon_state = "astrata"
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	block2add = FOV_BEHIND
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/noc
+	icon_state = "noc"
+	body_parts_covered = HEAD | MOUTH | EARS | HAIR	// sort of openfaced
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/dendor
+	icon_state = "dendor"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/necra
+	icon_state = "necra"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/abyssor
+	desc = "A heavy bronze helmet of ancient design. The sea does not change with the times."
+	icon_state = "abyssor"
+
+/obj/item/clothing/head/helmet/heavy/bucket/templar/ravox
+	icon_state = "ravoxhelm"
+	item_state = "ravoxhelm"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+/obj/item/clothing/head/helmet/heavy/bucket/templar/malum
+	icon_state = "malumhelm"
+	item_state = "malumhelm"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+
+/obj/item/clothing/head/peaceflower
+	icon = 'modular/stonekeep/icons/misc.dmi'
+
+
+/obj/item/clothing/head/priestmask
+//	color ="#ffffff"
+
+/obj/item/clothing/head/helmet/pestracage	// not great armor value but very durable and best coverage
+	name = "iron cage"
+	desc = "A simple steel helmet with no attachments. Helps protect the ears."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "headcage"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	armor =  ARMOR_LEATHER_GOOD
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	max_integrity = INTEGRITY_STRONGEST
+
+/obj/item/clothing/head/helmet/nocpriest
+	name = "moon headdress"
+	desc = "A silver crest, displaying the Moon Prince."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
+	icon_state = "nocpriest"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	blocksound = PLATEHIT
+	smeltresult = /obj/item/ingot/silver
+	anvilrepair = FALSE
+	sewrepair = TRUE
+	sellprice = 50
+
+	armor = ARMOR_LEATHER_BAD
+	body_parts_covered = HEAD|HAIR|EARS|NOSE
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STRONG
+
+/obj/item/clothing/head/helmet/feld
+	name = "pestran cage-helmet"
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
+
+/obj/item/clothing/head/roguehood/nochood
+//	color ="#ffffff"
+
+//.....	HATS
+/obj/item/clothing/head/roguehood/shawl
+	name = "shawl"
+	desc = "A thin piece of cloth tied around the neck, can be pulled up to cover the hair for modesty, or to protect against the environment."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	icon_state = "shawl"
+	item_state = "shawl"
+	color = "#8c4f4f"
+/obj/item/clothing/head/roguehood/shawl/Initialize()
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
+	..()
+
+/obj/item/clothing/head/roguehood/pashmina
+	name = "pashmina"
+	desc = "A thick hood that covers one's entire head, should they desire, or merely acts as a scarf otherwise."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	icon_state = "deserthood"
+	item_state = "deserthood"
+	color = "#4065bb"
+
+/obj/item/clothing/head/archercap
+	name = "archer's cap"
+	desc = "For the merry men."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	icon_state = "archercap"
+
+//................ Rain hood edit............... //
+/obj/item/clothing/head/hooded/rainhood
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+
+
+//................ Crown edit............... //
+/obj/item/clothing/head/crown/serpcrown
+	name = "royal crown"
+	desc = "The royal circlet of bright gold rests lightly on my brow, I once thought only of the rights this circlet would endow. But once I took the crown to which I had been schooled and bred, I found it heavy on the heart, though light upon the head."
+	icon = 'modular/stonekeep/icons/clothing.dmi'
+	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
+	dropshrink = 0.8
+
+/obj/item/clothing/head/crown/serpcrown/surplus
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	desc = "A replacement crown for the Monarch, every bit as valid as proof of sovereignity as the original."
 
 //................ Crimson Marauder ............... //
 /obj/item/clothing/head/helmet/ironpot/marauder
@@ -72,46 +219,6 @@
 	armor =  ARMOR_PLATE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 
-/obj/item/clothing/head/roguehood/pashmina
-	name = "pashmina"
-	desc = "A thick hood that covers one's entire head, should they desire, or merely acts as a scarf otherwise."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	icon_state = "deserthood"
-	item_state = "deserthood"
-	color = "#4065bb"
-
-
-//................ Malum Acolyte Helmet ............... //
-/obj/item/clothing/head/helmet/leather/minershelm/malumite
-	name = "bowl of fire"
-	desc = "The fires of industry burn ever on, to praise Malum."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	armor = ARMOR_PLATE_BAD
-
-/obj/item/clothing/head/roguehood/shawl
-	name = "shawl"
-	desc = "A thin piece of cloth tied around the neck, can be pulled up to cover the hair for modesty, or to protect against the environment."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	icon_state = "shawl"
-	item_state = "shawl"
-	color = "#8c4f4f"
-/obj/item/clothing/head/roguehood/shawl/Initialize()
-	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
-	..()
-
-/obj/item/clothing/head/archercap
-	name = "archer's cap"
-	desc = "For the merry men."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	icon_state = "archercap"
 
 /obj/item/clothing/head/helmet/heavy/psydonbarbute	// crusader helmet
 	name = "psydonian barbute"
@@ -433,80 +540,10 @@
 	body_parts_covered = COVERAGE_HEAD
 	max_integrity = INTEGRITY_STRONG
 
-//................ Crown edit............... //
-/obj/item/clothing/head/crown/serpcrown
-	name = "royal crown"
-	desc = "The royal circlet of bright gold rests lightly on my brow, I once thought only of the rights this circlet would endow. But once I took the crown to which I had been schooled and bred, I found it heavy on the heart, though light upon the head."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	dropshrink = 0.8
-
-/obj/item/clothing/head/crown/serpcrown/surplus
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-	desc = "A replacement crown for the Monarch, every bit as valid as proof of sovereignity as the original."
-
 
 //................ Padded Coif edit............... //
 /obj/item/clothing/neck/coif/cloth
 	dropshrink = 0.6
-
-//................ Rain hood edit............... //
-/obj/item/clothing/head/hooded/rainhood
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-
-
-//................ Templar Helmets. I made the necked ones, I regret it, better avoid overlap and muddled boundaries ............... //
-/obj/item/clothing/head/helmet/heavy/bucket/templar
-	name = "templar helmet"
-	icon_state = "astrata"
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	block2add = FOV_BEHIND
-
-/obj/item/clothing/head/helmet/heavy/bucket/templar/noc
-	icon_state = "noc"
-	body_parts_covered = HEAD | MOUTH | EARS | HAIR	// sort of openfaced
-	flags_inv = HIDEEARS
-
-/obj/item/clothing/head/helmet/heavy/bucket/templar/dendor
-	icon_state = "dendor"
-
-/obj/item/clothing/head/helmet/heavy/bucket/templar/necra
-	icon_state = "necra"
-
-/obj/item/clothing/head/helmet/heavy/bucket/templar/abyssor
-	desc = "A heavy bronze helmet of ancient design. The sea does not change with the times."
-	icon_state = "abyssor"
-
-/obj/item/clothing/head/helmet/heavy/bucket/templar/ravox
-	icon_state = "ravoxhelm"
-	item_state = "ravoxhelm"
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-/obj/item/clothing/head/helmet/heavy/bucket/templar/malum
-	icon_state = "malumhelm"
-	item_state = "malumhelm"
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-
-
-/obj/item/clothing/head/priestmask
-	color ="#ffffff"
-
-/obj/item/clothing/head/helmet/pestracage	// not great armor value but very durable and best coverage
-	name = "iron cage"
-	desc = "A simple steel helmet with no attachments. Helps protect the ears."
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	icon_state = "headcage"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	armor =  ARMOR_LEATHER_GOOD
-	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	max_integrity = INTEGRITY_STRONGEST
 
 /obj/item/clothing/neck/monke
 	name = "collar"
@@ -519,8 +556,25 @@
 /obj/item/clothing/face/facemask/steel
 	armor = ARMOR_PLATE_BAD
 
-/obj/item/clothing/head/peaceflower
+
+
+// ------------- PSYCROSSES ART ---------------
+/obj/item/clothing/neck/psycross/silver/abyssor
 	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/dendor
+	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/necra
+	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/malum
+	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/malum_steel
+	icon = 'icons/roguetown/clothing/neck.dmi'
+/obj/item/clothing/neck/psycross/silver/ravox
+	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/pestra
+	icon_state = "pestra_alt"
+
+
 
 /obj/item/clothing/head/helmet/heavy/necked/varyag
 	name = "varyag helmet"
@@ -531,8 +585,6 @@
 	armor = ARMOR_MAILLE
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/neck/psycross/silver/pestra
-	icon_state = "pestra_alt"
 
 /obj/item/clothing/face/spectacles/delf
 	name = "dark elf sunshields"
@@ -550,34 +602,7 @@
 	user.update_sight()
 
 
-/obj/item/clothing/head/helmet/nocpriest
-	name = "moon headdress"
-	desc = "A silver crest, displaying the Moon Prince."
-	icon = 'modular/stonekeep/icons/clothing.dmi'
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
-	icon_state = "nocpriest"
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
-	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
-	break_sound = 'sound/foley/breaksound.ogg'
-	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	blocksound = PLATEHIT
-	smeltresult = /obj/item/ingot/silver
-	anvilrepair = FALSE
-	sewrepair = TRUE
-	sellprice = 50
 
-	armor = ARMOR_LEATHER_BAD
-	body_parts_covered = HEAD|HAIR|EARS|NOSE
-	prevent_crits = CUT_AND_MINOR_CRITS
-	max_integrity = INTEGRITY_STRONG
-
-/obj/item/clothing/head/helmet/feld
-	name = "pestran cage-helmet"
-	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
 
 /obj/item/clothing/head/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
 	name = "ominous hood"
@@ -586,8 +611,7 @@
 /obj/item/clothing/head/helmet/leather/saiga
 	flags_inv = HIDEEARS
 
-/obj/item/clothing/head/roguehood/nochood
-	color ="#ffffff"
+
 
 // =============================================================================
 // ==============================	CLOAKS	====================================

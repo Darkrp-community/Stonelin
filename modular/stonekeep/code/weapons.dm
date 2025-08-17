@@ -221,7 +221,8 @@
 /obj/item/weapon/whip/antique
 	name = "war whip"
 
-
+/obj/item/weapon/shovel
+	force_wielded = 16
 
 /obj/item/weapon/shield/tower
 	dropshrink = 0.8
