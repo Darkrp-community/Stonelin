@@ -423,11 +423,39 @@
         "grungussuss": [
             {
                 "qol": "pointing at items in your inventory displays them above you"
+            },
+            {
+                "admin": "orphans are once again a 0 pq role"
+            },
+            {
+                "bugfix": "fixed lag when changing areas caused by loading music files"
+            },
+            {
+                "bugfix": "fixed vicious mockery being an untargeted spell"
+            },
+            {
+                "bugfix": "fixed admin liquid spawn cancel button not working"
+            },
+            {
+                "bugfix": "fixed infinite bronze and steel gear smelt oversight"
+            },
+            {
+                "bugfix": "fixed freshly smithed items being damaged"
+            }
+        ],
+        "Arkatos": [
+            {
+                "rscadd": "Xylix as a storyteller now respects round start events requirements. (But then true silliness begins)"
             }
         ],
         "wgtjunior743": [
             {
                 "rscdel": "Remove Artificer Keys from pilgrims."
+            }
+        ],
+        "SarmentiCampbell": [
+            {
+                "balance": "Replace Vampire lord's thralls's infinite stamina with infinite energy, Vampire lord will retain their infinite stamina."
             }
         ],
         "PotatoTomahto": [
