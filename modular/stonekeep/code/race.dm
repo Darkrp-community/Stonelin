@@ -141,7 +141,7 @@
 	are dominant in their species..."
 
 	specstats_m = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
-	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 1)
+	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 1, "speed" = 1, "fortune" = 1)
 
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	offset_features_m = list(
@@ -424,19 +424,17 @@
 	Said to be the offspring of of mortals who served Zizo and mated with their Spawn in unholy union, \
 	legions of them served as the chattel army under the banners of Zizo and Graggar. \
 	\n\n\
-	After their crushing defeat, Tieflings are said to have begged for mercy and were begrudgingly accepted, after abandoning their Lord. \
-	Facing much persecution and prejudice, these people have survived pogroms with remarkable resilience , \
-	many seeking a solitary and nomadic life without relying on the wider society to survive. \
+	After their crushing defeat, Tieflings are said to have begged for mercy and were begrudgingly allowed to live, after abandoning their Lord. \
 	Tieflings are less capable of creating offspring than most peoples, and only produce more tieflings due to their strong Zizo taint, so no half-breeds exist. \
 	Most of them tend to be extremely perceptive and paranoid, as luck is rarely on their side \
 	and their peculiar anatomy with somewhat fragile, crystalline bones makes them susceptible to injury."
 
 	specstats_m = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
 	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 1, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
-
+/*
 /datum/species/tieberian/get_accent_list()
 	return strings("SKtiefling_replacement.json", "tiefling")
-
+*/
 /datum/species/tieberian/get_hairc_list()
 	var/static/list/hair_colors = sortList(list(
 		"black - oil" = "181a1d",
@@ -474,3 +472,34 @@
 		return FALSE
 	else
 		return TRUE
+
+/datum/species/elf/undine/check_roundstart_eligible()
+	if(SSmapping.config.map_name == "Stone Hamlet")
+		return FALSE
+	else
+		return TRUE
+
+
+
+
+	/*=================*
+	*				   *
+	*	 ex Hollow-kin *
+	*				   *
+	*==================*/
+
+// ( -1 STR, +2 PER, +1 INT, -1 CON, +1 SPD, -1 FOR)
+
+/datum/species/demihuman
+	name = "Beastfolk"
+	id = SPEC_ID_HOLLOWKIN
+	desc = "Some babies are cursed by Dendor to have bestial features, to the grief and shame of their parents. Many are put into the forest as babes, and those who remain in society are treated as lesser. A few gifted ones from respectable families might make a place for themselves but they will never be fully accepted."
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_SPD = 1, STATKEY_LCK = -1)
+	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_SPD = 1, STATKEY_LCK = -1)
+	patreon_req = FALSE
+
+/datum/species/demihuman/after_creation(mob/living/carbon/C)
+	. = ..()
+	C.remove_language(/datum/language/beast)
+

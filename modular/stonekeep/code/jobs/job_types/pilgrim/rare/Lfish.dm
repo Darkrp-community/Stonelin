@@ -6,7 +6,7 @@
 	no matter the body of water. They have learned to thrive off the gifts of Abyssor, not simply survive."
 	allowed_ages = list(AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = ALL_STONEKEEP_PLAYER_RACES
+	allowed_races = ALL_RACES_SK_LIST
 	outfit = /datum/outfit/job/sk/pilgrim/fishermaster
 
 	maximum_possible_slots = 1

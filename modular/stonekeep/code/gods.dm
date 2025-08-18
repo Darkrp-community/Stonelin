@@ -1,9 +1,9 @@
 // ===========================	PANTHEON	=======================================
 
 /datum/patron/divine/astrata
-	name = "<font color='#7d7459'>Astrata"
-	domain = "<font color='#7d7459'>Order and Light"
-	desc = "<font color='#7d7459'>The Sun-Queen is firstborn of the Forgotten God, twin of Noc, and smile down on mankind as the Sun."
+	name = "<font color='#908d59'>Astrata</font>"
+	domain = "<font color='#908d59'>Order and Light</font>"
+	desc = "<font color='#908d59'>The Sun-Queen is firstborn of the Forgotten God, twin of Noc, and rides her blazing disk across the sky.</font>"
 	flaws = ""
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Oath-breaking, Disobeying hierarchies"
@@ -20,9 +20,9 @@
 	)
 
 /datum/patron/divine/noc
-	name = "<font color='#70637d'>Noc"
-	domain = "<font color='#70637d'>Knowledge, Secrets, Meditation"
-	desc = "<font color='#70637d'>The Moon Prince, twin of Astrata, gifted mankind the written language. Man must look to the sky and not dwell on brutish animal behaviour."
+	name = "<font color='#70637d'>Noc</font>"
+	domain = "<font color='#70637d'>Knowledge, Secrets, Meditation</font>"
+	desc = "<font color='#70637d'>The Moon Prince, twin of Astrata, gifted mankind the written language. Man must look to the sky and not dwell on brutish animal behaviour.</font>"
 	flaws = null
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Damaging books, Indulging Lust"
@@ -39,9 +39,9 @@
 	)
 
 /datum/patron/divine/dendor
-	name = "<font color='#4f745b'>Dendor"
-	domain = "<font color='#4f745b'>Forests and Beasts"
-	desc = "<font color='#4f745b'>A madness lies upon Dendor, wild and untamed, both predator and prey."
+	name = "<font color='#4f745b'>Dendor</font>"
+	domain = "<font color='#4f745b'>Forests and Beasts</font>"
+	desc = "<font color='#4f745b'>A madness lies upon Dendor, wild and untamed, both predator and prey.</font>"
 	flaws = ""
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Killing beasts wastefully"
@@ -58,9 +58,9 @@
 	)
 
 /datum/patron/divine/abyssor
-	name = "<font color='#63677d'>Abyssor"
-	domain = "<font color='#63677d'>Seas and Storms"
-	desc = "<font color='#63677d'>The World-Whale, immovable, unstoppable, bringer of bounties and ruin alike."
+	name = "<font color='#63677d'>Abyssor</font>"
+	domain = "<font color='#63677d'>Seas and Storms</font>"
+	desc = "<font color='#63677d'>The World-Whale, immovable, unstoppable, bringer of bounties and ruin alike.</font>"
 	flaws= ""
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Hubris, Forgetfulness"
@@ -83,9 +83,9 @@
 	)
 
 /datum/patron/divine/necra
-	name = "<font color='#78797e'>Necra"
-	domain = "<font color='#78797e'>Death and the Afterlife"
-	desc = "<font color='#78797e'>The Undermaiden keeps the dead in eternal rest."
+	name = "<font color='#78797e'>Necra</font>"
+	domain = "<font color='#78797e'>Death and the Afterlife</font>"
+	desc = "<font color='#78797e'>The Undermaiden keeps the dead in eternal rest.</font>"
 	flaws = ""
 	worshippers = "Dark Elves, Gravekeepers, Mourners"
 	sins = "Undeath"
@@ -102,9 +102,9 @@
 	)
 
 /datum/patron/divine/ravox
-	name = "<font color='#846565'>Ravox"
-	domain = "<font color='#846565'>Warfare, Struggle, and Chivalry"
-	desc = "<font color='#846565'>The blade of the Pantheon, a patron of all who have to face their fears in the maelstrom of battle."
+	name = "<font color='#9e6363'>Ravox</font>"
+	domain = "<font color='#9e6363'>Warfare, Struggle, and Chivalry</font>"
+	desc = "<font color='#9e6363'>The blade of the Pantheon, a patron of all who have to face their fears in the maelstrom of battle.</font>"
 	flaws = ""
 	worshippers = "Warriors, Knights"
 	sins = "Cowardice, Hesitation"
@@ -121,17 +121,15 @@
 	)
 
 /datum/patron/divine/xylix
-	name = "<font color='#63797d'>Xylix"
-	domain = "<font color='#63797d'>Saint of Trickery, Freedom, and Inspiration"
-	desc = "<font color='#63797d'>Perhaps the strangest Jester to have ever lived. Some say the greatest trick he ever pulled was making the world believe he never existed."
+	name = "<font color='#63797d'>Xylix</font>"
+	domain = "<font color='#63797d'>Saint of Trickery, Freedom, and Inspiration</font>"
+	desc = "<font color='#63797d'>Some say the greatest trick he ever pulled was making the world believe he never existed.</font>"
 	flaws = ""
 	worshippers = "Cheats, Performers, The Hopeless"
 	sins = "Boredom, Predictability"
 	boons = ""
 	added_traits = list()
 	t0 = /datum/action/cooldown/spell/healing
-
-
 	t1 = /datum/action/cooldown/spell/undirected/list_target/vicious_mimicry
 	t2 = /datum/action/cooldown/spell/status/wheel
 	confess_lines = list(
@@ -148,12 +146,12 @@
 	)
 
 /datum/patron/divine/pestra
-	name = "<font color='#778465'>Pestra"
-	domain = "<font color='#778465'>Saint of Healing, Alchemy, and Prophecy"
-	desc = "<font color='#778465'>A legendary alchemist, they claim she invented the very art. Said to have been a hunchback."
+	name = "<font color='#778465'>Pestra</font>"
+	domain = "<font color='#778465'>Medicine, Alchemy, and Prophecy</font>"
+	desc = "<font color='#778465'>Depicted as a hunchbacked old witch, only granting favor if well disposed.</font>"
 	flaws = ""
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
-	sins = "´Curing´ Abnormalities, Refusing to help the ill"
+	sins = "Failing to show respect to healers, Allowing disease to spread"
 	boons = ""
 	added_traits = list()
 	t0 = /datum/action/cooldown/spell/diagnose
@@ -167,9 +165,9 @@
 	)
 
 /datum/patron/divine/malum
-	name = "<font color='#827059'>Malum"
-	domain = "<font color='#827059'>Toil and Craftsmanship"
-	desc = "<font color='#827059'>To strive for perfection, to always aspire to greatness in your field, and to love the embers of the red-hot metal as it is struck is to be attuned to Malum."
+	name = "<font color='#827059'>Malum</font>"
+	domain = "<font color='#827059'>Toil and Craftsmanship</font>"
+	desc = "<font color='#827059'>To strive for perfection, to always aspire to greatness in your field, and to love the embers of the red-hot metal as it is struck is to be attuned to Malum.</font>"
 	flaws = ""
 	worshippers = "Smiths, Miners, Sculptors"
 	sins = "Breaking contracts, Shoddy work"
@@ -186,9 +184,9 @@
 	)
 
 /datum/patron/divine/eora
-	name = "<font color='#825974'>Eora"
-	domain = "<font color='#825974'>Love, Family, Beauty"
-	desc = "<font color='#825974'>The Mother, bonding people together in appreciation of the beauty of the world."
+	name = "<font color='#825974'>Eora</font>"
+	domain = "<font color='#825974'>Love, Family, Beauty</font>"
+	desc = "<font color='#825974'>The Mother, bonding people together in appreciation of the beauty of the world.</font>"
 	flaws= ""
 	worshippers = "Mothers, Artists, Married Couples"
 	sins = "Abandonment, Defiling beauty"
@@ -219,7 +217,7 @@
 		"THE FALSE GODS WILL FADE WHEN HE RETURNS!",
 		"PSYDON LIVES!",
 	)
-
+	storyteller = /datum/storyteller/psydon
 
 /datum/faith/divine_pantheon
 	name = "Divine Pantheon"
@@ -231,6 +229,7 @@
 	desc = "Worship of the Forgottten God as the primary diety. Popular among the Grenzelhofters, but can be found in all Humen Kingdoms."
 	godhead = /datum/patron/psydon
 	preference_accessible = FALSE
+
 
 /datum/faith/inhumen_pantheon
 	name = "Inhumen Gods"
@@ -298,3 +297,54 @@
 	)
 
 
+
+
+
+#define TAG_NOCEVENT "nocevent"
+
+/datum/triumph_buy/storyteller_influence_bonus/psydon
+	name = "Psydon Influence"
+	desc = "Buy an extra 25 influence for this god!"
+	triumph_buy_id = TRIUMPH_BUY_MATTHIOS_INFLUENCE
+	storyteller_name = PSYDON
+
+/datum/storyteller/psydon
+	name = PSYDON
+	desc = "The Inquisition is coming..."
+	welcome_text = "Humenity has not forgotten."
+	weight = 4
+	always_votable = TRUE
+	color_theme = "#577fa7"
+
+	tag_multipliers = list(
+		TAG_BATTLE = 1,
+	)
+
+	point_gains_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_PERSONAL = 0.8,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_INTERVENTION = 2,
+		EVENT_TRACK_CHARACTER_INJECTION = 1,
+		EVENT_TRACK_OMENS = 1,
+		EVENT_TRACK_RAIDS = 1,
+	)
+
+	influence_sets = list(
+		"Set 1" = list(
+			STATS_ZIZO_PRAISED = list("name" = "The enemy praised:", "points" = -0.1, "capacity" = -30),
+			STATS_PSYCROSS_USERS = list("name" = "Faith on display:", "points" = 5, "capacity" = 50),
+		),
+		"Set 2" = list(
+			STATS_GRAVES_CONSECRATED = list("name" = "Proper graves:", "points" = 1, "capacity" = 20),
+		),
+		"Set 3" = list(
+			STATS_ALIVE_NORTHERN_HUMANS = list("name" = "Humenity alive:", "points" = 2, "capacity" = 30),
+		),
+		"Set 4" = list(
+			STATS_DEADITES_KILLED = list("name" = "Scourge of the Undead:", "points" = 3, "capacity" = 30),
+		),
+		"Set 5" = list(
+			STATS_VAMPIRES_KILLED = list("name" = "Bane of the Vampyre:", "points" = 20, "capacity" = 60),
+		)
+	)

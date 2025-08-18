@@ -171,6 +171,7 @@
 	/datum/storyteller/malum, \
 	/datum/storyteller/eora, \
 	/datum/storyteller/dendor, \
+	/datum/storyteller/psydon, \
 )
 
 /// Inhumen pantheon storytellers
@@ -195,7 +196,6 @@
 #define MALUM "Malum"
 #define EORA "Eora"
 #define DENDOR "Dendor"
-
 // Inhumen pantheon
 #define ZIZO "Zizo"
 #define BAOTHA "Baotha"

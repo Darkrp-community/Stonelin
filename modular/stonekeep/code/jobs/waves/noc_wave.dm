@@ -2,7 +2,7 @@
 	name = "Priest of Noc"
 	greet_text = "It is time to replace the Sun Queen with her superior brother as the head of the Pantheon! Inspired by divine command in your dreams, you must take over the local Temple and make them recognize the supremacy of Noc."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = ALL_RACES_BY_NAME
+	allowed_races = ALL_RACES_SK_LIST
 	outfit = /datum/outfit/job/sk_migration/noc_priest
 	grant_lit_torch = TRUE
 
@@ -15,8 +15,7 @@
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/noc) // For some stupid reason this was checking for Dendor before.
 			H.set_patron(/datum/patron/divine/noc)
-
-
+	H.virginity = TRUE
 
 	head = /obj/item/clothing/head/helmet/nocpriest
 	neck = /obj/item/clothing/neck/psycross/noc
@@ -29,8 +28,7 @@
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	beltl = /obj/item/weapon/knife/villager
 	backr = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/needle/thorn = 1, /datum/reagent/medicine/strongmana = 1, /obj/item/storage/belt/pouch/coins/poor = 1)
-
+	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/needle/thorn = 1, /obj/item/scrying = 1, /obj/item/storage/belt/pouch/coins/poor = 1)
 	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // They get this and a wooden staff to defend themselves
@@ -40,6 +38,9 @@
 	H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
+
+	ADD_TRAIT(H, TRAIT_TUTELAGE, TRAIT_GENERIC) // better apprentice learning
+	ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
 
 	if(H.mind)
 		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
@@ -55,11 +56,34 @@
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells_priest(H)
 
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(!eyes)
+		return
+	eyes.see_in_dark = 3
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	H.update_sight()
 	H.update_icons()
 
 /datum/migrant_wave/noc_cult
 	name = "The Noc Apostate"
-	max_spawns = 1
+	can_roll = FALSE
+	downgrade_wave = /datum/migrant_wave/noc_cult_second
+	roles = list(
+		/datum/migrant_role/sk/nocpriest = 1
+		)
+	greet_text = "Too long the Moon Prince has been refused his rightful place as the primary God by the cult of his sister Astrata. It is time to right this wrong. They call you apostate, but you know you see the truth."
+
+/datum/migrant_wave/noc_cult_second
+	name = "The Noc Apostate"
+	weight = 5
+	downgrade_wave = /datum/migrant_wave/noc_cult_third
+	roles = list(
+		/datum/migrant_role/sk/nocpriest = 1
+		)
+	greet_text = "Too long the Moon Prince has been refused his rightful place as the primary God by the cult of his sister Astrata. It is time to right this wrong. They call you apostate, but you know you see the truth."
+
+/datum/migrant_wave/noc_cult_third
+	name = "The Noc Apostate"
 	weight = 5
 	roles = list(
 		/datum/migrant_role/sk/nocpriest = 1
@@ -82,3 +106,20 @@
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(cast_on, cast_on.patron)
 	C.grant_spells_templar(cast_on)
 	cast_on.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+
+
+
+
+
+/datum/round_event_control/antagonist/migrant_wave/nocpriest
+	name = "Noc Priest"
+	wave_type = /datum/migrant_wave/noc_cult
+
+	weight = 100
+	max_occurrences = 1
+
+	earliest_start = 0 MINUTES
+
+	tags = list(
+		TAG_NOCEVENT,
+	)

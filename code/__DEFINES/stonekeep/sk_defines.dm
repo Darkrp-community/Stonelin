@@ -1,10 +1,4 @@
-#define ALL_STONEKEEP_PLAYER_RACES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine")	// the normal lineup sans Rakshari who are not generally available
-#define ALL_STONEKEEP_RACES_NORMALSPRITE		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Tiefling", "Aasimar", "Changeling","Skylancer","Ogrun", "Orc", "orc")	// for clothes without dwarf sprites
-
 #define ALL_RACES_WITH_FACIALHAIR		list("human", "rakshari", "dwarf", "elf", "tiefling", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
-#define ALL_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine", "Rakshari")
-#define NORMAL_TOWNER_RACES 	list("Humen","Elf","Half-Elf","Dwarf")
-#define PEASANT_RACES 			list("Humen","Aasimar","Half-Elf","Dwarf")
 
 #define SK_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 #define SK_TEMPLAR_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
@@ -19,6 +13,8 @@
 #define TRAIT_DESECRANT	"Desecrant"
 //END OF STONEKEEP TRAITS
 
+#define TRIUMPH_BUY_PSYDON_INFLUENCE "psydon_influence"
+#define PSYDON "Psydon"
 
 #define FACTION_BURAKUMIN "Burakumin"
 
@@ -223,9 +219,12 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	SPEC_ID_DROW,\
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
+	SPEC_ID_HOLLOWKIN, \
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_ROUSMAN,\
 	SPEC_ID_ZIZOMBIE,\
+	SPEC_ID_GOBLIN,\
+	SPEC_ID_ORC,\
 	SPEC_ID_FOX,\
 	SPEC_ID_KAPPA,\
 	SPEC_ID_TENGU,\
@@ -236,6 +235,24 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define ALL_KAIZOKU_RACES list(\
 	SPEC_ID_FOX,\
 	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	)
+
+#define ALL_STONEKEEP_RACES_NORMALSPRITE list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HOLLOWKIN, \
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_ROUSMAN,\
+	SPEC_ID_ZIZOMBIE,\
+	SPEC_ID_ORC,\
+	SPEC_ID_FOX,\
 	SPEC_ID_TENGU,\
 	SPEC_ID_ONI,\
 	)

@@ -38,9 +38,8 @@ Design philosphy:
 /datum/advclass/sk/acolyte/templemaiden
 	name = "Temple Maiden"
 	tutorial = "<br><br><font color='#c394b2'><span class='bold'>Devotees of the Mother, dedicated to make the Temple a more beautiful place. \
-	Most are former slaves given to the Temple, freed when they take the oaths of a Temple Maiden for ten years. \
-	Sanctified work is playing music and tending to the wounds of the pious, but also provide comfort to those worthy who aspire to their Gods favor. Accepting payments for holy work is a grave sin. \
-	Those who grow too old or tired of these tasks tend to the Temple gardens, and help rear the many fatherless children around, many whom grow up to be Templars or Hierodules themselves as they become adults.</span></font><br>"
+	Sanctified work is playing music and tending to the wounds of the pious, but also provide comfort to those worthy who aspire to their Gods favor. \
+	The more senior usually tend to the Temple gardens, and help rear the many fatherless children around, many whom grow up to be Templars or Acolytes.</span></font><br>"
 	outfit = /datum/outfit/job/stonekeep/temple/templemaiden
 	category_tags = list(CTAG_SKACOLYTE)
 	allowed_patrons = 	list(/datum/patron/divine/eora)
@@ -72,6 +71,8 @@ Design philosphy:
 	H.add_spell(/datum/action/cooldown/spell/diagnose/holy)
 	H.add_spell(/datum/action/cooldown/spell/healing)
 
+	backpack_contents = list(/obj/item/clothing/shirt/robe/hierodule)
+
 	r_hand = /obj/item/weapon/polearm/woodstaff/quarterstaff
 	head = /obj/item/clothing/head/padded/rabbetvisage
 	neck = /obj/item/clothing/neck/leathercollar/hierodule
@@ -85,9 +86,9 @@ Design philosphy:
 	var/loadout = rand(1,2)
 	switch(loadout)
 		if(1)
-			backl = /obj/item/instrument/harp
+			backr = /obj/item/instrument/harp
 		if(2)
-			backl = /obj/item/instrument/flute
+			backr = /obj/item/instrument/flute
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)
@@ -101,7 +102,7 @@ Design philosphy:
 /datum/advclass/sk/temple/moonseer
 	name = "Moon Seer"
 	tutorial = "<br><br><font color='#949cc3'><span class='bold'>You are a librarian and guardian of the written word, a wise one giving counsel, a seer who can percieve what is hidden.<br>\
-	Eyes turning white from staring too long at the moon, those chosen by the Moon Prince are second only to the Cult of Astrata in prestige.</span></font><br>"
+	Eyes turning white from staring too long at the moon, those chosen by the Moon Prince are second only to the Cult of Astrata in prestige.</span></font><br><br>"
 	outfit = /datum/outfit/job/stonekeep/temple/moonseer
 	allowed_patrons = 	list(/datum/patron/divine/noc)
 	category_tags = list(CTAG_SKACOLYTE)

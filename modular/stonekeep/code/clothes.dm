@@ -232,7 +232,8 @@
 /obj/item/clothing/head/helmet/heavy/crusader	// crusader helmet
 	name = "great helm"
 	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
-	icon_state = "totodhelm"
+	icon_state = "totodhelm_alt"
+	item_state = "totodhelm"
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -556,7 +557,9 @@
 /obj/item/clothing/face/facemask/steel
 	armor = ARMOR_PLATE_BAD
 
-
+/obj/item/clothing/neck/bevor
+	flags_inv = HIDEFACIALHAIR
+	alternate_worn_layer = HEAD_LAYER
 
 // ------------- PSYCROSSES ART ---------------
 /obj/item/clothing/neck/psycross/silver/abyssor
@@ -570,6 +573,8 @@
 /obj/item/clothing/neck/psycross/silver/malum_steel
 	icon = 'icons/roguetown/clothing/neck.dmi'
 /obj/item/clothing/neck/psycross/silver/ravox
+	icon = 'modular/stonekeep/icons/misc.dmi'
+/obj/item/clothing/neck/psycross/silver/noc
 	icon = 'modular/stonekeep/icons/misc.dmi'
 /obj/item/clothing/neck/psycross/silver/pestra
 	icon_state = "pestra_alt"

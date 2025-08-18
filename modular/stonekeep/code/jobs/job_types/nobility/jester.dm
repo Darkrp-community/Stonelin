@@ -14,7 +14,7 @@
 	spells = list(
 		/datum/action/cooldown/spell/undirected/joke,
 		/datum/action/cooldown/spell/undirected/tragedy,
-		/datum/action/cooldown/spell/undirected/list_target/vicious_mockery,
+		/datum/action/cooldown/spell/vicious_mockery,
 	)
 	outfit = /datum/outfit/job/stonekeep/jester
 	display_order = 10
@@ -46,7 +46,6 @@
 	H.adjust_skillrank(/datum/skill/misc/athletics, pick(4,4,4,4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/music, pick(1,2,3,4,5,6), TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, pick(1,2,3,4,5,6), TRUE)
-	H.add_spell(new /datum/action/cooldown/spell/undirected/list_target/vicious_mockery) // Mock people to your heart's content!
 	H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
 
 	H.base_intelligence = rand(4, 16)

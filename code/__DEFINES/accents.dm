@@ -30,6 +30,6 @@ GLOBAL_LIST_INIT(accent_list, list(
 	ACCENT_GRENZ = strings("accents/SKgrenzelhoft_replacement.json", "grenzelhoft"),
 	ACCENT_ZYBANTINE = strings("accents/zalad_replacement.json", "arabic"),
 //	ACCENT_PIRATE = strings("accents/pirate_replacement.json", "pirate"),
-	ACCENT_MIDDLE_SPEAK = strings("accents/middlespeak.json", "full"),
+	ACCENT_MIDDLE_SPEAK = strings("accents/valley_replacement.json", "valley"), // SK EDIT
 	ACCENT_ZALAD = strings("accents/zalad_replacement.json", "arabic"),
 ))

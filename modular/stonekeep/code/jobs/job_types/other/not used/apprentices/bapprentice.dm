@@ -6,7 +6,7 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	allowed_races = ALL_STONEKEEP_PLAYER_RACES
+	allowed_races = ALL_RACES_SK_LIST
 	allowed_ages = list(AGE_ADULT)
 
 	tutorial = "You have entered into the debt of the Maker's Guild through a contract of apprenticeship, \

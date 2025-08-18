@@ -39,6 +39,7 @@
 	tag_multipliers = list(
 		TAG_MAGICAL = 1.2,
 		TAG_HAUNTED = 1.1,
+		TAG_NOCEVENT = 100,
 	)
 	cost_variance = 25
 
