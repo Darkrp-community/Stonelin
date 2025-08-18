@@ -34,7 +34,7 @@
 	pants = /obj/item/clothing/pants/trou/beltpants
 	shoes = /obj/item/clothing/shoes/boots/leather/heavy
 	backr = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/reagent_containers/glass/bottle/healthpot)
+	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/reagent_containers/glass/bottle/healthpot = 1)
 
 	var/loadout = rand(1,3)
 	switch(loadout)

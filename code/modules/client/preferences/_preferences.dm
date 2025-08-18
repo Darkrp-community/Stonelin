@@ -416,7 +416,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		dat += "<br>"
 
 	dat += "<br>"
-	dat += "<b>Voice Type:</b> <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a>"
+//	dat += "<b>Voice Type:</b> <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a>" SK EDIT
 	dat += "<br><b>Voice Color:</b> <a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 	dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=selected_accent;task=input'>[selected_accent]</a>"
 	dat += "<br>"
@@ -1117,10 +1117,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						to_chat(user, "<font color='purple'>Patron: [selected_patron]</font>")
 						to_chat(user, "<font color='purple'>Domain: [selected_patron.domain]</font>")
 						to_chat(user, "<font color='purple'>Description: [selected_patron.desc]</font>")	//SKEDIT
-						to_chat(user, "<font color='purple'>Aspects: [selected_patron.flaws]</font>")	//SKEDIT
+//						to_chat(user, "<font color='purple'>Aspects: [selected_patron.flaws]</font>")	//SKEDIT
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
 						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
-//to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
+//to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>") SKEDIT
 
 				if("voice")
 					var/new_voice = input(user, "SELECT YOUR HERO'S VOICE COLOR", "THE THROAT","#"+voice_color) as color|null

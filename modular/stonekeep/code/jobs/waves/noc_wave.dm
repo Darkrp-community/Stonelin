@@ -1,3 +1,5 @@
+// Fires automatically if Noc storyteller is chosen, as a migrant wave, once. So that the window of opportunity if you wanna do this gimmick.
+
 /datum/migrant_role/sk/nocpriest
 	name = "Priest of Noc"
 	greet_text = "It is time to replace the Sun Queen with her superior brother as the head of the Pantheon! Inspired by divine command in your dreams, you must take over the local Temple and make them recognize the supremacy of Noc."
@@ -22,16 +24,16 @@
 	wrists = /obj/item/clothing/wrists/nocwrappings
 	shoes = /obj/item/clothing/shoes/sandals
 	armor = /obj/item/clothing/shirt/robe/noc
+	shirt = /obj/item/clothing/armor/gambeson/heavy
 	shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	pants = /obj/item/clothing/pants/trou/leather/heavy
 	belt = /obj/item/storage/belt/leather/rope
-	beltr = /obj/item/flashlight/flare/torch/lantern
-	beltl = /obj/item/weapon/knife/villager
+	beltl = /obj/item/weapon/knife/dagger/silver
 	backr = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/needle/thorn = 1, /obj/item/scrying = 1, /obj/item/storage/belt/pouch/coins/poor = 1)
+	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/needle/thorn = 1, /obj/item/scrying = 1, /obj/item/storage/belt/pouch/coins/mid = 1, /obj/item/reagent_containers/glass/bottle/healthpot = 1)
 	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // They get this and a wooden staff to defend themselves
+	H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
@@ -41,6 +43,9 @@
 
 	ADD_TRAIT(H, TRAIT_TUTELAGE, TRAIT_GENERIC) // better apprentice learning
 	ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_INT, 3)
+	H.change_stat(STATKEY_END, 1)
 
 	if(H.mind)
 		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
@@ -72,6 +77,7 @@
 		/datum/migrant_role/sk/nocpriest = 1
 		)
 	greet_text = "Too long the Moon Prince has been refused his rightful place as the primary God by the cult of his sister Astrata. It is time to right this wrong. They call you apostate, but you know you see the truth."
+
 
 /datum/migrant_wave/noc_cult_second
 	name = "The Noc Apostate"
@@ -110,7 +116,6 @@
 
 
 
-
 /datum/round_event_control/antagonist/migrant_wave/nocpriest
 	name = "Noc Priest"
 	wave_type = /datum/migrant_wave/noc_cult
@@ -118,8 +123,10 @@
 	weight = 100
 	max_occurrences = 1
 
-	earliest_start = 0 MINUTES
+	earliest_start = 0 SECONDS
 
 	tags = list(
 		TAG_NOCEVENT,
 	)
+	alert_observers = TRUE
+	allowed_storytellers = list(/datum/storyteller/noc)

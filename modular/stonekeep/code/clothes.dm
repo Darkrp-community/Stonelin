@@ -129,6 +129,7 @@
 	desc = "A silver crest, displaying the Moon Prince."
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/64x64.dmi'
+	dynamic_hair_suffix = "" // hides hair
 	icon_state = "nocpriest"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
@@ -708,6 +709,9 @@
 
 /obj/item/clothing/cloak/stabard/templar/noc
 	icon = 'modular/stonekeep/icons/clothing.dmi'
+
+/obj/item/clothing/shirt/robe/archivist
+	icon = 'modular/stonekeep/icons/clothing.dmi' // nicer look
 
 
 // =============================================================================
@@ -1388,15 +1392,12 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/shoes/boots/leather/inqboots
-	name = "inquisitorial boots"
-	desc = "Finely crafted boots, made to stomp out darkness."
+/obj/item/clothing/shoes/otavan/inqboots	// fixed icons
+	icon_state = "inqboots"
+	item_state = "inqboots"
 	icon = 'modular/stonekeep/icons/clothing.dmi'
 	mob_overlay_icon = 'modular/stonekeep/icons/onmob/clothes.dmi'
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
-	icon_state = "inqboots"
-	item_state = "inqboots"
-	armor = ARMOR_LEATHER_GOOD
 
 /obj/item/clothing/shoes/simpleshoes
 	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'

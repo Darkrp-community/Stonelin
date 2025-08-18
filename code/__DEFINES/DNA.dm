@@ -93,5 +93,5 @@
 
 #define MANDATORY_FEATURE_LIST list()
 
-#define HAIR_COLOR_LIST list("#8f5a00", "#593800", "#362200", "#4e422e", "#8c8271", "#bfb7ab", "#31302e", "#f0dc48")
-#define EYE_COLOR_LIST list("#865900", "#06b400", "#312f27", "#008e83", "#002d8e", "#c16c00")
+#define HAIR_COLOR_LIST list("#8f5a00", "#593800", "#362200", "#4e422e", "#8c8271", "#6f5124", "#31302e", "#928a4f") // STONEKEEP EDIT
+#define EYE_COLOR_LIST list("#312f27") // STONEKEEP EDIT

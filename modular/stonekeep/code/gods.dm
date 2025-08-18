@@ -204,7 +204,7 @@
 
 
 /datum/patron/psydon
-	name = "Forgotten God"
+	name = "Psydon"
 	domain = "God of Humenity, Dreams and Creation"
 	desc = "Forgotten but not gone, the Great Hero has left his realm to battle the Forbidden in Hell."
 	flaws = "Secretive, Judgemental, Self-Sacrificing"
@@ -228,7 +228,7 @@
 	name = "Old God"
 	desc = "Worship of the Forgottten God as the primary diety. Popular among the Grenzelhofters, but can be found in all Humen Kingdoms."
 	godhead = /datum/patron/psydon
-	preference_accessible = FALSE
+	preference_accessible = TRUE
 
 
 /datum/faith/inhumen_pantheon
@@ -243,7 +243,7 @@
 	name = "Apostasy"
 	desc = "Although gods obviously exist in this world, you refuse to bow down to them! Due to spite, ignorance, or your own ego; you are completely godless."
 	godhead = /datum/patron/godless
-
+	preference_accessible = FALSE
 
 /datum/faith/inhumen_pantheon
 	preference_accessible = FALSE
@@ -297,15 +297,17 @@
 	)
 
 
-
+/datum/action/cooldown/spell/projectile/moonlit_dagger
+	sound = 'sound/misc/tail_swing.ogg'
 
 
 #define TAG_NOCEVENT "nocevent"
+#define TAG_PSYEVENT "psyevent"
 
 /datum/triumph_buy/storyteller_influence_bonus/psydon
 	name = "Psydon Influence"
 	desc = "Buy an extra 25 influence for this god!"
-	triumph_buy_id = TRIUMPH_BUY_MATTHIOS_INFLUENCE
+	triumph_buy_id = TRIUMPH_BUY_PSYDON_INFLUENCE
 	storyteller_name = PSYDON
 
 /datum/storyteller/psydon
@@ -318,6 +320,7 @@
 
 	tag_multipliers = list(
 		TAG_BATTLE = 1,
+		TAG_PSYEVENT = 100,
 	)
 
 	point_gains_multipliers = list(
@@ -348,3 +351,5 @@
 			STATS_VAMPIRES_KILLED = list("name" = "Bane of the Vampyre:", "points" = 20, "capacity" = 60),
 		)
 	)
+
+

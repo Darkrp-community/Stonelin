@@ -48,7 +48,6 @@ Design philosphy:
 
 /datum/outfit/job/stonekeep/temple/templemaiden/pre_equip(mob/living/carbon/human/H)
 	..()
-	to_chat(H, "<span class='warning'>A testing line of text.")
 	if(H.patron != /datum/patron/divine/eora)
 		H.set_patron(/datum/patron/divine/eora)
 
@@ -144,14 +143,6 @@ Design philosphy:
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
-/*
-	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)	// Minor night vision
-	if(eyes)
-		eyes.Remove(H,1)
-		QDEL_NULL(eyes)
-	eyes = new /obj/item/organ/eyes/elf
-	eyes.Insert(H)
-*/
 
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)

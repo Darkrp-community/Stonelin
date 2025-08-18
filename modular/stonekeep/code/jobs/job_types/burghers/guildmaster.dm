@@ -17,7 +17,7 @@
 
 /datum/outfit/job/stonekeep/guildmaster/pre_equip(mob/living/carbon/human/H)
 	armor = /obj/item/clothing/shirt/tunic/colored/red
-	wrists = /obj/item/clothing/wrists/bracers/splint
+	wrists = /obj/item/clothing/wrists/bracers
 	pants = /obj/item/clothing/pants/splintlegs
 	shirt = /obj/item/clothing/armor/chainmail/iron
 	shoes = /obj/item/clothing/shoes/boots
