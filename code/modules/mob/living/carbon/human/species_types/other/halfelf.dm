@@ -32,8 +32,9 @@
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 
+	hairyness = "t2"
 	use_skintones = TRUE
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
 	changesource_flags = WABBAJACK
 
@@ -78,8 +79,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"
 
@@ -87,7 +88,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/elf/less,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/elf,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -124,11 +125,6 @@
 		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE, // - (White 3)
 		"Amber-Stained" = SKIN_COLOR_AMBER_STAINED, // - (White 4)
 		"Joshua-Aligned" = SKIN_COLOR_JOSHUA_ALIGNED, // - (Middle-Eastern)
-		"Arid-Birthed" = SKIN_COLOR_ARID_BIRTHED, // - (Black)
-		"Redwood-Rooted" = SKIN_COLOR_REDWOOD_ROOTED, // - (Mediterranean 1)
-		"Drifted-Wood" = SKIN_COLOR_DRIFTED_WOOD, // - (Mediterranean 2)
-		"Vine-Wrapped" = SKIN_COLOR_VINE_WRAPPED, // - (Latin 2)
-		"Sage-Bloomed" = SKIN_COLOR_SAGE_BLOOMED, // - (Black 2)
 	))
 
 /datum/species/human/halfelf/get_hairc_list()

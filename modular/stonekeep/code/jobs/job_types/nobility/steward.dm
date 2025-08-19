@@ -11,6 +11,7 @@
 
 	allowed_races = RACES_PLAYER_ROYALTY
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 
 	tutorial = "Coin, Coin, Coin! Oh beautiful coin: \
 	You're addicted to it, and you hold the position as the King's personal treasurer of both coin and information. \

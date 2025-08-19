@@ -8,6 +8,7 @@
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/militia)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ROYALTY
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	allowed_ages = list(AGE_OLD)
 	tutorial = "The common folk look to you for leadership and guidance when the nobles fail. No spring chicken, the young ones should listen to your sage advice, according to you."
 	outfit = /datum/outfit/job/stonekeep/elder

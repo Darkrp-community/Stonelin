@@ -42,7 +42,6 @@ GLOBAL_LIST_INIT(church_positions, list(
 GLOBAL_PROTECT(church_positions)
 
 GLOBAL_LIST_INIT(serf_positions, list(
-	/datum/job/merchant::title,
 	/datum/job/scribe::title,
 	/datum/job/stonekeep/guildmaster::title,
 	/datum/job/stonekeep/blacksmith::title,
@@ -99,8 +98,9 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 GLOBAL_PROTECT(youngfolk_positions)
 
 GLOBAL_LIST_INIT(company_positions, list(
-//	/datum/job/merchant::title,	STONEKEEP EDIT merchant not meant to be his own faction fully
+	/datum/job/merchant::title,
 	/datum/job/shophand::title,
+	/datum/job/mercenary::title,
 //	/datum/job/grabber::title,
 	))
 GLOBAL_PROTECT(company_positions)
@@ -108,7 +108,6 @@ GLOBAL_PROTECT(company_positions)
 GLOBAL_LIST_INIT(allmig_positions, list(
 	/datum/job/pilgrim::title,
 	/datum/job/adventurer::title,
-	/datum/job/mercenary::title,
 	/datum/job/bandit::title,
 	))
 

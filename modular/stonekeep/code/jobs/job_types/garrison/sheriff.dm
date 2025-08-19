@@ -11,6 +11,7 @@
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/guard)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	tutorial = "Appointed by your liege Lord to uphold their Law and be their champion in times of strife. You command the garrison, to help keep order and peace within the Lords demesne and defend it against the many dangers of the land."
 	outfit = /datum/outfit/job/stonekeep/sheriff
 	give_bank_account = 120

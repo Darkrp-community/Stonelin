@@ -6,12 +6,14 @@
 	flag = BANDIT
 	department_flag = OUTSIDERS
 	job_flags = (JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE | JOB_SHOW_IN_CREDITS)
-	display_order = JDO_BANDIT
+	display_order = BANDIT_ORDER
 	faction = FACTION_TOWN
 	total_positions = 6
 	spawn_positions = 4
 	min_pq = 4
 	antag_job = TRUE
+
+	allowed_races = ALL_RACES_SK_LIST
 
 	outfit = null
 	outfit_female = null

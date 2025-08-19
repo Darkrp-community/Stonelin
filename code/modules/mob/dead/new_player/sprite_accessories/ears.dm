@@ -330,14 +330,14 @@
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "Elf"
 	icon_state = "elf"
-	specuse = list(SPEC_ID_ELF)
+	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING,SPEC_ID_HUMEN)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/ears/elfw
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "ElfW"
 	icon_state = "elfw"
-	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING) //tiebs use these
+	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING,SPEC_ID_HUMEN) //tiebs use these
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/ears/elfh //halfelfs are humens techincally

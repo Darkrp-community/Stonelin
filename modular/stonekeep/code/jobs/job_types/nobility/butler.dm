@@ -7,6 +7,7 @@
 	bypass_lastclass = TRUE
 	total_positions = 2
 	spawn_positions = 2
+	allowed_patrons = ALL_TEMPLE_PATRONS
 
 	f_title = "Maid"
 	allowed_races = RACES_PLAYER_ROYALTY

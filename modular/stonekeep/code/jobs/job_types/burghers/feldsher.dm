@@ -13,6 +13,7 @@
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_quarte.ogg'
 
 /datum/outfit/job/stonekeep/feldsher/pre_equip(mob/living/carbon/human/H)

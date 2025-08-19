@@ -13,19 +13,18 @@
 /datum/species/elf/snow
 	name = "Elf"
 	id = SPEC_ID_ELF
-	desc = "Necra's guides.\
+	desc = "Firstborn.\
 	\n\n\
-	Elves, created by Necra to guide humenity, are characterized by lengthened age, \
-	low fertility, and a magical aptitude originating from a vast array of tribal cultures and sub-races. \
-	With the ascension of Zizo, the entire culture of snow-elves was all but destroyed, \
-	leading the remaining tribes to live in fear and paranoia of suffering the same fate. \
-	Many elves sought safety through mixing culture, \
-	positioning themselves under the watchful guard of their stronger humen counterparts. \
-	\n\n\
-	A longstanding feud remains between elves and dwarves. \
-	Elvenkind has yet to forgive the dwarves for their destruction of homeland \
-	and pillaging of natural resources within the former snow-elf territory. \n\
-	To elves, it was the greatest disrespect to those lost. "
+	Elves, the first race of Grimoria is characterized by lengthened age, \
+	low fertility, and magical aptitude originating from a vast array of tribal cultures and sub-races. \
+	Previously immortal, now mortal as punishment by the Forgotten God for their crimes \
+	against the other races in their pre-historic days: enslavement, \
+	hunting as a game, and other horrendous acts. \
+	Elves have since been in rapid decline due to their divine judgment, \
+	enclaves are few and scattered around the various realms of their ancestral homeland of Grimoria. \
+	Now, the Elves have integrated into the multiple races realms in the known world, \
+	some forming relationships and strong bonds."
+
 
 	skin_tone_wording = "Tribal Identity"
 
@@ -35,7 +34,7 @@
 	use_skintones = 1
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/met.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft.dmi'
@@ -55,7 +54,7 @@
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes/elf,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears/elfw,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/elf,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
@@ -107,7 +106,7 @@
 	)
 
 	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 2, STATKEY_INT = 2, STATKEY_CON = -1, STATKEY_END = -1, STATKEY_SPD = 2, STATKEY_LCK = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -129,16 +128,18 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-		"Plain Elf" = SKIN_COLOR_PLAIN_ELF, // - (White 2)
-		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF, // - (White 3)
-		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF, // - (White 4)
-		"Wood Elf" = SKIN_COLOR_WOOD_ELF, // - (Mediterranean 1)
-		"Sea Elf" = SKIN_COLOR_SEA_ELF, // - (Mediterranean 2)
-		"Jungle Elf" = SKIN_COLOR_JUNGLE_ELF, // - (Latin)
-		"Savannah Elf" = SKIN_COLOR_SAVANNAH_ELF, // - (Middle-Eastern)
-		"Sand Elf" = SKIN_COLOR_SAND_ELF, // - (Black 1)
-		"Crimson Elf" = SKIN_COLOR_CRIMSON_ELF, // - (Black2)
+	"Snow Elf" = SKIN_COLOR_SNOW_ELF, // - (Pale)
+	"Plain Elf" = SKIN_COLOR_PLAIN_ELF, // - (White 2)
+	"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF, // - (White 3)
+	"Coastal Elf" = SKIN_COLOR_COASTAL_ELF, // - (White 4)
+	"Wood Elf" = SKIN_COLOR_WOOD_ELF, // - (Mediterranean 1)
+	"Sea Elf" = SKIN_COLOR_SEA_ELF, // - (Mediterranean 2)
+	"Jungle Elf" = SKIN_COLOR_JUNGLE_ELF, // - (Latin)
+	"Savannah Elf" = SKIN_COLOR_SAVANNAH_ELF, // - (Middle-Eastern)
+	"Sand Elf" = SKIN_COLOR_SAND_ELF, // - (Black 1)
+	"Crimson Elf" = SKIN_COLOR_CRIMSON_ELF, // - (Black2)
 	))
+
 
 /datum/species/elf/snow/get_hairc_list()
 	return sortList(list(

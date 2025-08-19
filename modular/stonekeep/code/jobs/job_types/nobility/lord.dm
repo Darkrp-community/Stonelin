@@ -1,6 +1,7 @@
 /datum/job/lord
 	min_pq = 0
 	allowed_races = RACES_PLAYER_MANLIEST
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/stonekeep/lord
 	tutorial = "Elevated upon your throne through a web of intrigue and political upheaval, you are the absolute authority of these lands and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error in their ways."
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_scholar.ogg'

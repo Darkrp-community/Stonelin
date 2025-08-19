@@ -10,6 +10,7 @@
 	spawn_positions = 1
 	allowed_races = RACES_PLAYER_ROYALTY
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/stonekeep/hand
 
 	tutorial = "Advisor, spymaster, confidante, your ties with the ruler are deep and personal."

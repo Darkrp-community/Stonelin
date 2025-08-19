@@ -16,7 +16,7 @@
 	spawn_positions = 2
 	bypass_lastclass = TRUE
 	min_pq = -50
-//	allowed_patrons = list(/datum/patron/divine/malum) commented out, function moved to pre_equip
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	cmode_music = 'modular/stonekeep/sound/cmode/combat_dwarf.ogg'
 
 /datum/outfit/job/stonekeep/hammerite/pre_equip(mob/living/carbon/human/H)

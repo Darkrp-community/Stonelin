@@ -33,7 +33,7 @@
 			dynamic_hair_suffix = C.dynamic_hair_suffix
 
 	if(!extensions)
-		var/icon/hair_extensions = icon('icons/roguetown/mob/hair_extensions.dmi') //hehe
+		var/icon/hair_extensions = icon('modular/stonekeep/icons/mobs/hair_extensions.dmi') //SK EDIT
 		extensions = list()
 		for(var/s in hair_extensions.IconStates(1))
 			extensions[s] = TRUE

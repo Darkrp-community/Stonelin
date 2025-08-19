@@ -9,6 +9,10 @@
 		return FALSE
 	if(target.gender == MALE)
 		return FALSE
+	if(target.dna.species.id == SPEC_ID_AASIMAR)
+		return FALSE
+	if(user.dna.species.id == SPEC_ID_AASIMAR)
+		return FALSE
 	return TRUE
 
 /datum/sex_action/vaginal_sex/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)

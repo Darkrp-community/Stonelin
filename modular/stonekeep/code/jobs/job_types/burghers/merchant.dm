@@ -11,12 +11,13 @@
 
 	allowed_races = ALL_RACES_SK_LIST
 
-	tutorial = "You were born into wealth, \
+	tutorial = "You are a self-made wealthy person, \
 	learning from before you could talk about the basics of mathematics. \
-	Counting coins is a simple pleasure for any person, but youve made it an artform. \
-	These people are addicted to your wares and you are the literal beating heart of this economy: \
-	Dont let these filthy-covered troglodytes ever forget that."
+	Counting coins is a simple pleasure for any person, but you have made it an artform. \
+	These people are addicted to your wares and you are the beating heart of this economy: \
+	Never forget that."
 	display_order = MERCHANT_ORDER
+	allowed_patrons = SK_DIVINE_PATRONS
 	outfit = /datum/outfit/job/stonekeep/merchant
 	give_bank_account = 100
 	selection_color = "#2a348b"
@@ -46,14 +47,12 @@
 		head = /obj/item/clothing/head/roguehood/pashmina
 		shoes = /obj/item/clothing/shoes/gladiator
 
-
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_FOREIGNER, TRAIT_GENERIC)
 
-	H.change_stat("intelligence", 2)
-	H.change_stat("perception", 1)
-	H.change_stat("strength", -1)
+	H.change_stat(STATKEY_INT, 2)
+	H.change_stat(STATKEY_PER, 1)
+	H.change_stat(STATKEY_STR, -1)
 
 	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)

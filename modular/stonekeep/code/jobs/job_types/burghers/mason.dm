@@ -7,6 +7,7 @@
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 
 	tutorial = "There are ancient secrets within stone, something your creed has known since man built upon dirt. Youve pride in your work, youre the only reason this place doesnt fall apart. The King could replace you in a heartbeat, prove to them why youre the Master Mason."
 

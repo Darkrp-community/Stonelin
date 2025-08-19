@@ -1,5 +1,8 @@
 #define ALL_RACES_WITH_FACIALHAIR		list("human", "rakshari", "dwarf", "elf", "tiefling", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
 
+#define SK_DIVINE_PATRONS	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora,/datum/patron/psydon)
+
+
 #define SK_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 #define SK_TEMPLAR_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 
@@ -141,25 +144,28 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define ADEPT_ORDER			28
 
 #define MERCHANT_ORDER		31
-#define GUILDMASTER_ORDER	32
-#define INNKEEP_ORDER		33
-#define FELDSHER_ORDER		34
-#define BLACKSMITH_ORDER	35
-#define MASON_ORDER			36
-#define NITEMAN_ORDER		38
+#define MERCENARY_ORDER		32
 
-#define ELDER_ORDER			40
-#define SOILSON_ORDER		43
-#define COOK_ORDER			44
-#define WEAVER_ORDER		45
-#define WOODSMAN_ORDER		46
-#define STEVEDORE_ORDER		47
-#define BATHMAID_ORDER		48
-#define BEGGAR_ORDER		49
+#define GUILDMASTER_ORDER	41
+#define INNKEEP_ORDER		42
+#define FELDSHER_ORDER		43
+#define BLACKSMITH_ORDER	44
+#define MASON_ORDER			45
+#define NITEMAN_ORDER		46
 
-#define MERCENARY_ORDER		51
-#define PILGRIM_ORDER		53
-#define ADVENTURER_ORDER	55
+#define ELDER_ORDER			51
+#define SOILSON_ORDER		52
+#define COOK_ORDER			53
+#define WEAVER_ORDER		54
+#define WOODSMAN_ORDER		55
+#define STEVEDORE_ORDER		56
+#define BATHMAID_ORDER		57
+#define BEGGAR_ORDER		58
+
+
+#define PILGRIM_ORDER		61
+#define ADVENTURER_ORDER	62
+#define BANDIT_ORDER		63
 
 
 #define GATOR_HEALTH 220
@@ -173,6 +179,15 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define MASTERSOHEI_ORDER	25
 #define SOHEI_ORDER			29
 
+
+//DWARF SKIN TONES
+#define DWARF_MERCUR "ba9980"
+#define DWARF_BRASS "d3b19f"
+#define DWARF_FERRO "bc8d74"
+#define DWARF_PHOSPHORITE "967e70"
+#define DWARF_OBSIDIAN "665855"
+#define DWARF_QUARTZ "70685f"
+#define DWARF_GRENZDWARF "ffe0d1"
 
 /// Races from the Fog Islands
 #define RACES_PLAYER_FOGISLANDERS list(\
@@ -220,6 +235,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
 	SPEC_ID_HOLLOWKIN, \
+	SPEC_ID_RAKSHARI, \
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_ROUSMAN,\
 	SPEC_ID_ZIZOMBIE,\
@@ -248,6 +264,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
 	SPEC_ID_HOLLOWKIN, \
+	SPEC_ID_RAKSHARI, \
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_ROUSMAN,\
 	SPEC_ID_ZIZOMBIE,\

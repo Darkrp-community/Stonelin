@@ -29,34 +29,33 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	use_skintones = TRUE
 
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
 	changesource_flags = WABBAJACK
 
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 
 	offset_features_m = list(
-		OFFSET_RING = list(0,0),\
-		OFFSET_GLOVES = list(0,0),\
-		OFFSET_WRISTS = list(0,0),\
-		OFFSET_HANDS = list(0,0),\
-		OFFSET_CLOAK = list(0,0),\
-		OFFSET_FACEMASK = list(0,0),\
-		OFFSET_HEAD = list(0,0),\
-		OFFSET_FACE = list(0,0),\
-		OFFSET_BELT = list(0,0),\
-		OFFSET_BACK = list(0,0),\
-		OFFSET_NECK = list(0,0),\
-		OFFSET_MOUTH = list(0,0),\
-		OFFSET_PANTS = list(0,0),\
-		OFFSET_SHIRT = list(0,0),\
-		OFFSET_ARMOR = list(0,0),\
-		OFFSET_UNDIES = list(0,0),\
-	)
-
+		OFFSET_RING = list(0,1),\
+		OFFSET_GLOVES = list(0,1),\
+		OFFSET_WRISTS = list(0,1),\
+		OFFSET_CLOAK = list(0,1),\
+		OFFSET_FACEMASK = list(0,1),\
+		OFFSET_HEAD = list(0,1),\
+		OFFSET_FACE = list(0,1),\
+		OFFSET_BELT = list(0,1),\
+		OFFSET_BACK = list(0,1),\
+		OFFSET_NECK = list(0,1),\
+		OFFSET_MOUTH = list(0,1),\
+		OFFSET_PANTS = list(0,1),\
+		OFFSET_SHIRT = list(0,1),\
+		OFFSET_ARMOR = list(0,1),\
+		OFFSET_HANDS = list(0,1),\
+		OFFSET_UNDIES = list(0,1),\
+		)
 	offset_features_f = list(
-		OFFSET_RING = list(0,-1),\
+		OFFSET_RING = list(0,0),\
 		OFFSET_GLOVES = list(0,0),\
 		OFFSET_WRISTS = list(0,0),\
 		OFFSET_HANDS = list(0,0),\
@@ -64,7 +63,7 @@
 		OFFSET_FACEMASK = list(0,-1),\
 		OFFSET_HEAD = list(0,-1),\
 		OFFSET_FACE = list(0,-1),\
-		OFFSET_BELT = list(0,0),\
+		OFFSET_BELT = list(0,-1),\
 		OFFSET_BACK = list(0,-1),\
 		OFFSET_NECK = list(0,-1),\
 		OFFSET_MOUTH = list(0,-1),\
@@ -72,10 +71,10 @@
 		OFFSET_SHIRT = list(0,0),\
 		OFFSET_ARMOR = list(0,0),\
 		OFFSET_UNDIES = list(0,0),\
-	)
+		)
 
 	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 2, STATKEY_SPD = 0, STATKEY_LCK = 1)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 2, STATKEY_SPD = 0, STATKEY_LCK = 1)
+	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 1, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 1)
 
 	enflamed_icon = "widefire"
 
@@ -96,16 +95,16 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-		"Ice Cap" = SKIN_COLOR_ICECAP, // - (Pale)
-		"Arctic" = SKIN_COLOR_ARCTIC, // - (White 1)
-		"Tundra" = SKIN_COLOR_TUNDRA, // - (White 2)
-		"Continental" = SKIN_COLOR_CONTINENTAL, // - (White 3)
-		"Temperate" = SKIN_COLOR_TEMPERATE, // - (White 4)
-		"Coastal" = SKIN_COLOR_COASTAL, // - (Latin)
-		"Subtropical" = SKIN_COLOR_SUBTROPICAL, // - (Mediterranean)
-		"Tropical Dry" = SKIN_COLOR_TROPICALDRY, // - (Mediterranean 2)
-		"Tropical Wet" = SKIN_COLOR_TROPICALWET, // - (Latin 2)
-		"Desert" = SKIN_COLOR_DESERT, //  - (Middle-east)
+		"Grenzelhoft" = SKIN_COLOR_ICECAP, // - (Pale)
+		"Lowlander" = SKIN_COLOR_ARCTIC, // - (White 1)
+		"Mainlander" = SKIN_COLOR_TUNDRA, // - (White 2)
+		"Highlander" = SKIN_COLOR_CONTINENTAL, // - (White 3)
+		"Valorian" = SKIN_COLOR_TEMPERATE, // - (White 4)
+		"Heartfelt" = SKIN_COLOR_COASTAL, // - (Latin)
+		"Steppe" = SKIN_COLOR_SUBTROPICAL, // - (Mediterranean)
+		"Islander" = SKIN_COLOR_TROPICALDRY, // - (Mediterranean 2)
+		"Southlander" = SKIN_COLOR_TROPICALWET, // - (Latin 2)
+		"Zybantu" = SKIN_COLOR_DESERT, //  - (Middle-east)
 		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS, // - (Black)
 	))
 
@@ -136,8 +135,8 @@
 	))
 
 /datum/species/human/northern/get_possible_names(gender = MALE)
-	var/static/list/male_names = world.file2list('strings/rt/names/human/humnorm.txt')
-	var/static/list/female_names = world.file2list('strings/rt/names/human/humnorf.txt')
+	var/static/list/male_names = world.file2list('strings/names/roguetown/SKhumnorm.txt')
+	var/static/list/female_names = world.file2list('strings/names/roguetown/SKhumnorf.txt')
 	return (gender == FEMALE) ? female_names : male_names
 
 /datum/species/human/northern/get_possible_surnames(gender = MALE)

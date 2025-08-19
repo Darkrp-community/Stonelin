@@ -10,27 +10,17 @@
 /datum/species/tieberian
 	name = "Tiefling"
 	id = SPEC_ID_TIEFLING
-	desc = "Also known as Infernal-Spawn, Hell-Bloods, Surface-Devils, and perhaps in a more humorous manner, <i>thief</i>-lings. \
+	desc = "Also known as Infernal-Spawn, Hell-Bloods. \
 	\n\n\
-	Their treatment ranges from shunning to distrust, depending on the region. \
-	Shopkeeps and merchants always keep a wary eye out for tiefling passersby. \
-	The resentment feed into itself, leading to higher rates of tiefling ire and thievery against other species. \
-	Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. \
-	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. \
+	Tieflings, also known as Infernal-Spawn, are one of the younger peoples of Grimoria, \
+	appearing during the time of the Apotheosis War. \
+	Said to be the offspring of of mortals who served Zizo and mated with their Spawn in unholy union, \
+	legions of them served as the chattel army under the banners of Zizo and Graggar. \
 	\n\n\
-	Tieflings began appearing all over Psydonia after Baotha's ascension within the 21st century, and were exiled in droves as the world adapted. \
-	They are often mistaken as being related to her. \
-	\n\n\
-	Tieflings are incapable of reproducing with mortals, \
-	and thus are spawn of either devils, demons, or other tieflings. \
-	A tiefling may develop any number of hellish features, a wide range of horns, potential hooves, odd spines and spikes, or scales. \
-	Oddly positioned scales, hollow bones, and other varying oddities \
-	that appear consistently in Tiefling biology make them considerably fragile. \
-	It is not uncommon for a tiefling to be generally unpleasant to look at in the eye of the commonfolk. \
-	As if to make matters worse, their hellish progenitors have left them a destiny of misfortune, \
-	though perhaps their immunity to fire opens new opportunities for them... \
-	\n\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. <B>NOBLES EVEN MORE SO.</B> PLAY AT YOUR OWN RISK."
+	After their crushing defeat, Tieflings are said to have begged for mercy and were begrudgingly allowed to live, after abandoning their Lord. \
+	Tieflings are less capable of creating offspring than most peoples, and only produce more tieflings due to their strong Zizo taint, so no half-breeds exist. \
+	Most of them tend to be extremely perceptive and paranoid, as luck is rarely on their side \
+	and their peculiar anatomy with somewhat fragile, crystalline bones makes them susceptible to injury."
 
 	skin_tone_wording = "Progenitor"
 
@@ -40,7 +30,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFIRE)
 	use_skintones = TRUE
 
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
 	changesource_flags = WABBAJACK
 
@@ -86,8 +76,7 @@
 	)
 
 	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
-
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 3, STATKEY_INT = 1, STATKEY_CON = -2, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
 	enflamed_icon = "widefire"
 
 	organs = list(
@@ -153,14 +142,10 @@
 		"Sundered" = SKIN_COLOR_SUNDERED, //  - (Orange)
 		"Zarkana" = SKIN_COLOR_ARCANA, // - (Dark violet)
 		"Zarconum" = SKIN_COLOR_ZARCONUM, // - (Pink)
-//		"Flayer" = SKIN_COLOR_FLAYER, // - (Purple)
-//		"Abyssium" = SKIN_COLOR_ABYSS, // - (Navy blue)
 		"Castillian" = SKIN_COLOR_CASTILLIAN, // - (Pale red)
 		"Asturias" = SKIN_COLOR_ASTURIAS, // - (Clay red)
 		"Vaquero" = SKIN_COLOR_VAQUERO, // - (Earthly red)
 		"Zanguine" = SKIN_COLOR_ZANGUINE, // - (Dark violet)
-//		"Ash" = SKIN_COLOR_ASH, // - (Pale blue)
-//		"Arlenneth" = SKIN_COLOR_ARLENNETH, // - (Lavender blue)
 	))
 
 	return skin_colors
@@ -171,19 +156,17 @@
 		"black - cave" = "201616",
 		"black - rogue" = "2b201b",
 		"black - midnight" = "1d1b2b",
+		"black - hellbound" = "1e0909",
 
-		"blond - pale" = "9d8d6e",
-		"blond - dirty" = "88754f",
-		"blond - drywheat" = "d5ba7b",
-		"blond - strawberry" = "c69b71",
-
-		"purple - arcane" = "3f2f42",
+		"purple - arcane" = "312534",
+		"purple - etheral" = "4a2d48",
 
 		"blue - abyss" = "09282d",
+		"blue - nightshade" = "0b1330",
 
 		"red - demonic" = "480808",
 		"red - impish" = "641010",
-		"red - rubescent" = "8d5858"
+		"red - rubescent" = "8d4949"
 	))
 
 	return hair_colors

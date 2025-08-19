@@ -2,10 +2,11 @@
 	title = "Stevedore"
 	flag = SK_STEVEDORE
 	department_flag = PEASANTS
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 
-	allowed_races = RACES_PLAYER_ALL
+	allowed_races = ALL_RACES_SK_LIST
+	allowed_patrons = SK_DIVINE_PATRONS
 
 	tutorial = "Being a stevedore is one of the lowest yet most needed positions in town, as they are expected to aid the Merchant, Steward, Masons, and Blacksmiths in hauling materials and goods while keeping a guarding eye on the town's warehouses for the safety of the items stashed within."
 

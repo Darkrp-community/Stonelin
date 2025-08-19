@@ -12,20 +12,16 @@
 /datum/species/elf/dark
 	name = "Dark Elf"
 	id = SPEC_ID_DROW
-	desc = "Zizo's conquered. \
+	desc = "The unnatural. \
 	\n\n\
-	These elves hail from an underground expanse of newly-reborn empires. \
-	They lead harsh, matriarchal lives under the watchful gaze of Zizo, \
-	the vast majority hoping to one day achieve such power and domination for themselves. \
-	Zizo's spawn, the last snow elves, integrated themselves- whether gleefully or resentfully- within the dark elf culture \
-	their grandmother had carved through conquest. \
-	\n\n\
-	To most in Psydonia, a dark elf is nothing more than a servant of Zizo waiting to betray for power, \
-	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
-	rarely receive fair treatment. \
-	Dark elves over 500 years old may remember their Ravoxian empire of old, yet few remain who were not killed or converted. \
-	\n\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. <B>NOBLES EVEN MORE SO.</B> PLAY AT YOUR OWN RISK."
+	Descending from a perversion of false immortality, Dark Elves are a unique and young species \
+	that have only recently found themselves a staple of daily life. \
+	They boast a proud, beauty-centric culture that compensates their cursed that ranges \
+	from skin tints to extreme deformations, with anyone falling behind their cripplingly high standards \
+	refered to as a Homonculus. While less graceful terms such as \
+	stitchface, zombie or corpsewalker are most commonly thrown out by the elder races \
+	Dark Elves tend to be extremely arrogant of others plights, with selfishness \
+	being seen as a massive boon in their societies, leading to storng rivalries among their enclaves.\ "
 
 	skin_tone_wording = "Parent House"
 
@@ -34,7 +30,7 @@
 	use_skintones = 1
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mem.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft.dmi'
@@ -107,8 +103,8 @@
 		OFFSET_UNDIES = list(0,1),\
 	)
 
-	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -142,9 +138,6 @@
 		"Spider Venom" = SKIN_COLOR_SPIDER_VENOM, // - (Deep grey)
 		"Jackpoison" = SKIN_COLOR_JACKPOISON, // - (Grey-purple)
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS, // - (Grey-blue)
-		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR, // - (Black-blue)
-		"Zizo Descendant" = SKIN_COLOR_SNOW_ELF, // - (Pale white)
-		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN, // - (Pink)
 	))
 
 /datum/species/elf/dark/get_hairc_list()
