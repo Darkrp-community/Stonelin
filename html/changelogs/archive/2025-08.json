@@ -502,6 +502,11 @@
             {
                 "balance": "changes math calculation so pain matter again"
             }
+        ],
+        "Arkatos": [
+            {
+                "bugfix": "Fixed a rare issue where a roundstart event failed to trigger due to wrong timing."
+            }
         ]
     }
 }
