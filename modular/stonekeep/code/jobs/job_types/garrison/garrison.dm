@@ -6,7 +6,6 @@ the like.
 */
 /datum/job/stonekeep/garrison
 	title = "Man-at-arms"
-	flag = SK_GUARD
 	department_flag = GARRISON
 	total_positions = 5
 	spawn_positions = 5

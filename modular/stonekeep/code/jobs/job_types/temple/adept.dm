@@ -1,6 +1,5 @@
 /datum/job/adept
 	title = "Adept"
-	flag = SK_ADEPT
 	department_flag = CHURCHMEN
 	faction = FACTION_TOWN
 	total_positions = 0

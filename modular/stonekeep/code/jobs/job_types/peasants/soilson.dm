@@ -1,6 +1,5 @@
 /datum/job/farmer
 	title = "Soilson"
-	flag = SK_SOILSON
 	department_flag = PEASANTS
 	total_positions = 4
 	spawn_positions = 4

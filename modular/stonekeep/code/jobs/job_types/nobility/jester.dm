@@ -1,6 +1,5 @@
 /datum/job/jester
 	title = "Jester"
-	flag = SK_JESTER
 	department_flag = NOBLEMEN
 	total_positions = 1
 	spawn_positions = 1

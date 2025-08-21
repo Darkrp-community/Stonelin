@@ -1,6 +1,5 @@
 /datum/job/mercenary
 	title = "Mercenary"
-	flag = SK_MERCENARY
 	department_flag = OUTSIDERS
 	total_positions = 2
 	spawn_positions = 2

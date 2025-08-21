@@ -27,6 +27,11 @@
 // =============================================================================
 // ==============================	HEAD	====================================
 
+/obj/item/clothing/face/facemask/adept//eventmin adept mask
+	name = "iron mask"
+	icon_state = "iadept"
+	desc = "A heavy iron mask that both conceals and protects the face, this one is shaped by a psycross visor."
+
 //.....	TEMPLE STUFF
 //................ Rabbet Visage ............... //
 /obj/item/clothing/head/padded/rabbetvisage

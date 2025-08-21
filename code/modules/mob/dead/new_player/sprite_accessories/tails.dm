@@ -339,25 +339,16 @@
 	color_key_names = list("Tail", "Tip")
 	can_wag = TRUE
 
-/datum/sprite_accessory/tail/tiefling
-	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
-	name = "TiebTail"
-	icon_state = "tiebtail"
-	specuse = list(SPEC_ID_TIEFLING)
-	color_key_defaults = list(KEY_SKIN_COLOR)
-
 /datum/sprite_accessory/tail/triton
 	name = "Triton Bell"
 	icon = 'icons/mob/sprite_accessory/tails/triton.dmi'
 	icon_state = "triton"
-	specuse = list(SPEC_ID_TRITON)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/tail/kobold
 	name = "Kobold Curly"
 	icon = 'icons/mob/sprite_accessory/tails/lizard.dmi'
 	icon_state = "kobold"
-	specuse = list(SPEC_ID_KOBOLD)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 
@@ -393,24 +384,18 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Two Foxtails"
 	icon_state = "twotails"
-	specuse = list("abyssariad", "Changeling", "changeling")
-	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/tail/threetails
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Three Foxtails"
 	icon_state = "threetails"
-	specuse = list("abyssariad", "Changeling", "changeling")
-	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/tail/tengu
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Tengu wings"
 	icon_state = "tenguv"
-	specuse = list("abyssariad", "Tengu", "Skylancer")
-	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/tail/kobold/alt
@@ -422,4 +407,3 @@
 	name = "Medicator Plumage"
 	icon = 'icons/mob/sprite_accessory/tails/medicator.dmi'
 	icon_state = "vulture"
-	specuse = list(SPEC_ID_MEDICATOR)

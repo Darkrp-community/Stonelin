@@ -19,6 +19,7 @@
 #define TRIUMPH_BUY_PSYDON_INFLUENCE "psydon_influence"
 #define PSYDON "Psydon"
 
+#define FACTION_GRAGGAR		"Graggar"
 #define FACTION_BURAKUMIN "Burakumin"
 
 #define CTAG_SKMERCENARY 	"CAT_SKMERCENART"  		// Mercenary classes
@@ -78,7 +79,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 
 	var/aggressive //Outdated NPC stuff. Remove when the Raiders are updated.
 	var/next_reposition = 0 //Outdated NPC stuff. Remove when the Raiders are updated.
-
+/*
 #define SK_LORD			(1<<0)
 #define SK_CONSORT		(1<<1)
 #define SK_HAND			(1<<2)
@@ -100,16 +101,11 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SK_ADEPT		(1<<5)
 
 #define SK_MERCHANT		(1<<0)
-#define SK_INNKEEP		(1<<1)
-#define SK_GUILDMASTER	(1<<2)
-#define SK_FELDSHER		(1<<3)
-#define SK_BLACKSMITH	(1<<4)
-#define SK_MASON		(1<<5)
-#define SK_NITEMAN		(1<<6)
+*/
 
 #define SK_ELDER		(1<<0)
 #define SK_SOILSON		(1<<1)
-#define SK_COOK			(1<<2)
+
 #define SK_WEAVER		(1<<3)
 #define SK_WOODSMAN		(1<<4)
 #define SK_STEVEDORE	(1<<5)
@@ -180,6 +176,9 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SOHEI_ORDER			29
 
 
+// Debug guaranteed crit chance for testing purposes, almost always crits
+#define TRAIT_ADMINTEST_CRIT "Debug guaranteed critchance"
+
 //DWARF SKIN TONES
 #define DWARF_MERCUR "ba9980"
 #define DWARF_BRASS "d3b19f"
@@ -245,6 +244,34 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 	SPEC_ID_KAPPA,\
 	SPEC_ID_TENGU,\
 	SPEC_ID_ONI,\
+	)
+
+#define LITERALLY_ALL_RACES_SK_LIST list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HOLLOWKIN, \
+	SPEC_ID_RAKSHARI, \
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_ROUSMAN,\
+	SPEC_ID_ZIZOMBIE,\
+	SPEC_ID_GOBLIN,\
+	SPEC_ID_ORC,\
+	SPEC_ID_FOX,\
+	SPEC_ID_KAPPA,\
+	SPEC_ID_TENGU,\
+	SPEC_ID_ONI,\
+	SPEC_ID_HARPY,\
+	SPEC_ID_RAKSHARI,\
+	SPEC_ID_TRITON,\
+	SPEC_ID_MEDICATOR,\
+	SPEC_ID_KOBOLD,\
+	SPEC_ID_HUMAN_SPACE,\
 	)
 
 /// List of all Kaizoku Foglander-specific races

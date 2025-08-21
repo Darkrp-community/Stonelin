@@ -185,14 +185,12 @@
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "TiebHorns"
 	icon_state = "tiebhorns"
-	specuse = list(SPEC_ID_TIEFLING)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/horns/tiefling/alt
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "TiebHornies"
 	icon_state = "tiebhornsalt"
-	specuse = list(SPEC_ID_TIEFLING)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 
@@ -201,9 +199,8 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Ogrun horn"
 	icon_state = "onihorn"
-	specuse = list("abyssariad", "Ogrun", "ogrun")
 	color_key_defaults = list(KEY_SKIN_COLOR)
-	gender = NEUTER
+
 
 /datum/sprite_accessory/horns/triton
 	name = "Triton Tusks"

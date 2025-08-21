@@ -1,6 +1,5 @@
 /datum/job/stonekeep/mason
 	title = "Mason"
-	flag = SK_MASON
 	department_flag = SERFS
 	total_positions = 0
 	spawn_positions = 0

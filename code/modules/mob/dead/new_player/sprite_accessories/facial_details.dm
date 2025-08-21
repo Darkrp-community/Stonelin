@@ -1,12 +1,10 @@
 /datum/sprite_accessory/detail
 	name = ""
 	icon_state = null
-	gender = NEUTER
 	icon = 'icons/roguetown/mob/detail.dmi'
 	use_static = TRUE
 	layer = BODY_LAYER
 	default_colors = list("FFFFFF")
-	specuse = ALL_RACES_SK_LIST
 
 /datum/sprite_accessory/detail/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_FACE)

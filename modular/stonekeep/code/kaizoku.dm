@@ -319,7 +319,6 @@ get_accent_list()
 	name = "Femdoshi"
 	icon_state = "female_fundoshi"
 	gender = FEMALE
-	specuse = list("abyssariad")
 	roundstart = TRUE
 	use_static = TRUE
 

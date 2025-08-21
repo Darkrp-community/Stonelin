@@ -4,7 +4,6 @@
 	display_order = PRIEST_ORDER
 	department_flag = CHURCHMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	flag = PRIEST
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1

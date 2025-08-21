@@ -1,6 +1,5 @@
 /datum/job/grabber
 	title = "Stevedore"
-	flag = SK_STEVEDORE
 	department_flag = PEASANTS
 	total_positions = 0
 	spawn_positions = 0

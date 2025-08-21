@@ -1,6 +1,5 @@
 /datum/job/squire
 	title = "Squire"
-	flag = SK_SQUIRE
 	department_flag = GARRISON
 //	department_flag = APPRENTICES
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)

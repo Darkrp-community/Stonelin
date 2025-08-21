@@ -1,6 +1,5 @@
 /datum/job/stonekeep/elder
 	title = "Village Elder"
-	flag = SK_ELDER
 	department_flag = PEASANTS
 	total_positions = 1
 	spawn_positions = 1

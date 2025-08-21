@@ -1,6 +1,5 @@
 /datum/job/stonekeep/guildmaster
 	title = "Guild Master"
-	flag = SK_GUILDMASTER
 	department_flag = SERFS
 	total_positions = 1
 	spawn_positions = 1

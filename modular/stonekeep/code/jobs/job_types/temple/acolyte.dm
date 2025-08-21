@@ -4,7 +4,6 @@ Acolytes are all healers but with different flavors depending on Patron.
 */
 /datum/job/monk
 	title = "Acolyte"
-	flag = SK_ACOLYTE
 	department_flag = CHURCHMEN
 	display_order =  ACOLYTE_ORDER
 	total_positions = 4

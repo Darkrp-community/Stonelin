@@ -1,7 +1,5 @@
 /datum/job/vagrant
 	title = "Beggar"
-	flag = SK_BEGGAR
-//	flag = APPRENTICE	ROGTODO again, their apprenrtice system, is it something good or bad.
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	department_flag = PEASANTS
 	total_positions = 15

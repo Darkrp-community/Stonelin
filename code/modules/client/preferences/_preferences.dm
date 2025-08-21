@@ -1151,7 +1151,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				if("species")
 					var/list/selectable = get_selectable_species(patreon)
 
-					var/result = browser_input_list(user, "SELECT YOUR HERO'S PEOPLE:", "VANDERLIN FAUNA", selectable, pref_species)
+					var/result = browser_input_list(user, "SELECT YOUR HERO'S PEOPLE:", "STONELIN FAUNA", selectable, pref_species)
 
 					if(result)
 						var/species = GLOB.species_list[result]

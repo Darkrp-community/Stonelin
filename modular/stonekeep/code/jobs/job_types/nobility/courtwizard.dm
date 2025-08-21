@@ -1,6 +1,5 @@
 /datum/job/magician
 	title = "Court Wizard"
-	flag = SK_WIZARD
 	department_flag = NOBLEMEN
 	total_positions = 1
 	spawn_positions = 1

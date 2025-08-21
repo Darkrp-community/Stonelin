@@ -1,6 +1,5 @@
 /datum/job/butler
 	title = "Butler"
-	flag = SK_SERVANT
 	department_flag = NOBLEMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN

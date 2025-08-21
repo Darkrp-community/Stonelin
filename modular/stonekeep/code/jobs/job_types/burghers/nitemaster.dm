@@ -1,7 +1,6 @@
 /datum/job/stonekeep/nitemaster
 	title = "Nitemaster"
 	f_title = "Nitematron"
-	flag = SK_NITEMAN
 	department_flag = NOBLEMEN
 	total_positions = 1
 	spawn_positions = 1

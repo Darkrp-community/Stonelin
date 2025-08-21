@@ -66,7 +66,6 @@
 
 /datum/job/exlord //just used to change the lords title
 	title = "Ex-Monarch"
-	flag = LORD
 	department_flag = NOBLEMEN
 	faction = FACTION_TOWN
 	total_positions = 0

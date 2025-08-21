@@ -1,6 +1,5 @@
 /datum/job/feldsher
 	title = "Feldsher"
-	flag = SK_FELDSHER
 	department_flag = SERFS
 	total_positions = 1
 	spawn_positions = 1

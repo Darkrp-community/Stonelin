@@ -4,7 +4,6 @@ It´s pretty good. Also extra good mood boost for sex, but still a bit barebones
 
 /datum/job/stonekeep/nitemaiden
 	title = "Nitemaiden"
-	flag = SK_BATHMAID
 	department_flag = PEASANTS
 	total_positions = 3
 	spawn_positions = 3

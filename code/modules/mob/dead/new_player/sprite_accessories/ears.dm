@@ -330,21 +330,18 @@
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "Elf"
 	icon_state = "elf"
-	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING,SPEC_ID_HUMEN)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/ears/elfw
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "ElfW"
 	icon_state = "elfw"
-	specuse = list(SPEC_ID_ELF, SPEC_ID_TIEFLING,SPEC_ID_HUMEN) //tiebs use these
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/ears/elfh //halfelfs are humens techincally
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "ElfH"
 	icon_state = "elf"
-	specuse = list(SPEC_ID_HUMEN)
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 
@@ -355,7 +352,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Upright Fox Ears"
 	icon_state = "ears_upright"
-	specuse = list("abyssariad", "Changeling", "changeling")
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 // Side fox ears
@@ -363,7 +359,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Sideways Fox Ears"
 	icon_state = "ears_lying"
-	specuse = list("abyssariad", "Changeling", "changeling")
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 // Thick fox ears
@@ -371,7 +366,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Thick Fox Ears"
 	icon_state = "ears_thick"
-	specuse = list("abyssariad", "Changeling", "changeling")
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 // One-down fox ears
@@ -379,7 +373,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Curious Fox Ears"
 	icon_state = "ears_stoned"
-	specuse = list("abyssariad", "Changeling", "changeling")
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 
@@ -387,7 +380,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Ogrun"
 	icon_state = "ears_oni"
-	specuse = list("abyssariad", "Ogrun", "ogrun")
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 
@@ -395,7 +387,6 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Skylancer ears"
 	icon_state = "ears_tengu"
-	specuse = list("abyssariad", "Tengu", "Skylancer")
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 
@@ -403,5 +394,4 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Kappae"
 	icon_state = "kappae"
-	specuse = list("abyssariad", "Kappa", "Undine")
 	color_key_defaults = list(KEY_SKIN_COLOR)

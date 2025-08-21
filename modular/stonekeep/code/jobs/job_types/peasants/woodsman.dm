@@ -2,7 +2,6 @@
 	title = "Woodsman"
 	tutorial = "Living on the outskirts of civliziation, you got roots in the local community, but spend most of your time alone in the forest."
 	allowed_sexes = list(MALE,FEMALE)
-	flag = SK_WOODSMAN
 	department_flag = PEASANTS
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	outfit = /datum/outfit/job/stonekeep/woodsman

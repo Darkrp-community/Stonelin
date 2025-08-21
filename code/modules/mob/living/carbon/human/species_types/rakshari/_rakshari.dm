@@ -26,7 +26,7 @@
 	use_skintones = TRUE
 	default_color = "FFFFFF"
 
-	possible_ages = NORMAL_AGES_LIST_CHILD
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
 	species_traits = list(EYECOLOR, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_KITTEN_MOM)
@@ -89,7 +89,7 @@
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	C.grant_language(/datum/language/common)
 	C.grant_language(/datum/language/zalad)
-	to_chat(C, "<span class='info'>I can speak Zalad with ,z before my speech.</span>")
+	to_chat(C, "<span class='info'>I can speak Zybantian with ,z before my speech.</span>")
 
 /datum/species/rakshari/check_roundstart_eligible()
 	return TRUE
@@ -108,10 +108,10 @@
 
 /datum/species/rakshari/get_skin_list()
 	return sortList(list(
-		"Oasis Rakshari" = SKIN_COLOR_PLAIN_ELF, // - (White 2)
-		"Mountain Rakshari" = SKIN_COLOR_MOUNTAIN_ELF, // - (White 3)
-		"City Rakshari" = SKIN_COLOR_COASTAL_ELF, // - (White 4)
-		"Desert Rakshari" = SKIN_COLOR_WOOD_ELF, // - (Mediterranean 1)
+		"Oasis Rakshari" = "cb9578",
+		"Mountain Rakshari" = "d3bd74",
+		"City Rakshari" = "9b5d44",
+		"Desert Rakshari" = "c2aea4",
 	))
 
 /datum/species/rakshari/get_accent_list()

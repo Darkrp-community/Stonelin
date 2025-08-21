@@ -1,6 +1,5 @@
 /datum/job/stonekeep/inquisitor
 	title = "Inquisitor"
-	flag = SK_INQUISITOR
 	department_flag = CHURCHMEN
 	faction = FACTION_TOWN
 	total_positions = 0

@@ -1,6 +1,5 @@
 /datum/job/stonekeep/blacksmith
 	title = "Blacksmith"
-	flag = SK_BLACKSMITH
 	department_flag = SERFS
 	total_positions = 2
 	spawn_positions = 2

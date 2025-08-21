@@ -1,6 +1,5 @@
 /datum/job/stonekeep/weaver
 	title = "Weaver"
-	flag = SK_WEAVER
 	department_flag = PEASANTS
 	tutorial = "Cloth, linen, silk and leather. You've tirelessly studied and poured your life into \
 				sewing articles of protection, padding, and fashion for serf and noble alike."

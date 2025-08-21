@@ -8,7 +8,6 @@
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	outfit = /datum/outfit/job/stonekeep/hammerite
-	flag = SK_MASON
 	department_flag = SERFS
 	display_order = MASON_ORDER
 	give_bank_account = 30
