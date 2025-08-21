@@ -12,6 +12,7 @@
 	)
 	outfit = /datum/outfit/job/zybantine_migration/emir
 	grant_lit_torch = TRUE
+	is_recognized = TRUE
 
 /datum/outfit/job/zybantine_migration/emir/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -76,6 +77,7 @@
 	)
 	outfit = /datum/outfit/job/zybantine_migration/amirah
 	grant_lit_torch = TRUE
+	is_recognized = TRUE
 
 /datum/outfit/job/zybantine_migration/amirah/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -135,6 +137,7 @@
 	)
 	outfit = /datum/outfit/job/zybantine_migration/furusiyya
 	grant_lit_torch = TRUE
+	is_recognized = TRUE
 
 /datum/outfit/job/zybantine_migration/furusiyya/pre_equip(mob/living/carbon/human/H)
 	..()
