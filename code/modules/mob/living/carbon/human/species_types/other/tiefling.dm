@@ -104,7 +104,8 @@
 		/datum/customizer/organ/horns/tiefling,
 		/datum/customizer/organ/tail/tiefling,
 		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid/pointyear, //SK EDIT
+		/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_male, //SK EDIT
+		/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_female, // SK EDIT
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,

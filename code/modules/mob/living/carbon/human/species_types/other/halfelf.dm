@@ -100,7 +100,8 @@
 	customizers = list(
 		/datum/customizer/organ/ears/elf,
 		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/male, // SK EDIT
+		/datum/customizer/bodypart_feature/hair/head/humanoid/female, // SK EDIT
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,

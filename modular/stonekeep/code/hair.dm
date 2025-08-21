@@ -1,28 +1,18 @@
-/*
-/datum/customizer_choice/bodypart_feature/hair/head/humanoid/humen
-	switch(gender)
-		if(MALE)
-			return accessories = list(
-				/datum/sprite_accessory/hair/head/bowlcut,
-				)
-		if(FEMALE)
-			return accessories = list(
-				/datum/sprite_accessory/hair/head/beartails,
-				)
-*/
+/datum/customizer/bodypart_feature/hair/head/humanoid/male/is_allowed(datum/preferences/prefs)
+	return (prefs.gender == MALE)
 
+/datum/customizer/bodypart_feature/hair/head/humanoid/male
+	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/male)
 
-/datum/customizer/bodypart_feature/hair/head/humanoid/humen
-	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/humen)
-
-/datum/customizer_choice/bodypart_feature/hair/head/humanoid/humen
+/datum/customizer_choice/bodypart_feature/hair/head/humanoid/male
 	sprite_accessories = list(
-		/datum/sprite_accessory/hair/head/bald,
 		/datum/sprite_accessory/hair/head/adventurer_human,
+		/datum/sprite_accessory/hair/head/bald,
 		/datum/sprite_accessory/hair/head/berserker,
 		/datum/sprite_accessory/hair/head/bog,
 		/datum/sprite_accessory/hair/head/bowlcut,
 		/datum/sprite_accessory/hair/head/brother,
+		/datum/sprite_accessory/hair/head/birdnest,
 		/datum/sprite_accessory/hair/head/cavehead,
 		/datum/sprite_accessory/hair/head/conscript,
 		/datum/sprite_accessory/hair/head/courtier,
@@ -30,14 +20,18 @@
 		/datum/sprite_accessory/hair/head/druid,
 		/datum/sprite_accessory/hair/head/forester,
 		/datum/sprite_accessory/hair/head/forged,
+		/datum/sprite_accessory/hair/head/fluffy,
 		/datum/sprite_accessory/hair/head/graceful,
+		/datum/sprite_accessory/hair/head/herder,
 		/datum/sprite_accessory/hair/head/heroic,
+		/datum/sprite_accessory/hair/head/highlander,
 		/datum/sprite_accessory/hair/head/hunter,
 		/datum/sprite_accessory/hair/head/landlord,
 		/datum/sprite_accessory/hair/head/lion,
 		/datum/sprite_accessory/hair/head/monk,
 		/datum/sprite_accessory/hair/head/majestic_human,
 		/datum/sprite_accessory/hair/head/merc,
+		/datum/sprite_accessory/hair/head/miller,
 		/datum/sprite_accessory/hair/head/nobility_human,
 		/datum/sprite_accessory/hair/head/nomadic_humtief,
 		/datum/sprite_accessory/hair/head/pirate,
@@ -45,7 +39,9 @@
 		/datum/sprite_accessory/hair/head/raider,
 		/datum/sprite_accessory/hair/head/rogue,
 		/datum/sprite_accessory/hair/head/romantic,
+		/datum/sprite_accessory/hair/head/runt,
 		/datum/sprite_accessory/hair/head/ronin,
+		/datum/sprite_accessory/hair/head/shaved,
 		/datum/sprite_accessory/hair/head/scribe,
 		/datum/sprite_accessory/hair/head/southern_human,
 		/datum/sprite_accessory/hair/head/son,
@@ -58,23 +54,44 @@
 		/datum/sprite_accessory/hair/head/tied_long,
 		/datum/sprite_accessory/hair/head/trimmed,
 		/datum/sprite_accessory/hair/head/warrior,
+		/datum/sprite_accessory/hair/head/witcher,
 		/datum/sprite_accessory/hair/head/vagabond,
 		/datum/sprite_accessory/hair/head/zybantu,
+		)
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/female/is_allowed(datum/preferences/prefs)
+	return (prefs.gender == FEMALE)
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/female
+	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/female)
+
+/datum/customizer_choice/bodypart_feature/hair/head/humanoid/female
+	sprite_accessories = list(
 		/datum/sprite_accessory/hair/head/amazon,
 		/datum/sprite_accessory/hair/head/archivist,
 		/datum/sprite_accessory/hair/head/barbarian,
+		/datum/sprite_accessory/hair/head/bald,
+		/datum/sprite_accessory/hair/head/baum,
 		/datum/sprite_accessory/hair/head/beartails,
+		/datum/sprite_accessory/hair/head/birdnest,
 		/datum/sprite_accessory/hair/head/bun,
 		/datum/sprite_accessory/hair/head/bob,
+		/datum/sprite_accessory/hair/head/chastity,
 		/datum/sprite_accessory/hair/head/conscriptf,
 		/datum/sprite_accessory/hair/head/consort,
 		/datum/sprite_accessory/hair/head/curlyshort,
 		/datum/sprite_accessory/hair/head/damsel,
+		/datum/sprite_accessory/hair/head/dawn,
+		/datum/sprite_accessory/hair/head/fluffy,
 		/datum/sprite_accessory/hair/head/grumpy_f,
+		/datum/sprite_accessory/hair/head/herder,
+		/datum/sprite_accessory/hair/head/highlander,
 		/datum/sprite_accessory/hair/head/homely,
+		/datum/sprite_accessory/hair/head/jape,
 		/datum/sprite_accessory/hair/head/lady,
 		/datum/sprite_accessory/hair/head/loosebraid,
 		/datum/sprite_accessory/hair/head/maid,
+		/datum/sprite_accessory/hair/head/martial,
 		/datum/sprite_accessory/hair/head/majestic_f,
 		/datum/sprite_accessory/hair/head/matron,
 		/datum/sprite_accessory/hair/head/messy,
@@ -86,55 +103,48 @@
 		/datum/sprite_accessory/hair/head/princess,
 		/datum/sprite_accessory/hair/head/queen,
 		/datum/sprite_accessory/hair/head/rapunzel,
+		/datum/sprite_accessory/hair/head/royalcurls,
 		/datum/sprite_accessory/hair/head/rose,
 		/datum/sprite_accessory/hair/head/roughtails,
+		/datum/sprite_accessory/hair/head/runt,
 		/datum/sprite_accessory/hair/head/shrine,
 		/datum/sprite_accessory/hair/head/soilbride,
 		/datum/sprite_accessory/hair/head/spicy,
+		/datum/sprite_accessory/hair/head/shaved,
 		/datum/sprite_accessory/hair/head/squire_f,
 		/datum/sprite_accessory/hair/head/tails,
+		/datum/sprite_accessory/hair/head/towner,
+		/datum/sprite_accessory/hair/head/trapper,
 		/datum/sprite_accessory/hair/head/tied_pony,
 		/datum/sprite_accessory/hair/head/tiedup,
 		/datum/sprite_accessory/hair/head/tiedcutf,
 		/datum/sprite_accessory/hair/head/tomboy,
 		/datum/sprite_accessory/hair/head/updo,
-		/datum/sprite_accessory/hair/head/wisp,
-		/datum/sprite_accessory/hair/head/willow,
-		/datum/sprite_accessory/hair/head/baum,
-		/datum/sprite_accessory/hair/head/birdnest,
-		/datum/sprite_accessory/hair/head/chastity,
-		/datum/sprite_accessory/hair/head/dawn,
-		/datum/sprite_accessory/hair/head/fluffy,
-		/datum/sprite_accessory/hair/head/helmet,
-		/datum/sprite_accessory/hair/head/herder,
-		/datum/sprite_accessory/hair/head/highlander,
-		/datum/sprite_accessory/hair/head/jape,
-		/datum/sprite_accessory/hair/head/martial,
-		/datum/sprite_accessory/hair/head/miller,
-		/datum/sprite_accessory/hair/head/runt,
-		/datum/sprite_accessory/hair/head/royalcurls,
-		/datum/sprite_accessory/hair/head/shaved,
-		/datum/sprite_accessory/hair/head/towner,
-		/datum/sprite_accessory/hair/head/trapper,
 		/datum/sprite_accessory/hair/head/uncombed,
 		/datum/sprite_accessory/hair/head/wastrel,
+		/datum/sprite_accessory/hair/head/wisp,
 		/datum/sprite_accessory/hair/head/wilderness,
+		/datum/sprite_accessory/hair/head/willow,
 		/datum/sprite_accessory/hair/head/witcher,
-		/datum/sprite_accessory/hair/head/helmet,
-	)
+		)
 
-/datum/customizer/bodypart_feature/hair/head/humanoid/pointyear
-	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear)
 
-/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear
+/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_male/is_allowed(datum/preferences/prefs)
+	return (prefs.gender == MALE)
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_male
+	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear_male)
+
+/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear_male
 	sprite_accessories = list(
 		/datum/sprite_accessory/hair/head/bald,
+		/datum/sprite_accessory/hair/head/baum,
+		/datum/sprite_accessory/hair/head/birdnest,
 		/datum/sprite_accessory/hair/head/berserker,
 		/datum/sprite_accessory/hair/head/bog,
 		/datum/sprite_accessory/hair/head/bowlcut,
 		/datum/sprite_accessory/hair/head/brother,
 		/datum/sprite_accessory/hair/head/cavehead,
-		/datum/sprite_accessory/hair/head/conscript,
 		/datum/sprite_accessory/hair/head/courtier,
 		/datum/sprite_accessory/hair/head/dome,
 		/datum/sprite_accessory/hair/head/druid,
@@ -142,10 +152,16 @@
 		/datum/sprite_accessory/hair/head/forester,
 		/datum/sprite_accessory/hair/head/foreigner_tief,
 		/datum/sprite_accessory/hair/head/forged,
+		/datum/sprite_accessory/hair/head/herder,
 		/datum/sprite_accessory/hair/head/heroic,
+		/datum/sprite_accessory/hair/head/herder,
 		/datum/sprite_accessory/hair/head/hunter,
+		/datum/sprite_accessory/hair/head/jape,
 		/datum/sprite_accessory/hair/head/landlord,
 		/datum/sprite_accessory/hair/head/lover_tief,
+		/datum/sprite_accessory/hair/head/majestic_elf,
+		/datum/sprite_accessory/hair/head/martial,
+		/datum/sprite_accessory/hair/head/miller,
 		/datum/sprite_accessory/hair/head/monk,
 		/datum/sprite_accessory/hair/head/merc,
 		/datum/sprite_accessory/hair/head/pirate,
@@ -154,31 +170,67 @@
 		/datum/sprite_accessory/hair/head/rogue,
 		/datum/sprite_accessory/hair/head/romantic,
 		/datum/sprite_accessory/hair/head/ronin,
+		/datum/sprite_accessory/hair/head/runt,
 		/datum/sprite_accessory/hair/head/scribe,
 		/datum/sprite_accessory/hair/head/son_elf,
 		/datum/sprite_accessory/hair/head/steward,
+		/datum/sprite_accessory/hair/head/shaved,
 		/datum/sprite_accessory/hair/head/swain,
 		/datum/sprite_accessory/hair/head/top_aas,
 		/datum/sprite_accessory/hair/head/troubadour,
 		/datum/sprite_accessory/hair/head/tied,
 		/datum/sprite_accessory/hair/head/tied_long,
 		/datum/sprite_accessory/hair/head/trimmed,
+		/datum/sprite_accessory/hair/head/towner,
+		/datum/sprite_accessory/hair/head/trapper,
 		/datum/sprite_accessory/hair/head/warrior,
 		/datum/sprite_accessory/hair/head/woodsman_elf,
 		/datum/sprite_accessory/hair/head/vagabond,
 		/datum/sprite_accessory/hair/head/zybantu,
+		/datum/sprite_accessory/hair/head/curlyshort,
+		/datum/sprite_accessory/hair/head/matron,
+		/datum/sprite_accessory/hair/head/messy,
+		/datum/sprite_accessory/hair/head/mysterious_elf,
+		/datum/sprite_accessory/hair/head/mystery,
+		/datum/sprite_accessory/hair/head/pix,
+		/datum/sprite_accessory/hair/head/plain,
+		/datum/sprite_accessory/hair/head/spicy,
+		/datum/sprite_accessory/hair/head/tiedup,
+		/datum/sprite_accessory/hair/head/tomboy,
+		/datum/sprite_accessory/hair/head/wastrel,
+		/datum/sprite_accessory/hair/head/wilderness,
+		/datum/sprite_accessory/hair/head/witcher,
+	)
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_female/is_allowed(datum/preferences/prefs)
+	return (prefs.gender == FEMALE)
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/pointy_ear_female
+	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear_female)
+
+/datum/customizer_choice/bodypart_feature/hair/head/humanoid/pointyear_female
+	sprite_accessories = list(
+
+
+
 		/datum/sprite_accessory/hair/head/archivist,
-		/datum/sprite_accessory/hair/head/barbarian,
+		/datum/sprite_accessory/hair/head/bald,
+		/datum/sprite_accessory/hair/head/baum,
+		/datum/sprite_accessory/hair/head/birdnest,
 		/datum/sprite_accessory/hair/head/beartails,
 		/datum/sprite_accessory/hair/head/bun,
 		/datum/sprite_accessory/hair/head/bob,
+		/datum/sprite_accessory/hair/head/chastity,
 		/datum/sprite_accessory/hair/head/conscriptf,
 		/datum/sprite_accessory/hair/head/consort,
 		/datum/sprite_accessory/hair/head/cotton_elf,
 		/datum/sprite_accessory/hair/head/curlyshort,
 		/datum/sprite_accessory/hair/head/damsel,
+		/datum/sprite_accessory/hair/head/dawn,
 		/datum/sprite_accessory/hair/head/fancy_femelf,
+		/datum/sprite_accessory/hair/head/fluffy,
 		/datum/sprite_accessory/hair/head/homely,
+		/datum/sprite_accessory/hair/head/jape,
 		/datum/sprite_accessory/hair/head/junia,
 		/datum/sprite_accessory/hair/head/lady,
 		/datum/sprite_accessory/hair/head/loosebraid,
@@ -187,6 +239,8 @@
 		/datum/sprite_accessory/hair/head/majestic_f,
 		/datum/sprite_accessory/hair/head/matron,
 		/datum/sprite_accessory/hair/head/messy,
+		/datum/sprite_accessory/hair/head/majestic_elf,
+		/datum/sprite_accessory/hair/head/martial,
 		/datum/sprite_accessory/hair/head/mysterious_elf,
 		/datum/sprite_accessory/hair/head/mystery,
 		/datum/sprite_accessory/hair/head/nun,
@@ -198,40 +252,25 @@
 		/datum/sprite_accessory/hair/head/rapunzel,
 		/datum/sprite_accessory/hair/head/rose,
 		/datum/sprite_accessory/hair/head/roughtails,
-		/datum/sprite_accessory/hair/head/shrine,
-		/datum/sprite_accessory/hair/head/soilbride,
-		/datum/sprite_accessory/hair/head/spicy,
-		/datum/sprite_accessory/hair/head/tails,
-		/datum/sprite_accessory/hair/head/tied_pony,
-		/datum/sprite_accessory/hair/head/tiedup,
-		/datum/sprite_accessory/hair/head/tiedcutf,
-		/datum/sprite_accessory/hair/head/tomboy,
-		/datum/sprite_accessory/hair/head/updo,
-		/datum/sprite_accessory/hair/head/wisp,
-		/datum/sprite_accessory/hair/head/willow,
-		/datum/sprite_accessory/hair/head/baum,
-		/datum/sprite_accessory/hair/head/birdnest,
-		/datum/sprite_accessory/hair/head/chastity,
-		/datum/sprite_accessory/hair/head/dawn,
-		/datum/sprite_accessory/hair/head/fluffy,
-		/datum/sprite_accessory/hair/head/helmet,
-		/datum/sprite_accessory/hair/head/herder,
-		/datum/sprite_accessory/hair/head/highlander,
-		/datum/sprite_accessory/hair/head/jape,
-		/datum/sprite_accessory/hair/head/majestic_elf,
-		/datum/sprite_accessory/hair/head/martial,
-		/datum/sprite_accessory/hair/head/miller,
 		/datum/sprite_accessory/hair/head/runt,
 		/datum/sprite_accessory/hair/head/royalcurls,
 		/datum/sprite_accessory/hair/head/shaved,
+		/datum/sprite_accessory/hair/head/shrine,
+		/datum/sprite_accessory/hair/head/soilbride,
+		/datum/sprite_accessory/hair/head/spicy,
 		/datum/sprite_accessory/hair/head/towner,
-		/datum/sprite_accessory/hair/head/trapper,
+		/datum/sprite_accessory/hair/head/tails,
+		/datum/sprite_accessory/hair/head/tiedup,
+		/datum/sprite_accessory/hair/head/tiedcutf,
+		/datum/sprite_accessory/hair/head/tomboy,
 		/datum/sprite_accessory/hair/head/uncombed,
+		/datum/sprite_accessory/hair/head/updo,
+		/datum/sprite_accessory/hair/head/wisp,
+		/datum/sprite_accessory/hair/head/willow,
 		/datum/sprite_accessory/hair/head/wastrel,
-		/datum/sprite_accessory/hair/head/wilderness,
 		/datum/sprite_accessory/hair/head/witcher,
-		/datum/sprite_accessory/hair/head/helmet,
 	)
+
 
 //////////////////////
 // Hair Definitions //
@@ -579,38 +618,32 @@
 	name = "Amazon"
 	icon_state = "amazon_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_AASIMAR)
 
 /datum/sprite_accessory/hair/head/archivist
 	name = "Archivist"
 	icon_state = "archivist_f" // original name bob_scully
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/barbarian
 	name = "Barbarian"
 	icon_state = "barbarian_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/beartails
 	name = "Beartails"
 	icon_state = "beartails_f" // modified cotton
 	gender = FEMALE
 	under_layer = TRUE
-	specuse = list(SPEC_ID_HUMEN)
 
 /datum/sprite_accessory/hair/head/bun
 	name = "Bun"
 	icon_state = "bun-low"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/bob
 	name = "Bob"
 	icon_state = "bob_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/conscriptf
 	name = "Conscripte"
@@ -634,7 +667,6 @@
 	name = "Curly Short"
 	icon_state = "curly_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/damsel
 	name = "Damsel"
@@ -646,49 +678,41 @@
 	name = "Fancy"
 	icon_state = "fancy_elf_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_ELF)
 
 /datum/sprite_accessory/hair/head/grumpy_f
 	name = "Grumpy"
 	icon_state = "grumpy_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/gnomish_f
 	name = "Gnomish"
 	icon_state = "gnomish_f" // original name bun_grandma
 	gender = FEMALE
-	specuse = list(SPEC_ID_DWARF)
 
 /datum/sprite_accessory/hair/head/hearth_f
 	name = "Hearth"
 	icon_state = "hearth_f" // original name ponytail_fox
 	gender = FEMALE
-	specuse = list(SPEC_ID_DWARF)
 
 /datum/sprite_accessory/hair/head/homely
 	name = "Homely"
 	icon_state = "homely_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/junia
 	name = "Junia"
 	icon_state = "junia_tief_f" // modified hime_updo
 	gender = FEMALE
-	specuse = list(SPEC_ID_TIEFLING)
 
 /datum/sprite_accessory/hair/head/lady
 	name = "Lady"
 	icon_state = "lady_f" // original name newyou
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_ELF, SPEC_ID_TIEFLING)
 
 /datum/sprite_accessory/hair/head/loosebraid
 	name = "Loose Braid"
 	icon_state = "loosebraid_f"
 	gender = FEMALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
 
 /datum/sprite_accessory/hair/head/maiden
 	name = "Maiden"

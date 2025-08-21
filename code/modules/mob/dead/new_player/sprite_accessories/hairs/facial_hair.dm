@@ -6,7 +6,7 @@
 /datum/sprite_accessory/hair/facial
 	icon = 'icons/roguetown/mob/facial.dmi'
 	gender = MALE
-	specuse = RACES_PLAYER_ALL // STONEKEEP EDIT
+	specuse = ALL_RACES_SK_LIST // STONEKEEP EDIT
 	var/briarhairbuff = FALSE // STONEKEEP EDIT. Does having this hairstyle provide a devotion boon to Briars?
 
 /datum/sprite_accessory/hair/facial/none
@@ -18,7 +18,7 @@
 	name = "None"
 	icon_state = "facial_shaven"
 	gender = MALE
-	specuse = list(SPEC_ID_HUMEN, SPEC_ID_DWARF, SPEC_ID_ELF, SPEC_ID_AASIMAR, SPEC_ID_TIEFLING, SPEC_ID_HALF_ORC)
+	specuse = list(ALL_RACES_SK_LIST)
 
 /datum/sprite_accessory/hair/facial/brew
 	name = "Brew"
