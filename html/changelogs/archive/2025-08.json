@@ -638,88 +638,11 @@
         "grungussuss": [
             {
                 "qol": "throne will now glow when it is in a mode"
-            },
-            {
-                "admin": "scrying no longer messages admins"
             }
         ],
         "HijackSpaghetti": [
             {
                 "rscadd": "New chalk rune and ritual for leyline attunement a.k.a. mana baptism."
-            }
-        ]
-    },
-    "2025-08-23": {
-        "grungussuss": [
-            {
-                "bugfix": "fixed lord color being wonky"
-            },
-            {
-                "admin": "admins are notified when a monarch or priest disconnects"
-            },
-            {
-                "rscadd": "amount lost from dying on a psycross decreased from 2 to 0"
-            },
-            {
-                "rscadd": "amount lost from dying in a cell decreased from 2 to 0"
-            },
-            {
-                "rscadd": "amount lost from dying reduced from 1 to 0"
-            },
-            {
-                "bugfix": "copy outfit works again"
-            },
-            {
-                "admin": "added better logging for spell usage"
-            },
-            {
-                "rscadd": "you can now make paper from logs on a tanning rack"
-            },
-            {
-                "rscadd": "Added meow"
-            }
-        ],
-        "PotatoTomahto": [
-            {
-                "bugfix": "fixes advclass rolls"
-            },
-            {
-                "rscadd": "onscreen blurbs when insane"
-            }
-        ],
-        "SarmentiCampbell": [
-            {
-                "rscadd": "Re-add the maniac's disgusting pig examine."
-            },
-            {
-                "balance": "increase the weight and chance for it to proc of the midround maniac proccing(it still hasn't rolled yet in ages.)"
-            },
-            {
-                "rscadd": "Give Maniac strong-grabber trait"
-            },
-            {
-                "balance": "lower maniac's role restrictions(mostly youngling roles since they do get debuffed)"
-            }
-        ],
-        "CheffieGithub": [
-            {
-                "bugfix": "Fix cleric and templar miracle progression."
-            },
-            {
-                "balance": "You cannot excommunicate followers of the inhumen."
-            }
-        ],
-        "Wouju": [
-            {
-                "code_imp": "woodcutter and footman war axe can now be found in the polearms file"
-            }
-        ],
-        "dwasint": [
-            {
-                "rscadd": "apiaries are now craftable"
-            },
-            {
-                "rscadd": "seed merchants can now rarely bring queen bees with them"
             }
         ]
     }
