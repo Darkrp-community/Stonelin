@@ -20,12 +20,6 @@
 #define SPEC_ID_ROUSMAN	"rousman"
 #define SPEC_ID_ZIZOMBIE "zizombie"
 
-// STONEKEEP RACES
-#define SPEC_ID_FOX "Changeling"
-#define SPEC_ID_KAPPA "Undine"
-#define SPEC_ID_TENGU "Skylancer"
-#define SPEC_ID_ONI "Ogrun"
-
 /// List of all species
 #define ALL_RACES_LIST list(\
 	SPEC_ID_HUMEN,\
@@ -102,7 +96,7 @@
 	SPEC_ID_HALF_ORC,\
 )
 
-/// Races not considered discriminated against in Stonekeep. Used for nobility, etc.
+/// Species not considered discriminated against in Vanderlin. Used for nobility, etc.
 #define RACES_PLAYER_NONDISCRIMINATED list(\
 	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\
@@ -123,7 +117,7 @@
 	SPEC_ID_MEDICATOR,\
 )
 
-/// Races who are non-exotic to Enigma. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
+/// Species who are non-exotic to Vanderlin. These are species from foreign lands with no local pull or uncommon species. Used in miscellaneous cases, when they would not be that role.
 #define RACES_PLAYER_NONEXOTIC list(\
 	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\
@@ -203,9 +197,6 @@
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_MEDICATOR,\
-	SPEC_ID_FOX,\
-	SPEC_ID_KAPPA,\
-	SPEC_ID_TENGU,\
 )
 
 /// Vanderlin royalty
@@ -223,8 +214,6 @@
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
 	SPEC_ID_MEDICATOR,\
-	SPEC_ID_FOX,\
-	SPEC_ID_TENGU,\
 )
 
 /// Foreigner Nobility Species - No Tiefling (you know why) or hollow-kin or medicators (too young to have nobles mayhaps)
@@ -241,8 +230,6 @@
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_KOBOLD,\
-	SPEC_ID_FOX,\
-	SPEC_ID_TENGU,\
 )
 
 /// Nonnative species - Anything not native to Psydonia.
@@ -260,7 +247,6 @@
 	SPEC_ID_KOBOLD,\
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_HOLLOWKIN,\
-	SPEC_ID_ONI,\
 )
 
 /// Species that use the base human body, adjusted or otherwise
@@ -281,8 +267,4 @@
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_ZIZOMBIE,\
-	SPEC_ID_FOX,\
-	SPEC_ID_KAPPA,\
-	SPEC_ID_TENGU,\
-	SPEC_ID_ONI,\
 )
