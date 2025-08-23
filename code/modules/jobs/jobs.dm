@@ -94,6 +94,7 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 	/datum/job/innkeep_son::title,
 	/datum/job/orphan::title,
 	/datum/job/churchling::title,
+	/datum/job/soilchild::title,
 ))
 GLOBAL_PROTECT(youngfolk_positions)
 

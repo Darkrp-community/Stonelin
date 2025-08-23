@@ -27,8 +27,7 @@
 	if(!passed_genetics)
 		if(!seed_genetics)
 			var/datum/plant_def/plant_def_instance = GLOB.plant_defs[plant_def_type]
-			seed_genetics = new /datum/plant_genetics()
-			plant_def_instance?.set_genetic_tendencies(seed_genetics)
+			seed_genetics = new /datum/plant_genetics(plant_def_instance)
 		else
 			seed_genetics = new seed_genetics()
 	else
@@ -39,6 +38,7 @@
 	// Chance to destroy the seed as it's being stepped on
 	if(prob(10) && istype(L))
 		playsound(loc,"plantcross", 40, FALSE)
+		visible_message(span_warning("[L] crushes [src] underfoot."))
 		qdel(src)
 
 /obj/item/neuFarm/seed/examine(mob/user)
@@ -70,6 +70,10 @@
 		try_plant_seed(user, soil)
 		return
 	else if(istype(T, /turf/open/floor/dirt))
+		var/obj/structure/irrigation_channel/located = locate(/obj/structure/irrigation_channel) in T
+		if(located)
+			to_chat(user, span_notice("[located] is in the way!"))
+			return
 		if(!(user.get_skill_level(/datum/skill/labor/farming) >= SKILL_LEVEL_JOURNEYMAN))
 			to_chat(user, span_notice("I don't know enough to make a mound without tools."))
 			return

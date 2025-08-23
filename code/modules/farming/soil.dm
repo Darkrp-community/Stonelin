@@ -3,10 +3,10 @@
 #define SOIL_DECAY_TIME 20 MINUTES
 
 #define QUALITY_REGULAR 1
-#define QUALITY_BRONZE 2
-#define QUALITY_SILVER 3
-#define QUALITY_GOLD 4
-#define QUALITY_DIAMOND 5
+// #define QUALITY_BRONZE 2
+#define QUALITY_SILVER 2
+#define QUALITY_GOLD 3
+#define QUALITY_DIAMOND 4
 
 #define BLESSING_WEED_DECAY_RATE 10 / (1 MINUTES)
 #define WEED_GROWTH_RATE 3 / (1 MINUTES)
@@ -33,6 +33,7 @@
 	density = FALSE
 	climbable = FALSE
 	max_integrity = 0
+	UUID_saving = TRUE
 	/// Amount of water in the soil. It makes the plant and weeds not loose health
 	var/water = 0
 	/// Amount of weeds in the soil. The more of them the more water and nutrition they eat.
@@ -71,6 +72,11 @@
 	///accellerated_growth
 	var/accellerated_growth = 0
 
+	///the overlays we are adding to mobs
+	var/list/vanished
+
+	var/list/marked_turfs
+
 	COOLDOWN_DECLARE(soil_update)
 
 /obj/structure/soil/Crossed(atom/movable/AM)
@@ -94,14 +100,14 @@
 		return
 	var/feedback = "I harvest the produce."
 	var/modifier = 0
-	var/chance_to_ruin_single = 75 - (farming_skill * 25)
-	if(prob(chance_to_ruin_single))
-		feedback = "I harvest the produce, ruining a little."
-		modifier -= 1
 	var/chance_to_get_extra = -75 + (farming_skill * 25)
+	var/chance_to_ruin_single = 75 - (farming_skill * 25)
 	if(prob(chance_to_get_extra))
 		feedback = "I harvest the produce well."
 		modifier += 1
+	else if(prob(chance_to_ruin_single))
+		feedback = "I harvest the produce, ruining a little."
+		modifier -= 1
 
 	if(has_world_trait(/datum/world_trait/dendor_fertility))
 		feedback = "Praise Dendor for our harvest is bountiful."
@@ -314,10 +320,13 @@
 		return
 	if(try_handle_watering(attacking_item, user, params))
 		return
-	if(try_handle_fertilizing(attacking_item, user, params))
-		return
 	if(try_handle_harvest(attacking_item, user, params))
 		return
+	if(try_handle_fertilizing(attacking_item, user, params))
+		return
+	for(var/obj/item/bagged_item in attacking_item.contents)
+		if(try_handle_fertilizing(bagged_item, user, params))
+			return
 	return ..()
 
 /obj/structure/soil/proc/on_stepped(mob/living/stepper)
@@ -651,8 +660,8 @@
 		crop_quality = QUALITY_GOLD
 	else if(quality_points >= max_quality_points * 0.7)
 		crop_quality = QUALITY_SILVER
-	else if(quality_points >= max_quality_points * 0.5)
-		crop_quality = QUALITY_BRONZE
+	// else if(quality_points >= max_quality_points * 0.5)
+	// 	crop_quality = QUALITY_BRONZE
 	else
 		crop_quality = QUALITY_REGULAR
 
@@ -796,13 +805,12 @@
 		improvement_chance += 10
 	if(pollination_time > 0)
 		improvement_chance += 10
-	if(crop_quality >= QUALITY_GOLD)
+	if(crop_quality >= QUALITY_SILVER) // the rich get richer
 		improvement_chance += 20
 
-	// Try to improve each trait
+	// Improve two random traits
 	if(prob(improvement_chance))
-		improved.mutate_trait()
-		improved.mutate_trait()
+		improved.mutate_traits(amount = 2)
 
 	improved.generation += 1
 	return improved
@@ -878,14 +886,14 @@
 			if(plant.potassium_requirement > 0)
 				potassium_needed = (plant.potassium_requirement / total_growth_time) * target_growth_time
 		else
-			// Production phase
+			// Production phase, perennials use nutrients more "effectively" and need less
 			total_growth_time = plant.produce_time
 			if(plant.nitrogen_requirement > 0)
-				nitrogen_needed = (plant.nitrogen_requirement / total_growth_time) * target_growth_time
+				nitrogen_needed = ((plant.nitrogen_requirement * 0.6) / total_growth_time) * target_growth_time
 			if(plant.phosphorus_requirement > 0)
-				phosphorus_needed = (plant.phosphorus_requirement / total_growth_time) * target_growth_time
+				phosphorus_needed = ((plant.phosphorus_requirement * 0.6) / total_growth_time) * target_growth_time
 			if(plant.potassium_requirement > 0)
-				potassium_needed = (plant.potassium_requirement / total_growth_time) * target_growth_time
+				potassium_needed = ((plant.potassium_requirement * 0.6)/ total_growth_time) * target_growth_time
 	else
 		total_growth_time = plant.maturation_time + plant.produce_time
 		if(plant.nitrogen_requirement > 0)
@@ -976,9 +984,9 @@
 		for(var/obj/structure/soil/soil in cardinal_turf)
 			if(soil == src)
 				continue
-			soil.adjust_nitrogen(FLOOR(plant.nitrogen_production, 1))
-			soil.adjust_phosphorus(FLOOR(plant.phosphorus_production, 1))
-			soil.adjust_potassium(FLOOR(plant.potassium_production, 1))
+			soil.adjust_nitrogen(FLOOR(plant.nitrogen_production, 1) / 2)
+			soil.adjust_phosphorus(FLOOR(plant.phosphorus_production, 1) / 2)
+			soil.adjust_potassium(FLOOR(plant.potassium_production, 1) / 2)
 
 /obj/structure/soil/proc/add_growth(added_growth)
 	if(!plant)
@@ -1024,6 +1032,7 @@
 
 /obj/structure/soil/proc/decay_soil()
 	plant = null
+	remove_signals()
 	plant_genetics = null
 	qdel(src)
 
@@ -1036,6 +1045,7 @@
 	if(produce_ready)
 		ruin_produce()
 	plant = null
+	remove_signals()
 	plant_genetics = null
 	update_appearance(UPDATE_OVERLAYS)
 
@@ -1061,23 +1071,12 @@
 	var/base_amount = rand(plant.produce_amount_min, plant.produce_amount_max)
 
 	// Genetics yield bonus - more significant impact
-	var/genetics_yield_bonus = round((plant_genetics.yield_trait - TRAIT_GRADE_AVERAGE) / 5) // Every 5 points = +1 produce
-
-	// Quality modifiers
-	var/quality_modifier = 0
-	if(!istype(plant, /datum/plant_def/alchemical))
-		switch(crop_quality)
-			if(QUALITY_BRONZE)
-				quality_modifier = 1
-			if(QUALITY_SILVER)
-				quality_modifier = 2
-			if(QUALITY_GOLD)
-				quality_modifier = 3
-			if(QUALITY_DIAMOND)
-				quality_modifier = 4
+	var/genetics_yield_bonus = max(round((plant_genetics.yield_trait - TRAIT_GRADE_AVERAGE) / 25), 0) // Every 25 points = +1 produce
 
 	// Calculate final yield amount
-	var/spawn_amount = max(base_amount + modifier + quality_modifier + genetics_yield_bonus, 1)
+	var/spawn_amount = max(base_amount + modifier + genetics_yield_bonus, 1)
+
+	var/datum/plant_genetics/new_genetics = improve_genetics_naturally()
 
 	for(var/i in 1 to spawn_amount)
 		var/obj/item/produce = new plant.produce_type(loc)
@@ -1085,16 +1084,7 @@
 			var/obj/item/reagent_containers/food/snacks/produce/P = produce
 			P.set_quality(crop_quality)
 			// Pass genetics to the produce for seed extraction
-			P.source_genetics = plant_genetics.copy()
-
-	if(plant_genetics && plant_genetics.yield_trait > TRAIT_GRADE_GOOD)
-		var/seed_chance = (plant_genetics.yield_trait - TRAIT_GRADE_GOOD) * 2 // Up to 50% chance at max yield
-		if(prob(seed_chance))
-			// Create improved genetics for the seed
-			var/datum/plant_genetics/new_genetics = improve_genetics_naturally()
-			var/obj/item/neuFarm/seed/bonus_seed = new(loc, new_genetics)
-			bonus_seed.plant_def_type = plant.type
-			bonus_seed.forceMove(loc)
+			P.source_genetics = new_genetics.copy()
 
 	// Reset produce state
 	produce_ready = FALSE
@@ -1113,6 +1103,8 @@
 	if(plant)
 		return
 	plant = new_plant
+	if(initial(new_plant.see_through))
+		add_signals()
 	plant_health = MAX_PLANT_HEALTH
 	growth_time = 0
 	produce_time = 0
@@ -1125,6 +1117,67 @@
 	quality_points = 0
 	update_appearance(UPDATE_OVERLAYS)
 
+/obj/structure/soil/proc/add_signals()
+	var/turf/above = get_step(src, NORTH)
+	RegisterSignal(above, COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+	RegisterSignal(above, COMSIG_TURF_EXITED, PROC_REF(on_exited))
+	LAZYADD(marked_turfs, above)
+	RegisterSignal(get_step(above, WEST), COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+	RegisterSignal(get_step(above, WEST), COMSIG_TURF_EXITED, PROC_REF(on_exited))
+	LAZYADD(marked_turfs, get_step(above, WEST))
+	RegisterSignal(get_step(above, EAST), COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+	RegisterSignal(get_step(above, EAST), COMSIG_TURF_EXITED, PROC_REF(on_exited))
+	LAZYADD(marked_turfs, get_step(above, EAST))
+
+/obj/structure/soil/proc/remove_signals()
+	var/turf/above = get_step(src, NORTH)
+	UnregisterSignal(above, COMSIG_ATOM_ENTERED)
+	UnregisterSignal(above, COMSIG_TURF_EXITED)
+	UnregisterSignal(get_step(above, WEST), COMSIG_ATOM_ENTERED)
+	UnregisterSignal(get_step(above, WEST), COMSIG_TURF_EXITED)
+	UnregisterSignal(get_step(above, EAST), COMSIG_ATOM_ENTERED)
+	UnregisterSignal(get_step(above, EAST), COMSIG_TURF_EXITED)
+	LAZYCLEARLIST(marked_turfs)
+
+/obj/structure/soil/proc/on_entered(datum/source, mob/crossed)
+	if(!isliving(crossed))
+		return
+	if(!crossed.client)
+		return
+	if(LAZYACCESS(vanished, crossed))
+		return
+
+	var/image/overlay = image(src)
+	overlay.appearance = appearance
+	overlay.loc = src
+	overlay.override = TRUE
+	overlay.plane = SEETHROUGH_PLANE
+	overlay.appearance_flags = KEEP_APART
+
+	var/mutable_appearance/MA = mutable_appearance(icon, icon_state)
+	MA.appearance_flags = KEEP_APART
+	MA.plane = initial(plane)
+	overlay.overlays += MA
+	animate(overlay, alpha = 110, time = 0.3 SECONDS)
+
+	crossed.client.images += overlay
+	LAZYADDASSOC(vanished, crossed, overlay)
+
+
+/obj/structure/soil/proc/on_exited(turf/source, mob/crossed, direction)
+	if(!isliving(crossed))
+		return
+	if(get_step(source, crossed.dir) in marked_turfs)
+		return
+	if(!crossed.client)
+		return
+	var/image/overlay = LAZYACCESS(vanished, crossed)
+	if(!overlay)
+		return
+	crossed.client.images -= overlay
+	LAZYREMOVE(vanished, crossed)
+
+
 /obj/structure/soil/debug_soil
 	var/obj/item/neuFarm/seed/seed_to_grow
 
@@ -1136,7 +1189,13 @@
 	. = ..()
 	if(!seed_to_grow)
 		return
-	insert_plant(GLOB.plant_defs[initial(seed_to_grow.plant_def_type)])
+	var/debug_seed_genetics = initial(seed_to_grow.seed_genetics)
+	if(!debug_seed_genetics)
+		var/datum/plant_def/plant_def_instance = GLOB.plant_defs[initial(seed_to_grow.plant_def_type)]
+		debug_seed_genetics = new /datum/plant_genetics(plant_def_instance)
+	else
+		debug_seed_genetics = new debug_seed_genetics()
+	insert_plant(GLOB.plant_defs[initial(seed_to_grow.plant_def_type)], debug_seed_genetics)
 	add_growth(plant.maturation_time)
 	add_growth(plant.produce_time)
 
@@ -1146,7 +1205,7 @@
 #undef SOIL_DECAY_TIME
 
 #undef QUALITY_REGULAR
-#undef QUALITY_BRONZE
+// #undef QUALITY_BRONZE
 #undef QUALITY_SILVER
 #undef QUALITY_GOLD
 #undef QUALITY_DIAMOND
