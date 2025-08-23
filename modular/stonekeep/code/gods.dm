@@ -8,11 +8,6 @@
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Oath-breaking, Disobeying hierarchies"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/sacred_flame
-	t2 = /datum/action/cooldown/spell/healing/greater
-	t3 = /datum/action/cooldown/spell/revive
 	confess_lines = list(
 		"ASTRATA IS MY LIGHT!",
 		"ASTRATA BRINGS LAW!",
@@ -27,11 +22,7 @@
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Damaging books, Indulging Lust"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/status/invisibility
-	t2 = /datum/action/cooldown/spell/blindness/miracle
-	t3 = /datum/action/cooldown/spell/projectile/moonlit_dagger
+
 	confess_lines = list(
 		"NOC IS NIGHT!",
 		"NOC SEES THE TRUTH!",
@@ -46,11 +37,6 @@
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Killing beasts wastefully"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/undirected/bless_crops
-	t2 = /datum/action/cooldown/spell/undirected/beast_sense
-	t3 =/datum/action/cooldown/spell/beast_tame
 	confess_lines = list(
 		"DENDOR PROVIDES!",
 		"THE TREEFATHER BRINGS BOUNTY!",
@@ -65,17 +51,12 @@
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Hubris, Forgetfulness"
 	boons = ""
-	added_traits = list()
 /* NEEDS KAIZOKU TO WORK ROGTODO
 	t0 = /datum/action/cooldown/spell/healing/abyssal
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
 	t2 = /obj/effect/proc_holder/spell/invoked/icebind
 	t3 = /obj/effect/proc_holder/spell/invoked/ocean_embrace
 */
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/projectile/swordfish
-	t2 = /datum/action/cooldown/spell/undirected/conjure_item/summon_trident
-	t3 = /datum/action/cooldown/spell/ocean_embrace
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -90,11 +71,6 @@
 	worshippers = "Dark Elves, Gravekeepers, Mourners"
 	sins = "Undeath"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/burial_rites
-	t2 = /datum/action/cooldown/spell/undirected/soul_speak
-	t3 = /datum/action/cooldown/spell/aoe/churn_undead
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO NECRA!",
 		"THE UNDERMAIDEN IS OUR FINAL REPOSE!",
@@ -109,11 +85,6 @@
 	worshippers = "Warriors, Knights"
 	sins = "Cowardice, Hesitation"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/undirected/call_to_arms
-	t2 = /datum/action/cooldown/spell/undirected/divine_strike
-	t3 = /datum/action/cooldown/spell/persistence
 	confess_lines = list(
 		"RAVOX IS JUSTICE!",
 		"THROUGH STRIFE, GRACE!",
@@ -128,10 +99,6 @@
 	worshippers = "Cheats, Performers, The Hopeless"
 	sins = "Boredom, Predictability"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/undirected/list_target/vicious_mimicry
-	t2 = /datum/action/cooldown/spell/status/wheel
 	confess_lines = list(
 		"ASTRATA IS MY LIGHT!",
 		"NOC IS NIGHT!",
@@ -153,11 +120,6 @@
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "Failing to show respect to healers, Allowing disease to spread"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/diagnose
-	t1 = /datum/action/cooldown/spell/healing
-	t2 = /datum/action/cooldown/spell/attach_bodypart
-	t3 = /datum/action/cooldown/spell/cure_rot
 	confess_lines = list(
 		"PESTRA SOOTHES ALL ILLS!",
 		"THE SECRETS OF ALCHEMY WILL BE MINE!",
@@ -172,11 +134,6 @@
 	worshippers = "Smiths, Miners, Sculptors"
 	sins = "Breaking contracts, Shoddy work"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/status/vigorous_craft
-	t2 = /datum/action/cooldown/spell/hammer_fall
-	t3 = /datum/action/cooldown/spell/heat_metal
 	confess_lines = list(
 		"MALUM BREAK MY BONDS!",
 		"TRUE VALUE IS IN THE TOIL!",
@@ -191,11 +148,6 @@
 	worshippers = "Mothers, Artists, Married Couples"
 	sins = "Abandonment, Defiling beauty"
 	boons = ""
-	added_traits = list()
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/instill_perfection
-	t2 = /datum/action/cooldown/spell/projectile/eora_curse
-	t3 = /datum/action/cooldown/spell/eoran_bloom
 	confess_lines = list(
 		"EORA BRINGS US TOGETHER!",
 		"HER BEAUTY IS EVEN IN THIS TORMENT!",
@@ -286,10 +238,6 @@
 	sins = "Clumsiness, Hesitation, Humility"
 	boons = "You can see the most expensive item someone is carrying."
 	added_traits = list(TRAIT_MATTHIOS_EYES)
-	t0 = /datum/action/cooldown/spell/healing
-	t1 = /datum/action/cooldown/spell/aoe/on_turf/ensnare
-	t2 = null
-	t3 = null
 	confess_lines = list(
 		"MATTHIOS STEAL MY PAIN!",
 		"MATTHIOS WILL SAVE ME!",

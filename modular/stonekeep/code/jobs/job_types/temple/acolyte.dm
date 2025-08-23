@@ -48,7 +48,7 @@ Design philosphy:
 /datum/outfit/job/stonekeep/temple/templemaiden/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/eora)
-		H.set_patron(/datum/patron/divine/eora)
+		H.set_patron(/datum/patron/divine/eora, TRUE)
 
 	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -108,7 +108,7 @@ Design philosphy:
 /datum/outfit/job/stonekeep/temple/moonseer/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/noc)
-		H.set_patron(/datum/patron/divine/noc)
+		H.set_patron(/datum/patron/divine/noc, TRUE)
 	H.virginity = TRUE
 
 	backpack_contents = list(/obj/item/scrying, /obj/item/key/church)
@@ -139,9 +139,11 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_TUTELAGE, TRAIT_GENERIC) // better apprentice learning
 	ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
 
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells(H)
+	var/holder = H.patron.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_acolyte()
+		devotion.grant_to(H)
 
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
@@ -216,9 +218,11 @@ Design philosphy:
 	H.change_stat(STATKEY_END, 2)
 	H.change_stat(STATKEY_PER, -1)
 
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells(H)
+	var/holder = H.patron.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_acolyte()
+		devotion.grant_to(H)
 
 
 
@@ -234,7 +238,7 @@ Design philosphy:
 /datum/outfit/job/stonekeep/temple/gravekeeper/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/necra)
-		H.set_patron(/datum/patron/divine/necra)
+		H.set_patron(/datum/patron/divine/necra, TRUE)
 	head = /obj/item/clothing/head/padded/deathshroud
 	neck = /obj/item/clothing/neck/psycross/silver/necra
 	pants = /obj/item/clothing/pants/trou/leather/mourning
@@ -265,7 +269,9 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
 	ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
 
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells(H)
+	var/holder = H.patron.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_acolyte()
+		devotion.grant_to(H)
 

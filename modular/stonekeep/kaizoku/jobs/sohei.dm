@@ -69,7 +69,7 @@
 			head = /obj/item/clothing/head/helmet/skullcap/hachigane/purifier
 			if(H.mind)
 				if(H.patron != /datum/patron/abyssanctum/purifier)
-					H.set_patron(/datum/patron/abyssanctum/purifier) //Forces you to be Abyssanctum if you are not.
+					H.set_patron(/datum/patron/abyssanctum/purifier, TRUE) //Forces you to be Abyssanctum if you are not.
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) //The true focus of this class.
 		H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //I don't think they are deserving of bows, but Soheis irl also used them, soo...
@@ -88,12 +88,12 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("perception", -2) //(schizophrenia)
 		H.change_stat("speed", -1)
-
+/*
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Sohei are strong for a common role, but cannot pray to gain more abilities beyond t1
 	C.update_devotion(50, 50)
 	C.holder_mob = H
 	C.grant_spells_sohei(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-
+*/
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

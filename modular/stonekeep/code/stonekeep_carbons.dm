@@ -733,7 +733,7 @@
 	H.STAEND = rand(12,18)
 	H.STALUC = 18
 	H.STAINT = 7
-	H.set_patron(/datum/patron/divine/xylix)
+	H.set_patron(/datum/patron/divine/xylix, TRUE)
 
 /obj/item/clothing/head/jester/artefact
 	name = "blessed jester hat"

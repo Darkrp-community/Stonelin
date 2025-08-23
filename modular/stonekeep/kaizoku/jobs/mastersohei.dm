@@ -62,13 +62,14 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2) //Differently of templars, they don't have CHURN so they can have cleric-tier spells. Tideweaver focus only.
-
+/*
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Paladins, while devout warriors spent WAY too much time studying the blade. No more acolyte+
 	C.update_devotion(50, 50)
 	C.holder_mob = H
 	C.grant_spells_sohei(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+*/
 //	H.add_spell(new /obj/effect/proc_holder/spell/invoked/icebind)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //It's meant to be only heavy armor, but Kusari is medium. Idk how templar is doing, but in my testing, the armor was freaked.

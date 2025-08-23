@@ -38,7 +38,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/noc)
-			H.set_patron(/datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc, TRUE)
 
 		H.grant_language(/datum/language/elvish)
 		H.grant_language(/datum/language/dwarvish)

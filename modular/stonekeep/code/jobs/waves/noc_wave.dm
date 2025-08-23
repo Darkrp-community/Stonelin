@@ -16,7 +16,7 @@
 	..()
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/noc) // For some stupid reason this was checking for Dendor before.
-			H.set_patron(/datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc, TRUE)
 	H.virginity = TRUE
 
 	head = /obj/item/clothing/head/helmet/nocpriest
@@ -57,9 +57,12 @@
 	var/obj/item/weapon/polearm/woodstaff/aries/noc/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron) // This creates the cleric holder used for devotion spells
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells_priest(H)
+	var/holder = H.patron?.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_priest()
+		devotion.grant_to(H)
+
 
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
@@ -106,13 +109,6 @@
 	recruitment_message = "Serve NOC, %RECRUIT!"
 	accept_message = "FOR THE MOON PRINCE!"
 	refuse_message = "I refuse."
-
-/datum/action/cooldown/spell/undirected/list_target/convert_role/nocite/on_conversion(mob/living/carbon/human/cast_on)
-	. = ..()
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(cast_on, cast_on.patron)
-	C.grant_spells_templar(cast_on)
-	cast_on.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-
 
 
 

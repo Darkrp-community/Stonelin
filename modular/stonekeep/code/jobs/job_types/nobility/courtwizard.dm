@@ -42,8 +42,8 @@
 	shoes = /obj/item/clothing/shoes/shortboots
 	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/killersice = 1,  /obj/item/chalk = 1)
 	if(H.mind)
-		if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))
-			H.set_patron(/datum/patron/divine/noc)
+		if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))	//Magicians must follow Noc or Zizo to have access to magic.
+			H.set_patron(/datum/patron/divine/noc, TRUE)
 
 		H.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)

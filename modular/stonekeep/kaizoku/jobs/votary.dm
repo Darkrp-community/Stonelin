@@ -60,7 +60,7 @@
 			wrists = /obj/item/clothing/wrists/shrinekeeper
 			if(H.mind)
 				if(H.patron != /datum/patron/abyssanctum/purifier)
-					H.set_patron(/datum/patron/abyssanctum/purifier) //Forces you to be Abyssanctum if you are not.
+					H.set_patron(/datum/patron/abyssanctum/purifier, TRUE) //Forces you to be Abyssanctum if you are not.
 
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
@@ -78,7 +78,8 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep... in any bed they find.
 		H.change_stat("perception", -1)
-
+/*
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
+*/

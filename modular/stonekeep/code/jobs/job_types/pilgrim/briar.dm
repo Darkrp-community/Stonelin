@@ -34,7 +34,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/dendor)
-			H.set_patron(/datum/patron/divine/dendor)
+			H.set_patron(/datum/patron/divine/dendor, TRUE)
 
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
@@ -65,14 +65,17 @@
 		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/sacrifice_stinging)
 		H.mind.teach_crafting_recipe(/datum/repeatable_crafting_recipe/dendor/sacrifice_devouring)
 
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells(H)
+	var/holder = H.patron.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_acolyte()
+		devotion.grant_to(H)
+/*
 	var/datum/bodypart_feature/hair/feature = H.get_bodypart_feature_of_slot(BODYPART_FEATURE_FACIAL_HAIR)
 	var/datum/sprite_accessory/hair/facial/feature_type = SPRITE_ACCESSORY(feature.accessory_type)
 	if(feature_type.briarhairbuff == TRUE) // Is the facial hair we're wearing one that grants us the boons of Dendor?
 		C.devotion += 40
-
+*/
 /datum/outfit/job/sk/pilgrim/briar
 	var/tutorial = "<br><br><font color='#44720e'><span class='bold'>You know well how to make a shrine to Dendor, wood, thorns, and the head of a favored animal.<br><br>Choose a path stinging, devouring or growing, and make your sacrifices...<br><br>Remember - Dendor will only grant special powers from Blessing the first time you do recieve it, and only those mastering all his Miracles can unlock their full potential.  </span></font><br><br>"
 

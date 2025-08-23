@@ -87,7 +87,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/psydon, TRUE)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

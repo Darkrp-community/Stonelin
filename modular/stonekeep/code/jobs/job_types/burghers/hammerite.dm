@@ -21,7 +21,7 @@
 /datum/outfit/job/stonekeep/hammerite/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/malum)
-		H.set_patron(/datum/patron/divine/malum)
+		H.set_patron(/datum/patron/divine/malum, TRUE)
 
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)

@@ -45,7 +45,7 @@
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.add_spell(new /datum/action/cooldown/spell/undirected/barbrage)
-		H.set_patron(/datum/patron/inhumen/graggar)
+		H.set_patron(/datum/patron/inhumen/graggar, TRUE)
 		H.cmode_music = 'modular/stonekeep/sound/cmode/combat_barbarian.ogg'
 	var/helmet2choose = pickweight(list("Horned" = 1, "Varyag" = 1))
 	switch(helmet2choose)

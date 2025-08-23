@@ -29,7 +29,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/ravox)
-			H.set_patron(/datum/patron/divine/ravox)
+			H.set_patron(/datum/patron/divine/ravox, TRUE)
 
 		H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)

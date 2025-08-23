@@ -29,8 +29,8 @@
 	beltl = /obj/item/reagent_containers/glass/bottle/manapot
 	r_hand = /obj/item/weapon/polearm/woodstaff
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/noc)
-			H.set_patron(/datum/patron/divine/noc)
+		if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))	//Magicians must follow Noc or Zizo to have access to magic.
+			H.set_patron(/datum/patron/divine/noc, TRUE)
 
 		H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
