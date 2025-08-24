@@ -645,5 +645,12 @@
                 "rscadd": "New chalk rune and ritual for leyline attunement a.k.a. mana baptism."
             }
         ]
+    },
+    "2025-08-24": {
+        "Diegoflores31": [
+            {
+                "bugfix": "fixes goldface"
+            }
+        ]
     }
 }
