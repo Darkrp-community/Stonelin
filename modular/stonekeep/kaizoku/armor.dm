@@ -137,6 +137,7 @@
 	icon_state = "halfoyoroi"
 
 /obj/item/clothing/armor/brigandine/oyoroi/update_icon()
+	..()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
@@ -917,6 +918,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/helmet/zijinguan/update_icon()
+	..()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
@@ -1497,6 +1499,7 @@
 		return
 
 /obj/item/clothing/face/kaizoku/menpo/steel/kitsune/update_icon()
+	..()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
@@ -1672,6 +1675,7 @@
 	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/pants/kaizoku/yoroihakama/update_icon()
+	..()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
@@ -2200,6 +2204,7 @@
 	var/base_color = null
 
 /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad/zamurai/update_icon()
+	..()
 	cut_overlays()
 	if(base_color)
 		color = base_color
@@ -2218,6 +2223,7 @@
 	var/base_color = null
 
 /obj/item/clothing/wrists/bracers/kote/zamurai/update_icon()
+	..()
 	cut_overlays()
 	if(base_color)
 		color = base_color
@@ -2244,6 +2250,7 @@
 	base_icon_state = "zunari_kabuto"
 
 /obj/item/clothing/head/helmet/visored/zunari/zamurai/update_icon()
+	..()
 	cut_overlays()
 	var/visor_suffix = ""
 	if(adjustable == CADJUSTED)
@@ -2368,6 +2375,7 @@
 		M.update_inv_armor()
 
 /obj/item/clothing/armor/brigandine/neogarrison/update_icon()
+	..()
 	cut_overlays()
 
 	if(icon_state)
@@ -2416,7 +2424,7 @@
 		extra += I
 	return extra
 
-/obj/item/clothing/armor/brigandine/neogarrison/worn_overlays(isinhands, file2use)
+/obj/item/clothing/armor/brigandine/neogarrison/worn_overlays(isinhands, file2use, dummy_block = FALSE)
 	var/list/extras = ..(isinhands, file2use)
 	if(detail_tag && detail_tag != "_og")
 		var/image/B = image(file2use, "[icon_state][detail_tag]")
@@ -2492,6 +2500,7 @@
 		icon_state = "fllcustodian"
 
 /obj/item/clothing/armor/leather/splint/battlecoat/update_icon()
+	..()
 	cut_overlays()
 	if(icon_state)
 		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
@@ -2505,7 +2514,7 @@
 		det.color = GLOB.lordprimary
 		add_overlay(det)
 
-/obj/item/clothing/armor/leather/splint/battlecoat/worn_overlays(isinhands, file2use)
+/obj/item/clothing/armor/leather/splint/battlecoat/worn_overlays(isinhands, file2use, dummy_block = FALSE)
 	var/list/extras = ..(isinhands, file2use)
 	if(GLOB.lordprimary)
 		var/image/det_img = image(file2use, "[icon_state]_det")
@@ -2528,6 +2537,7 @@
 		update_icon()
 
 /obj/item/clothing/head/helmet/leather/paddedt/update_icon()
+	..()
 	cut_overlays()
 	if(icon_state)
 		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
@@ -2541,7 +2551,7 @@
 		det.color = GLOB.lordprimary
 		add_overlay(det)
 
-/obj/item/clothing/head/helmet/leather/paddedt/worn_overlays(isinhands, file2use)
+/obj/item/clothing/head/helmet/leather/paddedt/worn_overlays(isinhands, file2use, dummy_block = FALSE)
 	var/list/extras = ..(isinhands, file2use)
 	if(GLOB.lordprimary)
 		var/image/det_img = image(file2use, "[icon_state]_det")
