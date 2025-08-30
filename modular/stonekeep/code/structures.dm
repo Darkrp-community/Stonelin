@@ -779,7 +779,7 @@
 	if(added > 5)
 		return ..()
 
-/obj/structure/flora/shroom_tree_neu/obj_destruction(damage_flag)
+/obj/structure/flora/shroom_tree_neu/atom_destruction(damage_flag)
 	var/obj/structure/S = new /obj/structure/table/wood/treestump/shroomstumpneu(loc)
 	S.icon_state = "[base_icon_state]stump"
 	. = ..()

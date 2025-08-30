@@ -158,7 +158,7 @@
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
 
-/obj/item/reagent_containers/food/snacks/fogdart/obj_destruction(damage_flag)
+/obj/item/reagent_containers/food/snacks/fogdart/atom_destruction(damage_flag)
 	//..()
 	if(!dead)
 		new /obj/item/reagent_containers/food/snacks/fogdart/dead(src)

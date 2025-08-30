@@ -37,7 +37,7 @@
 	if(!isliving(user) || !user.mind || user.cmode)
 		return ..()
 	var/obj/O = attacked_atom
-	var/datum/mind/blacksmith_mind = user.mind
+//	var/datum/mind/blacksmith_mind = user.mind	stonekeep edit
 	var/repair_percent = 0.025 // 2.5% Repairing per hammer smack
 	/// Repairing is MUCH better with an anvil!
 	if(locate(/obj/machinery/anvil) in O.loc)
@@ -121,7 +121,7 @@
 		var/amt2raise = floor(user.STAINT * 0.25)
 		repair_percent *= user.get_skill_level(attacked_structure.hammer_repair)
 		attacked_structure.repair_damage(attacked_structure.max_integrity * repair_percent)
-		blacksmith_mind.adjust_experience(attacked_structure.hammer_repair, amt2raise) // STONEKEEP EDIT
+		user.adjust_experience(attacked_structure.hammer_repair, amt2raise) // STONEKEEP EDIT
 		playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
 		user.visible_message(span_info("[user] repairs [attacked_structure]!"))
 		return

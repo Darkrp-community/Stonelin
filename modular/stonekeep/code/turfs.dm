@@ -125,11 +125,6 @@
 	neighborlay = "cobstonemoss"
 	max_integrity = 1200
 
-/turf/open/floor/cobblemoss/turf_destruction(damage_flag)
-	. = ..()
-	ChangeTurf(/turf/open/floor/dirt, flags = CHANGETURF_INHERIT_AIR)
-	new /obj/item/natural/stone(src)
-
 /turf/open/floor/cobblemoss/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)

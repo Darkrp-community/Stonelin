@@ -74,7 +74,7 @@
 	name = "soulbinded nanban-do-gusoku"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/armor/plate/full/nanbando/cursed/obj_break(damage_flag)
+/obj/item/clothing/armor/plate/full/nanbando/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -153,7 +153,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/armor/brigandine/oyoroi/cursed/obj_break(damage_flag)
+/obj/item/clothing/armor/brigandine/oyoroi/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -195,7 +195,7 @@
 	name = "soulbinded o-yoroi gusoku"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku/cursed/obj_break(damage_flag)
+/obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -952,7 +952,7 @@
 	name = "soulbinded tosei kabuto"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/head/helmet/sallet/tosei_kabuto/cursed/obj_break(damage_flag)
+/obj/item/clothing/head/helmet/sallet/tosei_kabuto/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -975,7 +975,7 @@
 	name = "soulbinded masked tosei kabuto"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/head/helmet/visored/sallet/tosei_kabuto/cursed/obj_break(damage_flag)
+/obj/item/clothing/head/helmet/visored/sallet/tosei_kabuto/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -999,7 +999,7 @@
 	name = "soulbinded zunari kabuto"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-/obj/item/clothing/head/helmet/visored/zunari/cursed/obj_break(damage_flag)
+/obj/item/clothing/head/helmet/visored/zunari/cursed/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -1166,7 +1166,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT) //It is molten on the user's head.
 
-/obj/item/clothing/head/helmet/heavy/bronzepot/obj_break(damage_flag) //If it breaks, qdel.
+/obj/item/clothing/head/helmet/heavy/bronzepot/atom_break(damage_flag) //If it breaks, qdel.
 	. = ..()
 	if(QDELETED(src))
 		return
@@ -1536,7 +1536,7 @@
 		return
 	qdel(src)
 
-/obj/item/clothing/face/kaizoku/facemask/dishonor/obj_break(damage_flag)
+/obj/item/clothing/face/kaizoku/facemask/dishonor/atom_break(damage_flag)
 	. = ..()
 	if(QDELETED(src))
 		return

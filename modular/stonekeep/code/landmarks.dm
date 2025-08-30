@@ -262,7 +262,7 @@
 	desc = "A long shirt of maille, this one is made for a short man it seems."
 /obj/item/clothing/armor/chainmail/hauberk/broken/Initialize()
 	. = ..()
-	obj_break()
+	atom_break()
 
 /obj/item/clothing/armor/chainmail/battered
 	desc = "A good quality haubergon, but weakened by many blows."

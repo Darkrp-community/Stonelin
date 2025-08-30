@@ -47,7 +47,7 @@ get_accent_list()
 
 /obj/structure/frontierjustice/examine_status(mob/user)
 	if(max_integrity)
-		var/healthpercent = (obj_integrity/max_integrity) * 100
+		var/healthpercent = (atom_integrity / max_integrity) * 100
 		switch(healthpercent)
 			if(50 to 99)
 				return  "The flesh is still in place."
