@@ -6,8 +6,7 @@
 	icon_state = "scomm1"
 	density = FALSE
 	blade_dulling = DULLING_BASH
-	max_integrity = 0
-	pixel_y = 32
+	SET_BASE_PIXEL(0, 32)
 	anchored = TRUE
 	var/next_decree = 0
 	var/listening = TRUE
@@ -23,12 +22,10 @@
 	return ..()
 
 /obj/structure/fake_machine/scomm/r
-	pixel_y = 0
-	pixel_x = 32
+	SET_BASE_PIXEL(32, 0)
 
 /obj/structure/fake_machine/scomm/l
-	pixel_y = 0
-	pixel_x = -32
+	SET_BASE_PIXEL(-32, 0)
 
 /obj/structure/fake_machine/scomm/examine(mob/user)
 	. = ..()
@@ -93,11 +90,16 @@
 	. = ..()
 	icon_state = "scomm[listening]"
 
-/obj/structure/fake_machine/scomm/obj_break(damage_flag, silent)
+/obj/structure/fake_machine/scomm/atom_break(damage_flag)
 	. = ..()
 	set_light(0)
 	speaking = FALSE
 	listening = FALSE
+
+/obj/structure/fake_machine/scomm/atom_fix()
+	. = ..()
+	speaking = TRUE
+	listening = TRUE
 
 /obj/structure/fake_machine/scomm/Destroy()
 	SSroguemachine.scomm_machines -= src

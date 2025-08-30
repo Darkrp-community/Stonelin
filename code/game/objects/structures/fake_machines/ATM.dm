@@ -5,14 +5,14 @@
 	icon_state = "atm"
 	density = FALSE
 	blade_dulling = DULLING_BASH
-	pixel_y = 32
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/fake_machine/atm/attack_hand(mob/user)
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
 
-	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE) && prob(33))
 		to_chat(H, "<span class='warning'>The idea repulses me!</span>")
 		H.cursed_freak_out()
 		return
@@ -58,6 +58,7 @@
 		if(!SStreasury.withdraw_money_account(coin_amt*mod, H))
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			return
+		record_round_statistic(STATS_MAMMONS_WITHDRAWN, coin_amt * mod)
 		budget2change(coin_amt*mod, user, selection)
 	else
 		to_chat(user, "<span class='warning'>The machine bites my finger.</span>")
@@ -77,7 +78,7 @@
 	if(ishuman(user))
 		if(istype(P, /obj/item/coin))
 			var/mob/living/carbon/human/H = user
-			if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+			if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE) && prob(33))
 				to_chat(H, "<span class='warning'>The idea repulses me!</span>")
 				H.cursed_freak_out()
 				return
@@ -89,6 +90,7 @@
 			if(H in SStreasury.bank_accounts)
 				var/list/deposit_results = SStreasury.generate_money_account(P.get_real_price(), H)
 				if(islist(deposit_results))
+					record_round_statistic(STATS_MAMMONS_DEPOSITED, deposit_results[1] - deposit_results[2])
 					if(deposit_results[2] != 0)
 						say("Your deposit was taxed [deposit_results[2]] mammon.")
 						record_featured_stat(FEATURED_STATS_TAX_PAYERS, H, deposit_results[2])

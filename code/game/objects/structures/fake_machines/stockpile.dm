@@ -5,7 +5,7 @@
 	icon_state = "stockpile_vendor"
 	density = FALSE
 	blade_dulling = DULLING_BASH
-	pixel_y = 32
+	SET_BASE_PIXEL(0, 32)
 	var/stockpile_index = 1
 	var/datum/withdraw_tab/withdraw_tab = null
 
@@ -136,7 +136,7 @@
 			if(amt)
 				if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty") && message == TRUE)
 					say("No account found. Submit your fingers to a Meister for inspection.")
-			record_round_statistic(STATS_STOCKPILE_EXPANSES, amt)
+				record_round_statistic(STATS_STOCKPILE_EXPANSES, amt)
 			return amt
 
 /obj/structure/fake_machine/stockpile/attackby(obj/item/P, mob/user, params)

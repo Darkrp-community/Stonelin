@@ -112,8 +112,8 @@
 	//playsound(get_turf(target), 'sound/magic/staff_healing.ogg', 50, TRUE)
 
 	// Restore some durability or repair minor damage
-	if(target.obj_integrity < target.max_integrity)
-		target.obj_integrity = min(target.max_integrity, target.obj_integrity + 10)
+	if(target.get_integrity() < target.max_integrity)
+		target.repair_damage(10)
 		target.update_appearance()
 
 /datum/action/cooldown/spell/essence/chill
@@ -875,8 +875,8 @@
 	owner.visible_message(span_notice("[owner] calls upon divine light to bring perfect order."))
 
 	for(var/obj/item/I in range(2, target_turf))
-		I.pixel_x = 0
-		I.pixel_y = 0
+		I.pixel_x = I.base_pixel_x
+		I.pixel_y = I.base_pixel_y
 		I.transform = matrix()
 
 	var/obj/effect/temp_visual/divine_light/light = new(target_turf)

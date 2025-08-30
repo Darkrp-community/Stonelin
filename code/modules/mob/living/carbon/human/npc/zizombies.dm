@@ -165,7 +165,7 @@
 
 /datum/species/zizombie/regenerate_icons(mob/living/carbon/human/H)
 	H.icon_state = ""
-	if(H.notransform)
+	if(HAS_TRAIT(H, TRAIT_NO_TRANSFORM))
 		return 1
 	H.update_inv_hands()
 	H.update_inv_handcuffed()
@@ -237,6 +237,8 @@
 	H.base_constitution = 10
 	H.base_endurance = 16//the zombies shouldn't get tired after all
 	shirt = pick (/obj/item/clothing/shirt/undershirt/colored/vagrant, /obj/item/clothing/armor/gambeson/light)
+	H.recalculate_stats(FALSE)
+
 	pants = /obj/item/clothing/pants/tights/colored/vagrant
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	wrists = /obj/item/clothing/wrists/bracers/leather
@@ -309,6 +311,8 @@
 	H.base_speed = 7
 	H.base_constitution = 10
 	H.base_endurance = 16//the zizombies shouldn't get tired after all
+	H.recalculate_stats(FALSE)
+
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //zizombie Warrior
@@ -393,6 +397,7 @@
 	H.base_speed = 7
 	H.base_constitution = 10
 	H.base_endurance = 16//the zizombies shouldn't get tired after all
+	H.recalculate_stats(FALSE)
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //zizombie Warrior
@@ -473,6 +478,7 @@
 	H.base_speed = 7
 	H.base_constitution = 10
 	H.base_endurance = 20//the zizombies shouldn't get tired after all
+	H.recalculate_stats(FALSE)
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //zizombie Warrior

@@ -357,11 +357,9 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	..()
 
 /obj/item/natural/rock/attacked_by(obj/item/I, mob/living/user)
-	var/was_destroyed = obj_destroyed
 	. = ..()
-	if(.)
-		if(!was_destroyed && obj_destroyed)
-			record_featured_stat(FEATURED_STATS_MINERS, user)
+	if(atom_integrity <= 0)
+		record_featured_stat(FEATURED_STATS_MINERS, user)
 
 /obj/item/natural/rock/deconstruct(disassembled = FALSE)
 	if(!disassembled)
@@ -371,8 +369,8 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			new mineralType(src.loc, mineralAmt)
 		for(var/i in 1 to rand(1,3))
 			var/obj/item/S = new /obj/item/natural/stone(src.loc)
-			S.pixel_x = rand(25,-25)
-			S.pixel_y = rand(25,-25)
+			S.pixel_x = S.base_pixel_x + rand(25,-25)
+			S.pixel_y = S.base_pixel_y + rand(25,-25)
 		record_round_statistic(STATS_ROCKS_MINED)
 	qdel(src)
 

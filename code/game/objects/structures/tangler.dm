@@ -28,12 +28,16 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/flora/grass/tangler/real/obj_break(damage_flag, silent)
-	..()
+/obj/structure/flora/grass/tangler/real/atom_break(damage_flag)
+	. = ..()
 	QDEL_NULL(proximity_monitor)
 	unbuckle_all_mobs()
 	STOP_PROCESSING(SSobj, src)
 	update_appearance(UPDATE_ICON_STATE | UPDATE_NAME)
+
+/obj/structure/flora/grass/tangler/real/atom_fix()
+	. = ..()
+	proximity_monitor = new(src, 1)
 
 /obj/structure/flora/grass/tangler/real/process()
 	if(!has_buckled_mobs())
@@ -130,3 +134,12 @@
 			qdel(AM)
 			return
 		aggroed = world.time
+
+/obj/structure/flora/grass/tangler/real/CanPass(atom/movable/mover, turf/target)
+	if(isliving(mover))
+		if(prob(50) && !HAS_TRAIT(mover, TRAIT_WEBWALK))
+			to_chat(mover, "<span class='danger'>I get stuck in \the [src] for a moment.</span>")
+			return FALSE
+	else if(istype(mover, /obj/projectile) && prob(30))
+		return ..()
+	return ..()

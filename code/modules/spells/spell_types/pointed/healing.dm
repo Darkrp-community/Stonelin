@@ -56,7 +56,6 @@
 				span_notice("I am despised by the Ten, rejected, and they remind me just how unlovable I am with a wave of pain!"),
 			)
 			cast_on.emote("scream")
-			cast_on.adjustFireLoss(base_healing)
 			return
 
 	var/conditional_buff = FALSE
@@ -87,7 +86,7 @@
 				// the more natural stuff around US, the more we heal
 				for(var/obj/O in oview(5, owner))
 					if(is_type_in_typecache(O, natural_stuff))
-						situational_bonus = min(situational_bonus + 1, 25)
+						situational_bonus = min(situational_bonus + 0.5, 25)
 				if(situational_bonus > 0)
 					conditional_buff = TRUE
 

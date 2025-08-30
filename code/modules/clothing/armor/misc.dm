@@ -54,6 +54,7 @@
 	max_integrity = INTEGRITY_STRONGEST
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 3.2 * IRON_MULTIPLIER
+	stand_speed_reduction = 1.15
 
 /obj/item/clothing/armor/brigandine/Initialize()
 	. = ..()
@@ -82,6 +83,7 @@
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 7 * STEEL_MULTIPLIER
 	uses_lord_coloring = LORD_PRIMARY
+	stand_speed_reduction = 1.15
 
 /obj/item/clothing/armor/captain/Initialize()
 	. = ..()
@@ -99,6 +101,7 @@
 	armor_class = AC_MEDIUM
 	body_parts_covered = COVERAGE_TORSO//this way the roundstart zybantu mercenary armor is on pair with the other roles, a full brigandine doesn't seem fair on a merc role.
 	// add armor plate bad from defines
+	stand_speed_reduction = 1.05
 
 	max_integrity = INTEGRITY_STRONG
 

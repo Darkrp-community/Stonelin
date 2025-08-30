@@ -101,13 +101,17 @@
 		heldclod = null
 		update_appearance(UPDATE_ICON_STATE)
 
-/obj/item/weapon/shovel/attack_turf(turf/T, mob/living/user)
+/obj/item/weapon/shovel/attack_atom(atom/attacked_atom, mob/living/user)
+	if(!isturf(attacked_atom))
+		return ..()
+	var/turf/T = attacked_atom
 	user.changeNext_move(user.used_intent.clickcd)
 	if(user.used_intent.type == /datum/intent/irrigate)
+		. = TRUE
 		var/obj/structure/soil/located = locate(/obj/structure/soil) in T
 		if(located)
 			to_chat(user, span_notice("[located] is in the way!"))
-			return FALSE
+			return
 		if(istype(T, /turf/open/floor/dirt))
 			var/turf/open/floor/dirt/D = T
 			user.visible_message("[user] starts digging an irrigation channel.", "You start digging an irrigation channel.")
@@ -117,6 +121,7 @@
 			return TRUE
 
 	else if(user.used_intent.type == /datum/intent/shovelscoop)
+		. = TRUE
 		if(istype(T, /turf/open/floor/dirt))
 			var/obj/structure/closet/dirthole/holie = locate() in T
 			if(heldclod)
@@ -157,7 +162,7 @@
 			to_chat(user, "<span class='warning'>There is grass in the way.</span>")
 			return
 		return
-	. = ..()
+	return ..()
 
 /obj/item/weapon/shovel/getonmobprop(tag)
 	. = ..()

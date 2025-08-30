@@ -346,7 +346,7 @@
 /obj/structure/thronething
 	name = "stone wall"
 	icon = 'icons/turf/walls.dmi'
-	max_integrity = 0
+	resistance_flags = INDESTRUCTIBLE
 	opacity = 0
 	icon_state = "decostone-l"
 
@@ -453,3 +453,60 @@
 /turf/closed/wall/mineral/underbrick/Melt()
 	to_be_destroyed = FALSE
 	return src
+
+/turf/closed/wall/mineral/abyssal
+	name = "abyssal wall"
+	icon = 'icons/delver/abyss_walls.dmi'
+	icon_state = MAP_SWITCH("wallformed", "wallformed")
+	blade_dulling = DULLING_BASH
+	max_integrity = 99999
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onmetal/sheet (1).ogg'
+	attacked_sound = list('sound/combat/hits/onmetal/attackpipewall (1).ogg','sound/combat/hits/onmetal/attackpipewall (2).ogg')
+	above_floor = /turf/open/floor/concrete
+	baseturfs = list(/turf/open/floor/concrete)
+	climbdiff = 1
+	damage_deflection = 20
+	hardness = 10
+
+/turf/closed/wall/mineral/desert_sandstone
+	name = "sandstone wall"
+	icon = 'icons/delver/desert_sandstone.dmi'
+	icon_state = MAP_SWITCH("wallformed", "wallformed")
+	blade_dulling = DULLING_BASH
+	max_integrity = 99999
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onmetal/sheet (1).ogg'
+	attacked_sound = list('sound/combat/hits/onmetal/attackpipewall (1).ogg','sound/combat/hits/onmetal/attackpipewall (2).ogg')
+	above_floor = /turf/open/floor/sandstone
+	baseturfs = list(/turf/open/floor/sandstone)
+	climbdiff = 1
+	damage_deflection = 20
+	hardness = 10
+
+/turf/closed/wall/mineral/desert_sandstone/window
+	name = "sandstone window"
+	opacity = FALSE
+	var/state = "window_open"
+
+/turf/closed/wall/mineral/desert_sandstone/window/Initialize(mapload, ...)
+	. = ..()
+	add_overlay(mutable_appearance('icons/delver/desert_objects.dmi', state, layer = ABOVE_NORMAL_TURF_LAYER))
+
+/turf/closed/wall/mineral/desert_sandstone/window/brass
+	state = "window_brass"
+
+/turf/closed/wall/mineral/desert_soapstone
+	name = "soapstone wall"
+	icon = 'icons/delver/desert_slopstone.dmi'
+	icon_state = MAP_SWITCH("wallformed", "wallformed")
+	blade_dulling = DULLING_BASH
+	max_integrity = 99999
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onmetal/sheet (1).ogg'
+	attacked_sound = list('sound/combat/hits/onmetal/attackpipewall (1).ogg','sound/combat/hits/onmetal/attackpipewall (2).ogg')
+	above_floor = /turf/open/floor/sandstone
+	baseturfs = list(/turf/open/floor/sandstone)
+	climbdiff = 1
+	damage_deflection = 20
+	hardness = 10

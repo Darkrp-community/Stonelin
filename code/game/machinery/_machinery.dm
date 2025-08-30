@@ -147,8 +147,7 @@
 			component_parts.Cut()
 	qdel(src)
 
-/obj/machinery/obj_break(damage_flag, silent)
-	SHOULD_CALL_PARENT(TRUE)
+/obj/machinery/atom_break(damage_flag, silent)
 	. = ..()
 	if(!(stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
 		stat |= BROKEN
@@ -208,8 +207,8 @@
 /obj/machinery/examine(mob/user)
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
-		if(max_integrity)
-			var/healthpercent = (obj_integrity/max_integrity) * 100
+		if(uses_integrity)
+			var/healthpercent = (atom_integrity / max_integrity) * 100
 			switch(healthpercent)
 				if(50 to 99)
 					. += "It looks slightly damaged."
@@ -241,8 +240,8 @@
 	for (var/i in 1 to 32)
 		. += hex2num(md5[i])
 	. = . % 9
-	AM.pixel_x = -8 + ((.%3)*8)
-	AM.pixel_y = -8 + (round( . / 3)*8)
+	AM.pixel_x = AM.base_pixel_x - 8 + ((.%3)*8)
+	AM.pixel_y = AM.base_pixel_y - 8 + (round( . / 3)*8)
 
 /obj/machinery/Crossed(atom/movable/AM)
 	. = ..()

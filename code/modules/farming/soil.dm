@@ -32,7 +32,7 @@
 	icon_state = "soil"
 	density = FALSE
 	climbable = FALSE
-	max_integrity = 0
+	resistance_flags = INDESTRUCTIBLE
 	UUID_saving = TRUE
 	/// Amount of water in the soil. It makes the plant and weeds not loose health
 	var/water = 0
@@ -423,6 +423,7 @@
 
 /obj/structure/soil/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
+	remove_signals()
 	GLOB.weather_act_upon_list -= src
 	. = ..()
 
@@ -1032,7 +1033,6 @@
 
 /obj/structure/soil/proc/decay_soil()
 	plant = null
-	remove_signals()
 	plant_genetics = null
 	qdel(src)
 
@@ -1138,6 +1138,12 @@
 	UnregisterSignal(get_step(above, EAST), COMSIG_ATOM_ENTERED)
 	UnregisterSignal(get_step(above, EAST), COMSIG_TURF_EXITED)
 	LAZYCLEARLIST(marked_turfs)
+	for(var/mob/mob as anything in vanished)
+		var/image/overlay = LAZYACCESS(vanished, mob)
+		LAZYREMOVE(vanished, mob)
+		if(!overlay)
+			continue
+		mob.client?.images -= overlay
 
 /obj/structure/soil/proc/on_entered(datum/source, mob/crossed)
 	if(!isliving(crossed))
@@ -1172,11 +1178,10 @@
 	if(!crossed.client)
 		return
 	var/image/overlay = LAZYACCESS(vanished, crossed)
+	LAZYREMOVE(vanished, crossed)
 	if(!overlay)
 		return
 	crossed.client.images -= overlay
-	LAZYREMOVE(vanished, crossed)
-
 
 /obj/structure/soil/debug_soil
 	var/obj/item/neuFarm/seed/seed_to_grow

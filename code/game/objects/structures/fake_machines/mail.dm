@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 	icon_state = "mail"
 	density = FALSE
 	blade_dulling = DULLING_BASH
-	pixel_y = 32
+	SET_BASE_PIXEL(0, 32)
 	var/coin_loaded = FALSE
 	var/ournum
 	var/mailtag
@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 
 /obj/structure/fake_machine/mail/attack_hand(mob/user)
 	if(SSroguemachine.hermailermaster && ishuman(user))
-		var/obj/item/roguemachine/mastermail/M = SSroguemachine.hermailermaster
+		var/obj/item/fake_machine/mastermail/M = SSroguemachine.hermailermaster
 		var/mob/living/carbon/human/H = user
 		var/addl_mail = FALSE
 		for(var/obj/item/I in M.contents)
@@ -80,6 +80,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 			visible_message("<span class='warning'>[user] sends something.</span>")
 			playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
 			SStreasury.give_money_treasury(coin_loaded, "Mail Income")
+			record_round_statistic(STATS_TAXES_COLLECTED, coin_loaded)
 			coin_loaded = FALSE
 			update_appearance(UPDATE_OVERLAYS)
 			return
@@ -89,7 +90,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 		if(!send2place)
 			return
 		if(SSroguemachine.hermailermaster)
-			var/obj/item/roguemachine/mastermail/X = SSroguemachine.hermailermaster
+			var/obj/item/fake_machine/mastermail/X = SSroguemachine.hermailermaster
 			P.mailer = sentfrom
 			P.mailedto = send2place
 			P.update_appearance(UPDATE_ICON_STATE | UPDATE_NAME)
@@ -108,6 +109,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 		visible_message("<span class='warning'>[user] sends something.</span>")
 		playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
 		SStreasury.give_money_treasury(coin_loaded, "Mail")
+		record_round_statistic(STATS_TAXES_COLLECTED, coin_loaded)
 		coin_loaded = FALSE
 		update_appearance(UPDATE_OVERLAYS)
 
@@ -206,7 +208,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 					return
 				var/findmaster
 				if(SSroguemachine.hermailermaster)
-					var/obj/item/roguemachine/mastermail/X = SSroguemachine.hermailermaster
+					var/obj/item/fake_machine/mastermail/X = SSroguemachine.hermailermaster
 					findmaster = TRUE
 					given_paper.mailer = sentfrom
 					given_paper.mailedto = send2place
@@ -253,12 +255,10 @@ GLOBAL_LIST_EMPTY(letters_sent)
 	return ..()
 
 /obj/structure/fake_machine/mail/r
-	pixel_y = 0
-	pixel_x = 32
+	SET_BASE_PIXEL(32, 0)
 
 /obj/structure/fake_machine/mail/l
-	pixel_y = 0
-	pixel_x = -32
+	SET_BASE_PIXEL(-32, 0)
 
 /obj/structure/fake_machine/mail/update_overlays()
 	. = ..()
@@ -296,34 +296,33 @@ GLOBAL_LIST_EMPTY(letters_sent)
 	popup.set_content(dat)
 	popup.open(FALSE)
 
-/obj/item/roguemachine/mastermail
+/obj/item/fake_machine/mastermail
 	name = "MASTER OF MAILS"
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "mailspecial"
-	pixel_y = 32
-	max_integrity = 0
+	SET_BASE_PIXEL(0, 32)
 	density = FALSE
 	blade_dulling = DULLING_BASH
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	var/new_mail
 
-/obj/item/roguemachine/mastermail/Initialize()
+/obj/item/fake_machine/mastermail/Initialize()
 	. = ..()
 	SSroguemachine.hermailermaster = src
 	update_appearance(UPDATE_ICON_STATE)
 	set_light(1, 1, 1, l_color = "#ff0d0d")
 	AddComponent(/datum/component/storage/concrete/grid/mailmaster)
 
-/obj/item/roguemachine/mastermail/Destroy()
+/obj/item/fake_machine/mastermail/Destroy()
 	SSroguemachine.hermailermaster = null
 	return ..()
 
-/obj/item/roguemachine/mastermail/update_icon_state()
+/obj/item/fake_machine/mastermail/update_icon_state()
 	. = ..()
 	icon_state = "mailspecial[new_mail ? "-get" : ""]"
 
-/obj/item/roguemachine/mastermail/attackby(obj/item/P, mob/user, params)
+/obj/item/fake_machine/mastermail/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/paper))
 		var/obj/item/paper/PA = P
 		if(!PA.mailer && !PA.mailedto && PA.cached_mailer && PA.cached_mailedto)
@@ -338,7 +337,7 @@ GLOBAL_LIST_EMPTY(letters_sent)
 		STR.handle_item_insertion(P, prevent_warning=TRUE)
 	..()
 
-/obj/item/roguemachine/mastermail/Destroy()
+/obj/item/fake_machine/mastermail/Destroy()
 	set_light(0)
 	SSroguemachine.hermailers -= src
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

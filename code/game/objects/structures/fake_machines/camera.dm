@@ -6,31 +6,34 @@
 	density = FALSE
 	blade_dulling = DULLING_BASH
 	layer = ABOVE_MOB_LAYER
-	max_integrity = 0
 	var/number = 1
-	pixel_y = 10
+	SET_BASE_PIXEL(0, 10)
 
 /obj/structure/fake_machine/camera/right
 	icon_state = "camera-r"
-	pixel_x = 5
-	pixel_y = 5
+	SET_BASE_PIXEL(5, 5)
 
 /obj/structure/fake_machine/camera/left
 	icon_state = "camera-l"
-	pixel_x = -5
-	pixel_y = 5
+	SET_BASE_PIXEL(-5, 5)
 
-/obj/structure/fake_machine/camera/obj_break(damage_flag, silent)
-	..()
+/obj/structure/fake_machine/camera/atom_break(damage_flag)
+	. = ..()
 	set_light(0)
 	icon_state = "camera-br"
 	SSroguemachine.cameras -= src
+
+/obj/structure/fake_machine/camera/atom_fix()
+	. = ..()
+	set_light(1, 1, 1, l_color =  "#ff0d0d")
+	icon_state = initial(icon_state)
+	SSroguemachine.cameras += src
 
 /obj/structure/fake_machine/camera/Initialize()
 	. = ..()
 	set_light(1, 1, 1, l_color =  "#ff0d0d")
 	SSroguemachine.cameras += src
-	number = SSroguemachine.cameras.len
+	number = length(SSroguemachine.cameras)
 	name = "face #[number]"
 
 /obj/structure/fake_machine/camera/Destroy()

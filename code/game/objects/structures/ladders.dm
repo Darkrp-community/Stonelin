@@ -8,7 +8,7 @@
 	var/obj/structure/ladder/down   //the ladder below this one
 	var/obj/structure/ladder/up     //the ladder above this one
 	obj_flags = BLOCK_Z_OUT_DOWN
-	max_integrity = 0
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -194,18 +194,16 @@
 	max_integrity = 200
 	blade_dulling = DULLING_BASHCHOP
 
-
-
 /obj/structure/wallladder/OnCrafted(dirin, mob/user)
 	dir = dirin
 	layer = BELOW_MOB_LAYER
 	switch(dir)
 		if(NORTH)
-			pixel_y = 16
+			pixel_y = base_pixel_y + 16
 		if(SOUTH)
 			layer = ABOVE_MOB_LAYER
 		if(WEST)
-			pixel_x = -4
+			pixel_x = base_pixel_x - 4
 		if(EAST)
-			pixel_x = 4
-	. = ..()
+			pixel_x = base_pixel_x + 4
+	return ..()

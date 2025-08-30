@@ -190,13 +190,14 @@
 	releasedrain = 0
 	blade_class = BCLASS_PUNCH
 
-/obj/item/weapon/knife/scissors/attack_obj(obj/O, mob/living/user) //This is scissor action! We're putting this here not to lose sight of it!
-	if(user.used_intent.type == /datum/intent/snip && istype(O, /obj/item))
-		var/obj/item/item = O
+/obj/item/weapon/knife/scissors/pre_attack(atom/A, mob/living/user, params)
+	if(user.used_intent.type == /datum/intent/snip && isitem(A))
+		var/obj/item/item = A
 		if(item.sewrepair && item.salvage_result) // We can only salvage objects which can be sewn!
+			. = TRUE
 			var/skill_level = user.get_skill_level(/datum/skill/misc/sewing)
 			var/salvage_time = (7 SECONDS - (skill_level * 10))
-			if(!do_after(user, salvage_time, user))
+			if(!do_after(user, salvage_time, A))
 				return
 			if(item.fiber_salvage) //We're getting fiber as base if fiber is present on the item
 				new /obj/item/natural/fibers(get_turf(item))
@@ -468,8 +469,8 @@
 	S.language_holder = target.language_holder.copy(S)
 	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
 	playsound(src, 'sound/magic/soulsteal.ogg', 100, extrarange = 5)
-	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
-	src.obj_integrity = src.max_integrity // And fixes the dagger. No blacksmith required!
+	blade_int = max_blade_int // Stealing a soul successfully sharpens the blade.
+	repair_damage(max_integrity) // And fixes the dagger. No blacksmith required!
 
 /obj/item/weapon/knife/dagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/chosen_ghost

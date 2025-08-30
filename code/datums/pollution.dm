@@ -1,8 +1,7 @@
 /obj/effect/abstract/pollution
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "smoke-static"
-	pixel_x = -32
-	pixel_y = -32
+	SET_BASE_PIXEL(-32, -32)
 	anchored = TRUE
 	plane = GAME_PLANE_UPPER
 	layer = AREA_LAYER-1
@@ -117,7 +116,7 @@
 		qdel(src)
 		return
 	for(var/type in pollutants)
-		pollutants[type] -= max(floor(amount_to_scrub * (pollutants[type] / total_amount)),1)
+		pollutants[type] -= max(floor(amount_to_scrub * (pollutants[type] / total_amount)), 1)
 	total_amount -= amount_to_scrub
 	update_height()
 	handle_overlay()

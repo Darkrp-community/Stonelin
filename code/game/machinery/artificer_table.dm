@@ -37,7 +37,8 @@
 		var/skill = user.get_skill_level(material.artrecipe.appro_skill)
 		if(material.artrecipe.progress == 100)
 			for(var/i in 1 to material.artrecipe.created_amount)
-				new material.artrecipe.created_item(get_turf(src))
+				var/atom/new_atom = new material.artrecipe.created_item(get_turf(src))
+				new_atom.update_integrity(new_atom.max_integrity, update_atom = FALSE)
 			var/obj/item/created_item_instance = material.artrecipe.created_item
 			user.visible_message(span_info("[user] creates \a [created_item_instance.name]."))
 			user.adjust_experience(material.artrecipe.appro_skill, (user.STAINT * (material.artrecipe.craftdiff + 1)/2) * user.get_learning_boon(material.artrecipe.appro_skill)) // STONEKEEP EDIT
@@ -116,8 +117,8 @@
 	if(!material)
 		return
 	var/obj/item/I = material
-	I.pixel_x = 0
-	I.pixel_y = 0
+	I.pixel_x = I.base_pixel_x
+	I.pixel_y = I.base_pixel_y
 	var/mutable_appearance/M = new /mutable_appearance(I)
 	M.transform *= 0.8
 	M.pixel_y = 6

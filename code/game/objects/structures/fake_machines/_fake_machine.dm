@@ -4,7 +4,7 @@
 	destroy_sound = 'sound/foley/breaksound.ogg'
 	break_sound = 'sound/foley/machinebreak.ogg'
 	anchored = TRUE
-	max_integrity = 0
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/fake_machine/proc/budget2change(budget, mob/user, specify)
 	var/turf/T
@@ -59,8 +59,8 @@
 		var/zenar_value = min(floor(zenars_to_put), 20)
 		var/obj/item/coin/G = new type_to_put(T, zenar_value)
 		zenars_to_put -= zenar_value
-		G.pixel_y = rand(-4, 4)
-		G.pixel_x = rand(-4, 4)
+		G.pixel_y = G.base_pixel_y + rand(-4, 4)
+		G.pixel_x = G.base_pixel_x + rand(-4, 4)
 
 		if(user)
 			user.put_in_hands(G)

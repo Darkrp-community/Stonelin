@@ -14,7 +14,7 @@
 	dir = pick(GLOB.cardinals)
 	. = ..()
 
-/turf/open/floor/ruinedwood/turf_destruction(damage_flag)
+/turf/open/floor/ruinedwood/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -64,7 +64,7 @@
 	. = ..()
 	dir = dirin
 
-/turf/open/floor/twig/turf_destruction(damage_flag)
+/turf/open/floor/twig/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -83,7 +83,7 @@
 //these are here so we can put wood floors next to each other but not have them smooth
 /turf/open/floor/wood/nosmooth
 
-/turf/open/floor/wood/turf_destruction(damage_flag)
+/turf/open/floor/wood/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -103,7 +103,7 @@
 	damage_deflection = 8
 	max_integrity = 600
 
-/turf/open/floor/woodturned/turf_destruction(damage_flag)
+/turf/open/floor/woodturned/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -123,7 +123,7 @@
 	damage_deflection = 8
 	max_integrity = 800
 
-/turf/open/floor/rooftop/turf_destruction(damage_flag)
+/turf/open/floor/rooftop/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -145,14 +145,14 @@
 	smoothing_list = SMOOTH_GROUP_FLOOR_DIRT_ROAD
 	neighborlay = "grassedge"
 	max_integrity = 1200
-	spread_chance = 2.5
-	burn_power = 15
+	spread_chance = 2
+	burn_power = 10
 
 /turf/open/floor/grass/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/turf/open/floor/grass/turf_destruction(damage_flag)
+/turf/open/floor/grass/atom_destruction(damage_flag)
 	. = ..()
 	ChangeTurf(/turf/open/floor/dirt, flags = CHANGETURF_INHERIT_AIR)
 
@@ -343,7 +343,7 @@
 /turf/open/floor/dirt/road/attack_hand_secondary(mob/user, params)
 	return
 
-/turf/open/floor/dirt/turf_destruction(damage_flag)
+/turf/open/floor/dirt/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -438,7 +438,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/turf/open/floor/blocks/turf_destruction(damage_flag)
+/turf/open/floor/blocks/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -482,7 +482,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/greenstone/turf_destruction(damage_flag)
+/turf/open/floor/greenstone/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -523,7 +523,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/turf/open/floor/hexstone/turf_destruction(damage_flag)
+/turf/open/floor/hexstone/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -547,7 +547,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/turf/open/floor/churchmarble/turf_destruction(damage_flag)
+/turf/open/floor/churchmarble/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -563,7 +563,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/church/turf_destruction(damage_flag)
+/turf/open/floor/church/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -586,7 +586,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/churchbrick/turf_destruction(damage_flag)
+/turf/open/floor/churchbrick/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -606,7 +606,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/churchrough/turf_destruction(damage_flag)
+/turf/open/floor/churchrough/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -635,7 +635,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/herringbone/turf_destruction(damage_flag)
+/turf/open/floor/herringbone/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -653,7 +653,7 @@
 	neighborlay = "cobbleedge"
 	max_integrity = 1200
 
-/turf/open/floor/cobble/turf_destruction(damage_flag)
+/turf/open/floor/cobble/atom_destruction(damage_flag)
 	. = ..()
 	ChangeTurf(/turf/open/floor/dirt, flags = CHANGETURF_INHERIT_AIR)
 	new /obj/item/natural/stone(src)
@@ -699,7 +699,7 @@
 	neighborlay = "cobblerock"
 	max_integrity = 1200
 
-/turf/open/floor/cobblerock/turf_destruction(damage_flag)
+/turf/open/floor/cobblerock/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -749,7 +749,7 @@
 	damage_deflection = 10
 	max_integrity = 800
 
-/turf/open/floor/tile/turf_destruction(damage_flag)
+/turf/open/floor/tile/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -807,7 +807,7 @@
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
 
-/turf/open/floor/concrete/turf_destruction(damage_flag)
+/turf/open/floor/concrete/atom_destruction(damage_flag)
 	. = ..()
 	src.ChangeTurf(/turf/open/floor/dirt, flags = CHANGETURF_INHERIT_AIR)
 	new /obj/item/natural/stone(src)
@@ -832,7 +832,7 @@
 /turf/open/floor/metal/alt
 	icon_state = "plating2"
 
-/turf/open/floor/metal/turf_destruction(damage_flag)
+/turf/open/floor/metal/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -892,7 +892,7 @@
 	damage_deflection = 8
 	max_integrity = 1000
 
-/turf/open/floor/plank/turf_destruction(damage_flag)
+/turf/open/floor/plank/atom_destruction(damage_flag)
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -902,6 +902,16 @@
 /turf/open/floor/tile/checker_green
 	icon_state = "tile"
 	color = "#94df5b"
+
+/turf/open/floor/abyss_tile
+	icon = 'icons/delver/abyss_objects.dmi'
+	icon_state = "abysstile-1"
+
+/turf/open/floor/abyss_tile/two
+	icon_state = "abysstile-2"
+
+/turf/open/floor/abyss_tile/three
+	icon_state = "abysstile-3"
 
 /turf/open/floor/sandstone
 	icon_state = "sandstone"
@@ -946,3 +956,102 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+
+/turf/open/floor/abyss_sand
+	name = "abyssal sand"
+	desc = "Warm sand that, sadly, have been mixed with dirt."
+	icon_state = "sand_abyss"
+	icon = 'icons/delver/abyss_objects.dmi'
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/grassland.ogg'
+	slowdown = 0
+
+/turf/open/floor/abyss_sand/path
+	icon_state = "path_abyss"
+
+/turf/open/floor/sand
+	name = "sand"
+	desc = "Warm sand that, sadly, have been mixed with dirt."
+	icon_state = "sand-1"
+	icon = 'icons/delver/desert_objects.dmi'
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/grassland.ogg'
+	slowdown = 0
+	var/blood_sand = FALSE
+
+/turf/open/floor/sand/Initialize()
+	. = ..()
+	var/random_num = rand(1, 12)
+	icon_state = "sand-[random_num]"
+
+/turf/open/floor/sand/proc/make_bloodied()
+	if(blood_sand)
+		return
+	blood_sand = TRUE
+	icon_state = "bloody"
+
+	for(var/direction in list(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
+		var/turf/open/floor/sand/adjacent_turf = get_step(src, direction)
+		if(istype(adjacent_turf))
+			var/dir_name = dir_to_name(direction)
+			adjacent_turf.set_bloody_direction(dir_name)
+
+/turf/open/floor/sand/proc/set_bloody_direction(direction_name)
+	if(blood_sand)
+		return
+	blood_sand = TRUE
+	icon_state = "bloody-[direction_name]"
+
+/turf/open/floor/sand/proc/dir_to_name(direction)
+	switch(direction)
+		if(NORTH)
+			return "n"
+		if(SOUTH)
+			return "s"
+		if(EAST)
+			return "e"
+		if(WEST)
+			return "w"
+		if(NORTHEAST)
+			return "ne"
+		if(NORTHWEST)
+			return "nw"
+		if(SOUTHEAST)
+			return "se"
+		if(SOUTHWEST)
+			return "sw"
+	return "n" // fallback
+
+
+/turf/open/floor/sand/bloodied
+	 icon_state = "bloody"
+
+/turf/open/floor/sand/bloodied/Initialize(mapload)
+	. = ..()
+	make_bloodied()
+
+/turf/open/floor/sandstone_tile
+	icon = 'icons/delver/desert_objects.dmi'
+	icon_state = "sandstonefloor-1"
+
+/turf/open/floor/sandstone_tile/two
+	icon_state = "sandstonefloor-2"
+
+/turf/open/floor/sandstone_tile/three
+	icon_state = "sandstonefloor-3"
+
+/turf/open/floor/sandstone_tile/four
+	icon_state = "sandstonefloor-4"
+
+/turf/open/floor/sandstone_tile/five
+	icon_state = "sandstonefloor-5"
+
+/turf/open/floor/sandstone_tile/six
+	icon_state = "sandstonefloor-6"

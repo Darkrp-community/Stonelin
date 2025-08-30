@@ -19361,7 +19361,7 @@
 /turf/open/floor/church,
 /area/rogue/indoors/town/church/inquisition)
 "lMD" = (
-/mob/living/simple_animal/hostile/retaliate/trufflepig,
+/mob/living/simple_animal/hostile/retaliate/trufflepig/male,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/rtfield/safe)
 "lMH" = (
@@ -20882,7 +20882,7 @@
 /obj/structure/chair/wood/alt/chair_noble{
 	dir = 8
 	},
-/obj/item/roguemachine/mastermail,
+/obj/item/fake_machine/mastermail,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/steward)
 "mLm" = (
@@ -21901,7 +21901,7 @@
 /turf/open/floor/dirt,
 /area/rogue/indoors/town/cell)
 "nqN" = (
-/obj/item/roguemachine/drugtrade,
+/obj/item/fake_machine/drugtrade,
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "nqQ" = (
@@ -38845,7 +38845,7 @@
 /turf/open/floor/blocks/stonered/tiny,
 /area/rogue/indoors/town/clinic_large/apothecary)
 "xUE" = (
-/mob/living/simple_animal/hostile/retaliate/trufflepig,
+/mob/living/simple_animal/hostile/retaliate/trufflepig/female,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/rtfield/safe)
 "xUO" = (

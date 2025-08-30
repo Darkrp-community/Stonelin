@@ -127,6 +127,10 @@
 	if(modifiers["middle"])
 		if(QDELETED(book))
 			book = new(null)
+		var/mob/M = usr
+		for(var/datum/recipe as anything in M.mind?.learned_recipes)
+			book.types |= recipe.type
+		book.generate_categories()
 		usr << browse(book.generate_html(usr),"window=recipe;size=800x810")
 		return
 	if(world.time < lastclick + 3 SECONDS)
@@ -217,12 +221,11 @@
 		var/obj/item/I = hud.mymob.get_item_by_slot(slot_id)
 		if(I)
 			icon_state = icon_full
-			if(I.max_integrity)
-				if(I.obj_integrity < I.max_integrity)
+			if(I.uses_integrity)
+				if(I.obj_broken)
+					icon_state = "slotbroke"
+				else if(I.get_integrity() < I.max_integrity)
 					icon_state = "slotdmg"
-					if(I.integrity_failure)
-						if((I.obj_integrity / I.max_integrity) <= I.integrity_failure)
-							icon_state = "slotbroke"
 		else
 			icon_state = icon_empty
 	return ..()

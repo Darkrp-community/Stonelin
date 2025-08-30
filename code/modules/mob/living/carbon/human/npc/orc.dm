@@ -191,7 +191,7 @@
 
 /datum/species/orc/regenerate_icons(mob/living/carbon/human/H)
 	H.icon_state = ""
-	if(H.notransform)
+	if(HAS_TRAIT(H, TRAIT_NO_TRANSFORM))
 		return 1
 	H.update_inv_hands()
 	H.update_inv_handcuffed()
@@ -259,6 +259,7 @@
 	armor = pick (/obj/item/clothing/armor/leather/hide/orc, /obj/item/clothing/armor/chainmail/iron/orc, /obj/item/clothing/armor/plate/orc)
 	head = /obj/item/clothing/head/helmet/orc
 	var/loadout = rand(1,3)
+	H.recalculate_stats(FALSE)
 	switch(loadout)
 		if(1) //one handed armed + shield
 			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/mace/copperbludgeon, /obj/item/weapon/axe/boneaxe, /obj/item/weapon/mace/spiked)
@@ -299,6 +300,7 @@
 	H.base_speed = 13
 	H.base_constitution = 13
 	H.base_endurance = 13
+	H.recalculate_stats(FALSE)
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Dual Axe Warrior
@@ -352,7 +354,8 @@
 	H.base_speed = 13
 	H.base_constitution = 14
 	H.base_endurance = 14
-	var/loadout = rand(1,4)
+	H.recalculate_stats(FALSE)
+	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //one handed armed + shield
 			r_hand = pick (/obj/item/weapon/axe/iron, /obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/flail, /obj/item/weapon/mace/spiked)
@@ -427,6 +430,7 @@
 	H.base_speed = 12
 	H.base_constitution = 13
 	H.base_endurance = 13
+	H.recalculate_stats(FALSE)
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
@@ -484,6 +488,7 @@
 	armor = /obj/item/clothing/armor/plate/orc/warlord
 	cloak = /obj/item/clothing/cloak/raincloak/colored/red
 	head = /obj/item/clothing/head/helmet/orc/warlord
+	H.recalculate_stats(FALSE)
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord

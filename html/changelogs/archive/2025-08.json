@@ -652,5 +652,349 @@
                 "bugfix": "fixes goldface"
             }
         ]
+    },
+    "2025-08-24": {
+        "CheffieGithub": [
+            {
+                "bugfix": "fix abyssorites and acolytes miracles"
+            }
+        ],
+        "Diegoflores31": [
+            {
+                "bugfix": "fixes goldface"
+            }
+        ],
+        "Wouju": [
+            {
+                "bugfix": "raw essentia crafting"
+            }
+        ],
+        "Arkatos": [
+            {
+                "rscadd": "Added a new triumph buy - Secret Officiant."
+            },
+            {
+                "rscadd": "Added a new triumph buy - Random Curse."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "rscadd": "briar troll shrine that can be made with two troll heads"
+            },
+            {
+                "code_imp": "transformation status effect, refactors transformation code"
+            },
+            {
+                "balance": "werewolves have slightly higher bleed mod. werewolves damage clothing upon transformation."
+            }
+        ]
+    },
+    "2025-08-25": {
+        "flleeppyy": [
+            {
+                "rscadd": "Proper Discord verification via 'OOC > Verify Discord Account' verb."
+            }
+        ],
+        "Arkatos": [
+            {
+                "bugfix": "Fixed an issue where printing press was not printing correct books"
+            }
+        ],
+        "Wouju": [
+            {
+                "rscadd": "Master of Nerves logs and text display has been improved"
+            },
+            {
+                "rscadd": "Clerics, both Ten and Inhumen, had their loadouts overhauled"
+            },
+            {
+                "rscadd": "Made the Forgefiend a hammer, you can craft and smith with it now"
+            },
+            {
+                "rscadd": "Wooden mallet can now be used to smith with"
+            },
+            {
+                "code_imp": "hammers use defines for their force and integrity, set some maces integrity to use their defines"
+            }
+        ],
+        "grungussuss": [
+            {
+                "bugfix": "fixed seeing no name in the disconnected important role admin message"
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "rscadd": "You can label bottles with parchment and a feather again. Middle-click to remove the label."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "balance": "Potence now gets a minor STR buff for weapon attacks"
+            },
+            {
+                "qol": "Death Knight and Steal the sun commands now tells the user the amount of vitae needed for these actions if they lack enough."
+            },
+            {
+                "bugfix": "Ritual of Ascension now works."
+            },
+            {
+                "bugfix": "Vampire Lord can ascend at their last Ritual of Ascension"
+            },
+            {
+                "bugfix": "Vampire Lord can acess their Tome Souls after their first ascension"
+            },
+            {
+                "code_imp": "Ritual of Ascension was renamed together with their stages and descriptions."
+            },
+            {
+                "rscadd": "Add a Like, Dislike and Ask Again Feature to Mentor"
+            },
+            {
+                "rscadd": "Voices got an unique name in the meditates that is consistent like the Meditates"
+            },
+            {
+                "rscadd": "Medidates names can't be repeated anymore"
+            },
+            {
+                "rscadd": "Mentor Statistics at the Admin Tab"
+            },
+            {
+                "rscadd": "Mentors can gain 1 Triumph from every 7 likes (it has a limit of 5 Triumphs per round)"
+            }
+        ]
+    },
+    "2025-08-26": {
+        "Wouju": [
+            {
+                "bugfix": "Tavern Brawler special works properly now"
+            },
+            {
+                "code_imp": "Special traits now use stat defines properly"
+            },
+            {
+                "rscadd": "biggest shelves aka racks are now climbable and are dense"
+            },
+            {
+                "balance": "Cleaning people with normal soap applies the clean mood effect, which will remove the stink of horcs. Cleaning yourself with herbal soap applies a greater effect, and being cleaned by someone with herbal soap will apply the clean buff"
+            },
+            {
+                "balance": "Soaps now lose a bit of use when dilluted in a bucket of water, it is still way better than using it to clean floors directly"
+            }
+        ],
+        "Wabberspace": [
+            {
+                "rscadd": "A new forest garrison role, Ruffian, a youngling role primarily built around being an aide to the Forest Garrison, with a mixture of Orphan and Ranger skills."
+            },
+            {
+                "rscadd": "A unique orphan halt used only by Ruffians."
+            },
+            {
+                "balance": "Renames Forest Infantry to Forest Ravager, and replaces their Axe skills with Whips & Flails, and gives them a heater shield and military flail, as well as rearranging their stats to be far slower, and far more durable/enduring, and gives them the critical resistance perk."
+            },
+            {
+                "rscadd": "A new belt type used by the Forest Garrison that includes their key and a needle."
+            },
+            {
+                "balance": "Allows forrester armour to be sew-repaired."
+            },
+            {
+                "balance": "Gives Forest Reaver a +1 speed statline, bringing them to parity with adults."
+            },
+            {
+                "bugfix": "Allows Aasimar to be Wardens."
+            },
+            {
+                "balance": "Replaces the Forest Guard's steel coifs with iron bevors."
+            },
+            {
+                "balance": "Prevents the Forest Guard from taking on apprentices."
+            },
+            {
+                "balance": "Raises Forest Guard slots to 4 to coincide with Ruffian influxes."
+            }
+        ],
+        "Somniworld": [
+            {
+                "rscadd": "The town elder role is now accessible to Medicators, Tritons, and Harpies, these species do not have access to the Mayor subclass, however, as it is reserved for nobles."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "balance": "fire servant requires objects to burn to ash"
+            },
+            {
+                "balance": "closed turfs can burn"
+            }
+        ]
+    },
+    "2025-08-27": {
+        "islaughterfunny": [
+            {
+                "balance": "Made the Blessed Needle capable of repairing clothes."
+            }
+        ],
+        "Arkatos": [
+            {
+                "rscadd": "Expanded Economy section in the Chronicle."
+            },
+            {
+                "rscadd": "Added Gods Events in the Chronicle."
+            }
+        ],
+        "grungussuss": [
+            {
+                "qol": "added animations for lying down, standing up and being grabbed"
+            },
+            {
+                "qol": "lock unlock now has a nice animation"
+            }
+        ],
+        "SarmentiCampbell": [
+            {
+                "balance": "lowered chance for secondary antag to spawn, Maniac and Aspirant will now roll for a major antag with a increased chance."
+            },
+            {
+                "balance": "added minimum player requirement for secondary antags to spawn."
+            }
+        ],
+        "Siro": [
+            {
+                "rscadd": "Harpies can eat worms and silk worms"
+            },
+            {
+                "qol": "Flying ability button now shows when it is active."
+            },
+            {
+                "code_imp": "Added the ability to restrict types to abberant_eater"
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "rscadd": "sacks pull a random item out when right clicked"
+            }
+        ]
+    },
+    "2025-08-28": {
+        "CheffieGithub": [
+            {
+                "bugfix": "Fixed chill touch and spell cooldown visuals."
+            },
+            {
+                "config": "Enabled AFK kick config flag with 25 minute timeout and 20 minute warning. Admins are immune."
+            },
+            {
+                "bugfix": "Fixed random flaw badness, works like you selected the flaw (eye loss, etc)."
+            },
+            {
+                "bugfix": "Fixed random flaw (50%) acting like random flaw (3 TRI)."
+            },
+            {
+                "bugfix": "Inhumen Monk and Churchlings get their T1 spell."
+            }
+        ],
+        "Just-Sim": [
+            {
+                "code_imp": "Removed a hard-coded key buffer."
+            }
+        ],
+        "Wouju": [
+            {
+                "rscadd": "Added new food items, herbsteak and herbird"
+            },
+            {
+                "rscadd": "A new powder was added, used in crafting the herbsteak and herbird"
+            },
+            {
+                "code_imp": "tweaked cooking repeatable crafting code. Now it checks if the item is a food snack item before attempting to apply freshness and food quality"
+            }
+        ]
+    },
+    "2025-08-29": {
+        "Wouju": [
+            {
+                "rscadd": "ZIZO sigils are now cleanable with a damp rag"
+            },
+            {
+                "rscadd": "ZIZO soap is now bright crimson bloody red. It also has more uses than base soap."
+            },
+            {
+                "refactor": "Made various ZIZO and scrying orb chat messages use span_XYZs properly. Yell at me if they dont work"
+            },
+            {
+                "balance": "various minor skill changes"
+            },
+            {
+                "rscadd": "Lead balls are now crafted with tin at the artificier table"
+            },
+            {
+                "rscadd": "Lead balls can be crafted with tin by blacksmiths"
+            },
+            {
+                "bugfix": "Fixed essence harvester menu. You also need to use the jar to now remove nodes from it."
+            }
+        ],
+        "HijackSpaghetti": [
+            {
+                "balance": "halves cost of mana related utility tree in spellbook, give Mana Well slight mana regeneration, taken from Meditation, shifted 25 max mana to Expanded Reserves."
+            },
+            {
+                "bugfix": "fixed missing magical brick and flower field descriptions in spellbook"
+            }
+        ],
+        "Just-Sim": [
+            {
+                "rscadd": "Emote Markdown"
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "balance": "Psydon Paladin now has expert swordsman, lost their ability to speak celestial but can speak old psydonic."
+            },
+            {
+                "bugfix": "Progressives psydonites can roll Paladin and Church can't recruit progressive psydonites anymore."
+            }
+        ]
+    },
+    "2025-08-30": {
+        "F-e-r-n": [
+            {
+                "balance": "Makes fullplate and encumbered people get up slower"
+            },
+            {
+                "balance": "Removes strength check from encumbrance and makes carryweight scale on either STR or CON depending on whats higher."
+            },
+            {
+                "balance": "50% encumbrance now disables sprinting from 70%"
+            }
+        ],
+        "Siro": [
+            {
+                "rscadd": "Noble boot variants can store small knives, coins, or key. Only one storage space."
+            },
+            {
+                "rscadd": "Storing anything but a knife in your boots will add a stress."
+            },
+            {
+                "rscadd": "Maximum 40% chance to cut yourself storing a knife in your boots at less than 10 luck."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "rscadd": "Golden Psycross unique description"
+            },
+            {
+                "bugfix": "Good Swim Trait name is not ugly anymore"
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "bugfix": "fixed an issue with doubled flaw effects."
+            }
+        ],
+        "Just-Sim": [
+            {
+                "rscadd": "Door bumping with keys unlocks doors."
+            }
+        ]
     }
 }

@@ -23,12 +23,8 @@
 	var/list/broken_states
 	var/list/burnt_states
 
-	///the chance this turf has to spread, basically 1.75% by default
 	spread_chance = 0.85
-	///means fires last at base 90 seconds
 	burn_power = 22.5
-
-	var/prettifyturf = FALSE
 
 /turf/open/floor/Initialize(mapload)
 	if (!broken_states)
@@ -59,9 +55,6 @@
 		icon_regular_floor = "floor"
 	else
 		icon_regular_floor = icon_state
-
-/turf/open/floor/turf_destruction(damage_flag)
-	return
 
 /turf/open/floor/ex_act(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 	var/shielded = is_shielded()

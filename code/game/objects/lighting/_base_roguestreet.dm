@@ -9,7 +9,7 @@
 	fueluse = 0
 	bulb_colour = "#e4ff6c"
 	bulb_power = 1
-	max_integrity = 0
+	resistance_flags = INDESTRUCTIBLE
 	pass_flags_self = LETPASSTHROW
 	smeltresult = /obj/item/ingot/bronze
 
@@ -27,7 +27,7 @@
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "midlamp1"
 	base_state = "midlamp"
-	pixel_x = -16
+	SET_BASE_PIXEL(-16, 0)
 	density = TRUE
 
 /obj/machinery/light/fueledstreet/orange
@@ -79,7 +79,7 @@
 	icon_state = "midlamp3"
 	base_state = "midlamp"
 	state_suffix = "3"
-	pixel_x = -16
+	SET_BASE_PIXEL(0, -16)
 	density = TRUE
 
 /obj/machinery/light/fueledstreet/blue/wall
