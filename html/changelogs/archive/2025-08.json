@@ -647,13 +647,6 @@
         ]
     },
     "2025-08-24": {
-        "Diegoflores31": [
-            {
-                "bugfix": "fixes goldface"
-            }
-        ]
-    },
-    "2025-08-24": {
         "CheffieGithub": [
             {
                 "bugfix": "fix abyssorites and acolytes miracles"
@@ -994,6 +987,13 @@
         "Just-Sim": [
             {
                 "rscadd": "Door bumping with keys unlocks doors."
+            }
+        ]
+    },
+    "2025-08-31": {
+        "PotatoTomahto": [
+            {
+                "code_imp": "repairable component to refactor repairing structures"
             }
         ]
     }
