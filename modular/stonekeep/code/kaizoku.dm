@@ -370,29 +370,28 @@ get_accent_list()
 	if(H.mind)
 		if(H.dna)
 			if(H.dna.species)
-				if(H.dna.species.id == "abyssariad")
-					H.verbs |= /mob/proc/throatsing
-					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
-					H.verbs |= /mob/proc/abyssaltide
-					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
-					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
-					if(H.dna.species.name == "Changeling")
-						H.verbs |= /mob/living/carbon/human/proc/toggle_changeling_maw
-						//H.verbs |= /mob/living/carbon/human/proc/toggle_shapeshift // Not done. The idea is for changelings to choose their specialization later.
-						//H.verbs |= /mob/living/carbon/human/proc/toggle_mimicry //This one isn't working.
-						ADD_TRAIT(H, TRAIT_CHANGELING_METABOLISM, TRAIT_GENERIC) //Both an advantage and a disadvantage, essentially carnivore code + Venom bite.
-						ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC) //Mythology Kitsune trope //hopefully// done right. Seduction may go a long way to KILL victims.
-						// please. Don't make me feel like I did a wrong move here. I swear to INARI. You people fucked up too much for my taste.
-					if(H.dna.species.name == "Skylancer")
-						H.verbs |= /mob/proc/birdcall
-						H.verbs |= /mob/living/carbon/human/proc/fly
-						H.verbs |= /mob/living/carbon/human/proc/fly_up
-					if(H.dna.species.name == "Ogrun")
-						H.verbs |= /mob/living/carbon/human/proc/warcry
-				if(H.dna.species.name == "Undine") //undine ability; Making below-average armor with normal random things/butchered goods.
-					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
-					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
-					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+				H.verbs |= /mob/proc/throatsing
+				H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+				H.verbs |= /mob/proc/abyssaltide
+				H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
+				ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+				if(H.dna.species.name == "Changeling")
+					H.verbs |= /mob/living/carbon/human/proc/toggle_changeling_maw
+					//H.verbs |= /mob/living/carbon/human/proc/toggle_shapeshift // Not done. The idea is for changelings to choose their specialization later.
+					//H.verbs |= /mob/living/carbon/human/proc/toggle_mimicry //This one isn't working.
+					ADD_TRAIT(H, TRAIT_CHANGELING_METABOLISM, TRAIT_GENERIC) //Both an advantage and a disadvantage, essentially carnivore code + Venom bite.
+					ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC) //Mythology Kitsune trope //hopefully// done right. Seduction may go a long way to KILL victims.
+					// please. Don't make me feel like I did a wrong move here. I swear to INARI. You people fucked up too much for my taste.
+				if(H.dna.species.name == "Skylancer")
+					H.verbs |= /mob/proc/birdcall
+					H.verbs |= /mob/living/carbon/human/proc/fly
+					H.verbs |= /mob/living/carbon/human/proc/fly_up
+				if(H.dna.species.name == "Ogrun")
+					H.verbs |= /mob/living/carbon/human/proc/warcry
+			if(H.dna.species.name == "Undine") //undine ability; Making below-average armor with normal random things/butchered goods.
+				H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+				H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
+				ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/reinforcedarmor)
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/reinforcedhelmet)
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/mediumhelmet)
@@ -401,7 +400,7 @@ get_accent_list()
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/lightarmor)
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/obsidian_spear)
 //					H.mind.teach_crafting_recipe(/datum/blueprint_recipe/obsidian_club)
-					H.verbs |= /mob/proc/croak
+				H.verbs |= /mob/proc/croak
 
 /* Add to kaizok jobs
 	if(H.dna.species.id == "human")
@@ -1039,13 +1038,18 @@ get_accent_list()
 	animate(src, pixel_x = oldx + 2, time = 0.3)
 	animate(pixel_x = oldx - 2, time = 0.3)
 	animate(pixel_x = oldx, time = 0.3)
+	COOLDOWN_START(src, gong_ring, 30 SECONDS) //Be removed later.
 
+// Not for OG stonekeep.
+
+/*
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.stat != DEAD && !isbrain(player) && is_tideseeker(player.mind?.assigned_role))
 			player.playsound_local(get_turf(player), 'modular/stonekeep/kaizoku/sound/gong3.ogg', 60, FALSE)
 			to_chat(player, "<span class='notice'>A sacred gong rings out from afar...</span>")
 
 	COOLDOWN_START(src, gong_ring, 30 SECONDS)
+*/
 
 /obj/machinery/light/fueled/lightbeacon
 	name = "paper lantern"

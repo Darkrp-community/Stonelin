@@ -23,9 +23,6 @@
 	category_tags = list(CTAG_ADVENTURER)
 	horse = /mob/living/simple_animal/hostile/retaliate/saiga/tame/saddled // placeholder
 
-/datum/outfit/job/sk/adventurer/abyss/zamurai
-	allowed_patrons = list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
-
 /datum/advclass/combat/sk/abyss/zamurai/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)
 		horse = /mob/living/simple_animal/hostile/retaliate/saiga/tame/saddled// placeholder

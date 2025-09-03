@@ -12,7 +12,7 @@
 
 /datum/species/abyssariad/changeling
 	name = "Changeling"
-	id = "abyssariad"
+	id = SPEC_ID_FOX
 	desc = "<b>Storm branched Champions</b><br>\
 	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, the changelings are an \
 	honor-bound race wild as the storms, hermetically humble, yet quick tempered. \
@@ -43,7 +43,7 @@
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
 	offset_features_m = list(
-		OFFSET_ID = list(0,1),\
+		OFFSET_RING = list(0,1),\
 		OFFSET_GLOVES = list(0,1),\
 		OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1),\
@@ -61,7 +61,7 @@
 		OFFSET_UNDIES = list(0,1),\
 		)
 	offset_features_f = list(
-		OFFSET_ID = list(0,-1),\
+		OFFSET_RING = list(0,-1),\
 		OFFSET_GLOVES = list(0,1),\
 		OFFSET_WRISTS = list(0,1),\
 		OFFSET_HANDS = list(0,1),\

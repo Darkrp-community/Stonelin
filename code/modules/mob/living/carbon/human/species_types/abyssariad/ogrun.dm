@@ -12,7 +12,7 @@
 
 /datum/species/abyssariad/ogrun
 	name = "Ogrun"
-	id = "abyssariad"
+	id = SPEC_ID_ONI
 	desc = "<b>Island branched Champions</b><br>\
 	Under the guide of Abyssor's creations, orcs invading fog islands became purified entities after Blood Apotheosis. \
 	Just like the islands that sprinkled the ocean's surface, these orcs bears the constant waves and storms of life \
@@ -45,7 +45,7 @@
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
 	offset_features_m = list(
-		OFFSET_ID = list(0,1),\
+		OFFSET_RING = list(0,1),\
 		OFFSET_GLOVES = list(0,1),\
 		OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1),\
@@ -63,7 +63,7 @@
 		OFFSET_UNDIES = list(0,1),\
 		)
 	offset_features_f = list(
-		OFFSET_ID = list(0,1),\
+		OFFSET_RING = list(0,1),\
 		OFFSET_GLOVES = list(0,1),\
 		OFFSET_WRISTS = list(0,1),\
 		OFFSET_HANDS = list(0,1),\

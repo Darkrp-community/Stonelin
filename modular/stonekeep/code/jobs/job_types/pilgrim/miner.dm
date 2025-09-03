@@ -10,7 +10,10 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Ogrun"
+		"Ogrun",
+		"Changeling",
+		"Undine",
+		"Skylancer"
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/miner
 	category_tags = list(CTAG_PILGRIM)

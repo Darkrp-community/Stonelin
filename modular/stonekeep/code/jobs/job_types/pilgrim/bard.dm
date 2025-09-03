@@ -15,7 +15,9 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Skylancer"
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/bard
 	category_tags = list(CTAG_PILGRIM)
@@ -51,7 +53,7 @@
 	beltr = /obj/item/weapon/sword/short
 	beltl = /obj/item/storage/belt/pouch/coins/poor
 	backpack_contents = list(/obj/item/flint)
-	if(H.dna?.species?.id == "abyssariad"|| H.dna.species.name == "Undine")
+	if(H.dna.species.id == RACES_PLAYER_NATIVEFOGGIES)
 		cloak = /obj/item/clothing/cloak/raincloak/guardiancloak/red
 		armor = /obj/item/clothing/armor/leather/vest/kaizoku
 		shoes = /obj/item/clothing/shoes/shortboots/cloudhead

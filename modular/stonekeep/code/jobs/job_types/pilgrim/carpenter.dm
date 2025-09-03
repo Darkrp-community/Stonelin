@@ -8,7 +8,11 @@
 		"Elf",
 		"Half-Elf",
 		"Aasimar",
-		"Ogrun"
+		"Ogrun",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/carpenter

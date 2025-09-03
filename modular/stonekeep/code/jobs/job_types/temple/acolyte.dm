@@ -10,7 +10,7 @@ Acolytes are all healers but with different flavors depending on Patron.
 	spawn_positions = 4
 
 	allowed_patrons = SK_TEMPLE_PATRONS
-	allowed_races = RACES_PLAYER_NONDISCRIMINATED
+	allowed_races = STONEKEEP_RACES_PLAYER_NONDISCRIMINATED
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the Temple of the Ten not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/necra)
 	outfit = /datum/outfit/job/stonekeep/acolyte
@@ -93,7 +93,13 @@ Design philosphy:
 	H.change_stat(STATKEY_PER, 1)
 	H.change_stat(STATKEY_SPD, 1)
 
-	new /datum/devotion/cleric_holder(H, H.patron)
+	var/holder = H.patron?.devotion_holder //Replace with whatever Templemaiden is made to have.
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_cleric()
+		devotion.grant_to(H)
+
+	// new /datum/devotion/cleric_holder(H, H.patron) // This does not exist anymore.
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 
@@ -189,12 +195,10 @@ Design philosphy:
 			shoes = /obj/item/clothing/shoes/sandals
 			armor = /obj/item/clothing/shirt/robe/eora
 		if(/datum/patron/divine/abyssor)
-			head = /obj/item/clothing/head/padded/shrinekeeper
+			head = /obj/item/clothing/head/padded/abyssor
 			neck = /obj/item/clothing/neck/psycross/silver/abyssor
-			armor = /obj/item/clothing/shirt/robe/shrinekeeper
-			shirt = /obj/item/clothing/shirt/rags/monkgarb/random
-			shoes = /obj/item/clothing/shoes/sandals/geta
-			wrists = /obj/item/clothing/wrists/shrinekeeper
+			shoes = /obj/item/clothing/shoes/boots
+			armor = /obj/item/clothing/shirt/robe/abyssor
 			H.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 		else // Failsafe
 			head = /obj/item/clothing/head/roguehood/random

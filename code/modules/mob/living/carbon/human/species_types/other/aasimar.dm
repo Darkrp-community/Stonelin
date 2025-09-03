@@ -42,7 +42,7 @@
 	soundpack_m = /datum/voicepack/male/serious
 
 	offset_features_m = list(
-		OFFSET_ID = list(0,2),\
+		OFFSET_RING = list(0,2),\
 		OFFSET_GLOVES = list(0,2),\
 		OFFSET_WRISTS = list(0,2),\
 		OFFSET_CLOAK = list(0,2),\
@@ -60,7 +60,7 @@
 		OFFSET_UNDIES = list(0,1),\
 		)
 	offset_features_f = list(
-		OFFSET_ID = list(0,2),\
+		OFFSET_RING = list(0,2),\
 		OFFSET_GLOVES = list(0,2),\
 		OFFSET_WRISTS = list(0,2),\
 		OFFSET_CLOAK = list(0,2),\

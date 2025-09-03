@@ -386,7 +386,7 @@
 	\"By the Heavenly Emperor's command. For the abyss against all odds.\""
 	icon_state = "myrmidon"
 	item_state = "myrmidon"
-	allowed_race = list("abyssariad")
+	allowed_race = list("RACES_PLAYER_NATIVEFOGGIES")
 	sleevetype = null
 	max_integrity = INTEGRITY_STRONGEST+100 //Chest + Pants - Everything is on a single armor. Breaks easier since it gets battered everywhere, so it requires more endurance.
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
@@ -531,7 +531,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	allowed_race = list("human", "tiefling", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -1266,7 +1266,7 @@
 	icon_state = "myrmidon"
 	item_state = "myrmidon"
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("abyssariad")
+	allowed_race = list("changeling", "ogrun", "undine", "skylancer")
 	flags_inv = HIDEEARS
 	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD_EXCEPT_EYES
@@ -1959,7 +1959,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	allowed_race = list("human", "tiefling", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 	color = null
 	sellprice = 100
 
@@ -1998,7 +1998,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	allowed_race = list("human", "tiefling", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 	color = null
 
 /obj/item/clothing/shirt/kaizoku/robe/Initialize()
@@ -2248,350 +2248,3 @@
 	detail_tag = "_det"
 	colorgrenz = TRUE
 	base_icon_state = "zunari_kabuto"
-
-/obj/item/clothing/head/helmet/visored/zunari/zamurai/update_icon()
-	..()
-	cut_overlays()
-	var/visor_suffix = ""
-	if(adjustable == CADJUSTED)
-		visor_suffix = "_raised"
-	icon_state = "[base_icon_state][visor_suffix]"
-	color = initial(color)
-
-	if(get_detail_tag())
-		var/overlay_icon_state = "[base_icon_state][get_detail_tag()][visor_suffix]"
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, overlay_icon_state))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
-
-/obj/item/clothing/head/helmet/visored/zunari/zamurai/AdjustClothes(mob/user)
-	if(loc == user)
-		playsound(user, "sound/items/visor.ogg", 50, TRUE, -1)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			body_parts_covered = COVERAGE_HEAD
-			flags_inv = HIDEEARS
-			flags_cover = null
-			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-			block2add = null
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-
-		if(istype(src, /obj/item/clothing/head/helmet/visored/zunari/zamurai))
-			src:update_icon()
-
-		if(ishuman(user))
-			var/mob/living/carbon/H = user
-			H.update_inv_head()
-
-		user.update_fov_angles()
-	else // Failsafe.
-		to_chat(user, "<span class='warning'>Wear the helmet on your head to open and close the visor.</span>")
-		return
-
-///////////////////////////////////// New Garrison
-
-/obj/item/clothing/armor/brigandine/neogarrison
-	name = "TEMPLATE GARRISON ARMOR"
-	desc = "you should not see this"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
-	icon_state = "flhcustodian"
-	detail_tag = ""
-	detail_color = null
-	color = null
-	var/picked = FALSE
-	var/has_mini = FALSE
-	var/mini_color = null
-	var/mini_tag = ""
-
-/obj/item/clothing/armor/brigandine/neogarrison/Initialize()
-	. = ..()
-	if(picked)
-		return
-
-	var/mob/living/carbon/human/L = loc
-	if(!istype(L) || !L.client)
-		return
-
-	if(L.dna.species?.id != "abyssariad")
-		name = "heartfelt plated coat"
-		desc = "Plated coat used by Heartfelteans"
-		icon_state = "hfhcustodian"
-	else
-		name = "foglander coat-of-knives"
-		desc = "Armored coat used by Foglanders"
-		icon_state = "flhcustodian"
-
-	INVOKE_ASYNC(src, PROC_REF(get_player_input))
-
-/obj/item/clothing/armor/brigandine/neogarrison/proc/get_player_input()
-	if(!ishuman(loc))
-		return
-
-	var/list/colors = list(
-		"PURPLE"="#865c9c",
-		"RED"="#933030",
-		"BROWN"="#685542",
-		"GREEN"="#79763f",
-		"BLUE"="#395480",
-		"YELLOW"="#b5b004",
-		"TEAL"="#249589",
-		"STEEL"="#ffffff",
-		"ORANGE"="#b86f0c",
-		"Royal Majenta"="#962e5c")
-
-	detail_tag = ""
-	detail_color = null
-	has_mini = FALSE
-	mini_color = null
-	mini_tag = ""
-
-	if(GLOB.lordprimary)
-		var/list/choices = list("Battle coat" = "_det", "Cloak" = "_det1")
-		var/choice = input(loc, "Choose your armor plating style", "Armor Customization") as null|anything in choices
-		if(choice)
-			detail_tag = choices[choice]
-			detail_color = GLOB.lordprimary
-			mini_tag = "_mini"
-			has_mini = TRUE
-			mini_color = GLOB.lordsecondary
-	else
-		detail_tag = "_og"
-		if(alert(loc, "Do you want to apply a colored mini-lining?", "Mini-Lining", "Yes", "No") == "Yes")
-			has_mini = TRUE
-			var/color_choice = input(loc, "Choose your mini-lining color", "Mini-Lining Color") as null|anything in colors
-			if(color_choice)
-				mini_tag = "_mini"
-				mini_color = colors[color_choice]
-
-	picked = TRUE
-	update_icon()
-	if(ismob(loc))
-		var/mob/M = loc
-		M.update_inv_armor()
-
-/obj/item/clothing/armor/brigandine/neogarrison/update_icon()
-	..()
-	cut_overlays()
-
-	if(icon_state)
-		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
-		base.alpha = 255
-		base.appearance_flags = RESET_COLOR
-		add_overlay(base)
-
-	if(detail_tag && detail_tag != "_og")
-		var/mutable_appearance/DET = mutable_appearance(icon, "[icon_state][detail_tag]")
-		DET.appearance_flags = RESET_COLOR
-		if(detail_color)
-			DET.color = detail_color
-		add_overlay(DET)
-
-	if(has_mini && mini_tag)
-		var/mutable_appearance/MU = mutable_appearance(icon, "[icon_state][mini_tag]")
-		MU.appearance_flags = RESET_COLOR
-		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
-			MU.color = mini_color
-		add_overlay(MU)
-
-	if(detail_tag && detail_tag != "_og")
-		var/image/I1 = image(icon, "[icon_state][detail_tag]")
-		if(detail_color)
-			I1.color = detail_color
-		overlays += I1
-
-	if(has_mini && mini_tag)
-		var/image/I2 = image(icon, "[icon_state][mini_tag]")
-		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
-			I2.color = mini_color
-		overlays += I2
-
-/obj/item/clothing/armor/brigandine/neogarrison/proc/get_additional_worn_overlays(file)
-	var/list/extra = list()
-	if(detail_tag && detail_tag != "_og")
-		var/image/B = image(file, "[icon_state][detail_tag]")
-		if(detail_color)
-			B.color = detail_color
-		extra += B
-	if(has_mini && mini_tag)
-		var/image/I = image(file, "[icon_state][mini_tag]")
-		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
-			I.color = mini_color
-		extra += I
-	return extra
-
-/obj/item/clothing/armor/brigandine/neogarrison/worn_overlays(isinhands, file2use, dummy_block = FALSE)
-	var/list/extras = ..(isinhands, file2use)
-	if(detail_tag && detail_tag != "_og")
-		var/image/B = image(file2use, "[icon_state][detail_tag]")
-		if(detail_color)
-			B.color = detail_color
-		extras += B
-	if(has_mini && mini_tag)
-		var/image/I = image(file2use, "[icon_state][mini_tag]")
-		if(mini_color) //Appears only when the player chooses for a "Mini" overlay.
-			I.color = mini_color
-		extras += I
-	return extras
-
-/obj/item/clothing/neck/bevor/crabstain
-	name = "crabstain bevor"
-	desc = "A crab-like throat and neck protector favored by coastal guards, with jagged lips similar to carcinized sea creatures. \
-			The ridged mechanisms can be opened with the tongue to allow the user to eat."
-	icon_state = "crabstain"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
-	adjustable = CAN_CADJUST
-	alternate_worn_layer = MOUTH_LAYER
-
-/obj/item/clothing/neck/bevor/crabstain/AdjustClothes(mob/user)
-	if(loc == user)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			if(toggle_icon_state)
-				icon_state = "[initial(icon_state)]_open"
-			flags_inv = null
-			body_parts_covered = NECK|EARS
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-			flags_inv = HIDEEARS|HIDEHAIR
-			if(user)
-				if(ishuman(user))
-					var/mob/living/carbon/H = user
-					H.update_inv_neck()
-
-/obj/item/clothing/neck/gorget/lazerrain
-	name = "lazerrain aegis"
-	icon_state = "lazerrain"
-	desc = "Compact, interlocking iron bands that slip beneath armor to ensure your neck will remain secured from slashes and punctures."
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
-	alternate_worn_layer = MOUTH_LAYER
-
-/obj/item/clothing/armor/leather/splint/battlecoat
-	name = "custodian battlecoat"
-	desc = "A light custodian gear made of interconnected hexagonal iron plates stitched under a thick coat for protection."
-	icon_state = "hflcustodian"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
-
-/obj/item/clothing/armor/leather/splint/battlecoat/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		update_icon()
-
-	var/mob/living/carbon/human/L = loc
-	if(!istype(L) || !L.client)
-		return
-
-	if(L.dna.species?.id != "abyssariad")
-		desc = "A light custodian gear made of interconnected hexagonal iron plates stitched under a thick coat for protection."
-		icon_state = "hflcustodian"
-	else
-		desc = "A light custodian overwear based on foglander godwenkai of ancient championage roots, with reinforced hexagonal plates under it."
-		icon_state = "fllcustodian"
-
-/obj/item/clothing/armor/leather/splint/battlecoat/update_icon()
-	..()
-	cut_overlays()
-	if(icon_state)
-		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
-		base.alpha = 255
-		base.appearance_flags = RESET_COLOR
-		add_overlay(base)
-
-	if(GLOB.lordprimary)
-		var/mutable_appearance/det = mutable_appearance(icon, "[icon_state]_det")
-		det.appearance_flags = RESET_COLOR
-		det.color = GLOB.lordprimary
-		add_overlay(det)
-
-/obj/item/clothing/armor/leather/splint/battlecoat/worn_overlays(isinhands, file2use, dummy_block = FALSE)
-	var/list/extras = ..(isinhands, file2use)
-	if(GLOB.lordprimary)
-		var/image/det_img = image(file2use, "[icon_state]_det")
-		//det_img.layer = ARMOR_LAYER
-		det_img.color = GLOB.lordprimary
-		extras += det_img
-	return extras
-
-/obj/item/clothing/head/helmet/leather/paddedt
-	name = "custodian bearskin"
-	desc = "A furcap commonly used by foglander grenadiers for identification became commonly used by others \
-	forces over centuries, usually ceremonial, with leather padding it becomes protective."
-	icon_state = "paddedt"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
-
-/obj/item/clothing/head/helmet/leather/paddedt/Initialize()
-	. = ..()
-	if(GLOB.lordprimary)
-		update_icon()
-
-/obj/item/clothing/head/helmet/leather/paddedt/update_icon()
-	..()
-	cut_overlays()
-	if(icon_state)
-		var/mutable_appearance/base = mutable_appearance(icon, icon_state)
-		base.alpha = 255
-		base.appearance_flags = RESET_COLOR
-		add_overlay(base)
-
-	if(GLOB.lordprimary)
-		var/mutable_appearance/det = mutable_appearance(icon, "[icon_state]_det")
-		det.appearance_flags = RESET_COLOR
-		det.color = GLOB.lordprimary
-		add_overlay(det)
-
-/obj/item/clothing/head/helmet/leather/paddedt/worn_overlays(isinhands, file2use, dummy_block = FALSE)
-	var/list/extras = ..(isinhands, file2use)
-	if(GLOB.lordprimary)
-		var/image/det_img = image(file2use, "[icon_state]_det")
-		//det_img.layer = HEAD_LAYER
-		det_img.color = GLOB.lordprimary
-		extras += det_img
-	return extras
-
-/obj/item/clothing/head/helmet/kettle/fs_kettle
-	name = "custodian kettle"
-	desc = "Infantry skull protection. It goes great with a gorget."
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
-	icon_state = "hfs_kettle"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-
-/obj/item/clothing/head/helmet/kettle/fs_kettle/Initialize()
-	. = ..()
-	var/mob/living/carbon/human/L = loc
-	if(!istype(L) || !L.client)
-		return
-
-	if(L.dna.species?.id != "abyssariad")
-		desc = "Skull protector of heartfeltean design. Square-looking, it protects against blows from above, what you need during sieges."
-		icon_state = "hfs_kettle"
-	else
-		desc = "Infantry headgear of Foglander design in a bowl-like silhouette, having a large brim protecting the eyes from the sun."
-		icon_state = "ffs_kettle"
-
-/obj/item/clothing/cloak/raincloak/guardsman
-	name = "custodian capelet"
-	desc = "a shoulder-length cape used by heartfeltean duelists. Proper for distractions and hide blades under."
-	icon_state = "guardcloak"
-	body_parts_covered = CHEST|GROIN
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
-	inhand_mod = FALSE
-	hoodtype = null
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/cloaks.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
-	color = CLOTHING_BLOOD_RED
-	uses_lord_coloring = LORD_PRIMARY

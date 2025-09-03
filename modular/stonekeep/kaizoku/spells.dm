@@ -1,14 +1,70 @@
+/datum/status_effect/debuff/shaken
+	id = "shaken"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/shaken
+	effectedstats = list("perception" = -3, "intelligence" = -2, "speed" = -2)
+	duration = 45 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/shaken
+	name = "shaken"
+	desc = "By the divines! What the hell was that?!"
+	icon_state = "shaken"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/debuff/withdrawal
+	id = "withdrawal"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/withdrawal
+	effectedstats = list("strength" = -2, "constitution" = -3, "endurance" = -3) //Don't use this during battle. You will weaken yourself.
+	duration = 6 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/withdrawal
+	name = "withdrawal"
+	desc = "My body needs time to call my Orcish Heritage."
+	icon_state = "withdrawal"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/buff/recovery
+	id = "recovery"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/recovery
+	effectedstats = null
+	duration = 45 SECONDS
+
+/atom/movable/screen/alert/status_effect/buff/recovery
+	name = "Recovery"
+	desc = "My body weakens to recover from foul wounds."
+	icon_state = "recovery"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/buff/recovery/on_apply()
+	. = ..()
+	var/mob/living/carbon/H = owner
+	if(!H)
+		return
+
+	START_PROCESSING(SSfastprocess, src)
+
+/datum/status_effect/buff/recovery/process()
+	. = ..()
+	var/mob/living/carbon/H = owner
+
+	H.blood_volume = min(H.blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
+	H.adjustBruteLoss(-0.5)
+	H.adjustFireLoss(-0.5)
+	H.adjustOxyLoss(-1)
+	H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
+	H.adjustCloneLoss(-1)
+	H.adjustToxLoss(-1)
+
+/datum/status_effect/buff/recovery/on_remove()
+	. = ..()
+	STOP_PROCESSING(SSfastprocess, src)
+
+// Do not bother having this on OG stonekeep. Move on.
+
+/*
 /datum/devotion/cleric_holder/proc/grant_spells_sohei(mob/living/carbon/human/H)
 	if(!H || !H.mind)
 		return
 
-//	var/datum/patron/A = H.patron
-//	var/list/spelllist = list(/datum/action/cooldown/spell/undirected/touch/entangler, A.t0) //Placeholder. Need to change this for a Sohei-only.
-//	for(var/spell_type in spelllist)				ROGTODO this shit was broken by Vandelrin
-//		if(!spell_type || H.mind.has_spell(spell_type))
-//			continue
-//		H.add_spell(new spell_type)
-//	level = CLERIC_T0
 	max_devotion = 150
 
 
@@ -106,67 +162,6 @@
 		if(prob(50))
 			C.adjustFireLoss(4)
 			C.Jitter(3)
-
-/datum/status_effect/debuff/shaken
-	id = "shaken"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/shaken
-	effectedstats = list("perception" = -3, "intelligence" = -2, "speed" = -2)
-	duration = 45 SECONDS
-
-/atom/movable/screen/alert/status_effect/debuff/shaken
-	name = "shaken"
-	desc = "By the divines! What the hell was that?!"
-	icon_state = "shaken"
-	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
-
-/datum/status_effect/debuff/withdrawal
-	id = "withdrawal"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/withdrawal
-	effectedstats = list("strength" = -2, "constitution" = -3, "endurance" = -3) //Don't use this during battle. You will weaken yourself.
-	duration = 6 MINUTES
-
-/atom/movable/screen/alert/status_effect/debuff/withdrawal
-	name = "withdrawal"
-	desc = "My body needs time to call my Orcish Heritage."
-	icon_state = "withdrawal"
-	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
-
-/datum/status_effect/buff/recovery
-	id = "recovery"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/recovery
-	effectedstats = null
-	duration = 45 SECONDS
-
-/atom/movable/screen/alert/status_effect/buff/recovery
-	name = "Recovery"
-	desc = "My body weakens to recover from foul wounds."
-	icon_state = "recovery"
-	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
-
-/datum/status_effect/buff/recovery/on_apply()
-	. = ..()
-	var/mob/living/carbon/H = owner
-	if(!H)
-		return
-
-	START_PROCESSING(SSfastprocess, src)
-
-/datum/status_effect/buff/recovery/process()
-	. = ..()
-	var/mob/living/carbon/H = owner
-
-	H.blood_volume = min(H.blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
-	H.adjustBruteLoss(-0.5)
-	H.adjustFireLoss(-0.5)
-	H.adjustOxyLoss(-1)
-	H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
-	H.adjustCloneLoss(-1)
-	H.adjustToxLoss(-1)
-
-/datum/status_effect/buff/recovery/on_remove()
-	. = ..()
-	STOP_PROCESSING(SSfastprocess, src)
-
 
 // ===================================================================
 // ABYSSANCTUM POWERS
@@ -310,7 +305,7 @@
 			C.apply_status_effect(/datum/status_effect/debuff/frostbite)
 			C.flash_fullscreen("whiteflash3")
 			return
-		if(C.dna.species?.id == "abyssariad"||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures. This proves their 'divinity' and purity ingame.
+		if(H.dna.species.id == RACES_PLAYER_NATIVEFOGGIES)||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures. This proves their 'divinity' and purity ingame.
 			C.visible_message("<span class='danger'>[target]'s body shivers slightly, yet remains sturdy.</span>", "<span class='userdanger'>A cold travel down my spine, yet I feel little to no pain.</span>")
 			C.adjustBruteLoss(rand(5, 15)) // 10 to 15 damage. Don't even bother attacking these. They will not be frozen either.
 			return
@@ -1261,3 +1256,4 @@
 		if(istype(P, type))
 			return TRUE
 	return FALSE
+*/
