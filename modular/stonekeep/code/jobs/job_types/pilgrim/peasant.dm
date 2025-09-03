@@ -8,7 +8,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Aasimar"
+		"Aasimar",
+		"Ogrun",
+		"Changeling",
+		"Undine",
+		"Skylancer"
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/peasant
 	category_tags = list(CTAG_PILGRIM)

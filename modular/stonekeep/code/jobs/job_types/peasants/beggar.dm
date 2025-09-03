@@ -43,7 +43,7 @@
 		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
 		if(prob(50))
 			shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
-	if(H.dna.species?.id == "abyssariad")
+	if(H.dna.species.id == RACES_PLAYER_NATIVEFOGGIES)
 		mask = /obj/item/clothing/face/kaizoku/facemask/dishonor
 		to_chat(H, "<span class='userdanger'>In failure I forfeited my honor and values of the Abyssal Tide. If I am to claim the essence of an Abyssariad once more, I must prove myself worthy.</span>")
 		H.burakumin = TRUE

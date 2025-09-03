@@ -15,7 +15,6 @@ the like.
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "You are a soldier in the town garrison, an Ashigaru from the Fog Islands. Treaties and alliances matter little to you, your Lord has ordered you to obey the local ruler and their Sheriff, maintaining order."
 	display_order = GARRISON_ORDER
-
 	outfit = /datum/outfit/job/stonekeep/garrison	//Default outfit.
 	advclass_cat_rolls = list(CTAG_SKGARRISON = 20)	//Handles class selection.
 	give_bank_account = 20

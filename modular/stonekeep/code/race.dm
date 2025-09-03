@@ -57,30 +57,34 @@
 
 // =================================================================================
 
+// Code changed. Now players can play as Abyssariads on the Stone Hamlet map.
+// It was that easy.
+
+
 /datum/species/abyssariad/skylancer/check_roundstart_eligible()
 	if(SSmapping.config.map_name == "Stone Hamlet")
-		return FALSE
-	else
 		return TRUE
+	else
+		return FALSE
 
 /datum/species/abyssariad/ogrun/check_roundstart_eligible()
 	if(SSmapping.config.map_name == "Stone Hamlet")
-		return FALSE
-	else
 		return TRUE
+	else
+		return FALSE
 
 /datum/species/elf/undine/check_roundstart_eligible()
 	if(SSmapping.config.map_name == "Stone Hamlet")
-		return FALSE
-	else
 		return TRUE
-/*
+	else
+		return FALSE
+
 /datum/species/abyssariad/changeling/check_roundstart_eligible()
 	if(SSmapping.config.map_name == "Stone Hamlet")
-		return FALSE
-	else
 		return TRUE
-*/
+	else
+		return FALSE
+
 
 
 

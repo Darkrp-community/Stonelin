@@ -10,6 +10,10 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/sk/pilgrim/cheesemaker
 

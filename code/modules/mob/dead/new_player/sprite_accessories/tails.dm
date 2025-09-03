@@ -358,7 +358,7 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Undine shell"
 	icon_state = "kappav"
-	specuse = list("abyssariad", "Kappa", "Undine")
+	specuse = list("Kappa", "Undine")
 	gender = NEUTER
 	default_colors = "#044D1D" // Placeholder until color select is set up
 	// Once shells can be customized, the following should be the pre-selectable colors:
@@ -376,7 +376,7 @@
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Fox tail"
 	icon_state = "onetail"
-	specuse = list("abyssariad", "Changeling", "changeling")
+	specuse = list("Changeling", "changeling")
 	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 

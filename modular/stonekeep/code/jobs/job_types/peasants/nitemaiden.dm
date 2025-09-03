@@ -34,7 +34,7 @@ It´s pretty good. Also extra good mood boost for sex, but still a bit barebones
 /datum/outfit/job/stonekeep/nitemaiden/pre_equip(mob/living/carbon/human/H)
 	..()
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-	if(H.dna.species?.id == "abyssariad")
+	if(H.dna.species.id == RACES_PLAYER_NATIVEFOGGIES)
 		if(H.wear_mask)
 			if(istype(H.wear_mask, /obj/item/clothing/face/eyepatch || /obj/item/clothing/face/eyepatch/left))
 				qdel(H.wear_mask)

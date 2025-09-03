@@ -12,7 +12,7 @@
 
 /datum/species/elf/undine
 	name = "Undine"
-	id = "elf"
+	id = SPEC_ID_KAPPA
 	desc = "<b>Undine</b><br>\
 	An amalgamation between Goblins and Elves that arrived at the Fog islands centuries \
 	ago, long corrupted by demonic essence and alchemical misconducts over generations, \
@@ -45,7 +45,7 @@
 //	minrace_pq = 0
 
 	offset_features_m = list(
-		OFFSET_ID = list(0,-1),\
+		OFFSET_RING = list(0,-1),\
 		OFFSET_GLOVES = list(0,-1),\
 		OFFSET_WRISTS = list(0,-1),\
 		OFFSET_CLOAK = list(0,-1),\
@@ -63,7 +63,7 @@
 		OFFSET_UNDIES = list(0,-1),\
 	)
 	offset_features_f = list(
-		OFFSET_ID = list(0,-1),\
+		OFFSET_RING = list(0,-1),\
 		OFFSET_GLOVES = list(0,-1),\
 		OFFSET_WRISTS = list(0,-1),\
 		OFFSET_HANDS = list(0,-2),\

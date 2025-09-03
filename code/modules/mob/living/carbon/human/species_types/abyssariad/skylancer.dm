@@ -12,7 +12,7 @@
 
 /datum/species/abyssariad/skylancer
 	name = "Skylancer"
-	id = "abyssariad"
+	id = SPEC_ID_TENGU
 	desc = "<b>Sky branched Champions</b><br>\
 	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, these \
 	avian denmorians are an graceful race suited to navigate rocky shores and battlefronts. Inquisitive and aloof, \

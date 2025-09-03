@@ -51,7 +51,7 @@
 			S.name = "zamurai's odoshi ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		if(H.dna.species?.id != "abyssariad")
+		if(H.dna.species.id == RACES_PLAYER_NATIVEFOGGIES)
 			var/honorary = "Sir"
 			if(H.gender == FEMALE)
 				honorary = "Dame"

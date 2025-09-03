@@ -670,17 +670,17 @@
 /obj/item/clothing/cloak/half/guard
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 
 /obj/item/clothing/cloak/half/guardsecond
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 
 /obj/item/clothing/cloak/half/vet
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "changeling", "ogrun", "undine", "skylancer")
 
 /obj/item/clothing/cloak/captain
 	name = "sheriffs cape"
